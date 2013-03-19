@@ -54,9 +54,10 @@ layout: default
       <p>tus delivers your files straight to your
       server, Amazon S3 bucket, or any other supported service.</p>
 
-      <h4>No Vendor Lock</h4>
-      <p>tus is free software. You can run it on your own servers,
-      using our open source or enterprise edition.</p>
+      <h4>Open Source</h4>
+      <p>tus is open source. You can run on it on your own servers, and
+      modify the source.
+      </p>
     </div>
   </div>
   <hr>
