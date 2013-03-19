@@ -4,15 +4,19 @@ layout: default
 
 <div class="container-narrow">
   <div class="masthead">
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="https://github.com/tus">Source</a></li>
+    </ul>
     <h3 class="muted">tus - coming soon</h3>
   </div>
   <hr>
   <div class="jumbotron">
-    <h1>Robust File Upload Infrastructure</h1>
+    <h1>Let's fix file uploading</h1>
     <p class="lead">
-    If content is king, you must make no mistakes acquiring it. tus provides
-    the infrastructure for fast and reliable file uploads for your website
-    or mobile app.
+     It's 2013, and adding reliable file uploading to your app is still too
+     damn hard.  tus is an open source project dedicated to create the best
+     file uploading protocol, server and clients.
     </p>
 
     <div class="input-append control-group">
@@ -37,8 +41,8 @@ layout: default
       every attempt to receive and resume your uploads.</p>
 
       <h4>HTML5, iOS, Android</h4>
-      <p>tus integrates everywhere. Capture content no matter where
-      your users are.</p>
+      <p>Tus will provide you with native clients to provide a great user
+      experience on all plattforms.</p>
 
       <h4>Integrate Easily</h4>
       <p>tus is designed for developers to love, and can often be integrated in
@@ -47,7 +51,7 @@ layout: default
 
     <div class="span6">
       <h4>Everybody Hates Waiting</h4>
-      <p>tus accelerates uploads using our geographically distributed network of upload servers.</p>
+      <p>tus accelerates uploads by utilizing multiple tcp connections per upload.</p>
 
 
       <h4>Your Files, Your Storage</h4>
