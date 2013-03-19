@@ -1,0 +1,7 @@
+navigation:
+- text: Home
+  url: /index.html
+- text: Demo
+  url: /demo.html
+- text: Source
+  url: https://github.com/tus

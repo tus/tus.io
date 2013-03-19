@@ -23,6 +23,38 @@
     </script>
   </head>
   <body>
-    {{ content }}
+    <div class="container-narrow">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          {% for link in site.navigation %}
+            {% assign active = nil %}
+            {% if page.url == link.url %}
+              {% assign active = 'active' %}
+            {% endif %}
+            <li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+          {% endfor %}
+        </ul>
+        <h3 class="muted">tus - coming soon</h3>
+      </div>
+      <hr>
+      {{ content }}
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Transloadit Ltd 2012-2013</p>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3306079-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
