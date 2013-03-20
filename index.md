@@ -35,9 +35,9 @@ layout: default
     <p>Tus will provide you with native clients to provide a great user
     experience on all plattforms.</p>
 
-    <h4>Integrate Easily</h4>
-    <p>tus is designed for developers to love, and can often be integrated in
-    a matter of minutes.</p>
+    <h4>Huge files? No problem.</h4>
+    <p>Forget about file size limits, tus aims to let you upload even
+    terabyte sized files.</p>
   </div>
 
   <div class="span6">

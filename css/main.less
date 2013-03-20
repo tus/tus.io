@@ -1,5 +1,5 @@
 body {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
 
@@ -41,7 +41,22 @@ body {
   margin-top: 28px;
 }
 
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.people{
+  & > div{
+    margin-right: 44px;
+    float: left;
+
+    img{
+      border: 1px solid #666;
+    }
+
+    h3{
+      font-size: 16px;
+      text-align: center;
+    }
+
+    &:last-child{
+      margin: 0;
+    }
+  }
 }

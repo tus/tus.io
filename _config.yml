@@ -1,6 +1,8 @@
 navigation:
 - text: Home
   url: /index.html
+- text: About
+  url: /about.html
 - text: Demo
   url: /demo.html
 - text: Source
