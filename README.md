@@ -2,13 +2,21 @@
 
 The tus.io website.
 
-## Requirements
+## Setup
 
-* [jekyll](https://github.com/mojombo/jekyll)
-* [jekyll-s3](https://github.com/laurilehmijoki/jekyll-s3) for deployment
+Install the required ruby gems:
 
-To work on the site locally, clone the repo, cd into it, then:
+```
+gem install jekyll jekyll-less therubyracer
+```
+
+After this you can run the local development server like this:
 
 ```bash
 $ jekyll --auto --server
 ```
+
+## Deployment
+
+This repository is configured to notify our CI server so that every push to the
+master branch will be deployed automatically.
