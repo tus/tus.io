@@ -2,4 +2,27 @@
 layout: default
 ---
 
-Coming soon ...
+<h2>Resumable File Upload Demo</h2>
+
+<p>This demo is a proof of concept for resumable file uploads.</p>
+
+<h3>Instructions</h3>
+
+<ol>
+  <li>Select a large file.</li>
+  <li>Watch it upload for a bit, then close this tab before it finishes.</li>
+  <li>Come back to the tab, select the same file again, the upload should resume where it left off.</li>
+</ol>
+
+<form id="js_upload">
+  <input class="js_file" name="upload" type="file" />
+</form>
+
+<div class="progress progress-striped active">
+  <div class="bar js_progress"></div>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/js/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
