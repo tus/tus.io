@@ -1,9 +1,10 @@
 ---
 layout: default
+title: Let's fix file uploading
 ---
 
 <div class="jumbotron">
-  <h1>Let's fix file uploading</h1>
+  <h1>{{ page.title }}</h1>
   <p class="lead">
    It's 2013, and adding reliable file uploading to your app is still too
    damn hard.  tus is an open source project dedicated to create the best
