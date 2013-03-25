@@ -1,8 +1,9 @@
 $(function() {
   'use strict';
 
-  var host = 'http://master.tus.io';
+  var host = 'http://localhost:1080';
   var $progress = $('.js_progress');
+  var $download = $('.js_download');
 
   $('#js_upload').fileupload({
       url: host + '/files',
@@ -10,7 +11,7 @@ $(function() {
       multipart: false,
       add: function(e, data) {
         $('.js_file').hide();
-        $('.js_progress').show();
+        $('.js_progress').parent().show();
         upload(data)
       },
       fail: function(e, data) {
@@ -22,19 +23,26 @@ $(function() {
         var progress = Math.round(data.loaded / data.total * 100);
         setProgress(progress);
       },
+      done: function(e, data) {
+        console.log(arguments);
+        success(data);
+      },
   });
 
   function upload(data) {
     var file = data.files[0];
     var localId = fingerprint(file);
-    var tusUrl = localStorage.getItem(localId);
     var size = file.size;
+    data.url = localStorage.getItem(localId);
 
-    if (!tusUrl) {
+    if (!data.url) {
       $.ajax({
         type: 'POST',
         url: host + '/files',
-        headers: {'Content-Range': 'bytes */' + size},
+        headers: {
+          'Content-Range': 'bytes */' + size,
+          'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
+        },
         success: function(theData, status, jqXHR) {
           var url = host + jqXHR.getResponseHeader('Location');
           localStorage.setItem(localId, url)
@@ -55,10 +63,10 @@ $(function() {
 
     $.ajax({
       type: 'HEAD',
-      url: tusUrl,
+      url: data.url,
       success: function(theData, status, jqXHR) {
         var range = jqXHR.getResponseHeader('Range');
-        var m = range.match(/bytes=\d+-(\d+)/)
+        var m = range && range.match(/bytes=\d+-(\d+)/)
         if (!m) {
           localStorage.removeItem(localId);
           upload(data);
@@ -72,7 +80,6 @@ $(function() {
         }
 
         data.uploadedBytes = uploadedBytes;
-        data.url = tusUrl;
         data.method = 'PUT';
         data.submit();
       },
@@ -83,7 +90,7 @@ $(function() {
           return;
         }
 
-        console.log('error checking', tusUrl, 'status', xhr.status);
+        console.log('error checking', data.url, 'status', xhr.status);
         setTimeout(function() {
           upload(data)
         }, 1000);
@@ -101,6 +108,9 @@ $(function() {
 
   function success(data) {
     setProgress(100);
-    console.log('success', data);
+    $progress.parent().hide();
+    $download.attr('href', data.url);
+    $download.show();
+    $download.text('Download '+data.files[0].name);
   }
 });
