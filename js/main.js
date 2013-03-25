@@ -20,7 +20,7 @@ $(function() {
         }, 1000);
       },
       progress: function(e, data) {
-        var progress = Math.round(data.loaded / data.total * 100);
+        var progress = (data.loaded / data.total * 100).toFixed(2);
         setProgress(progress);
       },
       done: function(e, data) {
