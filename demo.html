@@ -29,3 +29,19 @@ title: Resumable File Upload Demo
 <script type="text/javascript" src="/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="/js/jquery-file-upload/js/jquery.fileupload.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+
+<h3>Compatibility</h3>
+
+<p>For this proof of concept, the following browsers were tested:</p>
+
+<ul>
+  <li>Safari 6.0.2 on OS 10.8.2 (working)</li>
+  <li>Chrome 24.0.1312.52 on OS 10.8.2 (working)</li>
+  <li>IE 10.0 on Win8 (working)</li>
+  <li>Firefox 19.0.2 on OS 10.8.2 (broken, probably because of <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=608735">#608735</a>)</li>
+  <li>IE 9.0 on Win7 (broken, probably needs CORS workarounds)</li>
+</ul>
+
+<p>Going forward, all relevant browsers will be supported with as many features
+as possible. All browsers will be able to perform at least simple multipart
+uploads.</p>
