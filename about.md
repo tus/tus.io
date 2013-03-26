@@ -12,7 +12,7 @@ you may experience when building an application.
 We were one of the first users and big contributors to
 [node.js](http://nodejs.org/), created the most popular [module for
 parsing file uploads](http://github.com/felixge/node-formidable), and have
-built a successfull product on top of both:
+built a successful product on top of both:
 [transloadit.com](http://transloadit.com/).
 
 This time, we're trying to take things one step further, creating a product
