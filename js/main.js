@@ -1,6 +1,8 @@
 $(function() {
   'use strict';
 
+  fixFirefoxHeaders();
+
   var host = 'http://master.tus.io';
   var $progress = $('.js_progress');
   var $download = $('.js_download');
@@ -112,5 +114,40 @@ $(function() {
     $download.attr('href', data.url);
     $download.show();
     $download.text('Download '+data.files[0].name);
+  }
+
+  // This is required at the moment to get CORS headers support for Firefox.
+  // Based on http://bugs.jquery.com/ticket/10338#comment:13
+  function fixFirefoxHeaders() {
+    var _super = $.ajaxSettings.xhr;
+    $.ajaxSetup({
+      xhr: function() {
+        var xhr = _super();
+        var getAllResponseHeaders = xhr.getAllResponseHeaders;
+
+        xhr.getAllResponseHeaders = function() {
+          var allHeaders = getAllResponseHeaders.call(xhr);
+          if (allHeaders) {
+            return allHeaders;
+          }
+
+          allHeaders = "";
+          var concatHeader = function(i, headerName) {
+            if (xhr.getResponseHeader(headerName)) {
+              allHeaders += headerName + ": " + xhr.getResponseHeader(headerName) + "\n";
+            }
+          };
+
+          $(["Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"]).each(concatHeader);
+
+          // non-simple headers (add more as required)
+          $(["Location", "Range", "Content-Range"]).each(concatHeader);
+
+          return allHeaders;
+        };
+
+        return xhr;
+      }
+    });
   }
 });
