@@ -14,7 +14,7 @@ $(function() {
       add: function(e, data) {
         $('.js_file').hide();
         $('.js_progress').parent().show();
-        upload(data)
+        upload(data);
       },
       fail: function(e, data) {
         setTimeout(function() {
@@ -28,13 +28,14 @@ $(function() {
       done: function(e, data) {
         console.log(arguments);
         success(data);
-      },
+      }
   });
 
   function upload(data) {
     var file = data.files[0];
     var localId = fingerprint(file);
     var size = file.size;
+
     data.url = localStorage.getItem(localId);
 
     if (!data.url) {
@@ -47,18 +48,17 @@ $(function() {
         },
         success: function(theData, status, jqXHR) {
           var url = host + jqXHR.getResponseHeader('Location');
-          localStorage.setItem(localId, url)
+          localStorage.setItem(localId, url);
 
           data.url = url;
           data.method = 'PUT';
           data.submit();
         },
         error: function(xhr) {
-          console.log('error creating upload', xhr.status);
           setTimeout(function() {
-            upload(data)
+            upload(data);
           }, 1000);
-        },
+        }
       });
       return;
     }
@@ -68,7 +68,7 @@ $(function() {
       url: data.url,
       success: function(theData, status, jqXHR) {
         var range = jqXHR.getResponseHeader('Range');
-        var m = range && range.match(/bytes=\d+-(\d+)/)
+        var m = range && range.match(/bytes=\d+-(\d+)/);
         if (!m) {
           localStorage.removeItem(localId);
           upload(data);
@@ -94,9 +94,9 @@ $(function() {
 
         console.log('error checking', data.url, 'status', xhr.status);
         setTimeout(function() {
-          upload(data)
+          upload(data);
         }, 1000);
-      },
+      }
     });
   }
 
