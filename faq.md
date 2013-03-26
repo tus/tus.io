@@ -45,5 +45,4 @@ by offering hosting and support contracts.
 
 ### What license will you use?
 
-Good question! We are currently making this decision, and will clarify this
-ASAP.
+Good question! We are currently making this decision, and will clarify this very soon.
