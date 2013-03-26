@@ -5,7 +5,7 @@ title: HTTP Protocol
 
 ## {{ page.title }}
 
-**Status:** Work in progress / experimental
+**Status:** Work in progress
 
 Part of the tus mission is to create a simple protocol for http file uploads
 that supports the following features:
