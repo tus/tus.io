@@ -1,3 +1,4 @@
+markdown: redcarpet
 navigation:
 - text: Home
   url: /index.html
