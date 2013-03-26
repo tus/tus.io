@@ -1,8 +1,9 @@
 ---
 layout: default
+title: About
 ---
 
-## About
+## {{ page.title }}
 
 Hi, we are Transloadit, a small bootstrapped company from Berlin and Amsterdam.
 For over 4 years now, it has been our mission to solve all file related worries
