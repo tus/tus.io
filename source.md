@@ -1,8 +1,9 @@
 ---
 layout: default
+title: Source
 ---
 
-## Source
+## {{ page.title }}
 
 The tus project is split into several repositories:
 
