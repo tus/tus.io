@@ -9,7 +9,7 @@ The tus project is split into several repositories:
 
 * [tusd](https://github.com/tus/tusd) - A dedicated upload server written in Go.
 * [tus-html5-client](https://github.com/tus/tus-html5-client) - The client for HTML apps.
-* [tus-ios-client](https://github.com/tus/tus-html5-client) - The client for iOS apps.
+* [tus-ios-client](https://github.com/tus/tus-ios-client) - The client for iOS apps.
 * [tus-android-client](https://github.com/tus/tus-android-client) - The client for Android apps.
 * [tus.io](https://github.com/tus/tus.io) - The tus.io website itself.
 
