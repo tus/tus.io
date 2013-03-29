@@ -12,12 +12,12 @@ Got a question that is not answered here? Ask it
 
 Amazon S3 has several limitations that we consider problematic:
 
-* The minimum chunk size for multipart uploads is 5 MB. This is by far too
-  large for use under bad network conditions.
-* Throughput to S3 is often too slow for high bandwidth clients.
+* Under poor network conditions (e.g. mobile), the minimum chunk size for 
+  multipart uploads is too large (5 MB). Cellphones switching mobile towers keep getting cut off.
+* Under high bandwidth conditions, the throughput to S3 is low, resulting in unnecessary long wait times. 
 * S3 is a proprietary service. Having an open, vendor agnostic API allows
   you to treat storage as an implementation detail.
-* The lack of uniform HTML5, iOS and Android clients that can be easily used
+* There is a lack of uniform HTML5, iOS and Android clients that can be easily used
   to add reliable file uploading to any application.
 * While there is some support, S3 was not designed to be used in a browser
   environment.
