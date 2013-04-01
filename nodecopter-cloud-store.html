@@ -1,0 +1,85 @@
+---
+layout: default
+title: Nodecopter Cloud Store
+---
+
+<div class="jumbotron">
+  <img src="/img/nodecopter-cloud-store.jpg" width="256"/>
+  <h1>{{ page.title }}</h1>
+  <p class="lead">Taking your files to the cloud - literally.</p>
+
+  <iframe width="600" height="337" src="http://www.youtube.com/embed/vwnnhGi8lAY" frameborder="0"></iframe>
+</div>
+
+
+<hr>
+
+<h3>Demo</h3>
+
+<ol>
+  <li>Download the <a href="/tusd-nodecopter-edition">tusd-nodecopter-edition</a> ARM binary.</li>
+  <li>Connect to your AR Drone WiFi Network</li>
+  <li>Upload the the binary: <code>curl -T tusd-nodecopter-edition ftp://192.168.1.1/</code></li>
+  <li><code>telnet 192.168.1.1</code>, then run: <code>/data/video/tusd-nodecopter-edition</code></li>
+  <li>Use the input below to select a file and watch it upload to your drone!</li>
+</ol>
+
+<form id="js_upload">
+  <input class="js_file" name="upload" type="file" />
+</form>
+
+<div class="progress progress-striped active">
+  <div class="bar js_progress"></div>
+</div>
+
+<a class="btn btn-success download js_download">Download</a>
+
+<script type="text/javascript">
+  window.tusdEndpoint = 'http://192.168.1.1:1080';
+</script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/js/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<h3>FAQ</h3>
+
+<h4>Does it scale?</h4>
+
+<p>
+Yes! tusd-nodecopter-edition can be scaled horizontally by launching additional
+drones, and vertically by flying them on top of each other. For additional
+scalability you can use the <a href="https://github.com/felixge/node-ar-drone">node.js ardrone
+  library</a> - as node.js will automatically take care of all the scaling. If
+you need more storage for your individual drones, you can hook up a USB stick
+and mount it on your drone:
+</p>
+
+<pre>
+<code>mkdir /mnt/usb
+mount -t vfat -o rw,users /dev/sda1 /mnt/usb</code>
+</pre>
+
+<h4>Is it safe?</h4>
+
+<p>Yes, clouds are a great place to hide your data, as attackers will be
+unable find your drones. And even if they do find one or more of your drones,
+you can simply fly them to a different location!</p>
+
+<h4>How much does it cost?</h4>
+
+<p>We are still doing the math on this, but we are confident that the economies
+of scale will allow us to drive down storage cost significantly over time!</p>
+
+<h4>Can you notify me when it's ready?</h4>
+
+<p>Of course, just leave your email and we'll keep you posted about tus related
+developments:</p>
+
+<div class="input-append control-group">
+  <form action="http://transloadit.us1.list-manage1.com/subscribe/post?u=98e560c614f2baaf47237f500&amp;id=37aafbe5c1" method="post">
+    <input name="EMAIL" class="input-xlarge" type="email" placeholder="your email"/>
+    <input name="SOURCE" type="hidden" value="tus.io"/>
+    <button class="btn btn-success">Keep me posted</button>
+  </form>
+</div>

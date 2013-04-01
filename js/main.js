@@ -3,7 +3,7 @@ $(function() {
 
   fixFirefoxHeaders();
 
-  var host = 'http://master.tus.io';
+  var host = window.tusdEndpoint || 'http://localhost:1080';
   var $progress = $('.js_progress');
   var $download = $('.js_download');
 
