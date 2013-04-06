@@ -22,6 +22,18 @@ title: Handling Uploads Sucks
 
 <hr />
 
+## Posts
+
+<ul class="listing">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    (<span>{{ post.date | date: "%B %e, %Y" }}</span> )
+  </li>
+  {% endfor %}
+</ul>
+
 ## On the Githubs
 
 <ol id="githubs"></ol>
+
