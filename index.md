@@ -6,8 +6,8 @@ title: Handling Uploads Sucks
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Adding good file uploading to your app is fucking hard. Mobile
-    networks are unreliable, devices and browser APIs are all over
+    Adding reliable file uploading to your app is fucking hard. Mobile
+    networks are unstable, devices and browser APIs are all over
     the place, and there is no resumable upload protocol with client and server
     implementations.
   </p>
