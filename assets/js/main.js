@@ -108,10 +108,12 @@ $(function() {
       return d;
     }
 
-    var url = 'https://api.github.com/orgs/tus/events?per_page=100&callback=?';
+    var url = 'https://api.github.com/orgs/tus/events?per_page=20&callback=?';
     $.getJSON(url, function(data, textStatus, jqXHR) {
-      localStorage.setItem('githubs', JSON.stringify(data));
+      // github somehow ignore the per_page parameter
+      data.data = data.data.slice(0, 20);
 
+      localStorage.setItem('githubs', JSON.stringify(data));
       localStorage.setItem('githubs_date', now);
       d.resolve(data);
     });
