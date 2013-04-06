@@ -43,7 +43,7 @@ follow quickly and be treated as first class citizens.
 
 <hr />
 
-## Posts
+## Blog
 
 <ol id="posts">
   {% for post in site.posts %}
