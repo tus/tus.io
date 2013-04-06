@@ -28,7 +28,7 @@ $(function() {
     template += '<img src="${gravatarSrc}" class="gravatar" />';
     template += '<p><a href="${userUrl}" class="author">${username}</a> ';
     template += '<span>{{html action}}</span>';
-    template += ' <a href="${repoUrl}">${repoName}</a>${branch}</p>';
+    template += ' <a href="${repoUrl}">${repoName}</a>${branch}{{html commits}}</p>';
     template += '<div class="clearfix"></div>';
 
     for (var i = 0; i < data.data.length; i++) {
@@ -40,6 +40,7 @@ $(function() {
       var username    = item.actor.login;
       var action      = '';
       var branch      = '';
+      var commits     = '';
 
       // http://developer.github.com/v3/activity/events/types/
       switch (item.type) {
@@ -58,8 +59,26 @@ $(function() {
           action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
-          var commits = item.payload.commits.length === 1 ? 'commit' : 'commits';
-          action = 'pushed ' + item.payload.commits.length + ' ' + commits + ' to';
+          var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
+          action = 'pushed ' + item.payload.commits.length + ' ' + commitString + ' to';
+
+          commits = '<ul class="commits">';
+          for (var j in item.payload.commits) {
+            var commit = item.payload.commits[j];
+
+            var sha = commit.sha.substr(0, 7);
+            var msg = commit.message.substr(0, 50);
+            if (msg.length !== commit.message.length) {
+              msg += ' ...';
+            }
+
+            commits += '<li>';
+            commits += '<a href="' + commit.url + '">' + sha + '</a>';
+            commits += ' ' + msg;
+            commits += '</li>';
+          }
+
+          commits += '</ul>';
           break;
         case 'WatchEvent':
           action = 'is now watching';
@@ -83,7 +102,8 @@ $(function() {
           repoName: item.repo.name,
           branch: branch,
           created: item.created_at,
-          action: action
+          action: action,
+          commits: commits
         }
       );
       $('<li/>').append(entry).appendTo($githubs);

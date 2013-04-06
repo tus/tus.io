@@ -96,7 +96,7 @@ h3 {
     width: 90px;
     text-align: right;
   }
-  li {
+  > li {
     border-bottom: 1px solid #eee;
     &:last-child {
       border-bottom: none;
@@ -107,6 +107,19 @@ h3 {
   }
   .gravatar {
     margin-right: 7px;
+  }
+  .commits {
+    clear: both;
+    padding-top: 5px;
+    li {
+      list-style-type: none;
+      margin-left: 10px;
+      font-size: 12px;
+      a {
+        display: inline-block;
+        width: 50px;
+      }
+    }
   }
 }
 
