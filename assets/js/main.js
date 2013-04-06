@@ -26,26 +26,33 @@ $(function() {
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];
       var $li = $('<li/>').appendTo($githubs);
+      var user_url = item.actor.url.replace('//api.', '//').replace('/users/', '/');
+      var repo_url = item.repo.url.replace('//api.', '//').replace('/repos/', '/');
+
       $('<img/>').addClass('gravatar').attr('src', item.actor.avatar_url+'&s=64').appendTo($li);
       $('<span/>').text(' ').appendTo($li);
-      $('<a/>').attr('href', item.actor.url).text(item.actor.login).appendTo($li);
+      $('<a/>').attr('href', user_url).text(item.actor.login).appendTo($li);
 
       switch (item.type) {
         case 'IssueCommentEvent':
           $('<span/>').text(' commented on ').appendTo($li);
           $('<a/>').attr('href', item.payload.comment.url).text(item.payload.issue.title).appendTo($li);
           $('<span/>').text(' in ').appendTo($li);
-          $('<a/>').attr('href', item.repo.url).text(item.repo.name).appendTo($li);
+          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
           break;
         case 'PushEvent':
           $('<span/>').text(' pushed ' + item.payload.commits.length + ' commits to ').appendTo($li);
-          $('<a/>').attr('href', item.repo.url).text(item.repo.name).appendTo($li);
+          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
+          break;
+        case 'WatchEvent':
+          $('<span/>').text(item.payload.action).appendTo($li);
+          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
           $('<span/>').text(' created a new ' + item.payload.ref_type).appendTo($li);
           $('<span/>').text(' in ').appendTo($li);
-          $('<a/>').attr('href', item.repo.url).text(item.repo.name).appendTo($li);
+          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
           $('<span/>').text(': ').appendTo($li);
           $('<span/>').text(item.payload.ref).appendTo($li);
         default:
