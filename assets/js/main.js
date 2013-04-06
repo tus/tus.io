@@ -58,7 +58,8 @@ $(function() {
           action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
-          action = 'pushed ' + item.payload.commits.length + ' commits to';
+          var commits = item.payload.commits.length === 1 ? 'commit' : 'commits';
+          action = 'pushed ' + item.payload.commits.length + ' ' + commits + ' to';
           break;
         case 'WatchEvent':
           action = 'is now watching';
