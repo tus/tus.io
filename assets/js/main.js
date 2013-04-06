@@ -23,46 +23,59 @@ $(function() {
 
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
+    var template = '<img src="${gravatarSrc}" class="gravatar" />';
+    template += '<p><a href="${userUrl}" class="author">${username}</a> ';
+    template += '<span>{{html action}}</span>';
+    template += ' <a href="${repoUrl}">${repoName}</a>${branch}';
+    template += '<span class="timeago" title="${created}">${created}</span></p>';
+
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];
-      var $li = $('<li/>').appendTo($githubs);
-      var user_url = item.actor.url.replace('//api.', '//').replace('/users/', '/');
-      var repo_url = item.repo.url.replace('//api.', '//').replace('/repos/', '/');
 
-      $('<img/>').addClass('gravatar').attr('src', item.actor.avatar_url+'&s=64').appendTo($li);
-      $('<span/>').text(' ').appendTo($li);
-      $('<a/>').attr('href', user_url).text(item.actor.login).appendTo($li);
+      var userUrl     = item.actor.url.replace('//api.', '//').replace('/users/', '/');
+      var repoUrl     = item.repo.url.replace('//api.', '//').replace('/repos/', '/');
+      var gravatarSrc = item.actor.avatar_url + '&s=64';
+      var username    = item.actor.login;
+      var action      = '';
+      var branch      = '';
 
       switch (item.type) {
         case 'IssueCommentEvent':
-          $('<span/>').text(' commented on ').appendTo($li);
-          $('<a/>').attr('href', item.payload.comment.url).text(item.payload.issue.title).appendTo($li);
-          $('<span/>').text(' in ').appendTo($li);
-          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
+          var issueTitle = item.payload.issue.title;
+          var commentUrl = item.payload.comment.url;
+          action = 'commented on <a href="' + commentUrl + '">' + issueTitle + '</a>';
           break;
         case 'PushEvent':
-          $('<span/>').text(' pushed ' + item.payload.commits.length + ' commits to ').appendTo($li);
-          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
+          action = 'pushed ' + item.payload.commits.length + ' commits to';
           break;
         case 'WatchEvent':
-          $('<span/>').text(item.payload.action).appendTo($li);
-          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
+          action = item.payload.action;
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
-          $('<span/>').text(' created a new ' + item.payload.ref_type).appendTo($li);
-          $('<span/>').text(' in ').appendTo($li);
-          $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
-          $('<span/>').text(': ').appendTo($li);
-          $('<span/>').text(item.payload.ref).appendTo($li);
+          action = 'created a new ' + item.payload.ref_type + ' in';
+          branch = ': ' + item.payload.ref;
           break;
         default:
           console.log(item.type, item);
           break;
       }
-      $('<span/>').text(item.created_at).attr('title', item.created_at).addClass('timeago').appendTo($li);
+
+      var entry = $.tmpl(template,
+        {
+          gravatarSrc: gravatarSrc,
+          userUrl: userUrl,
+          username: username,
+          repoUrl: repoUrl,
+          repoName: item.repo.name,
+          branch: branch,
+          created: item.created_at,
+          action: action
+        }
+      );
+      $('<li/>').append(entry).appendTo($githubs);
     }
-    $('<span/>').text(' — ').appendTo($li);
+
     $('span.timeago').timeago();
   });
 
