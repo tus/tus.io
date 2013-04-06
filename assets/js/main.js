@@ -101,7 +101,7 @@ $(function() {
     }
 
     var now = +new Date() / 1000;
-    if (githubs && time && now - time < 60) {
+    if (githubs && time && now - time < 3 * 60) {
       d.resolve(githubs);
       return d;
     }
