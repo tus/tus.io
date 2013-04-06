@@ -6,8 +6,8 @@ title: Handling Uploads Sucks
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Making a good file uploader for your app is fucking hard. Mobile
-    networks are unreliable, devices and browser APIs are all over
+    Adding reliable file uploading to your app is fucking hard. Mobile
+    networks are unstable, devices and browser APIs are all over
     the place, and there is no resumable upload protocol with client and server
     implementations.
   </p>
@@ -16,11 +16,7 @@ title: Handling Uploads Sucks
     tus is an open source project for
     creating an
     <a target="_blank" href="https://github.com/tus/tus-resumable-upload-protocol/blob/master/README.md">open protocol</a>, as well as
-    <a target="_blank" href="https://github.com/tus/tus-ios-client">client</a>
-    and
-    <a target="_blank" href="https://github.com/tus/tusd">server</a>
-    implementations for
-    resumable file uploading.
+    client and server implementations for resumable file uploading.
   </p>
 </div>
 
