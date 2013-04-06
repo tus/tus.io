@@ -41,16 +41,25 @@ $(function() {
       var branch      = '';
 
       switch (item.type) {
+        case 'IssuesEvent':
+          action  = item.payload.issue.state + ' ';
+          action += 'issue <a href="' + item.payload.issue.html_url + '">';
+          action += item.payload.issue.title + '</a> in ';
+          break;
+        case 'CommitCommentEvent':
+          action  = 'commented "' + item.payload.comment.body + '" ';
+          action += 'on a commit to <a href="' + item.payload.comment.html_url + '">';
+          action += item.payload.comment.path + '</a> in';
+          break;
         case 'IssueCommentEvent':
-          var issueTitle = item.payload.issue.title;
-          var commentUrl = item.payload.comment.url;
-          action = 'commented on <a href="' + commentUrl + '">' + issueTitle + '</a>';
+          action  = 'commented on <a href="' + item.payload.comment.html_url + '">';
+          action += item.payload.issue.title + '</a> in ';
           break;
         case 'PushEvent':
           action = 'pushed ' + item.payload.commits.length + ' commits to';
           break;
         case 'WatchEvent':
-          action = item.payload.action;
+          action = 'is now watching ';
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
