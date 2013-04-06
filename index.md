@@ -11,6 +11,13 @@ title: Handling Uploads Sucks
     the place, and there is no resumable upload protocol with client and server
     implementations.
   </p>
+  <p class="lead">
+    &nbsp;
+  </p>
+  <p class="lead">
+    tus is an open source community dedicated to solving all problems in the file domain.
+    We are building: server, protocol, clients, documentation.
+  </p>
 </div>
 
 <hr>
