@@ -109,6 +109,7 @@ h3 {
     margin-right: 7px;
   }
   .commits {
+    display: none;
     clear: both;
     padding-top: 5px;
     li {
@@ -120,6 +121,9 @@ h3 {
         width: 50px;
       }
     }
+  }
+  > li:hover .commits {
+    display: block;
   }
 }
 
