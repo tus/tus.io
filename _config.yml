@@ -1,3 +1,4 @@
+permalink: "/blog/:year/:month/:day/:title"
 markdown: redcarpet
 navigation:
 - text: Home
@@ -14,3 +15,4 @@ navigation:
   url: /faq.html
 - text: Source
   url: /source.html
+
