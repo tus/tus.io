@@ -39,3 +39,19 @@ title: Handling Uploads Sucks
 
 <ol id="githubs"></ol>
 
+<hr />
+
+<div class="jumbotron">
+  <div class="input-append control-group">
+    <form action="http://transloadit.us1.list-manage1.com/subscribe/post?u=98e560c614f2baaf47237f500&amp;id=37aafbe5c1" method="post">
+      <input name="email" class="input-xlarge" type="email" placeholder="your email"/>
+      <input name="source" type="hidden" value="tus.io"/>
+      <button class="btn btn-success">keep me posted</button>
+    </form>
+  </div>
+
+  <p>
+  Leave your e-mail to receive infrequent e-mails about major releases and
+  announcements.
+  </p>
+</div>
