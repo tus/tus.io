@@ -46,9 +46,19 @@ $(function() {
       switch (item.type) {
         case 'IssuesEvent':
           // console.log(item);
+          var closed = item.payload.issue.state === 'closed';
           action  = item.payload.action + ' ';
           action += 'issue <a href="' + item.payload.issue.html_url + '">';
-          action += item.payload.issue.title + '</a> on';
+
+          if (closed) {
+            action += '<s>';
+          }
+          action += item.payload.issue.title;
+          if (closed) {
+            action += '</s>';
+          }
+
+          action += '</a> on';
           break;
         case 'CommitCommentEvent':
           action  = 'commented "' + item.payload.comment.body + '" ';
