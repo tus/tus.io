@@ -4,6 +4,8 @@ navigation:
   url: /index.html
 - text: About
   url: /about.html
+- text: Blog
+  url: /blog.html
 - text: Protocol
   url: /docs/http-protocol.html
 - text: Demo
