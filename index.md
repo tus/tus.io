@@ -26,9 +26,11 @@ title: Handling Uploads Sucks
 
 <ol id="posts">
   {% for post in site.posts %}
+  {% assign author = site.authors[post.author] %}
   <li>
     <span class="timeago" title="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%B %e, %Y" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
+    (by {{ author.name }})
   </li>
   {% endfor %}
 </ol>
