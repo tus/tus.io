@@ -40,6 +40,7 @@ $(function() {
       var action      = '';
       var branch      = '';
 
+      // http://developer.github.com/v3/activity/events/types/
       switch (item.type) {
         case 'IssuesEvent':
           action  = item.payload.issue.state + ' ';
