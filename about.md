@@ -20,15 +20,15 @@ that is 100% open source and home to an active community!
 
 <div class="people">
   <div>
-    <img width="200" src="/img/felix.jpg">
+    <img width="200" src="/assets/img/felix.jpg">
     <h3><a href="https://twitter.com/felixge">Felix Geisendörfer</a></h3>
   </div>
   <div>
-    <img width="200" src="/img/tim.jpg">
+    <img width="200" src="/assets/img/tim.jpg">
     <h3><a href="https://twitter.com/tim_kos">Tim Koschützki</a></h3>
   </div>
   <div>
-    <img width="200" src="/img/kevin.jpg">
+    <img width="200" src="/assets/img/kevin.jpg">
     <h3><a href="https://twitter.com/kvz">Kevin van Zonneveld</a></h3>
   </div>
 </div>
