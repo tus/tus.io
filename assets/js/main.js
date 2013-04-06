@@ -73,7 +73,7 @@ $(function() {
             }
 
             commits += '<li>';
-            commits += '<a href="' + commit.url + '">' + sha + '</a>';
+            commits += '<a href="' + makeCommitUrl(commit.url) + '">' + sha + '</a>';
             commits += ' ' + msg;
             commits += '</li>';
           }
@@ -139,5 +139,13 @@ $(function() {
       d.resolve(data);
     });
     return d;
+  }
+
+  function makeCommitUrl(url) {
+    var result = url;
+    result = result.replace(/repos\//, '');
+    result = result.replace(/api\./, '');
+    result = result.replace(/commits\//, 'commit/');
+    return result;
   }
 });
