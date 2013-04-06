@@ -94,19 +94,24 @@ $(function() {
     var d = $.Deferred();
 
     var githubs = localStorage.getItem('githubs');
+    var time = localStorage.getItem('githubs_date');
     try {
       githubs = JSON.parse(githubs);
     } catch (err) {
     }
 
-    if (githubs) {
+    var now = +new Date() / 1000;
+    if (githubs && time && now - time < 60) {
       d.resolve(githubs);
       return d;
     }
 
-    $.getJSON('https://api.github.com/orgs/tus/events?per_page=100&callback=?', function(data, textStatus, jqXHR) {
+    var url = 'https://api.github.com/orgs/tus/events?per_page=100&callback=?';
+    $.getJSON(url, function(data, textStatus, jqXHR) {
       localStorage.setItem('githubs', JSON.stringify(data));
-      d.resolve(data)
+
+      localStorage.setItem('githubs_date', now);
+      d.resolve(data);
     });
     return d;
   }
