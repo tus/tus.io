@@ -7,7 +7,7 @@ The tus.io website.
 Install the required ruby gems:
 
 ```
-gem install jekyll jekyll-less therubyracer
+gem install jekyll jekyll-less therubyracer redcarpet
 ```
 
 After this you can run the local development server like this:
