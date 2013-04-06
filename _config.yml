@@ -1,5 +1,6 @@
 permalink: "/blog/:year/:month/:day/:title"
 markdown: redcarpet
+rss_feed: http://tus.io/atom.xml
 navigation:
 - text: Home
   url: /index.html
