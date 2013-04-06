@@ -4,9 +4,9 @@ $(function() {
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];
       var $li = $('<li/>').appendTo($githubs);
-      $('<img width="32"/>').attr('src', item.actor.avatar_url+'&s=64').appendTo($li);
+      $('<img/>').addClass('gravatar').attr('src', item.actor.avatar_url+'&s=64').appendTo($li);
       $('<a/>').attr('href', item.actor.url).text(item.actor.login).appendTo($li);
-      
+
       switch (item.type) {
         case 'IssueCommentEvent':
           console.log(item);
