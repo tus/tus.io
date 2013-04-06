@@ -110,7 +110,7 @@ $(function() {
 
     var url = 'https://api.github.com/orgs/tus/events?per_page=20&callback=?';
     $.getJSON(url, function(data, textStatus, jqXHR) {
-      // github somehow ignore the per_page parameter
+      // github does not support the per_page parameter for events
       data.data = data.data.slice(0, 20);
 
       localStorage.setItem('githubs', JSON.stringify(data));
