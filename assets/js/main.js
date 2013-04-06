@@ -45,9 +45,10 @@ $(function() {
       // http://developer.github.com/v3/activity/events/types/
       switch (item.type) {
         case 'IssuesEvent':
-          action  = item.payload.issue.state + ' ';
+          // console.log(item);
+          action  = item.payload.action + ' ';
           action += 'issue <a href="' + item.payload.issue.html_url + '">';
-          action += item.payload.issue.title + '</a> in';
+          action += item.payload.issue.title + '</a> on';
           break;
         case 'CommitCommentEvent':
           action  = 'commented "' + item.payload.comment.body + '" ';
