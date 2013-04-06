@@ -22,9 +22,8 @@ title: Handling Uploads Sucks
   </p>
 </div>
 
-<hr>
+<hr />
 
 ## On the Githubs
 
-<ol id="githubs">
-</ol>
+<ol id="githubs"></ol>
