@@ -1,7 +1,7 @@
 $(function() {
   'use strict';
 
-  var host = window.tusdEndpoint || 'http://localhost:1080';
+  var host = window.tusdEndpoint ||   'http://master.tus.io';
   var $progress = $('.js_progress');
   var $download = $('.js_download');
 
