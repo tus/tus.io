@@ -30,7 +30,9 @@ title: Handling Uploads Sucks
   <li>
     <span class="timeago" title="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%B %e, %Y" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
-    (by {{ author.name }})
+    by
+
+    <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a>
   </li>
   {% endfor %}
 </ol>
