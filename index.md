@@ -6,7 +6,7 @@ title: Handling Uploads Sucks
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Making a good file uploader for your app is fucking hard. Mobile
+    Adding good file uploading to your app is fucking hard. Mobile
     networks are unreliable, devices and browser APIs are all over
     the place, and there is no resumable upload protocol with client and server
     implementations.
@@ -16,30 +16,9 @@ title: Handling Uploads Sucks
     tus is an open source project for
     creating an
     <a target="_blank" href="https://github.com/tus/tus-resumable-upload-protocol/blob/master/README.md">open protocol</a>, as well as
-    <a target="_blank" href="https://github.com/tus/tus-ios-client">client</a>
-    and
-    <a target="_blank" href="https://github.com/tus/tusd">server</a>
-    implementations for
-    resumable file uploading.
+    client and server implementations for resumable file uploading.
   </p>
 </div>
-
-<hr />
-
-## Source
-
-The tus project is split into several repositories:
-
-* [tusd](https://github.com/tus/tusd) - A dedicated upload server written in Go.
-* [tus-html5-client](https://github.com/tus/tus-html5-client) - The client for HTML apps.
-* [tus-ios-client](https://github.com/tus/tus-ios-client) - The client for iOS apps.
-* [tus-android-client](https://github.com/tus/tus-android-client) - The client for Android apps.
-* [tus.io](https://github.com/tus/tus.io) - The tus.io website itself.
-
-At first, we will focus on the tusd server and the HTML5 client in order to nail
-the protocol and basic feature set. However, the iOS and Android clients will
-follow quickly and be treated as first class citizens.
-
 
 <hr />
 
