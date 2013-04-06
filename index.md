@@ -24,14 +24,14 @@ title: Handling Uploads Sucks
 
 ## Posts
 
-<ul class="listing">
+<ol id="posts">
   {% for post in site.posts %}
   <li>
+    <span class="timeago" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %e, %Y" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
-    (<span>{{ post.date | date: "%B %e, %Y" }}</span> )
   </li>
   {% endfor %}
-</ul>
+</ol>
 
 <hr />
 
