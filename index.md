@@ -33,6 +33,8 @@ title: Handling Uploads Sucks
   {% endfor %}
 </ul>
 
+<hr />
+
 ## On the Githubs
 
 <ol id="githubs"></ol>
