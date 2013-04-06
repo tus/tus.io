@@ -62,21 +62,21 @@ $(function() {
           var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
           action = 'pushed ' + item.payload.commits.length + ' ' + commitString + ' to';
 
-          commits = '<ul class="commits">';
-          for (var j in item.payload.commits) {
-            var commit = item.payload.commits[j];
+          // commits = '<ul class="commits">';
+          // for (var j in item.payload.commits) {
+          //   var commit = item.payload.commits[j];
 
-            var sha = commit.sha.substr(0, 7);
-            var msg = commit.message.substr(0, 50);
-            if (msg.length !== commit.message.length) {
-              msg += ' ...';
-            }
+          //   var sha = commit.sha.substr(0, 7);
+          //   var msg = commit.message.substr(0, 50);
+          //   if (msg.length !== commit.message.length) {
+          //     msg += ' ...';
+          //   }
 
-            commits += '<li>';
-            commits += '<a href="' + makeCommitUrl(commit.url) + '">' + sha + '</a>';
-            commits += ' ' + msg;
-            commits += '</li>';
-          }
+          //   commits += '<li>';
+          //   commits += '<a href="' + makeCommitUrl(commit.url) + '">' + sha + '</a>';
+          //   commits += ' ' + msg;
+          //   commits += '</li>';
+          // }
 
           commits += '</ul>';
           break;
