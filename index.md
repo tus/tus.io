@@ -43,7 +43,7 @@ follow quickly and be treated as first class citizens.
 <ol id="posts">
   {% for post in site.posts %}
   <li>
-    <span class="timeago" title="{{ post.date | date "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%B %e, %Y" }}</span>
+    <span class="timeago" title="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%B %e, %Y" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
   {% endfor %}
