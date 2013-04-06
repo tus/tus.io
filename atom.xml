@@ -9,13 +9,14 @@ layout: nil
  <link href="http://tus.io/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://tus.io/</id>
- <author>
-   <name>Tus Authors</name>
-   <email>hello@tus.io</email>
- </author>
 
  {% for post in site.posts %}
+ {% assign author = site.authors[post.author] %}
  <entry>
+   <author>
+     <name>{{ author.name }}</name>
+     <email>hello@tus.io</email>
+   </author>
    <title>{{ post.title }}</title>
    <link href="http://tus.io{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>

@@ -1,14 +1,18 @@
 ---
 layout: default
 title: Blog
+title: Blog
 ---
 
 <!-- <h2>Blog</h2> -->
 
 {% for post in site.posts %}
 
+	{% assign author = site.authors[post.author] %}
+
 	<h2>{{ post.title }}</h2>
-	<span>Published: {{ post.date | date: "%B %e, %Y" }}</span>
+	<span>Published: {{ post.date | date: "%B %e, %Y" }}</span>.
+	<span>Author: <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a></span>
 
 	{{ post.content }}
 
