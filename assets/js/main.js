@@ -23,11 +23,12 @@ $(function() {
 
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
-    var template = '<img src="${gravatarSrc}" class="gravatar" />';
+
+    var template = '<span class="timeago" title="${created}">${created}</span>';
+    template += '<img src="${gravatarSrc}" class="gravatar" />';
     template += '<p><a href="${userUrl}" class="author">${username}</a> ';
     template += '<span>{{html action}}</span>';
-    template += ' <a href="${repoUrl}">${repoName}</a>${branch}';
-    template += '<span class="timeago" title="${created}">${created}</span></p>';
+    template += ' <a href="${repoUrl}">${repoName}</a>${branch}</p>';
 
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];

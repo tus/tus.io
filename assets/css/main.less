@@ -80,21 +80,32 @@ h3 {
   list-style-type: none;
   padding: 0;
   margin: 0 0 0 5px;
+  img {
+    float: left;
+  }
   p {
-    display: inline;
+    display: inline-block;
+    width: 250px;
+    float: left;
+    margin: 0;
   }
   span.timeago {
-    float: right;
+    position: absolute;
+    right: 0;
   }
   li {
+    width: 50%;
     border-bottom: 1px solid #eee;
     &:last-child {
       border-bottom: none;
     }
     padding: 5px 0;
+    clear: both;
+    overflow: auto;
+    position: relative;
   }
   .gravatar {
-    margin-right: 3px;
+    margin-right: 7px;
   }
 }
 
