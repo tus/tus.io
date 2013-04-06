@@ -29,6 +29,7 @@ $(function() {
     template += '<p><a href="${userUrl}" class="author">${username}</a> ';
     template += '<span>{{html action}}</span>';
     template += ' <a href="${repoUrl}">${repoName}</a>${branch}</p>';
+    template += '<div class="clearfix"></div>';
 
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];
