@@ -44,7 +44,7 @@ $(function() {
         case 'IssuesEvent':
           action  = item.payload.issue.state + ' ';
           action += 'issue <a href="' + item.payload.issue.html_url + '">';
-          action += item.payload.issue.title + '</a> in ';
+          action += item.payload.issue.title + '</a> in';
           break;
         case 'CommitCommentEvent':
           action  = 'commented "' + item.payload.comment.body + '" ';
@@ -53,13 +53,13 @@ $(function() {
           break;
         case 'IssueCommentEvent':
           action  = 'commented on <a href="' + item.payload.comment.html_url + '">';
-          action += item.payload.issue.title + '</a> in ';
+          action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
           action = 'pushed ' + item.payload.commits.length + ' commits to';
           break;
         case 'WatchEvent':
-          action = 'is now watching ';
+          action = 'is now watching';
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
