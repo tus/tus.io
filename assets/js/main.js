@@ -1,4 +1,26 @@
 $(function() {
+  $.timeago.settings = {
+    strings: {
+      prefixAgo: null,
+      prefixFromNow: null,
+      suffixAgo: "ago",
+      suffixFromNow: "from now",
+      seconds: "~1 min",
+      minute: "~1 min",
+      minutes: "%d min",
+      hour: "%dh",
+      hours: "%dh",
+      day: "a day",
+      days: "%d days",
+      month: "about a month",
+      months: "%d months",
+      year: "about a year",
+      years: "%d years",
+      wordSeparator: " ",
+      numbers: []
+    }
+  };
+
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
     for (var i = 0; i < data.data.length; i++) {
@@ -30,10 +52,10 @@ $(function() {
           console.log(item.type, item);
           break;
       }
-      $('<abbr/>').text(item.created_at).attr('title', item.created_at).addClass('timeago').appendTo($li);
+      $('<span/>').text(item.created_at).attr('title', item.created_at).addClass('timeago').appendTo($li);
     }
     $('<span/>').text(' — ').appendTo($li);
-    $('abbr.timeago').timeago();
+    $('span.timeago').timeago();
   });
 
 
