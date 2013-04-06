@@ -55,6 +55,7 @@ $(function() {
           $('<a/>').attr('href', repo_url).text(item.repo.name).appendTo($li);
           $('<span/>').text(': ').appendTo($li);
           $('<span/>').text(item.payload.ref).appendTo($li);
+          break;
         default:
           console.log(item.type, item);
           break;
