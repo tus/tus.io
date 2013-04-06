@@ -45,7 +45,7 @@ $(function() {
         case 'IssuesEvent':
           action  = item.payload.issue.state + ' ';
           action += 'issue <a href="' + item.payload.issue.html_url + '">';
-          action += item.payload.issue.title + '</a> in ';
+          action += item.payload.issue.title + '</a> in';
           break;
         case 'CommitCommentEvent':
           action  = 'commented "' + item.payload.comment.body + '" ';
@@ -54,13 +54,13 @@ $(function() {
           break;
         case 'IssueCommentEvent':
           action  = 'commented on <a href="' + item.payload.comment.html_url + '">';
-          action += item.payload.issue.title + '</a> in ';
+          action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
           action = 'pushed ' + item.payload.commits.length + ' commits to';
           break;
         case 'WatchEvent':
-          action = 'is now watching ';
+          action = 'is now watching';
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
@@ -95,19 +95,24 @@ $(function() {
     var d = $.Deferred();
 
     var githubs = localStorage.getItem('githubs');
+    var time = localStorage.getItem('githubs_date');
     try {
       githubs = JSON.parse(githubs);
     } catch (err) {
     }
 
-    if (githubs) {
+    var now = +new Date() / 1000;
+    if (githubs && time && now - time < 60) {
       d.resolve(githubs);
       return d;
     }
 
-    $.getJSON('https://api.github.com/orgs/tus/events?per_page=100&callback=?', function(data, textStatus, jqXHR) {
+    var url = 'https://api.github.com/orgs/tus/events?per_page=100&callback=?';
+    $.getJSON(url, function(data, textStatus, jqXHR) {
       localStorage.setItem('githubs', JSON.stringify(data));
-      d.resolve(data)
+
+      localStorage.setItem('githubs_date', now);
+      d.resolve(data);
     });
     return d;
   }
