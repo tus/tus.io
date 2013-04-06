@@ -13,9 +13,8 @@ title: Handling Uploads Sucks
   </p>
 
   <p class="lead">
-    tus is an <a href="http://github.com/tus">open source project</a> for
-    creating an <a href="#">open protocol</a>, as well as <a
-    href="#">client</a> and <a href="#">server</a> implementations for
+    tus is an open source project for
+    creating an <strong>open protocol</strong>, as well as <strong>client</strong> and <strong>server</strong> implementations for
     resumable file uploading.
   </p>
 </div>
