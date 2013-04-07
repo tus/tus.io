@@ -107,8 +107,27 @@ $(function() {
           action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
-          var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
-          action = 'pushed ' + item.payload.commits.length + ' ' + commitString + ' to';
+          // var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
+
+          var firstCommit = item.payload.commits[0].sha;
+          var firstUrl    = makeHtmlUrl(item.payload.commits[0].url);
+          var lastCommit  = '';
+          for (var j in item.payload.commits) {
+            lastCommit = item.payload.commits[j].sha;
+          }
+          var compareUrl  = firstUrl.replace('commit', 'compare').replace(firstCommit, firstCommit + '...' + lastCommit);
+
+          action  = 'pushed ';
+          if (item.payload.commits.length === 1) {
+            action += '<a href="' + firstUrl + '">';
+            action += '1 commit';
+            action += '</a>';
+          } else {
+            action += '<a href="' + compareUrl + '">';
+            action += item.payload.commits.length + ' ' + 'commits';
+            action += '</a>';
+          }
+          action += ' to';
 
           // commits = '<ul class="commits">';
           // for (var j in item.payload.commits) {
@@ -127,7 +146,7 @@ $(function() {
           // }
 
           // commits += '</ul>';
-          console.log(item.type, item);
+          // console.log(item.type, item);
           break;
         case 'WatchEvent':
           action = 'is now watching';
