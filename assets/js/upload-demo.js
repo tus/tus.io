@@ -1,11 +1,13 @@
 $(function() {
   'use strict';
 
-  fixFirefoxHeaders();
 
   // This is required at the moment to get CORS headers support for Firefox.
   // Based on http://bugs.jquery.com/ticket/10338#comment:13
-  function fixFirefoxHeaders() {
+  // jQuery is not fixing because it's a FF bug.
+  // FF is fixing but only as of version 21+ so to support older versions
+  // in combination with jQuery 1.4+, we'll need this:
+  function fixFirefoxXhrHeaders() {
     var _super = $.ajaxSettings.xhr;
     $.ajaxSetup({
       xhr: function() {
@@ -37,6 +39,7 @@ $(function() {
       }
     });
   }
+  fixFirefoxXhrHeaders();
 
   var host = window.tusdEndpoint || 'http://master.tus.io';
   var $progress = $('.js_progress');
