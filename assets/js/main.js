@@ -123,7 +123,7 @@ $(function() {
             messages.push(msg);
           }
           var compareUrl  = firstUrl.replace('commit', 'compare').replace(firstCommit, firstCommit + '...' + lastCommit);
-          var txtMessages = messages.join("\n");
+          var txtMessages = messages.join(' &mdash; ');
 
           action  = 'pushed ';
           if (item.payload.commits.length === 1) {
