@@ -84,11 +84,8 @@ $(function() {
           'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
         },
         success: function(theData, status, jqXHR) {
-          var location = jqXHR.getResponseHeader('Location');
-          var url = host;
-          if (location) {
-            url += location;
-          } else {
+          var url = jqXHR.getResponseHeader('Location');
+          if (!url) {
             throw "Unable to parse Location header to form url";
           }
 
