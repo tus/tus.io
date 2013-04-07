@@ -9,8 +9,8 @@ navigation:
   url: /blog.html
 - text: Demo
   url: /demo.html
-- text: Community
-  url: /community.html
+- text: About
+  url: /about.html
 - text: Protocol
   url: /protocols/resumable-upload.html
 - text: Implementations
