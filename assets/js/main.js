@@ -104,8 +104,17 @@ $(function() {
           action += item.payload.comment.path + '</a> in';
           break;
         case 'IssueCommentEvent':
+          var closed = item.payload.issue.state === 'closed';
+
           action  = 'commented on <a target="_blank" href="' + item.payload.comment.html_url + '">';
-          action += item.payload.issue.title + '</a> in';
+          if (closed) {
+            action += '<s>';
+          }
+          action += item.payload.issue.title;
+          if (closed) {
+            action += '</s>';
+          }
+          action += '</a> in';
           break;
         case 'PushEvent':
           // var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
