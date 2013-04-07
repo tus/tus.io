@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Implementations
+comments: true
 ---
 
 ## {{page.title}}
@@ -22,3 +23,13 @@ Add resumable file uploads to Android apps <span class="muted">&mdash; Coming So
 A standalone server written in go to handle resumable file uploads
 using the tus protocol
 
+
+<hr />
+
+### More..
+
+The tus protocol is very simple and because it builds on standard HTTP calls it
+could be implemented as Ruby libraries, Wordpress plugins, etc.
+
+The tus organisation on Github can provide a home for much more implementations
+than we're currently trying to push out. Feel free to help out!
