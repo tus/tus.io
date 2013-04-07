@@ -28,6 +28,7 @@ title: Handling Uploads Sucks
   {% for post in site.posts %}
   {% assign author = site.authors[post.author] %}
   <li>
+    <img src="https://secure.gravatar.com/avatar/{{author.gravatar}}&s=64" class="gravatar">
     <span class="timeago" title="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%B %e, %Y" }}</span>
     <a href="{{ post.url }}">{{ post.title }}</a>
     by

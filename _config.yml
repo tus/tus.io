@@ -12,21 +12,21 @@ navigation:
 authors:
   felixge:
     name: Felix Geisendörfer
-    gravatar: 3933b38a349355d514fb4659457ef1d9
+    gravatar: 23968f0ca75b13463d2db5343e5c2096
     email: felix@transloadit.com
     web: http://felixge.de
     twitter: felixge
     github: felixge
   tim_kos:
     name: Tim Koschützki
-    gravatar: 1912af33a9771e5d24ab8d402864fb58
+    gravatar: 9c31d1102d95104fb994ae67cd1989b6
     email: tim@transloadit.com
     web: http://debuggable.com
     twitter: tim_kos
     github: tim-kos
   kvz:
     name: Kevin van Zonneveld
-    gravatar: 16369618649852f72876a1d9eb3cb4cc
+    gravatar: 3210e1be3e4059b93c4a88309e2183a2
     email: kevin@transloadit.com
     web: http://kvz.io
     twitter: kvz
