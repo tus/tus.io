@@ -1,6 +1,9 @@
 $(function() {
   'use strict';
 
+  var host = window.tusdEndpoint || 'http://master.tus.io';
+  var $progress = $('.js_progress');
+  var $download = $('.js_download');
 
   // This is required at the moment to get CORS headers support for Firefox.
   // Based on http://bugs.jquery.com/ticket/10338#comment:13
@@ -40,10 +43,6 @@ $(function() {
     });
   }
   fixFirefoxXhrHeaders();
-
-  var host = window.tusdEndpoint || 'http://master.tus.io';
-  var $progress = $('.js_progress');
-  var $download = $('.js_download');
 
   $('#js_upload').fileupload({
       url: host + '/files',
