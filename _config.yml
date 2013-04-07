@@ -9,7 +9,7 @@ navigation:
 - text: Demo
   url: /demo.html
 - text: Protocol
-  url: /protocol.html
+  url: /protocols/resumable-upload.html
 - text: Implementations
   url: /implementations.html
 

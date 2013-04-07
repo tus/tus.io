@@ -2,4 +2,4 @@
 /_jekyll_s3.yml
 
 # Built by `make build`:
-protocol.md
+protocols/*.md
