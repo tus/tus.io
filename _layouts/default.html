@@ -19,11 +19,7 @@
             {% if page.url == link.url %}
               {% assign active = 'active' %}
             {% endif %}
-            {% assign target = '_self' %}
-            {% if link.text == 'Protocol' %}
-              {% assign target = '_blank' %}
-            {% endif %}
-            <li class="{{ active }}"><a target="{{ target }}" href="{{ link.url }}">{{ link.text }}</a></li>
+            <li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
           {% endfor %}
         </ul>
         <h3 class="muted logo"><a href="/">tus</a></h3>

@@ -1,2 +1,5 @@
 /_site
 /_jekyll_s3.yml
+
+# Built by `make build`:
+protocol.md

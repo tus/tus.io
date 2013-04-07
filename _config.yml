@@ -9,7 +9,7 @@ navigation:
 - text: Demo
   url: /demo.html
 - text: Protocol
-  url: https://github.com/tus/tus-resumable-upload-protocol/blob/master/README.md
+  url: /protocol.html
 - text: Implementations
   url: /implementations.html
 
