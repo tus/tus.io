@@ -1,7 +1,44 @@
 $(function() {
   'use strict';
 
-  var host = window.tusdEndpoint ||   'http://master.tus.io';
+  fixFirefoxHeaders();
+
+  // This is required at the moment to get CORS headers support for Firefox.
+  // Based on http://bugs.jquery.com/ticket/10338#comment:13
+  function fixFirefoxHeaders() {
+    var _super = $.ajaxSettings.xhr;
+    $.ajaxSetup({
+      xhr: function() {
+        var xhr = _super();
+        var getAllResponseHeaders = xhr.getAllResponseHeaders;
+
+        xhr.getAllResponseHeaders = function() {
+          var allHeaders = getAllResponseHeaders.call(xhr);
+          if (allHeaders) {
+            return allHeaders;
+          }
+
+          allHeaders = "";
+          var concatHeader = function(i, headerName) {
+            if (xhr.getResponseHeader(headerName)) {
+              allHeaders += headerName + ": " + xhr.getResponseHeader(headerName) + "\n";
+            }
+          };
+
+          $(["Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"]).each(concatHeader);
+
+          // non-simple headers (add more as required)
+          $(["Location", "Range", "Content-Range"]).each(concatHeader);
+
+          return allHeaders;
+        };
+
+        return xhr;
+      }
+    });
+  }
+
+  var host = window.tusdEndpoint || 'http://master.tus.io';
   var $progress = $('.js_progress');
   var $download = $('.js_download');
 
@@ -34,7 +71,7 @@ $(function() {
     var localId = fingerprint(file);
     var size = file.size;
 
-    data.url = localStorage.getItem(localId);
+    // data.url = localStorage.getItem(localId);
 
     if (!data.url) {
       $.ajax({
@@ -45,7 +82,21 @@ $(function() {
           'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
         },
         success: function(theData, status, jqXHR) {
-          var url = host + jqXHR.getResponseHeader('Location');
+          var headers = jqXHR.getAllResponseHeaders();
+          console.log(headers);
+          console.log(jqXHR);
+          //split("\\r\\n")
+
+          var location = jqXHR.getResponseHeader('Location');
+          var url = host;
+          if (location) {
+            url += location;
+          } else {
+            throw "Location not set";
+          }
+          console.log('location', location);
+
+
           localStorage.setItem(localId, url);
 
           data.url = url;
