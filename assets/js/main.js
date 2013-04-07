@@ -21,6 +21,45 @@ $(function() {
     }
   };
 
+  var loadGithubs = function () {
+    var d = $.Deferred();
+
+    var githubs = localStorage.getItem('githubs');
+    var time = localStorage.getItem('githubs_date');
+    try {
+      githubs = JSON.parse(githubs);
+    } catch (err) {
+    }
+
+    var now = +new Date() / 1000;
+    if (githubs && time && now - time < 3 * 60) {
+      d.resolve(githubs);
+      return d;
+    }
+
+    var url = 'https://api.github.com/orgs/tus/events?per_page=20&callback=?';
+    $.getJSON(url, function(data, textStatus, jqXHR) {
+      // github does not support the per_page parameter for events
+      data.data = data.data.slice(0, 20);
+
+      localStorage.setItem('githubs', JSON.stringify(data));
+      localStorage.setItem('githubs_date', now);
+      d.resolve(data);
+    });
+    return d;
+  }
+
+  var makeHtmlUrl = function (url) {
+    var result = url;
+
+    result = result.replace(/\/users\//, '/');
+    result = result.replace(/\/repos\//, '/');
+    result = result.replace(/\/api\./, '/');
+    result = result.replace(/\/commits\//, '/commit/');
+
+    return result;
+  }
+
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
 
@@ -123,42 +162,4 @@ $(function() {
   });
 
 
-  var loadGithubs = function () {
-    var d = $.Deferred();
-
-    var githubs = localStorage.getItem('githubs');
-    var time = localStorage.getItem('githubs_date');
-    try {
-      githubs = JSON.parse(githubs);
-    } catch (err) {
-    }
-
-    var now = +new Date() / 1000;
-    if (githubs && time && now - time < 3 * 60) {
-      d.resolve(githubs);
-      return d;
-    }
-
-    var url = 'https://api.github.com/orgs/tus/events?per_page=20&callback=?';
-    $.getJSON(url, function(data, textStatus, jqXHR) {
-      // github does not support the per_page parameter for events
-      data.data = data.data.slice(0, 20);
-
-      localStorage.setItem('githubs', JSON.stringify(data));
-      localStorage.setItem('githubs_date', now);
-      d.resolve(data);
-    });
-    return d;
-  }
-
-  var makeHtmlUrl = function (url) {
-    var result = url;
-
-    result = result.replace(/\/users\//, '/');
-    result = result.replace(/\/repos\//, '/');
-    result = result.replace(/\/api\./, '/');
-    result = result.replace(/\/commits\//, '/commit/');
-
-    return result;
-  }
 });
