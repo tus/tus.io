@@ -65,9 +65,9 @@ $(function() {
 
     var template = '<span class="timeago" title="${created}">${created}</span>';
     template += '<img src="${gravatarSrc}" class="gravatar" />';
-    template += '<p><a href="${userUrl}" class="author">${username}</a> ';
+    template += '<p><a target="_blank" href="${userUrl}" class="author">${username}</a> ';
     template += '<span>{{html action}}</span>';
-    template += ' <a href="${repoUrl}">${repoName}</a>${branch}{{html commits}}</p>';
+    template += ' <a target="_blank" href="${repoUrl}">${repoName}</a>${branch}{{html commits}}</p>';
     template += '<div class="clearfix"></div>';
 
     for (var i = 0; i < data.data.length; i++) {
@@ -85,7 +85,7 @@ $(function() {
           // console.log(item);
           var closed = item.payload.issue.state === 'closed';
           action  = item.payload.action + ' ';
-          action += 'issue <a href="' + item.payload.issue.html_url + '">';
+          action += 'issue <a target="_blank" href="' + item.payload.issue.html_url + '">';
 
           if (closed) {
             action += '<s>';
@@ -99,11 +99,11 @@ $(function() {
           break;
         case 'CommitCommentEvent':
           action  = 'commented "' + item.payload.comment.body + '" ';
-          action += 'on a commit to <a href="' + item.payload.comment.html_url + '">';
+          action += 'on a commit to <a target="_blank" href="' + item.payload.comment.html_url + '">';
           action += item.payload.comment.path + '</a> in';
           break;
         case 'IssueCommentEvent':
-          action  = 'commented on <a href="' + item.payload.comment.html_url + '">';
+          action  = 'commented on <a target="_blank" href="' + item.payload.comment.html_url + '">';
           action += item.payload.issue.title + '</a> in';
           break;
         case 'PushEvent':
@@ -112,18 +112,26 @@ $(function() {
           var firstCommit = item.payload.commits[0].sha;
           var firstUrl    = makeHtmlUrl(item.payload.commits[0].url);
           var lastCommit  = '';
+          var messages    = [];
+          var msg         = '';
           for (var j in item.payload.commits) {
             lastCommit = item.payload.commits[j].sha;
+            msg = item.payload.commits[j].message.substr(0, 50);
+            if (msg.length > item.payload.commits[j].message.length) {
+              msg += ' ...';
+            }
+            messages.push(msg);
           }
           var compareUrl  = firstUrl.replace('commit', 'compare').replace(firstCommit, firstCommit + '...' + lastCommit);
+          var txtMessages = messages.join("\n");
 
           action  = 'pushed ';
           if (item.payload.commits.length === 1) {
-            action += '<a href="' + firstUrl + '">';
+            action += '<a target="_blank" rel="tooltip" data-placement="right" title="' + txtMessages + '" href="' + firstUrl + '">';
             action += '1 commit';
             action += '</a>';
           } else {
-            action += '<a href="' + compareUrl + '">';
+            action += '<a target="_blank" rel="tooltip" data-placement="right" title="' + txtMessages + '" href="' + compareUrl + '">';
             action += item.payload.commits.length + ' ' + 'commits';
             action += '</a>';
           }
@@ -178,6 +186,7 @@ $(function() {
     }
 
     $('span.timeago').timeago();
+    $('a[rel]').tooltip();
   });
 
 
