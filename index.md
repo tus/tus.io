@@ -42,7 +42,7 @@ title: Handling Uploads Sucks
 
 ## On the Githubs
 
-<ol id="githubs"></ol>
+<ol id="githubs"><li>Loading...</li></ol>
 
 <hr />
 

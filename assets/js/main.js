@@ -62,6 +62,7 @@ $(function() {
 
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
+    $githubs.html('');
 
     var template = '<span class="timeago" title="${created}">${created}</span>';
     template += '<img src="${gravatarSrc}" class="gravatar" />';
