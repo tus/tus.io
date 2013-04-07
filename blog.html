@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Blog
-title: Blog
 ---
 
 <!-- <h2>Blog</h2> -->
@@ -10,10 +9,21 @@ title: Blog
 
 	{% assign author = site.authors[post.author] %}
 
-	<h2>{{ post.title }}</h2>
-	<span>Published: {{ post.date | date: "%B %e, %Y" }}</span>.
-	<span>Author: <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a></span>
+	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	<p>
+		<span>Published: {{ post.date | date: "%B %e, %Y" }}</span>.
+		<span>Author: <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a></span>
+		<br />
+	</p>
 
 	{{ post.content }}
 
 {% endfor %}
+
+<hr />
+Subscribe to this blog via
+<a href="{{ site.rss_feed }}">RSS</a>.
+<!-- or
+@todo(felixge) Hook in feedburner
+<a href="http://tus.io/atom.xml?email=true">E-Mail</a>. -->
+
