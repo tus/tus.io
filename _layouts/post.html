@@ -5,10 +5,10 @@ layout: default
 {% assign author = site.authors[page.author] %}
 
 <h2>{{ page.title }}</h2>
+<p>
 <span>Published: {{ page.date | date: "%B %e, %Y" }}</span>.
 <span>Author: <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a></span>
-<br />
-<br />
+</p>
 
 {{ content }}
 
