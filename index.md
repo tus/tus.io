@@ -15,7 +15,7 @@ title: Handling Uploads Sucks
   <p class="lead">
     tus is an open source project for
     creating an
-    <a target="_blank" href="https://github.com/tus/tus-resumable-upload-protocol/blob/master/README.md">open protocol</a>, as well as
+    <a href="/protocols/resumable-upload.html">open protocol</a>, as well as
     client and server implementations for resumable file uploading.
   </p>
 </div>
