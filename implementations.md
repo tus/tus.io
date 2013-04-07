@@ -20,7 +20,7 @@ Add resumable file uploads to Android apps <span class="muted">&mdash; Coming So
 ### Server-side
 
 - [tusd](https://github.com/tus/tusd)
-A standalone server written in go to handle resumable file uploads
+A stand-alone server written in go to handle resumable file uploads
 using the tus protocol
 
 
