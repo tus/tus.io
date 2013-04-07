@@ -71,7 +71,7 @@ $(function() {
     var localId = fingerprint(file);
     var size = file.size;
 
-    // data.url = localStorage.getItem(localId);
+    data.url = localStorage.getItem(localId);
 
     if (!data.url) {
       $.ajax({
@@ -82,20 +82,13 @@ $(function() {
           'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
         },
         success: function(theData, status, jqXHR) {
-          var headers = jqXHR.getAllResponseHeaders();
-          console.log(headers);
-          console.log(jqXHR);
-          //split("\\r\\n")
-
           var location = jqXHR.getResponseHeader('Location');
           var url = host;
           if (location) {
             url += location;
           } else {
-            throw "Location not set";
+            throw "Unable to parse Location header to form url";
           }
-          console.log('location', location);
-
 
           localStorage.setItem(localId, url);
 
