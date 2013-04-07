@@ -26,7 +26,7 @@ using the tus protocol
 
 <hr />
 
-<!-- ### More..
+<!-- ### More ...
 
 The tus protocol is very simple and because it builds on standard HTTP calls it
 could be implemented as Ruby libraries, Wordpress plugins, etc.
