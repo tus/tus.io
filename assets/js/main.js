@@ -200,4 +200,37 @@ $(function() {
   });
 
 
+  var makeCommunities = function () {
+    var $com = $('#communities');
+    $com.html('');
+    $.getJSON('/assets/json/community.json', function(data, textStatus, jqXHR) {
+      var listed = {};
+      var user = {}
+      var entry = {};
+      var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
+      template += '<img src="${gravatarSrc}" class="gravatar" />';
+      template += '</a>';
+      for (key in data) {
+        if (!(user = data[key])) {
+          continue;
+        }
+        if (listed[user.login]) {
+          continue;
+        }
+
+        listed[user.login] = true;
+
+        entry = $.tmpl(template, {
+            gravatarSrc: user.avatar_url + '&s=64',
+            userUrl: user.html_url,
+            username: user.login
+        });
+
+        entry.appendTo($com);
+      }
+
+      $('a[rel]').tooltip();
+    });
+  };
+  makeCommunities();
 });
