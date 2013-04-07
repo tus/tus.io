@@ -3,9 +3,10 @@ layout: default
 title: Community
 ---
 
-## The tus Core team
+## Core Team
 
-Hi, we are Transloadit, a small bootstrapped company from Berlin and Amsterdam.
+The Core Team currently consists of the founders of Transloadit,
+a small bootstrapped company from Berlin and Amsterdam.
 For over 4 years now, it has been our mission to solve all file related worries
 you may experience when building an application.
 
@@ -19,25 +20,20 @@ This time, we're trying to take things one step further, creating
 file processing projects that are 100% open source and a home to an active
 community!
 
-<div class="people">
-  <div>
-    <img width="200" src="/assets/img/felix.jpg">
-    <h3><a href="https://twitter.com/felixge">Felix Geisendörfer</a></h3>
-  </div>
-  <div>
-    <img width="200" src="/assets/img/tim.jpg">
-    <h3><a href="https://twitter.com/tim_kos">Tim Koschützki</a></h3>
-  </div>
-  <div>
-    <img width="200" src="/assets/img/kevin.jpg">
-    <h3><a href="https://twitter.com/kvz">Kevin van Zonneveld</a></h3>
-  </div>
-</div>
+<div class="community" id="members"></div>
 
-### The tus Community
+<!--
+## Contributors
 
-Our most significant contributors and repo watchers.
+<div class="community" id="contributors"></div>
+-->
 
-<div id="communities">
+## Watchers
 
-</div>
+<div class="community" id="subscribers-stargazers"></div>
+
+<!--
+## Stargazers
+
+<div class="community" id="stargazers"></div>
+-->

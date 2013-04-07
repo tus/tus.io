@@ -201,35 +201,42 @@ $(function() {
 
 
   var makeCommunities = function () {
-    var $com = $('#communities');
-    $com.html('');
-    $.getJSON('/assets/json/community.json', function(data, textStatus, jqXHR) {
-      var listed = {};
-      var user = {}
-      var entry = {};
-      var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
-      template += '<img src="${gravatarSrc}" class="gravatar" />';
-      template += '</a>';
-      for (key in data) {
-        if (!(user = data[key])) {
-          continue;
-        }
-        if (listed[user.login]) {
-          continue;
-        }
+    var listed = {};
+    $('div.community').each(function () {
+      var $com = $(this);
+      var types = $com.attr('id').split('-');
+      for (var i in types) {
+        type = types[i];
 
-        listed[user.login] = true;
+        $com.html('');
+        $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
+          var user = {}
+          var entry = {};
+          var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
+          template += '<img src="${gravatarSrc}" class="gravatar" />';
+          template += '</a>';
+          for (var key in data) {
+            if (!(user = data[key]) || !user.login) {
+              continue;
+            }
+            if (listed[user.login]) {
+              continue;
+            }
 
-        entry = $.tmpl(template, {
-            gravatarSrc: user.avatar_url + '&s=64',
-            userUrl: user.html_url,
-            username: user.login
+            listed[user.login] = true;
+
+            entry = $.tmpl(template, {
+                gravatarSrc: user.avatar_url + '&s=64',
+                userUrl: user.html_url,
+                username: user.login
+            });
+
+            entry.appendTo($com);
+          }
+
+          $('a[rel]').tooltip();
         });
-
-        entry.appendTo($com);
       }
-
-      $('a[rel]').tooltip();
     });
   };
   makeCommunities();
