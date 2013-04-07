@@ -1,4 +1,5 @@
 permalink: "/blog/:year/:month/:day/:title"
+tusd_endpoint: "http://master.tus.io"
 markdown: redcarpet
 rss_feed: http://tus.io/atom.xml
 navigation:
