@@ -34,8 +34,6 @@ $(function() {
     for (var i = 0; i < data.data.length; i++) {
       var item = data.data[i];
 
-      var userUrl     = item.actor.url.replace('//api.', '//').replace('/users/', '/');
-      var repoUrl     = item.repo.url.replace('//api.', '//').replace('/repos/', '/');
       var gravatarSrc = item.actor.avatar_url + '&s=64';
       var username    = item.actor.login;
       var action      = '';
@@ -84,12 +82,13 @@ $(function() {
           //   }
 
           //   commits += '<li>';
-          //   commits += '<a href="' + makeCommitUrl(commit.url) + '">' + sha + '</a>';
+          //   commits += '<a href="' + makeHtmlUrl(commit.url) + '">' + sha + '</a>';
           //   commits += ' ' + msg;
           //   commits += '</li>';
           // }
 
-          commits += '</ul>';
+          // commits += '</ul>';
+          console.log(item.type, item);
           break;
         case 'WatchEvent':
           action = 'is now watching';
@@ -107,9 +106,9 @@ $(function() {
       var entry = $.tmpl(template,
         {
           gravatarSrc: gravatarSrc,
-          userUrl: userUrl,
+          userUrl: makeHtmlUrl(item.actor.url),
           username: username,
-          repoUrl: repoUrl,
+          repoUrl: makeHtmlUrl(item.repo.url),
           repoName: item.repo.name,
           branch: branch,
           created: item.created_at,
@@ -124,7 +123,7 @@ $(function() {
   });
 
 
-  function loadGithubs() {
+  var loadGithubs = function () {
     var d = $.Deferred();
 
     var githubs = localStorage.getItem('githubs');
@@ -152,11 +151,14 @@ $(function() {
     return d;
   }
 
-  function makeCommitUrl(url) {
+  var makeHtmlUrl = function (url) {
     var result = url;
-    result = result.replace(/repos\//, '');
-    result = result.replace(/api\./, '');
-    result = result.replace(/commits\//, 'commit/');
+
+    result = result.replace(/\/users\//, '/');
+    result = result.replace(/\/repos\//, '/');
+    result = result.replace(/\/api\./, '/');
+    result = result.replace(/\/commits\//, '/commit/');
+
     return result;
   }
 });
