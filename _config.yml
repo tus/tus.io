@@ -5,12 +5,12 @@ rss_feed: http://tus.io/atom.xml
 navigation:
 - text: Home
   url: /index.html
+- text: About
+  url: /about.html
 - text: Blog
   url: /blog.html
 - text: Demo
   url: /demo.html
-- text: About
-  url: /about.html
 - text: Protocol
   url: /protocols/resumable-upload.html
 - text: Implementations
