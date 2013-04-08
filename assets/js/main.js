@@ -206,7 +206,7 @@ $(function() {
     $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
       var user     = {}
       var entry    = {};
-      var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
+      var template = '<a target="_blank" rel="tooltip" data-placement="bottom" title="${username}" href="${userUrl}" class="author">';
       template += '<img src="${gravatarSrc}" class="gravatar" />';
       template += '</a>';
       for (var key in data) {
