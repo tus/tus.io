@@ -16,6 +16,15 @@ After this you can run the local development server like this:
 $ jekyll --auto --server
 ```
 
+Some things like the protocol, and contributor/stargazer lists are replaced with
+up to date versions on deploy.
+
+If you want to have up to date versions this locally too, run:
+
+```bash
+make build
+```
+
 ## Deployment
 
 This repository is configured to notify our CI server so that every push to the
