@@ -22,8 +22,8 @@ platforms!
 Are you passionate about better file uploading? Join us! We welcome all
 contributions, be it patches, comments or questions.
 
-We're also hanging on freenode.net in `#tusio` - this is also the official
-twitter hash tag.
+If you'd like to chat, we're hanging on freenode.net in `#tusio` - this is also
+the official twitter hash tag.
 
 ### Contributors
 
