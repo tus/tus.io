@@ -7,12 +7,12 @@ title: Community
 
 <!-- @todo(felixge) some nice copy here please -->
 
-## Contributors
+### Contributors
 
 <div class="community" id="members"></div>
 <!-- <div class="community" id="members-contributors"></div> -->
 
 
-## Watchers
+### Watchers
 
 <div class="community" id="subscribers-stargazers"></div>
