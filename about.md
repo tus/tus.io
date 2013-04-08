@@ -3,7 +3,7 @@ layout: default
 title: Community
 ---
 
-## Core Team
+## About
 
 The Core Team currently consists of the founders of Transloadit,
 a small bootstrapped company from Berlin and Amsterdam.
@@ -20,13 +20,10 @@ This time, we're trying to take things one step further, creating
 file processing projects that are 100% open source and a home to an active
 community!
 
-<div class="community" id="members"></div>
-
-<!--
 ## Contributors
 
-<div class="community" id="contributors"></div>
--->
+<div class="community" id="members-contributors"></div>
+
 
 ## Watchers
 
