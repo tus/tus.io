@@ -200,44 +200,53 @@ $(function() {
   });
 
 
-  var makeCommunities = function () {
-    var listed = {};
-    $('div.community').each(function () {
-      var $com = $(this);
-      var types = $com.attr('id').split('-');
-      for (var i in types) {
-        type = types[i];
+  var makeCommunityType = function (types, listed, cb) {
+    // In parallel otherwise the listed check does not work reliably
+    var type   = types.shift();
+    $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
+      var user     = {}
+      var entry    = {};
+      var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
+      template += '<img src="${gravatarSrc}" class="gravatar" />';
+      template += '</a>';
+      for (var key in data) {
+        if (!(user = data[key]) || !user.login) {
+          continue;
+        }
+        if (listed[user.login]) {
+          continue;
+        }
 
-        $com.html('');
-        $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
-          var user = {}
-          var entry = {};
-          var template = '<a target="_blank" rel="tooltip" data-placement="right" title="${username}" href="${userUrl}" class="author">';
-          template += '<img src="${gravatarSrc}" class="gravatar" />';
-          template += '</a>';
-          for (var key in data) {
-            if (!(user = data[key]) || !user.login) {
-              continue;
-            }
-            if (listed[user.login]) {
-              continue;
-            }
+        listed[user.login] = true;
 
-            listed[user.login] = true;
-
-            entry = $.tmpl(template, {
-                gravatarSrc: user.avatar_url + '&s=64',
-                userUrl: user.html_url,
-                username: user.login
-            });
-
-            entry.appendTo($com);
-          }
-
-          $('a[rel]').tooltip();
+        entry = $.tmpl(template, {
+            gravatarSrc: user.avatar_url + '&s=64',
+            userUrl: user.html_url,
+            username: user.login
         });
+
+        entry.appendTo($('div.community[id*="' + type + '"]'));
+      }
+
+      if (types.length > 0) {
+        makeCommunityType(types, listed, cb);
+      } else {
+        return cb();
       }
     });
   };
+
+  var makeCommunities = function () {
+    var allTypes = [];
+    $('div.community').each(function () {
+      $(this).html('');
+      allTypes = allTypes.concat($(this).attr('id').split('-'));
+    });
+
+    makeCommunityType(allTypes, {}, function () {
+      $('a[rel]').tooltip();
+    });
+  };
+
   makeCommunities();
 });
