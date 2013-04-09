@@ -14,8 +14,7 @@ and videos are lost due to network errors every year!
 
 The tus.io project is here to change this! We are working on a [resumable
 upload protocol](protocols/resumable-upload.html), along with client and server
-[implementations](implementations.html) for all
-platforms!
+[implementations](implementations.html) for all platforms!
 
 ## Join the community
 
