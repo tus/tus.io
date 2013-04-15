@@ -1,7 +1,7 @@
 permalink: "/blog/:year/:month/:day/:title"
 tusd_endpoint: "http://master.tus.io"
 markdown: redcarpet
-rss_feed: http://tus.io/atom.xml
+rss_feed: http://feeds.feedburner.com/tusio
 navigation:
 - text: Home
   url: /index.html
