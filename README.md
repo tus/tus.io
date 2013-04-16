@@ -16,10 +16,11 @@ After this you can run the local development server like this:
 $ jekyll --auto --server
 ```
 
-Some things like the protocol, and contributor/stargazer lists are replaced with
-up to date versions on deploy.
+Next, point your browser to http://127.0.0.1:4000/
 
-If you want to have up to date versions this locally too, run:
+**Note** Some things like the protocol, and contributor/stargazer lists are replaced with
+up to date versions on deploy.  
+If you want to have up to date versions of these locally too, run:
 
 ```bash
 make build
