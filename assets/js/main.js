@@ -205,9 +205,12 @@ $(function() {
 
   var makeCommunityType = function (types, listed, cb) {
     // In parallel otherwise the listed check does not work reliably
-    var type   = types.shift();
+    var type = types.shift();
+    if (!type) {
+      return;
+    }
     $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
-      var user     = {}
+      var user     = {};
       var entry    = {};
       var template = '<a target="_blank" rel="tooltip" data-placement="bottom" title="${username}" href="${userUrl}" class="author">';
       template += '<img src="${gravatarSrc}" class="gravatar" />';
