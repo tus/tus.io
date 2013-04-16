@@ -47,7 +47,7 @@ $(function() {
       d.resolve(data);
     });
     return d;
-  }
+  };
 
   var makeHtmlUrl = function (url) {
     var result = url;
@@ -58,7 +58,7 @@ $(function() {
     result = result.replace(/\/commits\//, '/commit/');
 
     return result;
-  }
+  };
 
   loadGithubs().done(function(data) {
     var $githubs = $('#githubs');
@@ -165,6 +165,9 @@ $(function() {
 
           // commits += '</ul>';
           // console.log(item.type, item);
+          break;
+        case 'ForkEvent':
+          action = 'just forked';
           break;
         case 'WatchEvent':
           action = 'is now watching';
