@@ -216,7 +216,8 @@ $(function() {
       template += '<img src="${gravatarSrc}" class="gravatar" />';
       template += '</a>';
       for (var key in data) {
-        if (!(user = data[key]) || !user.login) {
+        user = data[key].user || data[key];
+        if (!user.login) {
           continue;
         }
         if (listed[user.login]) {
@@ -231,7 +232,7 @@ $(function() {
             username: user.login
         });
 
-        entry.appendTo($('div.community[id*="' + type + '"]'));
+        entry.appendTo($('div.community[data-contains*="' + type + '"]'));
       }
 
       if (types.length > 0) {
@@ -246,7 +247,7 @@ $(function() {
     var allTypes = [];
     $('div.community').each(function () {
       $(this).html('');
-      allTypes = allTypes.concat($(this).attr('id').split('-'));
+      allTypes = allTypes.concat($(this).data('contains').split(', '));
     });
 
     makeCommunityType(allTypes, {}, function () {

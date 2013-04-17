@@ -10,7 +10,7 @@ fi
 curl -ks https://api.github.com/orgs/tus/members > members.json
 
 combined=""
-for type in "collaborators" "subscribers" "stargazers"; do
+for type in "collaborators" "subscribers" "stargazers" "issues"; do
 
   for repo in "tus.io" "tusd" "tus-jquery-client" "tus-ios-client" "tus-android-client" "tus-resumable-upload-protocol"; do
     current="$(curl -ks https://api.github.com/repos/tus/${repo}/${type} |tail -n +2 |sed '$d')"
