@@ -8,7 +8,7 @@ title: Resumable File Uploads
   <p class="lead">
     Mobile networks are unstable, file sizes are getting bigger, and plattform
     APIs are a mess. As a result millions of cat videos are lost in the <a
-    href="http://www.youtube.com/watch?feature=player_detailpage&v=f99PcP0aFNE#t=129.5s">tubes</a>
+    href="http://www.youtube.com/watch?v=_cZC67wXUTs">tubes</a>
     every year.  This needs to be made much simpler.
   </p>
 
