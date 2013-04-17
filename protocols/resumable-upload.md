@@ -6,7 +6,7 @@ comments: true
 
 # Please take note
 
-For contributions, and the latest version of this document, please go to:
+For contributions and the latest version of this document, please go to:
 
 https://github.com/tus/tus-resumable-upload-protocol
 
