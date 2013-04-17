@@ -26,9 +26,18 @@ the official twitter hash tag.
 
 ### Contributors
 
-<div class="community" data-contains="members, issues"></div>
-<!-- <div class="community" id="members-contributors"></div> -->
+People who code
+
+<div class="community" data-contains="members, contributors, collaborators"></div>
+
+### Collaborators
+
+People who comment
+
+<div class="community" data-contains="issues"></div>
 
 ### Watchers
+
+People who watch
 
 <div class="community" data-contains="subscribers, stargazers"></div>
