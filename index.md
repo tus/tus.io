@@ -1,22 +1,22 @@
 ---
 layout: default
-title: Handling Uploads Sucks
+title: Resumable File Uploads
 ---
 
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Adding reliable file uploading to your app is fucking hard. Mobile
-    networks are unstable, devices and browser APIs are all over
-    the place, and there is no resumable upload protocol with client and server
-    implementations.
+    Mobile networks are unstable, file sizes are getting bigger, and plattform
+    APIs are a mess. As a result millions of cat videos are lost in the tubes
+    every year. This needs to be made much simpler.
   </p>
 
   <p class="lead">
     tus is an open source project for
     creating an
     <a href="/protocols/resumable-upload.html">open protocol</a>, as well as
-    client and server implementations for resumable file uploading.
+    client and server implementations for resumable file uploading. We won't
+    stop until every web site and mobile app has reliable uploading.
   </p>
 </div>
 
