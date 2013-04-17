@@ -172,6 +172,9 @@ $(function() {
         case 'WatchEvent':
           action = 'is now watching';
           break;
+        case 'PullRequestEvent':
+          action = 'sent a pull request for';
+          break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
           action = 'created a new ' + item.payload.ref_type + ' in';
