@@ -1,0 +1,931 @@
+[   {
+    "url": "https://api.github.com/repos/tus/tus.io/issues/15",
+    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/15/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/15/comments",
+    "events_url": "https://api.github.com/repos/tus/tus.io/issues/15/events",
+    "html_url": "https://github.com/tus/tus.io/issues/15",
+    "id": 13292320,
+    "number": 15,
+    "title": "Fixing link to SemVer",
+    "user": {
+      "login": "powtac",
+      "id": 36167,
+      "avatar_url": "https://secure.gravatar.com/avatar/782ed167b5c2c2563480ad62727f6b08?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "782ed167b5c2c2563480ad62727f6b08",
+      "url": "https://api.github.com/users/powtac",
+      "html_url": "https://github.com/powtac",
+      "followers_url": "https://api.github.com/users/powtac/followers",
+      "following_url": "https://api.github.com/users/powtac/following",
+      "gists_url": "https://api.github.com/users/powtac/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/powtac/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/powtac/subscriptions",
+      "organizations_url": "https://api.github.com/users/powtac/orgs",
+      "repos_url": "https://api.github.com/users/powtac/repos",
+      "events_url": "https://api.github.com/users/powtac/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/powtac/received_events",
+      "type": "User"
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-17T11:51:32Z",
+    "updated_at": "2013-04-17T11:51:32Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": "https://github.com/tus/tus.io/pull/15",
+      "diff_url": "https://github.com/tus/tus.io/pull/15.diff",
+      "patch_url": "https://github.com/tus/tus.io/pull/15.patch"
+    },
+    "body": "http://semver.org"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus.io/issues/14",
+    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/14/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/14/comments",
+    "events_url": "https://api.github.com/repos/tus/tus.io/issues/14/events",
+    "html_url": "https://github.com/tus/tus.io/issues/14",
+    "id": 13291342,
+    "number": 14,
+    "title": "Improve copy on homepage, consider removing \"fuck\"",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus.io/labels/bug",
+        "name": "bug",
+        "color": "fc2929"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2013-04-17T11:19:16Z",
+    "updated_at": "2013-04-17T11:26:21Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "see https://news.ycombinator.com/item?id=5563569"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus.io/issues/12",
+    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/12/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/12/comments",
+    "events_url": "https://api.github.com/repos/tus/tus.io/issues/12/events",
+    "html_url": "https://github.com/tus/tus.io/issues/12",
+    "id": 12882528,
+    "number": 12,
+    "title": "Add feedburner for RSS",
+    "user": {
+      "login": "kvz",
+      "id": 26752,
+      "avatar_url": "https://secure.gravatar.com/avatar/3210e1be3e4059b93c4a88309e2183a2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "3210e1be3e4059b93c4a88309e2183a2",
+      "url": "https://api.github.com/users/kvz",
+      "html_url": "https://github.com/kvz",
+      "followers_url": "https://api.github.com/users/kvz/followers",
+      "following_url": "https://api.github.com/users/kvz/following",
+      "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
+      "organizations_url": "https://api.github.com/users/kvz/orgs",
+      "repos_url": "https://api.github.com/users/kvz/repos",
+      "events_url": "https://api.github.com/users/kvz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kvz/received_events",
+      "type": "User"
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-06T19:44:04Z",
+    "updated_at": "2013-04-06T19:44:04Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": ""
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus.io/issues/1",
+    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/1/comments",
+    "events_url": "https://api.github.com/repos/tus/tus.io/issues/1/events",
+    "html_url": "https://github.com/tus/tus.io/issues/1",
+    "id": 12391476,
+    "number": 1,
+    "title": "demo: improve endpoint configuration",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus.io/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-03-25T09:01:19Z",
+    "updated_at": "2013-03-25T09:01:19Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Right now you have to edit the `js/main.js` file to change the url endpoint used for the demo. This config should be moved to _site.yml and be easy to overwrite for local development.\r\n\r\nProblems:\r\n* Seems like `.js` files are not interpreted as templates by jekyll, so `{{ site.demo.url }}` isn't accessible\r\n* Jekyll seems to have no concept of environment configs, so we'll have to come up with something for that ourselves.\r\n\r\nThis is not urgent, but a nice to have."
+  },   {
+    "url": "https://api.github.com/repos/tus/tusd/issues/14",
+    "labels_url": "https://api.github.com/repos/tus/tusd/issues/14/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tusd/issues/14/comments",
+    "events_url": "https://api.github.com/repos/tus/tusd/issues/14/events",
+    "html_url": "https://github.com/tus/tusd/issues/14",
+    "id": 13236717,
+    "number": 14,
+    "title": "Better error message when Content-Length does not match Content-Range",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tusd/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-16T08:52:31Z",
+    "updated_at": "2013-04-16T08:52:31Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Right now it gives a 500 error with the explanation EOF which is confusing"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tusd/issues/13",
+    "labels_url": "https://api.github.com/repos/tus/tusd/issues/13/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tusd/issues/13/comments",
+    "events_url": "https://api.github.com/repos/tus/tusd/issues/13/events",
+    "html_url": "https://github.com/tus/tusd/issues/13",
+    "id": 12924869,
+    "number": 13,
+    "title": "Streamable file downloads",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tusd/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-08T14:10:59Z",
+    "updated_at": "2013-04-08T14:10:59Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Right now GET \\<fileUrl\\> doesn't work until the full file is received. It'd be awesome if it would stream the amount of data that has been received so far, so that data can be streamed to the downloader as it's being uploaded!"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tusd/issues/10",
+    "labels_url": "https://api.github.com/repos/tus/tusd/issues/10/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tusd/issues/10/comments",
+    "events_url": "https://api.github.com/repos/tus/tusd/issues/10/events",
+    "html_url": "https://github.com/tus/tusd/issues/10",
+    "id": 12392740,
+    "number": 10,
+    "title": "add integration tests",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tusd/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-03-25T09:46:20Z",
+    "updated_at": "2013-03-25T09:46:20Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "This depends on #9, once we have things refactored, we could easily spin up a test server for integration tests."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tusd/issues/9",
+    "labels_url": "https://api.github.com/repos/tus/tusd/issues/9/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tusd/issues/9/comments",
+    "events_url": "https://api.github.com/repos/tus/tusd/issues/9/events",
+    "html_url": "https://github.com/tus/tusd/issues/9",
+    "id": 12392711,
+    "number": 9,
+    "title": "refactor / clean up",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tusd/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-03-25T09:45:29Z",
+    "updated_at": "2013-03-25T09:45:29Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "The current code could need a little more structure / types, which would also help with testing."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tusd/issues/8",
+    "labels_url": "https://api.github.com/repos/tus/tusd/issues/8/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tusd/issues/8/comments",
+    "events_url": "https://api.github.com/repos/tus/tusd/issues/8/events",
+    "html_url": "https://github.com/tus/tusd/issues/8",
+    "id": 12392074,
+    "number": 8,
+    "title": "add logging",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tusd/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": {
+      "login": "tim-kos",
+      "id": 15005,
+      "avatar_url": "https://secure.gravatar.com/avatar/9c31d1102d95104fb994ae67cd1989b6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "9c31d1102d95104fb994ae67cd1989b6",
+      "url": "https://api.github.com/users/tim-kos",
+      "html_url": "https://github.com/tim-kos",
+      "followers_url": "https://api.github.com/users/tim-kos/followers",
+      "following_url": "https://api.github.com/users/tim-kos/following",
+      "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
+      "organizations_url": "https://api.github.com/users/tim-kos/orgs",
+      "repos_url": "https://api.github.com/users/tim-kos/repos",
+      "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tim-kos/received_events",
+      "type": "User"
+    },
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-03-25T09:23:18Z",
+    "updated_at": "2013-03-26T15:56:54Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "this way we can tell what files were uploaded, how fast, etc."
+  },   {
+    "url": "https://api.github.com/repos/tus/tus-jquery-client/issues/2",
+    "labels_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/2/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/2/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/2/events",
+    "html_url": "https://github.com/tus/tus-jquery-client/issues/2",
+    "id": 12893750,
+    "number": 2,
+    "title": "Setup JSHint checking",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-jquery-client/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-07T10:56:17Z",
+    "updated_at": "2013-04-07T10:56:17Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Or any other good static analyzer that is less bitchy than JSLint."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-jquery-client/issues/1",
+    "labels_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/1/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-jquery-client/issues/1/events",
+    "html_url": "https://github.com/tus/tus-jquery-client/issues/1",
+    "id": 12126126,
+    "number": 1,
+    "title": "jQuery File upload research",
+    "user": {
+      "login": "tim-kos",
+      "id": 15005,
+      "avatar_url": "https://secure.gravatar.com/avatar/9c31d1102d95104fb994ae67cd1989b6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "9c31d1102d95104fb994ae67cd1989b6",
+      "url": "https://api.github.com/users/tim-kos",
+      "html_url": "https://github.com/tim-kos",
+      "followers_url": "https://api.github.com/users/tim-kos/followers",
+      "following_url": "https://api.github.com/users/tim-kos/following",
+      "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
+      "organizations_url": "https://api.github.com/users/tim-kos/orgs",
+      "repos_url": "https://api.github.com/users/tim-kos/repos",
+      "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tim-kos/received_events",
+      "type": "User"
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": {
+      "login": "tim-kos",
+      "id": 15005,
+      "avatar_url": "https://secure.gravatar.com/avatar/9c31d1102d95104fb994ae67cd1989b6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "9c31d1102d95104fb994ae67cd1989b6",
+      "url": "https://api.github.com/users/tim-kos",
+      "html_url": "https://github.com/tim-kos",
+      "followers_url": "https://api.github.com/users/tim-kos/followers",
+      "following_url": "https://api.github.com/users/tim-kos/following",
+      "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
+      "organizations_url": "https://api.github.com/users/tim-kos/orgs",
+      "repos_url": "https://api.github.com/users/tim-kos/repos",
+      "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tim-kos/received_events",
+      "type": "User"
+    },
+    "milestone": null,
+    "comments": 4,
+    "created_at": "2013-03-18T09:39:59Z",
+    "updated_at": "2013-04-07T11:02:53Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "- setup locally with node server for now\r\n- upload file locally via jquery file upload\r\n- is it able to upload several chunks at the same time?\r\n- how can we identify files:\r\n  - what data do we get? path, size, mime, name -> generate unique id\r\n  - id of tus, file upload \r\n"
+  },   {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/11",
+    "id": 13291168,
+    "number": 11,
+    "title": "Clarify that url does not have to be fixed",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-17T11:13:27Z",
+    "updated_at": "2013-04-17T11:13:27Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "see https://news.ycombinator.com/reply?id=5563688&whence=item%3fid%3d5563569"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/10",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/10/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/10/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/10/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/10",
+    "id": 13288911,
+    "number": 10,
+    "title": "Mention authentication in protocol",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-17T10:00:35Z",
+    "updated_at": "2013-04-17T10:00:35Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Basically clarifying that the usual suspects can be used (basic auth, cookies, etc)."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/9",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/9/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/9/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/9/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/9",
+    "id": 13288552,
+    "number": 9,
+    "title": "100-Continue Research",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2013-04-17T09:51:01Z",
+    "updated_at": "2013-04-17T11:58:57Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Figure out if we need to support / require https' 100-Continue feature."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/7",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/7/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/7/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/7/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/7",
+    "id": 13243171,
+    "number": 7,
+    "title": "Checksum Support (MD5,CRC32,SHA1,etc.)",
+    "user": {
+      "login": "sandfox",
+      "id": 260919,
+      "avatar_url": "https://secure.gravatar.com/avatar/5c638f6b8e6c046f28378aadc9a46c24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "5c638f6b8e6c046f28378aadc9a46c24",
+      "url": "https://api.github.com/users/sandfox",
+      "html_url": "https://github.com/sandfox",
+      "followers_url": "https://api.github.com/users/sandfox/followers",
+      "following_url": "https://api.github.com/users/sandfox/following",
+      "gists_url": "https://api.github.com/users/sandfox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sandfox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sandfox/subscriptions",
+      "organizations_url": "https://api.github.com/users/sandfox/orgs",
+      "repos_url": "https://api.github.com/users/sandfox/repos",
+      "events_url": "https://api.github.com/users/sandfox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sandfox/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2013-04-16T12:17:44Z",
+    "updated_at": "2013-04-17T09:55:08Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Just a vague idea I'm throwing out here:\r\n\r\nShould there be some mechanism for verifying the upload contents somewhere in the process? e.g supplying a md5 hash of the file when responding to a `HEAD` request?\r\nOr is this outside the scope of the protocol and something that should left as option for implementations to handle if they want to?"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/6",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/6/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/6/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/6/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/6",
+    "id": 13234127,
+    "number": 6,
+    "title": "make example urls in protocol work",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-16T07:17:49Z",
+    "updated_at": "2013-04-16T08:00:50Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "we host a tusd version anyway, why not make life easier for early protocol implementors by making the example requests executable"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/5",
+    "id": 13209824,
+    "number": 5,
+    "title": "Describe limits for upload size",
+    "user": {
+      "login": "brunodecarvalho",
+      "id": 337352,
+      "avatar_url": "https://secure.gravatar.com/avatar/f54c7be892503a423462d0906f454f87?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "f54c7be892503a423462d0906f454f87",
+      "url": "https://api.github.com/users/brunodecarvalho",
+      "html_url": "https://github.com/brunodecarvalho",
+      "followers_url": "https://api.github.com/users/brunodecarvalho/followers",
+      "following_url": "https://api.github.com/users/brunodecarvalho/following",
+      "gists_url": "https://api.github.com/users/brunodecarvalho/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brunodecarvalho/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brunodecarvalho/subscriptions",
+      "organizations_url": "https://api.github.com/users/brunodecarvalho/orgs",
+      "repos_url": "https://api.github.com/users/brunodecarvalho/repos",
+      "events_url": "https://api.github.com/users/brunodecarvalho/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brunodecarvalho/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2013-04-15T17:07:24Z",
+    "updated_at": "2013-04-17T08:43:07Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Some HTTP frameworks I came across won't accept *Content-Length* values over a signed 32bit integer (2147483647 bytes, 2GB).\r\n\r\nOn the other hand, the RFC mandates that the *Content-Length* header must be ignored if the transfer encoding is anything but *identity* (i.e. chunked transfer encoding):\r\n\r\n> Messages MUST NOT include both a Content-Length header field and a non-identity transfer-coding. If the message does include a non-identity transfer-coding, the Content-Length MUST be ignored.\r\n\r\nYou should probably include a note explaining the limit for this kind of uploads will depend on the servers and/or client and that chunked transfer encoding is not an option."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/3",
+    "id": 13203935,
+    "number": 3,
+    "title": "Define behaviour when uploading non-contiguous chunks ",
+    "user": {
+      "login": "sandfox",
+      "id": 260919,
+      "avatar_url": "https://secure.gravatar.com/avatar/5c638f6b8e6c046f28378aadc9a46c24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "5c638f6b8e6c046f28378aadc9a46c24",
+      "url": "https://api.github.com/users/sandfox",
+      "html_url": "https://github.com/sandfox",
+      "followers_url": "https://api.github.com/users/sandfox/followers",
+      "following_url": "https://api.github.com/users/sandfox/following",
+      "gists_url": "https://api.github.com/users/sandfox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sandfox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sandfox/subscriptions",
+      "organizations_url": "https://api.github.com/users/sandfox/orgs",
+      "repos_url": "https://api.github.com/users/sandfox/repos",
+      "events_url": "https://api.github.com/users/sandfox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sandfox/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-15T15:03:32Z",
+    "updated_at": "2013-04-15T15:03:32Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "As per IRC convo:\r\n\r\nShould the server accept uploading of non-contiguous chunks?\r\nFor example client uploads ranges [0-100], then [240-360] then [400-420]. Do we accept this happily or throw toys out of the pram?\r\n\r\n\r\nIf acceptable behaviour, how should results of such be displayed when making a `HEAD` request?\r\n\r\nwith contiguous blocks `Range: bytes=0-100`\r\nwith non-contigous blocks `Range: bytes=0-100,240-360,400-420` ?? _no idea if this is sane or not_"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/2",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/2/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/2/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/2/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/2",
+    "id": 13202658,
+    "number": 2,
+    "title": "\"Range\" vs. \"Content-Range\"",
+    "user": {
+      "login": "awendt",
+      "id": 11964,
+      "avatar_url": "https://secure.gravatar.com/avatar/17038fd445c74e9cbbc3fa9adc174809?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "17038fd445c74e9cbbc3fa9adc174809",
+      "url": "https://api.github.com/users/awendt",
+      "html_url": "https://github.com/awendt",
+      "followers_url": "https://api.github.com/users/awendt/followers",
+      "following_url": "https://api.github.com/users/awendt/following",
+      "gists_url": "https://api.github.com/users/awendt/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/awendt/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/awendt/subscriptions",
+      "organizations_url": "https://api.github.com/users/awendt/orgs",
+      "repos_url": "https://api.github.com/users/awendt/repos",
+      "events_url": "https://api.github.com/users/awendt/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/awendt/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/bug",
+        "name": "bug",
+        "color": "fc2929"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2013-04-15T14:38:03Z",
+    "updated_at": "2013-04-17T09:03:21Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "\"Range\" is a **request** header for GET requests in [section 14.35](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35) of the HTTP/1.1 spec:\r\n\r\n> HTTP retrieval requests using conditional or unconditional GET methods\r\n> MAY request one or more sub-ranges of the entity\r\n\r\nOn the other hand, \"Content-Range\" in [section 14.16](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16) of the spec is a **response** header field:\r\n\r\n> The Content-Range entity-header is sent with a partial entity-body to specify\r\n> where in the full entity-body the partial body should be applied\r\n\r\nWhy do you use \"Range\" for the response and \"Content-Range\" for the request?"
+  } ]
