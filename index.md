@@ -7,8 +7,9 @@ title: Resumable File Uploads
   <h1>{{ page.title }}</h1>
   <p class="lead">
     Mobile networks are unstable, file sizes are getting bigger, and plattform
-    APIs are a mess. As a result millions of cat videos are lost in the tubes
-    every year. This needs to be made much simpler.
+    APIs are a mess. As a result millions of cat videos are lost in the
+    [tubes](http://www.youtube.com/watch?v=f99PcP0aFNE) every year. This needs
+    to be made much simpler.
   </p>
 
   <p class="lead">
