@@ -167,13 +167,17 @@ $(function() {
           // console.log(item.type, item);
           break;
         case 'ForkEvent':
-          action = 'just forked';
+          action = 'forked';
           break;
         case 'WatchEvent':
           action = 'is now watching';
           break;
         case 'PullRequestEvent':
-          action = 'sent a pull request for';
+          action  = item.payload.action + ' ';
+          action += 'pull request <a target="_blank" href="' + item.payload.pull_request.html_url + '">';
+          action += item.payload.pull_request.title;
+          action += '</a> for';
+
           break;
         case 'CreateEvent':
           // @TODO: Not tested for ref_type != 'branch'
