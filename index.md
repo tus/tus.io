@@ -27,7 +27,7 @@ title: Handling Uploads Sucks
   frameborder="0"
   scrolling="no"
   class="twitter-follow-btn"
-  src="//platform.twitter.com/widgets/follow_button.html?screen_name=tusio"
+  src="//platform.twitter.com/widgets/follow_button.html?screen_name=tus_io"
   style="width:300px; height:20px;"></iframe>
 
 ## Blog
