@@ -13,11 +13,10 @@ title: Resumable File Uploads
   </p>
 
   <p class="lead">
-    tus is an open source project for
-    creating an
-    <a href="/protocols/resumable-upload.html">open protocol</a>, as well as
-    client and server implementations for resumable file uploading. We won't
-    stop until every web site and mobile app has reliable uploading.
+    tus is an open source project for creating the first <a
+    href="/protocols/resumable-upload.html">open protocol for resumable file
+    uploading</a>, as well as client and server. We won't stop until every web
+    site and mobile app has reliable uploading.
   </p>
 </div>
 
