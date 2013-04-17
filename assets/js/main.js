@@ -81,18 +81,20 @@ $(function() {
       var commits     = '';
 
       // http://developer.github.com/v3/activity/events/types/
+      var isClosed = false;
+
       switch (item.type) {
         case 'IssuesEvent':
           // console.log(item);
-          var closed = item.payload.issue.state === 'closed';
+          isClosed = item.payload.issue.state === 'closed';
           action  = item.payload.action + ' ';
           action += 'issue <a target="_blank" href="' + item.payload.issue.html_url + '">';
 
-          if (closed) {
+          if (isClosed) {
             action += '<s>';
           }
           action += item.payload.issue.title;
-          if (closed) {
+          if (isClosed) {
             action += '</s>';
           }
 
@@ -104,14 +106,14 @@ $(function() {
           action += item.payload.comment.path + '</a> in';
           break;
         case 'IssueCommentEvent':
-          var closed = item.payload.issue.state === 'closed';
+          isClosed = item.payload.issue.state === 'closed';
 
           action  = 'commented on <a target="_blank" href="' + item.payload.comment.html_url + '">';
-          if (closed) {
+          if (isClosed) {
             action += '<s>';
           }
           action += item.payload.issue.title;
-          if (closed) {
+          if (isClosed) {
             action += '</s>';
           }
           action += '</a> in';
@@ -211,17 +213,23 @@ $(function() {
 
 
   var makeCommunityType = function (types, listed, cb) {
-    // In parallel otherwise the listed check does not work reliably
+    // Not in parallel otherwise the listed check does not work reliably
     var type = types.shift();
     if (!type) {
       return;
     }
+
+    var $communities = $('div.community[data-contains*="' + type + '"]');
+
+    var template = '<a target="_blank" rel="tooltip" data-placement="bottom" title="${username}" href="${userUrl}" class="author">';
+    template += '<img src="${gravatarSrc}" class="gravatar" />';
+    template += '</a>';
+
     $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
-      var user     = {};
-      var entry    = {};
-      var template = '<a target="_blank" rel="tooltip" data-placement="bottom" title="${username}" href="${userUrl}" class="author">';
-      template += '<img src="${gravatarSrc}" class="gravatar" />';
-      template += '</a>';
+      var user  = {};
+      var entry = {};
+      var count = 0;
+
       for (var key in data) {
         user = data[key].user || data[key];
         if (!user.login) {
@@ -231,21 +239,28 @@ $(function() {
           continue;
         }
 
+        count++;
         listed[user.login] = true;
 
         entry = $.tmpl(template, {
-            gravatarSrc: user.avatar_url + '&s=64',
-            userUrl: user.html_url,
-            username: user.login
+          gravatarSrc: user.avatar_url + '&s=64',
+          userUrl: user.html_url,
+          username: user.login
         });
 
-        entry.appendTo($('div.community[data-contains*="' + type + '"]'));
+        entry.appendTo($communities.find('div'));
       }
+
+      $communities.each(function() {
+        var $span = $(this).find('h3 span');
+        var newCount = parseInt($span.text(), 10) + count;
+        $span.text(newCount);
+      });
 
       if (types.length > 0) {
         makeCommunityType(types, listed, cb);
       } else {
-        return cb();
+        cb();
       }
     });
   };
@@ -253,7 +268,6 @@ $(function() {
   var makeCommunities = function () {
     var allTypes = [];
     $('div.community').each(function () {
-      $(this).html('');
       allTypes = allTypes.concat($(this).data('contains').split(', '));
     });
 
