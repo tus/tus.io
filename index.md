@@ -56,7 +56,7 @@ title: Resumable File Uploads
 
 <hr />
 
-## On the Githubs
+## On the GitHubs
 
 <ol id="githubs"><li>Loading...</li></ol>
 
