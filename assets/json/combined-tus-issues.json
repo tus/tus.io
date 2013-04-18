@@ -1,56 +1,12 @@
 [   {
-    "url": "https://api.github.com/repos/tus/tus.io/issues/15",
-    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/15/labels{/name}",
-    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/15/comments",
-    "events_url": "https://api.github.com/repos/tus/tus.io/issues/15/events",
-    "html_url": "https://github.com/tus/tus.io/issues/15",
-    "id": 13292320,
-    "number": 15,
-    "title": "Fixing link to SemVer",
-    "user": {
-      "login": "powtac",
-      "id": 36167,
-      "avatar_url": "https://secure.gravatar.com/avatar/782ed167b5c2c2563480ad62727f6b08?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
-      "gravatar_id": "782ed167b5c2c2563480ad62727f6b08",
-      "url": "https://api.github.com/users/powtac",
-      "html_url": "https://github.com/powtac",
-      "followers_url": "https://api.github.com/users/powtac/followers",
-      "following_url": "https://api.github.com/users/powtac/following",
-      "gists_url": "https://api.github.com/users/powtac/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/powtac/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/powtac/subscriptions",
-      "organizations_url": "https://api.github.com/users/powtac/orgs",
-      "repos_url": "https://api.github.com/users/powtac/repos",
-      "events_url": "https://api.github.com/users/powtac/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/powtac/received_events",
-      "type": "User"
-    },
-    "labels": [
-
-    ],
-    "state": "open",
-    "assignee": null,
-    "milestone": null,
-    "comments": 0,
-    "created_at": "2013-04-17T11:51:32Z",
-    "updated_at": "2013-04-17T11:51:32Z",
-    "closed_at": null,
-    "pull_request": {
-      "html_url": "https://github.com/tus/tus.io/pull/15",
-      "diff_url": "https://github.com/tus/tus.io/pull/15.diff",
-      "patch_url": "https://github.com/tus/tus.io/pull/15.patch"
-    },
-    "body": "http://semver.org"
-  },
-  {
-    "url": "https://api.github.com/repos/tus/tus.io/issues/14",
-    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/14/labels{/name}",
-    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/14/comments",
-    "events_url": "https://api.github.com/repos/tus/tus.io/issues/14/events",
-    "html_url": "https://github.com/tus/tus.io/issues/14",
-    "id": 13291342,
-    "number": 14,
-    "title": "Improve copy on homepage, consider removing \"fuck\"",
+    "url": "https://api.github.com/repos/tus/tus.io/issues/16",
+    "labels_url": "https://api.github.com/repos/tus/tus.io/issues/16/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus.io/issues/16/comments",
+    "events_url": "https://api.github.com/repos/tus/tus.io/issues/16/events",
+    "html_url": "https://github.com/tus/tus.io/issues/16",
+    "id": 13322939,
+    "number": 16,
+    "title": "Improve about page / homepage copy further",
     "user": {
       "login": "felixge",
       "id": 15000,
@@ -71,24 +27,24 @@
     },
     "labels": [
       {
-        "url": "https://api.github.com/repos/tus/tus.io/labels/bug",
-        "name": "bug",
-        "color": "fc2929"
+        "url": "https://api.github.com/repos/tus/tus.io/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
       }
     ],
     "state": "open",
     "assignee": null,
     "milestone": null,
-    "comments": 1,
-    "created_at": "2013-04-17T11:19:16Z",
-    "updated_at": "2013-04-17T11:26:21Z",
+    "comments": 5,
+    "created_at": "2013-04-17T22:26:15Z",
+    "updated_at": "2013-04-18T08:22:23Z",
     "closed_at": null,
     "pull_request": {
       "html_url": null,
       "diff_url": null,
       "patch_url": null
     },
-    "body": "see https://news.ycombinator.com/item?id=5563569"
+    "body": "See @hintjens's comment here: https://github.com/tus/tus.io/issues/14#issuecomment-16504582"
   },
   {
     "url": "https://api.github.com/repos/tus/tus.io/issues/12",
@@ -546,6 +502,242 @@
     },
     "body": "- setup locally with node server for now\r\n- upload file locally via jquery file upload\r\n- is it able to upload several chunks at the same time?\r\n- how can we identify files:\r\n  - what data do we get? path, size, mime, name -> generate unique id\r\n  - id of tus, file upload \r\n"
   },   {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/16",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/16/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/16/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/16/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/16",
+    "id": 13338963,
+    "number": 16,
+    "title": "Support streams with unknown length?",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
+        "name": "enhancement",
+        "color": "84b6eb"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-18T08:31:38Z",
+    "updated_at": "2013-04-18T08:31:38Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "see discussion here: http://www.tus.io/protocols/resumable-upload.html#comment-865108402"
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/15",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/15/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/15/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/15/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/15",
+    "id": 13321750,
+    "number": 15,
+    "title": "Clarify that POST is an optional step",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/bug",
+        "name": "bug",
+        "color": "fc2929"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-17T21:53:42Z",
+    "updated_at": "2013-04-17T21:53:42Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "If you already have the final file url, you can directly PUT to it."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/14",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/14/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/14/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/14/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/14",
+    "id": 13321201,
+    "number": 14,
+    "title": "PATCH vs PUT",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/bug",
+        "name": "bug",
+        "color": "fc2929"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2013-04-17T21:38:49Z",
+    "updated_at": "2013-04-18T09:32:48Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "As pointed out by @Baughn in IRC, PATCH (partial entity update) seems more appropriate than PUT (replacing an entire entity) for resuming uploads. But it might cause issues with mobile http proxies as PATCH is somewhat exotic. Needs investigation."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/13",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/13/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/13/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/13/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/13",
+    "id": 13299690,
+    "number": 13,
+    "title": "Define behavior for GET on incomplete uploads",
+    "user": {
+      "login": "brunodecarvalho",
+      "id": 337352,
+      "avatar_url": "https://secure.gravatar.com/avatar/f54c7be892503a423462d0906f454f87?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "f54c7be892503a423462d0906f454f87",
+      "url": "https://api.github.com/users/brunodecarvalho",
+      "html_url": "https://github.com/brunodecarvalho",
+      "followers_url": "https://api.github.com/users/brunodecarvalho/followers",
+      "following_url": "https://api.github.com/users/brunodecarvalho/following",
+      "gists_url": "https://api.github.com/users/brunodecarvalho/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brunodecarvalho/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brunodecarvalho/subscriptions",
+      "organizations_url": "https://api.github.com/users/brunodecarvalho/orgs",
+      "repos_url": "https://api.github.com/users/brunodecarvalho/repos",
+      "events_url": "https://api.github.com/users/brunodecarvalho/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brunodecarvalho/received_events",
+      "type": "User"
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2013-04-17T14:51:30Z",
+    "updated_at": "2013-04-17T16:32:41Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Edge case. Don't really have a strong opinion on whether it should simply return **404 Not Found** or give some sort of indication that an upload is under way, like **416 Requested Range Not Satisfiable**. For the latter, the RFC says servers \"SHOULD\" respond with 416 if a *Range* header was sent in the request but it doesn't say anything about it not being allowed or recommended otherwise.\r\n\r\nProbably best to just leave a small note on the protocol draft stating that default behavior is to report 404 until the upload has been completed but server implementations are free to roll in their own behavior as they deem fit."
+  },
+  {
+    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/12",
+    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/12/labels{/name}",
+    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/12/comments",
+    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/12/events",
+    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/12",
+    "id": 13293714,
+    "number": 12,
+    "title": "Consider using 204 No Content",
+    "user": {
+      "login": "felixge",
+      "id": 15000,
+      "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "23968f0ca75b13463d2db5343e5c2096",
+      "url": "https://api.github.com/users/felixge",
+      "html_url": "https://github.com/felixge",
+      "followers_url": "https://api.github.com/users/felixge/followers",
+      "following_url": "https://api.github.com/users/felixge/following",
+      "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
+      "organizations_url": "https://api.github.com/users/felixge/orgs",
+      "repos_url": "https://api.github.com/users/felixge/repos",
+      "events_url": "https://api.github.com/users/felixge/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/felixge/received_events",
+      "type": "User"
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/bug",
+        "name": "bug",
+        "color": "fc2929"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-04-17T12:34:12Z",
+    "updated_at": "2013-04-17T12:34:12Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "See: https://news.ycombinator.com/reply?id=5564024&whence=item%3fid%3d5563569"
+  },
+  {
     "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11",
     "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11/labels{/name}",
     "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/11/comments",
@@ -678,9 +870,9 @@
     "state": "open",
     "assignee": null,
     "milestone": null,
-    "comments": 2,
+    "comments": 5,
     "created_at": "2013-04-17T09:51:01Z",
-    "updated_at": "2013-04-17T11:58:57Z",
+    "updated_at": "2013-04-18T09:20:07Z",
     "closed_at": null,
     "pull_request": {
       "html_url": null,
@@ -726,9 +918,9 @@
     "state": "open",
     "assignee": null,
     "milestone": null,
-    "comments": 3,
+    "comments": 11,
     "created_at": "2013-04-16T12:17:44Z",
-    "updated_at": "2013-04-17T09:55:08Z",
+    "updated_at": "2013-04-18T09:30:10Z",
     "closed_at": null,
     "pull_request": {
       "html_url": null,
@@ -786,54 +978,6 @@
     "body": "we host a tusd version anyway, why not make life easier for early protocol implementors by making the example requests executable"
   },
   {
-    "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5",
-    "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/labels{/name}",
-    "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/comments",
-    "events_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/5/events",
-    "html_url": "https://github.com/tus/tus-resumable-upload-protocol/issues/5",
-    "id": 13209824,
-    "number": 5,
-    "title": "Describe limits for upload size",
-    "user": {
-      "login": "brunodecarvalho",
-      "id": 337352,
-      "avatar_url": "https://secure.gravatar.com/avatar/f54c7be892503a423462d0906f454f87?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
-      "gravatar_id": "f54c7be892503a423462d0906f454f87",
-      "url": "https://api.github.com/users/brunodecarvalho",
-      "html_url": "https://github.com/brunodecarvalho",
-      "followers_url": "https://api.github.com/users/brunodecarvalho/followers",
-      "following_url": "https://api.github.com/users/brunodecarvalho/following",
-      "gists_url": "https://api.github.com/users/brunodecarvalho/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/brunodecarvalho/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/brunodecarvalho/subscriptions",
-      "organizations_url": "https://api.github.com/users/brunodecarvalho/orgs",
-      "repos_url": "https://api.github.com/users/brunodecarvalho/repos",
-      "events_url": "https://api.github.com/users/brunodecarvalho/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/brunodecarvalho/received_events",
-      "type": "User"
-    },
-    "labels": [
-      {
-        "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/labels/enhancement",
-        "name": "enhancement",
-        "color": "84b6eb"
-      }
-    ],
-    "state": "open",
-    "assignee": null,
-    "milestone": null,
-    "comments": 3,
-    "created_at": "2013-04-15T17:07:24Z",
-    "updated_at": "2013-04-17T08:43:07Z",
-    "closed_at": null,
-    "pull_request": {
-      "html_url": null,
-      "diff_url": null,
-      "patch_url": null
-    },
-    "body": "Some HTTP frameworks I came across won't accept *Content-Length* values over a signed 32bit integer (2147483647 bytes, 2GB).\r\n\r\nOn the other hand, the RFC mandates that the *Content-Length* header must be ignored if the transfer encoding is anything but *identity* (i.e. chunked transfer encoding):\r\n\r\n> Messages MUST NOT include both a Content-Length header field and a non-identity transfer-coding. If the message does include a non-identity transfer-coding, the Content-Length MUST be ignored.\r\n\r\nYou should probably include a note explaining the limit for this kind of uploads will depend on the servers and/or client and that chunked transfer encoding is not an option."
-  },
-  {
     "url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3",
     "labels_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3/labels{/name}",
     "comments_url": "https://api.github.com/repos/tus/tus-resumable-upload-protocol/issues/3/comments",
@@ -870,9 +1014,9 @@
     "state": "open",
     "assignee": null,
     "milestone": null,
-    "comments": 0,
+    "comments": 2,
     "created_at": "2013-04-15T15:03:32Z",
-    "updated_at": "2013-04-15T15:03:32Z",
+    "updated_at": "2013-04-18T08:13:37Z",
     "closed_at": null,
     "pull_request": {
       "html_url": null,
@@ -918,9 +1062,9 @@
     "state": "open",
     "assignee": null,
     "milestone": null,
-    "comments": 1,
+    "comments": 4,
     "created_at": "2013-04-15T14:38:03Z",
-    "updated_at": "2013-04-17T09:03:21Z",
+    "updated_at": "2013-04-18T08:48:40Z",
     "closed_at": null,
     "pull_request": {
       "html_url": null,

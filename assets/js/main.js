@@ -225,7 +225,7 @@ $(function() {
     template += '<img src="${gravatarSrc}" class="gravatar" />';
     template += '</a>';
 
-    $.getJSON('/assets/json/' + type +'.json', function(data, textStatus, jqXHR) {
+    $.getJSON('/assets/json/combined-tus-' + type +'.json', function(data, textStatus, jqXHR) {
       var user  = {};
       var entry = {};
       var count = 0;

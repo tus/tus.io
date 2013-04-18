@@ -3,3 +3,4 @@
 
 # Built by `make build`:
 protocols/*.md
+assets/*.json
