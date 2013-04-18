@@ -1075,6 +1075,24 @@
     "events_url": "https://api.github.com/users/dikini/events{/privacy}",
     "received_events_url": "https://api.github.com/users/dikini/received_events",
     "type": "User"
+  },
+  {
+    "login": "troyth",
+    "id": 2113599,
+    "avatar_url": "https://secure.gravatar.com/avatar/8241d6e7491e352db8edf5b5f8633d2c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "8241d6e7491e352db8edf5b5f8633d2c",
+    "url": "https://api.github.com/users/troyth",
+    "html_url": "https://github.com/troyth",
+    "followers_url": "https://api.github.com/users/troyth/followers",
+    "following_url": "https://api.github.com/users/troyth/following",
+    "gists_url": "https://api.github.com/users/troyth/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/troyth/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/troyth/subscriptions",
+    "organizations_url": "https://api.github.com/users/troyth/orgs",
+    "repos_url": "https://api.github.com/users/troyth/repos",
+    "events_url": "https://api.github.com/users/troyth/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/troyth/received_events",
+    "type": "User"
   },   {
     "login": "felixge",
     "id": 15000,
@@ -1593,24 +1611,6 @@
     "repos_url": "https://api.github.com/users/waltercolindres/repos",
     "events_url": "https://api.github.com/users/waltercolindres/events{/privacy}",
     "received_events_url": "https://api.github.com/users/waltercolindres/received_events",
-    "type": "User"
-  },
-  {
-    "login": "Tug",
-    "id": 230230,
-    "avatar_url": "https://secure.gravatar.com/avatar/ebb4711e4534645f1ce863ccd64fa7f9?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
-    "gravatar_id": "ebb4711e4534645f1ce863ccd64fa7f9",
-    "url": "https://api.github.com/users/Tug",
-    "html_url": "https://github.com/Tug",
-    "followers_url": "https://api.github.com/users/Tug/followers",
-    "following_url": "https://api.github.com/users/Tug/following",
-    "gists_url": "https://api.github.com/users/Tug/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/Tug/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/Tug/subscriptions",
-    "organizations_url": "https://api.github.com/users/Tug/orgs",
-    "repos_url": "https://api.github.com/users/Tug/repos",
-    "events_url": "https://api.github.com/users/Tug/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/Tug/received_events",
     "type": "User"
   },
   {
