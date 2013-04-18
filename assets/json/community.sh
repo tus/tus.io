@@ -100,7 +100,7 @@ function fetch () {
   local url=""
   local file=""
   for f_arg; do
-    path="${url}${f_arg}/"
+    path="${path}${f_arg}/"
   done
 
   path="${path%?}"
