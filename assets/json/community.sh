@@ -15,11 +15,15 @@
 # Copyright (c) 2013 Kevin van Zonneveld
 # http://twitter.com/kvz
 #
+# Requires:
+#  - bash
+#  - curl
+#
 # Usage:
 #  LOG_LEVEL=7 OWNER=tus ./community.sh
 #
 #
-# Based on BASH3 Boilerplate v0.0.3 (https://github.com/kvz/bash3boilerplate)
+# Based on BASH3 Boilerplate v0.1.0 (https://github.com/kvz/bash3boilerplate)
 # Licensed under MIT: http://kvz.io/licenses/LICENSE-MIT
 # Copyright (c) 2013 Kevin van Zonneveld
 # http://twitter.com/kvz
@@ -59,37 +63,61 @@ function _fmt ()      {
     # Don't use colors on pipes or non-recognized terminals
     color=""; color_reset=""
   fi
-  echo -e "$(date -u +"%Y-%m-%d %H:%M:%S UTC") ${color}$(printf "[%9s]" ${1})${color_reset}";
+  echo -e "$(date -u +"%Y-%m-%d %H:%M:%S UTC") ${color}$(printf "[%9s]" ${1})${color_reset}"
 }
-function emergency () {                             echo "$(_fmt emergency) ${@}" || true; exit 1; }
-function alert ()     { [ "${LOG_LEVEL}" -ge 1 ] && echo "$(_fmt alert) ${@}" || true; }
-function critical ()  { [ "${LOG_LEVEL}" -ge 2 ] && echo "$(_fmt critical) ${@}" || true; }
-function error ()     { [ "${LOG_LEVEL}" -ge 3 ] && echo "$(_fmt error) ${@}" || true; }
-function warning ()   { [ "${LOG_LEVEL}" -ge 4 ] && echo "$(_fmt warning) ${@}" || true; }
-function notice ()    { [ "${LOG_LEVEL}" -ge 5 ] && echo "$(_fmt notice) ${@}" || true; }
-function info ()      { [ "${LOG_LEVEL}" -ge 6 ] && echo "$(_fmt info) ${@}" || true; }
-function debug ()     { [ "${LOG_LEVEL}" -ge 7 ] && echo "$(_fmt debug) ${@}" || true; }
+function emergency () {                             echo "$(_fmt emergency) ${@}" 1>&2 || true; exit 1; }
+function alert ()     { [ "${LOG_LEVEL}" -ge 1 ] && echo "$(_fmt alert) ${@}" 1>&2 || true; }
+function critical ()  { [ "${LOG_LEVEL}" -ge 2 ] && echo "$(_fmt critical) ${@}" 1>&2 || true; }
+function error ()     { [ "${LOG_LEVEL}" -ge 3 ] && echo "$(_fmt error) ${@}" 1>&2 || true; }
+function warning ()   { [ "${LOG_LEVEL}" -ge 4 ] && echo "$(_fmt warning) ${@}" 1>&2 || true; }
+function notice ()    { [ "${LOG_LEVEL}" -ge 5 ] && echo "$(_fmt notice) ${@}" 1>&2 || true; }
+function info ()      { [ "${LOG_LEVEL}" -ge 6 ] && echo "$(_fmt info) ${@}" 1>&2 || true; }
+function debug ()     { [ "${LOG_LEVEL}" -ge 7 ] && echo "$(_fmt debug) ${@}" 1>&2 || true; }
 
-function fetch () {
-  local url=""
-  local file=""
-  for arg; do
-    url="${url}${arg}/"
-  done
+function can_request () {
+  remaining="$(_download https://api.github.com/rate_limit |awk '/remaining/{print $NF}')"
+  if [ "${remaining}" = "0" ]; then
+    emergency "Would hit the GitHub API rate limit upon next request. Aborting "
+  fi
+}
 
-  url="${url%?}"
-  file="$(echo "${url}" |sed 's#/#-#g')"
+function _download () {
+  local url="${1}"
+  local buf="$(curl -ks "${url}")"
 
-  url="https://api.github.com/${url}"
-  file="${CACHE_DIR}/${file}.json"
-
-  # To protect against rate-limiter & long waits
-  if [ "$(find "${file}" -mmin -60 2>/dev/null |wc -l)" -eq 0 ]; then
-    curl -ks "${url}" -o "${file}" || echo "" > "${file}" # <-- avoid json corruption
-    sleep 2
+  if [ "${?}" -ne 0 ]; then
+    emergency "Unable to download ${url}. "
+  fi
+  if echo "${buf}" |egrep '^\s+"message":' > /dev/null 2>&1; then
+    emergency "Unable to process ${url}. $(echo "${buf}" |egrep '^\s+"message":')"
   fi
 
-  cat "${file}"
+  echo "${buf}"
+}
+
+function fetch () {
+  local path=""
+  local url=""
+  local file=""
+  for f_arg; do
+    path="${url}${f_arg}/"
+  done
+
+  path="${path%?}"
+  url="https://api.github.com/${path}"
+  file="${CACHE_DIR}/$(echo "${path}" |sed 's#/#-#g').json"
+
+  # Try using cache if not too old
+  if [ "$(find "${file}" -mmin -60 2>/dev/null |wc -l)" -gt 0 ]; then
+    debug "Using cached ${file}"
+  else
+    debug "Downloading ${url} -> ${file}"
+    can_request || exit 1
+    buf="$(_download "${url}")"
+    [ -n "${buf}" ] && echo "${buf}" > "${file}"
+  fi
+
+  [ -f "${file}" ] && cat "${file}"
 }
 
 
@@ -115,7 +143,11 @@ set -o pipefail
 # Members is organisation wide
 combined_file="${WEB_DIR}/combined-${OWNER}-members.json"
 info "Writing ${combined_file}"
-fetch orgs ${OWNER} members > "${combined_file}"
+current="$(fetch orgs ${OWNER} members)"
+if [ -z "${current}" ]; then
+  current="[]"
+fi
+echo "${current}" > "${combined_file}"
 
 # Rest is sourced per type & repo
 for type in $(echo ${TYPES}); do
