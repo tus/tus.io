@@ -6,7 +6,7 @@ title: Resumable File Uploads
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Mobile networks are unstable, file sizes are getting bigger, and plattform
+    Mobile networks are unstable, file sizes are getting bigger, and platform
     APIs are a mess. As a result millions of cat videos are lost in the <a
     href="http://www.youtube.com/watch?v=_cZC67wXUTs">tubes</a>
     every year.  This needs to be made much simpler.
