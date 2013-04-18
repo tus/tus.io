@@ -36,7 +36,7 @@ __FILE__="${__DIR__}/$(basename "${0}")"
 # Environment variables
 [ -z "${LOG_LEVEL}" ] && LOG_LEVEL="6" # 7 = debug, 0 = emergency
 [ -z "${OWNER}" ]     && OWNER="tus"
-[ -z "${TYPES}" ]     && TYPES="collaborators contributors subscribers stargazers issues"
+[ -z "${TYPES}" ]     && TYPES="collaborators contributors subscribers stargazers issues issues/comments"
 [ -z "${REPOS}" ]     && REPOS="tus.io tusd tus-jquery-client tus-ios-client tus-android-client tus-resumable-upload-protocol"
 [ -z "${CACHE_DIR}" ] && CACHE_DIR="${__DIR__}" # holds all individual .json files, raw copy of Github's
 [ -z "${WEB_DIR}" ]   && WEB_DIR="${__DIR__}"   # holds combined .json files
@@ -71,15 +71,17 @@ function info ()      { [ "${LOG_LEVEL}" -ge 6 ] && echo "$(_fmt info) ${@}" || 
 function debug ()     { [ "${LOG_LEVEL}" -ge 7 ] && echo "$(_fmt debug) ${@}" || true; }
 
 function fetch () {
-  local url="https://api.github.com/"
-  local file="${CACHE_DIR}/"
+  local url=""
+  local file=""
   for arg; do
     url="${url}${arg}/"
-    file="${file}${arg}-"
   done
 
   url="${url%?}"
-  file="${file%?}.json"
+  file="$(echo "${url}" |sed 's#/#-#g')"
+
+  url="https://api.github.com/${url}"
+  file="${CACHE_DIR}/${file}.json"
 
   # To protect against rate-limiter & long waits
   if [ "$(find "${file}" -mmin -60 2>/dev/null |wc -l)" -eq 0 ]; then
@@ -118,7 +120,7 @@ fetch orgs ${OWNER} members > "${combined_file}"
 # Rest is sourced per type & repo
 for type in $(echo ${TYPES}); do
   combined=""
-  combined_file="${WEB_DIR}/combined-${OWNER}-${type}.json"
+  combined_file="${WEB_DIR}/combined-${OWNER}-$(echo "${type}" |sed 's#/#-#g').json"
   for repo in $(echo ${REPOS}); do
     # use sed vs head because that does not work on OSX
     current="$(fetch repos ${OWNER} ${repo} ${type} |tail -n +2 |sed '$d')"

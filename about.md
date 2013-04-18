@@ -30,7 +30,7 @@ the official twitter hash tag.
   <div></div>
 </div>
 
-<div class="community" data-contains="issues">
+<div class="community" data-contains="issues-comments, issues">
   <h3>Collaborators (<span>0</span>)</h3>
   <p>People commenting</p>
   <div></div>
