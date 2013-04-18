@@ -6,17 +6,25 @@ title: Resumable File Uploads
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
   <p class="lead">
-    Mobile networks are unstable, file sizes are getting bigger, and platform
-    APIs are a mess. As a result millions of cat videos are lost in the <a
-    href="http://www.youtube.com/watch?v=_cZC67wXUTs">tubes</a>
-    every year.  This needs to be made much simpler.
+    Users want to share more and more photos and videos. But mobile networks
+    are fragile. Platform APIs are a mess. Every project builds its own file
+    uploader. A thousand one week projects that barely work, when all we need
+    is one real project, done right.
   </p>
 
   <p class="lead">
-    tus is an open source project for creating the first <a
-    href="/protocols/resumable-upload.html">open protocol for resumable file
-    uploading</a>, as well as client and server implementations. We won't stop
-    until every web site and mobile app has reliable uploading.
+    We are going to do this right. We will solve reliable file uploads for once
+    and for all. A new open
+    <a href="/protocols/resumable-upload.html">protocol for resumable uploads</a>
+    (tus) built on HTTP. Simple, cheap, reusable stacks for clients and servers.
+    Any language, any platform, any network.
+  </p>
+
+  <p class="lead">
+    It's probably an impossible dream. No-one has managed yet.
+    But we're going to give it our best shot.
+    <a target="" href="https://github.com/tus">Join us on GitHub</a> and
+    help us make the world a better place. No more lost cat videos!
   </p>
 </div>
 
