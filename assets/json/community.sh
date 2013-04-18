@@ -82,8 +82,8 @@ function fetch () {
   file="${file%?}.json"
 
   # To protect against rate-limiter & long waits
-  if [ "$(find "${file}" -mmin -60 |wc -l)" -eq 0 ]; then
-    curl -ks "${url}" -o "${file}"
+  if [ "$(find "${file}" -mmin -60 2>/dev/null |wc -l)" -eq 0 ]; then
+    curl -ks "${url}" -o "${file}" || echo "" > "${file}" # <-- avoid json corruption
     sleep 2
   fi
 
