@@ -16,7 +16,7 @@ title: Resumable File Uploads
     We are going to do this right. We will solve reliable file uploads for once
     and for all. A new open
     <a href="/protocols/resumable-upload.html">protocol for resumable uploads</a>
-    (tus) built on HTTP. Simple, cheap, reusable stacks for clients and servers.
+    built on HTTP. Simple, cheap, reusable stacks for clients and servers.
     Any language, any platform, any network.
   </p>
 
