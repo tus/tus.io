@@ -1,0 +1,3 @@
+[submodule "lib/tus-resumable-upload-protocol"]
+	path = lib/tus-resumable-upload-protocol
+	url = git@github.com:tus/tus-resumable-upload-protocol.git

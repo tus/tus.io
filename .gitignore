@@ -2,5 +2,5 @@
 /_jekyll_s3.yml
 
 # Built by `make build`:
-protocols/*.md
+protocols/*.html
 assets/json/*.json
