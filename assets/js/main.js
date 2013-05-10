@@ -121,6 +121,9 @@ $(function() {
         case 'PushEvent':
           // var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
 
+          if (!item.payload || !item.payload.commits) {
+            return;
+          }
           var firstCommit = item.payload.commits[0].sha;
           var firstUrl    = makeHtmlUrl(item.payload.commits[0].url);
           var lastCommit  = '';
