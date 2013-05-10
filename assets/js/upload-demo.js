@@ -74,7 +74,7 @@ $(function() {
           $(["Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"]).each(concatHeader);
 
           // non-simple headers (add more as required)
-          $(["Location", "Range", "Content-Range"]).each(concatHeader);
+          $(["Location", "Range", "Offset", "Content-Range"]).each(concatHeader);
 
           return allHeaders;
         };
