@@ -122,7 +122,7 @@ $(function() {
           // var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
 
           if (!item.payload || !item.payload.commits || item.payload.commits.length === 0) {
-            return;
+            break;
           }
           var firstCommit = item.payload.commits[0].sha;
           var firstUrl    = makeHtmlUrl(item.payload.commits[0].url);
