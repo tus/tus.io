@@ -1,9 +1,51 @@
 $(function() {
   'use strict';
 
-  var host = window.tusdEndpoint || 'http://master.tus.io';
   var $progress = $('.js_progress');
   var $download = $('.js_download');
+
+  var host = window.tusdEndpoint || 'http://master.tus.io';
+  host = 'http://localhost:1080';
+  $('input[type=file]').change(function() {
+    var $input  = $(this);
+    var $parent = $input.parent();
+    var file    = this.files[0];
+    console.log('selected file', file);
+
+    $('.js-stop').removeClass('disabled');
+
+    var options = {
+      endpoint: host + '/files/',
+      resetBefore: $('#reset_before').prop('checked'),
+      resetAfter: false
+    };
+
+    $('.js_file').hide();
+    $('.js_progress').parent().show();
+
+    $('.progress').addClass('active');
+
+    upload = tus.upload(file, options)
+      .fail(function(error) {
+        console.log('Failed because: ' + error);
+      })
+      .always(function() {
+        $input.val('');
+        $('.js-stop').addClass('disabled');
+        $('.progress').removeClass('active');
+      })
+      .progress(function(e, bytesUploaded, bytesTotal) {
+        var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
+        $progress.css('width', percentage + '%');
+      })
+      .done(function(url, file) {
+        $progress.css('width', '100%');
+        $progress.parent().hide();
+        $download.attr('href', url);
+        $download.show();
+        $download.text('Download '+file.name);
+      });
+  });
 
   // This is required at the moment to get CORS headers support for Firefox.
   // Based on http://bugs.jquery.com/ticket/10338#comment:13
@@ -44,29 +86,31 @@ $(function() {
   }
   fixFirefoxXhrHeaders();
 
-  $('#js_upload').fileupload({
-      url: host + '/files',
-      maxChunkSize: 16 * 1024 * 1024,
-      multipart: false,
-      add: function(e, data) {
-        $('.js_file').hide();
-        $('.js_progress').parent().show();
-        upload(data);
-      },
-      fail: function(e, data) {
-        setTimeout(function() {
-          upload(data);
-        }, 1000);
-      },
-      progress: function(e, data) {
-        var progress = (data.loaded / data.total * 100).toFixed(2);
-        setProgress(progress);
-      },
-      done: function(e, data) {
-        console.log(arguments);
-        success(data);
-      }
-  });
+  // disabled for now since it doesn't fully work with the PATCH and Offset
+  // changes in v0.2 of the protocol. Needs more hackery here.
+  // $('#js_upload').fileupload({
+  //     url: host + '/files',
+  //     maxChunkSize: 16 * 1024 * 1024,
+  //     multipart: false,
+  //     add: function(e, data) {
+  //       $('.js_file').hide();
+  //       $('.js_progress').parent().show();
+  //       upload(data);
+  //     },
+  //     fail: function(e, data) {
+  //       setTimeout(function() {
+  //         upload(data);
+  //       }, 1000);
+  //     },
+  //     progress: function(e, data) {
+  //       var progress = (data.loaded / data.total * 100).toFixed(2);
+  //       setProgress(progress);
+  //     },
+  //     done: function(e, data) {
+  //       console.log(arguments);
+  //       success(data);
+  //     }
+  // });
 
   function upload(data) {
     var file = data.files[0];
