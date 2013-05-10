@@ -121,7 +121,7 @@ $(function() {
         case 'PushEvent':
           // var commitString = item.payload.commits.length === 1 ? 'commit' : 'commits';
 
-          if (!item.payload || !item.payload.commits) {
+          if (!item.payload || !item.payload.commits || item.payload.commits.length === 0) {
             return;
           }
           var firstCommit = item.payload.commits[0].sha;
