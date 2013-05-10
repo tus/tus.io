@@ -5,7 +5,6 @@ $(function() {
   var $download = $('.js_download');
 
   var host = window.tusdEndpoint || 'http://master.tus.io';
-  host = 'http://localhost:1080';
   $('input[type=file]').change(function() {
     var $input  = $(this);
     var $parent = $input.parent();
