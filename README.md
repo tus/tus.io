@@ -16,6 +16,12 @@ After this you can run the local development server like this:
 $ jekyll --auto --server
 ```
 
+On more recent Jekyll installs it's
+
+```bash
+$ jekyll serve --watch
+```
+
 Next, point your browser to http://127.0.0.1:4000/
 
 **Note** Some things like the protocol, and contributor/stargazer lists are replaced with
