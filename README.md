@@ -39,8 +39,7 @@ Everyone with PUSH access to the tus.io repository can type
 
 ```bash
 gem install jekyll jekyll-less therubyracer redcarpet
-make
-rake site:publish
+make # builds protocols, community then runs rake site:publish
 ```
 
 To compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
