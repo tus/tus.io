@@ -20,6 +20,7 @@ namespace :site do
     Dir.mktmpdir do |tmp|
       cp_r "_site/.", tmp
       rm_r "#{tmp}/lib"
+      system "echo 'This repo is just a deploy target. Edit the site over at https://github.com/tus/tus.io' > #{tmp}/README.md"
       Dir.chdir tmp
       system "git init"
       system "git add ."
