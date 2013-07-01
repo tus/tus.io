@@ -4,3 +4,4 @@
 # Built by `make build`:
 protocols/*.html
 assets/json/*.json
+protocols/resumable-upload.html

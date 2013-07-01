@@ -6,7 +6,7 @@
     "url": "https://api.github.com/users/kvz",
     "html_url": "https://github.com/kvz",
     "followers_url": "https://api.github.com/users/kvz/followers",
-    "following_url": "https://api.github.com/users/kvz/following",
+    "following_url": "https://api.github.com/users/kvz/following{/other_user}",
     "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
@@ -15,7 +15,7 @@
     "events_url": "https://api.github.com/users/kvz/events{/privacy}",
     "received_events_url": "https://api.github.com/users/kvz/received_events",
     "type": "User",
-    "contributions": 121
+    "contributions": 129
   },
   {
     "login": "felixge",
@@ -25,7 +25,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -34,7 +34,7 @@
     "events_url": "https://api.github.com/users/felixge/events{/privacy}",
     "received_events_url": "https://api.github.com/users/felixge/received_events",
     "type": "User",
-    "contributions": 64
+    "contributions": 71
   },
   {
     "login": "tim-kos",
@@ -44,7 +44,7 @@
     "url": "https://api.github.com/users/tim-kos",
     "html_url": "https://github.com/tim-kos",
     "followers_url": "https://api.github.com/users/tim-kos/followers",
-    "following_url": "https://api.github.com/users/tim-kos/following",
+    "following_url": "https://api.github.com/users/tim-kos/following{/other_user}",
     "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
@@ -53,7 +53,7 @@
     "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
     "received_events_url": "https://api.github.com/users/tim-kos/received_events",
     "type": "User",
-    "contributions": 45
+    "contributions": 51
   },
   {
     "login": "dougal",
@@ -63,7 +63,7 @@
     "url": "https://api.github.com/users/dougal",
     "html_url": "https://github.com/dougal",
     "followers_url": "https://api.github.com/users/dougal/followers",
-    "following_url": "https://api.github.com/users/dougal/following",
+    "following_url": "https://api.github.com/users/dougal/following{/other_user}",
     "gists_url": "https://api.github.com/users/dougal/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/dougal/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/dougal/subscriptions",
@@ -82,7 +82,7 @@
     "url": "https://api.github.com/users/powtac",
     "html_url": "https://github.com/powtac",
     "followers_url": "https://api.github.com/users/powtac/followers",
-    "following_url": "https://api.github.com/users/powtac/following",
+    "following_url": "https://api.github.com/users/powtac/following{/other_user}",
     "gists_url": "https://api.github.com/users/powtac/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/powtac/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/powtac/subscriptions",
@@ -100,7 +100,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -109,7 +109,7 @@
     "events_url": "https://api.github.com/users/felixge/events{/privacy}",
     "received_events_url": "https://api.github.com/users/felixge/received_events",
     "type": "User",
-    "contributions": 91
+    "contributions": 117
   },
   {
     "login": "kvz",
@@ -119,7 +119,7 @@
     "url": "https://api.github.com/users/kvz",
     "html_url": "https://github.com/kvz",
     "followers_url": "https://api.github.com/users/kvz/followers",
-    "following_url": "https://api.github.com/users/kvz/following",
+    "following_url": "https://api.github.com/users/kvz/following{/other_user}",
     "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
@@ -128,7 +128,7 @@
     "events_url": "https://api.github.com/users/kvz/events{/privacy}",
     "received_events_url": "https://api.github.com/users/kvz/received_events",
     "type": "User",
-    "contributions": 12
+    "contributions": 17
   },
   {
     "login": "tim-kos",
@@ -138,7 +138,7 @@
     "url": "https://api.github.com/users/tim-kos",
     "html_url": "https://github.com/tim-kos",
     "followers_url": "https://api.github.com/users/tim-kos/followers",
-    "following_url": "https://api.github.com/users/tim-kos/following",
+    "following_url": "https://api.github.com/users/tim-kos/following{/other_user}",
     "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
@@ -147,7 +147,7 @@
     "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
     "received_events_url": "https://api.github.com/users/tim-kos/received_events",
     "type": "User",
-    "contributions": 7
+    "contributions": 10
   },   {
     "login": "tim-kos",
     "id": 15005,
@@ -156,7 +156,7 @@
     "url": "https://api.github.com/users/tim-kos",
     "html_url": "https://github.com/tim-kos",
     "followers_url": "https://api.github.com/users/tim-kos/followers",
-    "following_url": "https://api.github.com/users/tim-kos/following",
+    "following_url": "https://api.github.com/users/tim-kos/following{/other_user}",
     "gists_url": "https://api.github.com/users/tim-kos/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/tim-kos/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/tim-kos/subscriptions",
@@ -165,7 +165,7 @@
     "events_url": "https://api.github.com/users/tim-kos/events{/privacy}",
     "received_events_url": "https://api.github.com/users/tim-kos/received_events",
     "type": "User",
-    "contributions": 36
+    "contributions": 37
   },
   {
     "login": "kvz",
@@ -175,7 +175,7 @@
     "url": "https://api.github.com/users/kvz",
     "html_url": "https://github.com/kvz",
     "followers_url": "https://api.github.com/users/kvz/followers",
-    "following_url": "https://api.github.com/users/kvz/following",
+    "following_url": "https://api.github.com/users/kvz/following{/other_user}",
     "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
@@ -194,7 +194,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -203,7 +203,26 @@
     "events_url": "https://api.github.com/users/felixge/events{/privacy}",
     "received_events_url": "https://api.github.com/users/felixge/received_events",
     "type": "User",
-    "contributions": 11
+    "contributions": 12
+  },
+  {
+    "login": "subosito",
+    "id": 73028,
+    "avatar_url": "https://secure.gravatar.com/avatar/b8d0a61ecf3b9a23540703024875d7b7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "b8d0a61ecf3b9a23540703024875d7b7",
+    "url": "https://api.github.com/users/subosito",
+    "html_url": "https://github.com/subosito",
+    "followers_url": "https://api.github.com/users/subosito/followers",
+    "following_url": "https://api.github.com/users/subosito/following{/other_user}",
+    "gists_url": "https://api.github.com/users/subosito/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/subosito/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/subosito/subscriptions",
+    "organizations_url": "https://api.github.com/users/subosito/orgs",
+    "repos_url": "https://api.github.com/users/subosito/repos",
+    "events_url": "https://api.github.com/users/subosito/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/subosito/received_events",
+    "type": "User",
+    "contributions": 1
   },
   {
     "login": "seblavoie",
@@ -213,7 +232,7 @@
     "url": "https://api.github.com/users/seblavoie",
     "html_url": "https://github.com/seblavoie",
     "followers_url": "https://api.github.com/users/seblavoie/followers",
-    "following_url": "https://api.github.com/users/seblavoie/following",
+    "following_url": "https://api.github.com/users/seblavoie/following{/other_user}",
     "gists_url": "https://api.github.com/users/seblavoie/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/seblavoie/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/seblavoie/subscriptions",
@@ -224,6 +243,25 @@
     "type": "User",
     "contributions": 1
   },   {
+    "login": "afh",
+    "id": 16507,
+    "avatar_url": "https://secure.gravatar.com/avatar/e61a03f7f87be52e3381faecc83bc950?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "e61a03f7f87be52e3381faecc83bc950",
+    "url": "https://api.github.com/users/afh",
+    "html_url": "https://github.com/afh",
+    "followers_url": "https://api.github.com/users/afh/followers",
+    "following_url": "https://api.github.com/users/afh/following{/other_user}",
+    "gists_url": "https://api.github.com/users/afh/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/afh/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/afh/subscriptions",
+    "organizations_url": "https://api.github.com/users/afh/orgs",
+    "repos_url": "https://api.github.com/users/afh/repos",
+    "events_url": "https://api.github.com/users/afh/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/afh/received_events",
+    "type": "User",
+    "contributions": 30
+  },
+  {
     "login": "felixge",
     "id": 15000,
     "avatar_url": "https://secure.gravatar.com/avatar/23968f0ca75b13463d2db5343e5c2096?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
@@ -231,7 +269,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -240,7 +278,7 @@
     "events_url": "https://api.github.com/users/felixge/events{/privacy}",
     "received_events_url": "https://api.github.com/users/felixge/received_events",
     "type": "User",
-    "contributions": 8
+    "contributions": 15
   },
   {
     "login": "kvz",
@@ -250,7 +288,7 @@
     "url": "https://api.github.com/users/kvz",
     "html_url": "https://github.com/kvz",
     "followers_url": "https://api.github.com/users/kvz/followers",
-    "following_url": "https://api.github.com/users/kvz/following",
+    "following_url": "https://api.github.com/users/kvz/following{/other_user}",
     "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
@@ -268,7 +306,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -286,7 +324,7 @@
     "url": "https://api.github.com/users/felixge",
     "html_url": "https://github.com/felixge",
     "followers_url": "https://api.github.com/users/felixge/followers",
-    "following_url": "https://api.github.com/users/felixge/following",
+    "following_url": "https://api.github.com/users/felixge/following{/other_user}",
     "gists_url": "https://api.github.com/users/felixge/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/felixge/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/felixge/subscriptions",
@@ -295,7 +333,7 @@
     "events_url": "https://api.github.com/users/felixge/events{/privacy}",
     "received_events_url": "https://api.github.com/users/felixge/received_events",
     "type": "User",
-    "contributions": 19
+    "contributions": 43
   },
   {
     "login": "kvz",
@@ -305,7 +343,7 @@
     "url": "https://api.github.com/users/kvz",
     "html_url": "https://github.com/kvz",
     "followers_url": "https://api.github.com/users/kvz/followers",
-    "following_url": "https://api.github.com/users/kvz/following",
+    "following_url": "https://api.github.com/users/kvz/following{/other_user}",
     "gists_url": "https://api.github.com/users/kvz/gists{/gist_id}",
     "starred_url": "https://api.github.com/users/kvz/starred{/owner}{/repo}",
     "subscriptions_url": "https://api.github.com/users/kvz/subscriptions",
@@ -315,4 +353,23 @@
     "received_events_url": "https://api.github.com/users/kvz/received_events",
     "type": "User",
     "contributions": 3
+  },
+  {
+    "login": "vayam",
+    "id": 342048,
+    "avatar_url": "https://secure.gravatar.com/avatar/3b5a456c814b3235a7f0bffa27406022?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "3b5a456c814b3235a7f0bffa27406022",
+    "url": "https://api.github.com/users/vayam",
+    "html_url": "https://github.com/vayam",
+    "followers_url": "https://api.github.com/users/vayam/followers",
+    "following_url": "https://api.github.com/users/vayam/following{/other_user}",
+    "gists_url": "https://api.github.com/users/vayam/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/vayam/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/vayam/subscriptions",
+    "organizations_url": "https://api.github.com/users/vayam/orgs",
+    "repos_url": "https://api.github.com/users/vayam/repos",
+    "events_url": "https://api.github.com/users/vayam/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/vayam/received_events",
+    "type": "User",
+    "contributions": 2
   } ]
