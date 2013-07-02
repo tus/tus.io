@@ -20,7 +20,8 @@ Licensed under MIT<br />
 
 - [tusd](https://github.com/tus/tusd)
 <span class="muted">&mdash; by [tus](/about.html)<br /></span>
-A stand-alone <strong>server</strong> written in Go to handle resumable file uploads using the tus `v0.2.1` protocol<br />
+A stand-alone <strong>server</strong> written in Go to handle resumable file uploads using the tus `v0.2.1` protocol.
+You can run this locally so you have a server to talk to, when you're developping new clients.<br />
 Licensed under MIT<br />
 
 As we go we'll adopt high-quality MIT licensed implementations for all languages and platforms
