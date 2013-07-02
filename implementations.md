@@ -6,54 +6,71 @@ comments: true
 
 ## {{page.title}}
 
+Here are some real-life code examples of languages implementing the tus resumable upload protocol.
 
-### Client-side
+### Official
+
+These projects are reference implementations maintained by the protocol developers.
+Later on, we want to adopt high-quality MIT licensed implementations for all languages and platforms
+under the tus organisations. We'll be looking for gems inside the community section for that.
+
+#### Server
 
 - [tus-jquery-client](https://github.com/tus/tus-jquery-client)
 Add resumable file uploads to web apps that are built with jQuery
+by tus core
+licensed under MIT
 
-<!--
-- [tus-ios-client](https://github.com/tus/tus-ios-client)
-Add resumable file uploads to iOS apps <span class="muted">&mdash; Coming Soon</span>
-- [tus-android-client](https://github.com/tus/tus-android-client)
-Add resumable file uploads to Android apps <span class="muted">&mdash; Coming Soon</span>
--->
-
-<hr />
-
-### Server-side
+#### Client
 
 - [tusd](https://github.com/tus/tusd)
-A stand-alone server written in go to handle resumable file uploads
-using the tus protocol
+A stand-alone server written in Go to handle resumable file uploads using the tus protocol
+by tus core
+licensed under MIT
 
-### In the wild
+### Community
 
 The tus protocol is very simple and because it builds on standard HTTP calls it
 could be implemented as Ruby libraries, Wordpress plugins, Bash/cURL, etc.
 
-The tus organisation on Github can provide a home for many more implementations
-than we're currently trying to push out. Feel free to help out!
-
 Drop a line if you built an open source tus implementation, and you'll be
-listed here. If the work is battletested and you're an active maintainer,
-your implementation could become the official one for your language/platform.
+listed here.
 
-For implementations we recommend using the MIT license.
+For new implementations we recommend using the MIT license and making clear
+what protocol version you're targetting.
 
-- [eahydra/tusclient](https://github.com/eahydra/tusclient)
-tus `v0.2.1` resumable file upload client in Go
-by [eahydra](https://github.com/eahydra)
-unknown license
-- [vayam/tuspy](https://github.com/vayam/tuspy)
-tus `v0.2.0` resumable file upload client in Python.
-licensed under Apache License, Version 2.0
-by [Naren Venkataraman](https://github.com/vayam)
+#### Server
+
 - [vayam/brewtus](https://github.com/vayam/brewtus)
 tus `v0.2.1` resumable file upload server in node.js.
-licensed under Apache License, Version 2.0
 by [Naren Venkataraman](https://github.com/vayam)
+licensed under Apache License, Version 2.0
+
+#### Client
+
 - [leblanc-simon/php-tus](https://github.com/leblanc-simon/php-tus)
-tus `v0.2.1` resumable file upload client in PHP
+Add tus `v0.2.1` resumable file uploads to PHP clients
 by [Simon Leblanc](https://github.com/leblanc-simon)
 licensed under MIT
+
+- [eahydra/tusclient](https://github.com/eahydra/tusclient)
+Add tus `v0.2.1` resumable file uploads to Go clients
+by [eahydra](https://github.com/eahydra)
+license unknown
+
+- [vayam/tuspy](https://github.com/vayam/tuspy)
+Add tus `v0.2.0` resumable file uploads to Python clients
+by [Naren Venkataraman](https://github.com/vayam)
+licensed under Apache License, Version 2.0
+
+- [tus/tus-ios-client](https://github.com/tus/tus-ios-client)
+Add tus resumable file uploads to iOS clients <span class="muted">&mdash; In the works</span>
+by tus core
+licensed under MIT
+
+- [tus/tus-android-client](https://github.com/tus/tus-android-client)
+Add tus resumable file uploads to Android clients <span class="muted">&mdash; Planned</span>
+by tus core
+licensed under MIT
+
+
