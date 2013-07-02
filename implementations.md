@@ -45,7 +45,7 @@ Add tus `v0.2.1` resumable file uploads to <strong>PHP</strong> clients<br />
 Licensed under MIT<br />
 
 - [eahydra/tusclient](https://github.com/eahydra/tusclient)
-<span class="muted">&mdash; by [eahydra](https://github.com/eahydra)<br /></span>
+<span class="muted">&mdash; by [Hydra Ea](https://github.com/eahydra)<br /></span>
 Add tus `v0.2.1` resumable file uploads to <strong>Go</strong> clients<br />
 Unknown license<br />
 
@@ -55,15 +55,16 @@ Add tus `v0.2.0` resumable file uploads to <strong>Python</strong> clients<br />
 Licensed under Apache License, Version 2.0<br />
 
 - [tus/tus-ios-client](https://github.com/tus/tus-ios-client)
-<span class="muted">&mdash; by [tus](/about.html)<br /></span>
+<span class="muted">&mdash; by [Alexis Hildebrandt](https://github.com/afh)<br /></span>
 Add tus resumable file uploads to <strong>iOS</strong> clients <span class="muted">&mdash; In the works</span><br />
 Licensed under MIT<br />
 
+<!--
 - [tus/tus-android-client](https://github.com/tus/tus-android-client)
 <span class="muted">&mdash; by [tus](/about.html)<br /></span>
 Add tus resumable file uploads to <strong>Android</strong> clients <span class="muted">&mdash; Planned</span><br />
 Licensed under MIT<br />
-
+-->
 
 #### Server
 
