@@ -47,7 +47,7 @@ Licensed under MIT<br />
 - [eahydra/tusclient](https://github.com/eahydra/tusclient)
 <span class="muted">&mdash; by [Hydra Ea](https://github.com/eahydra)<br /></span>
 Add tus `v0.2.1` resumable file uploads to <strong>Go</strong> clients<br />
-Unknown license<br />
+Licensed under MIT<br />
 
 - [vayam/tuspy](https://github.com/vayam/tuspy)
 <span class="muted">&mdash; by [Naren Venkataraman](https://github.com/vayam)<br /></span>
