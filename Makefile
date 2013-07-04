@@ -20,11 +20,11 @@ site:
 	jekyll build
 
 community:
-	#--repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
-	npm install on-the-githubs -v1.2.1
+	# --repo tus-resumable-upload-protocol \
+	npm install on-the-githubs -v1.3.0
 	$(onthegithubs_dir)/bin/ghcommunity-cache \
 	 --user tus \
-	 --repo tus-resumable-upload-protocol \
+	 --repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
 	 --format html \
 	 --concurrency 1 \
 	 --input _site/about.html \
