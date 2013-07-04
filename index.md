@@ -58,7 +58,6 @@ title: Resumable File Uploads
 
 ## On the GitHubs
 
-<link href="//kvz.github.io/on-the-githubs/css/on-the-githubs.css" rel="stylesheet" />
 <div class="on-the-githubs-events" data-event-source="orgs/tus">
   Loading...
 </div>
