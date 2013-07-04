@@ -24,20 +24,5 @@ contributions, be it patches, comments or questions.
 If you'd like to chat, we're hanging on freenode.net in `#tusio` - this is also
 the official twitter hash tag.
 
-<div class="community" data-contains="members, collaborators, contributors">
-  <h3>Contributors (<span>0</span>)</h3>
-  <p>People coding</p>
-  <div></div>
-</div>
 
-<div class="community" data-contains="issues-comments, issues">
-  <h3>Collaborators (<span>0</span>)</h3>
-  <p>People commenting</p>
-  <div></div>
-</div>
-
-<div class="community" data-contains="subscribers, stargazers">
-  <h3>Watchers (<span>0</span>)</h3>
-  <p>People watching</p>
-  <div></div>
-</div>
+<div class="on-the-githubs-community" />

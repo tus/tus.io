@@ -68,14 +68,19 @@
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.js"></script>
-    <script src="/assets/js/jquery.tmpl.js"></script>
-    <script src="/assets/js/jquery.timeago.js"></script>
+
+    <script src="//kvz.github.io/on-the-githubs/js/jquery.timeago.js"></script>
+    <script src="//kvz.github.io/on-the-githubs/js/jquery.ghevents.js"></script>
+
     <script src="/assets/js/main.js?v0.0.4"></script>
     <script src="/assets/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
     <script src="/assets/js/jquery-file-upload/js/jquery.fileupload.js"></script>
     <script src="/assets/js/jquery.tus.js"></script>
     <script type="text/javascript">
       window.tusdEndpoint = '{{ tusd_endpoint }}';
+    </script>
+    <script type="text/javascript">
+      $('.on-the-githubs-events').ghevents();
     </script>
     <script src="/assets/js/upload-demo.js"></script>
   </body>

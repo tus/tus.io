@@ -5,3 +5,6 @@
 protocols/*.html
 assets/json/*.json
 protocols/resumable-upload.html
+node_modules/
+
+.DS_Store

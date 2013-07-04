@@ -36,8 +36,8 @@ make build
 ## Deployment
 
 The tus.io site is developed from this repository.
-It is built and then pushed into the `master` branch of the `tus.github.io` repo. 
-This is done so we can host it on `tus.io` without subdirs 
+It is built and then pushed into the `master` branch of the `tus.github.io` repo.
+This is done so we can host it on `tus.io` without subdirs
 (would not be possible with a project page in `gh-pages` branch).
 
 The protocol is pulled in as a submodule from  the `tus-resumable-upload-protocol` repo.
@@ -52,5 +52,5 @@ make # builds protocols, community then runs rake site:publish
 To compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
 have a Git repo initialized there, and have the thing force-pushed to master branch of the `tus.github.io` repo.
 
-Up to ten minutes later (but mostly after a few seconds), 
-GitHub will have updated the [tus.io]() site accordingly. 
+Up to ten minutes later (but mostly after a few seconds),
+GitHub will have updated the [tus.io]() site accordingly.
