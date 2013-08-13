@@ -8,7 +8,10 @@ ghpages_repo="tus/tus.github.io"
 ghpages_branch="master"
 
 
-all: protocol site community publish
+all: site protocol community publish
+
+site:
+	jekyll build
 
 protocol:
 	git submodule update --init
@@ -16,9 +19,6 @@ protocol:
 	make -C $(protocol_dir) $(protocol_html)
 	echo "---\nlayout: protocol\ntitle: tus resmakeumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
 	cat "$(protocol_dir)/$(protocol_html)" >> "$(protocol_target)"
-
-site:
-	jekyll build
 
 community:
 	# --repo tus-resumable-upload-protocol \

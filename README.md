@@ -22,7 +22,6 @@ On more recent Jekyll installs it's
 $ jekyll serve --watch
 ```
 
-
 Next, point your browser to http://127.0.0.1:4000/
 
 **Note** Some things like the protocol, and contributor/stargazer lists are replaced with
@@ -30,7 +29,8 @@ up to date versions on deploy.
 If you want to have up to date versions of these locally too, run:
 
 ```bash
-make build
+make protocol
+make community
 ```
 
 ## Deployment
