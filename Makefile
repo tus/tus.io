@@ -22,7 +22,7 @@ protocol:
 
 community:
 	# --repo tus-resumable-upload-protocol \
-	npm install on-the-githubs -v1.3.6
+	npm install on-the-githubs -v1.3.7
 	$(onthegithubs_dir)/bin/ghcommunity-cache \
 	 --user tus \
 	 --repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
