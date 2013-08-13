@@ -25,4 +25,4 @@ If you'd like to chat, we're hanging on freenode.net in `#tusio` - this is also
 the official twitter hash tag.
 
 
-<div class="on-the-githubs-community" />
+replaced-by-on-the-githubs

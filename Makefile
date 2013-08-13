@@ -12,8 +12,9 @@ all: protocol site community publish
 
 protocol:
 	git submodule update --init
+	cd $(protocol_dir) && npm install robotskirt -v2.7.1
 	make -C $(protocol_dir) $(protocol_html)
-	echo "---\nlayout: protocol\ntitle: tus resumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
+	echo "---\nlayout: protocol\ntitle: tus resmakeumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
 	cat "$(protocol_dir)/$(protocol_html)" >> "$(protocol_target)"
 
 site:
@@ -21,14 +22,14 @@ site:
 
 community:
 	# --repo tus-resumable-upload-protocol \
-	npm install on-the-githubs -v1.3.0
+	npm install on-the-githubs -v1.3.6
 	$(onthegithubs_dir)/bin/ghcommunity-cache \
 	 --user tus \
 	 --repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
 	 --format html \
 	 --concurrency 1 \
 	 --input _site/about.html \
-	 --tag '<div class="on-the-githubs-community" />' \
+	 --tag 'replaced-by-on-the-githubs' \
 	 --output _site/about.html \
 	 --debug
 
