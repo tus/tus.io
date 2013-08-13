@@ -29,7 +29,7 @@ community:
 	 --format html \
 	 --concurrency 1 \
 	 --input _site/about.html \
-	 --tag 'replaced-by-on-the-githubs' \
+	 --tag '<p>replaced-by-on-the-githubs</p>' \
 	 --output _site/about.html \
 	 --debug
 
