@@ -15,7 +15,7 @@ site:
 
 protocol:
 	git submodule update --init
-	cd $(protocol_dir) && npm install robotskirt -v2.7.1
+	cd $(protocol_dir) && npm install
 	make -C $(protocol_dir) $(protocol_html)
 	echo "---\nlayout: protocol\ntitle: tus resmakeumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
 	cat "$(protocol_dir)/$(protocol_html)" >> "$(protocol_target)"
