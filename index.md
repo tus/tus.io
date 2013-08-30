@@ -58,7 +58,7 @@ title: Resumable File Uploads
 
 ## On the GitHubs
 
-<div class="on-the-githubs-events" data-event-source="orgs/tus">
+<div class="on-the-githubs" data-event-source="orgs/tus">
   Loading...
 </div>
 

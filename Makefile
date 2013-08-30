@@ -22,13 +22,13 @@ protocol:
 
 community:
 	npm install
-	$(onthegithubs_dir)/bin/ghcommunity-cache \
+	$(onthegithubs_dir)/bin/in-the-githubs \
 	 --user tus \
 	 --repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
 	 --format html \
 	 --concurrency 1 \
 	 --input _site/about.html \
-	 --tag '<p>replaced-by-on-the-githubs</p>' \
+	 --tag '<p>replaced-by-in-the-githubs</p>' \
 	 --output _site/about.html \
 	 --debug
 
