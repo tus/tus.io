@@ -69,6 +69,11 @@ Licensed under MIT<br />
 
 #### Server
 
+- [picocandy/rubytus](https://github.com/picocandy/rubytus)
+<span class="muted">&mdash; by [PicoCandy](https://github.com/picocandy)<br /></span>
+Released as a ruby gem - tus `v0.2.1` powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> app<br /><br />
+Licensed under MIT<br />
+
 - [vayam/brewtus](https://github.com/vayam/brewtus)
 <span class="muted">&mdash; by [Naren Venkataraman](https://github.com/vayam)<br /></span>
 Add tus `v0.2.1` resumable file uploads to <strong>node.js</strong> servers<br />
