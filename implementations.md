@@ -15,12 +15,12 @@ These projects are reference implementations maintained by the protocol develope
 
 - [tus-jquery-client](https://github.com/tus/tus-jquery-client)
 <span class="muted">&mdash; by [tus](/about.html)<br /></span>
-Add tus `v0.2.1` resumable file uploads to <strong>client</strong> web apps that are built with jQuery<br />
+Add tus `v0.2.1` resumable file uploads to <strong>client</strong> web apps that are built with <strong>jQuery</strong><br />
 Licensed under MIT<br />
 
 - [tusd](https://github.com/tus/tusd)
 <span class="muted">&mdash; by [tus](/about.html)<br /></span>
-A stand-alone <strong>server</strong> written in Go to handle resumable file uploads using the tus `v0.2.1` protocol.
+A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus `v0.2.1` protocol.
 You can run this to test client implementations with.<br />
 Licensed under MIT<br />
 
@@ -71,7 +71,7 @@ Licensed under MIT<br />
 
 - [picocandy/rubytus](https://github.com/picocandy/rubytus)
 <span class="muted">&mdash; by [PicoCandy](https://github.com/picocandy)<br /></span>
-Released as a ruby gem - tus `v0.2.1` powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> app<br /><br />
+Released as a ruby gem - tus `v0.2.1` powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> app<br />
 Licensed under MIT<br />
 
 - [vayam/brewtus](https://github.com/vayam/brewtus)
