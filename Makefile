@@ -44,7 +44,7 @@ publish:
 
 	cd /tmp/publish-ghpages \
 	 && git init && git add . \
-	 && git commit -m "Update $(ghpages_repo) site by $${USER}" \
+	 && git commit -nm "Update $(ghpages_repo) site by $${USER}" \
 	 && git remote add origin git@github.com:$(ghpages_repo).git \
 	 && git push origin master:refs/heads/$(ghpages_branch) --force
 
