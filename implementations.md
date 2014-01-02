@@ -40,6 +40,11 @@ what protocol version you're targetting.
 
 #### Client
 
+- [arifsetiawan/qt-upload-plugin](https://github.com/arifsetiawan/qt-upload-plugin)
+<span class="muted">&mdash; by [arif setiawan](https://github.com/arifsetiawan)<br /></span>
+Add tus `v0.2.1` resumable file uploads to <strong>Qt C++ (Qt plugin)</strong> clients<br />
+Licensed under MIT<br />
+
 - [leblanc-simon/php-tus](https://github.com/leblanc-simon/php-tus)
 <span class="muted">&mdash; by [Simon Leblanc](https://github.com/leblanc-simon)<br /></span>
 Add tus `v0.2.1` resumable file uploads to <strong>PHP</strong> clients<br />
@@ -69,9 +74,15 @@ Licensed under MIT<br />
 
 #### Server
 
+- [codeeply/tusdpy](https://github.com/codeeply/tusdpy)
+<span class="muted">&mdash; by [codeeply](https://github.com/codeeply)<br /></span>
+Add tus `v0.2.1` resumable file uploads to <strong>Python</strong> servers<br />
+Currently only the core protocol (no extensions) is supported.<br />
+Licensed under MIT<br />
+
 - [picocandy/rubytus](https://github.com/picocandy/rubytus)
 <span class="muted">&mdash; by [PicoCandy](https://github.com/picocandy)<br /></span>
-Released as a ruby gem - tus `v0.2.1` powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> app<br />
+Released as a ruby gem - tus `v0.2.1` powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> apps<br />
 Licensed under MIT<br />
 
 - [vayam/brewtus](https://github.com/vayam/brewtus)
