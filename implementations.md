@@ -41,7 +41,7 @@ what protocol version you're targetting.
 #### Client
 
 - [arifsetiawan/qt-upload-plugin](https://github.com/arifsetiawan/qt-upload-plugin)
-<span class="muted">&mdash; by [arif setiawan](https://github.com/arifsetiawan)<br /></span>
+<span class="muted">&mdash; by [Nurul Arif Setiawan](https://github.com/arifsetiawan)<br /></span>
 Add tus `v0.2.1` resumable file uploads to <strong>Qt C++ (Qt plugin)</strong> clients<br />
 Licensed under MIT<br />
 
