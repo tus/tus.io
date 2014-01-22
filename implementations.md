@@ -60,6 +60,11 @@ Licensed under MIT<br />
 Add tus `v0.2.0` resumable file uploads to <strong>Python</strong> clients<br />
 Licensed under Apache License, Version 2.0<br />
 
+- [vangheem/tus](https://github.com/vangheem/tus)
+<span class="muted">&mdash; by [Nathan Van Gheem](https://github.com/vangheem)<br /></span>
+Integrate tus `v0.2.1` with existing <strong>Python</strong> web technologies(WSGI, WebOb, Plone, Zope2)<br />
+Licensed under MIT<br />
+
 - [tus/tus-ios-client](https://github.com/tus/tus-ios-client)
 <span class="muted">&mdash; by [Alexis Hildebrandt](https://github.com/afh)<br /></span>
 Add tus resumable file uploads to <strong>iOS</strong> clients <span class="muted">&mdash; In the works</span><br />
