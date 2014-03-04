@@ -8,7 +8,7 @@ ghpages_repo="tus/tus.github.io"
 ghpages_branch="master"
 
 
-all: site protocol community publish
+all: protocol site community publish
 
 site:
 	jekyll build
@@ -32,7 +32,7 @@ community:
 	 --output _site/about.html \
 	 --debug
 
-publish:
+publish: protocol site community publish
 	rm -rf /tmp/publish-ghpages
 	mkdir -p /tmp/publish-ghpages
 
