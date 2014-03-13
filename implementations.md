@@ -95,6 +95,12 @@ Licensed under MIT<br />
 Add tus `v0.2.1` resumable file uploads to <strong>node.js</strong> servers<br />
 Licensed under Apache License, Version 2.0<br />
 
+- [leblanc-simon/php-tus](https://github.com/leblanc-simon/php-tus)
+<span class="muted">&mdash; by [Simon Leblanc](https://github.com/leblanc-simon)<br /></span>
+Add tus `v0.2.1` resumable file uploads to <strong>PHP</strong> servers (under Apache, Nginx, etc)<br />
+Licensed under MIT<br />
+
+
 Drop a line if you built an open source tus implementation, and you'll be
 listed here.
 
