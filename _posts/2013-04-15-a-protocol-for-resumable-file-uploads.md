@@ -53,5 +53,5 @@ you may have.
 
 Later this week we will also release some initial clients for
 [jQuery](https://github.com/tus/tus-jquery-client) and
-[iOS](https://github.com/tus/tus-ios-client), so make sure to follow this blog
+[iOS](https://github.com/tus/TUSKit), so make sure to follow this blog
 and these repositories for future updates!

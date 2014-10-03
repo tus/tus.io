@@ -65,7 +65,7 @@ Licensed under Apache License, Version 2.0<br />
 Integrate tus `v0.2.1` with existing <strong>Python</strong> web technologies(WSGI, WebOb, Plone, Zope2)<br />
 Licensed under MIT<br />
 
-- [tus/tus-ios-client](https://github.com/tus/tus-ios-client)
+- [tus/TUSKit](https://github.com/tus/TUSKit)
 <span class="muted">&mdash; by [Alexis Hildebrandt](https://github.com/afh)<br /></span>
 Add tus resumable file uploads to <strong>iOS</strong> clients <span class="muted">&mdash; In the works</span><br />
 Licensed under MIT<br />

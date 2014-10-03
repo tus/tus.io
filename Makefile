@@ -24,7 +24,7 @@ community:
 	npm install
 	$(onthegithubs_dir)/bin/in-the-githubs \
 	 --user tus \
-	 --repo tus.io,tusd,tus-jquery-client,tus-ios-client,tus-android-client,tus-resumable-upload-protocol \
+	 --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
 	 --format html \
 	 --concurrency 1 \
 	 --input _site/about.html \
