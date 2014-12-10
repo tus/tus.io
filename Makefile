@@ -10,17 +10,17 @@ ghpages_branch="master"
 
 all: install build deploy
 
-_site:
+site:
 	bundle exec jekyll build
 
-_protocol:
+protocol:
 	git submodule update --init
-	cd $(protocol_dir) && npm install
+	cd $(protocol_dir) && git checkout master && git pull && npm install
 	make -C $(protocol_dir) $(protocol_html)
 	echo "---\nlayout: protocol\ntitle: tus resumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
 	cat "$(protocol_dir)/$(protocol_html)" >> "$(protocol_target)"
 
-_community:
+community:
 	$(onthegithubs_dir)/bin/in-the-githubs \
 	 --user tus \
 	 --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
@@ -38,7 +38,7 @@ install:
 	bundle install
 	npm install
 
-build: _protocol _site _community
+build: protocol site community
 	echo "Done :)"
 
 deploy: build
@@ -61,10 +61,10 @@ deploy: build
 
 
 .PHONY: \
-	_community \
+	community \
 	install \
 	build \
 	preview \
-	_protocol \
+	protocol \
 	deploy \
-	_site \
+	site \
