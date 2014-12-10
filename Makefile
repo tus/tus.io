@@ -11,7 +11,7 @@ ghpages_branch="master"
 all: protocol site community publish
 
 site:
-	jekyll build
+	bundle exec jekyll build
 
 protocol:
 	git submodule update --init
@@ -35,6 +35,9 @@ community:
 publish: protocol site community publish
 	rm -rf /tmp/publish-ghpages
 	mkdir -p /tmp/publish-ghpages
+
+install:
+	bundle install
 
 	# Custom steps
 	cp -Raf ./_site/* /tmp/publish-ghpages/
