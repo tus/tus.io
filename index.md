@@ -49,7 +49,7 @@ title: Resumable File Uploads
     <a href="{{ post.url }}">{{ post.title }}</a>
     by
 
-    <a target="_blank" href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a>
+    <a href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a>
   </li>
   {% endfor %}
 </ol>
