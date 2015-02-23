@@ -1,4 +1,6 @@
 /_site
+/_vendors
+/assets/build
 /_jekyll_s3.yml
 
 # Built by `make build`:
