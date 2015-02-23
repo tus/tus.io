@@ -4,8 +4,8 @@ protocol_target="protocols/resumable-upload.html"
 
 onthegithubs_dir="node_modules/on-the-githubs"
 
-ghpages_repo="tus/tus.github.io"
-ghpages_branch="master"
+ghpages_repo="tus/tus.io"
+ghpages_branch="gh-pages"
 
 
 all: install build deploy
@@ -41,24 +41,33 @@ install:
 build: protocol site community
 	echo "Done :)"
 
-deploy: build
-	rm -rf /tmp/deploy-ghpages
-	mkdir -p /tmp/deploy-ghpages
+deploy:
+	mkdir -p /tmp/deploy-$(ghpages_repo)
 
 	# Custom steps
-	cp -Raf ./_site/* /tmp/deploy-ghpages/
-	rm -rf /tmp/deploy-ghpages/{lib,node_modules}
+	rsync \
+   --archive \
+   --delete \
+   --exclude=.git* \
+   --exclude=node_modules \
+   --exclude=lib \
+   --itemize-changes \
+   --checksum \
+   --no-times \
+   --no-group \
+   --no-motd \
+   --no-owner \
+	./_site/ /tmp/deploy-$(ghpages_repo)
 
-	echo 'This repo is just a deploy target. Do not edit. You changes will be lost.' > /tmp/deploy-ghpages/README.md
+	echo 'This repo is just a deploy target. Do not edit. You changes will be lost.' > /tmp/deploy-$(ghpages_repo)/README.md
 
-	cd /tmp/deploy-ghpages \
-	 && git init && git add . \
+	cd /tmp/deploy-$(ghpages_repo) \
+	 && git init && git checkout -B $(ghpages_branch) && git add --all . \
 	 && git commit -nm "Update $(ghpages_repo) _site by $${USER}" \
 	 && git remote add origin git@github.com:$(ghpages_repo).git \
-	 && git push origin master:refs/heads/$(ghpages_branch) --force
+	 && git push origin $(ghpages_branch):refs/heads/$(ghpages_branch) --force
 
-	rm -rf /tmp/deploy-ghpages
-
+	rm -rf /tmp/deploy-$(ghpages_repo)
 
 .PHONY: \
 	community \
