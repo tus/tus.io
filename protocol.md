@@ -2,6 +2,7 @@
 layout: protocol
 title: tus resumable upload protocol
 comments: true
+permalink: /protocols/resumable-upload.html
 ---
 
 <!-- CSS based nested ToC numbering thanks to

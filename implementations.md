@@ -103,4 +103,3 @@ Licensed under MIT<br />
 
 Drop a line if you built an open source tus implementation, and you'll be
 listed here.
-
