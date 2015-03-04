@@ -1,5 +1,4 @@
 onthegithubs_dir="node_modules/on-the-githubs"
-
 ghpages_repo="tus/tus.io"
 ghpages_branch="gh-pages"
 
@@ -19,9 +18,8 @@ build-site:
 
 .PHONY: build-protocol
 build-protocol:
-	@echo "--> Building protocol.."
-
-	wget \
+	@echo "--> Fetching latest protocol.."
+	@wget \
 	  https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md \
 		-O _includes/tus.md
 
@@ -55,25 +53,25 @@ deploy:
 
 	# Custom steps
 	@rsync \
-   --archive \
-   --delete \
-   --exclude=.git* \
-   --exclude=node_modules \
-   --exclude=lib \
-   --itemize-changes \
-   --checksum \
-   --no-times \
-   --no-group \
-   --no-motd \
-   --no-owner \
+    --archive \
+    --delete \
+    --exclude=.git* \
+    --exclude=node_modules \
+    --exclude=lib \
+    --itemize-changes \
+    --checksum \
+    --no-times \
+    --no-group \
+    --no-motd \
+    --no-owner \
 	./_site/ /tmp/deploy-$(ghpages_repo)
 
 	@echo 'This repo is just a deploy target. Do not edit. You changes will be lost.' > /tmp/deploy-$(ghpages_repo)/README.md
 
 	@cd /tmp/deploy-$(ghpages_repo) \
-	 && git init && git checkout -B $(ghpages_branch) && git add --all . \
-	 && git commit -nm "Update $(ghpages_repo) _site by $${USER}" \
-	 && git remote add origin git@github.com:$(ghpages_repo).git \
-	 && git push origin $(ghpages_branch):refs/heads/$(ghpages_branch) --force
+	  && git init && git checkout -B $(ghpages_branch) && git add --all . \
+	  && git commit -nm "Update $(ghpages_repo) _site by $${USER}" \
+	  && git remote add origin git@github.com:$(ghpages_repo).git \
+	  && git push origin $(ghpages_branch):refs/heads/$(ghpages_branch) --force
 
 	@rm -rf /tmp/deploy-$(ghpages_repo)
