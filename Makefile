@@ -1,8 +1,3 @@
-protocol_dir="lib/tus-resumable-upload-protocol"
-protocol_html="protocol.html"
-protocol_md="protocol.md"
-protocol_target="_includes/tus.md"
-
 onthegithubs_dir="node_modules/on-the-githubs"
 
 ghpages_repo="tus/tus.io"
@@ -25,9 +20,10 @@ build-site:
 .PHONY: build-protocol
 build-protocol:
 	@echo "--> Building protocol.."
-	@git submodule update --init
-	@cd $(protocol_dir) && git checkout master && git pull
-	@cp -avf "$(protocol_dir)/$(protocol_md)" "$(protocol_target)"
+
+	wget \
+	  https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md \
+		-O _includes/tus.md
 
 .PHONY: build-community
 build-community:
