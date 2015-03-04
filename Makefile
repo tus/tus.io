@@ -1,6 +1,7 @@
 protocol_dir="lib/tus-resumable-upload-protocol"
 protocol_html="protocol.html"
-protocol_target="protocols/resumable-upload.html"
+protocol_md="protocol.md"
+protocol_target="_includes/tus.md"
 
 onthegithubs_dir="node_modules/on-the-githubs"
 
@@ -25,10 +26,8 @@ build-site:
 build-protocol:
 	@echo "--> Building protocol.."
 	@git submodule update --init
-	@cd $(protocol_dir) && git checkout master && git pull && npm install
-	@make -C $(protocol_dir) $(protocol_html)
-	@echo "---\nlayout: protocol\ntitle: tus resumable upload protocol\ncomments: true\n---\n" > "$(protocol_target)"
-	@cat "$(protocol_dir)/$(protocol_html)" >> "$(protocol_target)"
+	@cd $(protocol_dir) && git checkout master && git pull
+	@cp -avf "$(protocol_dir)/$(protocol_md)" "$(protocol_target)"
 
 .PHONY: build-community
 build-community:

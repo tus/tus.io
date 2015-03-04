@@ -6,7 +6,7 @@
 # Built by `make build`:
 protocols/*.html
 assets/json/*.json
-protocols/resumable-upload.html
+_includes/tus.md
 node_modules/
 
 .DS_Store
