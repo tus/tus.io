@@ -10,12 +10,20 @@ ghpages_branch="gh-pages"
 .PHONY: all
 all: install build deploy
 
+.PHONY: install
+install:
+	@echo "--> Installing dependencies.."
+	@npm install
+	@jekyll --version || sudo gem install jekyll -v '2.5.2'
+
 .PHONY: build-site
 build-site:
-	@bundle exec jekyll build
+	@echo "--> Building site.."
+	@jekyll build
 
 .PHONY: build-protocol
 build-protocol:
+	@echo "--> Building protocol.."
 	@git submodule update --init
 	@cd $(protocol_dir) && git checkout master && git pull && npm install
 	@make -C $(protocol_dir) $(protocol_html)
@@ -24,6 +32,7 @@ build-protocol:
 
 .PHONY: build-community
 build-community:
+	@echo "--> Building community.."
 	@$(onthegithubs_dir)/bin/in-the-githubs \
 	 --user tus \
 	 --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
@@ -34,21 +43,19 @@ build-community:
 	 --output _site/about.html \
 	 --debug
 
-.PHONY: preview
-preview: install build
-	@bundle exec jekyll serve --skip-initial-build
-
-.PHONY: install
-install:
-	@bundle install
-	@npm install
-
 .PHONY: build
 build: build-protocol build-site build-community
+	@echo "--> Building all.."
 	@echo "Done :)"
+
+.PHONY: preview
+preview: install build
+	@echo "--> Running preview.."
+	jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: deploy
 deploy:
+	@echo "--> Deploying to GitHub pages.."
 	@mkdir -p /tmp/deploy-$(ghpages_repo)
 
 	# Custom steps
