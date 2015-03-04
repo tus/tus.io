@@ -1,14 +1,10 @@
 /_site
 /_vendors
 /assets/build
-/_jekyll_s3.yml
 
 # Built by `make build`:
 protocols/*.html
 assets/json/*.json
 _includes/tus.md
 node_modules/
-
 .DS_Store
-
-Gemfile.lock
