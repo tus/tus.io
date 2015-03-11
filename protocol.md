@@ -5,6 +5,8 @@ comments: true
 permalink: /protocols/resumable-upload.html
 ---
 
+## Protocol
+
 <!-- CSS based nested ToC numbering thanks to
      https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters -->
 

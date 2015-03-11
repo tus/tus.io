@@ -21,7 +21,10 @@ build-protocol:
 	@echo "--> Fetching latest protocol.."
 	@wget \
 	  https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md \
-		-O _includes/tus.md
+		--quiet \
+		--output-document=_includes/tus.md
+	# Removing first two lines to allow our own h2 header
+	@echo "$$(tail -n +3 ./_includes/tus.md)" > ./_includes/tus.md
 
 .PHONY: build-community
 build-community:
