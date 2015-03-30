@@ -13,7 +13,7 @@ kramdown:
 rss_feed: http://feeds.feedburner.com/tusio
 navigation:
 - text: Home
-  url: /index.html
+  url: /
 - text: About
   url: /about.html
 - text: Blog
