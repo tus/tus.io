@@ -5,21 +5,7 @@ comments: true
 permalink: /protocols/resumable-upload.html
 ---
 
-## Protocol
-
-<!-- CSS based nested ToC numbering thanks to
-     https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters -->
-
-<style type="text/css">
-  .kramdown-toc ul {
-    counter-reset: section;
-    list-style-type: none;
-  }
-  .kramdown-toc li::before {
-    counter-increment: section;            
-    content: counters(section,".") ". ";
-  }
-</style>
+<h2>Protocol</h2>
 
 <div markdown="1" class="kramdown-toc">
   * This bullet will be replaced with the ToC

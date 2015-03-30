@@ -9,7 +9,13 @@ all: install build deploy
 install:
 	@echo "--> Installing dependencies.."
 	@npm install
+	@bower install
 	@jekyll --version || sudo gem install jekyll -v '2.5.2'
+
+.PHONY: build-assets
+build-assets:
+	@echo "--> Building assets.."
+	@npm run build
 
 .PHONY: build-site
 build-site:
@@ -19,30 +25,38 @@ build-site:
 .PHONY: build-protocol
 build-protocol:
 	@echo "--> Fetching latest protocol.."
-	@wget \
+	@find _includes/tus.md -mtime +10 -exec rm -rf {} \; || true
+	@[ -f _includes/tus.md ] || (wget \
 	  https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md \
 		--quiet \
-		--output-document=_includes/tus.md
-	# Removing first two lines to allow our own h2 header
-	@echo "$$(tail -n +3 ./_includes/tus.md)" > ./_includes/tus.md
+		--output-document=_includes/tus.md \
+		&& echo "$$(tail -n +3 ./_includes/tus.md)" > ./_includes/tus.md)
+	@# Removes first two lines to allow our own h2 header
 
 .PHONY: build-community
 build-community:
 	@echo "--> Building community.."
-	@$(onthegithubs_dir)/bin/in-the-githubs \
-	 --user tus \
-	 --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
-	 --format html \
-	 --concurrency 1 \
-	 --input _site/about.html \
-	 --tag '<p>replaced-by-in-the-githubs</p>' \
-	 --output _site/about.html \
-	 --debug
+	@find _includes/community.html -mtime +10 -exec rm -rf {} \; || true
+	@[ -f _includes/community.html ] || (echo "<p>replaced-by-in-the-githubs</p>" > _includes/community.html \
+		&& $(onthegithubs_dir)/bin/in-the-githubs \
+		 --user tus \
+		 --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
+		 --format html \
+		 --concurrency 1 \
+		 --input _includes/community.html \
+		 --tag '<p>replaced-by-in-the-githubs</p>' \
+		 --output _includes/community.html \
+		 --debug)
 
 .PHONY: build
-build: build-protocol build-site build-community
+build: build-protocol build-assets build-site build-community
 	@echo "--> Building all.."
 	@echo "Done :)"
+
+.PHONY: preview-quick
+preview-quick: build-assets build-site
+	@echo "--> Running preview-quick.."
+	jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: preview
 preview: install build

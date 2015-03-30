@@ -1,17 +1,22 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>{{ page.title }}</title>
 
-    <link rel="shortcut icon" href="/assets/img/favicon.ico">
-    <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="//kvz.github.io/on-the-githubs/css/on-the-githubs.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link href="/assets/build/app.css" rel="stylesheet" type="text/css" />
     <link href="{{ site.rss_feed }}" type="application/rss+xml" rel="alternate" title="Posts">
-  </head>
-  <body>
 
+    <script src="//use.typekit.net/zgo3uyj.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
     {% assign repolink = 'https://github.com/tus' %}
     {% if page.url == '/protocols/resumable-upload.html' %}
       {% assign repolink = 'https://github.com/tus/tus-resumable-upload-protocol' %}
@@ -20,26 +25,67 @@
       {% assign repolink = 'https://github.com/tus/tus.io' %}
     {% endif %}
 
-    <a href="{{ repolink }}"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
-    <div class="container-narrow">
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          {% for link in site.navigation %}
-            {% assign active = nil %}
-            {% if page.url == link.url %}
-              {% assign active = 'active' %}
-            {% endif %}
-            <li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
-          {% endfor %}
-        </ul>
-        <h3 class="muted logo"><a href="/">tus</a></h3>
+    <a href="{{ repolink }}">
+      <img class="ribbon" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+    </a>
+
+    <div class="wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="three columns">
+              <h3 class="logo">
+                <a href="/">
+                  {% if page.url != "/index.html" %}
+                    <img src="/assets/img/favicon.png" class="shield" alt="tus.io" />
+                  {% else %}
+                  {% endif %}
+
+                  <img src="/assets/img/tus7.png" alt="tus.io" />
+                </a>
+              </h3>
+            </div>
+
+            <div class="nine columns nav-container">
+              <a href="#" class="toggler">
+                <span class="hamburger">&#9776;</span>
+                <span class="cross">&#10005;</span>
+              </a>
+
+              <ul class="nav">
+                {% for link in site.navigation %}
+                  {% assign active = nil %}
+                  {% if page.url == link.url %}
+                    {% assign active = 'active' %}
+                  {% endif %}
+                  <li class="{{ active }}">
+                    <a href="{{ link.url }}">{{ link.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+              <div class="u-cf"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <hr>
-      {{ content }}
-      <hr>
+
+      <div class="content">
+        {% if page.container != "none" %}
+        <div class="container">
+        {% endif %}
+
+          {{ content }}
+
+        {% if page.container != "none" %}
+        </div>
+        {% endif %}
+      </div>
 
       {% if page.comments %}
+      <div class="container">
         <div id="disqus_thread"></div>
+
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'tusio'; // required: replace example with your forum shortname
@@ -51,11 +97,14 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      {% endif %}
 
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      {% endif %}
     </div>
+
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-3306079-17']);
@@ -67,22 +116,15 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.js"></script>
 
-    <script src="//kvz.github.io/on-the-githubs/js/jquery.on-the-githubs.min.js"></script>
-
-    <script src="/assets/js/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
-    <script src="/assets/js/jquery-file-upload/js/jquery.fileupload.js"></script>
-    <script src="/assets/js/jquery.tus.js"></script>
     <script type="text/javascript">
       window.tusdEndpoint = '{{ tusd_endpoint }}';
     </script>
+
+    <script type="text/javascript" src="/assets/build/app.js"></script>
+
     <script type="text/javascript">
       $('.on-the-githubs').onthegithubs();
-      // If you use bootstrap and want to enable tooltips:
-      $('a[rel]').tooltip();
     </script>
-    <script src="/assets/js/upload-demo.js"></script>
   </body>
 </html>

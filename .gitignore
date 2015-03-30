@@ -1,10 +1,11 @@
-/_site
-/_vendors
-/assets/build
+_site
+_vendors
+assets/build
 
 # Built by `make build`:
-protocols/*.html
 assets/json/*.json
 _includes/tus.md
 node_modules/
+
+npm-debug.log
 .DS_Store

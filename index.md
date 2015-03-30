@@ -1,80 +1,102 @@
 ---
 layout: default
 title: Resumable File Uploads
+container: "none"
 ---
 
-<div class="jumbotron">
-  <h1>{{ page.title }}</h1>
-  <p class="lead">
-    Users want to share more and more photos and videos. But mobile networks
-    are fragile. Platform APIs are a mess. Every project builds its own file
-    uploader. A thousand one week projects that barely work, when all we need
-    is one real project, done right.
-  </p>
-
-  <p class="lead">
-    We are going to do this right. We will solve reliable file uploads for once
-    and for all. A new open
-    <a href="/protocols/resumable-upload.html">protocol for resumable uploads</a>
-    built on HTTP. Simple, cheap, reusable stacks for clients and servers.
-    Any language, any platform, any network.
-  </p>
-
-  <p class="lead">
-    It's probably an impossible dream. No-one has managed yet.
-    But we're going to give it our best shot.
-    <a target="" href="https://github.com/tus">Join us on GitHub</a> and
-    help us make the world a better place. No more lost cat videos!
-  </p>
-</div>
-
-<hr />
-
-<iframe
-  allowtransparency="true"
-  frameborder="0"
-  scrolling="no"
-  class="twitter-follow-btn"
-  src="//platform.twitter.com/widgets/follow_button.html?screen_name=tus_io"
-  style="width:300px; height:20px;"></iframe>
-
-## Blog
-
-<ol id="posts">
-  {% for post in site.posts %}
-  {% assign author = site.authors[post.author] %}
-  <li>
-    <img src="https://secure.gravatar.com/avatar/{{author.gravatar}}&s=64" class="gravatar">
-    <span class="timeago" title="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%b %e, %Y" }}</span>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    by
-
-    <a href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a>
-  </li>
-  {% endfor %}
-</ol>
-
-<hr />
-
-## On the GitHubs
-
-<div class="on-the-githubs" data-event-source="orgs/tus">
-  Loading...
-</div>
-
-
-<hr />
-
-<div class="jumbotron">
-  <div class="input-append control-group">
-    <form action="http://transloadit.us1.list-manage1.com/subscribe/post?u=98e560c614f2baaf47237f500&amp;id=37aafbe5c1" method="post">
-      <input name="EMAIL" class="input-xlarge" type="email" placeholder="Your e-mail address"/>
-      <input name="SOURCE" type="hidden" value="tus.io"/>
-      <button class="btn btn-success">Keep me posted</button>
-    </form>
+<div class="intro">
+  <div class="container">
+    <img class="banner" src="/assets/img/tus1.png" alt="Tus - Resumable File Uploads" />
   </div>
-  <p>
-  Leave your e-mail to receive infrequent e-mails about major releases and
-  announcements.
-  </p>
+
+  <div class="mission">
+    <div class="container">
+      <p>
+        Users want to share more and more photos and videos. But mobile networks
+        are fragile. Platform APIs are a mess. Every project builds its own file
+        uploader. A thousand one week projects that barely work, when all we need
+        is one real project, done right.
+      </p>
+
+      <p>
+        We are going to do this right. We will solve reliable file uploads for once
+        and for all. A new open
+        <a href="/protocols/resumable-upload.html">protocol for resumable uploads</a>
+        built on HTTP. Simple, cheap, reusable stacks for clients and servers.
+        Any language, any platform, any network.
+      </p>
+
+      <p>
+        It's probably an impossible dream. No-one has managed yet.
+        But we're going to give it our best shot.
+        <a target="" href="https://github.com/tus">Join us on GitHub</a> and
+        help us make the world a better place. No more lost cat videos!
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Recent blog posts</h2>
+
+  <ol class="posts">
+    {% for post in site.posts %}
+    {% assign author = site.authors[post.author] %}
+    <li>
+      <div class="author">
+        <a href="http://twitter.com/{{author.twitter}}" title="{{ author.name }}">
+          <img
+            src="https://secure.gravatar.com/avatar/{{author.gravatar}}&s=64"
+            class="gravatar"
+            alt="{{ author.name }}">
+        </a>
+      </div>
+
+      <div class="post-title">
+        <div class="date">
+          {{ post.date | date: "%b %e, %Y" }}
+        </div>
+
+        <h3>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <div class="on-the-githubs-container">
+    <h2>On the GitHubs</h2>
+
+    <div class="on-the-githubs" data-event-source="orgs/tus">
+      Loading...
+    </div>
+  </div>
+</div>
+
+<div class="subscription-form">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h3>Get latest news and updates!</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <p>
+          Leave your e-mail to receive infrequent e-mails about
+          major releases and announcements.
+        </p>
+      </div>
+
+      <div class="six columns">
+        <form action="http://transloadit.us1.list-manage1.com/subscribe/post?u=98e560c614f2baaf47237f500&amp;id=37aafbe5c1" method="post">
+          <input name="EMAIL" type="email" placeholder="Your e-mail address..."/>
+          <input name="SOURCE" type="hidden" value="tus.io"/>
+          <button class="button-primary">Subscribe!</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

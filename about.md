@@ -21,8 +21,9 @@ upload protocol](protocols/resumable-upload.html), along with client and server
 Are you passionate about better file uploading? Join us! We welcome all
 contributions, be it patches, comments or questions.
 
-If you'd like to chat, we're hanging on freenode.net in `#tusio` - this is also
-the official twitter hash tag.
+If you'd like to chat, we're hanging out in a Slack chatroom, 
+shoot us an invite request on [@tus_io](https://twitter.com/tus_io) on Twitter to get involved.
 
+<!-- Use `make build-community` to fetch latest authors -->
 
-replaced-by-in-the-githubs
+{% include community.html %}

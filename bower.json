@@ -1,0 +1,12 @@
+{
+  "name": "tus-io",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "jquery-file-upload": "7.4.1",
+    "jquery-tus": "*",
+    "jquery-timeago": "~1.4.1",
+    "skeleton": "~2.0.4",
+    "animate.css": "~3.2.3"
+  }
+}

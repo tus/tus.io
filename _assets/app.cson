@@ -1,0 +1,15 @@
+##
+# Files listed here will be concatenated to
+# ./build/app.js
+#
+[
+	'../_vendors/jquery/jquery.js'
+	'../_vendors/jquery-timeago/jquery.timeago.js'
+	'../node_modules/on-the-githubs/js/jquery.on-the-githubs.js'
+	'../_vendors/jquery-file-upload/js/vendor/jquery.ui.widget.js'
+	'../_vendors/jquery-file-upload/js/jquery.fileupload.js'
+	'../_vendors/jquery-tus/js/jquery.tus.js'
+
+	'./js/main.js'
+	'./js/upload-demo.js'
+]

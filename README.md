@@ -6,8 +6,23 @@ The tus.io website.
 
 Install the required ruby gems:
 
+```bash
+$ gem install jekyll therubyracer redcarpet
 ```
-gem install jekyll jekyll-less therubyracer redcarpet
+
+Build assets:
+
+```bash
+$ npm install
+$ bower install
+$ npm run build
+```
+
+You would also be required to run this command
+to fetch some info from original [Tus protocol](https://github.com/tus/tus-resumable-upload-protocol) repository:
+
+```bash
+$ make build-protocol
 ```
 
 After this you can run the local development server like this:

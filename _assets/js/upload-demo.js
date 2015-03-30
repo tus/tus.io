@@ -1,14 +1,14 @@
-$(function() {
+/* global $, console, tus */
+$(function () {
   'use strict';
 
   var $progress = $('.js_progress');
   var $download = $('.js_download');
-
   var host = window.tusdEndpoint || 'http://master.tus.io';
-  $('input[type=file]').change(function() {
-    var $input  = $(this);
-    var $parent = $input.parent();
-    var file    = this.files[0];
+
+  $('input[type=file]').change(function () {
+    var $input = $(this);
+    var file = this.files[0];
     console.log('selected file', file);
 
     $('.js-stop').removeClass('disabled');
@@ -25,23 +25,23 @@ $(function() {
     $('.progress').addClass('active');
 
     upload = tus.upload(file, options)
-      .fail(function(error) {
+      .fail(function (error) {
         console.log('Failed because: ' + error);
       })
-      .always(function() {
+      .always(function () {
         $input.val('');
         $('.js-stop').addClass('disabled');
         $('.progress').removeClass('active');
       })
-      .progress(function(e, bytesUploaded, bytesTotal) {
+      .progress(function (e, bytesUploaded, bytesTotal) {
         var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
         $progress.css('width', percentage + '%');
       })
-      .done(function(url, file) {
+      .done(function (url, file) {
         $progress.css('width', '100%');
         $progress.parent().hide();
         $download.attr('href', url);
-        $download.show();
+        $download.css({display: 'inline-block'});
         $download.text('Download '+file.name);
       });
   });
@@ -51,30 +51,30 @@ $(function() {
   // jQuery is not fixing because it's a FF bug.
   // FF is fixing but only as of version 21+ so to support older versions
   // in combination with jQuery 1.4+, we'll need this:
-  function fixFirefoxXhrHeaders() {
+  var fixFirefoxXhrHeaders = function () {
     var _super = $.ajaxSettings.xhr;
     $.ajaxSetup({
-      xhr: function() {
+      xhr: function () {
         var xhr = _super();
         var getAllResponseHeaders = xhr.getAllResponseHeaders;
 
-        xhr.getAllResponseHeaders = function() {
+        xhr.getAllResponseHeaders = function () {
           var allHeaders = getAllResponseHeaders.call(xhr);
           if (allHeaders) {
             return allHeaders;
           }
 
-          allHeaders = "";
-          var concatHeader = function(i, headerName) {
+          allHeaders = '';
+          var concatHeader = function (i, headerName) {
             if (xhr.getResponseHeader(headerName)) {
-              allHeaders += headerName + ": " + xhr.getResponseHeader(headerName) + "\n";
+              allHeaders += headerName + ': ' + xhr.getResponseHeader(headerName) + '\n';
             }
           };
 
-          $(["Cache-Control", "Content-Language", "Content-Type", "Expires", "Last-Modified", "Pragma"]).each(concatHeader);
+          $(['Cache-Control', 'Content-Language', 'Content-Type', 'Expires', 'Last-Modified', 'Pragma']).each(concatHeader);
 
           // non-simple headers (add more as required)
-          $(["Location", "Range", "Offset", "Content-Range"]).each(concatHeader);
+          $(['Location', 'Range', 'Offset', 'Content-Range']).each(concatHeader);
 
           return allHeaders;
         };
@@ -82,7 +82,7 @@ $(function() {
         return xhr;
       }
     });
-  }
+  };
   fixFirefoxXhrHeaders();
 
   // disabled for now since it doesn't fully work with the PATCH and Offset
@@ -111,7 +111,7 @@ $(function() {
   //     }
   // });
 
-  function upload(data) {
+  var upload = function (data) {
     var file = data.files[0];
     var localId = fingerprint(file);
     var size = file.size;
@@ -126,10 +126,10 @@ $(function() {
           'Content-Range': 'bytes */' + size,
           'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
         },
-        success: function(theData, status, jqXHR) {
+        success: function (theData, status, jqXHR) {
           var url = jqXHR.getResponseHeader('Location');
           if (!url) {
-            throw "Unable to parse Location header to form url";
+            throw 'Unable to parse Location header to form url';
           }
 
           localStorage.setItem(localId, url);
@@ -138,8 +138,8 @@ $(function() {
           data.method = 'PUT';
           data.submit();
         },
-        error: function(xhr) {
-          setTimeout(function() {
+        error: function () {
+          setTimeout(function () {
             upload(data);
           }, 1000);
         }
@@ -150,7 +150,7 @@ $(function() {
     $.ajax({
       type: 'HEAD',
       url: data.url,
-      success: function(theData, status, jqXHR) {
+      success: function (theData, status, jqXHR) {
         var range = jqXHR.getResponseHeader('Range');
         var m = range && range.match(/bytes=\d+-(\d+)/);
         if (!m) {
@@ -169,7 +169,7 @@ $(function() {
         data.method = 'PUT';
         data.submit();
       },
-      error: function(xhr) {
+      error: function (xhr) {
         if (xhr.status === 404) {
           localStorage.removeItem(localId);
           upload(data);
@@ -177,26 +177,26 @@ $(function() {
         }
 
         console.log('error checking', data.url, 'status', xhr.status);
-        setTimeout(function() {
+        setTimeout(function () {
           upload(data);
         }, 1000);
       }
     });
-  }
+  };
 
-  function fingerprint(file) {
+  var fingerprint = function (file) {
     return 'file-'+file.name+'-'+file.size;
-  }
+  };
 
-  function setProgress(percentage) {
+  var setProgress = function (percentage) {
     $progress.css('width', percentage+'%');
-  }
+  };
 
-  function success(data) {
+  var success = function (data) {
     setProgress(100);
     $progress.parent().hide();
     $download.attr('href', data.url);
-    $download.show();
+    $download.css({display: 'inline-block'});
     $download.text('Download '+data.files[0].name);
-  }
+  };
 });

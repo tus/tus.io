@@ -4,17 +4,27 @@ layout: default
 
 {% assign author = site.authors[page.author] %}
 
-<h2>{{ page.title }}</h2>
-<p>
-<span>Published: {{ page.date | date: "%B %e, %Y" }}</span>.
-<span>Author: <a href="http://twitter.com/{{author.twitter}}">{{ author.name }}</a></span>
-</p>
+<div class="post">
+  <h2 class="post-title">
+    {{ page.title }}
+  </h2>
 
-{{ content }}
+  <div class="post-info">
+    Published on <span class="date">{{ page.date | date: "%B %e, %Y" }}</span> by
+    <a class="author" href="http://twitter.com/{{author.twitter}}">
+      {{ author.name }}
+    </a>
+  </div>
 
-<hr />
-Subscribe to this blog via
-<a href="{{ site.rss_feed }}">RSS</a>.
+  <div class="post-content">
+    {{ content }}
+  </div>
+</div>
+
+<div class="post-subscribe">
+  Subscribe to this blog via
+  <a href="{{ site.rss_feed }}">RSS</a>.
+</div>
 <!-- or
 @todo(felixge) Hook in feedburner
 <a href="http://tus.io/atom.xml?email=true">E-Mail</a>. -->

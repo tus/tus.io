@@ -1,0 +1,76 @@
+// .posts,
+.on-the-githubs {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 5px;
+
+	img {
+		float: left;
+		margin: 0;
+	}
+
+	p {
+		display: inline-block;
+		float: left;
+		margin: 0;
+		width: 550px;
+	}
+
+	span.timeago {
+		position: absolute;
+		right: 0;
+		float: left;
+		width: 90px;
+		text-align: right;
+	}
+
+	li {
+		border-bottom: 1px solid #eee;
+		padding: 5px 0;
+		margin: 0;
+		clear: both;
+		position: relative;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&:hover .commits {
+			display: block;
+		}
+
+		abbr {
+			float: right;
+		}
+	}
+
+	.gravatar {
+		margin-right: 7px;
+		border-radius: 10px;
+		width: 20px;
+		height: 20px;
+	}
+
+	.commits {
+		display: none;
+		clear: both;
+		padding-top: 5px;
+
+		li {
+			list-style-type: none;
+			margin-left: 10px;
+			font-size: 12px;
+
+			a {
+				display: inline-block;
+				width: 50px;
+				text-align: right;
+				margin-right: 3px;
+			}
+		}
+	}
+
+	abbr[title] {
+		border: none;
+	}
+}

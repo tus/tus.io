@@ -1,5 +1,31 @@
 {
+  "title": "Tus.io",
+  "name": "tus-io",
+  "version": "0.0.1",
+  "files": [],
   "dependencies": {
-    "on-the-githubs": "2.2.0"
+    "autoprefixer": "^5.1.0",
+    "clean-css": "^3.0.10",
+    "concat-from-list": "0.1.2",
+    "jshint": "^2.6.0",
+    "less": "^2.4.0",
+    "on-the-githubs": "2.2.0",
+    "run-scripts": "0.2.2",
+    "uglify-js": "^2.4.16",
+    "watch": "^0.14.0"
+  },
+  "scripts": {
+    "js:concat": "concat-from-list _assets/app.cson assets/build/app.js",
+    "js:minify": "uglifyjs assets/build/app.js -o assets/build/app.js",
+    "js:minify:source": "uglifyjs assets/build/app.js -o assets/build/app.js --source-map assets/build/app.js.map",
+    "js:hint": "jshint $(find ./_assets/js -name \"*.js\")",
+    "js": "run-scripts js:hint js:concat js:minify",
+    "css:less": "lessc _assets/app.less > assets/build/app.css",
+    "css:prefix": "autoprefixer assets/build/app.css",
+    "css:minify": "cleancss -o ./assets/build/app.css ./assets/build/app.css",
+    "css": "run-scripts css:less css:prefix css:minify",
+    "build": "run-scripts css js",
+    "build:watch": "watch \"npm run build\" ./_assets",
+    "server": "jekyll serve"
   }
 }

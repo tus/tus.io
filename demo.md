@@ -14,15 +14,17 @@ This demo is a proof of concept for resumable file uploads.
  2. Watch it upload for a bit, then close this tab before it finishes.
  3. Come back to the tab, select the same file again, the upload should resume where it left off.
 
-<form id="js_upload">
-  <input class="js_file" name="upload" type="file" />
-</form>
+<div class="demo-form-container">
+  <form id="js_upload">
+    <input class="js_file" name="upload" type="file" />
+  </form>
 
-<div class="progress progress-striped active">
-  <div class="bar js_progress"></div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active js_progress" style="width: 0%"></div>
+  </div>
+
+  <a class="button button-primary download js_download">Download</a>
 </div>
-
-<a class="btn btn-success download js_download">Download</a>
 
 ---------------------------------------
 
