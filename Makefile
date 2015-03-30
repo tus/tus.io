@@ -63,7 +63,7 @@ preview: install build
 	@echo "--> Running preview.."
 	jekyll serve --watch --unpublished --skip-initial-build
 
-.PHONY: deploy
+.PHONY: build deploy
 deploy:
 	@echo "--> Deploying to GitHub pages.."
 	@mkdir -p /tmp/deploy-$(ghpages_repo)
