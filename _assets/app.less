@@ -8,6 +8,7 @@
 @scheme: #1eaedb;
 @scheme-primary: #25967a;
 @scheme-secondary: #48aa92;
+@scheme-tertiary: #f16100;
 
 @header-bg: #eee;
 @intro-color: #d6e1e5;
@@ -325,10 +326,21 @@ textarea:focus {
 			border-bottom-right-radius: 0;
 			min-width: 250px;
 			text-align: left;
+
+			&:focus {
+				border-color: darken(@scheme-tertiary, 1%);
+			}
 		}
 
 		button {
 			margin-left: -7px;
+			background: @scheme-tertiary;
+			border-color: @scheme-tertiary;
+
+			&:hover {
+				background: darken(@scheme-tertiary, 1%);
+				border-color: darken(@scheme-tertiary, 1%);
+			}
 		}
 	}
 }
