@@ -58,13 +58,18 @@ preview-quick: build-assets build-site
 	@echo "--> Running preview-quick.."
 	jekyll serve --watch --unpublished --skip-initial-build
 
+.PHONY: pull
+pull: 
+	@echo "--> Running pull.."
+	@git pull
+
 .PHONY: preview
 preview: install build
 	@echo "--> Running preview.."
 	jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: deploy
-deploy: build
+deploy: pull build
 	@echo "--> Deploying to GitHub pages.."
 	@mkdir -p /tmp/deploy-$(ghpages_repo)
 
