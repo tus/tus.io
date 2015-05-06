@@ -6,21 +6,21 @@ layout: none
 
  <title>tus.io</title>
  <link href="{{ site.rss_feed }}" rel="self"/>
- <link href="http://tus.io/"/>
+ <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://tus.io/</id>
+ <id>{{ site.url }}</id>
 
  {% for post in site.posts %}
  {% assign author = site.authors[post.author] %}
  <entry>
    <author>
-     <name>{{ author.name }}</name>
-     <email>hello@tus.io</email>
+     <name>{{ author.name | xml_escape  }}</name>
+     <email>{{ author.email | xml_escape  }}</email>
    </author>
-   <title>{{ post.title }}</title>
-   <link href="http://tus.io{{ post.url }}"/>
+   <title>{{ post.title | xml_escape  }}</title>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://tus.io/{{ post.id }}</id>
+   <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}

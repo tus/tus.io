@@ -11,6 +11,8 @@ kramdown:
   toc_levels: 2..6
 
 rss_feed: http://feeds.feedburner.com/tusio
+url: http://tus.io
+
 navigation:
 - text: Home
   url: /
