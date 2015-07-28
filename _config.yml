@@ -62,3 +62,13 @@ authors:
     email: marius@transloadit.com
     twitter: acconut_
     github: Acconut
+
+implementations:
+- name: tus-js-client
+  icon: prog-js01
+- name: tus-java-client
+  icon: prog-java
+- name: tus-android-client
+  icon: android
+- name: tusd
+  icon: prog-golang02

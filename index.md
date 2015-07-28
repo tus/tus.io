@@ -37,6 +37,27 @@ container: "none"
 </div>
 
 <div class="container">
+  <h2>Official implementations</h2>
+
+  <div class="row">
+    {% for impl in site.implementations %}
+    <div class="three columns implementation">
+      <a href="https://github.com/tus/{{impl.name}}">
+        <img src="/assets/img/{{impl.icon}}.svg" alt="Icon" />
+
+        {{impl.name}}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <p class="implementations-link">
+    Additionally, there are many <a href="/implementations.html">projects</a> built
+    and maintained by our community.
+  </p>
+</div>
+
+<div class="container">
   <h2>Recent blog posts</h2>
 
   <ol class="posts">
