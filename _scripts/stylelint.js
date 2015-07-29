@@ -14,18 +14,24 @@
   var stylelint = require('stylelint/dist');
   var config = JSON.parse(fs.readFileSync(__dirname + '/../.postcssrc', 'utf8'));
   var reporter = require('postcss-reporter');
+  var glob = require('glob');
 
   var sourcePath = __dirname + '/../' + relativePath;
-  var css = fs.readFileSync(sourcePath, 'utf8');
 
-  postcss([
-    stylelint(config), // using the pre-written SuitCSS config
-    reporter(),
-  ])
-    .process(css, {
-      from: sourcePath
-    })
-    .catch(function (err) {
-      console.error(err.stack);
+  glob(sourcePath, {}, function (err, files) {
+    files.forEach(function (file) {
+      var css = fs.readFileSync(sourcePath, 'utf8');
+
+      postcss([
+        stylelint(config), // using the pre-written SuitCSS config
+        reporter(),
+      ])
+        .process(css, {
+          from: sourcePath
+        })
+        .catch(function (err) {
+          console.error(err.stack);
+        });
     });
+  });
 })();

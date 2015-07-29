@@ -8,6 +8,7 @@
     "babel": "^5.8.19",
     "clean-css": "^3.0.10",
     "concat-from-list": "0.1.2",
+    "glob": "^5.0.14",
     "jshint": "^2.6.0",
     "less": "^2.4.0",
     "on-the-githubs": "^2.2.1",
