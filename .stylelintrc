@@ -1,7 +1,7 @@
 {
-  "rules": {
+	"rules": {
 		"at-rule-empty-line-before": [2, "always", {
-		  "except": ["blockless-group"]
+			"except": ["blockless-group"]
 		}],
 		"at-rule-no-vendor-prefix": 2,
 		"block-closing-brace-newline-after": [2, "always-multi-line"],
@@ -50,7 +50,7 @@
 		"property-no-vendor-prefix": 2,
 		"root-no-standard-properties": 2,
 		"rule-nested-empty-line-before": [2, "always-multi-line", {
-		  "except": ["first-nested"]
+			"except": ["first-nested"]
 		}],
 		"rule-non-nested-empty-line-before": [2, "always-multi-line"],
 		"rule-properties-order": [2, "alphabetical"],
@@ -67,5 +67,5 @@
 		"value-list-comma-space-after": [2, "always-single-line"],
 		"value-list-comma-space-before": [2, "never"],
 		"value-no-vendor-prefix": 2
-  }
+	}
 }
