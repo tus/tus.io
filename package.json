@@ -25,7 +25,7 @@
     "css:less": "lessc _assets/app.less > assets/build/app.css",
     "css:prefix": "autoprefixer assets/build/app.css",
     "css:minify": "cleancss -o ./assets/build/app.css ./assets/build/app.css",
-    "css:lint": "babel-node _scripts/stylelint.js ./_assets/less/posts.less",
+    "css:lint": "babel-node _scripts/stylelint.js ./_assets/\\*\\*/\\*.less",
     "css": "run-scripts css:less css:prefix css:minify",
     "build": "run-scripts css js",
     "build:watch": "watch \"npm run build\" ./_assets",

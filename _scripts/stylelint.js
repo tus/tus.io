@@ -18,16 +18,17 @@
 
   var sourcePath = __dirname + '/../' + relativePath;
 
-  glob(sourcePath, {}, function (err, files) {
+  glob(relativePath, {}, function (err, files) {
     files.forEach(function (file) {
-      var css = fs.readFileSync(sourcePath, 'utf8');
+      console.log('Processing:', file);
+      var css = fs.readFileSync(file, 'utf8');
 
       postcss([
-        stylelint(config), // using the pre-written SuitCSS config
+        stylelint(config),
         reporter(),
       ])
         .process(css, {
-          from: sourcePath
+          from: file
         })
         .catch(function (err) {
           console.error(err.stack);
