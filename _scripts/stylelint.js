@@ -1,4 +1,4 @@
-/* global __dirname, require */
+/* global __dirname, require, console, process */
 (function () {
   'use strict';
 
@@ -15,8 +15,6 @@
   var config = JSON.parse(fs.readFileSync(__dirname + '/../.stylelintrc', 'utf8'));
   var reporter = require('postcss-reporter');
   var glob = require('glob');
-
-  var sourcePath = __dirname + '/../' + relativePath;
 
   glob(relativePath, {}, function (err, files) {
     files.forEach(function (file) {
