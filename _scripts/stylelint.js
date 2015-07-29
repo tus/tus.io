@@ -12,7 +12,7 @@
   var fs = require('fs');
   var postcss = require('postcss');
   var stylelint = require('stylelint/dist');
-  var config = JSON.parse(fs.readFileSync(__dirname + '/../.postcssrc', 'utf8'));
+  var config = JSON.parse(fs.readFileSync(__dirname + '/../.stylelintrc', 'utf8'));
   var reporter = require('postcss-reporter');
   var glob = require('glob');
 
