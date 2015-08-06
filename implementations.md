@@ -158,20 +158,6 @@ what protocol version you're targetting.
       A tus <code>v1.0.0</code> server written using <strong>node.js</strong>
     </div>
   </li>
-  <li>
-    <a class="title" href="https://github.com/codeeply/tusdpy">
-      codeeply/tusdpy
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/codeeply">codeeply</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>Python</strong> servers<br />
-Currently only the core protocol (no extensions) is supported.
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
 
   <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
