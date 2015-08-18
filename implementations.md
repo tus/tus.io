@@ -15,14 +15,42 @@ These projects are reference implementations maintained by the protocol develope
 
 <ul class="implementations">
   <li>
-    <a class="title" href="https://github.com/tus/tus-jquery-client">
-      tus-jquery-client
+    <a class="title" href="https://github.com/tus/tus-js-client">
+      tus-js-client
     </a>
 
     <div class="author">&mdash; by <a href="/about.html">tus</a></div>
 
     <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>client</strong> web apps that are built with <strong>jQuery</strong>.
+      Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> web apps that are built with <strong>JavaScript</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+   <li>
+    <a class="title" href="https://github.com/tus/tus-java-client">
+      tus-java-client
+    </a>
+
+    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+
+    <div class="description">
+      Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> app using <strong>Java</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/tus/tus-android-client">
+      tus-android-client
+    </a>
+
+    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+
+    <div class="description">
+      Add tus <code>v1.0.0</code> resumable file uploads to <strong>Android</strong> apps.
     </div>
 
     <div class="license">Licensed under MIT</div>
@@ -36,7 +64,7 @@ These projects are reference implementations maintained by the protocol develope
     <div class="author">&mdash; by <a href="/about.html">tus</a></div>
 
     <div class="description">
-      A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v0.2.1</code> protocol.
+      A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol.
       You can run this to test client implementations with.
     </div>
 
