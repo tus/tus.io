@@ -11,6 +11,7 @@
     "less": "^2.4.0",
     "on-the-githubs": "^2.2.1",
     "run-scripts": "0.2.2",
+    "tus-js-client": "^1.0.0",
     "uglify-js": "^2.4.16",
     "watch": "^0.14.0"
   },

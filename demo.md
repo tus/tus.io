@@ -6,7 +6,7 @@ comments: true
 
 ## {{ page.title }}
 
-This demo is a proof of concept for resumable file uploads.
+This demo is a proof of concept for resumable file uploads built using the <a href="https://github.com/tus/tus-js-client">tus-js-client</a>.
 
 ### Instructions
 
@@ -14,17 +14,37 @@ This demo is a proof of concept for resumable file uploads.
  2. Watch it upload for a bit, then close this tab before it finishes.
  3. Come back to the tab, select the same file again, the upload should resume where it left off.
 
-<div class="demo-form-container">
-  <form id="js_upload">
-    <input class="js_file" name="upload" type="file" />
-  </form>
+<p class="alert hidden" id="support-alert">
+  <b>Warning!</b> Your browser does not seem to support the features necessary to run this demo. The buttons below may work but probably will fail silently.
+</p>
+<noscript>
+  <p class="alert">
+    <b>Warning!</b> Either you disabled JavaScript or your browser does not support it. However, this demo requires JavaScript. The buttons below  will fail silently unless you activate it, at least for this page.
+  </p>
+</noscript>
 
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped active js_progress" style="width: 0%"></div>
+<input type="file">
+<label>
+  <input type="checkbox" id="resume">
+  Perform full upload (even if we could resume)
+</label>
+
+<div class="row">
+  <div class="nine columns">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
+    </div>
   </div>
-
-  <a class="button button-primary download js_download">Download</a>
+  <div class="three columns">
+    <button class="u-full-width" id="stop-btn" disabled> abort upload</button>
+  </div>
 </div>
+
+<hr />
+<h3>Uploads</h3>
+<p class="upload-list">
+  Succesful uploads will be listed here. Try one!<br>
+</p>
 
 ---------------------------------------
 
