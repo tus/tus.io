@@ -57,6 +57,20 @@ These projects are reference implementations maintained by the protocol develope
   </li>
 
   <li>
+    <a class="title" href="https://github.com/tus/TUSKit">
+      tus/TUSKit
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/afh">Alexis Hildebrandt</a> and <a href="https://github.com/MMasterson">Mark R. Masterson</a></div>
+
+    <div class="description">
+      Add tus <code>v1.0.0</code> resumable file uploads to <strong>iOS</strong> clients.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/tus/tusd">
       tusd
     </a>
@@ -152,20 +166,6 @@ what protocol version you're targetting.
 
     <div class="description">
       Integrate tus <code>v0.2.1</code> with existing <strong>Python</strong> web technologies(WSGI, WebOb, Plone, Zope2)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/tus/TUSKit">
-      tus/TUSKit
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/afh">Alexis Hildebrandt</a></div>
-
-    <div class="description">
-      Add tus resumable file uploads to <strong>iOS</strong> clients (In the works)
     </div>
 
     <div class="license">Licensed under MIT</div>

@@ -72,5 +72,7 @@ implementations:
   icon: prog-java
 - name: tus-android-client
   icon: android
+- name: TUSKit
+  icon: os-ios
 - name: tusd
   icon: prog-golang02
