@@ -2,6 +2,7 @@
 @import (less) "../_vendors/skeleton/css/skeleton.css";
 @import (less) "../_vendors/animate.css/source/_base.css";
 @import (less) "../_vendors/animate.css/source/fading_entrances/fadeIn.css";
+@import (less) "../_vendors/animate.css/source/flippers/flipOutX.css";
 
 @import "./less/posts.less";
 
@@ -424,6 +425,10 @@ textarea:focus {
 
 		&.active {
 			animation: progress-bar-stripes 2s linear infinite;
+		}
+
+		&.no-transition {
+			transition: initial;
 		}
 	}
 
