@@ -75,7 +75,9 @@ $(function () {
         // show
         window.setTimeout(function () {
           $progressBar.removeClass('no-transition');
-          $progress.removeClass(animatedOutClass).addClass(animatedInClass);
+          $progress
+            .removeClass(animatedOutClass)
+            .addClass(animatedInClass);
         }, 300);
       }, 600);
     }, 1000);
