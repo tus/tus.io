@@ -10,17 +10,15 @@ Here's a quick update on the status of the project.
 
 ### 1.0 
 
-We're close to finalizing 1.0 in [this pull request](https://github.com/tus/tus-resumable-upload-protocol/pull/57). 
-
-Our project lead [Marius Kleidl](https://github.com/Acconut) has been taking care
+We're close to finalizing 1.0. Our project 
+lead [Marius Kleidl](https://github.com/Acconut) has been taking care
 of integrating a large batch of improvements
 that were made by [Naren Venkataraman](https://github.com/vayam) and this team.
 
 Things still left to do:
 
-- Write a Developers Guide
-- Add a page that lists companies who (plan to) deploy tus
-- Gather a *final round of feedback*
+- [Write a Developers Guide](https://github.com/tus/tus-resumable-upload-protocol/issues/59)
+- Gather a *final round of feedback* on [the 1.0 proposal](https://github.com/tus/tus-resumable-upload-protocol/pull/57)
 
 We're waiting for a *final round of feedback* to make sure every last bit 
 is taken care of before cementing everything into our first stable release.
@@ -49,6 +47,11 @@ and Marius for upgrading many of our implementations.
 Marius also added 1.0 Android and 
 standalone Java implementations as official tus projects.
 
+If you're interested in building & maintaining new 1.0 implementations and becoming
+a member of tus core, leave a note here:
+
+ - [More 1.0 implementations](https://github.com/tus/tus-resumable-upload-protocol/issues/67)
+
 ### Demo
 
 The demo section is currently receiving some polishing by 
@@ -71,7 +74,7 @@ spin up fully functioning tus servers with a single command. Every bit
 except for the AWS & server keys are open sourced, so please reach out if
 you'd like to help us with our todo:
 
-- Add local Vagrant support for testing the Ansible scripts
+- [Add local Vagrant support for testing the Ansible scripts](https://github.com/tus/infra-tusd/issues/1)
 
 ### Adoption
 
@@ -83,3 +86,4 @@ More announcements on this soon!
 
 If you will be using tus, and want the world to know, please add your to this issue:
 
+- [Companies that (plan to) use tus](https://github.com/tus/tus.io/issues/28)
