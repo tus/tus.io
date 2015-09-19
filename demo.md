@@ -6,7 +6,11 @@ comments: true
 
 ## {{ page.title }}
 
-This demo is a proof of concept for resumable file uploads built using the <a href="https://github.com/tus/tus-js-client">tus-js-client</a>.
+This demo is a proof of concept for resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client). 
+
+It sends your files
+to a [tusd](https://github.com/tus/tusd) server written in Go, that we
+deployed via [infra-tusd](https://github.com/tus/infra-tusd).
 
 ### Instructions
 
@@ -50,34 +54,75 @@ This demo is a proof of concept for resumable file uploads built using the <a hr
 
 ### Compatibility
 
-For this proof of concept, the following browsers were tested:
-
-#### OSX
-
- - Safari 6.0.2 on OS 10.8.2 (working)
- - Chrome 24.0.1312.52 on OS 10.8.2 (working)
- - Firefox 19.0.2 on OS 10.8.2 (working)
- - Opera 12.12 on OS X 10.8.3 (working)
+The [tus-js-client](https://github.com/tus/tus-js-client) used in
+this demo has been [tested](https://s3.amazonaws.com/archive.travis-ci.org/jobs/68939799/log.txt) and works with the following browsers:
 
 #### iOS
 
- - Safari on iOS 6.1.2 (working)
+- passed: iphone 4.3 on Mac 10.6
+- passed: iphone 5.0 on Mac 10.6
+- passed: iphone 5.1 on Mac 10.8
+- passed: iphone 6.0 on Mac 10.8
+- passed: iphone 6.1 on Mac 10.8
+- passed: iphone 7.0 on Mac 10.9
+- passed: iphone 7.1 on Mac 10.9
+- passed: iphone 8.0 on Mac 10.10
+- passed: iphone 8.2 on Mac 10.10
+- passed: iphone 8.1 on Mac 10.10
+
+#### Android
+
+- passed: android 4.0 on Linux
+- passed: android 4.1 on Linux
+- passed: android 4.2 on Linux
+- passed: android 4.3 on Linux
+- passed: android 4.4 on Linux
+- passed: android 5.0 on Linux
+- passed: android 5.1 on Linux
+
+
+#### OSX
+
+- passed: safari 6 on Mac 10.8
+- passed: safari 7 on Mac 10.9
+- passed: safari 5 on Mac 10.6
+- passed: safari 8 on Mac 10.10
 
 #### Linux
 
- - Iceweasel (Firefox) 10.0.12 on Debian GNU/Linux stable PPC (working)
- - Firefox 19 on Ubuntu 12.04 LTS (working)
- - Chromium 26.0.1410.43 on Linux (working)
+- passed: firefox 31 on Linux
+- passed: firefox 32 on Linux
+- passed: firefox 33 on Linux
+- passed: firefox 34 on Linux
+- passed: firefox 35 on Linux
+- passed: firefox 36 on Linux
+- passed: firefox 37 on Linux
+- passed: firefox 38 on Linux
+- passed: chrome 31 on Linux
+- passed: chrome 32 on Linux
+- passed: chrome 33 on Linux
+- passed: chrome 35 on Linux
+- passed: chrome 34 on Linux
+- passed: chrome 37 on Linux
+- passed: chrome 36 on Linux
+- passed: chrome 38 on Linux
+- passed: chrome 39 on Linux
+- passed: chrome 40 on Linux
+- passed: chrome 41 on Linux
+- passed: chrome 42 on Linux
+- passed: chrome 43 on Linux
 
 #### Windows
 
- - IE 9.0 on Win7 (broken, probably needs CORS workarounds)
- - IE 10.0 on Win8 (working)
- - Firefox 20.0.1 on Win7 64 (working)
- - Firefox 20.0.1 on Windows XP Pro SP3 (working)
- - Chrome 26.0.1410.64 on Win7 Pro 64 (working)
- - Opera on Win7 (working)
+- passed: internet explorer 10 on Windows 2012
+- passed: internet explorer 11 on Windows 2012 R2
+- passed: internet explorer 9 on Windows 2008
+- passed: opera 12 on Windows 2003
+- passed: opera 11 on Windows 2003
 
 Going forward, all relevant browsers will be supported with as many features
 as possible. All browsers will be able to perform at least simple multipart
 uploads.
+
+Using the `X-HTTP-Method-Override` header, it's possible to run tus
+even on platforms that won't let you do `PUT` and `PATCH` requests.
