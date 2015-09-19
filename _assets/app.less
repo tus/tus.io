@@ -5,12 +5,10 @@
 @import (less) "../_vendors/animate.css/source/flippers/flipOutX.css";
 
 @import "./less/posts.less";
-
 @scheme: #1eaedb;
 @scheme-primary: #25967a;
 @scheme-secondary: #48aa92;
 @scheme-tertiary: #f16100;
-
 @header-bg: #eee;
 @intro-color: #d6e1e5;
 @mission-bg: #eee;
@@ -57,10 +55,10 @@ textarea:focus {
 }
 
 .ribbon {
-	position: absolute;
-	top: 0;
-	right: 0;
 	border: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 	z-index: 10;
 
 	@media (max-width: 960px) {
@@ -70,26 +68,26 @@ textarea:focus {
 
 .header {
 	background: @header-bg;
-	border-top: 5px solid @scheme-secondary;
 	border-bottom: 1px solid #ddd;
+	border-top: 5px solid @scheme-secondary;
 
 	.logo {
-		margin: 0;
 		line-height: 65px;
+		margin: 0;
 
 		a {
 			color: #fff;
-			text-decoration: none;
 			font-weight: 700;
+			text-decoration: none;
 
 			img {
 				width: 65px;
 			}
 
 			.shield {
-				width: 35px;
 				position: relative;
 				top: 5px;
+				width: 35px;
 			}
 		}
 	}
@@ -97,8 +95,8 @@ textarea:focus {
 	.toggler {
 		display: none;
 		float: right;
-		line-height: 65px;
 		font-size: 2.5rem;
+		line-height: 65px;
 		text-decoration: none;
 
 		.hamburger {
@@ -112,22 +110,22 @@ textarea:focus {
 	}
 
 	.nav {
-		list-style: none;
-		padding: 0;
-		margin: 0;
 		float: right;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 
 		li {
 			float: left;
-			padding: 15px 10px;
 			margin: 0;
+			padding: 15px 10px;
 
 			a {
-				display: inline-block;
-				text-decoration: none;
-				padding: 5px 10px;
-				color: #222;
 				border: 1px solid transparent;
+				color: #222;
+				display: inline-block;
+				padding: 5px 10px;
+				text-decoration: none;
 			}
 
 			&.active a,
@@ -141,24 +139,24 @@ textarea:focus {
 		position: relative;
 
 		.nav {
-			display: none;
-			margin-top: 66px;
-			width: 300px;
 			background: #eee;
-			position: absolute;
-			z-index: 100;
-			right: 0;
 			border: 1px solid #ccc;
 			border-top: 0;
 			box-shadow: 0 2px 20px #ccc;
+			display: none;
+			margin-top: 66px;
+			position: absolute;
+			right: 0;
+			width: 300px;
+			z-index: 100;
 
 			li {
 				float: none;
 				padding: 0;
 
 				a {
-					padding: 10px 20px;
 					display: block;
+					padding: 10px 20px;
 					transition: background 0.3s, color 0.3s;
 
 					&:hover {
@@ -191,11 +189,10 @@ textarea:focus {
 
 .intro {
 	background: #fff;
-	text-align: center;
-	color: #fff;
 	color: @intro-color;
 	font-weight: 300;
 	position: relative;
+	text-align: center;
 
 	h1 {
 		margin: 0;
@@ -207,27 +204,29 @@ textarea:focus {
 
 	.brand {
 		h2 {
+			border: 0 !important;
 			font-size: 100px;
 			font-weight: 700;
 			margin: 50px 0 !important;
-			border: 0 !important;
 		}
 	}
 
+	/* stylelint-disable */
 	.banner {
-		.animated;
-		.fadeIn;
+		&:extend(.animated);
+		&:extend(.fadeIn);
 		animation-delay: 0.5s;
-		width: 60%;
 		padding: 40px 0;
+		width: 60%;
 	}
+	/* stylelint-enable */
 
 	.mission {
 		background: @mission-bg;
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #ddd;
 		color: @mission-color;
 		padding: 50px 0 20px 0;
-		border-top: 1px solid #ddd;
-		border-bottom: 1px solid #ddd;
 
 		a {
 			color: @mission-color;
@@ -237,8 +236,8 @@ textarea:focus {
 
 .content {
 	h2:first-child {
-		margin-top: 20px;
 		border-bottom: 1px solid #eee;
+		margin-top: 20px;
 	}
 
 	.post {
@@ -272,22 +271,22 @@ textarea:focus {
 
 	li {
 		border-bottom: 1px solid #eee;
-		padding-bottom: 15px;
 		margin-bottom: 15px;
+		padding-bottom: 15px;
 
 		.author {
 			color: #ccc;
-			width: 55px;
-			height: 55px;
 			float: left;
+			height: 55px;
 			margin-right: 25px;
 			margin-top: 5px;
+			width: 55px;
 
 			img {
-				width: 100%;
-				border-radius: 50%;
 				border: 2px solid #fff;
+				border-radius: 50%;
 				box-shadow: 0 0 6px #ccc;
+				width: 100%;
 			}
 		}
 
@@ -312,22 +311,22 @@ textarea:focus {
 }
 
 .subscription-form {
-	margin-top: 20px;
 	background: #eee;
-	padding-top: 20px;
 	border-top: 1px solid #ddd;
+	margin-top: 20px;
+	padding-top: 20px;
 
 	form {
 		position: relative;
 		text-align: right;
 
 		input[type="email"] {
-			z-index: 100;
-			position: relative;
-			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
 			min-width: 250px;
+			position: relative;
 			text-align: left;
+			z-index: 100;
 
 			&:focus {
 				border-color: darken(@scheme-tertiary, 1%);
@@ -335,9 +334,9 @@ textarea:focus {
 		}
 
 		button {
-			margin-left: -7px;
 			background: @scheme-tertiary;
 			border-color: @scheme-tertiary;
+			margin-left: -7px;
 
 			&:hover {
 				background: darken(@scheme-tertiary, 1%);
@@ -355,27 +354,27 @@ textarea:focus {
 		list-style-type: none;
 
 		li {
-			&:before {
-				counter-increment: section;
+			&::before {
 				content: counter(section) ". ";
+				counter-increment: section;
 				display: inline-block;
 				width: 18px;
 			}
 
 			ul {
-				margin-top: 1rem;
 				margin-bottom: 0;
+				margin-top: 1rem;
 			}
 
-			li:before {
+			li::before {
 				content: counter(section, lower-alpha) ". ";
 			}
 
-			li li:before {
+			li li::before {
 				content: counter(section, lower-roman) ". ";
 			}
 
-			li li li:before {
+			li li li::before {
 				content: counter(section, disc) " ";
 			}
 
@@ -395,8 +394,8 @@ textarea:focus {
 
 @keyframes progress-bar-stripes {
 	from {
- 		background-position: 40px 0;
- 	}
+		background-position: 40px 0;
+	}
 
 	to {
 		background-position: 0 0;
@@ -410,18 +409,21 @@ textarea:focus {
 	background-color: #eee;
 	border-radius: 4px;
 	box-shadow: 0 1px 2px #ccc inset;
+	height: 30px;
+	margin-bottom: 30px;
+	overflow: hidden;
 
 	.progress-bar {
-		float: left;
-		width: 0%;
-		height: 100%;
-		font-size: 11px;
-		line-height: 30px;
-		color: @scheme-secondary;
-		text-align: center;
 		background-color: @scheme-primary;
-		box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
-		transition: width .6s ease;
+		box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+		color: @scheme-secondary;
+		float: left;
+		font-size: 11px;
+		height: 100%;
+		line-height: 30px;
+		text-align: center;
+		transition: width 0.6s ease;
+		width: 0%;
 
 		&.active {
 			animation: progress-bar-stripes 2s linear infinite;
@@ -432,6 +434,7 @@ textarea:focus {
 		}
 	}
 
+	/* stylelint-disable */
 	.progress-bar-striped {
 		background-image: linear-gradient(
 			-45deg,
@@ -445,6 +448,7 @@ textarea:focus {
 		);
 		background-size: 40px 40px;
 	}
+	/* stylelint-enable */
 }
 
 .implementations {
@@ -476,42 +480,42 @@ textarea:focus {
 
 .in-the-githubs {
 	h2 {
-		padding-top: 20px;
 		clear: both;
+		padding-top: 20px;
 	}
 
 	a {
 		color: #ccc;
-		width: 55px;
-		height: 55px;
 		float: left;
+		height: 55px;
+		margin-bottom: 15px;
 		margin-right: 25px;
 		margin-top: 5px;
-		margin-bottom: 15px;
+		width: 55px;
 
 		img {
-			width: 100%;
-			border-radius: 50%;
 			border: 2px solid #fff;
+			border-radius: 50%;
 			box-shadow: 0 0 6px #ccc;
+			width: 100%;
 		}
 	}
 }
 
 .implementation {
 	img {
-		width: 30%;
 		display: block;
 		margin: auto;
 		margin-bottom: 15px;
+		width: 30%;
 	}
 
 	text-align: center;
 }
 
 .implementations-link {
-	text-align: center;
 	padding-top: 30px;
+	text-align: center;
 }
 
 .hidden {
