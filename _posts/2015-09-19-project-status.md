@@ -8,7 +8,7 @@ author: kvz
 
 Here's a quick update on the status of the project.
 
-## 1.0 
+### 1.0 
 
 We're close to finalizing 1.0 in [this pull request](https://github.com/tus/tus-resumable-upload-protocol/pull/57). 
 
@@ -25,7 +25,7 @@ Things still left to do:
 We're waiting for a *final round of feedback* to make sure every last bit 
 is taken care of before cementing everything into our first stable release.
 
-## Exposure & Swag
+### Exposure & Swag
 
 To make sure every developer and interested party had their change to chime in, 
 we're trying to get some extra exposure for the project. We'll be covered
@@ -37,7 +37,7 @@ currently only features two, pretty expensive, items and we're working with [Pri
 more accessible. Know that any profit flows back to the project. Our books are open to 
 anyone who wants to verify.
 
-## Implementations
+### Implementations
 
 While 1.0 could potentially still be changed, we don't expect major changes
 so our official implementations are already 1.0 ready.
@@ -49,7 +49,7 @@ and Marius for upgrading many of our implementations.
 Marius also added 1.0 Android and 
 standalone Java implementations as official tus projects.
 
-## Demo
+### Demo
 
 The demo section is currently receiving some polishing by 
 [Fahad Ibnay Heylaal](https://github.com/Acconut).
@@ -62,7 +62,7 @@ The demo page uploads files to a
 to a 1.0 [tusd](https://github.com/tus/tusd) server written in Go, that we
 deploy via the newly created [infra-tusd](https://github.com/tus/infra-tusd) repository.
 
-## Infra
+### Infra
 
 Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd) 
 uses a powerful combination of [Ansible](http://www.ansible.com/) and 
@@ -73,7 +73,7 @@ you'd like to help us with our todo:
 
 - Add local Vagrant support for testing the Ansible scripts
 
-## Adoption
+### Adoption
 
 Finally, a few of the biggest names in internet have taken an interest 
 in tus. tus will always remain open source and community owned, but 
