@@ -75,7 +75,11 @@ you'd like to help us with our todo:
 
 ## Adoption
 
-Finally, we're talking to a few of the internet's largest companies
-that have taken an interest in tus and are looking to roll out support.
+Finally, a few of the biggest names in internet have taken an interest 
+in tus. tus will always remain open source and community owned, but 
+we're excited that we're on the path to realizing our mission.
 
 More announcements on this soon!
+
+If you will be using tus, and want the world to know, please add your to this issue:
+
