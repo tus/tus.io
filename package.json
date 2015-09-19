@@ -4,16 +4,16 @@
   "version": "0.0.1",
   "files": [],
   "dependencies": {
-    "autoprefixer": "^5.1.0",
-    "clean-css": "^3.0.10",
+    "autoprefixer": "^6.0.3",
+    "clean-css": "^3.4.3",
     "concat-from-list": "0.1.2",
-    "jshint": "^2.6.0",
-    "less": "^2.4.0",
+    "jshint": "^2.8.0",
+    "less": "^2.5.1",
     "on-the-githubs": "^2.2.1",
     "run-scripts": "0.2.2",
     "tus-js-client": "^1.0.0",
-    "uglify-js": "^2.4.16",
-    "watch": "^0.14.0"
+    "uglify-js": "^2.4.24",
+    "watch": "^0.16.0"
   },
   "scripts": {
     "js:concat": "concat-from-list _assets/app.cson assets/build/app.js",
