@@ -40,8 +40,10 @@ container: "none"
   <h2>Official implementations</h2>
 
   <div class="row">
+    <div class="one column"></div>
+
     {% for impl in site.implementations %}
-    <div class="three columns implementation">
+    <div class="two columns implementation">
       <a href="https://github.com/tus/{{impl.name}}">
         <img src="/assets/img/{{impl.icon}}.svg" alt="Icon" />
 

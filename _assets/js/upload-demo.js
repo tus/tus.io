@@ -1,202 +1,85 @@
-/* global $, console, tus */
+/* global $, console, tus, alert */
+
 $(function () {
   'use strict';
 
-  var $progress = $('.js_progress');
-  var $download = $('.js_download');
-  var host = window.tusdEndpoint || 'http://master.tus.io';
+  var upload         = null;
+  var stopBtn        = document.querySelector('#stop-btn');
+  var resumeCheckbox = document.querySelector('#resume');
+  var input          = document.querySelector('input[type=file]');
+  var $progress      = $('.progress');
+  var $progressBar   = $('.progress-bar');
+  var alertBox       = document.querySelector('#support-alert');
+  var uploadList     = document.querySelector('.upload-list');
 
-  $('input[type=file]').change(function () {
-    var $input = $(this);
-    var file = this.files[0];
-    console.log('selected file', file);
+  if (!tus.isSupported) {
+    alertBox.classList.remove('hidden');
+  }
 
-    $('.js-stop').removeClass('disabled');
+  stopBtn.addEventListener('click', function (e) {
+    e.preventDefault();
 
-    var options = {
-      endpoint: host + '/files/',
-      resetBefore: $('#reset_before').prop('checked'),
-      resetAfter: false
-    };
-
-    $('.js_file').hide();
-    $('.js_progress').parent().show();
-
-    $('.progress').addClass('active');
-
-    upload = tus.upload(file, options)
-      .fail(function (error) {
-        console.log('Failed because: ' + error);
-      })
-      .always(function () {
-        $input.val('');
-        $('.js-stop').addClass('disabled');
-        $('.progress').removeClass('active');
-      })
-      .progress(function (e, bytesUploaded, bytesTotal) {
-        var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
-        $progress.css('width', percentage + '%');
-      })
-      .done(function (url, file) {
-        $progress.css('width', '100%');
-        $progress.parent().hide();
-        $download.attr('href', url);
-        $download.css({display: 'inline-block'});
-        $download.text('Download '+file.name);
-      });
+    if (upload) {
+      upload.abort();
+    }
   });
 
-  // This is required at the moment to get CORS headers support for Firefox.
-  // Based on http://bugs.jquery.com/ticket/10338#comment:13
-  // jQuery is not fixing because it's a FF bug.
-  // FF is fixing but only as of version 21+ so to support older versions
-  // in combination with jQuery 1.4+, we'll need this:
-  var fixFirefoxXhrHeaders = function () {
-    var _super = $.ajaxSettings.xhr;
-    $.ajaxSetup({
-      xhr: function () {
-        var xhr = _super();
-        var getAllResponseHeaders = xhr.getAllResponseHeaders;
+  input.addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    console.log('selected file', file);
 
-        xhr.getAllResponseHeaders = function () {
-          var allHeaders = getAllResponseHeaders.call(xhr);
-          if (allHeaders) {
-            return allHeaders;
-          }
+    stopBtn.disabled = false;
 
-          allHeaders = '';
-          var concatHeader = function (i, headerName) {
-            if (xhr.getResponseHeader(headerName)) {
-              allHeaders += headerName + ': ' + xhr.getResponseHeader(headerName) + '\n';
-            }
-          };
-
-          $(['Cache-Control', 'Content-Language', 'Content-Type', 'Expires', 'Last-Modified', 'Pragma']).each(concatHeader);
-
-          // non-simple headers (add more as required)
-          $(['Location', 'Range', 'Offset', 'Content-Range']).each(concatHeader);
-
-          return allHeaders;
-        };
-
-        return xhr;
-      }
-    });
-  };
-  fixFirefoxXhrHeaders();
-
-  // disabled for now since it doesn't fully work with the PATCH and Offset
-  // changes in v0.2 of the protocol. Needs more hackery here.
-  // $('#js_upload').fileupload({
-  //     url: host + '/files',
-  //     maxChunkSize: 16 * 1024 * 1024,
-  //     multipart: false,
-  //     add: function(e, data) {
-  //       $('.js_file').hide();
-  //       $('.js_progress').parent().show();
-  //       upload(data);
-  //     },
-  //     fail: function(e, data) {
-  //       setTimeout(function() {
-  //         upload(data);
-  //       }, 1000);
-  //     },
-  //     progress: function(e, data) {
-  //       var progress = (data.loaded / data.total * 100).toFixed(2);
-  //       setProgress(progress);
-  //     },
-  //     done: function(e, data) {
-  //       console.log(arguments);
-  //       success(data);
-  //     }
-  // });
-
-  var upload = function (data) {
-    var file = data.files[0];
-    var localId = fingerprint(file);
-    var size = file.size;
-
-    data.url = localStorage.getItem(localId);
-
-    if (!data.url) {
-      $.ajax({
-        type: 'POST',
-        url: host + '/files',
-        headers: {
-          'Content-Range': 'bytes */' + size,
-          'Content-Disposition': 'attachment; filename="' + encodeURI(file.name) + '"'
-        },
-        success: function (theData, status, jqXHR) {
-          var url = jqXHR.getResponseHeader('Location');
-          if (!url) {
-            throw 'Unable to parse Location header to form url';
-          }
-
-          localStorage.setItem(localId, url);
-
-          data.url = url;
-          data.method = 'PUT';
-          data.submit();
-        },
-        error: function () {
-          setTimeout(function () {
-            upload(data);
-          }, 1000);
-        }
-      });
-      return;
-    }
-
-    $.ajax({
-      type: 'HEAD',
-      url: data.url,
-      success: function (theData, status, jqXHR) {
-        var range = jqXHR.getResponseHeader('Range');
-        var m = range && range.match(/bytes=\d+-(\d+)/);
-        if (!m) {
-          localStorage.removeItem(localId);
-          upload(data);
-          return;
-        }
-
-        var uploadedBytes = parseInt(m[1], 10)+1;
-        if (uploadedBytes === size) {
-          success(data);
-          return;
-        }
-
-        data.uploadedBytes = uploadedBytes;
-        data.method = 'PUT';
-        data.submit();
+    var options = {
+      endpoint: 'http://master.tus.io:8080/files/',
+      resume: !resumeCheckbox.checked,
+      onError: function (error) {
+        reset();
+        alert('Failed because: ' + error);
       },
-      error: function (xhr) {
-        if (xhr.status === 404) {
-          localStorage.removeItem(localId);
-          upload(data);
-          return;
-        }
-
-        console.log('error checking', data.url, 'status', xhr.status);
-        setTimeout(function () {
-          upload(data);
-        }, 1000);
+      onProgress: function (bytesUploaded, bytesTotal) {
+        var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
+        $progressBar.css({width: percentage + '%'});
+        console.log(bytesUploaded, bytesTotal, percentage + '%');
+      },
+      onSuccess: function () {
+        reset();
+        var anchor = document.createElement('a');
+        anchor.textContent = 'Download ' + upload.file.name + ' (' + upload.file.size + ' bytes)';
+        anchor.href = upload.url;
+        anchor.className = 'button primary';
+        uploadList.appendChild(anchor);
       }
-    });
-  };
+    };
 
-  var fingerprint = function (file) {
-    return 'file-'+file.name+'-'+file.size;
-  };
+    upload = new tus.Upload(file, options);
+    upload.start();
+  });
 
-  var setProgress = function (percentage) {
-    $progress.css('width', percentage+'%');
-  };
+  var animatedOutClass = 'animated flipOutX';
+  var animatedInClass = 'animated fadeIn';
+  function reset() {
+    input.value = '';
+    stopBtn.disabled = true;
+    $progress.removeClass('active');
 
-  var success = function (data) {
-    setProgress(100);
-    $progress.parent().hide();
-    $download.attr('href', data.url);
-    $download.css({display: 'inline-block'});
-    $download.text('Download '+data.files[0].name);
-  };
+    // hide
+    window.setTimeout(function () {
+      $progress.addClass(animatedOutClass);
+      $progressBar.addClass('no-transition');
+
+      // set to 0
+      window.setTimeout(function () {
+        $progressBar.css({width: 0});
+
+        // show
+        window.setTimeout(function () {
+          $progressBar.removeClass('no-transition');
+          $progress
+            .removeClass(animatedOutClass)
+            .addClass(animatedInClass);
+        }, 300);
+      }, 600);
+    }, 1000);
+  }
 });

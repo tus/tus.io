@@ -2,6 +2,8 @@
 @import (less) "../_vendors/skeleton/css/skeleton.css";
 @import (less) "../_vendors/animate.css/source/_base.css";
 @import (less) "../_vendors/animate.css/source/fading_entrances/fadeIn.css";
+@import (less) "../_vendors/animate.css/source/flippers/flipOutX.css";
+
 @import "./less/posts.less";
 @scheme: #1eaedb;
 @scheme-primary: #25967a;
@@ -401,6 +403,9 @@ textarea:focus {
 }
 
 .progress {
+	overflow: hidden;
+	height: 38px;
+	margin-bottom: 30px;
 	background-color: #eee;
 	border-radius: 4px;
 	box-shadow: 0 1px 2px #ccc inset;
@@ -422,6 +427,10 @@ textarea:focus {
 
 		&.active {
 			animation: progress-bar-stripes 2s linear infinite;
+		}
+
+		&.no-transition {
+			transition: initial;
 		}
 	}
 
@@ -507,4 +516,18 @@ textarea:focus {
 .implementations-link {
 	padding-top: 30px;
 	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.alert {
+	padding: 15px 30px;
+	border: 1px solid #e1e11e;
+	border-radius: 3px;
+}
+
+.upload-list .button {
+	display: block;
 }

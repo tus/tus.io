@@ -59,7 +59,7 @@ preview-quick: build-assets build-site
 	jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: pull
-pull: 
+pull:
 	@echo "--> Running pull.."
 	@git pull
 
@@ -88,7 +88,7 @@ deploy: pull build
     --no-owner \
 	./_site/ /tmp/deploy-$(ghpages_repo)
 
-	@echo 'This repo is just a deploy target. Do not edit. You changes will be lost.' > /tmp/deploy-$(ghpages_repo)/README.md
+	@echo 'This branch is just a deploy target. Do not edit. You changes will be lost.' > /tmp/deploy-$(ghpages_repo)/README.md
 
 	@cd /tmp/deploy-$(ghpages_repo) \
 	  && git init && git checkout -B $(ghpages_branch) && git add --all . \

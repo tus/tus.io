@@ -20,6 +20,8 @@ navigation:
   url: /about.html
 - text: Blog
   url: /blog.html
+- text: Shop
+  url: http://shop.tus.io/collections/all
 - text: Demo
   url: /demo.html
 - text: Protocol
@@ -70,5 +72,7 @@ implementations:
   icon: prog-java
 - name: tus-android-client
   icon: android
+- name: TUSKit
+  icon: os-ios
 - name: tusd
   icon: prog-golang02
