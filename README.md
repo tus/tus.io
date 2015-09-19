@@ -53,6 +53,12 @@ Or, to build everything:
 make build
 ```
 
+For linting CSS files:
+
+```bash
+npm run css:lint
+```
+
 ## Deployment
 
 The tus.io site is developed from the `master` branch in this repository.
