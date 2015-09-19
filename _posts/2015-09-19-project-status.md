@@ -37,6 +37,18 @@ currently only features two, pretty expensive, items and we're working with [Pri
 more accessible. Know that any profit flows back to the project. Our books are open to 
 anyone who wants to verify.
 
+## Implementations
+
+While 1.0 could potentially still be changed, we don't expect major changes
+so our official implementations are already 1.0 ready.
+
+All official projects have been updated to the 1.0 branch already
+for which a big thank you goes out to [Mark R. Masterson](https://github.com/MMasterson)
+and Marius for upgrading many of our implementations. 
+
+Marius also added 1.0 Android and 
+standalone Java implementations as official tus projects.
+
 ## Demo
 
 The demo section is currently receiving some polishing by 
@@ -45,13 +57,6 @@ The demo section is currently receiving some polishing by
 It uses our 1.0 [tus-js-client](https://github.com/tus/tus-js-client) and we've
 updated the demo page to feature all the browsers & platforms the client has been 
 tested to work on.
-
-While 1.0 could potentially still be changed, we don't expect major changes
-so our official implementations are already 1.0 ready.
-
-All official projects have been updated to the 1.0 branch already
-for which a big thank you goes out to [Mark R. Masterson](https://github.com/MMasterson)
-and Marius.
 
 The demo page uploads files to a
 to a 1.0 [tusd](https://github.com/tus/tusd) server written in Go, that we
