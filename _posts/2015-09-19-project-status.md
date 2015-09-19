@@ -45,7 +45,8 @@ for which a big thank you goes out to [Mark R. Masterson](https://github.com/MMa
 and Marius who upgraded all of our implementations. 
 
 Marius also added Android and 
-standalone Java implementations as official tus projects.
+standalone Java implementations as official tus projects, and replaced our jQuery 
+implementation with a standalone [tus-js-client](https://github.com/tus/tus-js-client).
 
 If you're interested in building & maintaining new 1.0 implementations, becoming
 a member of tus core, leave a note here:
