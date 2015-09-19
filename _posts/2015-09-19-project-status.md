@@ -31,30 +31,30 @@ in [The Changelog](https://changelog.com/) on September 18 and Transloadit
 is sponsoring conferences to hand out swag and raise tus awareness.
 
 Swag is also for sale at the new [shop.tus.io](http://shop.tus.io/collections/all). The shop
-currently only features two, pretty expensive, items and we're working with [Printful](https://www.theprintful.com/) to make these
-more accessible. Know that any profit flows back to the project. Our books are open to 
+currently only features two, pretty expensive, items and we're working with [Printful](https://www.theprintful.com/) to improve on that. 
+Know that any profit flows back to the project and our books are open to 
 anyone who wants to verify.
 
 ### Implementations
 
 While 1.0 could potentially still be changed, we don't expect major changes
-so our official implementations are already 1.0 ready.
+so our official implementations have already been made 1.0 compatible.
 
 All official projects have been updated to the 1.0 branch already
 for which a big thank you goes out to [Mark R. Masterson](https://github.com/MMasterson)
-and Marius for upgrading many of our implementations. 
+and Marius who upgraded all of our implementations. 
 
-Marius also added 1.0 Android and 
+Marius also added Android and 
 standalone Java implementations as official tus projects.
 
-If you're interested in building & maintaining new 1.0 implementations and becoming
+If you're interested in building & maintaining new 1.0 implementations, becoming
 a member of tus core, leave a note here:
 
  - [More 1.0 implementations](https://github.com/tus/tus-resumable-upload-protocol/issues/67)
 
 ### Demo
 
-The demo section is currently receiving some polishing by 
+The demo section is currently receiving polishing by 
 [Fahad Ibnay Heylaal](https://github.com/Acconut).
 
 It uses our 1.0 [tus-js-client](https://github.com/tus/tus-js-client) and we've
@@ -71,19 +71,23 @@ Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd)
 uses a powerful combination of [Ansible](http://www.ansible.com/) and 
 [Terraform](https://terraform.io/) to 
 spin up fully functioning tus servers with a single command. Every bit 
-except for the AWS & server keys are open sourced, so please reach out if
-you'd like to help us with our todo:
+(except for the AWS & SSH keys has) been added to the repository 
+and is publicly available.
+
+Please each out if you'd like to help us:
 
 - [Add local Vagrant support for testing the Ansible scripts](https://github.com/tus/infra-tusd/issues/1)
 
 ### Adoption
 
-Finally, a few of the biggest names in internet have taken an interest 
+Finally, a few big companies have taken an interest 
 in tus. tus will always remain open source and community owned, but 
-we're excited that we're on the path to realizing our mission.
+we're excited that we're on the path to realizing our mission to
+change how the world does file uploading.
 
-More announcements on this soon!
+We'll have more announcements on this soon!
 
-If you will be using tus, and want the world to know, please add your to this issue:
+If you (plan to) use tus in production, please add your to this issue and get your
+company listed on the tus.io website:
 
 - [Companies that (plan to) use tus](https://github.com/tus/tus.io/issues/28)
