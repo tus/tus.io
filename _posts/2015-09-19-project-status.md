@@ -8,9 +8,9 @@ author: kvz
 
 Here's a quick update on the status of the project.
 
-### 1.0 
+### 1.0
 
-We're close to finalizing 1.0. Our project 
+We're close to finalizing 1.0. Our project
 lead [Marius Kleidl](https://github.com/Acconut) has been taking care
 of integrating a large batch of improvements
 that were made by [Naren Venkataraman](https://github.com/vayam) and this team.
@@ -20,19 +20,19 @@ Things still left to do:
 - [Write a Developers Guide](https://github.com/tus/tus-resumable-upload-protocol/issues/59)
 - Gather a *final round of feedback* on [the 1.0 proposal](https://github.com/tus/tus-resumable-upload-protocol/pull/57)
 
-We're waiting for a *final round of feedback* to make sure every last bit 
+We're waiting for a *final round of feedback* to make sure every last bit
 is taken care of before cementing everything into our first stable release.
 
 ### Exposure & Swag
 
-To make sure every developer and interested party had their change to chime in, 
+To make sure every developer and interested party had their change to chime in,
 we're trying to get some extra exposure for the project. We'll be covered
 in [The Changelog](https://changelog.com/) on September 18 and Transloadit
 is sponsoring conferences to hand out swag and raise tus awareness.
 
 Swag is also for sale at the new [shop.tus.io](http://shop.tus.io/collections/all). The shop
-currently only features two, pretty expensive, items and we're working with [Printful](https://www.theprintful.com/) to improve on that. 
-Know that any profit flows back to the project and our books are open to 
+currently only features two, pretty expensive, items and we're working with [Printful](https://www.theprintful.com/) to improve on that.
+Know that any profit flows back to the project and our books are open to
 anyone who wants to verify.
 
 ### Implementations
@@ -42,10 +42,10 @@ so our official implementations have already been made 1.0 compatible.
 
 All official projects have been updated to the 1.0 branch already
 for which a big thank you goes out to [Mark R. Masterson](https://github.com/MMasterson)
-and Marius who upgraded all of our implementations. 
+and Marius who upgraded all of our implementations.
 
-Marius also added Android and 
-standalone Java implementations as official tus projects, and replaced our jQuery 
+Marius also added Android and
+standalone Java implementations as official tus projects, and replaced our jQuery
 implementation with a standalone [tus-js-client](https://github.com/tus/tus-js-client).
 
 If you're interested in building & maintaining new 1.0 implementations, becoming
@@ -55,24 +55,28 @@ a member of tus core, leave a note here:
 
 ### Demo
 
-The demo section is currently receiving polishing by 
-[Fahad Ibnay Heylaal](https://github.com/Acconut).
+Since the first publication of the tus protocol, our website featured a
+[demo page](/demo.html) allowing users to see a tus in action, interactively.
+In the past this service had some issues with reliability and browser-support.
+Because of this past, we updated the entire stack used by the demo.
 
-It uses our 1.0 [tus-js-client](https://github.com/tus/tus-js-client) and we've
-updated the demo page to feature all the browsers & platforms the client has been 
-tested to work on.
+It now uses our newly created [tus-js-client](https://github.com/tus/tus-js-client)
+and we've updated the demo page to feature all the browsers & platforms the
+client has been tested to work on.
+The demo page uploads files to a [tusd 1.0](https://github.com/tus/tusd)
+server written in Go, that we deploy via the newly created
+[infra-tusd](https://github.com/tus/infra-tusd) repository.
 
-The demo page uploads files to a
-to a 1.0 [tusd](https://github.com/tus/tusd) server written in Go, that we
-deploy via the newly created [infra-tusd](https://github.com/tus/infra-tusd) repository.
+In addition, it has received some design polishing from [Fahad Ibnay Heylaal](https://github.com/fahad19),
+who also did the entire redesign of our website a few months ago.
 
 ### Infra
 
-Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd) 
-uses a powerful combination of [Ansible](http://www.ansible.com/) and 
-[Terraform](https://terraform.io/) to 
-spin up fully functioning tus servers with a single command. Every bit 
-(except for the AWS & SSH keys) has been added to the repository 
+Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd)
+uses a powerful combination of [Ansible](http://www.ansible.com/) and
+[Terraform](https://terraform.io/) to
+spin up fully functioning tus servers with a single command. Every bit
+(except for the AWS & SSH keys) has been added to the repository
 and is publicly available.
 
 Please each out if you'd like to help us:
@@ -81,8 +85,8 @@ Please each out if you'd like to help us:
 
 ### Adoption
 
-Finally, a few big companies have taken an interest 
-in tus. tus will always remain open source and community owned, but 
+Finally, a few big companies have taken an interest
+in tus. tus will always remain open source and community owned, but
 we're excited that we're on the path to realizing our mission to
 change how the world does file uploading.
 
