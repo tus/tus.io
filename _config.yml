@@ -76,3 +76,35 @@ implementations:
   icon: os-ios
 - name: tusd
   icon: prog-golang02
+
+features:
+- title: HTTP-based
+  content: |
+    Being built upon the popular HTTP protocol, tus can be easily integrated
+    into applications using existing libraries and can be used directly from
+    any website running inside a browser.
+- title: Production-ready
+  content: |
+    tus can be considered ready for use in production and has completed numerous
+    rounds of improvements and feedback from people working at Vimeo, Google
+    and multiple other known companies.
+- title: Open source
+  content: |
+    All of our implementations, this website and even the protocol itself is
+    accessible for everyone, in source code and, of course, for free on our
+    GitHub account.
+- title: Minimalistic designed…
+  content: |
+    The specification only requires a very small set of features to be
+    implemented by clients and servers, embracing simplicity and fast
+    development and iteration speed for everyone.
+- title: … and still extensible
+  content: |
+    tus still features an extensive list of extensions introducing additional
+    functionality, including parallel uploading, checksums and expiration,
+    which can be implemented voluntarily.
+- title: Community-owned
+  content: |
+    We believe in an open and accessible evolution of this protocol. At any
+    stage and since the beginning of tus, feedback has been appreciated and
+    integrated. Your contributions are awaited.
