@@ -72,7 +72,7 @@ Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd)
 uses a powerful combination of [Ansible](http://www.ansible.com/) and 
 [Terraform](https://terraform.io/) to 
 spin up fully functioning tus servers with a single command. Every bit 
-(except for the AWS & SSH keys has) been added to the repository 
+(except for the AWS & SSH keys) has been added to the repository 
 and is publicly available.
 
 Please each out if you'd like to help us:
@@ -88,7 +88,7 @@ change how the world does file uploading.
 
 We'll have more announcements on this soon!
 
-If you (plan to) use tus in production, please add your to this issue and get your
+If you (plan to) use tus in production, please comment on this issue and get your
 company listed on the tus.io website:
 
 - [Companies that (plan to) use tus](https://github.com/tus/tus.io/issues/28)
