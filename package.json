@@ -22,7 +22,7 @@
     "watch": "^0.16.0"
   },
   "scripts": {
-    "js:concat": "concat-from-list _assets/app.cson assets/build/app.js",
+    "js:concat": "concat-from-list _assets/app.json assets/build/app.js",
     "js:minify": "uglifyjs assets/build/app.js -o assets/build/app.js",
     "js:minify:source": "uglifyjs assets/build/app.js -o assets/build/app.js --source-map assets/build/app.js.map",
     "js:hint": "jshint $(find ./_assets/js -name \"*.js\") ./_scripts/*.js",
