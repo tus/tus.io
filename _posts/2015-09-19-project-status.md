@@ -10,7 +10,7 @@ Here's a quick update on the status of the project.
 
 ### 1.0
 
-We're close to finalizing 1.0. Our project
+We're finalizing 1.0. Our project
 lead [Marius Kleidl](https://github.com/Acconut) has been taking care
 of integrating a large batch of improvements
 that were made by [Naren Venkataraman](https://github.com/vayam) and this team.
