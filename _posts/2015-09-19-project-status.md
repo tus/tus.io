@@ -56,7 +56,7 @@ a member of tus core, leave a note here:
 ### Design
 
 The whole site has been given a new layout by [Fahad Ibnay Heylaal](https://github.com/fahad19) and
-a completely new logo was design by [Milan Vuckovic](https://twitter.com/milan_vuckovic).
+a completely new logo was designed by [Milan Vuckovic](https://twitter.com/milan_vuckovic).
 
 We're currently working on improving other:
 
