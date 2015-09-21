@@ -27,7 +27,7 @@ is taken care of before cementing everything into our first stable release.
 
 To make sure every developer and interested party had their change to chime in,
 we're trying to get some extra exposure for the project. We'll be covered
-in [The Changelog](https://changelog.com/) on September 18 and Transloadit
+in the upcoming [Changelog](https://changelog.com/) and Transloadit
 is sponsoring conferences to hand out swag and raise tus awareness.
 
 Swag is also for sale at the new [shop.tus.io](http://shop.tus.io/collections/all). The shop
