@@ -13,7 +13,7 @@ Here's a quick update on the status of the project.
 We're finalizing 1.0. Our project
 lead [Marius Kleidl](https://github.com/Acconut) has been taking care
 of integrating a large batch of improvements
-that were made by [Naren Venkataraman](https://github.com/vayam) and this team.
+that were made by Vimeo's [Naren Venkataraman](https://github.com/vayam) and this team.
 
 Things still left to do:
 
