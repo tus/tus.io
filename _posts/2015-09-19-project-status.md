@@ -53,6 +53,15 @@ a member of tus core, leave a note here:
 
  - [More 1.0 implementations](https://github.com/tus/tus-resumable-upload-protocol/issues/67)
 
+### Design
+
+The whole site has been given a new layout by [Fahad Ibnay Heylaal](https://github.com/fahad19) and
+a completely new logo was design by [Milan Vuckovic](https://twitter.com/milan_vuckovic).
+
+We're currently working on improving other:
+
+ - [Design issues](https://github.com/tus/tus.io/issues)
+
 ### Demo
 
 Since the first publication of the tus protocol, our website featured a
@@ -66,9 +75,6 @@ client has been tested to work on.
 The demo page uploads files to a [tusd 1.0](https://github.com/tus/tusd)
 server written in Go, that we deploy via the newly created
 [infra-tusd](https://github.com/tus/infra-tusd) repository.
-
-In addition, it has received some design polishing from [Fahad Ibnay Heylaal](https://github.com/fahad19),
-who also did the entire redesign of our website a few months ago.
 
 ### Infra
 
