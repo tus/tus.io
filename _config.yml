@@ -81,10 +81,8 @@ features:
 - title: HTTP-based
   content: |
     Built as a layer on top of the popular HTTP protocol, tus can be easily integrated
-    into applications using existing libraries, and can be used directly from any
-    website running inside a browser. Nearly all firewalls already allow its traffic,
-    and the traffic can leverage existing web infra such as loadbalancers,
-    cache appliances, reverse/authentication proxies.
+    into applications using existing libraries, proxies, and firewalls, and can
+    be used directly from any website.
 - title: Production-ready
   content: |
     tus can be considered ready for use in production and has completed numerous
