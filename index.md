@@ -37,6 +37,21 @@ container: "none"
 </div>
 
 <div class="container">
+  <div class="row">
+    {% for feat in site.features %}
+    {% if forloop.index0 == 3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    <section class="four columns feature">
+      <h5>{{feat.title}}</h5>
+      <div>{{feat.content}}</div>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container">
   <h2>Official implementations</h2>
 
   <div class="row">
