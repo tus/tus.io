@@ -80,9 +80,11 @@ implementations:
 features:
 - title: HTTP-based
   content: |
-    Being built upon the popular HTTP protocol, tus can be easily integrated
-    into applications using existing libraries and can be used directly from
-    any website running inside a browser.
+    Built as a layer on top of the popular HTTP protocol, tus can be easily integrated
+    into applications using existing libraries, and can be used directly from any
+    website running inside a browser. Nearly all firewalls already allow its traffic,
+    and the traffic can leverage existing web infra such as loadbalancers,
+    cache appliances, reverse/authentication proxies.
 - title: Production-ready
   content: |
     tus can be considered ready for use in production and has completed numerous
@@ -90,15 +92,15 @@ features:
     and multiple other known companies.
 - title: Open source
   content: |
-    All of our implementations, this website and even the protocol itself is
-    accessible for everyone, in source code and, of course, for free on our
-    GitHub account.
-- title: Minimalistic designed…
+    The source code to all of our implementations, this website and even the protocol
+    itself is accessible to everyone under MIT license, right from our
+    [GitHub](https://github.com/tus) organization.
+- title: Minimalistic design...
   content: |
     The specification only requires a very small set of features to be
     implemented by clients and servers, embracing simplicity and fast
     development and iteration speed for everyone.
-- title: … and still extensible
+- title: ... and still extensible
   content: |
     tus still features an extensive list of extensions introducing additional
     functionality, including parallel uploading, checksums and expiration,
