@@ -45,7 +45,7 @@ container: "none"
     {% endif %}
     <section class="four columns feature">
       <h5>{{feat.title}}</h5>
-      <div>{{feat.content}}</div>
+      <div>{{feat.content | markdownify }}</div>
     </section>
     {% endfor %}
   </div>
