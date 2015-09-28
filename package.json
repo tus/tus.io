@@ -6,7 +6,7 @@
   "dependencies": {
     "autoprefixer": "6.0.3",
     "babel": "5.8.23",
-    "clean-css": "3.4.4",
+    "clean-css": "3.4.5",
     "concat-from-list": "0.1.2",
     "glob": "5.0.15",
     "jshint": "2.8.0",
