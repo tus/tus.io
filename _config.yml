@@ -10,8 +10,47 @@ kramdown:
   entity_output: as_char
   toc_levels: 2..6
 
-rss_feed: http://feeds.feedburner.com/tusio
+# legacy rssgenerator.rb
+# We'll keep this around as we don't want to risk losing audience
+# over removing/redirecting this rss to the new atom.
+rss_name: blog.rss
+
+# new: jekyll-feed
+# We'll refer new atom feed though, as adviced by GitHub
+# https://github.com/blog/2053-easier-feeds-for-github-pages
+feed:
+  path: blog.atom
+
 url: http://tus.io
+
+gems:
+  - jemoji
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+emoji:
+  src: "/assets/img"
+
+assets:
+  debug         : false
+  cachebust     : hard
+  gzip          : [ text/css, application/javascript ]
+  cache         : true
+  js_compressor : uglifier
+  css_compressor: sass
+  sources       :
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _vendors
+    - node_modules
+
+browsers:
+  - "last 1 version"
+  - "> 1%"
+  - "Explorer 10"
+
+exclude: [vendor]
 
 navigation:
 - text: Home

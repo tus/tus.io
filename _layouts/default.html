@@ -9,8 +9,8 @@
 
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
-    <link href="/assets/build/app.css" rel="stylesheet" type="text/css" />
-    <link href="{{ site.rss_feed }}" type="application/rss+xml" rel="alternate" title="Posts">
+    {% stylesheet app %}
+    {% feed_meta %}
 
     <script src="//use.typekit.net/zgo3uyj.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -36,9 +36,9 @@
             <div class="three columns">
               <h3 class="logo">
                 <a href="/">
-                  {% if page.url != "/index.html" %}
-                    <img src="/assets/img/favicon.png" class="shield" alt="tus.io" />
+                  {% if page.homepage %}
                   {% else %}
+                    <img src="/assets/img/favicon.png" class="shield" alt="tus.io" />
                   {% endif %}
 
                   <img src="/assets/img/tus7.png" alt="tus.io" />
@@ -119,12 +119,10 @@
 
     <script type="text/javascript">
       window.tusdEndpoint = '{{ tusd_endpoint }}';
+      window.companyLogos = [{% for logo in site.data.logos %}{ url: '{{ logo.url }}', src: '{{ logo.src }}', name: '{{ logo.name }}' }{% unless forloop.last %},{% endunless %}{% endfor %}];
     </script>
 
-    <script type="text/javascript" src="/assets/build/app.js"></script>
+    {% javascript app %}
 
-    <script type="text/javascript">
-      $('.on-the-githubs').onthegithubs();
-    </script>
   </body>
 </html>
