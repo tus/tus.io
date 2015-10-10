@@ -13,6 +13,11 @@ kramdown:
 rss_feed: http://feeds.feedburner.com/tusio
 url: http://tus.io
 
+gems:
+  - jemoji
+
+emoji:
+  src: "/assets/img"
 navigation:
 - text: Home
   url: /
