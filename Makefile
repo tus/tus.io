@@ -1,3 +1,4 @@
+SHELL     := /usr/bin/env bash
 onthegithubs_dir="node_modules/on-the-githubs"
 ghpages_repo="tus/tus.io"
 ghpages_branch="gh-pages"
@@ -10,17 +11,17 @@ install:
 	@echo "--> Installing dependencies.."
 	@npm install
 	@bower install
-	@jekyll --version || sudo gem install jekyll -v '2.5.2'
 
 .PHONY: build-assets
 build-assets:
 	@echo "--> Building assets.."
 	@npm run build
+	@bundle install --path vendor/bundle
 
 .PHONY: build-site
 build-site:
 	@echo "--> Building site.."
-	@jekyll build
+	@bundle exec jekyll build
 
 .PHONY: build-protocol
 build-protocol:
@@ -49,14 +50,14 @@ build-community:
 		 --debug)
 
 .PHONY: build
-build: build-protocol build-assets build-site build-community
+build: build-protocol build-site build-community
 	@echo "--> Building all.."
 	@echo "Done :)"
 
 .PHONY: preview-quick
 preview-quick: build-assets build-site
 	@echo "--> Running preview-quick.."
-	jekyll serve --watch --unpublished --skip-initial-build
+	bundle exec jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: pull
 pull:
@@ -66,7 +67,7 @@ pull:
 .PHONY: preview
 preview: install build
 	@echo "--> Running preview.."
-	jekyll serve --watch --unpublished --skip-initial-build
+	bundle exec jekyll serve --watch --unpublished --skip-initial-build
 
 .PHONY: deploy
 deploy: pull build
