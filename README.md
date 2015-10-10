@@ -22,19 +22,17 @@ your browser after a few seconds.
 
 ## Deployment
 
-The tus.io site is developed from the `master` branch in this repository.
-It is built and then the results are forcefully pushed to the `gh-pages` branch of the `tus.io` repo on GitHub.
-
-The protocol is pulled in as a submodule from the `tus-resumable-upload-protocol` repo.
-
-Everyone with write access to this repo can type:
+tus.io is deployed onto GitHub pages, but since we have many custom build requirements that
+GitHub can't support for us (like building community pages and the protocll), 
+we curate content in `master`, build ourselves locally, then 
+directly push artifacts to to the `gh-pages` branch of the `tus.io` repo on GitHub.
 
 ```bash
 make deploy
 ```
 
-.. to compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
-have a Git repo initialized there, and have the thing force-pushed to the `gh-pages` branch of the `tus.io` repo.
+This compiles the Jekyll source into `./_site`, copies that into a random `TMPDIR`,
+initializes a Git repo there, and force-pushes to the `gh-pages` branch of the `tus.io` repo.
 
 Up to ten minutes later (but mostly after a few seconds), GitHub will have updated the [tus.io](http://tus.io) site accordingly.
 
