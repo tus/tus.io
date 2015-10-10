@@ -45,6 +45,11 @@ assets:
     - _vendors
     - node_modules
 
+browsers:
+  - "last 1 version"
+  - "> 1%"
+  - "Explorer 10"
+
 exclude: [vendor]
 
 navigation:

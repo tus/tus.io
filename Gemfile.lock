@@ -8,6 +8,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
     blankslate (2.1.2.4)
     classifier-reborn (2.0.3)
       fast-stemmer (~> 1.0)
@@ -128,6 +131,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   jekyll (= 2.5.2)
   jekyll-assets (= 1.0.0)
   jekyll-feed (= 0.3.1)
