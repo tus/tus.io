@@ -26,6 +26,8 @@ url: http://tus.io
 gems:
   - jemoji
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
 emoji:
   src: "/assets/img"
