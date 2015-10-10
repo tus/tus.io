@@ -44,18 +44,9 @@
     if ($('.logos').length > 0) {
       var logos = shuffleArray(window.companyLogos);
       for (var i = 0, l = logos.length; i<l; i++) {
-        var logo = $('<div class="slide offset-by-one column five columns"><a href="' + logos[i].url + '"><img src="' + logos[i].src + '" alt="' + logos[i].name + '"></a></div>');
+        var logo = $('<div class="six columns"><a href="' + logos[i].url + '"><img src="' + logos[i].src + '" alt="' + logos[i].name + '"></a></div>');
         $('.logos').append(logo);
       }
-      $('.expender').click(function() {
-        if ($('.logos').hasClass('expended')) {
-          $('.logos').removeClass('expended').css('max-height', '150px');
-          $('.expender').html('see more <span class="caret"/>');
-        } else {
-          $('.logos').addClass('expended').css('max-height', 5000);
-          $('.expender').html('see less <span class="dropup"><span class="caret"></span></span>');
-        }
-      });
     }
 
     $('.on-the-githubs').onthegithubs();
