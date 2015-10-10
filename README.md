@@ -2,62 +2,23 @@
 
 The tus.io website.
 
-## Setup
-
-Install the required ruby gems:
+To work on the site locally, type:
 
 ```bash
-$ gem install jekyll therubyracer redcarpet
+cd ~code
+git clone git@github.com:tus/tus.io.git
+make preview
 ```
 
-Build assets:
+This will run a chain of different [`Makefile`](/Makefile) targets that will 
+install prerequisites, download the latest version of our protocol, community 
+info, and then build all e.g. markdown & less files to html & css into `_site`.
 
-```bash
-$ npm install
-$ bower install
-$ npm run build
-```
+It will then fire up a Jekyll server and will offer you to click on 
+http://127.0.0.1:4000 where the tus.io site will be running.
 
-You would also be required to run this command
-to fetch some info from original [Tus protocol](https://github.com/tus/tus-resumable-upload-protocol) repository:
-
-```bash
-$ make build-protocol
-```
-
-After this you can run the local development server like this:
-
-```bash
-$ jekyll --auto --server
-```
-
-On more recent Jekyll installs it's
-
-```bash
-$ jekyll serve --watch
-```
-
-Next, point your browser to http://127.0.0.1:4000/
-
-**Note** Some things like the protocol, and contributor/stargazer lists are replaced with up to date versions on deploy.
-If you want to have up to date versions of these locally too, run:
-
-```bash
-make protocol
-make community
-```
-
-Or, to build everything:
-
-```bash
-make build
-```
-
-For linting CSS files:
-
-```bash
-npm run css:lint
-```
+When you make changes, Jekyll automatically rebuilds, and you can refresh
+your browser after a few seconds.
 
 ## Deployment
 
@@ -72,7 +33,7 @@ Everyone with write access to this repo can type:
 make deploy
 ```
 
-To compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
+.. to compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
 have a Git repo initialized there, and have the thing force-pushed to the `gh-pages` branch of the `tus.io` repo.
 
 Up to ten minutes later (but mostly after a few seconds), GitHub will have updated the [tus.io](http://tus.io) site accordingly.
@@ -82,6 +43,6 @@ Up to ten minutes later (but mostly after a few seconds), GitHub will have updat
 * Create a fork of this repository
 * Clone it locally
 * Create a new branch
-* Add your logo image to /img/logos/ directory. Logo should be at least 150px of height. Name your logo with your company/project name.
-* Update /_data/logos.yml file and add an entry for your company with the name, url and src (should point to the logo you just added).
+* Add your logo image to `assets/img/logos/` directory. Logo should be at least 150px of height. Name your logo with your company/project name.
+* Update `_data/logos.yml` file and add an entry for your company with the name, url and src (should point to the logo you just added).
 * Commit your changes to your fork and create a pull request into the main repository.
