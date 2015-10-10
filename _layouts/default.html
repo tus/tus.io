@@ -119,6 +119,7 @@
 
     <script type="text/javascript">
       window.tusdEndpoint = '{{ tusd_endpoint }}';
+      window.companyLogos = [{% for logo in site.data.logos %}{ url: '{{ logo.url }}', src: '{{ logo.src }}', name: '{{ logo.name }}' }{% unless forloop.last %},{% endunless %}{% endfor %}];
     </script>
 
     {% javascript app %}

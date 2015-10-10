@@ -76,3 +76,12 @@ To compile the Jekyll source into `./_site`, copy that into a random `TMPDIR`,
 have a Git repo initialized there, and have the thing force-pushed to the `gh-pages` branch of the `tus.io` repo.
 
 Up to ten minutes later (but mostly after a few seconds), GitHub will have updated the [tus.io](http://tus.io) site accordingly.
+
+## How to add your company/project logo to the site
+
+* Create a fork of this repository
+* Clone it locally
+* Create a new branch
+* Add your logo image to /img/logos/ directory. Logo should be at least 150px of height. Name your logo with your company/project name.
+* Update /_data/logos.yml file and add an entry for your company with the name, url and src (should point to the logo you just added).
+* Commit your changes to your fork and create a pull request into the main repository.

@@ -2,6 +2,7 @@
 layout: default
 title: Resumable File Uploads
 container: "none"
+homepage: true
 ---
 
 <div class="intro">
@@ -73,6 +74,20 @@ container: "none"
   <p class="implementations-link">
     Additionally, there are many <a href="/implementations.html">projects</a> built
     and maintained by our community.
+  </p>
+</div>
+
+
+<div class="container">
+  <h2>Who's using tus?</h2>
+  <div class="logos row">
+  </div>
+  <!-- <div class="expender row">
+   see more <span class="caret"></span>
+  </div> -->
+  <p class="implementations-link" markdown="1">
+    Do you (plan to) use tus? 
+    [Add your company](https://github.com/tus/tus.io/edit/master/_data/logos.yml)
   </p>
 </div>
 

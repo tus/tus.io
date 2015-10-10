@@ -40,10 +40,11 @@
   $(document).ready(function () {
     Tus.navToggler();
 
+    // Logo shuffler & placer
     if ($('.logos').length > 0) {
       var logos = shuffleArray(window.companyLogos);
       for (var i = 0, l = logos.length; i<l; i++) {
-        var logo = $('<div class="slide two columns"><a href="' + logos[i].url + '"><img src="' + logos[i].src + '" alt="' + logos[i].name + '"></a></div>');
+        var logo = $('<div class="slide offset-by-one column five columns"><a href="' + logos[i].url + '"><img src="' + logos[i].src + '" alt="' + logos[i].name + '"></a></div>');
         $('.logos').append(logo);
       }
       $('.expender').click(function() {
