@@ -16,6 +16,11 @@ $(function () {
     alertBox.classList.remove('hidden');
   }
 
+  if (!stopBtn) {
+    console.log('Stop button not found on this page. Aborting upload-demo. ');
+    return;
+  }
+
   stopBtn.addEventListener('click', function (e) {
     e.preventDefault();
 

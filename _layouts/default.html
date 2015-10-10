@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
-    <link href="/assets/build/app.css" rel="stylesheet" type="text/css" />
+    {% stylesheet app %}
     <link href="{{ site.rss_feed }}" type="application/rss+xml" rel="alternate" title="Posts">
 
     <script src="//use.typekit.net/zgo3uyj.js"></script>
@@ -121,7 +121,7 @@
       window.tusdEndpoint = '{{ tusd_endpoint }}';
     </script>
 
-    <script type="text/javascript" src="/assets/build/app.js"></script>
+    {% javascript app %}
 
     <script type="text/javascript">
       $('.on-the-githubs').onthegithubs();

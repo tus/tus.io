@@ -11,11 +11,6 @@ install:
 	@echo "--> Installing dependencies.."
 	@npm install
 	@bower install
-
-.PHONY: build-assets
-build-assets:
-	@echo "--> Building assets.."
-	@npm run build
 	@bundle install --path vendor/bundle
 
 .PHONY: build-site
@@ -55,7 +50,7 @@ build: build-protocol build-site build-community
 	@echo "Done :)"
 
 .PHONY: preview-quick
-preview-quick: build-assets build-site
+preview-quick: build-site
 	@echo "--> Running preview-quick.."
 	bundle exec jekyll serve --watch --unpublished --skip-initial-build
 

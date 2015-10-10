@@ -18,6 +18,22 @@ gems:
 
 emoji:
   src: "/assets/img"
+
+assets:
+  debug         : false
+  cachebust     : hard
+  gzip          : [ text/css, application/javascript ]
+  cache         : true
+  js_compressor : uglifier
+  css_compressor: sass
+  sources       :
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _vendors
+    - node_modules
+
+exclude: [vendor]
+
 navigation:
 - text: Home
   url: /

@@ -1,10 +1,10 @@
-@import (less) "../_vendors/skeleton/css/normalize.css";
-@import (less) "../_vendors/skeleton/css/skeleton.css";
-@import (less) "../_vendors/animate.css/source/_base.css";
-@import (less) "../_vendors/animate.css/source/fading_entrances/fadeIn.css";
-@import (less) "../_vendors/animate.css/source/flippers/flipOutX.css";
+@import (less) "../../_vendors/skeleton/css/normalize.css";
+@import (less) "../../_vendors/skeleton/css/skeleton.css";
+@import (less) "../../_vendors/animate.css/source/_base.css";
+@import (less) "../../_vendors/animate.css/source/fading_entrances/fadeIn.css";
+@import (less) "../../_vendors/animate.css/source/flippers/flipOutX.css";
 
-@import "./less/posts.less";
+@import "./posts.css.less";
 @scheme: #1eaedb;
 @scheme-primary: #25967a;
 @scheme-secondary: #48aa92;
@@ -16,6 +16,23 @@
 
 .clearfix {
 	clear: both;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.expander {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	cursor: pointer;
 }
 
 body {
