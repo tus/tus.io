@@ -1,3 +1,5 @@
+# Adding your logo source image as an http:// URL will work.
+# tus developers will later download, optimize, and include it in ./assets
 - url: 'https://transloadit.com'
   src: /assets/img/logos/transloadit.png
   name: Transloadit
