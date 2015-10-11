@@ -1,0 +1,184 @@
+
+
+.clearfix {
+	clear: both;
+}
+
+body {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: @scheme-secondary;
+
+	&:hover {
+		color: @scheme-primary;
+	}
+}
+
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+select:focus,
+textarea:focus {
+	border-color: @scheme-secondary;
+}
+
+.button {
+	&.button-primary {
+		background-color: @scheme-secondary;
+		border-color: @scheme-secondary;
+
+		&:hover {
+			background-color: @scheme-primary;
+			border-color: @scheme-primary;
+		}
+	}
+}
+
+.ribbon {
+	border: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+
+	@media (max-width: 960px) {
+		display: none;
+	}
+}
+
+.header {
+	background: @header-bg;
+	border-bottom: 1px solid #ddd;
+	border-top: 5px solid @scheme-secondary;
+
+	.logo {
+		line-height: 65px;
+		margin: 0;
+
+		a {
+			color: #fff;
+			font-weight: 700;
+			text-decoration: none;
+
+			img {
+				width: 65px;
+			}
+
+			.shield {
+				position: relative;
+				top: 5px;
+				width: 35px;
+			}
+		}
+	}
+
+	.toggler {
+		display: none;
+		float: right;
+		font-size: 2.5rem;
+		line-height: 65px;
+		text-decoration: none;
+
+		.hamburger {
+			display: block;
+			font-size: 1.5em;
+		}
+
+		.cross {
+			display: none;
+		}
+	}
+
+	.nav {
+		float: right;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			float: left;
+			margin: 0;
+			padding: 15px 10px;
+
+			a {
+				border: 1px solid transparent;
+				color: #222;
+				display: inline-block;
+				padding: 5px 10px;
+				text-decoration: none;
+			}
+
+			&.active a,
+			a:hover {
+				color: @scheme-secondary;
+			}
+		}
+	}
+
+	@media (max-width: 960px) {
+		position: relative;
+
+		.nav {
+			background: #eee;
+			border: 1px solid #ccc;
+			border-top: 0;
+			box-shadow: 0 2px 20px #ccc;
+			display: none;
+			margin-top: 66px;
+			position: absolute;
+			right: 0;
+			width: 300px;
+			z-index: 100;
+
+			li {
+				float: none;
+				padding: 0;
+
+				a {
+					display: block;
+					padding: 10px 20px;
+					transition: background 0.3s, color 0.3s;
+
+					&:hover {
+						background: @scheme-secondary;
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		.toggler {
+			display: inline-block;
+		}
+
+		.nav-container.open {
+			.nav {
+				display: block;
+			}
+
+			.hamburger {
+				display: none;
+			}
+
+			.cross {
+				display: block;
+			}
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.alert {
+	padding: 15px 30px;
+	border: 1px solid #e1e11e;
+	border-radius: 3px;
+}

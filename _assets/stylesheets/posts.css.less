@@ -1,76 +1,95 @@
-// .posts,
-.on-the-githubs {
-	list-style-type: none;
-	margin: 0 0 0 5px;
-	padding: 0;
 
-	img {
-		float: left;
-		margin: 0;
+.content {
+	h2:first-child {
+		border-bottom: 1px solid #eee;
+		margin-top: 20px;
 	}
 
-	p {
-		display: inline-block;
-		float: left;
-		margin: 0;
-		max-width: 550px;
+	.post {
+		.post-info {
+			color: #ccc;
+			margin-bottom: 10px;
+
+			.date {
+				font-weight: 700;
+			}
+		}
+
+		.post-content {
+			font-family: "ff-tisa-web-pro";
+			color: #555;
+		}
+
+		p {
+			margin-bottom: 15px;
+			// margin-left: 1.5em; // @TODO: do we really want this?
+			text-align: justify;
+		}
+
+		ul {
+			padding-left: 40px;
+		}
+
+		h3 {
+			border-bottom: 1px solid #eee;
+		}
 	}
 
-	span.timeago {
-		float: left;
-		position: absolute;
-		right: 0;
-		text-align: right;
-		width: 90px;
+	.post-subscribe {
+		margin-bottom: 20px;
 	}
+
+	.blog-posts {
+		.post {
+			h2:first-child {
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.posts {
+	list-style: none;
 
 	li {
 		border-bottom: 1px solid #eee;
-		clear: both;
-		margin: 0;
-		padding: 5px 0;
-		position: relative;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+
+		.author {
+			color: #ccc;
+			float: left;
+			height: 55px;
+			margin-right: 25px;
+			margin-top: 5px;
+			width: 55px;
+
+			img {
+				border: 2px solid #fff;
+				border-radius: 50%;
+				box-shadow: 0 0 6px #ccc;
+				width: 100%;
+			}
+		}
+
+		.post-title {
+			.date {
+				color: #ccc;
+			}
+
+			h3 {
+				margin: 0;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
 
 		&:last-child {
 			border-bottom: none;
 		}
-
-		&:hover .commits {
-			display: block;
-		}
-
-		abbr {
-			float: right;
-		}
-	}
-
-	.gravatar {
-		border-radius: 10px;
-		height: 20px;
-		margin-right: 7px;
-		width: 20px;
-	}
-
-	.commits {
-		clear: both;
-		display: none;
-		padding-top: 5px;
-
-		li {
-			font-size: 12px;
-			list-style-type: none;
-			margin-left: 10px;
-
-			a {
-				display: inline-block;
-				margin-right: 3px;
-				text-align: right;
-				width: 50px;
-			}
-		}
-	}
-
-	abbr[title] {
-		border: none;
 	}
 }

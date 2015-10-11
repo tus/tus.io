@@ -1,0 +1,39 @@
+
+.kramdown-toc {
+	margin-bottom: 15px;
+
+	ul {
+		counter-reset: section;
+		list-style-type: none;
+
+		li {
+			&::before {
+				content: counter(section) ". ";
+				counter-increment: section;
+				display: inline-block;
+				width: 18px;
+			}
+
+			ul {
+				margin-bottom: 0;
+				margin-top: 1rem;
+			}
+
+			li::before {
+				content: counter(section, lower-alpha) ". ";
+			}
+
+			li li::before {
+				content: counter(section, lower-roman) ". ";
+			}
+
+			li li li::before {
+				content: counter(section, disc) " ";
+			}
+
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+}
