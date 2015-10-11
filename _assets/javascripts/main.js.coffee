@@ -1,4 +1,6 @@
-### global jQuery ###
+# This is just to show that we can use the new jekyl-asset pipeline
+# to write CoffeeScript a well, should we so desire.
+
 (($) ->
   Tus = {}
 
