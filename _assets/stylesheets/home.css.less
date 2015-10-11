@@ -1,4 +1,3 @@
-
 .intro {
 	background: #fff;
 	color: @intro-color;
@@ -48,30 +47,15 @@
 }
 
 
-.implementations {
-	list-style: inherit;
-	margin-left: 30px;
+.feature {
+	h5 {
+		text-align: center;
+		margin-top: 1.5em;
+		border-bottom: 1px solid #eee;
+	}
 
-	li {
-		.title,
-		.author {
-			display: inline-block;
-		}
-
-		.author {
-			&,
-			a {
-				color: #aaa;
-			}
-
-			a {
-				text-decoration: none;
-
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
+	div {
+		text-align: justify;
 	}
 }
 
@@ -91,16 +75,47 @@
 	text-align: center;
 }
 
+.posts {
+	list-style: none;
 
-.feature {
-	h5 {
-		text-align: center;
-		margin-top: 1.5em;
+	li {
 		border-bottom: 1px solid #eee;
-	}
+		margin-bottom: 15px;
+		padding-bottom: 15px;
 
-	div {
-		text-align: justify;
+		.author {
+			color: #ccc;
+			float: left;
+			height: 55px;
+			margin-right: 25px;
+			margin-top: 5px;
+			width: 55px;
+
+			img {
+				border: 2px solid #fff;
+				border-radius: 50%;
+				box-shadow: 0 0 6px #ccc;
+				width: 100%;
+			}
+		}
+
+		.post-title {
+			.date {
+				color: #ccc;
+			}
+
+			h3 {
+				margin: 0;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 }
 
@@ -119,6 +134,83 @@
     text-align: center;
     padding-top: 30px;
   }
+}
+
+
+.on-the-githubs {
+	list-style-type: none;
+	margin: 0 0 0 5px;
+	padding: 0;
+
+	img {
+		float: left;
+		margin: 0;
+	}
+
+	p {
+		display: inline-block;
+		float: left;
+		margin: 0;
+		max-width: 550px;
+	}
+
+	span.timeago {
+		float: left;
+		position: absolute;
+		right: 0;
+		text-align: right;
+		width: 90px;
+	}
+
+	li {
+		border-bottom: 1px solid #eee;
+		clear: both;
+		margin: 0;
+		padding: 5px 0;
+		position: relative;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&:hover .commits {
+			display: block;
+		}
+
+		abbr {
+			float: right;
+		}
+	}
+
+	.gravatar {
+		border-radius: 10px;
+		height: 20px;
+		margin-right: 7px;
+		width: 20px;
+	}
+
+	.commits {
+		clear: both;
+		display: none;
+		padding-top: 5px;
+
+		li {
+			font-size: 12px;
+			list-style-type: none;
+			margin-left: 10px;
+
+			a {
+				display: inline-block;
+				margin-right: 3px;
+				text-align: right;
+				width: 50px;
+			}
+		}
+	}
+
+	abbr[title] {
+		border: none;
+	}
 }
 
 .subscription-form {
