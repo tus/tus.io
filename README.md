@@ -40,4 +40,4 @@ Up to ten minutes later (but mostly after a few seconds), GitHub will have updat
 
 Just edit [logos.yml](https://github.com/tus/tus.io/edit/master/_data/logos.yml) directly and
 save - this will send us a PR. We will download and include the externally linked logo ourselves
-later on.
+later on via `make download-logos && make optimize-logos`.
