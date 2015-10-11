@@ -5,7 +5,7 @@ The tus.io website.
 To work on the site locally, type:
 
 ```bash
-cd ~code
+cd ~/code
 git clone git@github.com:tus/tus.io.git
 make preview
 ```
