@@ -38,19 +38,6 @@ Up to ten minutes later (but mostly after a few seconds), GitHub will have updat
 
 ## How to add your company/project logo to the site
 
-### Easy
-
 Just edit [logos.yml](https://github.com/tus/tus.io/edit/master/_data/logos.yml) directly and
 save - this will send us a PR. We will download and include the externally linked logo ourselves
 later on.
-
-### Harder
-
-If you want to save us some work, you could:
-
-* Create a fork of this repository
-* Clone it locally
-* Create a new branch
-* Add your logo image to `assets/img/logos/` directory. Logo should be at least 150px of height and max 800px wide. Name your logo with your company/project name.
-* Update `_data/logos.yml` file and add an entry for your company with the name, url and src (should point to the logo you just added).
-* Commit your changes to your fork and create a pull request into the main repository.

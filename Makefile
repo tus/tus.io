@@ -16,8 +16,14 @@ save-logo-stats:
 	identify -format " - %f %b %G\n" $(logos_dir)/*.{svg,png} |gsort -hk3 > $(logos_dir)/README.md
 	du -hs $(logos_dir) >> $(logos_dir)/README.md
 
+.PHONY: download-logos
+download-logos:
+	@DEBUG=*:* coffee ./_scripts/download-external-logos.coffee
+	$(MAKE) save-logo-stats
+
 .PHONY: optimize-logos
 optimize-logos:
+	$(MAKE) download-logos
 	@which mogrify  > /dev/null 2>&1 || (echo "Please brew install imagemagick" && false)
 	@which pngquant > /dev/null 2>&1 || (echo "Please brew install pngquant"    && false)
 

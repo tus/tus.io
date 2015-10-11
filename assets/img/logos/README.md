@@ -1,3 +1,4 @@
- - vimeo.png 3.62KB 500x300
+ - vimeo.png 3.34KB 442x126
  - transloadit.png 11.8KB 800x204
- 20K	assets/img/logos
+ - hotpoint.png 15KB 616x150
+ 36K	assets/img/logos

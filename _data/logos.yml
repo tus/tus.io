@@ -1,9 +1,9 @@
-- url : https://transloadit.com
-  src : /assets/img/logos/transloadit.png
+- url: 'https://transloadit.com'
+  src: /assets/img/logos/transloadit.png
   name: Transloadit
-- url : https://vimeo.com
-  src : /assets/img/logos/vimeo.png
+- url: 'https://vimeo.com'
+  src: /assets/img/logos/vimeo.png
   name: Vimeo
-- url : http://hotpointapp.com
-  src : http://new.hotpointapp.com/wp-content/uploads/2015/09/KBFYG2.png
+- url: 'http://hotpointapp.com'
+  src: /assets/img/logos/hotpoint.png
   name: Hotpoint
