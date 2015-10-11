@@ -1,5 +1,8 @@
-# Adding your logo source image as an http:// URL will work.
-# tus developers will later download, optimize, and include it in ./assets
+# Just click 'edit', that will automatically fork this file and create a Pull Request with us.
+#
+# Adding your image as an http:// URL is okay.
+# tus developers will later on download, optimize, and include your logo in ./assets. 
+# This saves you the hassle of cloning the project locally to add your image.
 - url: 'https://transloadit.com'
   src: /assets/img/logos/transloadit.png
   name: Transloadit
