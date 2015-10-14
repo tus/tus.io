@@ -6,7 +6,7 @@
   "dependencies": {
     "autoprefixer": "6.0.3",
     "babel": "5.8.23",
-    "clean-css": "3.4.5",
+    "clean-css": "3.4.6",
     "concat-from-list": "0.1.2",
     "depurar": "^0.2.0",
     "download": "^4.2.1",
