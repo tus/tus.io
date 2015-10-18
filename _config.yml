@@ -20,6 +20,7 @@ url: http://tus.io
 gems:
   - jemoji
   - jekyll-feed
+  - jekyll-assets
   - jekyll-sitemap
   - jekyll-redirect-from
 
