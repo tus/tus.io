@@ -9,7 +9,7 @@
     "clean-css": "3.4.5",
     "concat-from-list": "0.1.2",
     "depurar": "^0.2.0",
-    "download": "^4.2.1",
+    "download": "^4.4.1",
     "glob": "5.0.15",
     "js-yaml": "^3.4.3",
     "jshint": "2.8.0",
