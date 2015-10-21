@@ -42,6 +42,7 @@ install:
 	@echo "--> Installing dependencies.."
 	@npm install
 	@bower install
+	@which bundle 2>/dev/null || sudo gem install bundler -v 1.10 -n /usr/local/bin	
 	@bundle install --path vendor/bundle
 
 .PHONY: build-site
