@@ -19,7 +19,7 @@
     "postcss-cli": "2.1.1",
     "postcss-reporter": "1.2.1",
     "run-scripts": "0.4.0",
-    "stylelint": "1.2.1",
+    "stylelint": "2.0.0",
     "tus-js-client": "1.0.0",
     "uglify-js": "2.4.24",
     "watch": "0.16.0"
