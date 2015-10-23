@@ -141,3 +141,6 @@ DEPENDENCIES
   jemoji (= 0.5.0)
   therubyracer (= 0.12.2)
   uglifier (= 2.7.2)
+
+BUNDLED WITH
+   1.10.0
