@@ -176,18 +176,6 @@ what protocol version you're targetting.
 
 <ul class="implementations">
   <li>
-    <a class="title" href="https://github.com/vencax/coffeetus">
-      vencax/coffeetus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/vencax">vencax</a></div>
-
-    <div class="description">
-      A tus <code>v1.0.0</code> server written using <strong>node.js</strong>
-    </div>
-  </li>
-
-  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
