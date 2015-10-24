@@ -16,7 +16,7 @@
     "less": "2.5.3",
     "on-the-githubs": "2.3.0",
     "postcss": "5.0.9",
-    "postcss-cli": "2.1.1",
+    "postcss-cli": "2.3.0",
     "postcss-reporter": "1.2.1",
     "run-scripts": "0.4.0",
     "stylelint": "1.2.1",
