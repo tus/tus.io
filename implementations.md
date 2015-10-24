@@ -228,6 +228,20 @@ what protocol version you're targetting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/vencax/coffeetus">
+      vencax/coffeetus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/vencax">vencax</a></div>
+
+    <div class="description">
+      tus <code>v1.0.0</code> powering resumable file uploads for <strong>CoffeeScript</strong> based Node.js servers and apps
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 Drop a line if you built an open source tus implementation, and you'll be
