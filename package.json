@@ -5,7 +5,7 @@
   "files": [],
   "dependencies": {
     "autoprefixer": "6.0.3",
-    "babel": "5.8.23",
+    "babel": "5.8.29",
     "clean-css": "3.4.5",
     "concat-from-list": "0.1.2",
     "depurar": "^0.2.0",
