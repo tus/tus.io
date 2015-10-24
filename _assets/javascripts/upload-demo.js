@@ -87,4 +87,101 @@ $(function () {
       }, 600);
     }, 1000);
   }
+
+  // Fetch the lastest job results from SauceLabs to build the browser matrix.
+  // Only proceed and send the request if we are on the demo page
+  if(location.pathname != "/demo.html") return;
+
+  // We use crossorigin.me for adding the required CROS headers since
+  // SauceLabs does not do this by default.
+  $.getJSON("http://crossorigin.me/https://saucelabs.com/rest/v1/marius_transloadit/jobs?limit=100&full=true", function(jobs) {
+    var matrix = {},
+        buildId = jobs[0].build;
+
+    // Insert jobs into a table
+    jobs.forEach(function(job) {
+      // Ignore jobs which are not run in the latestest build
+      if(job.build != buildId) return;
+
+      var browser = job.browser;
+
+      if(!(browser in matrix)) {
+        matrix[browser] = [];
+      }
+
+      matrix[browser].push({
+        version: job.browser_short_version,
+        passed: !!job.passed
+      });
+    });
+
+    // `matrix` contains the verions grouped by the browser name but
+    // we want the in a table-like format stored in rows and columns
+    var table = [];
+
+    for(var i = 0; true; i++) {
+      var cellFound = false;
+
+      table[i] = [];
+
+      for(var browser in matrix) {
+        var cell = matrix[browser][i];
+
+        if(cell) {
+          cellFound = true;
+        } else {
+          cell = null;
+        }
+
+        table[i].push(cell);
+
+      }
+
+      if(!cellFound) {
+        delete table[i];
+        break;
+      }
+    }
+
+    // Build a HTML table from the arrays
+    var html = "<table class='u-full-width'><tr>";
+
+    var browserAlias = {
+      iphone: "iPhone",
+      android: "Android",
+      opera: "Opera",
+      safari: "Safari",
+      googlechrome: "Chrome",
+      firefox: "Firefox",
+      iexplore: "IE"
+    };
+
+    for(var browser in matrix) {
+      html += "<th>" + browserAlias[browser] + "</th>";
+    }
+
+    html += "</tr>";
+
+    table.forEach(function(row) {
+      html += "<tr>";
+
+      row.forEach(function(cell) {
+        html += "<td>";
+        if(cell != null) {
+          if(!cell.passed) {
+            html += "<del>" + cell.version + "</del>";
+          } else {
+            html += cell.version;
+          }
+        }
+        html += "</td>";
+      });
+
+      html += "</tr>";
+    });
+
+    html += "</table>";
+
+    $("#browser-matrix").html(html);
+  });
 });

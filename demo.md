@@ -55,70 +55,11 @@ deployed via [infra-tusd](https://github.com/tus/infra-tusd).
 ### Compatibility
 
 The [tus-js-client](https://github.com/tus/tus-js-client) used in
-this demo has been [tested](https://s3.amazonaws.com/archive.travis-ci.org/jobs/68939799/log.txt) and works with the following browsers:
+this demo has been [automatically tested](https://travis-ci.org/tus/tus-js-client) and works with the following browsers:
 
-#### iOS
-
-- passed: iphone 4.3 on Mac 10.6
-- passed: iphone 5.0 on Mac 10.6
-- passed: iphone 5.1 on Mac 10.8
-- passed: iphone 6.0 on Mac 10.8
-- passed: iphone 6.1 on Mac 10.8
-- passed: iphone 7.0 on Mac 10.9
-- passed: iphone 7.1 on Mac 10.9
-- passed: iphone 8.0 on Mac 10.10
-- passed: iphone 8.2 on Mac 10.10
-- passed: iphone 8.1 on Mac 10.10
-
-#### Android
-
-- passed: android 4.0 on Linux
-- passed: android 4.1 on Linux
-- passed: android 4.2 on Linux
-- passed: android 4.3 on Linux
-- passed: android 4.4 on Linux
-- passed: android 5.0 on Linux
-- passed: android 5.1 on Linux
-
-
-#### OSX
-
-- passed: safari 6 on Mac 10.8
-- passed: safari 7 on Mac 10.9
-- passed: safari 5 on Mac 10.6
-- passed: safari 8 on Mac 10.10
-
-#### Linux
-
-- passed: firefox 31 on Linux
-- passed: firefox 32 on Linux
-- passed: firefox 33 on Linux
-- passed: firefox 34 on Linux
-- passed: firefox 35 on Linux
-- passed: firefox 36 on Linux
-- passed: firefox 37 on Linux
-- passed: firefox 38 on Linux
-- passed: chrome 31 on Linux
-- passed: chrome 32 on Linux
-- passed: chrome 33 on Linux
-- passed: chrome 35 on Linux
-- passed: chrome 34 on Linux
-- passed: chrome 37 on Linux
-- passed: chrome 36 on Linux
-- passed: chrome 38 on Linux
-- passed: chrome 39 on Linux
-- passed: chrome 40 on Linux
-- passed: chrome 41 on Linux
-- passed: chrome 42 on Linux
-- passed: chrome 43 on Linux
-
-#### Windows
-
-- passed: internet explorer 10 on Windows 2012
-- passed: internet explorer 11 on Windows 2012 R2
-- passed: internet explorer 9 on Windows 2008
-- passed: opera 12 on Windows 2003
-- passed: opera 11 on Windows 2003
+<div id="browser-matrix">
+  <center>Loading...</center>
+</div>
 
 Going forward, all relevant browsers will be supported with as many features
 as possible. All browsers will be able to perform at least simple multipart
