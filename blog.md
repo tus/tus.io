@@ -17,7 +17,9 @@ title: Blog
   </a>
 </div>
 
-{{ post.content }}
+<div class="post-content">
+  {{ post.content }}
+</div>
 
  </div>
  {% endfor %}
