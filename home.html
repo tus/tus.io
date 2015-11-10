@@ -119,7 +119,7 @@ permalink: /
       {% assign columnIndex   = forloop.index0 | modulo: columnsPerRow %}
 
       <div class="four columns {% if columnIndex == 0 %}offset-by-zero column{% endif %}">
-        <a href="{{ logo.url }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
+        <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
       </div>
       {% if columnIndex == tipOff %}</div><div class="row">{% endif %}
     {% else %}
@@ -145,6 +145,26 @@ permalink: /
     </div>
   </div>
 </div>
+
+<div class="container logos">
+  <h2>As seen on</h2>
+
+  <div class="row">
+    {% for logo in site.data.press |limit: 12 %}
+      {% assign columnsPerRow = 3 %}
+      {% assign tipOff        = columnsPerRow |minus: 1 %}
+      {% assign columnIndex   = forloop.index0 | modulo: columnsPerRow %}
+
+      <div class="four columns {% if columnIndex == 0 %}offset-by-zero column{% endif %}">
+        <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
+      </div>
+      {% if columnIndex == tipOff %}</div><div class="row">{% endif %}
+    {% else %}
+       There are press articles!
+    {% endfor %}
+  </div>
+</div>
+
 
 <div class="subscription-form">
   <div class="container">

@@ -1,0 +1,14 @@
+# Just click 'Edit this file', Saving will then that will automatically fork this, and create a Pull Request with us.
+#
+# Adding your image as an http:// URL is okay.
+# tus developers will later on download, optimize, and include your logo in ./assets.
+# This saves you the hassle of cloning the project locally to add your image.
+- url: 'http://tweakers.net/nieuws/101498/vimeo-gaat-resumable-upload-protocol-van-nederlandse-start-up-gebruiken.html'
+  src: /assets/img/press/tweakers.png
+  name: Tweakers.net (Dutch)
+- url: '#'
+  src: /assets/img/press/techeu.png
+  name: tech.eu
+- url: 'https://news.ycombinator.com/item?id=5563569'
+  src: /assets/img/press/hacker-news.png
+  name: Hacker News

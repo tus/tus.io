@@ -1,5 +1,8 @@
 SHELL     := /usr/bin/env bash
+logos_cfg := _data/logos.yml
 logos_dir := assets/img/logos
+press_cfg := _data/press.yml
+press_dir := assets/img/press
 
 onthegithubs_dir="node_modules/on-the-githubs"
 ghpages_repo="tus/tus.io"
@@ -9,8 +12,21 @@ ghpages_branch="gh-pages"
 all: install build deploy
 
 
-.PHONY: save-logo-stats
-save-logo-stats:
+.PHONY: save-press-stats
+save-press-stats:
+	$(MAKE) save-logos-stats logos_dir=$(press_dir)
+
+.PHONY: download-press
+download-press:
+	$(MAKE) download-logos logos_dir=$(press_dir)
+
+.PHONY: optimize-press
+optimize-press:
+	$(MAKE) optimize-logos logos_dir=$(press_dir)
+
+
+.PHONY: save-logos-stats
+save-logos-stats:
 	@which gsort    > /dev/null 2>&1 || (echo "Please brew install coreutils"   && false)
 	@which identify > /dev/null 2>&1 || (echo "Please brew install imagemagick" && false)
 	identify -format " - %f %b %G\n" $(logos_dir)/*.{svg,png} |gsort -hk3 > $(logos_dir)/README.md
@@ -18,16 +34,16 @@ save-logo-stats:
 
 .PHONY: download-logos
 download-logos:
-	@DEBUG=*:* coffee ./_scripts/download-external-logos.coffee
-	$(MAKE) save-logo-stats
+	@DEBUG=*:* LOGOS_DIR=$(logos_dir) LOGOS_CFG=$(logos_cfg) coffee ./_scripts/download-external-logos.coffee
+	$(MAKE) save-logos-stats logos_dir=$(logos_dir)
 
 .PHONY: optimize-logos
 optimize-logos:
-	$(MAKE) download-logos
+	$(MAKE) download-logos logos_dir=$(logos_dir)
 	@which mogrify  > /dev/null 2>&1 || (echo "Please brew install imagemagick" && false)
 	@which pngquant > /dev/null 2>&1 || (echo "Please brew install pngquant"    && false)
 
-	mogrify -resize 800x800\> $(logos_dir)/*.png
+	mogrify -format png -resize 800x800\> $(logos_dir)/*.png $(logos_dir)/*.jpg $(logos_dir)/*.jpeg
 	pngquant \
 	  --force \
 	  --skip-if-larger \
@@ -35,14 +51,14 @@ optimize-logos:
 		--ext '.png' \
 		--speed 1 \
 		$(logos_dir)/*.png
-	$(MAKE) save-logo-stats
+	$(MAKE) save-logos-stats logos_dir=$(logos_dir)
 
 .PHONY: install
 install:
 	@echo "--> Installing dependencies.."
 	@npm install
 	@bower install
-	@which bundle 2>/dev/null || sudo gem install bundler -v 1.10 -n /usr/local/bin	
+	@which bundle 2>/dev/null || sudo gem install bundler -v 1.10 -n /usr/local/bin
 	@bundle install --path vendor/bundle
 
 .PHONY: build-site

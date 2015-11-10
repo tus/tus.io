@@ -3,9 +3,9 @@ fs       = require "fs"
 debug    = require("depurar")("tusio")
 Download = require "download"
 
-logoAssetRelDir = "assets/img/logos"
+logoAssetRelDir = process.env.LOGOS_DIR || "assets/img/logos"
 logoAssetDir    = "#{__dirname}/../#{logoAssetRelDir}"
-logoConfigFile  = "#{__dirname}/../_data/logos.yml"
+logoConfigFile  = process.env.LOGOS_CFG || "#{__dirname}/../_data/logos.yml"
 logos           = YAML.safeLoad(fs.readFileSync(logoConfigFile, 'utf8'))
 
 for logo, i in logos
