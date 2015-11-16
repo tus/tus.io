@@ -15,6 +15,8 @@ kramdown:
 feed:
   path: blog.atom
 
+rss_feed: /atom.xml
+
 url: http://tus.io
 
 gems:
@@ -135,7 +137,7 @@ features:
 - title: ... yet still extensible
   content: |
     tus nevertheless features a sizable list of extensions that introduce additional
-    functionality, such as parallel uploading or checksums and expiration. All of these may be 
+    functionality, such as parallel uploading or checksums and expiration. All of these may be
     implemented according to your preferences.
 - title: Community-owned
   content: |
