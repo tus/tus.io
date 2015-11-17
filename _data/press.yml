@@ -12,3 +12,9 @@
 - url: 'https://news.ycombinator.com/item?id=5563569'
   src: /assets/img/press/hacker-news.png
   name: Hacker News
+- url: 'https://www.reddit.com/r/programming/comments/3t0rb2/berlinbased_transloadit_wants_to_fix_broken_file/'
+  src: /assets/img/press/reddit.png
+  name: Reddit
+- url: 'http://t3n.de/news/tus-open-source-upload-berliner-startup-657322'
+  src: /assets/img/press/t3n.png
+  name: t3n (German)
