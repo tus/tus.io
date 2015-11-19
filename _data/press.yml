@@ -9,7 +9,11 @@
 - url: 'http://tech.eu/features/6672/transloadit-tus-protocol-vimeo/'
   src: /assets/img/press/techeu.png
   name: tech.eu
-- url: 'https://news.ycombinator.com/item?id=5563569'
+# - url: 'https://news.ycombinator.com/item?id=10574364'
+# - url: 'https://news.ycombinator.com/item?id=5563569'
+# - url: 'https://news.ycombinator.com/item?id=5563569'
+# - url: 'https://news.ycombinator.com/item?id=10574179'
+- url: 'https://news.ycombinator.com/item?id=10591348'
   src: /assets/img/press/hacker-news.png
   name: Hacker News
 - url: 'https://www.reddit.com/r/programming/comments/3t0rb2/berlinbased_transloadit_wants_to_fix_broken_file/'
