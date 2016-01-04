@@ -16,8 +16,7 @@ for logo, i in logos
         .replace /[^A-Za-z\-\_]/g, "-"
 
       new Download()
-        .get(logo
-        .src)
+        .get(logo.src)
         .dest(logoAssetDir)
         .rename(basename: slug)
         .run (err, files)->
