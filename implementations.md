@@ -176,6 +176,34 @@ what protocol version you're targetting.
 
 <ul class="implementations">
   <li>
+    <a class="title" href="https://github.com/vencax/coffeetus">
+      vencax/coffeetus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/vencax">vencax</a></div>
+
+    <div class="description">
+      tus <code>v1.0.0</code> powering resumable file uploads for <strong>CoffeeScript</strong> based Node.js servers and apps
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/matthoskins1980/Flask-Tus">
+      matthoskins1980/Flask-Tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/matthoskins1980">Matt Hoskins</a></div>
+
+    <div class="description">
+      <strong>Flask</strong> extension implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Python</strong> servers and apps
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
@@ -212,20 +240,6 @@ what protocol version you're targetting.
 
     <div class="description">
       Add tus <code>v0.2.1</code> resumable file uploads to <strong>PHP</strong> servers (under Apache, Nginx, etc)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-  
-  <li>
-    <a class="title" href="https://github.com/vencax/coffeetus">
-      vencax/coffeetus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/vencax">vencax</a></div>
-
-    <div class="description">
-      tus <code>v1.0.0</code> powering resumable file uploads for <strong>CoffeeScript</strong> based Node.js servers and apps
     </div>
 
     <div class="license">Licensed under MIT</div>
