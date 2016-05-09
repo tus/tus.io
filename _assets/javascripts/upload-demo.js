@@ -160,7 +160,8 @@ $(function () {
       safari: "Safari",
       googlechrome: "Chrome",
       firefox: "Firefox",
-      iexplore: "IE"
+      iexplore: "IE",
+      microsoftedge: "Edge"
     };
 
     for(var browser in matrix) {
