@@ -31,6 +31,13 @@ $(function () {
 
   input.addEventListener('change', function (e) {
     var file = e.target.files[0];
+    // Only continue if a file has actually been selected.
+    // IE will trigger a change event even if we reset the input element
+    // using reset() and we do not want to blow up later.
+    if(!file) {
+      return;
+    }
+
     console.log('selected file', file);
 
     stopBtn.disabled = false;
