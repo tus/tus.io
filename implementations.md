@@ -79,7 +79,20 @@ These projects are reference implementations maintained by the protocol develope
 
     <div class="description">
       A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol.
-      You can run this to test client implementations with.
+      You can run this to test client implementations.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+  <li>
+    <a class="title" href="https://github.com/tus/tus-node-server">
+      tus-node-server
+    </a>
+
+    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+
+    <div class="description">
+      A stand-alone <strong>server</strong> or <a href="http://expressjs.com/en/guide/using-middleware.html">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can also run this to test client implementations with.
     </div>
 
     <div class="license">Licensed under MIT</div>

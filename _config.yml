@@ -110,6 +110,8 @@ implementations:
   icon: os-ios
 - name: tusd
   icon: prog-golang02
+- name: tus-node-server
+  icon: prog-node
 
 features:
 - title: HTTP-based
