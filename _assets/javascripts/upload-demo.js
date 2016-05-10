@@ -61,6 +61,10 @@ $(function () {
         anchor.href = upload.url;
         anchor.className = 'button primary';
         uploadList.appendChild(anchor);
+
+        $("html, body").animate({
+            scrollTop: $(uploadList).offset().top
+        }, 1000);
       }
     };
 
