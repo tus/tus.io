@@ -217,6 +217,20 @@ what protocol version you're targetting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/terrischwartz/tus_servlet">
+      terrischwartz/tus_servlet
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/terrischwartz">Terri Schwartz</a></div>
+
+    <div class="description">
+      <strong>Java servlet</strong> implementing server side of tus <code>v1.0.0</code>
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
