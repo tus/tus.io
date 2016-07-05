@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "depurar": "^0.2.0",
-    "download": "^4.2.1",
+    "download": "^4.4.1",
     "glob": "5.0.15",
     "js-yaml": "^3.4.3",
     "on-the-githubs": "2.3.0",
