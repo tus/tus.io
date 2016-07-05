@@ -10,7 +10,7 @@
     "on-the-githubs": "2.3.0",
     "postcss": "5.0.9",
     "postcss-reporter": "1.2.1",
-    "stylelint": "2.3.0",
+    "stylelint": "3.0.1",
     "tus-js-client": "1.1.3"
   }
 }
