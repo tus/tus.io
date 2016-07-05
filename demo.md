@@ -57,9 +57,7 @@ deployed via [infra-tusd](https://github.com/tus/infra-tusd).
 The [tus-js-client](https://github.com/tus/tus-js-client) used in
 this demo has been [automatically tested](https://travis-ci.org/tus/tus-js-client) and works with the following browsers:
 
-<div id="browser-matrix">
-  <center>Loading...</center>
-</div>
+<img id="browser-matrix" src="https://saucelabs.com/browser-matrix/marius_transloadit.svg" alt="Browser Compatibility Matrix"/>
 
 Going forward, all relevant browsers will be supported with as many features
 as possible. All browsers will be able to perform at least simple multipart
