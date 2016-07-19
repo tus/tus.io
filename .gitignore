@@ -10,3 +10,5 @@ assets/json/*.json
 node_modules/
 npm-debug.log
 vendor/bundle/
+
+.jekyll-metadata
