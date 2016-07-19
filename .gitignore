@@ -1,14 +1,12 @@
+_assets/bower
+_includes/tus.md
 _site
 _vendors
-assets/build
-
-# Built by `make build`:
-assets/json/*.json
-_includes/tus.md
-node_modules/
-
-npm-debug.log
+.asset-cache/
 .DS_Store
+.jekyll-assets-cache/
+assets/build
+assets/json/*.json
+node_modules/
+npm-debug.log
 vendor/bundle/
-
-.jekyll-assets-cache

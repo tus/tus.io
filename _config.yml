@@ -30,17 +30,8 @@ emoji:
   src: "/assets/img"
 
 assets:
-  debug         : false
-  cachebust     : hard
-  gzip          : [ text/css, application/javascript ]
-  cache         : true
-  js_compressor : uglifier
-  css_compressor: false
-  sources       :
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _vendors
-    - node_modules
+  sources:
+    - _assets
 
 browsers:
   - "last 1 version"
