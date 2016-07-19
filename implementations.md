@@ -271,6 +271,20 @@ what protocol version you're targetting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/everydo/tusfilter">
+      everydo/tusfilter
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/FuGangqiang">FuGangqiang</a></div>
+    
+    <div class="description">
+      <strong>wsgi filter</strong> middleware implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Flask, Bottle, Django and Pyraimd</strong> servers and apps
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Projects using tus</h4>
