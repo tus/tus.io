@@ -7,6 +7,7 @@ To work on the site locally, type:
 ```bash
 cd ~/code
 git clone git@github.com:tus/tus.io.git
+npm install
 npm run start
 ```
 
