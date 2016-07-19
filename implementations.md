@@ -259,5 +259,20 @@ what protocol version you're targetting.
   </li>
 </ul>
 
+<h4>Projects using tus</h4>
+
+<ul>
+  <li>
+    <a class="title" href="https://github.com/choonkeat/attache#rubygem">
+      choonkeat/attache#rubygem
+    </a>
+  </li>
+  <li>
+    <a class="title" href="https://github.com/janko-m/shrine">
+      janko-m/shrine
+    </a>
+  </li>
+</ul>
+
 Drop a line if you built an open source tus implementation, and you'll be
 listed here.
