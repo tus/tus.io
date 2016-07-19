@@ -30,7 +30,7 @@ echo "This branch is just a deploy target. Do not edit. You changes will be lost
 cd /tmp/deploy-${ghpages_repo} \
   && git init && git checkout -B ${ghpages_branch} && git add --all . \
   && git commit -nm "Update ${ghpages_repo} _site by ${USER}" \
-  && (git remote add origin github.com:${ghpages_repo}.git || true)  \
+  && (git remote add origin git@github.com:${ghpages_repo}.git || true)  \
   && git push origin ${ghpages_branch}:refs/heads/${ghpages_branch} --force
 
 rm -rf /tmp/deploy-${ghpages_repo}
