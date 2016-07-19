@@ -4,7 +4,7 @@ __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 source "${__dir}/_b3bp.sh"
 
-info "--> Installing dependencies.."
+echo "--> Installing dependencies.."
 bower install
 which bundle 2>/dev/null || sudo gem install bundler -v 1.10 -n /usr/local/bin
 bundle install --path vendor/bundle || bundle update vendor/bundle

@@ -4,7 +4,7 @@ __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 source "${__dir}/_b3bp.sh"
 
-info "--> Fetching latest protocol.."
+echo "--> Fetching latest protocol.."
 find _includes/tus.md -mtime +10 -exec rm -rf {} \; || true
 [ -f _includes/tus.md ] || (wget \
   https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md \
