@@ -56,8 +56,6 @@ navigation:
   url: /about.html
 - text: Blog
   url: /blog.html
-- text: Shop
-  url: http://shop.tus.io/collections/all
 - text: Demo
   url: /demo.html
 - text: Protocol
