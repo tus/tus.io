@@ -12,3 +12,7 @@
 - url: 'http://hotpointapp.com'
   src: /assets/img/logos/hotpoint.png
   name: Hotpoint
+- url: 'http://www.sdsc.edu'
+  src: https://www.phylo.org/portal2/images/sdsc_main_logo.gif
+  name: San Diego Supercomputer Center
+  
