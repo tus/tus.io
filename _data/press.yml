@@ -1,24 +1,28 @@
-# Just click 'Edit this file', Saving will then that will automatically fork this, and create a Pull Request with us.
+# Just (click) Edit this file. Saving will then that will automatically fork this,
+# and create a Pull Request so that we can review and merge it in.
 #
 # Adding your image as an http:// URL is okay.
 # tus developers will later on download, optimize, and include your logo in ./assets.
 # This saves you the hassle of cloning the project locally to add your image.
-- url: 'http://tweakers.net/nieuws/101498/vimeo-gaat-resumable-upload-protocol-van-nederlandse-start-up-gebruiken.html'
+- url: http://tweakers.net/nieuws/101498/vimeo-gaat-resumable-upload-protocol-van-nederlandse-start-up-gebruiken.html
   src: /assets/img/press/tweakers.png
   name: Tweakers.net (Dutch)
-- url: 'http://tech.eu/features/6672/transloadit-tus-protocol-vimeo/'
+- url: http://tech.eu/features/6672/transloadit-tus-protocol-vimeo/
   src: /assets/img/press/techeu.png
   name: tech.eu
-# - url: 'https://news.ycombinator.com/item?id=10574364'
-# - url: 'https://news.ycombinator.com/item?id=5563569'
-# - url: 'https://news.ycombinator.com/item?id=5563569'
-# - url: 'https://news.ycombinator.com/item?id=10574179'
-- url: 'https://news.ycombinator.com/item?id=10591348'
+# - url: https://news.ycombinator.com/item?id=10574364
+# - url: https://news.ycombinator.com/item?id=5563569
+# - url: https://news.ycombinator.com/item?id=5563569
+# - url: https://news.ycombinator.com/item?id=10574179
+- url: https://news.ycombinator.com/item?id=10591348
   src: /assets/img/press/hacker-news.png
   name: Hacker News
-- url: 'https://www.reddit.com/r/programming/comments/3t0rb2/berlinbased_transloadit_wants_to_fix_broken_file/'
+- url: https://www.reddit.com/r/programming/comments/3t0rb2/berlinbased_transloadit_wants_to_fix_broken_file/
   src: /assets/img/press/reddit.png
   name: Reddit
-- url: 'http://t3n.de/news/tus-open-source-upload-berliner-startup-657322'
+- url: http://t3n.de/news/tus-open-source-upload-berliner-startup-657322
   src: /assets/img/press/t3n.png
   name: t3n (German)
+- url: https://transloadit.com/blog/2016/03/tus-in-linux-magazine/
+  src: /assets/img/press/linuxmagazine.png
+  name: Linux Magazine
