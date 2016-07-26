@@ -30,6 +30,12 @@ emoji:
   src: "/assets/img"
 
 assets:
+  cache: false
+  assets:
+    - "*.png"
+    - "app.css"
+    - "app.js"
+  digest: false
   sources:
     - _assets
 
