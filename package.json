@@ -28,7 +28,7 @@
     "browser-sync": "2.13.0",
     "cross-env": "2.0.0",
     "depurar": "0.2.2",
-    "download": "5.0.2",
+    "download": "4.2.1",
     "glob": "7.0.5",
     "js-yaml": "3.6.1",
     "nodemon": "1.9.2",

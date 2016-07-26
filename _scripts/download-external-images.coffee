@@ -5,7 +5,7 @@ Download = require "download"
 
 imageAssetRelDir = process.env.IMAGES_DIR || "assets/img/images"
 imageAssetDir    = "#{__dirname}/../#{imageAssetRelDir}"
-imageConfigFile  = process.env.IMAGES_CFG || "#{__dirname}/../_data/images.yml"
+imageConfigFile  = process.env.IMAGES_CFG || "#{__dirname}/../_data/logos.yml"
 images           = YAML.safeLoad(fs.readFileSync(imageConfigFile, 'utf8'))
 
 for image, i in images
