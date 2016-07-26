@@ -120,21 +120,18 @@
 }
 
 .logos {
-	.columns {
-	  text-align: center;
-	}
-	img {
-	  height    : 60px;
-	  max-width : 100%;
-	  margin    : 0 auto;
-	  position  : relative;
-	}
-  .companies-link {
-    text-align: center;
-    padding-top: 30px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
+.logos img {
+  flex: 1 1 auto;
+  padding: 22px;
+	max-width: 200px;
+  max-height: 70px;
+}
 
 .on-the-githubs {
 	list-style-type: none;

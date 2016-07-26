@@ -105,19 +105,12 @@ permalink: /
 </div>
 
 
-<div class="container logos">
+<div class="container ">
   <h2>Who is using tus?</h2>
 
-  <div class="row">
+  <div class="row logos">
     {% for logo in site.data.logos |limit: 12 %}
-      {% assign columnsPerRow = 3 %}
-      {% assign tipOff        = columnsPerRow |minus: 1 %}
-      {% assign columnIndex   = forloop.index0 | modulo: columnsPerRow %}
-
-      <div class="four columns {% if columnIndex == 0 %}offset-by-zero column{% endif %}">
         <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
-      </div>
-      {% if columnIndex == tipOff %}</div><div class="row">{% endif %}
     {% else %}
        There are no company logos!
     {% endfor %}
@@ -142,22 +135,15 @@ permalink: /
   </div>
 </div>
 
-<div class="container logos">
+<div class="container">
   <h2>As seen on</h2>
 
-  <div class="row">
+  <div class="row logos">
     {% for logo in site.data.press |limit: 12 %}
-      {% assign columnsPerRow = 3 %}
-      {% assign tipOff        = columnsPerRow |minus: 1 %}
-      {% assign columnIndex   = forloop.index0 | modulo: columnsPerRow %}
-
-      <div class="four columns {% if columnIndex == 0 %}offset-by-zero column{% endif %}">
-        <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
-      </div>
-      {% if columnIndex == tipOff %}</div><div class="row">{% endif %}
-    {% else %}
-       There are no press articles to show at this point.
-    {% endfor %}
+      <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
+      {% else %}
+         There are no press logos!
+      {% endfor %}
   </div>
 </div>
 
