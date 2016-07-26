@@ -18,7 +18,7 @@
     "serve": "browser-sync start --server _site --files _site --reload-delay 400",
     "start": "npm-run-all pull install build --parallel watch serve",
     "start:quick": "npm-run-all build:site --parallel watch serve",
-    "watch": "nodemon --verbose --watch ./ --ignore _site/ --ignore vendor/ --ext html,json,md,js,css,png,jpg --exec 'npm run build:site'"
+    "watch": "nodemon --verbose --watch ./ --ignore _site/ --ignore vendor/ --ext html,json,md,js,css,less,png,jpg --exec 'npm run build:site'"
   },
   "dependencies": {
     "fakefile": "0.0.8",
