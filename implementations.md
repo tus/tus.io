@@ -231,6 +231,20 @@ what protocol version you're targetting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/janko-m/tus-ruby-server">
+      janko-m/tus-ruby-server
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/janko-m">Janko Marohnić</a></div>
+
+    <div class="description">
+      The ruby server implementation of tus <code>1.0.0</code>, can be run standalone or mounted in a ruby app
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
