@@ -5,8 +5,8 @@
   "scripts": {
     "build:community": "_scripts/build-community.sh",
     "build:protocol": "_scripts/build-protocol.sh",
-    "build:site": "cross-env JEKYLL_ENV={JEKYLL_ENV:-development} bundle exec jekyll build --incremental",
-    "build:site:full": "cross-env JEKYLL_ENV={JEKYLL_ENV:-development} bundle exec jekyll build",
+    "build:site": "cross-env JEKYLL_ENV=${JEKYLL_ENV:-development} bundle exec jekyll build --incremental",
+    "build:site:full": "cross-env JEKYLL_ENV=${JEKYLL_ENV:-development} bundle exec jekyll build",
     "build": "npm-run-all build:community build:protocol build:site:full",
     "deploy": "cross-env JEKYLL_ENV=production npm run build && _scripts/deploy.sh",
     "download:logos": "cross-env DEBUG=*:* IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos coffee ./_scripts/download-external-images.coffee",
