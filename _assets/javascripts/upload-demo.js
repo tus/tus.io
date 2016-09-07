@@ -46,8 +46,19 @@ $(function () {
       endpoint: 'http://master.tus.io:8080/files/',
       resume: !resumeCheckbox.checked,
       onError: function (error) {
+        if (error.originalRequest) {
+          if (confirm("Failed because: " + error + "\nDo you want to retry?")) {
+            options.resume = false;
+            options.uploadUrl = upload.url;
+            upload = new tus.Upload(file, options);
+            upload.start();
+            return;
+          }
+        } else {
+          alert("Failed because: " + error);
+        }
+
         reset();
-        alert('Failed because: ' + error);
       },
       onProgress: function (bytesUploaded, bytesTotal) {
         var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
