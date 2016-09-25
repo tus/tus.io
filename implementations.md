@@ -143,20 +143,6 @@ what protocol version you're targetting.
   </li>
 
   <li>
-    <a class="title" href="https://github.com/eahydra/tusclient">
-      eahydra/tusclient
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/eahydra">Hydra Ea</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>Go</strong> clients
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
     <a class="title" href="https://github.com/vayam/tuspy">
       vayam/tuspy
     </a>
