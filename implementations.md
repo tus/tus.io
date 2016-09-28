@@ -169,6 +169,20 @@ what protocol version you're targetting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/gerdus/tus-dotnet-client">
+      gerdus/tus-dotnet-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with .net applications (C#, Visual Basic.Net, etc)
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
