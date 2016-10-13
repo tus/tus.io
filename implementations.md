@@ -183,6 +183,20 @@ what protocol version you're targetting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/ifedapoolarewaju/tus-py-client">
+      ifedapoolarewaju/tus-py-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
