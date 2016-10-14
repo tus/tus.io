@@ -38,12 +38,20 @@ $(function () {
       return;
     }
 
+    // Use the HTTPS protocol if the site is served over a secure connection,
+    // in order to prevent the requests from being blocked by the browsers due
+    // to their mixed-content and security rules.
+    // In the other cases (including the http: and file: protocols), we simply
+    // fall back to HTTP.
+    var protocol = location.protocol === 'https:' ? 'https' : 'http';
+    var endpoint = protocol + '://master.tus.io/files/';
+
     console.log('selected file', file);
 
     stopBtn.disabled = false;
 
     var options = {
-      endpoint: 'http://master.tus.io:8080/files/',
+      endpoint: endpoint,
       resume: !resumeCheckbox.checked,
       onError: function (error) {
         if (error.originalRequest) {
