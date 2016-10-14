@@ -6,11 +6,8 @@ comments: true
 
 ## {{ page.title }}
 
-This demo is a proof of concept for resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client). 
-
-It sends your files
-to a [tusd](https://github.com/tus/tusd) server written in Go, that we
-deployed via [infra-tusd](https://github.com/tus/infra-tusd).
+This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client). 
+It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
 
 ### Instructions
 
