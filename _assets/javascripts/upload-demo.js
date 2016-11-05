@@ -29,7 +29,11 @@ $(function () {
       upload = null;
       toggleBtn.textContent = 'resume upload';
     } else {
-      startUpload();
+      if (input.files.length > 0) {
+        startUpload();
+      } else {
+        input.click();
+      }
     }
   });
 
