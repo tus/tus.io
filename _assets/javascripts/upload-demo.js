@@ -80,12 +80,13 @@ $(function () {
         console.log(bytesUploaded, bytesTotal, percentage + '%');
       },
       onSuccess: function () {
-        reset();
         var anchor = document.createElement('a');
         anchor.textContent = 'Download ' + upload.file.name + ' (' + upload.file.size + ' bytes)';
         anchor.href = upload.url;
         anchor.className = 'button primary';
         uploadList.appendChild(anchor);
+
+        reset();
 
         $("html, body").animate({
             scrollTop: $(uploadList).offset().top
