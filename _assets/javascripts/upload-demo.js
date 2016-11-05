@@ -4,7 +4,7 @@ $(function () {
   'use strict';
 
   var upload         = null;
-  var stopBtn        = document.querySelector('#stop-btn');
+  var toggleBtn      = document.querySelector('#toggle-btn');
   var resumeCheckbox = document.querySelector('#resume');
   var input          = document.querySelector('input[type=file]');
   var $progress      = $('.progress');
@@ -16,21 +16,27 @@ $(function () {
     alertBox.classList.remove('hidden');
   }
 
-  if (!stopBtn) {
-    console.log('Stop button not found on this page. Aborting upload-demo. ');
+  if (!toggleBtn) {
+    console.log('Toggle button not found on this page. Aborting upload-demo. ');
     return;
   }
 
-  stopBtn.addEventListener('click', function (e) {
+  toggleBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (upload) {
       upload.abort();
+      upload = null;
+      toggleBtn.textContent = 'resume upload';
+    } else {
+      startUpload();
     }
   });
 
-  input.addEventListener('change', function (e) {
-    var file = e.target.files[0];
+  input.addEventListener('change', startUpload);
+
+  function startUpload() {
+    var file = input.files[0];
     // Only continue if a file has actually been selected.
     // IE will trigger a change event even if we reset the input element
     // using reset() and we do not want to blow up later.
@@ -48,7 +54,7 @@ $(function () {
 
     console.log('selected file', file);
 
-    stopBtn.disabled = false;
+    toggleBtn.textContent = 'pause upload';
 
     var options = {
       endpoint: endpoint,
@@ -89,13 +95,15 @@ $(function () {
 
     upload = new tus.Upload(file, options);
     upload.start();
-  });
+  }
 
   var animatedOutClass = 'animated flipOutX';
   var animatedInClass = 'animated fadeIn';
   function reset() {
     input.value = '';
-    stopBtn.disabled = true;
+    toggleBtn.textContent = 'start upload';
+    upload = null;
+
     $progress.removeClass('active');
 
     // hide

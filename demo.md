@@ -6,7 +6,7 @@ comments: true
 
 ## {{ page.title }}
 
-This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client). 
+This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
 It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
 
 ### Instructions
@@ -37,7 +37,7 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
     </div>
   </div>
   <div class="three columns">
-    <button class="u-full-width" id="stop-btn" disabled> abort upload</button>
+    <button class="u-full-width" id="toggle-btn">start upload</button>
   </div>
 </div>
 
