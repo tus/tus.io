@@ -115,6 +115,34 @@ what protocol version you're targetting.
 
 <ul class="implementations">
   <li>
+    <a class="title" href="https://github.com/gerdus/tus-dotnet-client">
+      gerdus/tus-dotnet-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with <strong>.NET</strong> applications (C#, Visual Basic.Net, etc)
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/ifedapoolarewaju/tus-py-client">
+      ifedapoolarewaju/tus-py-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
       arifsetiawan/qt-upload-plugin
     </a>
@@ -165,34 +193,6 @@ what protocol version you're targetting.
 
     <div class="description">
       Integrate tus <code>v0.2.1</code> with existing <strong>Python</strong> web technologies(WSGI, WebOb, Plone, Zope2)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/gerdus/tus-dotnet-client">
-      gerdus/tus-dotnet-client
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
-
-    <div class="description">
-      Integrate tus <code>v1.0.0</code> with .net applications (C#, Visual Basic.Net, etc)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-  
-  <li>
-    <a class="title" href="https://github.com/ifedapoolarewaju/tus-py-client">
-      ifedapoolarewaju/tus-py-client
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
-
-    <div class="description">
-      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
     </div>
 
     <div class="license">Licensed under MIT</div>
@@ -259,6 +259,34 @@ what protocol version you're targetting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/everydo/tusfilter">
+      everydo/tusfilter
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/FuGangqiang">FuGangqiang</a></div>
+
+    <div class="description">
+      <strong>wsgi filter</strong> middleware implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Flask, Bottle, Django and Pyraimd</strong> servers and apps
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/smatsson/tusdotnet">
+      smatsson/tusdotnet
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
+
+    <div class="description">
+      <strong>.NET</strong> OWIN middleware implementing tus <code>v1.0.0</code> core protocol and the creation extension.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
@@ -295,34 +323,6 @@ what protocol version you're targetting.
 
     <div class="description">
       Add tus <code>v0.2.1</code> resumable file uploads to <strong>PHP</strong> servers (under Apache, Nginx, etc)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/everydo/tusfilter">
-      everydo/tusfilter
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/FuGangqiang">FuGangqiang</a></div>
-    
-    <div class="description">
-      <strong>wsgi filter</strong> middleware implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Flask, Bottle, Django and Pyraimd</strong> servers and apps
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/smatsson/tusdotnet">
-      smatsson/tusdotnet
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
-    
-    <div class="description">
-      <strong>.NET</strong> OWIN middleware implementing tus <code>v1.0.0</code> core protocol and the creation extension.
     </div>
 
     <div class="license">Licensed under MIT</div>
