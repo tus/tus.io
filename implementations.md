@@ -287,6 +287,20 @@ what protocol version you're targetting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/Orajo/zf2-tus-server">
+      Orajo/zf2-tus-server
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/Orajo">Jarosław Wasilewski</a></div>
+
+    <div class="description">
+      A <strong>PHP</strong> server for powering tus <code>v1.0.0</code> resumable file uploads in Zend Framework 2 applications.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
       picocandy/rubytus
     </a>
