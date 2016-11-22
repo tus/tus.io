@@ -1,6 +1,5 @@
 YAML     = require "js-yaml"
 fs       = require "fs"
-path     = require "path"
 debug    = require("depurar")("tusio")
 download = require "download"
 
