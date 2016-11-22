@@ -9,6 +9,9 @@ source "${__dir}/_b3bp.sh"
 echo "--> Installing dependencies.."
 bower install
 which bundle 2>/dev/null || sudo gem install bundler -v 1.10 -n /usr/local/bin
-bundle config build.libv8 --with-system-v8 || true
+if type brew; then
+  brew install v8
+  bundle config --local build.libv8 --with-v8-dir=/usr/local/opt/v8/include
+fi
 bundle install --path vendor/bundle || bundle update vendor/bundle
 rsync -a --progress --delete ./node_modules/{tus-js-client,on-the-githubs} ./_assets/node_modules/
