@@ -16,6 +16,6 @@
 - url: http://www.sdsc.edu
   src: /assets/img/logos/san-diego-supercomputer-center.gif
   name: San Diego Supercomputer Center
-- url: https://90seconds.tv
-  src: https://90seconds.tv/wp-content/uploads/90-email-small-black-on-transparent-1.png
+- url: 'https://90seconds.tv'
+  src: /assets/img/logos/90-seconds---cloud-video-production-platform
   name: 90 Seconds - Cloud video production platform
