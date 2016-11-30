@@ -1,4 +1,4 @@
-language: generic
+node_js: 6
 sudo: false
 script: true
 deploy:
