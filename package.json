@@ -3,25 +3,32 @@
   "name": "tus-io",
   "version": "0.0.1",
   "scripts": {
-    "build:community": "_scripts/build-community.sh",
-    "build:protocol": "_scripts/build-protocol.sh",
-    "build:site": "cross-env JEKYLL_ENV=${JEKYLL_ENV:-development} bundle exec jekyll build --incremental",
-    "build:site:full": "cross-env JEKYLL_ENV=${JEKYLL_ENV:-development} bundle exec jekyll build",
-    "build": "npm-run-all build:community build:protocol build:site:full",
+    "inject:community": "_scripts/inject-community.sh",
+    "inject:protocol": "_scripts/inject-protocol.sh",
+    "inject": "npm-run-all --parallel inject:*",
     "deploy": "npm install && bundle exec jekyll clean && cross-env JEKYLL_ENV=production npm run build && _scripts/deploy.sh",
     "download:logos": "cross-env DEBUG=*:* IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos coffee ./_scripts/download-external-images.coffee",
     "download:press": "cross-env DEBUG=*:* IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press coffee ./_scripts/download-external-images.coffee",
-    "install": "_scripts/post-install.sh",
+    "install": "bower install",
     "optimize:logos": "cross-env IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos _scripts/images-optimize.sh",
     "optimize:press": "cross-env IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press _scripts/images-optimize.sh",
     "pull": "git pull",
-    "serve": "browser-sync start --server _site --files _site --reload-delay 400",
-    "start": "npm-run-all pull install build --parallel watch serve",
-    "start:quick": "npm-run-all build:site --parallel watch serve",
-    "watch": "nodemon --verbose --watch ./ --ignore _site/ --ignore vendor/ --ext html,json,md,js,css,less,png,jpg --exec 'npm run build:site'"
+    "build:production": "LANYON_ENV=production lanyon build",
+    "build": "lanyon build",
+    "serve:production": "LANYON_ENV=production lanyon serve",
+    "serve": "lanyon serve",
+    "start:production": "npm run build:production && npm run serve:production",
+    "start": "lanyon start"
+  },
+  "lanyon": {
+    "prebuild:production": "npm run inject",
+    "entries": [
+      "app"
+    ]
   },
   "dependencies": {
     "fakefile": "0.0.8",
+    "lanyon": "0.0.10",
     "nodemon": "1.9.2"
   },
   "devDependencies": {

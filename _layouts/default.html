@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
-    {% stylesheet stylesheets/app %}
+    <link rel="stylesheet" href="/assets/build/app.css" media="screen" charset="utf-8">
     {% feed_meta %}
 
     <script src="//use.typekit.net/zgo3uyj.js"></script>
@@ -121,7 +121,7 @@
       window.tusdEndpoint = '{{ tusd_endpoint }}';
     </script>
 
-    {% javascript javascripts/app %}
+    <script src="/assets/build/app.js"></script>
 
   </body>
 </html>
