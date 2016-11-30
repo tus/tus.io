@@ -22,22 +22,11 @@ url: http://tus.io
 gems:
   - jemoji
   - jekyll-feed
-  - jekyll-assets
   - jekyll-sitemap
   - jekyll-redirect-from
 
 emoji:
   src: "/assets/img"
-
-assets:
-  cache: false
-  assets:
-    - "*.png"
-    - "app.css"
-    - "app.js"
-  digest: false
-  sources:
-    - _assets
 
 browsers:
   - "last 1 version"
