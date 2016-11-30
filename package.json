@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "fakefile": "0.0.8",
-    "lanyon": "0.0.12",
+    "lanyon": "0.0.13",
     "nodemon": "1.9.2"
   },
   "devDependencies": {
