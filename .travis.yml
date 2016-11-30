@@ -1,0 +1,15 @@
+language: generic
+sudo: false
+script: true
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: .lanyon/bin/deploy
+  on:
+    branch: master
+    condition: $TRAVIS_OS_NAME = linux
+env:
+  global:
+  - secure: j1jSak103FcxooWc5uzFy0gxZBzEEbD/q9yt+/kTDpU4G8M/U0m5RNdTcrF2jHHql35z4wLW6zRkxy1Qt1qfLqm8DZSbYSxqEDjR79VffdUmUp1S2CM+SVm4nltavgKmKma74pKjxySsqPnY/iI+5JVweSCPDU0NuomXdBezdGw=
+  - secure: nqU763tiuNe+e3iLq9f/0nSH9+Cx+mGLugLlyrEomLUHBXJBvv5PMm/Bv2c4yUYO91GjfVwoczRy5hhmmy5lP/iNsOZmbfm0A8Q1LpUE5zloaJv9XuCFP9yrragO12XBo5d4iE/b/CFOXbX9/szVu0f3X3e2fKpdfkMq/FJJHHY=
+  - secure: WdH88iCLCy6W//SR+9xzaZNBTzp/CR69hE8JDYPlfeNjpk6sGYZms9RXHwKnlzsxRzgRbDpYjMRMN9imhKnQezQ2nq/MPnviCvuXt8v72rzqS/ENF0mszgjE+puZiVrxk/d0+s4QY3rMPuu2847RiFjFVwSafI/74esIyRM2ScY=

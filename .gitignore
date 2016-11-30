@@ -9,3 +9,4 @@ npm-debug.log
 .jekyll-metadata
 .lanyon
 .lanyon/vendor/bin
+env.sh

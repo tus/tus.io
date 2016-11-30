@@ -17,32 +17,30 @@
     "build": "lanyon build",
     "serve:production": "LANYON_ENV=production lanyon serve",
     "serve": "lanyon serve",
+    "deploy": "lanyon deploy",
+    "encrypt": "lanyon encrypt",
     "start:production": "npm run build:production && npm run serve:production",
     "start": "lanyon start"
   },
   "lanyon": {
-    "prebuild:production": "npm run inject",
-    "entries": [
-      "app"
-    ]
+    "prebuild:production": "npm run inject"
   },
   "dependencies": {
-    "fakefile": "0.0.8",
-    "lanyon": "0.0.13",
-    "nodemon": "1.9.2"
   },
   "devDependencies": {
     "browser-sync": "2.13.0",
     "cross-env": "2.0.0",
     "depurar": "0.2.2",
     "download": "5.0.2",
+    "fakefile": "0.0.8",
     "glob": "7.0.5",
     "js-yaml": "3.6.1",
+    "lanyon": "0.0.13",
     "nodemon": "1.9.2",
     "npm-run-all": "2.3.0",
     "on-the-githubs": "2.3.2",
-    "postcss": "5.1.0",
     "postcss-reporter": "1.4.1",
+    "postcss": "5.1.0",
     "stylelint": "7.0.3",
     "tus-js-client": "^1.4.1"
   }
