@@ -9,7 +9,7 @@
     "deploy": "lanyon deploy",
     "download:logos": "cross-env DEBUG=*:* IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos coffee ./_scripts/download-external-images.coffee",
     "download:press": "cross-env DEBUG=*:* IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press coffee ./_scripts/download-external-images.coffee",
-    "install": "bower install",
+    "install": "bower install && lanyon postinstall",
     "optimize:logos": "cross-env IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos _scripts/images-optimize.sh",
     "optimize:press": "cross-env IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press _scripts/images-optimize.sh",
     "pull": "git pull",
