@@ -1,7 +1,10 @@
-window.jQuery = window.$ = require('jquery')
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
+
 require('jquery-timeago/jquery.timeago.js')
 require('on-the-githubs/js/jquery.on-the-githubs.js')
-require('tus-js-client/dist/tus.js')
+require('tus-js-client')
 
 require('javascripts/app.js')
 

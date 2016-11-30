@@ -2,9 +2,10 @@
   "name": "tus-io",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "1.9.1",
-    "jquery-timeago": "~1.4.1",
-    "skeleton": "~2.0.4",
-    "animate.css": "~3.2.3"
+    "jquery": "2.2.0",
+    "jquery-timeago": "1.4.1",
+    "skeleton": "2.0.4",
+    "animate.css": "3.2.3",
+    "on-the-githubs": "^2.3.2"
   }
 }
