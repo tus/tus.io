@@ -1357,7 +1357,7 @@ character-parser@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/character-parser/-/character-parser-1.2.1.tgz#c0dde4ab182713b919b970959a123ecc1a30fcd6"
 
-chokidar@1.5.1:
+chokidar@1.5.1, chokidar@^1.4.3:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.5.1.tgz#43115fcf2d8fb74f06b630aeeccd06715a146dd1"
   dependencies:
@@ -1372,24 +1372,9 @@ chokidar@1.5.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
-chokidar@1.6.0:
+chokidar@1.6.0, chokidar@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.6.0.tgz#90c32ad4802901d7713de532dc284e96a63ad058"
-  dependencies:
-    anymatch "^1.3.0"
-    async-each "^1.0.0"
-    glob-parent "^2.0.0"
-    inherits "^2.0.1"
-    is-binary-path "^1.0.0"
-    is-glob "^2.0.0"
-    path-is-absolute "^1.0.0"
-    readdirp "^2.0.0"
-  optionalDependencies:
-    fsevents "^1.0.0"
-
-chokidar@^1.0.0, chokidar@^1.4.3:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.6.1.tgz#2f4447ab5e96e50fb3d789fd90d4c72e0e4c70c2"
   dependencies:
     anymatch "^1.3.0"
     async-each "^1.0.0"
@@ -2018,17 +2003,11 @@ debug@2.0.0:
   dependencies:
     ms "0.6.2"
 
-debug@2.2.0, debug@~2.2.0:
+debug@2.2.0, debug@^2.1.1, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
-
-debug@^2.1.1, debug@^2.2.0:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.3.3.tgz#40c453e67e6e13c901ddec317af8986cda9eff8c"
-  dependencies:
-    ms "0.7.2"
 
 decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
@@ -3710,9 +3689,9 @@ known-css-properties@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.0.3.tgz#9e1f591da25c12f65b70a045422c7d862b8eccf3"
 
-lanyon@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.13.tgz#65ee93455c5f44a237b9cb2aceb046d72052cb44"
+lanyon@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.15.tgz#fe9afe8d875377bcdf2a3b7b0efada96a0cedd86"
   dependencies:
     autoprefixer "6.5.3"
     babel-core "6.18.2"
@@ -4172,10 +4151,6 @@ ms@0.6.2:
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
-
-ms@0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
 multimatch@^2.0.0, multimatch@^2.1.0:
   version "2.1.0"
@@ -5171,17 +5146,13 @@ qs@0.4.x:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-0.4.2.tgz#3cac4c861e371a8c9c4770ac23cda8de639b8e5f"
 
-qs@6.2.0:
+qs@6.2.0, "qs@>= 0.4.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
 
 qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
-
-"qs@>= 0.4.0", qs@~6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 qs@~2.3.3:
   version "2.3.3"
@@ -5190,6 +5161,10 @@ qs@~2.3.3:
 qs@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-5.2.1.tgz#801fee030e0b9450d6385adc48a4cc55b44aedfc"
+
+qs@~6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 query-string@^4.1.0:
   version "4.2.3"

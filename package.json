@@ -6,7 +6,7 @@
     "inject:community": "_scripts/inject-community.sh",
     "inject:protocol": "_scripts/inject-protocol.sh",
     "inject": "npm-run-all --parallel inject:*",
-    "deploy": "npm install && bundle exec jekyll clean && cross-env JEKYLL_ENV=production npm run build && _scripts/deploy.sh",
+    "deploy": "lanyon deploy",
     "download:logos": "cross-env DEBUG=*:* IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos coffee ./_scripts/download-external-images.coffee",
     "download:press": "cross-env DEBUG=*:* IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press coffee ./_scripts/download-external-images.coffee",
     "install": "bower install",
@@ -17,7 +17,6 @@
     "build": "lanyon build",
     "serve:production": "LANYON_ENV=production lanyon serve",
     "serve": "lanyon serve",
-    "deploy": "lanyon deploy",
     "encrypt": "lanyon encrypt",
     "start:production": "npm run build:production && npm run serve:production",
     "start": "lanyon start"
@@ -25,8 +24,7 @@
   "lanyon": {
     "prebuild:production": "npm run inject"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "2.13.0",
     "cross-env": "2.0.0",
@@ -35,12 +33,12 @@
     "fakefile": "0.0.8",
     "glob": "7.0.5",
     "js-yaml": "3.6.1",
-    "lanyon": "0.0.13",
+    "lanyon": "0.0.15",
     "nodemon": "1.9.2",
     "npm-run-all": "2.3.0",
     "on-the-githubs": "2.3.2",
-    "postcss-reporter": "1.4.1",
     "postcss": "5.1.0",
+    "postcss-reporter": "1.4.1",
     "stylelint": "7.0.3",
     "tus-js-client": "^1.4.1"
   }
