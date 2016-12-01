@@ -8,6 +8,7 @@ cache:
   directories:
   - node_modules
   - .lanyon
+install: npm install # <-- yarn still messes up nested bins: https://github.com/yarnpkg/yarn/issues/760
 before_cache:
   - rm -f ./node_modules/.bin/which # <-- workaround for https://github.com/travis-ci/travis-ci/issues/5092
 deploy:
