@@ -3,6 +3,8 @@
 $(function () {
   'use strict';
 
+  var tus = require('tus-js-client');
+
   var upload         = null;
   var toggleBtn      = document.querySelector('#toggle-btn');
   var resumeCheckbox = document.querySelector('#resume');
