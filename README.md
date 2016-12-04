@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tus/tus.io.svg?branch=master)](https://travis-ci.org/tus/tus.io)
+
 # tus.io
 
 The tus.io website.
@@ -11,29 +13,11 @@ npm install
 npm run start
 ```
 
-This will run a chain of different scripts that will 
-install prerequisites, download the latest version of our protocol, community 
-info, and then build all e.g. markdown & less files to html & css into `_site`.
-
-It will then fire up a static webserver server and a browser pointing it to
-http://127.0.0.1:3000 where the tus.io site will be running, and automatically refreshed
-as you make changes.
+Uses [Lanyon](https://github.com/kvz/lanyon) under the hood
 
 ## Deployment
 
-tus.io is deployed onto GitHub pages, but since we have many custom build requirements that
-GitHub can't support for us (like building community pages and the protocol), 
-we curate content in `master`, build ourselves locally, then 
-directly push artifacts to to the `gh-pages` branch of the `tus.io` repo on GitHub.
-
-```bash
-npm run deploy
-```
-
-This compiles the Jekyll source into `./_site`, copies that into a random `TMPDIR`,
-initializes a Git repo there, and force-pushes to the `gh-pages` branch of the `tus.io` repo.
-
-Up to ten minutes later (but mostly after a few seconds), GitHub will have updated the [tus.io](http://tus.io) site accordingly.
+Done via Travis on pushes to master.
 
 ## How to add your company/project logo to the site
 
