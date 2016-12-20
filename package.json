@@ -37,7 +37,7 @@
     "js-yaml": "3.6.1",
     "lanyon": "0.0.47",
     "npm-run-all": "2.3.0",
-    "on-the-githubs": "2.3.2",
+    "on-the-githubs": "2.4.0",
     "postcss": "5.1.0",
     "postcss-reporter": "1.4.1",
     "stylelint": "7.0.3",

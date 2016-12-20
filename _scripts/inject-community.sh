@@ -13,10 +13,11 @@ find _includes/community.html -mtime +10 -exec rm -rf {} \; || true
 [ -f _includes/community.html ] || (echo "<p>replaced-by-in-the-githubs</p>" > _includes/community.html \
   && ${onthegithubs_dir}/bin/in-the-githubs \
    --user tus \
-   --repo tus.io,tusd,tus-jquery-client,TUSKit,tus-android-client,tus-resumable-upload-protocol \
+   --repo tus.io,tusd,tus-js-client,TUSKit,tus-android-client,tus-java-client,tus-node-server,tus-resumable-upload-protocol \
    --format html \
    --concurrency 1 \
    --input _includes/community.html \
    --tag '<p>replaced-by-in-the-githubs</p>' \
    --output _includes/community.html \
+   --groups contributors,collaborators \
    --debug)
