@@ -143,6 +143,20 @@ what protocol version you're targetting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/eventials/go-tus">
+      eventials/go-tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/eventials">Eventials</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> into your <strong>Golang</strong> application
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
       arifsetiawan/qt-upload-plugin
     </a>
