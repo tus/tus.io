@@ -294,7 +294,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/alican">Alican Toprak</a></div>
 
     <div class="description">
-      Django app implementing server side of tus protocol to powering resumable file uploads for <strong>Django Python</strong> projects
+      Django app implementing server side of the tus <code>v1.0.0</code> protocol to power resumable file uploads in <strong>Django Python</strong> projects
     </div>
 
     <div class="license">Licensed under MIT</div>
