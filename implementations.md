@@ -285,6 +285,20 @@ what protocol version you're targetting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/alican/django-tus">
+      alican/django-tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/alican">alican</a></div>
+
+    <div class="description">
+      Django app implementing server side of tus protocol to powering resumable file uploads for <strong>Django Python</strong> projects
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 
   <li>
     <a class="title" href="https://github.com/smatsson/tusdotnet">
