@@ -291,7 +291,7 @@ what protocol version you're targeting.
       alican/django-tus
     </a>
 
-    <div class="author">&mdash; by <a href="https://github.com/alican">alican</a></div>
+    <div class="author">&mdash; by <a href="https://github.com/alican">Alican Toprak</a></div>
 
     <div class="description">
       Django app implementing server side of tus protocol to powering resumable file uploads for <strong>Django Python</strong> projects
