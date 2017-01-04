@@ -109,7 +109,7 @@ it builds on standard HTTP calls it
 could be implemented as Ruby libraries, Wordpress plugins, Bash/cURL, etc.
 
 For new implementations we recommend using the MIT license and making clear
-what protocol version you're targetting.
+what protocol version you're targeting.
 
 <h4>Client</h4>
 
