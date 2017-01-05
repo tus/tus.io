@@ -19,10 +19,13 @@ upload protocol](protocols/resumable-upload.html), with client and server
 ## Join the community
 
 Are you as passionate about better file uploading as we are? Join us! We welcome all
-contributions, be it in the form of patches, comments or questions.
+contributions, be it in the form of patches, comments or questions. You can reach the community using many different channels:
 
-If you'd like to talk to us, we're hanging out in a Slack chatroom. 
-Shoot us an invite request on Twitter at [@tus_io](https://twitter.com/tus_io) to get involved.
+- On [GitHub](https://github.com/tus), where the specification and all the code is hosted.
+- On [Slack](https://slackin-xgybtegrsh.now.sh), where the community is available for a chat.
+- On [Twitter](https://twitter.com/tus_io), where the core developers sometimes tweet about the project.
+- Additionally, the project leads can also be reached directly in person:
+  - Marius: [marius@transloadit.com](mailto:marius@transloadit.com)
 
 <!-- Use `make build-community` to fetch latest authors -->
 
