@@ -157,6 +157,20 @@ what protocol version you're targeting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/cenkalti/tus.py">
+      cenkalti/tus.py
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/cenkalti">Cenk Altı</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients, plus <strong>command-line</strong> program
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
       arifsetiawan/qt-upload-plugin
     </a>
