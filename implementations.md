@@ -322,7 +322,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
 
     <div class="description">
-      <strong>.NET</strong> OWIN middleware implementing tus <code>v1.0.0</code> core protocol and the creation extension.
+      <strong>.NET</strong> (C#, VB.NET etc) server implementation of tus <code>v1.0.0</code>.
     </div>
 
     <div class="license">Licensed under MIT</div>
