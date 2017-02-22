@@ -26,3 +26,6 @@
 - url: https://transloadit.com/blog/2016/03/tus-in-linux-magazine/
   src: /assets/img/press/linuxmagazine.png
   name: Linux Magazine
+- url: https://www.producthunt.com/posts/tus-io
+  src: /assets/img/press/product-hunt.png
+  name: Produt Hunt
