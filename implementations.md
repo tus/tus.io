@@ -72,7 +72,7 @@ These projects are reference implementations maintained by the protocol develope
   
   <li>
     <a class="title" href="https://github.com/tus/tus-py-client">
-      tus/tus-py-client
+      tus-py-client
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
