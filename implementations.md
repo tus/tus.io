@@ -58,13 +58,27 @@ These projects are reference implementations maintained by the protocol develope
 
   <li>
     <a class="title" href="https://github.com/tus/TUSKit">
-      tus/TUSKit
+      TUSKit
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/afh">Alexis Hildebrandt</a> and <a href="https://github.com/MMasterson">Mark R. Masterson</a></div>
 
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>iOS</strong> clients.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+  
+  <li>
+    <a class="title" href="https://github.com/tus/tus-py-client">
+      tus/tus-py-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
+
+    <div class="description">
+      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
     </div>
 
     <div class="license">Licensed under MIT</div>
@@ -123,20 +137,6 @@ what protocol version you're targeting.
 
     <div class="description">
       Integrate tus <code>v1.0.0</code> with <strong>.NET</strong> applications (C#, Visual Basic.Net, etc)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/ifedapoolarewaju/tus-py-client">
-      ifedapoolarewaju/tus-py-client
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
-
-    <div class="description">
-      Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
     </div>
 
     <div class="license">Licensed under MIT</div>
