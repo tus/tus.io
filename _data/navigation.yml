@@ -1,0 +1,12 @@
+- text: Home
+  url: /
+- text: About
+  url: /about.html
+- text: Blog
+  url: /blog.html
+- text: Demo
+  url: /demo.html
+- text: Protocol
+  url: /protocols/resumable-upload.html
+- text: Implementations
+  url: /implementations.html

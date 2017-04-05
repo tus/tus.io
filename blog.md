@@ -5,7 +5,7 @@ title: Blog
 
 <div class="blog-posts">
  {% for post in site.posts %}
- {% assign author = site.authors[post.author] %}
+ {% assign author = site.data.authors[post.author] %}
  <div class="post" markdown="1">
 
 ## [{{ post.title }}]({{ post.url }})

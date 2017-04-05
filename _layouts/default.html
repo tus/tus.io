@@ -55,7 +55,7 @@
               </a>
 
               <ul class="nav">
-                {% for link in site.navigation %}
+                {% for link in site.data.navigation %}
                   {% assign active = "" %}
                   {% if page.url == link.url %}
                     {% assign active = 'active' %}

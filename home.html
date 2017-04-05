@@ -40,7 +40,7 @@ permalink: /
 
 <div class="container">
   <div class="row">
-    {% for feat in site.features %}
+    {% for feat in site.data.features %}
     {% if forloop.index0 == 3 %}
   </div>
   <div class="row">
@@ -73,7 +73,7 @@ permalink: /
   <h2>Official implementations</h2>
 
   <div class="row">
-    {% for impl in site.implementations %}
+    {% for impl in site.data.implementations %}
     <div class="two columns implementation">
       <a href="https://github.com/tus/{{impl.name}}">
         <img src="/assets/img/{{impl.icon}}.svg" alt="Icon" />
@@ -95,7 +95,7 @@ permalink: /
 
   <ol class="posts">
     {% for post in site.posts |limit: 3 %}
-    {% assign author = site.authors[post.author] %}
+    {% assign author = site.data.authors[post.author] %}
     <li>
       <div class="author">
         <a href="http://twitter.com/{{author.twitter}}" title="{{ author.name }}">
