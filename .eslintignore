@@ -1,0 +1,6 @@
+node_modules/
+lib/
+fixture/
+assets/bower_components
+assets/build
+_site
