@@ -10,7 +10,12 @@
     and multiple other well-known companies.
 - title: Open source
   content: |
-    The source code to all of our implementations, this website and even the protocol
+    tus is brought to you by the people behind
+    <a href="https://transloadit.com">
+      <img src="https://uppy.io/images/transloadit-logo.png" aling="absmiddle" width="16" height="16">
+      Transloadit
+    </a>
+    but the source code to all of our implementations, this website and even the protocol
     itself is accessible to everyone under MIT license, directly from our
     [GitHub](https://github.com/tus) organization.
 - title: Minimalistic design...
