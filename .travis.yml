@@ -11,11 +11,11 @@ cache:
 install: npm install # <-- yarn still messes up nested bins: https://github.com/yarnpkg/yarn/issues/760
 before_cache:
   - rm -f ./node_modules/.bin/which # <-- workaround for https://github.com/travis-ci/travis-ci/issues/5092
-before_deploy: .lanyon/bin/install
+
 deploy:
   skip_cleanup: true
   provider: script
-  script: .lanyon/bin/deploy
+  script: ./node_modules/lanyon/scripts/ci-deploy.sh
   on:
     branch: master
     condition: $TRAVIS_OS_NAME = linux
