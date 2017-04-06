@@ -12,6 +12,6 @@ permalink: /protocols/resumable-upload.html
   {:toc}
 </div>
 
-<!-- Use `make build-protocol` to fetch latest protocol version -->
+<!-- Use `make inject-protocol` to fetch latest protocol version -->
 
 {% include tus.md %}
