@@ -353,6 +353,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/dirkmoors/drf-tus">
+      dirkmoors/drf-tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/dirkmoors">Dirk Moors</a></div>
+
+    <div class="description">
+      A Python library for powering tus <code>v1.0.0</code> resumable file uploads in applications using <strong>Django Rest Framework</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 
   <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
