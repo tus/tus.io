@@ -1,7 +1,7 @@
 $(function () {
   'use strict'
 
-  var tus = require('tus-js-client/dist/tus.js')
+  var tus = require('tus-js-client')
 
   var upload         = null
   var toggleBtn      = document.querySelector('#toggle-btn')
