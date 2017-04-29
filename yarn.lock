@@ -706,16 +706,7 @@ babel-plugin-transform-class-constructor-call@^6.22.0:
     babel-runtime "^6.22.0"
     babel-template "^6.22.0"
 
-babel-plugin-transform-class-properties@^6.22.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.23.0.tgz#187b747ee404399013563c993db038f34754ac3b"
-  dependencies:
-    babel-helper-function-name "^6.23.0"
-    babel-plugin-syntax-class-properties "^6.8.0"
-    babel-runtime "^6.22.0"
-    babel-template "^6.23.0"
-
-babel-plugin-transform-class-properties@^6.24.1:
+babel-plugin-transform-class-properties@^6.22.0, babel-plugin-transform-class-properties@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac"
   dependencies:
@@ -4642,9 +4633,9 @@ known-css-properties@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.0.3.tgz#9e1f591da25c12f65b70a045422c7d862b8eccf3"
 
-lanyon@0.0.84:
-  version "0.0.84"
-  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.84.tgz#8d78acfca41a715786071e1ce61ee81df7967858"
+lanyon@0.0.85:
+  version "0.0.85"
+  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.85.tgz#daa1e88e3a503a02c0d0ad129789bdf7f02c552f"
   dependencies:
     assets-webpack-plugin "3.5.1"
     async "^2.3.0"
