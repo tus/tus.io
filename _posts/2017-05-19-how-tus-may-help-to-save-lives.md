@@ -14,7 +14,7 @@ While we did set out to make the world a slightly better place by making uploadi
 
 
 <div class="kodak-container kodak-dropshadow">
-<img src="/assets/img/fireman" alt="Firefighters">
+<img src="/assets/img/fireman.jpg" alt="Firefighters">
 </div>
 
 
