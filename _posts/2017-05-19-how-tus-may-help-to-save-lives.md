@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'How firefighters in Poland are using tus, our open protocol for resumable uploads'
+title: 'How tus may help to save lives'
 meta_description: >-
   How reliable is uploading with tus? Don’t let us tell you, ask the Polish fire brigades who are using tus to relay information between   the command center and units in the field!
 visible_title: 'How tus may help to save lives'
