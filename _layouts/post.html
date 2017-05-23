@@ -11,9 +11,15 @@ layout: default
 
   <div class="post-info">
     Published on <span class="date">{{ page.date | date: "%B %e, %Y" }}</span> by
-    <a class="author" href="http://twitter.com/{{author.twitter}}">
-      {{ author.name }}
-    </a>
+    {%if author.link%}
+      <a class="author" href="{{author.link}}">
+        {{ author.name }}
+      </a>
+    {%else%}
+      <a class="author" href="http://twitter.com/{{author.twitter}}">
+        {{ author.name }}
+      </a>
+    {%endif%}
   </div>
 
   <div class="post-content">
