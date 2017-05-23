@@ -6,7 +6,7 @@ layout: default
 
 <div class="post">
   <h2 class="post-title">
-    {{ page.title }}
+    {{page.visible_title |default: page.title}}
   </h2>
 
   <div class="post-info">
