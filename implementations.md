@@ -327,14 +327,14 @@ what protocol version you're targeting.
   </li>
 
   <li>
-    <a class="title" href="https://github.com/smatsson/tusdotnet">
-      smatsson/tusdotnet
+    <a class="title" href="https://github.com/tusdotnet/tusdotnet">
+      tusdotnet/tusdotnet
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
 
     <div class="description">
-      <strong>.NET</strong> (C#, VB.NET etc) server implementation of tus <code>v1.0.0</code>.
+      <strong>.NET</strong> server implementation of tus <code>v1.0.0</code>, including all major extensions, that runs on both OWIN and ASP.NET Core.
     </div>
 
     <div class="license">Licensed under MIT</div>
