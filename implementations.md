@@ -292,7 +292,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/janko-m">Janko Marohnić</a></div>
 
     <div class="description">
-      The <strong>ruby</strong> server implementation of tus <code>1.0.0</code>, can be run standalone or mounted in a ruby app
+      The <strong>ruby</strong> server implementation of tus <code>v1.0.0</code>, can be run standalone or mounted in a ruby app
     </div>
 
     <div class="license">Licensed under MIT</div>
