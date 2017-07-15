@@ -19,3 +19,6 @@
 - url: 'https://90seconds.tv'
   src: /assets/img/logos/90-seconds---cloud-video-production-platform.png
   name: 90 Seconds - Cloud video production platform
+- url: 'https://soundoff.io'
+  src: 'https://soundoff.io/img/branding/soundoff-black-horizontal.png'
+	name: Soundoff.io
