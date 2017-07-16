@@ -4,21 +4,21 @@
 # Adding your image as an http:// URL is okay.
 # tus developers will later on download, optimize, and include your logo in ./assets.
 # This saves you the hassle of cloning the project locally to add your image.
-- url: https://transloadit.com
+- url: 'https://transloadit.com'
   src: /assets/img/logos/transloadit.png
   name: Transloadit
-- url: https://vimeo.com
+- url: 'https://vimeo.com'
   src: /assets/img/logos/vimeo.png
   name: Vimeo
-- url: http://hotpointapp.com
+- url: 'http://hotpointapp.com'
   src: /assets/img/logos/hotpoint.png
   name: Hotpoint
-- url: http://www.sdsc.edu
+- url: 'http://www.sdsc.edu'
   src: /assets/img/logos/san-diego-supercomputer-center.gif
   name: San Diego Supercomputer Center
 - url: 'https://90seconds.tv'
   src: /assets/img/logos/90-seconds---cloud-video-production-platform.png
   name: 90 Seconds - Cloud video production platform
 - url: 'https://soundoff.io'
-  src: 'https://soundoff.io/img/branding/soundoff-black-horizontal.png'
+  src: /assets/img/logos/soundoff.png
   name: Soundoff.io
