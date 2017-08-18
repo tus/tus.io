@@ -2,6 +2,7 @@
 layout: post
 title: "S3 as a Storage Back-End"
 author: acconut
+redirect_from: /blog/2016/03/07/tus-s3-backend/
 ---
 
 With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official [tusd](https://github.com/tus/tusd) server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to [deliver](https://godoc.org/github.com/tus/tusd/s3store) on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon's service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.

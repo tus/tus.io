@@ -1,4 +1,4 @@
-permalink: "/blog/:year/:month/:day/:title/"
+permalink: "/blog/:year/:month/:day/:title.html"
 tusd_endpoint: "http://master.tus.io"
 
 kramdown:
@@ -19,7 +19,7 @@ feed:
 
 rss_feed: /atom.xml
 
-url: http://tus.io
+url: https://tus.io
 
 gems:
   - jemoji

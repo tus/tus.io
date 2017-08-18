@@ -17,7 +17,6 @@ title: Blog
   </a>
 </div>
 
-
 <div class="post-content">
   {{ post.excerpt }}
   

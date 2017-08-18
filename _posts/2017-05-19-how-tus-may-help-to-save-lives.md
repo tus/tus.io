@@ -6,6 +6,7 @@ meta_description: >-
 visible_title: 'How tus may help to save lives'
 author: aj
 published: true
+redirect_from: /blog/2017/05/19/how-tus-may-help-to-save-lives/
 ---
 
 Yes, oddly enough, this seems to be the case! A while ago, we noticed something really interesting on tus.io, our open protocol for resumable uploads: a [comment](/implementations.html#comment-2903776646) from [Jaroslaw Wasilewski](https://twitter.com/Orajo) mentioned that tus was being used to support firefighting rescue operations. Now that is exciting news!
