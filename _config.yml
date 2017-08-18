@@ -1,4 +1,4 @@
-permalink: "/blog/:year/:month/:day/:title"
+permalink: "/blog/:year/:month/:day/:title/"
 tusd_endpoint: "http://master.tus.io"
 
 kramdown:
@@ -9,6 +9,8 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 2..6
+
+excerpt_separator: "<!--more-->"
 
 # We'll refer new atom feed though, as adviced by GitHub
 # https://github.com/blog/2053-easier-feeds-for-github-pages

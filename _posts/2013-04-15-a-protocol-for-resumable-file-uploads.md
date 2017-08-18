@@ -6,8 +6,8 @@ date: 2013-04-15 15:00:00
 author: felixge
 ---
 
-**tl;dr:** We are happy to announce version 0.1 of the [tus resumable upload
-protocol](/protocols/resumable-upload.html) and are interested in your
+**tl;dr:** We are happy to announce version 0.1 of the 
+[tus resumable upload protocol](/protocols/resumable-upload.html) and are interested in your
 feedback!
 
 With mobile devices becoming the dominant source of user generated media files,
@@ -18,6 +18,8 @@ Reliability here means the ability to detect network errors, and resuming an
 upload without having to start from the beginning. In many scenarios this can
 mean the difference between a file reaching your application, or the user
 giving up in frustration.
+
+<!--more-->
 
 Ideally, this should be a trivial feature to add. In reality however, there is
 quite a lack of solutions in this space. Sure, there are a few JavaScript

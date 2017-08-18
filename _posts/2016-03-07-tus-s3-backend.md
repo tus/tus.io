@@ -6,6 +6,8 @@ author: acconut
 
 With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official [tusd](https://github.com/tus/tusd) server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to [deliver](https://godoc.org/github.com/tus/tusd/s3store) on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon's service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.
 
+<!--more-->
+
 ## Immutable Objects
 
 We, as the designers of tus, have to admit that the protocol uses a data model which is mostly incompatible with AWS S3. In order to understand this sentence, we need to make a small comparison: In tus, when you want to move a file to a remote location, you first create a new upload resource without pushing any of the file's data to the server. It is even possible to make this operation before you know the length or size of the entire object that you want to transfer. After this step, you are free to upload the data in chunks of any size. The first chunk could be a few MBs, followed by one that is just 100 bytes and a final upload then contains the remaining GB. While this freedom introduces the need for a flexible server implementation, which is capable of handling chunks of any size, it also lays the foundation for tus' core feature: **resumability of an upload at any given time**.

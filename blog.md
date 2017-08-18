@@ -17,14 +17,18 @@ title: Blog
   </a>
 </div>
 
+
 <div class="post-content">
-  {{ post.content }}
+  {{ post.excerpt }}
+  
+  <a href="{{ post.url }}">&raquo;Read On</a>
 </div>
 
  </div>
  {% endfor %}
 </div>
 
+<hr />
 <div class="post-subscribe" markdown="1">
   Subscribe to this blog via
   [RSS]({{ site.rss_feed }}).
