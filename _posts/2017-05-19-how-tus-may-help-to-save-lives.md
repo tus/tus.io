@@ -8,7 +8,7 @@ author: aj
 published: true
 ---
 
-Yes, oddly enough, this seems to be the case! A while ago, we noticed something really interesting on tus.io, our open protocol for resumable uploads: a [comment](http://tus.io/implementations.html#comment-2903776646) from [Jaroslaw Wasilewski](https://twitter.com/Orajo) mentioned that tus was being used to support firefighting rescue operations. Now that is exciting news!
+Yes, oddly enough, this seems to be the case! A while ago, we noticed something really interesting on tus.io, our open protocol for resumable uploads: a [comment](/implementations.html#comment-2903776646) from [Jaroslaw Wasilewski](https://twitter.com/Orajo) mentioned that tus was being used to support firefighting rescue operations. Now that is exciting news!
 
 While we did set out to make the world a slightly better place by making uploading more reliable for everyone, this is certainly not what we had in mind. We were very interested to learn more about this, so we invited Jaroslaw to sit down with us for a virtual cup of coffee and asked him to tell us a little more about the system they have developed – and how they are using tus for it.
 
@@ -33,7 +33,7 @@ While we did set out to make the world a slightly better place by making uploadi
 
 **Did you encounter any challenges in implementing tus? If so, how did you overcome them?**
 
->At that time, the biggest problem was the lack of documentation for version 1.0 of tus. The only available documentation concerned, from what I remember, version 0.2. Therefore, much of our work had to be based on tests and analysis of HTTP messages from the [demo version](http://tus.io/demo.html). That said, thanks to the availability of the tusd server, our subcontractor managed to complete all of their preparations before I'd finished my work. That was a great help. And when the [tus protocol 1.0](https://tus.io/protocols/resumable-upload.html) was released, I was able to fix some remaining issues.
+>At that time, the biggest problem was the lack of documentation for version 1.0 of tus. The only available documentation concerned, from what I remember, version 0.2. Therefore, much of our work had to be based on tests and analysis of HTTP messages from the [demo version](/demo.html). That said, thanks to the availability of the tusd server, our subcontractor managed to complete all of their preparations before I'd finished my work. That was a great help. And when the [tus protocol 1.0](/protocols/resumable-upload.html) was released, I was able to fix some remaining issues.
 
 **What benefits have the fire departments you work with experienced after tus was implemented?**
 
