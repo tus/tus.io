@@ -30,9 +30,8 @@ layout: default
 <hr />
 
 <div class="post-subscribe">
-  Subscribe to this blog via
-  <a href="{{ site.rss_feed }}">RSS</a>.
+  <p>
+    Subscribe to, or respond on our social channels: <br />
+    {% include social.html rss=true %}
+  </p>
 </div>
-<!-- or
-@todo(felixge) Hook in feedburner
-<a href="https://tus.io/atom.xml?email=true">E-Mail</a>. -->

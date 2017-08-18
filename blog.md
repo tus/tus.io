@@ -29,7 +29,10 @@ title: Blog
 </div>
 
 <hr />
-<div class="post-subscribe" markdown="1">
-  Subscribe to this blog via
-  [RSS]({{ site.rss_feed }}).
+
+<div class="post-subscribe">
+  <p>
+    Subscribe to, or say hello to our community: <br />
+    {% include social.html rss=true %}
+  </p>
 </div>
