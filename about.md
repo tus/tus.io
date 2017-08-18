@@ -22,6 +22,7 @@ Are you as passionate about better file uploading as we are? Join us! We welcome
 contributions, be it in the form of patches, comments or questions. You can reach the community using many different channels:
 
 - On [GitHub](https://github.com/tus), where the specification and all the code is hosted.
+- On [Discourse](https://community.transloadit.com/c/tus), our community forum (new! be one of the first to leave a message).
 - On [Slack](https://slackin-xgybtegrsh.now.sh), where the community is available for a chat.
 - On [Twitter](https://twitter.com/tus_io), where the core developers sometimes tweet about the project.
 - Additionally, the project leads can also be reached directly in person:
