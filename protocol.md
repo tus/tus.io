@@ -5,7 +5,7 @@ comments: true
 permalink: /protocols/resumable-upload.html
 ---
 
-<h2>Protocol</h2>
+<h1>Protocol</h1>
 
 <div markdown="1" class="kramdown-toc">
   * This bullet will be replaced with the ToC

@@ -8,7 +8,7 @@ title: Blog
  {% assign author = site.data.authors[post.author] %}
  <div class="post" markdown="1">
 
-## [{{ post.title }}]({{ post.url }})
+# [{{ post.title }}]({{ post.url }})
 
 <div class="post-info">
   Published on <span class="date">{{ post.date | date: "%B %e, %Y" }}</span> by

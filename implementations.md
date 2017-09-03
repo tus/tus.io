@@ -4,12 +4,12 @@ title: Implementations
 comments: true
 ---
 
-## {{page.title}}
+# {{page.title}}
 
 Here are some real-life implementations of the tus resumable upload [protocol](/protocols/resumable-upload.html) in different languages
 and platforms.
 
-### Uppy
+## Uppy
 
 Some special attention should go to [Uppy](https://uppy.io) which is a full-featured
 file uploader for webbrowsers that supports tus. Just like tus, Uppy is
@@ -21,7 +21,7 @@ how to use tus technology in user facing products.
 
 For core implementations with a smaller footprint or non-webbrowser use, read on.
 
-### Official
+## Official
 
 These projects are reference implementations maintained by the protocol developers.
 
@@ -128,7 +128,7 @@ These projects are reference implementations maintained by the protocol develope
 As we go we'll adopt high-quality MIT licensed implementations for all languages and platforms
 under the GitHub [tus organisation](https://github.com/tus). We'll be looking to fork gems inside the Community section below.
 
-### Community
+## Community
 
 The [protocol](/protocols/resumable-upload.html) is very simple and because
 it builds on standard HTTP calls it

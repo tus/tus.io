@@ -5,9 +5,9 @@ layout: default
 {% assign author = site.data.authors[page.author] %}
 
 <div class="post">
-  <h2 class="post-title">
+  <h1 class="post-title">
     {{page.visible_title |default: page.title}}
-  </h2>
+  </h1>
 
   <div class="post-info">
     Published on <span class="date">{{ page.date | date: "%B %e, %Y" }}</span> by

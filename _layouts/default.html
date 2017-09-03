@@ -5,7 +5,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ page.title }}</title>
+    {% assign used_title = page.title %}
+    {% unless page.is_home %}
+      {% assign used_title = used_title | append: " | Transloadit" %}
+    {% endunless %}
+    {% unless layout.title_prefix %}
+      {% assign used_title = used_title | prepend: layout.title_prefix %}
+    {% endunless %}
+
+    <title>{{ used_title }}</title>
 
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">

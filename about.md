@@ -3,7 +3,7 @@ layout: default
 title: About tus
 ---
 
-## About tus
+# About tus
 
 The internet is facing a problem. As camera quality on mobile devices continues to steadily improve,
 user generated files grow larger and larger. Unfortunately this means that
