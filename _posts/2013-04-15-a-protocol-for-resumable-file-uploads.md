@@ -45,7 +45,7 @@ This means that smaller companies are currently doomed to invent, implement and
 maintain their own incompatible protocols and solutions for something that
 should be a trivial component of a modern application.
 
-We find this unacceptable, so the [tus project](http://www.tus.io/) is a
+We find this unacceptable, so the [tus project](https://www.tus.io/) is a
 community project that was born in order to level the playing field and make
 resumable file uploading easy for anybody to implement.
 
