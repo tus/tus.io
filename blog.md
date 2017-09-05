@@ -22,7 +22,7 @@ title: Blog
 <div class="post-content">
   {{ post.excerpt }}
   
-  <a href="{{ post.url }}">&raquo;Read On</a>
+  <a href="{{ post.url }}">Read On &raquo;</a>
 </div>
 
  </div>
