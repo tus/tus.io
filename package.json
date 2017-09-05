@@ -1,6 +1,7 @@
 {
   "title": "Tus.io",
   "name": "tus-io",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "inject:community": "_scripts/inject-community.sh",
