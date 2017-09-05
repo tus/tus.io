@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About tus
+title: About
 ---
 
 # About tus
