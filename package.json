@@ -22,6 +22,7 @@
     "serve": "lanyon serve",
     "encrypt": "lanyon encrypt",
     "start:production": "npm run build:production && npm run serve:production",
+    "upgrade:modules": "npm-check-updates -u --semverLevel major && yarn",
     "start": "lanyon start",
     "lint": "eslint .",
     "fix": "eslint . --fix"
@@ -45,6 +46,7 @@
     "depurar": "0.2.2",
     "download": "5.0.2",
     "es6-promise": "4.1.0",
+    "npm-check-updates": "2.12.1",
     "eslint": "3.19.0",
     "eslint-config-standard": "6.2.1",
     "eslint-plugin-promise": "3.5.0",
