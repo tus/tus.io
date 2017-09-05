@@ -64,12 +64,14 @@
 
               <ul class="nav">
                 {% for link in site.data.navigation %}
+                  {% assign pageUrlHtml = page.url |append: ".html"  %}
+                  {% assign linkUrlNoHtml = link.url |replace: ".html", ""  %}
                   {% assign active = "" %}
-                  {% if page.url == link.url %}
+                  {% if link.url == page.url or link.url == pageUrlHtml or page.url contains linkUrlNoHtml %}
                     {% assign active = 'active' %}
                   {% endif %}
                   <li class="{{ active }}">
-                    <a href="{{ link.url }}">{{ link.text }}</a>
+                    <a data-pageUrlHtml="{{pageUrlHtml}}" href="{{ link.url }}">{{ link.text }}</a>
                   </li>
                 {% endfor %}
               </ul>
