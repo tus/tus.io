@@ -7,7 +7,7 @@
 
     {% assign used_title = page.title %}
     {% unless page.is_home %}
-      {% assign used_title = used_title | append: " | Transloadit" %}
+      {% assign used_title = used_title | append: " | tus" %}
     {% endunless %}
     {% unless layout.title_prefix %}
       {% assign used_title = used_title | prepend: layout.title_prefix %}
