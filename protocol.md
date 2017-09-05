@@ -1,6 +1,6 @@
 ---
 layout: protocol
-title: tus resumable upload protocol
+title: resumable upload protocol
 comments: true
 permalink: /protocols/resumable-upload.html
 ---
