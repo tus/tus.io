@@ -9,10 +9,13 @@ The tus.io website.
 To work on the site locally, type:
 
 ```bash
+type wget || sudo apt-get install wget || brew install wget
 cd ~/code
 git clone git@github.com:tus/tus.io.git
 npm install
-npm run start
+npm run inject:protocol
+npm run inject:community
+npm start
 ```
 
 Uses [Lanyon](https://github.com/kvz/lanyon) under the hood
