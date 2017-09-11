@@ -1,5 +1,6 @@
 permalink: "/blog/:year/:month/:day/:title.html"
 tusd_endpoint: "http://master.tus.io"
+commenting_baseurl: https://tus.io
 
 kramdown:
   input: GFM
