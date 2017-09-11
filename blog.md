@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog
+permalink: /blog.html
 ---
 
 # {{page.title}}

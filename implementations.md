@@ -2,6 +2,7 @@
 layout: default
 title: Implementations
 comments: true
+permalink: /implementations.html
 ---
 
 # {{page.title}}

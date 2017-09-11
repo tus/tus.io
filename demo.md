@@ -2,6 +2,7 @@
 layout: default
 title: Resumable File Upload Demo
 comments: true
+permalink: /demo.html
 ---
 
 # {{ page.title }}
