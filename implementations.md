@@ -182,6 +182,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/ankitpokhrel/tus-php">
+      ankitpokhrel/tus-php
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/ankitpokhrel">Ankit Pokhrel</a></div>
+
+    <div class="description">
+      This project is a tus <code>1.0.0</code> client and server implementation for <strong>PHP</strong> applications
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 
   <li>
     <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
@@ -364,6 +378,20 @@ what protocol version you're targeting.
 
     <div class="description">
       A Python library for powering tus <code>v1.0.0</code> resumable file uploads in applications using <strong>Django Rest Framework</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+  
+  <li>
+    <a class="title" href="https://github.com/ankitpokhrel/tus-php">
+      ankitpokhrel/tus-php
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/ankitpokhrel">Ankit Pokhrel</a></div>
+
+    <div class="description">
+      This project is a tus <code>1.0.0</code> client and server implementation for <strong>PHP</strong> applications
     </div>
 
     <div class="license">Licensed under MIT</div>
