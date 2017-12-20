@@ -1,7 +1,6 @@
 _includes/tus.md
 _site
 .DS_Store
-assets/bower_components
 assets/build
 assets/json/*.json
 node_modules/
@@ -13,3 +12,4 @@ env.sh
 .lanyon/bin
 
 npm-debug.log*
+assets/bower_components
