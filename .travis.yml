@@ -6,7 +6,7 @@ script: true
 cache:
   apt: true
   yarn: true
-install: env SCROLEX_MODE=passthru LANYON_ONLY=docker LANYON_RESET=1 DOCKER_BUILD=1 yarn
+install: env SCROLEX_MODE=passthru LANYON_ONLY=docker LANYON_RESET=1 yarn
 before_cache:
   - rm -f ./node_modules/.bin/which # <-- workaround for https://github.com/travis-ci/travis-ci/issues/5092
 deploy:
