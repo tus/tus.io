@@ -32,6 +32,11 @@
     "prebuild:content:production": "npm run inject"
   },
   "devDependencies": {
+    "@bower_components/animate.css": "daneden/animate.css#3.2.3",
+    "@bower_components/jquery": "jquery/jquery-dist#2.2.0",
+    "@bower_components/jquery-timeago": "rmm5t/jquery-timeago#1.4.1",
+    "@bower_components/on-the-githubs": "kvz/on-the-githubs#^2.3.2",
+    "@bower_components/skeleton": "dhgamache/Skeleton#2.0.4",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -52,16 +57,11 @@
     "fakefile": "0.0.9",
     "glob": "7.1.2",
     "js-yaml": "3.9.1",
-    "lanyon": "0.0.100",
+    "lanyon": "0.0.107",
     "npm-check-updates": "2.12.1",
     "npm-run-all": "2.3.0",
     "on-the-githubs": "2.4.0",
     "stylelint": "7.13.0",
-    "@bower_components/animate.css": "daneden/animate.css#3.2.3",
-    "@bower_components/jquery": "jquery/jquery-dist#2.2.0",
-    "@bower_components/jquery-timeago": "rmm5t/jquery-timeago#1.4.1",
-    "@bower_components/on-the-githubs": "kvz/on-the-githubs#^2.3.2",
-    "@bower_components/skeleton": "dhgamache/Skeleton#2.0.4",
     "tus-js-client": "1.4.4"
   },
   "engines": {
