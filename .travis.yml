@@ -6,7 +6,7 @@ script: true
 cache:
   apt: true
   yarn: true
-install: env SCROLEX_MODE=passthru LANYON_ONLY=docker LANYON_RESET=1 yarn
+install: yarn
 before_cache:
   - rm -f ./node_modules/.bin/which # <-- workaround for https://github.com/travis-ci/travis-ci/issues/5092
 deploy:
@@ -18,6 +18,9 @@ deploy:
     condition: $TRAVIS_OS_NAME = linux
 env:
   global:
+  - SCROLEX_MODE: passthru
+  - LANYON_ONLY: docker
+  - LANYON_RESET: 1
   - secure: qZb8S39zoO2nnjmrPb3o7FN4Oh4x/JfD9mCLQTRnbeimwz7ptTttnXnKyY1iG4dGgN3RlklAFDKt/Y7XRShgUT830P/2BQChE6UFW3SDfCP/mE7e3Tcu80OLAiDoVRFCM6h9r0vtLf4PROBu/ZwUgM5LDe4T5aPcD/8IGs+a5Zw=
   - secure: imJZaflcVfqbrT5dZWzogtl/YcKllybizWigJT5LXx7wi2ytb8OI/Sej4POJkJty0526DfP2I2licfhCR8KCvMdXvuLfrt0Lv1a40BLWqMbzBFob3pwZ0d8flGqXoutnDlrO0xhwSvp24dEfd9IH4gfpOORJzyX3WneBmgbwasI=
   - secure: cD6+Lg0YVwcT61+knXd4gwi+iz7TSo4l3jKyXpGob/9hA8SjYlTuNV/AC4JvdqhDuiymDx/gQYz/KbU8/vM1yZryYYLYlngP/fVMRWs70tZNUilfiE98n5PEfU3nz1Mkoq5sPAxAKhHp1ySt29xoFeux03v3u2tosMTcVzt+ZEc=
