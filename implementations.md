@@ -463,8 +463,8 @@ what protocol version you're targeting.
     </a>
   </li>
   <li>
-    <a class="title" href="https://github.com/janko-m/shrine">
-      janko-m/shrine
+    <a class="title" href="https://github.com/shrinerb/shrine">
+      shrinerb/shrine
     </a>
   </li>
 </ul>
