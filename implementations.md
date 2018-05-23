@@ -410,6 +410,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/jpscaletti/tus">
+      jpscaletti/tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/jpscaletti">Juan-Pablo Scaletti</a></div>
+
+    <div class="description">
+      This project provides a tus <code>1.0.0</code> server built using <strong>Elixir</strong>
+    </div>
+
+    <div class="license">Licensed under BSD 3-Clause</div>
+  </li>
 
   <li>
     <a class="title" href="https://github.com/picocandy/rubytus">
