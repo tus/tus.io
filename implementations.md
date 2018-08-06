@@ -212,34 +212,6 @@ what protocol version you're targeting.
   </li>
 
   <li>
-    <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
-      arifsetiawan/qt-upload-plugin
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/arifsetiawan">Nurul Arif Setiawan</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>Qt C++ (Qt plugin)</strong> clients
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/leblanc-simon/php-tus">
-      leblanc-simon/php-tus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/leblanc-simon">Simon Leblanc</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>PHP</strong> clients
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
     <a class="title" href="https://github.com/vayam/tuspy">
       vayam/tuspy
     </a>
@@ -247,24 +219,10 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/vayam">Naren Venkataraman</a></div>
 
     <div class="description">
-      Add tus <code>v0.2.0</code> resumable file uploads to <strong>Python</strong> clients
+      Add tus <code>v1.0.0</code> resumable file uploads to <strong>Python</strong> clients
     </div>
 
     <div class="license">Licensed under Apache License, Version 2.0</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/vangheem/tus">
-      vangheem/tus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/vangheem">Nathan Van Gheem</a></div>
-
-    <div class="description">
-      Integrate tus <code>v0.2.1</code> with existing <strong>Python</strong> web technologies(WSGI, WebOb, Plone, Zope2)
-    </div>
-
-    <div class="license">Licensed under MIT</div>
   </li>
 </ul>
 
@@ -448,48 +406,6 @@ what protocol version you're targeting.
 
     <div class="description">
       This project enables tus <code>1.0.0</code> resumable uploads for any <strong>Java</strong> web application
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/picocandy/rubytus">
-      picocandy/rubytus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/picocandy">PicoCandy</a></div>
-
-    <div class="description">
-      Released as a ruby gem - tus <code>v0.2.1</code> powering resumable file uploads for <strong>ruby</strong> servers and <strong>rails</strong> apps
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/vayam/brewtus">
-      vayam/brewtus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/vayam">Naren Venkataraman</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>node.js</strong> servers
-    </div>
-
-    <div class="license">Licensed under Apache License, Version 2.0</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/leblanc-simon/php-tus">
-      leblanc-simon/php-tus
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/leblanc-simon">Simon Leblanc</a></div>
-
-    <div class="description">
-      Add tus <code>v0.2.1</code> resumable file uploads to <strong>PHP</strong> servers (under Apache, Nginx, etc)
     </div>
 
     <div class="license">Licensed under MIT</div>
