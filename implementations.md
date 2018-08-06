@@ -198,6 +198,20 @@ what protocol version you're targeting.
   </li>
 
   <li>
+    <a class="title" href="https://github.com/vinzscam/react-native-tus-client">
+      vinzscam/react-native-tus-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/vinzscam">Vincenzo Scamporlino</a></div>
+
+    <div class="description">
+      This project is a tus <code>1.0.0</code> client implementation specifically for <strong>React Native</strong> applications
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
     <a class="title" href="https://github.com/arifsetiawan/qt-upload-plugin">
       arifsetiawan/qt-upload-plugin
     </a>
@@ -423,6 +437,20 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under BSD 3-Clause</div>
+  </li>
+  
+  <li>
+    <a class="title" href="https://github.com/tomdesair/tus-java-server">
+      tomdesair/tus-java-server
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/tomdesair">Tom Desair</a></div>
+
+    <div class="description">
+      This project enables tus <code>1.0.0</code> resumable uploads for any <strong>Java</strong> web application
+    </div>
+
+    <div class="license">Licensed under MIT</div>
   </li>
 
   <li>
