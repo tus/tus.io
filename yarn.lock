@@ -5290,9 +5290,9 @@ known-css-properties@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.2.0.tgz#899c94be368e55b42d7db8d5be7d73a4a4a41454"
 
-lanyon@0.0.128:
-  version "0.0.128"
-  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.128.tgz#2fac879096258be731a2be0772d2d17b4bf8902d"
+lanyon@0.0.129:
+  version "0.0.129"
+  resolved "https://registry.yarnpkg.com/lanyon/-/lanyon-0.0.129.tgz#9dfd82dfa13345145978ca19a13f6630fd0957ef"
   dependencies:
     assets-webpack-plugin "3.5.1"
     autoprefixer "8.6.1"
