@@ -9,9 +9,7 @@ module.exports.overrideRuntime = function ({ runtime, toolkit }) {
       'npm run inject',
     ])
   }
-
-  runtime['prebuild:content'] = preBuilds.join(' && ')
-
+  
   // Chown jekyll parent directories to avoid: `Permission denied @ dir_s_mkdir - /Users/`...
   let chownDirs = []
   let parts = runtime.contentBuildDir.split('/')
@@ -24,6 +22,8 @@ module.exports.overrideRuntime = function ({ runtime, toolkit }) {
   }
   let dirlist = chownDirs.map((i) => `'${i}'`).join(' ')
   preBuilds.push(`cd '${runtime.cacheDir}' && ${toolkit.dockerString(`bash -c "chown jekyll.jekyll ${dirlist}" || true`, { runtime })}`)
+
+  runtime['prebuild:content'] = preBuilds.join(' && ')
 
   return runtime
 }
