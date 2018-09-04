@@ -11,7 +11,6 @@
     "slackin:deploy": "source env.sh && _scripts/slackin.sh",
     "download:logos": "cross-env DEBUG=*:* IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos node ./_scripts/download-external-images.js",
     "download:press": "cross-env DEBUG=*:* IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press node ./_scripts/download-external-images.js",
-    "install": "lanyon install",
     "optimize:logos": "cross-env IMAGES_CFG=_data/logos.yml IMAGES_DIR=assets/img/logos _scripts/images-optimize.sh",
     "optimize:press": "cross-env IMAGES_CFG=_data/press.yml IMAGES_DIR=assets/img/press _scripts/images-optimize.sh",
     "pull": "git pull",
@@ -28,10 +27,7 @@
     "fix": "eslint . --fix"
   },
   "devDependencies": {
-    "animate.css": "3.2.3",
-    "jquery": "2.2.0",
-    "timeago": "1.4.1",
-    "skeleton-css": "2.0.4",
+    "animate.css": "3.2.5",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -51,12 +47,15 @@
     "eslint-plugin-standard": "2.3.1",
     "fakefile": "0.0.9",
     "glob": "7.1.2",
+    "jquery": "2.2.0",
     "js-yaml": "3.9.1",
-    "lanyon": "0.0.126",
+    "lanyon": "0.0.128",
     "npm-check-updates": "2.12.1",
     "npm-run-all": "2.3.0",
     "on-the-githubs": "2.4.0",
+    "skeleton-css": "2.0.4",
     "stylelint": "7.13.0",
+    "timeago": "1.4.1",
     "tus-js-client": "1.4.4"
   },
   "engines": {
