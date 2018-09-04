@@ -75,7 +75,7 @@ permalink: /
     {% for impl in site.data.implementations %}
     <div class="two columns implementation">
       <a href="https://github.com/tus/{{impl.name}}">
-        <img src="/assets/img/{{impl.icon}}.svg" alt="Icon" />
+        <img src="/assets/img/{{impl.icon}}.svg" alt="Support for {{impl.name}}" />
 
         {{impl.name}}
       </a>
@@ -90,11 +90,10 @@ permalink: /
 </div>
 
 <div class="container">
-  <h2>Recent blog posts</h2>
+  <h2>Blog posts</h2>
 
   <ol class="posts">
-    {% assign fewPosts = site.posts |limit: 3 %}
-    {% for post in fewPosts %}
+    {% for post in site.posts limit:3 %}
     {% assign author = site.data.authors[post.author] %}
     <li>
       <div class="author">
@@ -125,10 +124,10 @@ permalink: /
   <h2>Who is using tus?</h2>
 
   <div class="row logos">
-    x
-    {% assign fewLogos = site.data.logos |limit: 6 %}
-    {% for logo in fewLogos %}
-        <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
+    {% for logo in data.logos limit:6 %}
+        <a href="{{ logo.url }}" title="{{ logo.name }}">
+          <img src="{{ logo.src }}" alt="{{ logo.name }}">
+        </a>
     {% else %}
        There are no company logos!
     {% endfor %}
@@ -157,8 +156,7 @@ permalink: /
   <h2>As seen on</h2>
 
   <div class="row logos">
-    {% assign fewPublications = site.data.press |limit: 12 %}
-    {% for logo in fewPublications %}
+    {% for logo in site.data.press limit:12 %}
       <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
       {% else %}
          There are no press publications!
