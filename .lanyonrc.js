@@ -4,7 +4,7 @@ const _ = require('lodash')
 module.exports.overrideRuntime = function ({ runtime, toolkit }) {
   let preBuilds = []
 
-  if (runtime.isDev) {
+  if (!runtime.isDev) {
     preBuilds = preBuilds.concat([
       'npm run inject',
     ])
