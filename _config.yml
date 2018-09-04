@@ -19,7 +19,6 @@ feed:
   path: blog.atom
 
 rss_feed: /atom.xml
-
 url: https://tus.io
 
 plugins:
@@ -35,5 +34,9 @@ browsers:
   - "last 1 version"
   - "> 1%"
   - "Explorer 10"
+exclude:
+  - node_modules
+  - .git
 
-exclude: [vendor]
+keep_files:
+  - assets
