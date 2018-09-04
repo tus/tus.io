@@ -124,7 +124,9 @@ permalink: /
   <h2>Who is using tus?</h2>
 
   <div class="row logos">
-    {% for logo in site.data.logos |limit: 12 %}
+    x
+    {% assign fewLogos = site.data.logos |limit: 6 %}
+    {% for logo in fewLogos %}
         <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
     {% else %}
        There are no company logos!
@@ -154,10 +156,11 @@ permalink: /
   <h2>As seen on</h2>
 
   <div class="row logos">
-    {% for logo in site.data.press |limit: 12 %}
+    {% assign fewPublications = site.data.press |limit: 12 %}
+    {% for logo in fewPublications %}
       <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
       {% else %}
-         There are no press logos!
+         There are no press publications!
       {% endfor %}
   </div>
 </div>

@@ -11,6 +11,11 @@ kramdown:
   entity_output: as_char
   toc_levels: 2..6
 
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
 excerpt_separator: "<!--more-->"
 
 # We'll refer new atom feed though, as adviced by GitHub
