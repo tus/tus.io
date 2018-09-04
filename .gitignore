@@ -12,4 +12,3 @@ env.sh
 .lanyon/bin
 
 npm-debug.log*
-assets/bower_components
