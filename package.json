@@ -25,18 +25,13 @@
     "upgrade:modules": "npm-check-updates -u --semverLevel major && yarn",
     "start": "lanyon start",
     "lint": "eslint .",
-    "fix": "eslint . --fix",
-    "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'assets/bower_components', 'junction') } catch (e) { }\""
-  },
-  "lanyon": {
-    "prebuild:content:production": "npm run inject"
+    "fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@bower_components/animate.css": "daneden/animate.css#3.2.3",
-    "@bower_components/jquery": "jquery/jquery-dist#2.2.0",
-    "@bower_components/jquery-timeago": "rmm5t/jquery-timeago#1.4.1",
-    "@bower_components/on-the-githubs": "kvz/on-the-githubs#^2.3.2",
-    "@bower_components/skeleton": "dhgamache/Skeleton#2.0.4",
+    "animate.css": "3.2.3",
+    "jquery": "2.2.0",
+    "timeago": "1.4.1",
+    "skeleton-css": "2.0.4",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -57,7 +52,7 @@
     "fakefile": "0.0.9",
     "glob": "7.1.2",
     "js-yaml": "3.9.1",
-    "lanyon": "0.0.107",
+    "lanyon": "0.0.126",
     "npm-check-updates": "2.12.1",
     "npm-run-all": "2.3.0",
     "on-the-githubs": "2.4.0",

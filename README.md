@@ -6,19 +6,23 @@
 
 The tus.io website.
 
+## Work on the website locally
+
+This uses [Lanyon](https://github.com/kvz/lanyon) under the hood.
+
+Docker and Node 8+ are a requirement for local website development.
+
 To work on the site locally, type:
 
 ```bash
 type wget || sudo apt-get install wget || brew install wget
 cd ~/code
 git clone git@github.com:tus/tus.io.git
-npm install
+yarn
 npm run inject:protocol
 npm run inject:community
 npm start
 ```
-
-Uses [Lanyon](https://github.com/kvz/lanyon) under the hood
 
 ## Deployment
 
