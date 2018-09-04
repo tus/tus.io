@@ -124,7 +124,7 @@ permalink: /
   <h2>Who is using tus?</h2>
 
   <div class="row logos">
-    {% for logo in data.logos limit:6 %}
+    {% for logo in site.data.logos limit:6 %}
         <a href="{{ logo.url }}" title="{{ logo.name }}">
           <img src="{{ logo.src }}" alt="{{ logo.name }}">
         </a>
