@@ -10,6 +10,14 @@ module.exports.overrideRuntime = function ({ runtime, toolkit }) {
     ])
   }
   
+  let postBuilds = []
+
+  if (!runtime.isDev) {
+    postBuilds = postBuilds.concat([
+      `sudo chown -R ${process.env.USER} '${runtime.contentBuildDir}'`,
+    ])
+  }
+  
   // Chown jekyll parent directories to avoid: `Permission denied @ dir_s_mkdir - /Users/`...
   let chownDirs = []
   let parts = runtime.contentBuildDir.split('/')
@@ -24,6 +32,7 @@ module.exports.overrideRuntime = function ({ runtime, toolkit }) {
   preBuilds.push(`cd '${runtime.cacheDir}' && ${toolkit.dockerString(`bash -c "chown jekyll.jekyll ${dirlist}" || true`, { runtime })}`)
 
   runtime['prebuild:content'] = preBuilds.join(' && ')
+  runtime['postbuild:content'] = postBuilds.join(' && ')
 
   return runtime
 }
