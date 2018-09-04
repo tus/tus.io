@@ -10,9 +10,9 @@
 - url: 'https://medium.com/vimeo-engineering-blog/vimeo-is-adopting-tus-d5e999acd517'
   src: /assets/img/logos/vimeo.png
   name: Vimeo
-- url: 'http://hotpointapp.com'
-  src: /assets/img/logos/hotpoint.png
-  name: Hotpoint
+- url: 'https://cloudflare.com'
+  src: /assets/img/logos/cloudflare.png
+  name: Cloudflare
 - url: 'http://www.sdsc.edu'
   src: /assets/img/logos/san-diego-supercomputer-center.gif
   name: San Diego Supercomputer Center
@@ -22,3 +22,6 @@
 - url: 'https://soundoff.io'
   src: /assets/img/logos/soundoff.png
   name: Soundoff.io
+- url: 'http://hotpointapp.com'
+  src: /assets/img/logos/hotpoint.png
+  name: Hotpoint
