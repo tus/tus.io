@@ -2,6 +2,10 @@ permalink: "/blog/:year/:month/:day/:title.html"
 tusd_endpoint: "http://master.tus.io"
 commenting_baseurl: https://tus.io
 
+strict_front_matter: true
+encoding: UTF-8
+timezone: Europe/Amsterdam
+
 kramdown:
   input: GFM
   hard_wrap: false

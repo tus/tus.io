@@ -93,7 +93,8 @@ permalink: /
   <h2>Recent blog posts</h2>
 
   <ol class="posts">
-    {% for post in site.posts |limit: 3 %}
+    {% assign fewPosts = site.posts |limit: 3 %}
+    {% for post in fewPosts %}
     {% assign author = site.data.authors[post.author] %}
     <li>
       <div class="author">
