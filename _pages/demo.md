@@ -53,13 +53,17 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 ### Compatibility
 
 The [tus-js-client](https://github.com/tus/tus-js-client) used in
-this demo has been [automatically tested](https://travis-ci.org/tus/tus-js-client) and works with the following browsers:
+this demo has been [automatically tested](https://travis-ci.org/tus/tus-js-client)
+and works with the following browsers:
 
-<img id="browser-matrix" src="https://saucelabs.com/browser-matrix/marius_transloadit.svg" alt="Browser Compatibility Matrix"/>
-
-Going forward, all relevant browsers will be supported with as many features
-as possible. All browsers will be able to perform at least simple multipart
-uploads.
+* Internet Explorer 10+
+* Microsoft Edge 12+
+* Mozilla Firefox 14+
+* Google Chrome 20+
+* Safari 6+
+* Opera 12.1+
+* iOS 6.0+
+* Android 5.0+
 
 Using the `X-HTTP-Method-Override` header, it's possible to run tus
 even on platforms that won't let you do `PUT` and `PATCH` requests.
