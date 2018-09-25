@@ -13,6 +13,9 @@
 - url: 'https://cloudflare.com'
   src: /assets/img/logos/cloudflare.png
   name: Cloudflare
+- url: 'https://git-lfs.github.com/'
+  src: /assets/img/logos/git-lfs-icon.png
+  name: Git LFS
 - url: 'http://www.sdsc.edu'
   src: /assets/img/logos/san-diego-supercomputer-center.gif
   name: San Diego Supercomputer Center
