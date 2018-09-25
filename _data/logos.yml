@@ -6,7 +6,7 @@
 # This saves you the hassle of cloning the project locally to add your image.
 - url: 'https://transloadit.com'
   src: /assets/img/logos/transloadit.png
-  name: Transloadit
+  name: Transloadit - File uploading & encoding API
 - url: 'https://medium.com/vimeo-engineering-blog/vimeo-is-adopting-tus-d5e999acd517'
   src: /assets/img/logos/vimeo.png
   name: Vimeo
