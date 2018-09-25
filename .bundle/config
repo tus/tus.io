@@ -1,4 +1,0 @@
----
-BUNDLE_PATH: "vendor/bundle"
-BUNDLE_DISABLE_SHARED_GEMS: "true"
-BUNDLE_BUILD__LIBV8: "--with-v8-dir=/usr/local/opt/v8/include"
