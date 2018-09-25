@@ -2,7 +2,6 @@
 layout: post
 title: Project Status
 comments: true
-date: 2015-09-19
 author: kvz
 redirect_from: /blog/2015/09/19/project-status/
 ---

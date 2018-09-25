@@ -2,7 +2,6 @@
 layout: post
 title: Hello world
 comments: true
-date: 2013-04-06 20:45:00
 author: kvz
 redirect_from: /blog/2013/04/06/hello-world/
 ---

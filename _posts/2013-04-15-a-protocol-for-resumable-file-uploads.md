@@ -2,7 +2,6 @@
 layout: post
 title: A protocol for resumable file uploads
 comments: true
-date: 2013-04-15 15:00:00
 author: felixge
 redirect_from: /blog/2013/04/15/a-protocol-for-resumable-file-uploads/
 ---
