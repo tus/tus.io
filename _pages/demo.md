@@ -14,7 +14,7 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 
  1. Select a large file.
  2. Watch it upload for a bit, then close this tab before it finishes.
- 3. Come back to the tab, select the same file again, the upload should resume where it left off.
+ 3. Come back to [this place](https://tus.io/demo.html), select the same file again, the upload should resume where it left off.
 
 <p class="alert hidden" id="support-alert">
   <b>Warning!</b> Your browser does not seem to support the features necessary to run this demo. The buttons below may work but probably will fail silently.
