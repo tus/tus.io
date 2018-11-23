@@ -45,7 +45,7 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 <hr />
 <h3>Uploads</h3>
 <p class="upload-list">
-  Succesful uploads will be listed here. Try one!<br>
+  Successful uploads will be listed here. Try one!<br>
 </p>
 
 ---------------------------------------
