@@ -272,11 +272,11 @@ what protocol version you're targeting.
   </li>
 
   <li>
-    <a class="title" href="https://github.com/janko-m/tus-ruby-server">
-      janko-m/tus-ruby-server
+    <a class="title" href="https://github.com/janko/tus-ruby-server">
+      janko/tus-ruby-server
     </a>
 
-    <div class="author">&mdash; by <a href="https://github.com/janko-m">Janko Marohnić</a></div>
+    <div class="author">&mdash; by <a href="https://github.com/janko">Janko Marohnić</a></div>
 
     <div class="description">
       The <strong>ruby</strong> server implementation of tus <code>v1.0.0</code>, can be run standalone or mounted in a ruby app
