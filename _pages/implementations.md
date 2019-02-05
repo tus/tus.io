@@ -224,6 +224,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under Apache License, Version 2.0</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/Jon-Indico/TusDotNetClient">
+      Jon-Indico/TusDotNetClient
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/Jon-Indico">Jon Grythe Stødle</a> and <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
+
+    <div class="description">
+      A tus <code>v1.0.0</code> client library for <strong>.NET</strong> applications
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
