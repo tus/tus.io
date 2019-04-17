@@ -1,3 +1,44 @@
+.TransloaditBar {
+	display: none;
+	background: #141829;
+	color: #fff;
+	font-size: 11px;
+	height: 30px;
+	
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 5px;
+	}
+
+	&-link {
+		color: #fff;
+		font-weight: 700;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&-logo {
+		margin-right: 5px;
+	}
+	
+	&-logoImg {
+		display: block;
+	}
+
+	&-about {
+		flex: 1;
+		text-align: right;
+	}
+
+	.page-index & {
+		display: block;
+	}
+}
+
 .intro {
 	background: #fff;
 	color: @intro-color;
@@ -119,17 +160,17 @@
 }
 
 .logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: row wrap;
 }
 
 .logos img {
-  flex: 1 1 auto;
-  padding: 22px;
+	flex: 1 1 auto;
+	padding: 22px;
 	max-width: 200px;
-  max-height: 70px;
+	max-height: 70px;
 }
 
 .on-the-githubs {
