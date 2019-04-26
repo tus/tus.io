@@ -1,4 +1,6 @@
-
+.container {
+	padding: 0 15px;
+}
 
 .clearfix {
 	clear: both;
@@ -52,12 +54,16 @@ textarea:focus {
 	@media (max-width: 960px) {
 		display: none;
 	}
+
+	.page-index & {
+		top: 32px;
+	}
 }
 
 .header {
 	background: @header-bg;
 	border-bottom: 1px solid #ddd;
-	border-top: 5px solid @scheme-secondary;
+	position: relative;
 
 	.logo {
 		line-height: 65px;
