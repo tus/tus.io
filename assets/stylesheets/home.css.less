@@ -24,6 +24,13 @@
 
 	&-logo {
 		margin-right: 10px;
+		overflow: hidden;
+		width: 20px;
+
+		@media screen and (min-width: 360px) {
+			overflow: visible;
+			width: auto;
+		}
 	}
 	
 	&-logoImg {
