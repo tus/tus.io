@@ -238,6 +238,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/jackhftang/tusc">
+      jackhftang/tusc
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/jackhftang">Jack Tang</a></div>
+
+    <div class="description">
+      This project provide a <strong>small-size and static-binary command line utility</strong> of tus <code>1.0.0</code> for both client and server.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
@@ -420,6 +434,20 @@ what protocol version you're targeting.
 
     <div class="description">
       This project enables tus <code>1.0.0</code> resumable uploads for any <strong>Java</strong> web application
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/jackhftang/tusc">
+      jackhftang/tusc
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/jackhftang">Jack Tang</a></div>
+
+    <div class="description">
+      This project provide a <strong>small-size and static-binary command line utility</strong> of tus <code>1.0.0</code> for both client and server.
     </div>
 
     <div class="license">Licensed under MIT</div>
