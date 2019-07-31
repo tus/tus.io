@@ -1,21 +1,12 @@
 ---
 layout: default
-title: About
-permalink: /about.html
+title: Support
+permalink: /support.html
 ---
 
-# About tus
+# Support
 
-The internet is facing a problem. As camera quality on mobile devices continues to steadily improve,
-user generated files grow larger and larger. Unfortunately this means that
-uploading these files reliably becomes much harder as well, especially when using the tiny
-mobile tubes provided by greedy network operators. The problem is that most
-applications are not up to the challenge, which means that millions of cat images
-and videos are lost due to network errors each year!
-
-The tus.io project is here to stop this tragedy! tus is a [resumable
-upload protocol](protocols/resumable-upload.html), with client and server
-[implementations](implementations.html) for all platforms!
+Since tus is developed in the open, _free community support_ is available through our public channels as listed below. The community support covers questions about the protocol itself and our open-source implementations. If you want advanced help with your own tus setup or would like private assistance, you can also pick the _commercial support_ from [Transloadit](https://transloadit.com/).
 
 ## Join the community
 
@@ -28,6 +19,10 @@ contributions, be it in the form of patches, comments or questions. You can reac
 - On [Twitter](https://twitter.com/tus_io), where the core developers sometimes tweet about the project.
 - Additionally, the project leads can also be reached directly in person:
   - Marius: [marius@transloadit.com](mailto:marius@transloadit.com)
+
+## Commercial support
+
+The development of tus is sponsored by [Transloadit](https://transloadit.com/), a cloud service provider for file uploading, conversion and processing. Through their enterprise plan, they also offer commercial support for tus to help you with setup, integration, deployment, scaling and monitoring to cover your individual needs. If you are interested, feel free to contact them at [support@transloadit.com](mailto:support@transloadit.com).
 
 <!-- Use `make build-community` to fetch latest authors -->
 

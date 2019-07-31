@@ -32,7 +32,7 @@ These projects are reference implementations maintained by the protocol develope
       tus-js-client
     </a>
 
-    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+    <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> web apps that are built with <strong>JavaScript</strong>.
@@ -46,7 +46,7 @@ These projects are reference implementations maintained by the protocol develope
       tus-java-client
     </a>
 
-    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+    <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> app using <strong>Java</strong>.
@@ -60,7 +60,7 @@ These projects are reference implementations maintained by the protocol develope
       tus-android-client
     </a>
 
-    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+    <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>Android</strong> apps.
@@ -102,7 +102,7 @@ These projects are reference implementations maintained by the protocol develope
       tusd
     </a>
 
-    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+    <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
       A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol.
@@ -116,7 +116,7 @@ These projects are reference implementations maintained by the protocol develope
       tus-node-server
     </a>
 
-    <div class="author">&mdash; by <a href="/about.html">tus</a></div>
+    <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
       A stand-alone <strong>server</strong> or <a href="http://expressjs.com/en/guide/using-middleware.html">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can also run this to test client implementations with.
