@@ -110,3 +110,7 @@ Client and Server implementations, so we're quite happy with them.
 
 The "X-" prefix for headers has been deprecated, see [RFC
 6648](http://tools.ietf.org/html/rfc6648).
+
+## What does "tus" even mean?
+
+Historically it stood for **T**ransloadit **U**pload **S**erver, later repurposed to: The Upload Server. But really, it's just tus, now, as its own word. Often written in lower casing as an homage to unix ancestry, and (when it was still an abbreviation) to desparately avoid yelling TUS in all caps. We used to insist on lowercasing, but have gotten more pragmatic from our encounters with journalists, who insist on it being Tus in their articles, and nothing much we can do about it. So we guess, write it however you feel like today :smile:
