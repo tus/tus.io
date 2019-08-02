@@ -44,7 +44,7 @@ You'll need a:
 
 There are also community maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc, if those fit your platform better.
 
-If you don't want to self-host tus servers, [Transloadit](https://transloadit.com) offers a tus-based and globally distributed upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and e.g. add an Uppy HTML tag to your website.
+If you don't want to self-host tus servers, [Transloadit](https://transloadit.com) offers a tus-based and globally distributed upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website. Alternatively you can check out [SDKs for other platforms](https://transloadit.com/docs/#sdks).
 
 ## How does tus work?
 
