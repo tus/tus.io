@@ -88,3 +88,25 @@ Before deleting an outstanding upload the Server should give the Client enough t
 ## How can I get the file name or file type for an upload?
 
 For itself, the tus protocol does not have a direct mechanism to obtain the type or filename of an upload as the specification does not have the principle of a disk-based file, allowing you to upload arbitrary data using tus. However, the wanted functionality can be achieved by utilizing metadata. A Client can attach the file's name and type to an upload when it's being created by setting the `Upload-Metadata` header. On the other side, the Server can read these values and determine the name and type of the upload.
+
+## Why is the protocol using custom headers?
+
+We have carefully investigated the use of existing headers such as `Range` and
+`Content-Range`, but unfortunately they are defined in a way that makes them
+unsuitable for resumable file uploads.
+
+We also considered using existing `PATCH` payload formats such as
+[multipart/byteranges](http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges),
+but unfortunately the XHR2 [FormData
+interface](http://www.w3.org/TR/XMLHttpRequest/#interface-formdata) does not
+support custom headers for multipart parts, and the [send()
+method](http://www.w3.org/TR/XMLHttpRequest/#the-send-method) does not allow
+streaming arbitrary data without loading all of it into memory.
+
+That being said, custom headers also allowed us to greatly simplify the
+Client and Server implementations, so we're quite happy with them.
+
+## Why are you not using the "X-" prefix for your headers?
+
+The "X-" prefix for headers has been deprecated, see [RFC
+6648](http://tools.ietf.org/html/rfc6648).
