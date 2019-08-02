@@ -1,10 +1,11 @@
 ---
 layout: default
-title: Guide
-permalink: /guide.html
+title: FAQ
+permalink: /faq.html
+redirect_from: /guide.html
 ---
 
-# Guide
+# FAQ
 
 This document is meant to provide a more general description of what tus is and how it can be used in the best way. This guide does not replace the [protocol specification](/protocols/resumable-upload.html) but instead complements it. While the specification tells you exactly what you can and must not do, this document is intented to give you a better understanding of how the protocol works and how you might use it in your application. It's similar to how laws and regulations get interpreted to know what they actually say. Anyways, let's get started!
 
