@@ -35,6 +35,17 @@ If you are unsure if tus is a good fit for your use case, here is a list of crit
 
 Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios when you handle many very small files (e.g. a few KBs) on a slow network and were the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, [contact us](/support.html) and we are happy to assist you.
 
+## How do I install tus and get started?
+
+You'll need a:
+
+- server implementation (you can read how to [get started with tusd](https://github.com/tus/tusd#getting-started) which is the most mature option), and a:
+- client implementation (such as the bare-bones [tus-js-client](https://github.com/tus/tus-js-client#installation) for browsers and Node.js, or if you need a rich UI, [Uppy](https://uppy.io/docs/#getting-started).
+
+There are also community maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc, if those fit your platform better.
+
+If you don't want to self-host tus servers, [Transloadit](https://transloadit.com) offers a tus-based and globally distributed upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and e.g. add an Uppy HTML tag to your website.
+
 ## How does tus work?
 
 This section covers the more low-level details of how tus performs an upload. If you are using one of our open-source [implementations](/implementations.html), you don't have to worry about these details but they may still be helpful to ease debugging and troubleshooting.
