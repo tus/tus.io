@@ -42,9 +42,9 @@ You'll need a:
 - server implementation (you can read how to [get started with tusd](https://github.com/tus/tusd#getting-started) which is the most mature option), and a:
 - client implementation (such as the bare-bones [tus-js-client](https://github.com/tus/tus-js-client#installation) for browsers and Node.js, or if you need a rich UI, [Uppy](https://uppy.io/docs/#getting-started).
 
-There are also community maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc, if those fit your platform better.
+tus is a low-level building block and there's no one right way to do deploy resumable file uploads with it. Still, to get started quickly, for the majority use case, we'd recommend tusd + Uppy. But the ecosystem is reach and you'll know it if one of our community maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc, are a better fit to your platform.
 
-If you don't want to self-host tus servers, [Transloadit](https://transloadit.com) offers a tus-based and globally distributed upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website. Alternatively you can check out [SDKs for other platforms](https://transloadit.com/docs/#sdks).
+Finally, if you don't care for self-hosting tus servers, [Transloadit](https://transloadit.com) offers a tus-based upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website, or check out [non-browser integrations](https://transloadit.com/docs/#sdks).
 
 ## How does tus work?
 
