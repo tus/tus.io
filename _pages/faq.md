@@ -44,7 +44,7 @@ You'll need a:
 
 tus is a low-level building block and there's no one right way to do deploy resumable file uploads with it. Still, to get started quickly, for the majority use case, we'd recommend tusd + Uppy. But the ecosystem is reach and you'll know it if one of our community maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc, are a better fit to your platform.
 
-Finally, if you don't care for self-hosting tus servers, [Transloadit](https://transloadit.com) offers a tus-based upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website, or check out [non-browser integrations](https://transloadit.com/docs/#sdks).
+Finally, if you don't care for self-hosting tus servers, [Transloadit](https://transloadit.com) offers a tus-based upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website, or check out [non-browser client integrations](https://transloadit.com/docs/#sdks).
 
 ## How does tus work?
 
