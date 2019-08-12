@@ -252,6 +252,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/bluetianx/BirdMessenger">
+      bluetianx/BirdMessenger
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/bluetianx">Bruce Tian</a></div>
+
+    <div class="description">
+      This project provides a tus <code>1.0.0</code> client built using <strong>.NET</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
