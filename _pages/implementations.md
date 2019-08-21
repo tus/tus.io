@@ -266,6 +266,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/adhocore/tusc.sh">
+      adhocore/tusc.sh
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/adhocore">Jitendra Adhikari</a></div>
+
+    <div class="description">
+      This project provides a tus <code>1.0.0</code> client for <strong>bash</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
