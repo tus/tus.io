@@ -12,3 +12,5 @@ env.sh
 .lanyon/bin
 
 npm-debug.log*
+assets/build
+.lanyon
