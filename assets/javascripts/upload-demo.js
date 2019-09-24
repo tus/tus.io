@@ -48,26 +48,18 @@ $(function () {
       return
     }
 
-    // Use the HTTPS protocol if the site is served over a secure connection,
-    // in order to prevent the requests from being blocked by the browsers due
-    // to their mixed-content and security rules.
-    // In the other cases (including the http: and file: protocols), we simply
-    // fall back to HTTP.
-    var protocol = window.location.protocol === 'https:' ? 'https' : 'http'
-    var endpoint = protocol + '://master.tus.io/files/'
-
     console.log('selected file', file)
 
     toggleBtn.textContent = 'pause upload'
 
     var options = {
-      endpoint: endpoint,
+      endpoint: 'https://master.tus.io/files/',
       resume  : !resumeCheckbox.checked,
       metadata: {
         filename: file.name,
-        filetype: file.type
+        filetype: file.type,
       },
-      onError : function (error) {
+      onError: function (error) {
         if (error.originalRequest) {
           if (window.confirm('Failed because: ' + error + '\nDo you want to retry?')) {
             options.resume = false
