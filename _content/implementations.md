@@ -480,6 +480,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/mmatuska/lua-tus-server">
+      mmatuska/lua-tus-server
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/mmatuska">Martin Matuška</a></div>
+
+    <div class="description">
+      This project allows you to add tus <code>1.0.0</code> support to your OpenResty or NGINX (with mod_lua) installation.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Projects using tus</h4>
