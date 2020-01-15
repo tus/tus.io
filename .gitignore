@@ -14,3 +14,4 @@ env.sh
 npm-debug.log*
 assets/build
 .lanyon
+.jekyll-cache/
