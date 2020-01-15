@@ -76,7 +76,7 @@ $(function () {
       },
       onProgress: function (bytesUploaded, bytesTotal) {
         var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
-        $progressBar.css({width: percentage + '%'})
+        $progressBar.css({ width: percentage + '%' })
         console.log(bytesUploaded, bytesTotal, percentage + '%')
       },
       onSuccess: function () {
@@ -114,7 +114,7 @@ $(function () {
 
       // set to 0
       window.setTimeout(function () {
-        $progressBar.css({width: 0})
+        $progressBar.css({ width: 0 })
 
         // show
         window.setTimeout(function () {

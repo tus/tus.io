@@ -75,7 +75,7 @@ function onRequestOutgoing (xhr) {
       <div class="http-paragraph">
         ${req.headers.join('<br />')}
         <br />
-        ${req.bodySize ? `[Binary body with ${req.bodySize} bytes]` : `[No body sent]`}
+        ${req.bodySize ? `[Binary body with ${req.bodySize} bytes]` : '[No body sent]'}
       </div>
     </div>
     <div class="http-block http-response">
