@@ -3,6 +3,7 @@ layout: default
 title: FAQ
 permalink: /faq.html
 redirect_from: /guide.html
+comments: true
 ---
 
 # FAQ
