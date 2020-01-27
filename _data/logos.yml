@@ -29,5 +29,5 @@
   src: /assets/img/logos/hotpoint.png
   name: Hotpoint
 - url: 'https://filepost.io'
-  src: 'https://filepost.io/assets/file-post-logo-69e81683db6bf6174bbe276f1df15892d9b8357fada308ab16da8812d022827c.png'
+  src: /assets/img/logos/filepost.png
   name: FilePost
