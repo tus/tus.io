@@ -16,7 +16,6 @@ contributions, be it in the form of patches, comments or questions. You can reac
 
 - On [GitHub](https://github.com/tus), where the specification and all the code is hosted.
 - On [Discourse](https://community.transloadit.com/c/tus), our community forum (new! be one of the first to leave a message, we'll read it!).
-- On [Slack](https://slackin-xgybtegrsh.now.sh), always up for for a chat.
 - On [Twitter](https://twitter.com/tus_io), where the core developers sometimes tweet about the project.
 - Additionally, the project lead can also be reached directly via email: [marius@transloadit.com](mailto:marius@transloadit.com)
 

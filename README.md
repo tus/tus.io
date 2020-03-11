@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/tus/tus.io.svg?branch=master)](https://travis-ci.org/tus/tus.io)
-[![Join the community](https://slackin-xgybtegrsh.now.sh/badge.svg)](https://slackin-xgybtegrsh.now.sh)
-<!-- ^-- could also be http://slack.tus.io but we can't have https and cloudflare enforces that now it seems -->
+[![Join the community](/assets/img/community-forum-35a78b.svg)](https://community.transloadit.com/c/tus)
 
 # tus.io
 

@@ -21,7 +21,6 @@
     "pull": "git pull",
     "serve:production": "LANYON_ENV=production lanyon serve",
     "serve": "lanyon serve",
-    "slackin:deploy": "source env.sh && _scripts/slackin.sh",
     "start:production": "npm run build:production && npm run serve:production",
     "start": "lanyon start",
     "test": "true",
