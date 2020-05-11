@@ -60,5 +60,8 @@
   },
   "engines": {
     "yarn": ">= 1.0.0"
+  },
+  "dependencies": {
+    "prismjs": "^1.20.0"
   }
 }
