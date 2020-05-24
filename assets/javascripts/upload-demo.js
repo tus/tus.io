@@ -95,8 +95,9 @@ function drawUploadControls (upload) {
     <div class="row">
       <div class="nine columns">
         <div class="progress">
-            <div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
-          </div>
+          <div class="progress-bar progress-bar-striped indeterminate"></div>
+        </div>
+        <span id="js-upload-text-progress"></span>
       </div>
       <div class="three columns">
         <button class="u-full-width" id="js-upload-toggle">pause upload</button>
@@ -106,6 +107,8 @@ function drawUploadControls (upload) {
 
   const progressBar   = container.querySelector('.progress-bar')
   const pauseButton   = container.querySelector('#js-upload-toggle')
+  const textProgress  = container.querySelector('#js-upload-text-progress')
+  const textHeading   = container.querySelector('.heading')
   let isUploadRunning = true
 
   pauseButton.addEventListener('click', () => {
@@ -113,10 +116,12 @@ function drawUploadControls (upload) {
       upload.abort()
       isUploadRunning = false
       pauseButton.textContent = 'resume upload'
+      textHeading.textContent = 'The upload is paused:'
     } else {
       upload.start()
       isUploadRunning = true
       pauseButton.textContent = 'pause upload'
+      textHeading.textContent = 'The upload is running:'
     }
   })
 
@@ -136,9 +141,12 @@ function drawUploadControls (upload) {
   }
 
   upload.options.onProgress = (bytesUploaded, bytesTotal) => {
-    const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
-    progressBar.style.width = percentage + '%'
-    console.log('demo: progress', bytesUploaded, bytesTotal, percentage + '%')
+    const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2) + '%'
+    progressBar.classList.remove('indeterminate')
+    progressBar.classList.add('active')
+    progressBar.style.width = percentage
+    console.log('demo: progress', bytesUploaded, bytesTotal, percentage)
+    textProgress.textContent = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(bytesTotal)} (${percentage})`
   }
 
   upload.options.onSuccess = () => {
@@ -156,7 +164,7 @@ function drawDownloadLink (upload) {
     <div class="heading">The upload is complete!</div>
 
     <a href="${upload.url}" target="_blank" class="button button-primary">
-      Download ${upload.file.name} (${upload.file.size} bytes)
+      Download ${upload.file.name} (${formatBytes(upload.file.size)})
     </a>
     <br />
     or
@@ -168,6 +176,22 @@ function drawDownloadLink (upload) {
     event.preventDefault()
     drawFileInput()
   })
+}
+
+/**
+ * Turn a byte number into a human readable format.
+ * Taken from https://stackoverflow.com/a/18650828
+ */
+function formatBytes (bytes, decimals = 2) {
+  if (bytes === 0) return '0 Bytes'
+
+  const k = 1024
+  const dm = decimals < 0 ? 0 : decimals
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
 }
 
 if (container) {
