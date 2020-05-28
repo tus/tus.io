@@ -91,8 +91,12 @@
 }
 
 .upload-text-progress {
-	margin-top: 1em;
 	line-height: 1.4;
+	margin-top: 1em;
+
+	@media screen and (min-width: 550px) {
+		margin-top: 0;
+	}
 }
 
 .http-method-url {
