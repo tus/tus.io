@@ -64,7 +64,7 @@ function drawPreviousUploadSelect (upload) {
       container.innerHTML = `
         <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
         <button data-resume="0" class="button button-primary">Yes, resume</button>
-        <button data-resume="false">No, start a new upload</button>
+        <button data-resume="false">No, start over</button>
       `
     }
 
@@ -167,7 +167,7 @@ function drawDownloadLink (upload) {
     </a>
     <br />
     or
-    <a href="#" id="js-reset-demo">upload another file</a>
+    <a href="#" id="js-reset-demo">Upload another file</a>
   `
 
   const resetButton = container.querySelector('#js-reset-demo')
