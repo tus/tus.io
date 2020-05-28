@@ -16,6 +16,16 @@
 	}
 }
 
+@keyframes progress-bar-indeterminate {
+	from {
+		margin-left: 0%;
+	}
+
+	to {
+		margin-left: 90%;
+	}
+}
+
 .progress {
 	overflow: hidden;
 	height: 38px;
@@ -36,7 +46,7 @@
 		height: 100%;
 		line-height: 30px;
 		text-align: center;
-		transition: width 0.6s ease;
+		transition: width 0.6s ease, margin-left 1s ease;
 		width: 0%;
 
 		&.active {
@@ -45,6 +55,11 @@
 
 		&.no-transition {
 			transition: initial;
+		}
+
+		&.indeterminate {
+			width: 10%;
+			animation: progress-bar-indeterminate 3s linear infinite;
 		}
 	}
 
@@ -65,8 +80,18 @@
 	/* stylelint-enable */
 }
 
-.upload-list .button {
-	display: block;
+#js-upload-container {
+	border: 1px solid #e1e1e1;
+	border-radius: 7px;
+	padding: 40px 30px;
+	text-align: center;
+	overflow: hidden;
+
+	.heading {
+		font-size: 1.3em;
+		margin-bottom: 20px;
+		text-decoration: underline;
+	}
 }
 
 .http-method-url {

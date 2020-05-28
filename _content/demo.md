@@ -8,16 +8,16 @@ permalink: /demo.html
 # {{ page.title }}
 
 This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
-It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
+It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/). Please be aware that the uploaded files will be removed from our servers after a few hours, for privacy, and to combat people uploading malicious content.
 
 ### Instructions
 
  1. Select a large file.
  2. Watch it upload for a bit, then close this tab before it finishes.
- 3. Come back to [this place](https://tus.io/demo.html), select the same file again, the upload should resume where it left off.
+ 3. Come back to [this place](https://tus.io/demo.html), select the same file again and you can resume the upload where it left off.
  4. Inspect the HTTP traffic (see below) to understand how tus works.
 
-<p class="alert hidden" id="support-alert">
+<p class="alert hidden" id="js-support-alert">
   <b>Warning!</b> Your browser does not seem to support the features necessary to run this demo. The buttons below may work but probably will fail silently.
 </p>
 <noscript>
@@ -26,28 +26,9 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
   </p>
 </noscript>
 
-<input type="file">
-<label>
-  <input type="checkbox" id="resume">
-  Perform full upload (even if we could resume)
-</label>
-
-<div class="row">
-  <div class="nine columns">
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
-    </div>
-  </div>
-  <div class="three columns">
-    <button class="u-full-width" id="toggle-btn">start upload</button>
-  </div>
+<div id="js-upload-container">
+  <!-- Will be filled using the script upload-demo.js -->
 </div>
-
-<hr />
-<h3>Uploads</h3>
-<p class="upload-list">
-  Successful uploads will be listed here. Try one!<br>
-</p>
 
 <hr />
 <h3>HTTP Traffic</h3>
@@ -56,6 +37,7 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 </p>
 
 <div class="http-traffic-list">
+  <!-- Will be filled using the script in request-viewer.js -->
 </div>
 
 ---------------------------------------

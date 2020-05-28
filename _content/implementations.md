@@ -312,6 +312,19 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  <li>
+    <a class="title" href="https://github.com/pylotcode/aiohttp-tus">
+      pylotcode/aiohttp-tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://www.pylot.dev/">Pylot</a> Team, Igor Davydenko <a href="https://github.com/playpauseandstop">@playpauseandstop</a> </div>
+
+    <div class="description">
+      <strong>Asynchronous Python 3</strong> implementation with binding to <strong>aiohttp.web</strong> framework implementing tus protocol
+    </div>
+
+    <div class="license">Licensed under BSD-3-Clause</div>
+  </li>
 
   <li>
     <a class="title" href="https://github.com/terrischwartz/tus_servlet">
