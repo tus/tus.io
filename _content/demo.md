@@ -16,7 +16,7 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 
  1. Select a large file.
  2. Watch it upload for a bit, then close this tab before it finishes.
- 3. Come back to [this place](https://tus.io/demo.html), select the same file again and you can resume the upload where it left off.
+ 3. Come back to this page, select the same file again and you can resume the upload where it left off.
  4. Inspect the HTTP traffic (see below) to understand how tus works.
 
 <p class="alert hidden" id="js-support-alert">
