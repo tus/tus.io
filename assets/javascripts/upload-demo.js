@@ -63,7 +63,7 @@ function drawPreviousUploadSelect (upload) {
       const time = $.timeago(previousUploads[0].creationTime)
       container.innerHTML = `
         <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
-        <button data-resume="0" class="button button-primary">Yes, resume that upload</button>
+        <button data-resume="0" class="button button-primary">Yes, resume</button>
         <button data-resume="false">No, start a new upload</button>
       `
     }
@@ -92,13 +92,13 @@ function drawUploadControls (upload) {
   container.innerHTML = `
     <div class="heading">The upload is running:</div>
     <div class="row">
-      <div class="nine columns">
+      <div class="ten columns">
         <div class="progress">
           <div class="progress-bar progress-bar-striped indeterminate"></div>
         </div>
       </div>
-      <div class="three columns">
-        <button class="u-full-width" id="js-upload-toggle">Pause upload</button>
+      <div class="two columns">
+        <button class="u-full-width" id="js-upload-toggle">Pause</button>
       </div>
     </div>
     <div class="upload-text-progress" id="js-upload-text-progress"></div>
@@ -114,12 +114,12 @@ function drawUploadControls (upload) {
     if (isUploadRunning) {
       upload.abort()
       isUploadRunning = false
-      pauseButton.textContent = 'Resume upload'
+      pauseButton.textContent = 'Resume'
       textHeading.textContent = 'The upload is paused:'
     } else {
       upload.start()
       isUploadRunning = true
-      pauseButton.textContent = 'Pause upload'
+      pauseButton.textContent = 'Pause'
       textHeading.textContent = 'The upload is running:'
     }
   })
