@@ -101,7 +101,7 @@ function drawUploadControls (upload) {
         <button class="u-full-width" id="js-upload-toggle">Pause upload</button>
       </div>
     </div>
-    <span id="js-upload-text-progress"></span>
+    <div class="upload-text-progress" id="js-upload-text-progress"></div>
   `
 
   const progressBar   = container.querySelector('.progress-bar')
