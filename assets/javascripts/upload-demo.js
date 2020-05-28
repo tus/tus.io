@@ -91,15 +91,11 @@ function drawPreviousUploadSelect (upload) {
 function drawUploadControls (upload) {
   container.innerHTML = `
     <div class="heading">The upload is running:</div>
-    <div class="row">
-      <div class="ten columns">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped indeterminate"></div>
-        </div>
+    <div class="upload-row">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped indeterminate"></div>
       </div>
-      <div class="two columns">
-        <button class="u-full-width" id="js-upload-toggle">Pause</button>
-      </div>
+      <button id="js-upload-toggle">Pause</button>
     </div>
     <div class="upload-text-progress" id="js-upload-text-progress"></div>
   `

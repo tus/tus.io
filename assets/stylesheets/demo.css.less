@@ -16,10 +16,21 @@
 	}
 }
 
+.upload-row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	button {
+		padding: 0 16px;
+	}
+}
+
 .progress {
+	flex: 1;
+	margin-right: 10px;
 	overflow: hidden;
 	height: 38px;
-	margin-bottom: 10px;
 	background-color: #eee;
 	border-radius: 4px;
 	box-shadow: 0 1px 1px #ddd inset;
@@ -53,6 +64,7 @@
 			width: 100%;
 			animation: progress-bar-stripes 2s linear infinite;
 			background-color: #b7b7b7;
+			opacity: 0.5;
 		}
 	}
 
