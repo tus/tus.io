@@ -92,14 +92,15 @@ function drawUploadControls (upload) {
   container.innerHTML = `
     <div class="heading">The upload is running:</div>
     <div class="upload-row">
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped indeterminate"></div>
+      <div class="progress indeterminate">
+        <div class="progress-bar"></div>
       </div>
       <button id="js-upload-toggle">Pause</button>
     </div>
     <div class="upload-text-progress" id="js-upload-text-progress"></div>
   `
 
+  const progress      = container.querySelector('.progress')
   const progressBar   = container.querySelector('.progress-bar')
   const pauseButton   = container.querySelector('#js-upload-toggle')
   const textProgress  = container.querySelector('#js-upload-text-progress')
@@ -137,8 +138,7 @@ function drawUploadControls (upload) {
 
   upload.options.onProgress = (bytesUploaded, bytesTotal) => {
     const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2) + '%'
-    progressBar.classList.remove('indeterminate')
-    progressBar.classList.add('active')
+    progress.classList.remove('indeterminate')
     progressBar.style.width = percentage
     console.log('demo: progress', bytesUploaded, bytesTotal, percentage)
     textProgress.textContent = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(bytesTotal)} (${percentage})`
