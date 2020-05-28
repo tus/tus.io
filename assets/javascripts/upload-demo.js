@@ -64,7 +64,6 @@ function drawPreviousUploadSelect (upload) {
       container.innerHTML = `
         <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
         <button data-resume="0" class="button button-primary">Yes, resume that upload</button>
-        <br />
         <button data-resume="false">No, start a new upload</button>
       `
     }
@@ -97,12 +96,12 @@ function drawUploadControls (upload) {
         <div class="progress">
           <div class="progress-bar progress-bar-striped indeterminate"></div>
         </div>
-        <span id="js-upload-text-progress"></span>
       </div>
       <div class="three columns">
-        <button class="u-full-width" id="js-upload-toggle">pause upload</button>
+        <button class="u-full-width" id="js-upload-toggle">Pause upload</button>
       </div>
     </div>
+    <span id="js-upload-text-progress"></span>
   `
 
   const progressBar   = container.querySelector('.progress-bar')
@@ -115,12 +114,12 @@ function drawUploadControls (upload) {
     if (isUploadRunning) {
       upload.abort()
       isUploadRunning = false
-      pauseButton.textContent = 'resume upload'
+      pauseButton.textContent = 'Resume upload'
       textHeading.textContent = 'The upload is paused:'
     } else {
       upload.start()
       isUploadRunning = true
-      pauseButton.textContent = 'pause upload'
+      pauseButton.textContent = 'Pause upload'
       textHeading.textContent = 'The upload is running:'
     }
   })
