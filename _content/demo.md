@@ -8,13 +8,15 @@ permalink: /demo.html
 # {{ page.title }}
 
 This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
-It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/). Please be aware that the uploaded files will be removed from our servers after a few hours, for privacy, and to combat people uploading malicious content.
+It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
+
+**⚠️ Please be aware that the uploaded files will be removed from our servers after a few hours, for privacy, and to combat people uploading malicious content.**
 
 ### Instructions
 
  1. Select a large file.
  2. Watch it upload for a bit, then close this tab before it finishes.
- 3. Come back to [this place](https://tus.io/demo.html), select the same file again and you can resume the upload where it left off.
+ 3. Come back to this page, select the same file again and you can resume the upload where it left off.
  4. Inspect the HTTP traffic (see below) to understand how tus works.
 
 <p class="alert hidden" id="js-support-alert">
