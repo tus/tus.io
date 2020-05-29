@@ -23,6 +23,7 @@
 
 	button {
 		padding: 0 16px;
+		min-width: 90px;
 	}
 }
 
@@ -58,9 +59,14 @@
 	}
 
 	.progress-bar {
-		transition: width 0.25s ease;
+		transition: width 0.25s ease, background-color 0.25s ease;
 		width: 0;
 		animation: progress-bar-stripes 2s linear infinite;
+	}
+
+	&.paused .progress-bar {
+		background-color: #4faa94;
+		animation-play-state: paused;
 	}
 }
 
