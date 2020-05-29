@@ -113,11 +113,13 @@ function drawUploadControls (upload) {
       isUploadRunning = false
       pauseButton.textContent = 'Resume'
       textHeading.textContent = 'The upload is paused:'
+      progress.classList.add('paused')
     } else {
       upload.start()
       isUploadRunning = true
       pauseButton.textContent = 'Pause'
       textHeading.textContent = 'The upload is running:'
+      progress.classList.remove('paused')
     }
   })
 
