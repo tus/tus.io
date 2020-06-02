@@ -1,6 +1,8 @@
 'use strict'
 
-const tus       = require('tus-js-client')
+const ago = require('s-ago')
+const tus = require('tus-js-client')
+
 const container = document.querySelector('#js-upload-container')
 const alertBox  = document.querySelector('#js-support-alert')
 
@@ -38,50 +40,53 @@ function drawFileInput () {
     }
 
     const upload = new tus.Upload(file, options)
-    drawPreviousUploadSelect(upload)
+    drawPreviousUploadSelect(upload).catch((error) => {
+      console.error(error)
+    })
   })
 }
 
 /**
  * Fill the container with buttons to select if an upload should be resumed
  */
-function drawPreviousUploadSelect (upload) {
-  upload.findPreviousUploads().then((previousUploads) => {
-    // We only want to consider uploads that were started three hours or less ago.
-    const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000
-    previousUploads.forEach(upload => { upload.creationTime = new Date(upload.creationTime) })
-    previousUploads = previousUploads
-      .filter(upload => upload.creationTime > threeHoursAgo)
-      .sort((a, b) => b.creationTime - a.creationTime)
+async function drawPreviousUploadSelect (upload) {
+  let previousUploads = await upload.findPreviousUploads()
 
-    // If no upload was previously started, we can directly start the upload.
-    if (previousUploads.length === 0) {
-      return drawUploadControls(upload)
-    }
+  // We only want to consider uploads that were started within the last three hours.
+  const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000
+  previousUploads = previousUploads
+    .map((upload) => {
+      upload.creationTime = new Date(upload.creationTime)
+      return upload
+    })
+    .filter(upload => upload.creationTime > threeHoursAgo)
+    .sort((a, b) => b.creationTime - a.creationTime)
 
-    if (previousUploads.length >= 1) {
-      const time = $.timeago(previousUploads[0].creationTime)
-      container.innerHTML = `
-        <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
-        <button data-resume="0" class="button button-primary">Yes, resume that upload</button>
-        <br />
-        <button data-resume="false">No, start a new upload</button>
-      `
-    }
+  // If no upload was previously started, we can directly start the upload.
+  if (previousUploads.length === 0) {
+    return drawUploadControls(upload)
+  }
 
-    // The code is also able to deal with multiple options here, but we don't
-    // use it at the moment.
-    const buttons = container.querySelectorAll('button[data-resume]')
-    Array.from(buttons).forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const value = event.target.getAttribute('data-resume')
-        const index = parseInt(value, 10)
-        if (!isNaN(index)) {
-          upload.resumeFromPreviousUpload(previousUploads[index])
-        }
+  const time = ago(previousUploads[0].creationTime)
+  container.innerHTML = `
+    <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
+    <button data-resume="0" class="button button-primary">Yes, resume that upload</button>
+    <br />
+    <button data-resume="false">No, start a new upload</button>
+  `
 
-        drawUploadControls(upload)
-      })
+  // The code is also able to deal with multiple options here, but we don't
+  // use it at the moment.
+  const buttons = container.querySelectorAll('button[data-resume]')
+  Array.from(buttons).forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const value = event.target.getAttribute('data-resume')
+      const index = parseInt(value, 10)
+      if (!isNaN(index)) {
+        upload.resumeFromPreviousUpload(previousUploads[index])
+      }
+
+      drawUploadControls(upload)
     })
   })
 }
