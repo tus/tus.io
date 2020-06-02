@@ -70,9 +70,8 @@ async function drawPreviousUploadSelect (upload) {
   const time = ago(previousUploads[0].creationTime)
   container.innerHTML = `
     <div class="heading">You already started uploading this file ${time}. Do you want to resume this upload?</div>
-    <button data-resume="0" class="button button-primary">Yes, resume that upload</button>
-    <br />
-    <button data-resume="false">No, start a new upload</button>
+    <button data-resume="0" class="button button-primary">Yes, resume</button>
+    <button data-resume="false">No, start over</button>
   `
 
   // The code is also able to deal with multiple options here, but we don't
@@ -85,8 +84,6 @@ async function drawPreviousUploadSelect (upload) {
       if (!isNaN(index)) {
         upload.resumeFromPreviousUpload(previousUploads[index])
       }
-
-      drawUploadControls(upload)
     })
   })
 }
@@ -97,19 +94,16 @@ async function drawPreviousUploadSelect (upload) {
 function drawUploadControls (upload) {
   container.innerHTML = `
     <div class="heading">The upload is running:</div>
-    <div class="row">
-      <div class="nine columns">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped indeterminate"></div>
-        </div>
-        <span id="js-upload-text-progress"></span>
+    <div class="upload-row">
+      <div class="progress indeterminate">
+        <div class="progress-bar"></div>
       </div>
-      <div class="three columns">
-        <button class="u-full-width" id="js-upload-toggle">pause upload</button>
-      </div>
+      <button id="js-upload-toggle">Pause</button>
     </div>
+    <div class="upload-text-progress" id="js-upload-text-progress"></div>
   `
 
+  const progress      = container.querySelector('.progress')
   const progressBar   = container.querySelector('.progress-bar')
   const pauseButton   = container.querySelector('#js-upload-toggle')
   const textProgress  = container.querySelector('#js-upload-text-progress')
@@ -120,13 +114,15 @@ function drawUploadControls (upload) {
     if (isUploadRunning) {
       upload.abort()
       isUploadRunning = false
-      pauseButton.textContent = 'resume upload'
+      pauseButton.textContent = 'Resume'
       textHeading.textContent = 'The upload is paused:'
+      progress.classList.add('paused')
     } else {
       upload.start()
       isUploadRunning = true
-      pauseButton.textContent = 'pause upload'
+      pauseButton.textContent = 'Pause'
       textHeading.textContent = 'The upload is running:'
+      progress.classList.remove('paused')
     }
   })
 
@@ -147,8 +143,7 @@ function drawUploadControls (upload) {
 
   upload.options.onProgress = (bytesUploaded, bytesTotal) => {
     const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2) + '%'
-    progressBar.classList.remove('indeterminate')
-    progressBar.classList.add('active')
+    progress.classList.remove('indeterminate')
     progressBar.style.width = percentage
     console.log('demo: progress', bytesUploaded, bytesTotal, percentage)
     textProgress.textContent = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(bytesTotal)} (${percentage})`
@@ -173,7 +168,7 @@ function drawDownloadLink (upload) {
     </a>
     <br />
     or
-    <a href="#" id="js-reset-demo">upload another file</a>
+    <a href="#" id="js-reset-demo">Upload another file</a>
   `
 
   const resetButton = container.querySelector('#js-reset-demo')
