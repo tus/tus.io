@@ -7,16 +7,18 @@
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 a {
-	color: @scheme-secondary;
+	color: @scheme-primary;
+	text-decoration: none;
 
 	&:hover {
 		color: @scheme-primary;
+		text-decoration: underline;
 	}
 }
 
@@ -113,7 +115,7 @@ textarea:focus {
 		li {
 			float: left;
 			margin: 0;
-			padding: 15px 10px;
+			padding: 14px 10px;
 
 			a {
 				border: 1px solid transparent;
