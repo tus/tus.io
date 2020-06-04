@@ -2,15 +2,9 @@ const path = require('path')
 const _ = require('lodash')
 
 module.exports.overrideRuntime = function ({ runtime, toolkit }) {
-  let preBuilds = []
-
   if (!runtime.isDev) {
-    preBuilds = preBuilds.concat([
-      'npm run inject',
-    ])
+    runtime['prebuild:content'] = 'npm run inject'
   }
-  
-  runtime['prebuild:content'] = preBuilds.join(' && ')
 
   return runtime
 }
