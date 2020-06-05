@@ -7,16 +7,18 @@
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 a {
-	color: @scheme-secondary;
+	color: @scheme-primary;
+	text-decoration: none;
 
 	&:hover {
 		color: @scheme-primary;
+		text-decoration: underline;
 	}
 }
 
@@ -62,11 +64,12 @@ textarea:focus {
 
 .header {
 	background: @header-bg;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 	position: relative;
 
 	.logo {
 		line-height: 65px;
+		font-size: 3rem;
 		margin: 0;
 
 		a {
@@ -113,7 +116,7 @@ textarea:focus {
 		li {
 			float: left;
 			margin: 0;
-			padding: 15px 10px;
+			padding: 14px 7px;
 
 			a {
 				border: 1px solid transparent;
@@ -211,4 +214,9 @@ textarea:focus {
 		width: auto;
 		float: right;
 	}
+}
+
+
+.comments {
+	margin-top: 50px;
 }
