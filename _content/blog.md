@@ -21,7 +21,7 @@ permalink: /blog.html
 </div>
 
 <div class="post-content">
-  {{ post.excerpt }}
+  {{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}
   
   <a href="{{ post.url }}">Read On &raquo;</a>
 </div>
