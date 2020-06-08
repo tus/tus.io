@@ -31,3 +31,6 @@
 - url: 'https://filepost.io'
   src: /assets/img/logos/filepost.png
   name: FilePost
+- url: 'https://ezybox.in'
+  src:  https://ezybox.in/logo-color.png
+  name: Ezybox
