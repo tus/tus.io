@@ -30,4 +30,7 @@
   name: Hotpoint
 - url: 'https://filepost.io'
   src: /assets/img/logos/filepost.png
-  name: FilePost
+  name: FilePost	
+- url: 'https://ezybox.in/logo-color.png'
+  src: /assets/img/logos/ezybox.png
+  name: Ezybox
