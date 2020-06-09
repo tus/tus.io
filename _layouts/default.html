@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{site.lanyon_assets.app.css}}"  media="screen" charset="utf-8">
+    {%include _generated_assets/app-{{jekyll.environment}}-head.html%}
     {% feed_meta %}
 
     <!-- Twitter follow button script -->
@@ -137,6 +137,6 @@
       window.tusdEndpoint = '{{ tusd_endpoint }}';
     </script>
 
-    <script async src="{{site.lanyon_assets.app.js}}"></script>
+    {%include _generated_assets/app-{{jekyll.environment}}-body.html%}
   </body>
 </html>

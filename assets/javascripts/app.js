@@ -15,10 +15,10 @@ import 'prismjs/components/prism-c' // can't use objectivec without c
 import 'prismjs/components/prism-objectivec'
 import 'prismjs/components/prism-swift'
 
-require('timeago/jquery.timeago.js')
-require('on-the-githubs/js/jquery.on-the-githubs.js')
-require('./upload-demo.js')
-require('./request-viewer.js')
+import 'timeago/jquery.timeago.js'
+import 'on-the-githubs/js/jquery.on-the-githubs.js'
+import './upload-demo.js'
+import './request-viewer.js'
 
 ;($ => {
   const Tus = {}
