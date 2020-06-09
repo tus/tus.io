@@ -69,17 +69,18 @@
 		}
 	}
 
-	/* stylelint-disable */
 	.banner {
-		// @extend .animated;
-		// @extend .fadeIn;
-		animation-delay: 0.5s;
-		padding: 40px 0;
-		width: 60%;
-		margin: 0 auto;
-		display: block;
+		-webkit-animation: fadeIn 2s;  /* Safari, Chrome and Opera > 12.1 */
+		-moz-animation   : fadeIn 2s;  /* Firefox < 16 */
+		-ms-animation    : fadeIn 2s;  /* Internet Explorer */
+		-o-animation     : fadeIn 2s;  /* Opera < 12.1 */
+		animation        : fadeIn 2s;
+
+		padding          : 40px 0;
+		width            : 60%;
+		margin           : 0 auto;
+		display          : block;
 	}
-	/* stylelint-enable */
 
 	.mission {
 		background: $mission-bg;

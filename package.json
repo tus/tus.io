@@ -27,7 +27,6 @@
     "upgrade:modules": "updtr"
   },
   "devDependencies": {
-    "animate.css": "4.1.0",
     "cross-env": "7.0.2",
     "depurar": "0.3.0",
     "download": "8.0.0",
