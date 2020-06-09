@@ -13,11 +13,11 @@ body {
 }
 
 a {
-	color: @scheme-primary;
+	color: $scheme-primary;
 	text-decoration: none;
 
 	&:hover {
-		color: @scheme-primary;
+		color: $scheme-primary;
 		text-decoration: underline;
 	}
 }
@@ -31,17 +31,17 @@ input[type=number]:focus,
 input[type=search]:focus,
 select:focus,
 textarea:focus {
-	border-color: @scheme-secondary;
+	border-color: $scheme-secondary;
 }
 
 .button {
 	&.button-primary {
-		background-color: @scheme-secondary;
-		border-color: @scheme-secondary;
+		background-color: $scheme-secondary;
+		border-color: $scheme-secondary;
 
 		&:hover {
-			background-color: @scheme-primary;
-			border-color: @scheme-primary;
+			background-color: $scheme-primary;
+			border-color: $scheme-primary;
 		}
 	}
 }
@@ -63,7 +63,7 @@ textarea:focus {
 }
 
 .header {
-	background: @header-bg;
+	background: $header-bg;
 	border-bottom: 1px solid #eee;
 	position: relative;
 
@@ -128,7 +128,7 @@ textarea:focus {
 
 			&.active a,
 			a:hover {
-				color: @scheme-secondary;
+				color: $scheme-secondary;
 			}
 		}
 	}
@@ -158,7 +158,7 @@ textarea:focus {
 					transition: background 0.3s, color 0.3s;
 
 					&:hover {
-						background: @scheme-secondary;
+						background: $scheme-secondary;
 						color: #fff;
 					}
 				}
