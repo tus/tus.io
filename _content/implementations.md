@@ -527,6 +527,9 @@ what protocol version you're targeting.
       goadesign/examples/tus
     </a>
   </li>
+  <li>
+    The react-uploady library includes a tus upload component: <a href="https://github.com/rpldy/react-uploady"> rpldy/react-uploady</a>
+  </li>
 </ul>
 
 Drop a line if you built an open source tus implementation, and you'll be
