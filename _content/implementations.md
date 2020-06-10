@@ -522,6 +522,11 @@ what protocol version you're targeting.
       shrinerb/shrine
     </a>
   </li>
+  <li>
+    Goa based tus server implementation: <a class="title" href="https://github.com/goadesign/examples/tree/master/tus">
+      goadesign/examples/tus
+    </a>
+  </li>
 </ul>
 
 Drop a line if you built an open source tus implementation, and you'll be
