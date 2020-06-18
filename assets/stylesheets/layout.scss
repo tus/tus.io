@@ -1,5 +1,14 @@
 .container {
 	padding: 0 15px;
+
+  .content &,
+  &.comments {
+		max-width: 768px;
+  }
+  
+  .page-index & {
+    max-width: 960px;
+  }
 }
 
 .clearfix {
