@@ -30,7 +30,8 @@ h4 {
 }
 
 .content h2,
-.content h3 {
+.content h3,
+.content h4 {
 	margin-top: 4rem;
 }
 
@@ -71,6 +72,11 @@ p.lead {
 	}
 
 	h4 {
-		font-size: 1.8rem;
+		font-size: 2rem;
+	}
+
+	h5 {
+		font-size: 1.6rem;
+		font-weight: 700;
 	}
 }
