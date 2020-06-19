@@ -38,11 +38,13 @@
 
 	.blog-posts {
 		.post {
-			margin-left: 0;
-			margin-right: 0;
-			h2:first-child {
+			margin: 40px 0 60px;
+
+			h2 {
 				a {
 					text-decoration: none;
+					font-weight: 500;
+					color: inherit;
 				}
 			}
 		}
