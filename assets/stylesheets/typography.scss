@@ -36,7 +36,11 @@ h4 {
 
 .content ul {
 	list-style: disc outside;
-	padding-left: 30px;
+	padding-left: 20px;
+
+	ul {
+		padding-left: 0;
+	}
 }
 
 p {
