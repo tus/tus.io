@@ -1,9 +1,9 @@
 .container {
-	padding: 0 15px;
+  padding: 0 15px;
 
   .content &,
   &.comments {
-		max-width: 768px;
+    max-width: 768px;
   }
   
   .page-index & {
@@ -12,23 +12,23 @@
 }
 
 .clearfix {
-	clear: both;
+  clear: both;
 }
 
 body {
-	font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+  font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-	color: $scheme-primary;
-	text-decoration: none;
+  color: $scheme-primary;
+  text-decoration: none;
 
-	&:hover {
-		color: $scheme-primary;
-		text-decoration: underline;
-	}
+  &:hover {
+    color: $scheme-primary;
+    text-decoration: underline;
+  }
 }
 
 input[type=email]:focus,
@@ -40,191 +40,191 @@ input[type=number]:focus,
 input[type=search]:focus,
 select:focus,
 textarea:focus {
-	border-color: $scheme-secondary;
+  border-color: $scheme-secondary;
 }
 
 .button {
-	&.button-primary {
-		background-color: $scheme-secondary;
-		border-color: $scheme-secondary;
+  &.button-primary {
+    background-color: $scheme-secondary;
+    border-color: $scheme-secondary;
 
-		&:hover {
-			background-color: $scheme-primary;
-			border-color: $scheme-primary;
-		}
-	}
+    &:hover {
+      background-color: $scheme-primary;
+      border-color: $scheme-primary;
+    }
+  }
 }
 
 .ribbon {
-	border: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 10;
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
 
-	@media (max-width: 960px) {
-		display: none;
-	}
+  @media (max-width: 960px) {
+    display: none;
+  }
 
-	.page-index & {
-		top: 32px;
-	}
+  .page-index & {
+    top: 32px;
+  }
 }
 
 .header {
-	background: $header-bg;
-	border-bottom: 1px solid #eee;
-	position: relative;
+  background: $header-bg;
+  border-bottom: 1px solid #eee;
+  position: relative;
 
-	.logo {
-		line-height: 65px;
-		font-size: 3rem;
-		margin: 0;
+  .logo {
+    line-height: 65px;
+    font-size: 3rem;
+    margin: 0;
 
-		a {
-			color: #fff;
-			font-weight: 700;
-			text-decoration: none;
+    a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
 
-			img {
-				height: 23px;
-			}
+      img {
+        height: 23px;
+      }
 
-			.shield {
-				position: relative;
-				top: 5px;
-				width: 35px;
-				height: auto;
-			}
-		}
-	}
+      .shield {
+        position: relative;
+        top: 5px;
+        width: 35px;
+        height: auto;
+      }
+    }
+  }
 
-	.toggler {
-		display: none;
-		float: right;
-		font-size: 2.5rem;
-		line-height: 65px;
-		text-decoration: none;
+  .toggler {
+    display: none;
+    float: right;
+    font-size: 2.5rem;
+    line-height: 65px;
+    text-decoration: none;
 
-		.hamburger {
-			display: block;
-			font-size: 1.5em;
-		}
+    .hamburger {
+      display: block;
+      font-size: 1.5em;
+    }
 
-		.cross {
-			display: none;
-		}
-	}
+    .cross {
+      display: none;
+    }
+  }
 
-	.nav {
-		float: right;
-		list-style: none;
-		margin: 0;
-		padding: 0;
+  .nav {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-		li {
-			float: left;
-			margin: 0;
-			padding: 14px 7px;
+    li {
+      float: left;
+      margin: 0;
+      padding: 14px 7px;
 
-			a {
-				border: 1px solid transparent;
-				color: #222;
-				display: inline-block;
-				padding: 5px 10px;
-				text-decoration: none;
-			}
+      a {
+        border: 1px solid transparent;
+        color: #222;
+        display: inline-block;
+        padding: 5px 10px;
+        text-decoration: none;
+      }
 
-			&.active a,
-			a:hover {
-				color: $scheme-secondary;
-			}
-		}
-	}
+      &.active a,
+      a:hover {
+        color: $scheme-secondary;
+      }
+    }
+  }
 
-	@media (max-width: 960px) {
-		position: relative;
+  @media (max-width: 960px) {
+    position: relative;
 
-		.nav {
-			background: #eee;
-			border: 1px solid #ccc;
-			border-top: 0;
-			box-shadow: 0 2px 20px #ccc;
-			display: none;
-			margin-top: 66px;
-			position: absolute;
-			right: 0;
-			width: 300px;
-			z-index: 100;
+    .nav {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-top: 0;
+      box-shadow: 0 2px 20px #ccc;
+      display: none;
+      margin-top: 66px;
+      position: absolute;
+      right: 0;
+      width: 300px;
+      z-index: 100;
 
-			li {
-				float: none;
-				padding: 0;
+      li {
+        float: none;
+        padding: 0;
 
-				a {
-					display: block;
-					padding: 10px 20px;
-					transition: background 0.3s, color 0.3s;
+        a {
+          display: block;
+          padding: 10px 20px;
+          transition: background 0.3s, color 0.3s;
 
-					&:hover {
-						background: $scheme-secondary;
-						color: #fff;
-					}
-				}
-			}
-		}
+          &:hover {
+            background: $scheme-secondary;
+            color: #fff;
+          }
+        }
+      }
+    }
 
-		.toggler {
-			display: inline-block;
-		}
+    .toggler {
+      display: inline-block;
+    }
 
-		.nav-container.open {
-			.nav {
-				display: block;
-			}
+    .nav-container.open {
+      .nav {
+        display: block;
+      }
 
-			.hamburger {
-				display: none;
-			}
+      .hamburger {
+        display: none;
+      }
 
-			.cross {
-				display: block;
-			}
-		}
-	}
+      .cross {
+        display: block;
+      }
+    }
+  }
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .alert {
-	padding: 15px 30px;
-	border: 1px solid #e1e11e;
-	border-radius: 3px;
+  padding: 15px 30px;
+  border: 1px solid #e1e11e;
+  border-radius: 3px;
 }
 
 .Social {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 
-	p {
-		margin-bottom: 0;
-	}
+  p {
+    margin-bottom: 0;
+  }
 }
 
 
 @media (max-width: 549px) {
-	.logo-container {
-		width: auto;
-	}
+  .logo-container {
+    width: auto;
+  }
 
-	.nav-container {
-		width: auto;
-		float: right;
-	}
+  .nav-container {
+    width: auto;
+    float: right;
+  }
 }
 
 
 .comments {
-	margin: 50px auto 80px;
+  margin: 50px auto 80px;
 }
