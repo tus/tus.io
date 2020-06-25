@@ -47,6 +47,10 @@
   }
 }
 
+.page-index section {
+  margin-bottom: 50px;
+}
+
 .intro {
   background: #fff;
   position: relative;
@@ -70,11 +74,14 @@
     -ms-animation    : fadeIn 1s;  /* Internet Explorer */
     -o-animation     : fadeIn 1s;  /* Opera < 12.1 */
     animation        : fadeIn 1s;
-
-    padding          : 40px 0;
-    width            : 60%;
-    margin           : 0 auto;
+    width            : auto;
+    max-width        : 100%;
+    margin           : 40px auto 20px;
     display          : block;
+
+    @media screen and (min-width: 768px) {
+      width: 60%;
+    }
   }
 
   .mission {
