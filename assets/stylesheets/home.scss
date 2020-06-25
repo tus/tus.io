@@ -49,15 +49,10 @@
 
 .intro {
   background: #fff;
-  color: $intro-color;
   position: relative;
 
   h1 {
     margin: 0;
-  }
-
-  a {
-    color: $intro-color;
   }
 
   .brand {
@@ -84,28 +79,19 @@
 
   .mission {
     background: $mission-bg;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    color: $mission-color;
-    padding: 40px 0 30px;
+    padding: 40px 0;
+    margin: 40px 0 60px;
+    font-size: 18px;
     
     .container {
       margin: 0 auto;
       max-width: 70rem;
     }
-
-    a {
-      color: $mission-color;
-    }
   }
 }
 
-
 .feature {
-  h5 {
-    margin-top: 1.5em;
-    border-bottom: 1px solid #eee;
-  }
+  margin-bottom: 40px;
 }
 
 .implementation {
