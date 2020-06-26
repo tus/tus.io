@@ -51,6 +51,14 @@
   margin-bottom: 50px;
 }
 
+section.centered {
+  text-align: center;
+}
+
+.page-index p {
+  max-width: none;
+}
+
 .intro {
   background: #fff;
   position: relative;
@@ -132,9 +140,10 @@
     border-bottom: 1px solid #eee;
     margin-bottom: 15px;
     padding-bottom: 15px;
+    max-width: none;
 
     .author {
-      color: #ccc;
+      color: #999;
       float: left;
       height: 55px;
       margin-right: 25px;
@@ -151,7 +160,7 @@
 
     .post-title {
       .date {
-        color: #ccc;
+        color: #999;
       }
 
       h3 {
@@ -167,6 +176,11 @@
       border-bottom: none;
     }
   }
+}
+
+.who-is-using {
+  background-color: $mission-bg;
+  padding: 40px 0;
 }
 
 .logos {
