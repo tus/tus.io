@@ -9,7 +9,7 @@
 	align-items: center;
 
 	@media screen and (min-width: 768px) {
-		padding: 0 60px;
+		padding: 0 20px;
 	}
 
 	&-link {
@@ -29,25 +29,21 @@
 	}
 
 	&-about {
-		text-align: right;
+		display: flex;
+		align-items: center;
 	}
 
-	&-info {
-    text-align: center;
-  	}
-
-  	&-info-link {
+	&-info-link {
     color: #b3cbf2;
-    font-weight: 600;
-    
-    &:hover {
-        color: #25967a;
-    	}
-  	}
+		font-weight: 600;
+		
+		&:hover {
+			color: #b3cbf2;
+		}
+	}
 
 	.page-index & {
 		display: flex;
-		padding-right: 20px;
 	}
 }
 
