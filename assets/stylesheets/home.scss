@@ -1,15 +1,15 @@
 .TransloaditBar {
 	display: none;
-	height: 37px;
-	padding: 0 10px;
+	padding: 5px 10px 8px;
 	background: #141829;
 	color: #fff;
 	font-size: 13px;
-	justify-content: space-between;
-	align-items: center;
-
+	
 	@media screen and (min-width: 768px) {
+		height: 37px;
 		padding: 0 20px;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	&-link {
@@ -31,6 +31,17 @@
 	&-about {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+	}
+
+	&-info {
+		margin-top: 10px;
+		text-align: center;
+
+		@media screen and (min-width: 768px) {
+			text-align: right;
+			margin-top: 0;
+		}
 	}
 
 	&-info-link {
@@ -43,7 +54,11 @@
 	}
 
 	.page-index & {
-		display: flex;
+		display: block;
+
+		@media screen and (min-width: 768px) {
+			display: flex;
+		}
 	}
 }
 
