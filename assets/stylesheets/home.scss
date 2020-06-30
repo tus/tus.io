@@ -1,16 +1,15 @@
 .TransloaditBar {
 	display: none;
-	height: 29px;
+	height: 37px;
 	padding: 0 10px;
 	background: #141829;
 	color: #fff;
-	font-size: 11px;
+	font-size: 13px;
 	justify-content: space-between;
 	align-items: center;
-	box-sizing: border-box;
 
 	@media screen and (min-width: 768px) {
-		padding: 0 20px;
+		padding: 0 60px;
 	}
 
 	&-link {
@@ -21,29 +20,34 @@
 			text-decoration: underline;
 		}
 	}
+  	&-logo {
+    	margin-right: 10px;
+  	}
 
-	&-logo {
-		margin-right: 10px;
-		overflow: hidden;
-		width: 20px;
-
-		@media screen and (min-width: 360px) {
-			overflow: visible;
-			width: auto;
-		}
-	}
-	
-	&-logoImg {
+  	&-logoImg {
 		display: block;
 	}
 
 	&-about {
-		flex: 1;
 		text-align: right;
 	}
 
+	&-info {
+    text-align: center;
+  	}
+
+  	&-info-link {
+    color: #b3cbf2;
+    font-weight: 600;
+    
+    &:hover {
+        color: #25967a;
+    	}
+  	}
+
 	.page-index & {
 		display: flex;
+		padding-right: 20px;
 	}
 }
 
