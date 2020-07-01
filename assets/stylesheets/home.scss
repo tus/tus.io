@@ -1,11 +1,12 @@
 .TransloaditBar {
-  display: none;
+  display: block;
   padding: 5px 10px 8px;
   background: #141829;
   color: #fff;
   font-size: 13px;
   
   @media screen and (min-width: 768px) {
+    display: flex;
     height: 37px;
     padding: 0 20px;
     justify-content: space-between;
@@ -54,13 +55,13 @@
     }
   }
 
-  .page-index & {
-    display: block;
+  // .page-index & {
+  //   display: block;
 
-    @media screen and (min-width: 768px) {
-      display: flex;
-    }
-  }
+  //   @media screen and (min-width: 768px) {
+  //     display: flex;
+  //   }
+  // }
 }
 
 .intro {
