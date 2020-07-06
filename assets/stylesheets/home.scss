@@ -1,16 +1,16 @@
 .TransloaditBar {
-  display: none;
-  height: 29px;
-  padding: 0 10px;
+  display: block;
+  padding: 5px 10px 8px;
   background: #141829;
   color: #fff;
-  font-size: 11px;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-
+  font-size: 13px;
+  
   @media screen and (min-width: 768px) {
+    display: flex;
+    height: 37px;
     padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &-link {
@@ -21,38 +21,90 @@
       text-decoration: underline;
     }
   }
-
+  
   &-logo {
     margin-right: 10px;
-    overflow: hidden;
-    width: 20px;
-
-    @media screen and (min-width: 360px) {
-      overflow: visible;
-      width: auto;
-    }
   }
-  
+
   &-logoImg {
     display: block;
   }
 
   &-about {
-    flex: 1;
-    text-align: right;
-  }
-
-  .page-index & {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  &-info {
+    margin-top: 10px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: right;
+      margin-top: 0;
+    }
+  }
+
+  &-info-link {
+    color: #b3cbf2;
+    font-weight: 600;
+    
+    &:hover {
+      color: #b3cbf2;
+    }
+  }
+
+  // .page-index & {
+  //   display: block;
+
+  //   @media screen and (min-width: 768px) {
+  //     display: flex;
+  //   }
+  // }
 }
 
-.page-index section {
-  margin-bottom: 50px;
-}
+.intro {
+  background: #fff;
+  position: relative;
 
-section.centered {
-  text-align: center;
+  h1 {
+    margin: 0;
+  }
+
+  .brand {
+    h2 {
+      border: 0 !important;
+      font-size: 100px;
+      font-weight: 700;
+      margin: 50px 0 !important;
+    }
+  }
+
+  .banner {
+    -webkit-animation: fadeIn 2s;  /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation   : fadeIn 2s;  /* Firefox < 16 */
+    -ms-animation    : fadeIn 2s;  /* Internet Explorer */
+    -o-animation     : fadeIn 2s;  /* Opera < 12.1 */
+    animation        : fadeIn 2s;
+
+    padding          : 40px 0;
+    width            : 60%;
+    margin           : 0 auto;
+    display          : block;
+  }
+
+  .mission {
+    background: $mission-bg;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 40px 0 30px;
+    
+    .container {
+      margin: 0 auto;
+      max-width: 70rem;
+    }
+  }
 }
 
 .page-index p {
@@ -209,7 +261,6 @@ section.centered {
 
   p {
     display: inline-block;
-    float: left;
     margin: 0;
     max-width: 550px;
     max-height: 50px;
