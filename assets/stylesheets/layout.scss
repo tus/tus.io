@@ -160,6 +160,7 @@ textarea:focus {
       box-shadow: 0 2px 20px #ccc;
       display: none;
       margin-top: 66px;
+      margin-right: 0;
       position: absolute;
       right: 0;
       width: 300px;
@@ -310,6 +311,22 @@ textarea:focus {
   // }
 }
 
-.github-corner svg {
-  z-index: 100;
+.github-menu-item {
+  display: list-item;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.github-corner {
+  display: none;
+
+  svg {
+    z-index: 100;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 }
