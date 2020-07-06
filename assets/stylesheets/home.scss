@@ -1,5 +1,9 @@
 .page-index section {
   margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 }
 
 section.centered {
@@ -69,19 +73,26 @@ section.centered {
 }
 
 .implementation {
+  margin: 40px 20px;
+  
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin: 20px;
+    min-width: 100px;
+  }
+
   img {
     display: block;
     margin: auto;
     margin-bottom: 15px;
-    width: 30%;
+    width: 36px;
   }
 
   text-align: center;
 }
 
 .implementations-link {
-  padding-top: 20px;
-  // text-align: center;
+  margin: 20px 0;
 }
 
 .posts {

@@ -76,10 +76,9 @@ permalink: /
   <div class="container">
     <h2>Official implementations</h2>
   
-    <div class="row">
-      <div class="one column"></div>
+    <div>
       {% for impl in site.data.implementations %}
-      <div class="two columns implementation">
+      <div class="implementation">
         <a href="https://github.com/tus/{{impl.name}}">
           <img src="/assets/img/{{impl.icon}}.svg" alt="Support for {{impl.name}}" />
   
@@ -165,7 +164,7 @@ permalink: /
   </div>
 </section>
 
-<section>
+<section class="centered">
   <div class="container">
     <h2>As seen on</h2>
   
