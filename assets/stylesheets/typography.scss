@@ -1,6 +1,10 @@
 body {
   font-size: 1.6em;
   color: #272727;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.8em;
+  }
 }
 
 h1, h2, h3 {
@@ -60,7 +64,7 @@ p.lead {
   h1 {
     font-size: 3.6rem;
     font-weight: 600;
-    margin-top: 70px;
+    margin-top: 50px;
   }
 
   h2 {
