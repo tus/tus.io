@@ -64,47 +64,12 @@
   // }
 }
 
-.intro {
-  background: #fff;
-  position: relative;
+.page-index section {
+  margin-bottom: 50px;
+}
 
-  h1 {
-    margin: 0;
-  }
-
-  .brand {
-    h2 {
-      border: 0 !important;
-      font-size: 100px;
-      font-weight: 700;
-      margin: 50px 0 !important;
-    }
-  }
-
-  .banner {
-    -webkit-animation: fadeIn 2s;  /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation   : fadeIn 2s;  /* Firefox < 16 */
-    -ms-animation    : fadeIn 2s;  /* Internet Explorer */
-    -o-animation     : fadeIn 2s;  /* Opera < 12.1 */
-    animation        : fadeIn 2s;
-
-    padding          : 40px 0;
-    width            : 60%;
-    margin           : 0 auto;
-    display          : block;
-  }
-
-  .mission {
-    background: $mission-bg;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    padding: 40px 0 30px;
-    
-    .container {
-      margin: 0 auto;
-      max-width: 70rem;
-    }
-  }
+section.centered {
+  text-align: center;
 }
 
 .page-index p {
