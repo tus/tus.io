@@ -8,7 +8,8 @@ comments: true
 
 # FAQ
 
-Here are some Frequently Asked Questions and their answers. This document is still a work-in-progress and is being re-written as we speak. If you have any questions or topics you would like to see covered, [let us know](/support.html)! 
+Here are some Frequently Asked Questions and their answers. This document is still a work-in-progress and is being re-written as we speak. If you have any questions or topics you would like to see covered, [let us know](/support.html)!
+{:.lead}
 
 <div markdown="1" class="kramdown-toc">
   * This bullet will be replaced with the ToC
