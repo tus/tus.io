@@ -1,16 +1,21 @@
 .TransloaditBar {
   display: block;
-  padding: 5px 10px 8px;
   background: #141829;
   color: #fff;
   font-size: 13px;
   
-  @media screen and (min-width: 768px) {
-    display: flex;
-    height: 37px;
-    padding: 0 20px;
-    justify-content: space-between;
-    align-items: center;
+  .container {
+    padding: 5px 10px 8px;
+    width: auto;
+    max-width: 1600px;
+    
+    @media screen and (min-width: 768px) {
+      height: 37px;
+      display: flex;
+      padding: 0 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &-link {
@@ -39,6 +44,7 @@
   &-info {
     margin-top: 10px;
     text-align: center;
+    flex: 1;
 
     @media screen and (min-width: 768px) {
       text-align: right;

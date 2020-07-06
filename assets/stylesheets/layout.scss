@@ -75,6 +75,12 @@ textarea:focus {
   background: $header-bg;
   border-bottom: 1px solid #eee;
   position: relative;
+  
+  .container {
+    padding: 0 20px;
+    max-width: 1600px;
+    width: auto;
+  }
 
   .logo {
     line-height: 65px;
@@ -119,7 +125,7 @@ textarea:focus {
   .nav {
     float: right;
     list-style: none;
-    margin: 0;
+    margin: 0 64px 0 0; // extra margin-right because of the GitHub icon-link
     padding: 0;
 
     li {
