@@ -1,80 +1,25 @@
-.TransloaditBar {
-  display: block;
-  padding: 5px 10px 8px;
-  background: #141829;
-  color: #fff;
-  font-size: 13px;
-  
+.page-index section {
+  margin-bottom: 50px;
+
   @media screen and (min-width: 768px) {
-    display: flex;
-    height: 37px;
-    padding: 0 20px;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 80px;
   }
+}
 
-  &-link {
-    color: #fff;
-    font-weight: 700;
+section.centered {
+  text-align: center;
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  
-  &-logo {
-    margin-right: 10px;
-  }
-
-  &-logoImg {
-    display: block;
-  }
-
-  &-about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-info {
-    margin-top: 10px;
-    text-align: center;
-
-    @media screen and (min-width: 768px) {
-      text-align: right;
-      margin-top: 0;
-    }
-  }
-
-  &-info-link {
-    color: #b3cbf2;
-    font-weight: 600;
-    
-    &:hover {
-      color: #b3cbf2;
-    }
-  }
-
-  // .page-index & {
-  //   display: block;
-
-  //   @media screen and (min-width: 768px) {
-  //     display: flex;
-  //   }
-  // }
+.page-index p {
+  max-width: none;
 }
 
 .intro {
   background: #fff;
-  color: $intro-color;
   position: relative;
 
   h1 {
     margin: 0;
-  }
-
-  a {
-    color: $intro-color;
   }
 
   .brand {
@@ -87,58 +32,67 @@
   }
 
   .banner {
-    -webkit-animation: fadeIn 2s;  /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation   : fadeIn 2s;  /* Firefox < 16 */
-    -ms-animation    : fadeIn 2s;  /* Internet Explorer */
-    -o-animation     : fadeIn 2s;  /* Opera < 12.1 */
-    animation        : fadeIn 2s;
-
-    padding          : 40px 0;
-    width            : 60%;
-    margin           : 0 auto;
+    -webkit-animation: fadeIn 1s;  /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation   : fadeIn 1s;  /* Firefox < 16 */
+    -ms-animation    : fadeIn 1s;  /* Internet Explorer */
+    -o-animation     : fadeIn 1s;  /* Opera < 12.1 */
+    animation        : fadeIn 1s;
+    width            : auto;
+    max-width        : 100%;
+    margin           : 40px auto 20px;
     display          : block;
+
+    @media screen and (min-width: 768px) {
+      width: 60%;
+    }
   }
 
   .mission {
     background: $mission-bg;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    color: $mission-color;
-    padding: 40px 0 30px;
+    padding: 40px 0;
+    margin: 40px 0;
+    font-size: 18px;
     
     .container {
       margin: 0 auto;
       max-width: 70rem;
     }
-
-    a {
-      color: $mission-color;
-    }
   }
 }
 
-
 .feature {
-  h5 {
-    margin-top: 1.5em;
-    border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  p {
+    color: #585858;
   }
 }
 
 .implementation {
+  margin: 40px 20px;
+  
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin: 20px;
+    min-width: 100px;
+  }
+
   img {
     display: block;
     margin: auto;
     margin-bottom: 15px;
-    width: 30%;
+    width: 36px;
   }
 
   text-align: center;
 }
 
 .implementations-link {
-  padding-top: 30px;
-  text-align: center;
+  margin: 20px 0;
 }
 
 .posts {
@@ -148,9 +102,10 @@
     border-bottom: 1px solid #eee;
     margin-bottom: 15px;
     padding-bottom: 15px;
+    max-width: none;
 
     .author {
-      color: #ccc;
+      color: #999;
       float: left;
       height: 55px;
       margin-right: 25px;
@@ -167,7 +122,7 @@
 
     .post-title {
       .date {
-        color: #ccc;
+        color: #999;
       }
 
       h3 {
@@ -183,6 +138,11 @@
       border-bottom: none;
     }
   }
+}
+
+.who-is-using {
+  background-color: $mission-bg;
+  padding: 40px 0;
 }
 
 .logos {
@@ -211,7 +171,6 @@
 
   p {
     display: inline-block;
-    float: left;
     margin: 0;
     max-width: 550px;
     max-height: 50px;
@@ -282,7 +241,9 @@
   background: #eee;
   border-top: 1px solid #ddd;
   margin-top: 20px;
+  margin-bottom: 0 !important;
   padding-top: 20px;
+  padding-bottom: 40px;
 
   form {
     position: relative;

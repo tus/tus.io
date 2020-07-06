@@ -9,6 +9,7 @@ permalink: /implementations.html
 
 Here are some real-life implementations of the tus resumable upload [protocol](/protocols/resumable-upload.html) in different languages
 and platforms.
+{:.lead}
 
 ## Uppy
 

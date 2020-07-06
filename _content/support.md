@@ -8,6 +8,7 @@ redirect_from: /about.html
 # Support
 
 tus is developed in the open and _free community support_ is available through our public channels as listed below. The community support covers questions about the protocol itself and our open-source implementations. If you want advanced or private help with your own tus setup, _commercial support_ is available by Transloadit (see further down).
+{:.lead}
 
 ## Join the community
 
