@@ -84,6 +84,8 @@ async function drawPreviousUploadSelect (upload) {
       if (!isNaN(index)) {
         upload.resumeFromPreviousUpload(previousUploads[index])
       }
+
+      drawUploadControls(upload)
     })
   })
 }
