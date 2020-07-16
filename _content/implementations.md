@@ -19,7 +19,7 @@ brought to you by the people behind <a href="https://transloadit.com"><img
   src="/assets/img/transloadit-logo.png"
   align="absmiddle" width="16" height="16"></a><a style="text-decoration: none;" href="https://transloadit.com">
 </a><a href="https://transloadit.com">Transloadit</a> and represents their take on
-how to use tus technology in user facing products. 
+how to use tus technology in user facing products.
 
 For core implementations with a smaller footprint or non-webbrowser use, read on.
 
@@ -83,7 +83,7 @@ These projects are reference implementations maintained by the protocol develope
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/tus/tus-py-client">
       tus-py-client
@@ -183,7 +183,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/ankitpokhrel/tus-php">
       ankitpokhrel/tus-php
@@ -225,7 +225,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under Apache License, Version 2.0</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/Jon-Indico/TusDotNetClient">
       Jon-Indico/TusDotNetClient
@@ -253,7 +253,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/bluetianx/BirdMessenger">
       bluetianx/BirdMessenger
@@ -267,7 +267,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/adhocore/tusc.sh">
       adhocore/tusc.sh
@@ -280,6 +280,21 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/kiwiirc/nativescript-tus-client">
+      kiwiirc/nativescript-tus-client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/tralves">Tiago Alves</a></div>
+
+    <div class="description">
+      A NativeScript plugin for TUS.
+      Uses the native libs <a href="https://github.com/tus/TUSKit">TUSKit (iOS)</a> and <a href="https://github.com/tus/tus-android-client">tus-android-client</a> under the hood.
+    </div>
+
+    <div class="license">Licensed under Apache License 2.0</div>
   </li>
 </ul>
 
@@ -368,7 +383,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/alican/django-tus">
       alican/django-tus
@@ -410,7 +425,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/dirkmoors/drf-tus">
       dirkmoors/drf-tus
@@ -424,7 +439,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/ankitpokhrel/tus-php">
       ankitpokhrel/tus-php
@@ -438,7 +453,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
    <li>
     <a class="title" href="https://github.com/ckaratzas/tus-server-implementation">
       ckaratzas/tus-server-implementation
@@ -452,7 +467,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/jpscaletti/tus">
       jpscaletti/tus
@@ -466,7 +481,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under BSD 3-Clause</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/tomdesair/tus-java-server">
       tomdesair/tus-java-server
