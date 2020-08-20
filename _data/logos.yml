@@ -37,3 +37,6 @@
 - url: 'https://radity.com'
   src:  /assets/img/logos/radity.png
   name: Radity
+- url: 'https://globalctoforum.org/'
+  src:  /assets/img/logos/global-cto-forum.png
+  name: Global CTO Forum
