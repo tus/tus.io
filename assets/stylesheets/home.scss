@@ -146,17 +146,41 @@ section.centered {
 }
 
 .logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
+  margin: 20px -20px;
+  
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    text-align: center;
+  }
+}
+
+.logos a {
+  display: block;
+  padding: 20px 10px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
 }
 
 .logos img {
-  flex: 1 1 auto;
-  padding: 22px;
-  max-width: 200px;
-  max-height: 70px;
+  display: block;
+  max-width: 130px;
+  max-height: 40px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.logos--press img {
+  max-height: 27px;
 }
 
 .on-the-githubs {

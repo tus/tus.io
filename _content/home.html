@@ -168,7 +168,7 @@ permalink: /
   <div class="container">
     <h2>As seen on</h2>
   
-    <div class="row logos">
+    <div class="row logos logos--press">
       {% for logo in site.data.press limit:12 %}
         <a href="{{ logo.url }}" title="{{ logo.name }}"><img src="{{ logo.src }}" alt="{{ logo.name }}"></a>
         {% else %}
