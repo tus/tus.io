@@ -296,6 +296,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under Apache License 2.0</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/jjmutumi/tus_client">
+      jjmutumi/tus_client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/jjmutumi">Joseph Mutumi</a></div>
+
+    <div class="description">
+      A pure dart library that implements a client for TUS that can be used in Flutter.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
