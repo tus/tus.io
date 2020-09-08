@@ -537,6 +537,26 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://code.uplex.de/uplex-varnish/libvmod-tus">
+      libvmod-tus
+    </a>
+    <a href="https://gitlab.com/uplex/varnish/libvmod-tus">
+      (gitlab mirror)
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/nigoroll">Nils Goroll</a> of <a href="https://uplex.de/">UPLEX</a></div>
+
+    <div class="description">
+      A <strong><a href="https://varnish-cache.org/">Varnish Cache</a></strong>
+      module (<strong>vmod</strong>) to handle tus <code>1.0.0</code>
+      client uploads and turn them into a single backend request,
+      e.g. as a <code>PUT</code> request.
+    </div>
+
+    <div class="license">Licensed under BSD 2-clause</div>
+  </li>
 </ul>
 
 <h4>Projects using tus</h4>
