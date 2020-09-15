@@ -37,6 +37,7 @@ function drawFileInput () {
         filename: file.name,
         filetype: file.type,
       },
+      addRequestId: true,
     }
 
     const upload = new tus.Upload(file, options)
@@ -132,7 +133,12 @@ function drawUploadControls (upload) {
     console.log('demo: error', error)
 
     if (error.originalRequest) {
-      if (window.confirm('Failed because: ' + error + '\nDo you want to retry?')) {
+      const text = `The upload was interrupted by a network failure or server error. Usually, this failure will disappear by retrying the upload. If the error does not disappear, please contact us.
+
+Details: ${error}
+
+Do you want to retry the upload?`
+      if (window.confirm(text)) {
         upload.start()
         return
       }
