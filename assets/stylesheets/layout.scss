@@ -127,19 +127,19 @@ textarea:focus {
     float: right;
     list-style: none;
     margin: 0 44px 0 0; // extra margin-right because of the GitHub icon-link
-    padding: 0;
+    padding: 14px 0;
     font-size: 1.6rem;
 
     li {
       float: left;
       margin: 0;
-      padding: 14px 4px;
+      padding: 0;
 
       a {
         border: 1px solid transparent;
         color: #222;
         display: inline-block;
-        padding: 5px 10px;
+        padding: 5px 11px;
         text-decoration: none;
       }
 
@@ -150,7 +150,7 @@ textarea:focus {
     }
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 767px) {
     position: relative;
 
     .nav {
@@ -165,6 +165,7 @@ textarea:focus {
       right: 0;
       width: 300px;
       z-index: 100;
+      padding: 0;
 
       li {
         float: none;
