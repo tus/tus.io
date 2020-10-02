@@ -32,7 +32,7 @@ function drawFileInput () {
     console.log('demo: selected file', file)
 
     const options = {
-      endpoint: 'https://master.tus.io/files/',
+      endpoint: 'https://tusd.tusdemo.net/files/',
       metadata: {
         filename: file.name,
         filetype: file.type,

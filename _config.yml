@@ -1,5 +1,5 @@
 permalink: "/blog/:year/:month/:day/:title.html"
-tusd_endpoint: "http://master.tus.io"
+tusd_endpoint: "http://tusd.tusdemo.net"
 commenting_baseurl: https://tus.io
 
 strict_front_matter: true
