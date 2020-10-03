@@ -310,6 +310,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/JenSte/aiotus">
+      JenSte/aiotus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/JenSte">Jens Steinhauser</a></div>
+
+    <div class="description">
+      An <strong>asynchronous Python 3</strong> client-side tus <code>v1.0.0</code> implementation.
+    </div>
+
+    <div class="license">Licensed under Apache License 2.0</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
