@@ -1,10 +1,19 @@
+# The icons are provided by https://pictonic.co/free
 - name: tus-js-client
   icon: prog-js01
+  repo: tus/tus-js-client
 - name: tus-java-client
   icon: prog-java
+  repo: tus/tus-java-client
 - name: tus-android-client
   icon: android
+  repo: tus/tus-android-client
 - name: TUSKit
   icon: os-ios
+  repo: tus/TUSKit
 - name: tusd
   icon: prog-golang02
+  repo: tus/tusd
+- name: tusdotnet
+  icon: prog-dotnet
+  repo: tusdotnet/tusdotnet
