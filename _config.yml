@@ -19,6 +19,8 @@ collections:
   content:
     output: true
     permalink: /:path/
+  versions:
+    output: true
 
 excerpt_separator: "<!--more-->"
 

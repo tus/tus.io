@@ -5,6 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {% if page.noindex %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+
     {% assign used_title = page.title %}
     {% unless page.is_home %}
       {% assign used_title = used_title | append: " | tus" %}

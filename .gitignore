@@ -1,4 +1,4 @@
-_includes/tus.md
+_versions/*.md
 _site
 .DS_Store
 .jekyll-cache/
