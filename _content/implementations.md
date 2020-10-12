@@ -120,7 +120,21 @@ These projects are reference implementations maintained by the protocol develope
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
 
     <div class="description">
-      A stand-alone <strong>server</strong> or <a href="http://expressjs.com/en/guide/using-middleware.html">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can also run this to test client implementations with.
+      A stand-alone <strong>server</strong> or <a href="http://expressjs.com/en/guide/using-middleware.html">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/tusdotnet/tusdotnet">
+      tusdotnet
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
+
+    <div class="description">
+      <strong>ASP.NET Core and OWIN middlewares</strong> written in <strong>C#</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.
     </div>
 
     <div class="license">Licensed under MIT</div>
@@ -421,20 +435,6 @@ what protocol version you're targeting.
 
     <div class="description">
       Django app implementing server side of the tus <code>v1.0.0</code> protocol to power resumable file uploads in <strong>Django Python</strong> projects
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-  </li>
-
-  <li>
-    <a class="title" href="https://github.com/tusdotnet/tusdotnet">
-      tusdotnet/tusdotnet
-    </a>
-
-    <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
-
-    <div class="description">
-      <strong>.NET</strong> server implementation of tus <code>v1.0.0</code>, including all major extensions, that runs on both OWIN and ASP.NET Core.
     </div>
 
     <div class="license">Licensed under MIT</div>
