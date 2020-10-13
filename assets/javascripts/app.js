@@ -29,16 +29,24 @@ import './request-viewer.js'
     const toggleClass   = 'open'
     $toggler.click(() => $navContainer.toggleClass(toggleClass))
 
-    return $(document).click(() => {
+    $(document).click(() => {
       if (!$navContainer.hasClass(toggleClass)) {
-        return $navContainer.removeClass(toggleClass)
+        $navContainer.removeClass(toggleClass)
       }
     })
   }
 
-  return $(document).ready(() => {
+  Tus.versionSelector = () => {
+    const $select = $('#js-version-select')
+    $select.change(() => {
+      window.location.href = $select.val()
+    })
+  }
+
+  $(document).ready(() => {
     Tus.navToggler()
-    return $('.on-the-githubs').onthegithubs()
+    Tus.versionSelector()
+    $('.on-the-githubs').onthegithubs()
   })
 })(jQuery)
 

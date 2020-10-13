@@ -3,5 +3,27 @@ layout: default
 ---
 
 <div class="protocol">
-{{ content }}
+  <h1>
+    Protocol
+
+    {% assign versions = site.versions | reverse %}
+    <select id="js-version-select">
+      {% for version in versions %}
+        <option value="{{ version.url }}" {% if page.url == version.url %}selected{% endif %}>{{ version.slug }}</option>
+      {% endfor %}
+    </select>
+  </h1>
+
+  <p class="lead">
+    This document contains the specification for the tus protocol which lays out exactly how tus clients and servers must behave. If you want a less formal and more intuitive introduction, we recommend you to also have a look at our <a href="/faq.html">FAQ</a>.
+  </p>
+
+  {% if page.version_outdated %}
+    <p class="alert" id="js-support-alert">
+      <b>Warning!</b> This is the specification for an old and outdated version of tus, and should only be used for comparisions. The latest version of the tus protocol can be found <a href="/protocols/resumable-upload.html">here</a>.
+    </p>
+  {% endif %}
+
+  <!-- Use `make inject-protocol` to fetch latest protocol version -->
+  {{ content }}
 </div>
