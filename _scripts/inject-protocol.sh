@@ -31,7 +31,8 @@ version_outdated: false"
   echo "--> Fetching protocol ${slug}"
 
   # Removes first two lines to allow our own h2 header
-  local content="$(curl --silent ${url} | tail -n +3)"
+  local content
+  content="$(curl --silent --fail --retry 3 "${url}" | tail -n +3)"
 
   cat <<EOF > "${__dir}/../_versions/${slug}.md"
 ---
