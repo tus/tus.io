@@ -34,20 +34,21 @@
 }
 
 .protocol-version {
-  font-size: 16px;
   margin: 15px 0 20px;
   color: #555;
+  font-size: 14px;
 
   select {
     margin-left: 0.33em;
-    min-width: 80px;
+    min-width: 80px;    
+    height: auto;
   }
+
   
   @media screen and (min-width: 768px) {
     position: absolute;
-    top: 15px;
+    top: 12px;
     right: 15px;
     margin: 0;
-    font-size: 14px;
   }
 }
