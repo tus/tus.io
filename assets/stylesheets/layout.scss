@@ -43,6 +43,12 @@ textarea:focus {
   border-color: $scheme-secondary;
 }
 
+select,
+select:focus {
+  all: revert;
+  font-size: 16px;
+}
+
 .button {
   &.button-primary {
     background-color: $scheme-secondary;
