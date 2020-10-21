@@ -43,6 +43,18 @@ textarea:focus {
   border-color: $scheme-secondary;
 }
 
+select {
+  padding: 3px 4px;
+}
+
+@-moz-document url-prefix() {
+  select,
+  select:focus {
+    all: revert;
+    font-size: 14px;
+  }
+}
+
 .button {
   &.button-primary {
     background-color: $scheme-secondary;
