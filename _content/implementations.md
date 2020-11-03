@@ -14,14 +14,14 @@ and platforms.
 ## Uppy
 
 Some special attention should go to [Uppy](https://uppy.io) which is a full-featured
-file uploader for webbrowsers that supports tus. Just like tus, Uppy is
+file uploader for web browsers that supports tus. Just like tus, Uppy is
 brought to you by the people behind <a href="https://transloadit.com"><img
   src="/assets/img/transloadit-logo.png"
   align="absmiddle" width="16" height="16"></a><a style="text-decoration: none;" href="https://transloadit.com">
 </a><a href="https://transloadit.com">Transloadit</a> and represents their take on
-how to use tus technology in user facing products.
+how to use tus technology in user-facing products.
 
-For core implementations with a smaller footprint or non-webbrowser use, read on.
+For core implementations with a smaller footprint or non-web browser use, read on.
 
 ## Official
 
@@ -34,11 +34,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
-
+    
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> web apps that are built with <strong>JavaScript</strong>.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -48,11 +48,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
-
+    
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> app using <strong>Java</strong>.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -62,11 +62,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
-
+    
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>Android</strong> apps.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -76,11 +76,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/afh">Alexis Hildebrandt</a> and <a href="https://github.com/MMasterson">Mark R. Masterson</a></div>
-
+    
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>iOS</strong> clients.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -90,11 +90,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a></div>
-
+    
     <div class="description">
       Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -104,12 +104,12 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
-
+    
     <div class="description">
       A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol.
       You can run this to test client implementations.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
   <li>
@@ -118,11 +118,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="/support.html">tus</a></div>
-
+    
     <div class="description">
       A stand-alone <strong>server</strong> or <a href="http://expressjs.com/en/guide/using-middleware.html">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -132,11 +132,11 @@ These projects are reference implementations maintained by the protocol develope
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/smatsson">Stefan Matsson</a></div>
-
+    
     <div class="description">
       <strong>ASP.NET Core and OWIN middlewares</strong> written in <strong>C#</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 </ul>
@@ -148,9 +148,9 @@ under the GitHub [tus organisation](https://github.com/tus). We'll be looking to
 
 The [protocol](/protocols/resumable-upload.html) is very simple and because
 it builds on standard HTTP calls it
-could be implemented as Ruby libraries, Wordpress plugins, Bash/cURL, etc.
+could be implemented as Ruby libraries, WordPress plugins, Bash/cURL, etc.
 
-For new implementations we recommend using the MIT license and making clear
+For new implementations, we recommend using the MIT license and making clear
 what protocol version you're targeting.
 
 <h4>Client</h4>
@@ -162,11 +162,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
-
+    
     <div class="description">
       Integrate tus <code>v1.0.0</code> with <strong>.NET</strong> applications (C#, Visual Basic.Net, etc)
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -176,11 +176,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/eventials">Eventials</a></div>
-
+    
     <div class="description">
       Integrate tus <code>v1.0.0</code> into your <strong>Golang</strong> application
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -190,11 +190,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/cenkalti">Cenk Altı</a></div>
-
+    
     <div class="description">
       Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients, plus <strong>command-line</strong> program
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -204,11 +204,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/ankitpokhrel">Ankit Pokhrel</a></div>
-
+    
     <div class="description">
       This project is a tus <code>1.0.0</code> client and server implementation for <strong>PHP</strong> applications
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -218,11 +218,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/vinzscam">Vincenzo Scamporlino</a></div>
-
+    
     <div class="description">
       This project is a tus <code>1.0.0</code> client implementation specifically for <strong>React Native</strong> applications
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -232,11 +232,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/vayam">Naren Venkataraman</a></div>
-
+    
     <div class="description">
       Add tus <code>v1.0.0</code> resumable file uploads to <strong>Python</strong> clients
     </div>
-
+    
     <div class="license">Licensed under Apache License, Version 2.0</div>
   </li>
 
@@ -246,11 +246,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/Jon-Indico">Jon Grythe Stødle</a> and <a href="https://github.com/gerdus">Gerdus van Zyl</a></div>
-
+    
     <div class="description">
       A tus <code>v1.0.0</code> client library for <strong>.NET</strong> applications
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -260,11 +260,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/jackhftang">Jack Tang</a></div>
-
+    
     <div class="description">
       This project provide a <strong>small-size and static-binary command line utility</strong> of tus <code>1.0.0</code> for both client and server.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -274,11 +274,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/bluetianx">Bruce Tian</a></div>
-
+    
     <div class="description">
       This project provides a tus <code>1.0.0</code> client built using <strong>.NET</strong>.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -288,11 +288,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/adhocore">Jitendra Adhikari</a></div>
-
+    
     <div class="description">
       This project provides a tus <code>1.0.0</code> client for <strong>bash</strong>.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -302,12 +302,12 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/tralves">Tiago Alves</a></div>
-
+    
     <div class="description">
       A NativeScript plugin for TUS.
       Uses the native libs <a href="https://github.com/tus/TUSKit">TUSKit (iOS)</a> and <a href="https://github.com/tus/tus-android-client">tus-android-client</a> under the hood.
     </div>
-
+    
     <div class="license">Licensed under Apache License 2.0</div>
   </li>
 
@@ -317,11 +317,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/jjmutumi">Joseph Mutumi</a></div>
-
+    
     <div class="description">
       A pure dart library that implements a client for TUS that can be used in Flutter.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -331,11 +331,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/JenSte">Jens Steinhauser</a></div>
-
+    
     <div class="description">
       An <strong>asynchronous Python 3</strong> client-side tus <code>v1.0.0</code> implementation.
     </div>
-
+    
     <div class="license">Licensed under Apache License 2.0</div>
   </li>
 </ul>
@@ -349,11 +349,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/vencax">vencax</a></div>
-
+    
     <div class="description">
       tus <code>v1.0.0</code> powering resumable file uploads for <strong>CoffeeScript</strong> based Node.js servers and apps
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -363,11 +363,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/matthoskins1980">Matt Hoskins</a></div>
-
+    
     <div class="description">
       <strong>Flask</strong> extension implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Python</strong> servers and apps
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
   <li>
@@ -376,11 +376,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://www.pylot.dev/">Pylot</a> Team, Igor Davydenko <a href="https://github.com/playpauseandstop">@playpauseandstop</a> </div>
-
+    
     <div class="description">
       <strong>Asynchronous Python 3</strong> implementation with binding to <strong>aiohttp.web</strong> framework implementing tus protocol
     </div>
-
+    
     <div class="license">Licensed under BSD-3-Clause</div>
   </li>
 
@@ -390,11 +390,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/terrischwartz">Terri Schwartz</a></div>
-
+    
     <div class="description">
       <strong>Java servlet</strong> implementing server side of tus <code>v1.0.0</code>
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -404,11 +404,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/janko">Janko Marohnić</a></div>
-
+    
     <div class="description">
       The <strong>ruby</strong> server implementation of tus <code>v1.0.0</code>, can be run standalone or mounted in a ruby app
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -418,11 +418,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/FuGangqiang">FuGangqiang</a></div>
-
+    
     <div class="description">
       <strong>wsgi filter</strong> middleware implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Flask, Bottle, Django and Pyraimd</strong> servers and apps
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -432,11 +432,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/alican">Alican Toprak</a></div>
-
+    
     <div class="description">
       Django app implementing server side of the tus <code>v1.0.0</code> protocol to power resumable file uploads in <strong>Django Python</strong> projects
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -446,11 +446,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/Orajo">Jarosław Wasilewski</a></div>
-
+    
     <div class="description">
       A <strong>PHP</strong> server for powering tus <code>v1.0.0</code> resumable file uploads in Zend Framework 2 applications.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -460,11 +460,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/dirkmoors">Dirk Moors</a></div>
-
+    
     <div class="description">
       A Python library for powering tus <code>v1.0.0</code> resumable file uploads in applications using <strong>Django Rest Framework</strong>.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -474,11 +474,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/ankitpokhrel">Ankit Pokhrel</a></div>
-
+    
     <div class="description">
       This project is a tus <code>1.0.0</code> client and server implementation for <strong>PHP</strong> applications
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -488,11 +488,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/ckaratzas">Christos Karatzas</a></div>
-
+    
     <div class="description">
       This project provides a tus <code>1.0.0</code> server built using <strong>Java</strong> and the Vert.x-Web stack with various extensions
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -502,11 +502,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/jpscaletti">Juan-Pablo Scaletti</a></div>
-
+    
     <div class="description">
       This project provides a tus <code>1.0.0</code> server built using <strong>Elixir</strong>
     </div>
-
+    
     <div class="license">Licensed under BSD 3-Clause</div>
   </li>
 
@@ -516,11 +516,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/tomdesair">Tom Desair</a></div>
-
+    
     <div class="description">
       This project enables tus <code>1.0.0</code> resumable uploads for any <strong>Java</strong> web application
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -530,11 +530,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/jackhftang">Jack Tang</a></div>
-
+    
     <div class="description">
       This project provide a <strong>small-size and static-binary command line utility</strong> of tus <code>1.0.0</code> for both client and server.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -544,11 +544,11 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/mmatuska">Martin Matuška</a></div>
-
+    
     <div class="description">
       This project allows you to add tus <code>1.0.0</code> support to your OpenResty or NGINX (with mod_lua) installation.
     </div>
-
+    
     <div class="license">Licensed under MIT</div>
   </li>
 
@@ -561,14 +561,14 @@ what protocol version you're targeting.
     </a>
 
     <div class="author">&mdash; by <a href="https://github.com/nigoroll">Nils Goroll</a> of <a href="https://uplex.de/">UPLEX</a></div>
-
+    
     <div class="description">
       A <strong><a href="https://varnish-cache.org/">Varnish Cache</a></strong>
       module (<strong>vmod</strong>) to handle tus <code>1.0.0</code>
       client uploads and turn them into a single backend request,
       e.g. as a <code>PUT</code> request.
     </div>
-
+    
     <div class="license">Licensed under BSD 2-clause</div>
   </li>
 </ul>
