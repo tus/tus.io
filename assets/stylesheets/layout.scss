@@ -1,0 +1,345 @@
+.container {
+  padding: 0 15px;
+
+  .content &,
+  &.comments {
+    max-width: 800px;
+  }
+  
+  .page-index & {
+    max-width: 960px;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $scheme-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $scheme-primary;
+    text-decoration: underline;
+  }
+}
+
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+select:focus,
+textarea:focus {
+  border-color: $scheme-secondary;
+}
+
+select {
+  padding: 3px 4px;
+}
+
+@-moz-document url-prefix() {
+  select,
+  select:focus {
+    all: revert;
+    font-size: 14px;
+  }
+}
+
+.button {
+  &.button-primary {
+    background-color: $scheme-secondary;
+    border-color: $scheme-secondary;
+
+    &:hover {
+      background-color: $scheme-primary;
+      border-color: $scheme-primary;
+    }
+  }
+}
+
+.ribbon {
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+
+  .page-index & {
+    top: 32px;
+  }
+}
+
+.header {
+  background: $header-bg;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  
+  .container {
+    padding: 0 20px;
+    max-width: 1600px;
+    width: auto;
+  }
+
+  .logo {
+    line-height: 65px;
+    font-size: 3rem;
+    margin: 0;
+
+    a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+
+      img {
+        height: 23px;
+      }
+
+      .shield {
+        position: relative;
+        top: 5px;
+        margin-left: -6px;
+        width: 35px;
+        height: auto;
+      }
+    }
+  }
+
+  .toggler {
+    display: none;
+    float: right;
+    font-size: 2.5rem;
+    line-height: 65px;
+    text-decoration: none;
+
+    .hamburger {
+      display: block;
+      font-size: 1.5em;
+    }
+
+    .cross {
+      display: none;
+    }
+  }
+
+  .nav {
+    float: right;
+    list-style: none;
+    margin: 0 44px 0 0; // extra margin-right because of the GitHub icon-link
+    padding: 14px 0;
+    font-size: 1.6rem;
+
+    li {
+      float: left;
+      margin: 0;
+      padding: 0;
+
+      a {
+        border: 1px solid transparent;
+        color: #222;
+        display: inline-block;
+        padding: 5px 11px;
+        text-decoration: none;
+      }
+
+      &.active a,
+      a:hover {
+        color: $scheme-secondary;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    position: relative;
+
+    .nav {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-top: 0;
+      box-shadow: 0 2px 20px #ccc;
+      display: none;
+      margin-top: 66px;
+      margin-right: 0;
+      position: absolute;
+      right: 0;
+      width: 300px;
+      z-index: 100;
+      padding: 0;
+
+      li {
+        float: none;
+        padding: 0;
+
+        a {
+          display: block;
+          padding: 10px 20px;
+          transition: background 0.3s, color 0.3s;
+
+          &:hover {
+            background: $scheme-secondary;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .toggler {
+      display: inline-block;
+    }
+
+    .nav-container.open {
+      .nav {
+        display: block;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      .cross {
+        display: block;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.alert {
+  padding: 15px 30px;
+  border: 1px solid #e1e11e;
+  border-radius: 3px;
+}
+
+.Social {
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+@media (max-width: 549px) {
+  .logo-container {
+    width: auto;
+  }
+
+  .nav-container {
+    width: auto;
+    float: right;
+  }
+}
+
+
+.comments {
+  margin: 50px auto 80px;
+}
+
+
+.TransloaditBar {
+  display: block;
+  background: #141829;
+  color: #fff;
+  font-size: 13px;
+  
+  .container {
+    padding: 5px 10px 8px;
+    width: auto;
+    max-width: 1600px;
+    
+    @media screen and (min-width: 768px) {
+      height: 37px;
+      display: flex;
+      padding: 0 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-link {
+    color: #fff;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  &-logo {
+    margin-right: 10px;
+  }
+
+  &-logoImg {
+    display: block;
+  }
+
+  &-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-info {
+    margin-top: 10px;
+    text-align: center;
+    flex: 1;
+
+    @media screen and (min-width: 768px) {
+      text-align: right;
+      margin-top: 0;
+    }
+  }
+
+  &-info-link {
+    color: #b3cbf2;
+    font-weight: 600;
+    
+    &:hover {
+      color: #b3cbf2;
+    }
+  }
+
+  // .page-index & {
+  //   display: block;
+
+  //   @media screen and (min-width: 768px) {
+  //     display: flex;
+  //   }
+  // }
+}
+
+.github-menu-item {
+  display: list-item;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.github-corner {
+  display: none;
+
+  svg {
+    z-index: 100;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}

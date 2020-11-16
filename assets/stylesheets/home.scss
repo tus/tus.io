@@ -1,0 +1,300 @@
+.page-index section {
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+}
+
+section.centered {
+  text-align: center;
+}
+
+.page-index p {
+  max-width: none;
+}
+
+.intro {
+  background: #fff;
+  position: relative;
+
+  h1 {
+    margin: 0;
+  }
+
+  .brand {
+    h2 {
+      border: 0 !important;
+      font-size: 100px;
+      font-weight: 700;
+      margin: 50px 0 !important;
+    }
+  }
+
+  .banner {
+    -webkit-animation: fadeIn 1s;  /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation   : fadeIn 1s;  /* Firefox < 16 */
+    -ms-animation    : fadeIn 1s;  /* Internet Explorer */
+    -o-animation     : fadeIn 1s;  /* Opera < 12.1 */
+    animation        : fadeIn 1s;
+    width            : auto;
+    max-width        : 100%;
+    margin           : 40px auto 20px;
+    display          : block;
+
+    @media screen and (min-width: 768px) {
+      width: 60%;
+    }
+  }
+
+  .mission {
+    background: $mission-bg;
+    padding: 40px 0;
+    margin: 40px 0;
+    font-size: 18px;
+    
+    .container {
+      margin: 0 auto;
+      max-width: 70rem;
+    }
+  }
+}
+
+.feature {
+  margin-bottom: 20px;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  p {
+    color: #585858;
+  }
+}
+
+.implementation {
+  margin: 40px 20px;
+  
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin: 20px;
+    min-width: 100px;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 36px;
+  }
+
+  text-align: center;
+}
+
+.implementations-link {
+  margin: 20px 0;
+}
+
+.posts {
+  list-style: none;
+
+  li {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    max-width: none;
+
+    .author {
+      color: #999;
+      float: left;
+      height: 55px;
+      margin-right: 25px;
+      margin-top: 5px;
+      width: 55px;
+
+      img {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 6px #ccc;
+        width: 100%;
+      }
+    }
+
+    .post-title {
+      .date {
+        color: #999;
+      }
+
+      h3 {
+        margin: 0;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.who-is-using {
+  background-color: $mission-bg;
+  padding: 40px 0;
+}
+
+.logos {
+  margin: 20px -20px;
+  
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    text-align: center;
+  }
+}
+
+.logos a {
+  display: block;
+  padding: 20px 10px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+}
+
+.logos img {
+  display: block;
+  max-width: 130px;
+  max-height: 40px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.logos--press img {
+  max-height: 27px;
+}
+
+.on-the-githubs {
+  list-style-type: none;
+  margin: 0 0 0 5px;
+  padding: 0;
+
+  img {
+    float: left;
+    margin: 0;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0;
+    max-width: 550px;
+    max-height: 50px;
+    overflow: hidden;		
+  }
+
+  span.timeago {
+    float: left;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 90px;
+  }
+
+  li {
+    border-bottom: 1px solid #eee;
+    clear: both;
+    margin: 0;
+    padding: 5px 0;
+    position: relative;
+    max-width: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover .commits {
+      display: block;
+    }
+
+    abbr {
+      float: right;
+    }
+  }
+
+  .gravatar {
+    border-radius: 10px;
+    height: 20px;
+    margin-right: 7px;
+    width: 20px;
+  }
+
+  .commits {
+    clear: both;
+    display: none;
+    padding-top: 5px;
+
+    li {
+      font-size: 12px;
+      list-style-type: none;
+      margin-left: 10px;
+
+      a {
+        display: inline-block;
+        margin-right: 3px;
+        text-align: right;
+        width: 50px;
+      }
+    }
+  }
+
+  abbr[title] {
+    border: none;
+  }
+}
+
+.subscription-form {
+  background: #eee;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  margin-bottom: 0 !important;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  form {
+    position: relative;
+    text-align: right;
+
+    input[type="email"] {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      min-width: 250px;
+      position: relative;
+      text-align: left;
+      z-index: 100;
+
+      &:focus {
+        border-color: darken($scheme-tertiary, 1%);
+      }
+    }
+
+    button {
+      background: $scheme-tertiary;
+      border-color: $scheme-tertiary;
+      margin-left: -7px;
+
+      &:hover {
+        background: darken($scheme-tertiary, 1%);
+        border-color: darken($scheme-tertiary, 1%);
+      }
+    }
+  }
+}

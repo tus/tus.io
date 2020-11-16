@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"_site/": true,
+			".lanyon/": true,
+			"assets/build/": true,
+			"assets/img/": true,
+			"blog.rss": true,
+			"node_modules/": true,
+			"package-lock.json": true,
+			"vendor/": true,
+			"vendors/": true,
+			"yarn-error.log": true,
+			"yarn.lock": true
+		}
+	}
+}

@@ -1,0 +1,53 @@
+.kramdown-toc {
+  margin-bottom: 15px;
+
+  ul {
+    counter-reset: section;
+    list-style-type: none;
+
+    li {
+      &::before {
+        content: counter(section) ". ";
+        counter-increment: section;
+        display: inline-block;
+        margin-right: 0.4em;
+      }
+
+      ul {
+        margin-bottom: 0;
+        margin-top: 1rem;
+      }
+
+      li::before {
+        content: counter(section, lower-alpha) ". ";
+      }
+
+      li li::before {
+        content: counter(section, lower-roman) ". ";
+      }
+
+      li li li::before {
+        content: counter(section, disc) " ";
+      }
+    }
+  }
+}
+
+.protocol-version {
+  margin: 15px 0 20px;
+  color: #555;
+  font-size: 14px;
+
+  select {
+    margin-left: 0.33em;
+    min-width: 80px;
+    height: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    margin: 0;
+  }
+}

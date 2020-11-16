@@ -1,0 +1,28 @@
+
+
+.implementations {
+  list-style: inherit;
+  margin-left: 30px;
+
+  li {
+    .title,
+    .author {
+      display: inline-block;
+    }
+
+    .author {
+      &,
+      a {
+        color: #aaa;
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

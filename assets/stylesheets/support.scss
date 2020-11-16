@@ -1,0 +1,26 @@
+.in-the-githubs {
+  overflow: hidden;
+  margin-bottom: 40px;
+
+  h2 {
+    clear: both;
+    padding-top: 20px;
+  }
+
+  a {
+    color: #ccc;
+    float: left;
+    height: 55px;
+    margin-bottom: 15px;
+    margin-right: 25px;
+    margin-top: 5px;
+    width: 55px;
+
+    img {
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #ccc;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    
+    
+    
+
+    <title>Major release: tus-js-client v2.0.0 | tus</title>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/assets/build/vendors~app.79b9fb9c92395a10472f.d0179ca16effc899178e.chunk.css" rel="stylesheet"><link href="/assets/build/app.d7a7cf28f20683432f38.css" rel="stylesheet">
+    <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
+
+    <!-- Twitter follow button script -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </head>
+
+  <body>
+    
+    
+    
+
+    <div class="wrapper">
+      <div class="TransloaditBar">
+        <div class="container">
+          <div class="TransloaditBar-about">
+            <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener noreferrer">
+              <img class="TransloaditBar-logoImg" src="/assets/img/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+            </a>
+            <span>tus is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span>
+          </div>
+          <div class="TransloaditBar-info">
+            <b>New: </b><a href="https://www.transloadit.com/pricing" class="TransloaditBar-info-link">Transloadit Community Plan</a> — get free hosted Companion &amp; tusd, unlimited uploading, and 5GB/month encoding traffic!
+          </div>
+        </div>
+      </div>
+
+      <div class="header">
+        <a href="https://github.com/tus" class="github-corner" aria-label="View source on GitHub"><svg width="64" height="64" viewBox="0 0 250 250" style="fill:#48aa92; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+        <div class="container">
+          <div class="row">
+            <div class="three columns logo-container">
+              <h3 class="logo">
+                <a href="/">
+                  
+                    <img src="/assets/img/favicon.png" class="shield" alt="tus" />
+                  
+
+                  <img src="/assets/img/tus8.png" alt="tus" />
+                </a>
+              </h3>
+            </div>
+
+            <div class="nine columns nav-container">
+              <a href="#" class="toggler">
+                <span class="hamburger">&#8801;</span>
+                <span class="cross">&#10005;</span>
+              </a>
+
+              <ul class="nav">
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/faq.html">FAQ</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/support.html">Support</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="active">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/blog.html">Blog</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/demo.html">Demo</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/protocols/resumable-upload.html">Protocol</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2020/05/04/tus-js-client-200.html.html" href="/implementations.html">Implementations</a>
+                  </li>
+                
+                <li class="github-menu-item"><a href="https://github.com/tus">GitHub</a></li>
+              </ul>
+
+              <div class="u-cf"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        
+          <div class="container">
+        
+
+          
+
+<div class="post">
+  <h1 class="post-title">
+    Major release: tus-js-client v2.0.0
+  </h1>
+
+  <div class="post-info">
+    Published on <span class="date">May  4, 2020</span> by
+    
+      <a class="author" href="https://twitter.com/acconut_">
+        Marius Kleidl
+      </a>
+    
+  </div>
+
+  <div class="post-content">
+    <p class="lead">tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of an network issue or server outage. When resumability is implemented with automatic retries (with this release now the default), the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.</p>
+
+<p><a href="https://github.com/tus/tus-js-client/">tus-js-client</a> is the official client implementation for <a href="/protocols/resumable-upload.html">the tus protocol</a> in JavaScript. Since it had been born five years ago, it has grown enormously in numbers of features and supported environments. While it was originally designed for <strong>web browsers</strong>, it can now also be used in:</p>
+
+<ul>
+  <li><strong>Node.js</strong>,</li>
+  <li><strong>React Native</strong>, and</li>
+  <li><strong>Apache Cordova</strong> applications.</li>
+</ul>
+
+<p>However, over time this growth came at the cost of some technical debt which can hinder further development. In this release we cleaned up the code base, removed some odd API decisions from early stages and add long awaited features, such as <strong>Automatic Retries</strong> and <strong>Parallel Chunked Uploads</strong>. We are pleased to introduce you to the all new <strong>tus-js-client v2.0.0</strong>, which packs all this, and more.</p>
+
+<h2 id="new-features">New features</h2>
+
+<p>Besides cleaning up old technical debt, this release also introduces new functionality:</p>
+
+<ul>
+  <li><strong>Add support for Parallel Uploads</strong><br />
+tus-js-client now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#paralleluploads"><code class="language-plaintext highlighter-rouge">parallelUploads</code> documentation</a> for more details.</li>
+  <li><strong>Add Upload Storage API</strong><br />
+tus-js-client was always able to resume uploads which have been started in a previous browsing session. This is possible by storing the upload resource’s URL after it has been created and retrieving it from said storage based on file metadata later on. This allows users to pick up an upload where it had been left off even after the browser is (accidentally) closed. tus-js-client uses the Web Storage API to save this pointer inside the browsers but historically provided little access to retrieve or modify elements in this URL storage.
+To remove this limitation, we introduce the URL Storage interface: You are now able to supply your own URL storage using the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#urlstorage"><code class="language-plaintext highlighter-rouge">urlStorage</code> option</a>, if you want to save URLs in a database, for example.
+Furthermore, you can now easily query the URL storage to retrieve a list of previously started uploads using the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#tusuploadfindpreviousuploads"><code class="language-plaintext highlighter-rouge">findPreviousUploads</code> method</a> and ask the end user which upload should be resumed. Please have a look at <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/usage.md#example-let-user-select-upload-to-resume">the corresponding example</a> for more details on this approach.</li>
+  <li><strong>Add HTTP abstraction layer</strong><br />
+tus-js-client has always contained an abstraction layer to smooth out the differences between the network APIs in browsers and inside Node.js. Users now also have the ability to supply a custom HTTP stack to further customize the used HTTP interface. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#httpstack"><code class="language-plaintext highlighter-rouge">httpStack</code> documentation</a> for more details.</li>
+  <li><strong>Add File Reader abstraction layer</strong><br />
+Similar to the HTTP abstraction layer, tus-js-client also uses an abstraction to uniformly read data from the different input file types. If you want to add support for another input type, you can supply your own file reader implementation now. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#filereader"><code class="language-plaintext highlighter-rouge">fileReader</code> documentation</a> for more details.</li>
+  <li><strong>Add request IDs</strong><br />
+tus-js-client can now be configured to send unique request IDs using the <code class="language-plaintext highlighter-rouge">X-Request-ID</code> header. Since tus-js-client includes this ID in its error messages, it can be used to correlate client errors with server logs to make debugging easier. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#addrequestid"><code class="language-plaintext highlighter-rouge">addRequestId</code> documentation</a> for more details.</li>
+  <li><strong>Add request and response callbacks</strong><br />
+This release also adds the <code class="language-plaintext highlighter-rouge">onBeforeRequest</code> and <code class="language-plaintext highlighter-rouge">onAfterResponse</code> callbacks which will be invoked before a HTTP request is sent and directly after a HTTP response is received. This allows you to modify outgoing requests or retrieve additional information from incoming responses. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#onbeforerequest">documentation</a> for more information and examples.</li>
+</ul>
+
+<h2 id="breaking-changes">Breaking changes</h2>
+
+<p>The main behavior of tus-js-client and the vast majority of its API surface stay the same. However, the following breaking changes were necessary:</p>
+
+<ul>
+  <li><strong>Drop support for Node.js 6 and 7</strong><br />
+Only Node.js 8 or newer are fully supported and tested for compatibility with tus-js-client from now own. Earlier versions may work but we don’t guarantee or support it. Please note that we still support the same browsers as before, with the exception of requiring a polyfill in some cases, explained further down.</li>
+  <li><strong>Require support for Promises</strong><br />
+The internal code has been partially rewritten to use Promises instead of callbacks, which allowed us to clean up a lot of old spaghetti code. For library users this means that you need to use a <em>Promise polyfill</em> if your application runs in older browsers which do not support Promises. Have a look at <a href="https://caniuse.com/#feat=promises">caniuse.com</a> for a list of those browsers and <a href="https://github.com/zloirock/core-js#ecmascript-promise">core-js</a> for a polyfill.</li>
+  <li><strong>Use Promises for <code class="language-plaintext highlighter-rouge">abort</code>/<code class="language-plaintext highlighter-rouge">terminate</code> functions</strong><br />
+The <code class="language-plaintext highlighter-rouge">Upload#abort</code> and <code class="language-plaintext highlighter-rouge">Upload.terminate</code> functions do not longer accept a callback but instead return a Promise now. We recommend adding a catch phrase to avoid errors about unhandled rejections. If you have code such as:
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upload</span><span class="p">.</span><span class="nx">abort</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="c1">// Handle error</span>
+  <span class="k">else</span> <span class="c1">// Handle successful abort call</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+    <p>you should rewrite it to:</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upload</span><span class="p">.</span><span class="nx">abort</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Handle success</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Handle error</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Use Promises for the <code class="language-plaintext highlighter-rouge">fingerprint</code> option</strong><br />
+The function that is passed as the <code class="language-plaintext highlighter-rouge">fingerprint</code> option into the <code class="language-plaintext highlighter-rouge">Upload</code>-constructor is not callback-based anymore. Instead it must also return a Promise. If you supply a custom fingerprint function it must have a signature such as:
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fingerprint</span> <span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">....</span>
+  <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Enable retries by default</strong><br />
+tus-js-client has supported automated retries of network-caused error for years using the <code class="language-plaintext highlighter-rouge">retryDelays</code> option. However, in order to avoid breaking changes, this feature had been disabled by default when it was introduced. With this release, the retrying mechanism will be enabled by default to make it easier for new users to take advantage of it. If you have custom retrying code implemented, you may want to check that it is compatible when tus-js-client also retries HTTP requests.</li>
+  <li><strong>Remove <code class="language-plaintext highlighter-rouge">resume</code> option</strong><br />
+Historically, the <code class="language-plaintext highlighter-rouge">resume</code> option has controlled whether tus-js-client will check if it is possible to resume an upload from a previous browsing session (e.g. when the browser has accidentally been closed while the upload was still running). This was implemented by calculating the fingerprint for the given input file and comparing it to a list of previously created uploads which was stored in the browser’s <code class="language-plaintext highlighter-rouge">localStorage</code>. If such an upload exists, tus-js-client would attempt to resume it.
+However, this effectively gives the application no control over which upload is resumed. In previous versions, applications were not able to retrieve the list of previously created uploads or remove items from this list. Furthermore, if multiple matching uploads were found for a fingerprint, the applications could not decide which of those uploads should be resumed.
+In this release, the <code class="language-plaintext highlighter-rouge">resume</code> option has been removed and instead the Upload Storage API has been added. An introduction into the Upload Storage API can be found in the New Features section higher up. If you previously did not explicitly set <code class="language-plaintext highlighter-rouge">resume: false</code>, and hence relied on tus-js-client deciding to resume, you can get the previous behavior using following code snippet:
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tus</span><span class="p">.</span><span class="nx">Upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+<span class="nx">upload</span><span class="p">.</span><span class="nx">findPreviousUploads</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">previousUploads</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">previousUploads</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">upload</span><span class="p">.</span><span class="nx">resumeFromPreviousUpload</span><span class="p">(</span><span class="nx">previousUploads</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="p">}</span>
+
+  <span class="nx">upload</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+    <p>or in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async/await</a> syntax:</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tus</span><span class="p">.</span><span class="nx">Upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">previousUploads</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">findPreviousUploads</span><span class="p">()</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">previousUploads</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">upload</span><span class="p">.</span><span class="nx">resumeFromPreviousUpload</span><span class="p">(</span><span class="nx">previousUploads</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="nx">upload</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Remove <code class="language-plaintext highlighter-rouge">withCredentials</code> option</strong><br />
+This release introduces an HTTP abstraction layer to overcome differences between network APIs in browsers and inside Node.js. This makes internal code a lot cleaner but also means that the browser-only <code class="language-plaintext highlighter-rouge">withCredentials</code> option is not properly possible anymore. If you used this feature before, you can now explicitly set this flag using the request callbacks:
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tus</span><span class="p">.</span><span class="nx">Upload</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">endpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">....</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">onBeforeRequestSend</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">getUnderlyingObject</span><span class="p">()</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="p">....</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="try-it">Try it</h2>
+
+<p>If you’d like to try it out, we have updated our <a href="/demo.html">demo</a> to use tus-js-client v2.0 as well. The code for it can be found <a href="https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js">here</a>. Do leave a comment there how it went!</p>
+
+<p>Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at <a href="https://github.com/tus">GitHub</a>. If you don’t know where to start or have other questions, feel free to <a href="/support.html">contact us</a>!</p>
+
+  </div>
+</div>
+
+<hr />
+
+<div class="post-subscribe">
+  <p>
+    Subscribe to, or respond on our social channels:
+  </p>
+  <div>
+  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"><img src="/assets/img/community-forum-35a78b.svg" /></a>
+  <a href="https://twitter.com/tus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @tus_io</a>
+  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg" /></a>
+  <iframe src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+</div>
+
+</div>
+
+
+        
+          </div>
+        
+      </div>
+
+      
+        <div class="container comments">
+          <div id="disqus_thread"></div>
+
+          <script type="text/javascript">
+              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+              var disqus_shortname = 'tusio'; // required: replace example with your forum shortname
+              var disqus_url = 'https://tus.io/blog/2020/05/04/tus-js-client-200.html';
+
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+          </script>
+
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+          <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3306079-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      window.tusdEndpoint = '';
+    </script>
+
+    <script src="/assets/build/vendors~app.180dcf098d37d50aa0c7.d0179ca16effc899178e.chunk.js"></script><script src="/assets/build/app.5f5a3cde7cdbe4ac482b.js"></script>
+  </body>
+</html>

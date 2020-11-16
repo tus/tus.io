@@ -1,0 +1,61 @@
+
+.content {
+  h2:first-child {
+    // border-bottom: 1px solid #eee;
+    margin-top: 20px;
+  }
+
+  .post {
+    margin: 0 auto 5rem;
+
+    .post-info {
+      margin-top: -10px;
+      color: #888;
+      margin-bottom: 30px;
+
+      .date {
+        font-weight: 700;
+      }
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    h3 {
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .post-subscribe {
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 0.5em;
+      font-weight: 500;
+    }
+  }
+
+  .blog-posts {
+    .post {
+      margin: 40px 0 60px;
+
+      h2 {
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          color: inherit;
+        }
+      }
+    }
+
+    .post-info {
+      font-size: 14px;
+      margin-bottom: 16px;
+
+      .date {
+        font-weight: inherit;
+      }
+    }
+  }
+}
