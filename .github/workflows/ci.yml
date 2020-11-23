@@ -32,9 +32,6 @@ jobs:
       - name: Lint
         run : |
           yarn lint
-      - name: Test
-        run : |
-          yarn test
       - name: Website Build
         if  : github.ref != 'refs/heads/master'
         run : |
