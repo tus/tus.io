@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/tus/tus.io.svg?branch=master)](https://travis-ci.org/tus/tus.io)
 [![Join the community](/assets/img/community-forum-35a78b.svg)](https://community.transloadit.com/c/tus)
 
 # tus.io
@@ -25,7 +24,7 @@ npm start
 
 ## Deployment
 
-Done via Travis on pushes to master.
+Done via GitHub Actions on pushes to master.
 
 ## How to add your company/project logo to the site
 
