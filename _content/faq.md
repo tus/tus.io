@@ -52,10 +52,10 @@ This section covers the more low-level details of how tus performs an upload. If
 
 A tus upload is broken down into different HTTP requests, where each one has a different purpose:
 
-- At first, the client sends a POST request to the server to initiate the upload. This *upload creation request* tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the Location header set to the *upload URL*. The upload URL is used to uniquely identify and reference the newly created upload resource.
-- Once the upload has been created, the client can start to transmit the actual upload content by sending a PATCH request to the upload URL, as returned in the previous POST request. Ideally, this PATCH request should contain as much upload content as possible to minimize the upload duration. The PATCH request must also contain the Upload-Offset header which tells the server at which byte-offset the server should write the uploaded data. If the PATCH request successfully transfers the entire upload content, then your upload is done!
-- If the PATCH request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a HEAD request to the upload URL and inspecting the returned Upload-Offset header. Once the client knows the upload offset, it can send another PATCH request until the upload is completely down.
-- Optionally, if the client wants to delete an upload because it won't be needed anymore, a DELETE request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.
+- At first, the client sends a `POST` request to the server to initiate the upload. This *upload creation request* tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the `Location` header set to the *upload URL*. The upload URL is used to uniquely identify and reference the newly created upload resource.
+- Once the upload has been created, the client can start to transmit the actual upload content by sending a `PATCH` request to the upload URL, as returned in the previous `POST` request. Ideally, this `PATCH` request should contain as much upload content as possible to minimize the upload duration. The `PATCH` request must also contain the `Upload-Offset` header which tells the server at which byte-offset the server should write the uploaded data. If the `PATCH` request successfully transfers the entire upload content, then your upload is done!
+- If the `PATCH` request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a `HEAD` request to the upload URL and inspecting the returned `Upload-Offset` header. Once the client knows the upload offset, it can send another `PATCH` request until the upload is completely down.
+- Optionally, if the client wants to delete an upload because it won't be needed anymore, a `DELETE` request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.
 
 If you want to see these requests in action, you can head over to our [demo](/demo.html) where the actual HTTP requests are shown on the page!
 
@@ -94,7 +94,7 @@ If that is not an option for you, please reach out to us, we are open to definin
 
 ## How are pause/resume handled? When should I delete partial uploads?
 
-The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a HEAD request to the corresponding upload URL to obtain the available offset. After receiving a valid response you can upload more data using PATCH requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration]() extension).
+The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration]() extension).
 
 Before deleting an outstanding upload the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one week for a general use case.
 
@@ -104,9 +104,9 @@ For itself, the tus protocol does not have a direct mechanism to obtain the type
 
 ## Why is the protocol using custom headers?
 
-We have carefully investigated the use of existing headers such as Range and Content-Range, but unfortunately, they are defined in a way that makes them unsuitable for resumable file uploads.
+We have carefully investigated the use of existing headers such as `Range` and `Content-Range`, but unfortunately, they are defined in a way that makes them unsuitable for resumable file uploads.
 
-We also considered using existing PATCH payload formats such as [multipart/byteranges](http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges), but unfortunately, the XHR2 [FormData interface](http://www.w3.org/TR/XMLHttpRequest/#interface-formdata) does not support custom headers for multipart parts, and the [send() method](http://www.w3.org/TR/XMLHttpRequest/#the-send-method) does not allow streaming arbitrary data without loading all of it into memory.
+We also considered using existing `PATCH` payload formats such as [multipart/byteranges](http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges), but unfortunately, the XHR2 [FormData interface](http://www.w3.org/TR/XMLHttpRequest/#interface-formdata) does not support custom headers for multipart parts, and the [send() method](http://www.w3.org/TR/XMLHttpRequest/#the-send-method) does not allow streaming arbitrary data without loading all of it into memory.
 
 That being said, custom headers also allowed us to greatly simplify the client and server implementations, so we're quite happy with them.
 
