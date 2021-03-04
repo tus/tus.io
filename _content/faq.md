@@ -18,7 +18,7 @@ Here are some Frequently Asked Questions and their answers. This document is sti
 
 ## What is tus?
 
-Tus is a project aiming to make resumable file uploads easily usable and widely available. The most interesting parts of this project are the [protocol specification](/protocols/resumable-upload.html) and the many freely available [client and server implementations](/implementations.html).
+tus is a project aiming to make resumable file uploads easily usable and widely available. The most interesting parts of this project are the [protocol specification](/protocols/resumable-upload.html) and the many freely available [client and server implementations](/implementations.html).
 
 When we say "resumable file uploads", we refer to the ability that uploads can be interrupted at any time and afterward be resumed from the state where the failure began. This interruption can be accidentally (e.g. a connection drop or a server crash) or voluntarily if the user decides to pause the upload. In traditional uploading implementations, your progress would be lost in such a situation but tus enables you to recover from these interruptions and continues where the upload was stopped.
 
@@ -33,7 +33,7 @@ If you are unsure whether tus is a good fit for your use case, here is a list of
 - You want to provide your users with the ability to pause an upload and resume it later (maybe even after a few days).
 - You do not want to rely on proprietary upload solutions but instead, prefer to build upon free and open source projects.
 
-Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios when you handle many very small files (e.g. a few KBs) on a slow network and where the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, [contact us]() and we are happy to assist you.
+Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios when you handle many very small files (e.g. a few KBs) on a slow network and where the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, [contact us](/support.html) and we are happy to assist you.
 
 ## How do I install tus and get started?
 
@@ -61,7 +61,8 @@ If you want to see these requests in action, you can head over to our [demo](/de
 
 ## How do I integrate tus into my application?
 
-If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](). The exact setup steps vary for each implementation but the basic scheme is the following:
+If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](/implementations.html
+). The exact setup steps vary for each implementation but the basic scheme is the following:
 
 The tus server is usually deployed alongside your main application server in its process. A proxy is then used to route the requests to either the tus server or your application server. The tus server usually stores the uploads on disk but some servers (such as our reference implementation [tusd](https://github.com/tus/tusd)) are also capable of storing the data directly on different cloud providers, such as AWS S3 or Google Cloud Storage.
 
@@ -94,7 +95,8 @@ If that is not an option for you, please reach out to us, we are open to definin
 
 ## How are pause/resume handled? When should I delete partial uploads?
 
-The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration]() extension).
+The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration](/protocols/resumable-upload.html#expiration
+) extension).
 
 Before deleting an outstanding upload the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one week for a general use case.
 
