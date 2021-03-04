@@ -157,60 +157,60 @@
 
 <p>tus is a project aiming to make resumable file uploads easily usable and widely available. The most interesting parts of this project are the <a href="/protocols/resumable-upload.html">protocol specification</a> and the many freely available <a href="/implementations.html">client and server implementations</a>.</p>
 
-<p>When we say “resumable file uploads”, we refer to the ability that uploads can be interrupted at any time and afterwards be resumed from the state where the failure began. This interruption can be accidentally (e.g. a connection drop or a server crash) or voluntarily if the user decides to pause the upload. In traditional uploading implementations your progress would be lost in such situations but tus enables you to recover from these interruptions and continue where the upload was stopped.</p>
+<p>When we say “resumable file uploads”, we refer to the ability that uploads can be interrupted at any time and afterward be resumed from the state where the failure began. This interruption can be accidentally (e.g. a connection drop or a server crash) or voluntarily if the user decides to pause the upload. In traditional uploading implementations, your progress would be lost in such a situation but tus enables you to recover from these interruptions and continues where the upload was stopped.</p>
 
-<p>On a more technical side, the tus protocol is built upon HTTP/HTTPS making it available on every platform including browsers, desktop software and mobile applications. Furthermore, it also allows us to build upon the massive ecosystem and best practices that HTTP provides.</p>
+<p>On a more technical side, the tus protocol is built upon HTTP/HTTPS to make it available on every platform including browsers, desktop software, and mobile applications. Furthermore, it also allows us to build upon the massive ecosystem and best practices that HTTP provides.</p>
 
 <h2 id="when-should-i-use-tus">When should I use tus?</h2>
 
-<p>If you are unsure whether tus is a good fit for your use case, here is a list of criteria. If one of these points applies to you, it is very likely that you would benefit from tus:</p>
+<p>If you are unsure whether tus is a good fit for your use case, here is a list of criteria. If one of these points applies to you, you could likely benefit from tus:</p>
 
 <ul>
-  <li>You operate on partly unreliable networks where connections can get easily dropped or a connection may not be available at all for some time, e.g. when using mobile data.</li>
-  <li>You handle large files and want to avoid having to reupload parts of it just because the upload got interrupted (Note: “large” is relative word. A 10MB file can be large if you have an uplink speed of 100KB/s).</li>
+  <li>You operate on partly unreliable networks where a connection can get easily dropped or a connection may not be available at all for some time, e.g. when using mobile data.</li>
+  <li>You handle large files and want to avoid having to reupload parts of it just because the upload got interrupted (Note: “large” is a relative word. A 10MB file can be large if you have an uplink speed of 100KB/s).</li>
   <li>You want to provide your users with the ability to pause an upload and resume it later (maybe even after a few days).</li>
-  <li>You do not want to rely on proprietary upload solutions but instead prefer to build upon free and open source projects.</li>
+  <li>You do not want to rely on proprietary upload solutions but instead, prefer to build upon free and open source projects.</li>
 </ul>
 
-<p>Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios when you handle many very small files (e.g. a few KBs) on a slow network and were the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, <a href="/support.html">contact us</a> and we are happy to help you.</p>
+<p>Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios when you handle many very small files (e.g. a few KBs) on a slow network and where the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, <a href="/support.html">contact us</a> and we are happy to assist you.</p>
 
 <h2 id="how-do-i-install-tus-and-get-started">How do I install tus and get started?</h2>
 
 <p>You’ll need a:</p>
 
 <ul>
-  <li>Server implementation (you can read how to <a href="https://github.com/tus/tusd/#documentation">get started with tusd</a> which is the most mature option), and a:</li>
-  <li>Client implementation (such as the bare-bones <a href="https://github.com/tus/tus-js-client#installation">tus-js-client</a> for browsers and Node.js, or if you need a rich UI, <a href="https://uppy.io/docs/#getting-started">Uppy</a>).</li>
+  <li>server implementation (you can read how to <a href="https://github.com/tus/tusd/#documentation">get started with tusd</a> which is the most mature option), and a:</li>
+  <li>client implementation (such as the bare-bones <a href="https://github.com/tus/tus-js-client#installation">tus-js-client</a> for browsers and Node.js, or if you need a rich UI, <a href="https://uppy.io/docs/#getting-started">Uppy</a>.</li>
 </ul>
 
-<p>tus is a low-level building block and there’s no one right way to do deploy resumable file uploads with it. Still, to get started quickly, for the majority use case, we’d recommend tusd + Uppy. But the ecosystem is rich and you’ll know it if one of our community maintained client/server <a href="https://tus.io/implementations.html">implementations</a> in Ruby, Python, Elixir, etc, are a better fit to your platform.</p>
+<p>Tus is a low-level building block and there’s no one right way to do deploy resumable file uploads with it. Still, to get started quickly for the majority of use cases, we recommend tusd + Uppy. But the ecosystem is rich and you’ll know it if one of our community maintained client/server <a href="https://tus.io/implementations.html">implementations</a> in Ruby, Python, Elixir, etc, are a better fit for your platform.</p>
 
 <p>Finally, if you don’t care for self-hosting tus servers, <a href="https://transloadit.com">Transloadit</a> offers a tus-based upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website, or check out <a href="https://transloadit.com/docs/#sdks">non-browser client integrations</a>.</p>
 
 <h2 id="how-does-tus-work">How does tus work?</h2>
 
-<p>This section covers the more low-level details of how tus performs an upload. If you are using one of our open-source <a href="/implementations.html">implementations</a>, you don’t have to worry about these details. That being said, they might still come in handy when debugging and troubleshooting.</p>
+<p>This section covers the more low-level details of how tus performs an upload. If you are using one of our open-source <a href="/implementations.html">implementations</a>, you don’t have to worry about these details but they may still be helpful to ease debugging and troubleshooting.</p>
 
 <p>A tus upload is broken down into different HTTP requests, where each one has a different purpose:</p>
 
 <ul>
-  <li>At first, the client sends a <code class="language-plaintext highlighter-rouge">POST</code> request to the server to initiate the upload. This <em>upload creation request</em> tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the <code class="language-plaintext highlighter-rouge">Location</code> header containing the <em>upload URL</em>. The upload URL is used to uniquely identify and reference the newly created upload resource.</li>
+  <li>At first, the client sends a <code class="language-plaintext highlighter-rouge">POST</code> request to the server to initiate the upload. This <em>upload creation request</em> tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the <code class="language-plaintext highlighter-rouge">Location</code> header set to the <em>upload URL</em>. The upload URL is used to uniquely identify and reference the newly created upload resource.</li>
   <li>Once the upload has been created, the client can start to transmit the actual upload content by sending a <code class="language-plaintext highlighter-rouge">PATCH</code> request to the upload URL, as returned in the previous <code class="language-plaintext highlighter-rouge">POST</code> request. Ideally, this <code class="language-plaintext highlighter-rouge">PATCH</code> request should contain as much upload content as possible to minimize the upload duration. The <code class="language-plaintext highlighter-rouge">PATCH</code> request must also contain the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header which tells the server at which byte-offset the server should write the uploaded data. If the <code class="language-plaintext highlighter-rouge">PATCH</code> request successfully transfers the entire upload content, then your upload is done!</li>
-  <li>If the <code class="language-plaintext highlighter-rouge">PATCH</code> request got interrupted or failed for another reason, the client can attempt to resume the upload. In order to resume, the client must know how much data the server has already received. This information is obtained by sending a <code class="language-plaintext highlighter-rouge">HEAD</code> request to the upload URL and inspecting the returned <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header. Once the client knows the upload offset, it can send another <code class="language-plaintext highlighter-rouge">PATCH</code> request until the upload is completed.</li>
-  <li>Optionally, if the client wants to delete an upload because it won’t be needed anymore, a <code class="language-plaintext highlighter-rouge">DELETE</code> request can be sent to the upload URL. After this, the upload can be cleaned up by the server and resuming the upload is not possible anymore.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">PATCH</code> request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a <code class="language-plaintext highlighter-rouge">HEAD</code> request to the upload URL and inspecting the returned <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header. Once the client knows the upload offset, it can send another <code class="language-plaintext highlighter-rouge">PATCH</code> request until the upload is completely down.</li>
+  <li>Optionally, if the client wants to delete an upload because it won’t be needed anymore, a <code class="language-plaintext highlighter-rouge">DELETE</code> request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.</li>
 </ul>
 
 <p>If you want to see these requests in action, you can head over to our <a href="/demo.html">demo</a> where the actual HTTP requests are shown on the page!</p>
 
 <h2 id="how-do-i-integrate-tus-into-my-application">How do I integrate tus into my application?</h2>
 
-<p>If you want to add tus to your application, you need a server and client component. For a quick start, we recommend to have a look at our list of open-source <a href="/implementations.html">implementations</a>. The exact setup steps vary for each implementation but the basic scheme is following:</p>
+<p>If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source <a href="/implementations.html">implementations</a>. The exact setup steps vary for each implementation but the basic scheme is the following:</p>
 
-<p>The tus server is usually deployed alongside your main application server in its own process. A proxy is then used to route the requests to either the tus server or your application server. The tus server usually stores the uploads on disk but some servers (such as our reference implementation <a href="https://github.com/tus/tusd">tusd</a>) are also capable of storing the data directly on different cloud providers, such as AWS S3 or Google Cloud Storage.</p>
+<p>The tus server is usually deployed alongside your main application server in its process. A proxy is then used to route the requests to either the tus server or your application server. The tus server usually stores the uploads on disk but some servers (such as our reference implementation <a href="https://github.com/tus/tusd">tusd</a>) are also capable of storing the data directly on different cloud providers, such as AWS S3 or Google Cloud Storage.</p>
 
 <p>Once you have a tus server set up, you can integrate the tus client into your client application. We offer tus clients for a variety of different environments including browsers, Android, iOS, Java and Node.js. If you want to pass application-specific information to your upload, such as the current user’s ID, you can add them as key-value-pairs to the upload’s metadata. This metadata is then also available to the tus server for custom processing.</p>
 
-<p>Finally, most tus servers offer a way to subscribe to specific events, such as if a new upload is created or finished. For example, <a href="https://github.com/tus/tusd">tusd</a> has a <a href="https://github.com/tus/tusd/blob/master/docs/hooks.md">hook system</a> which can be used to execute custom scripts or send HTTP requests if a specific event occurs. These hooks can be used to move the completed uploads to another location and provide them to your application for further processing. Inside these hooks it’s also possible to access the upload’s metadata set by the tus client in your client application.</p>
+<p>Finally, most tus servers offer a way to subscribe to specific events, such as if a new upload is created or finished. For example, <a href="https://github.com/tus/tusd">tusd</a> has a <a href="https://github.com/tus/tusd/blob/master/docs/hooks.md">hook system</a> that can be used to execute custom scripts or send HTTP requests if a specific event occurs. These can be used to move the completed uploads to another location and provide them with your application for further processing. It’s also possible to access the upload’s metadata set by the tus client in your client application inside these hooks.</p>
 
 <h2 id="how-do-i-scale-tus">How do I scale tus?</h2>
 
@@ -228,7 +228,7 @@
 <ol>
   <li>The client connects to server A through the load balancer and starts to upload data using a <code class="language-plaintext highlighter-rouge">PATCH</code> request.</li>
   <li>After some time the connection between the client and the server A is interrupted, for example a mobile phone loses its reception. The important detail here is that the client can know very quickly that the connection has been dropped while the server is unaware of this situation. The server is therefore still waiting for more upload data to be written to the upload resource.</li>
-  <li>The client now wants to resume the upload but connects to server B through the load balancer now. If no locking were be in place, server B and server A may write data to the same upload resource simultaneously leading to corrupt data.</li>
+  <li>The client now wants to resume the upload but connects to server B through the load balancer. If no locking were to be in place, server B and server A may write data to the same upload resource simultaneously leading to corrupt data.</li>
 </ol>
 
 <p>This can be prevented if either sticky sessions were enabled, so the client would have connected to server A again, or if a shared locking mechanism between the servers would be required.</p>
@@ -241,9 +241,9 @@
 
 <h2 id="how-are-pauseresume-handled-when-should-i-delete-partial-uploads">How are pause/resume handled? When should I delete partial uploads?</h2>
 
-<p>The tus protocol is built upon the principles of simple pausing and resuming. In order to pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a <code class="language-plaintext highlighter-rouge">HEAD</code> request to the corresponding upload URL in order to obtain the available offset. After receiving a valid response you can upload more data using <code class="language-plaintext highlighter-rouge">PATCH</code> requests. You should keep in mind that the Server may delete an unfinished upload if it is not continued for a longer time period (see the <a href="/protocols/resumable-upload.html#expiration">Expiration</a> extension).</p>
+<p>The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g. checksums) or internal errors occur. Once you are ready to resume an upload, send a <code class="language-plaintext highlighter-rouge">HEAD</code> request to the corresponding upload URL to obtain the available offset. After receiving a valid response you can upload more data using <code class="language-plaintext highlighter-rouge">PATCH</code> requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see <a href="/protocols/resumable-upload.html#expiration">Expiration</a> extension).</p>
 
-<p>Before deleting an unfinished upload the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one day for a general use case.</p>
+<p>Before deleting an outstanding upload the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one week for a general use case.</p>
 
 <h2 id="how-can-i-get-the-file-name-or-file-type-for-an-upload">How can I get the file name or file type for an upload?</h2>
 
@@ -251,9 +251,9 @@
 
 <h2 id="why-is-the-protocol-using-custom-headers">Why is the protocol using custom headers?</h2>
 
-<p>We have carefully investigated the use of existing headers such as <code class="language-plaintext highlighter-rouge">Range</code> and <code class="language-plaintext highlighter-rouge">Content-Range</code>, but unfortunately they are defined in a way that makes them unsuitable for resumable file uploads.</p>
+<p>We have carefully investigated the use of existing headers such as <code class="language-plaintext highlighter-rouge">Range</code> and <code class="language-plaintext highlighter-rouge">Content-Range</code>, but unfortunately, they are defined in a way that makes them unsuitable for resumable file uploads.</p>
 
-<p>We also considered using existing <code class="language-plaintext highlighter-rouge">PATCH</code> payload formats such as <a href="http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges">multipart/byteranges</a>, but unfortunately the XHR2 <a href="http://www.w3.org/TR/XMLHttpRequest/#interface-formdata">FormData interface</a> does not support custom headers for multipart parts, and the <a href="http://www.w3.org/TR/XMLHttpRequest/#the-send-method">send() method</a> does not allow streaming arbitrary data without loading all of it into memory.</p>
+<p>We also considered using existing <code class="language-plaintext highlighter-rouge">PATCH</code> payload formats such as <a href="http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges">multipart/byteranges</a>, but unfortunately, the XHR2 <a href="http://www.w3.org/TR/XMLHttpRequest/#interface-formdata">FormData interface</a> does not support custom headers for multipart parts, and the <a href="http://www.w3.org/TR/XMLHttpRequest/#the-send-method">send() method</a> does not allow streaming arbitrary data without loading all of it into memory.</p>
 
 <p>That being said, custom headers also allowed us to greatly simplify the client and server implementations, so we’re quite happy with them.</p>
 
@@ -263,7 +263,7 @@
 
 <h2 id="what-does-tus-even-mean">What does “tus” even mean?</h2>
 
-<p>Historically it stood for <strong>T</strong>ransloadit <strong>U</strong>pload <strong>S</strong>erver, later repurposed to: The Upload Server. But really, it’s just tus, now, as its own word. Often written in lower casing as an homage to unix ancestry, and (when it was still an abbreviation) to desperately avoid yelling TUS in all caps. We used to insist on lowercasing, but have gotten more pragmatic from our encounters with journalists, who insist on it being Tus in their articles, and nothing much we can do about it. So we guess, write it however you feel like today <img class="emoji" title=":smile:" alt=":smile:" src="/assets/img/emoji/unicode/1f604.png" height="20" width="20"></p>
+<p>Historically it stood for <strong>T</strong>ransloadit <strong>U</strong>pload <strong>S</strong>erver, later repurposed to The Upload Server. But really, it’s just known now, as tus. Often written in the lower casing as an homage to unix ancestry, and (when it was still an abbreviation) to desperately avoid yelling TUS in all caps. We used to insist on lowercasing, but have gotten more pragmatic from our encounters with journalists, who insist on it being Tus in their articles, and nothing much we can do about it. So we guess, write it however you feel like today. <img class="emoji" title=":smile:" alt=":smile:" src="/assets/img/emoji/unicode/1f604.png" height="20" width="20"></p>
 
 
         
