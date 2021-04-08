@@ -54,7 +54,7 @@ A tus upload is broken down into different HTTP requests, where each one has a d
 
 - At first, the client sends a `POST` request to the server to initiate the upload. This *upload creation request* tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the `Location` header set to the *upload URL*. The upload URL is used to uniquely identify and reference the newly-created upload resource.
 - Once the upload has been created, the client can start to transmit the actual upload content by sending a `PATCH` request to the upload URL, as returned in the previous `POST` request. Ideally, this `PATCH` request should contain as much upload content as possible to minimize the upload duration. The `PATCH` request must also contain the `Upload-Offset` header, which tells the server at which byte offset the server should write the uploaded data. If the `PATCH` request successfully transfers the entirety of the upload content, then your upload is done!
-- If the `PATCH` request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a `HEAD` request to the upload URL and inspecting the returned `Upload-Offset` header. Once the client knows the upload offset, it can send another `PATCH` request until the upload is completely down.
+- If the `PATCH` request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a `HEAD` request to the upload URL and inspecting the returned `Upload-Offset` header. Once the client knows the upload offset, it can send another `PATCH` request until the upload is completely done.
 - Optionally, if the client wants to delete an upload because it won't be needed anymore, a `DELETE` request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.
 
 If you want to see these requests in action, you can head over to our [demo](/demo.html) where the actual HTTP requests are shown on the page!
@@ -89,7 +89,7 @@ This can be prevented if either sticky sessions were enabled, so the client woul
 
 ## How can I deal with bad HTTP proxies?
 
-If you are dealing with HTTP proxies that strip/modify HTTP headers or can't handle `PATCH` requests properly, you should consider using HTTPS. This will make it impossible for proxies to modify your requests and use the `X-HTTP-Method-Override` header which allows you to use `POST` requests.
+If you are dealing with HTTP proxies that strip/modify HTTP headers or can't handle `PATCH` requests properly, you should consider using HTTPS. This will make it impossible for proxies to modify your requests and lets you use the `X-HTTP-Method-Override` header, which allows you to take advantage of `POST` requests.
 
 If that is not an option for you, please reach out to us. We are open to defining a compatibility protocol extension.
 
