@@ -295,6 +295,7 @@ section.centered {
       background: $scheme-tertiary;
       border-color: $scheme-tertiary;
       margin-left: -7px;
+      font-size: 12px;
 
       &:hover {
         background: darken($scheme-tertiary, 1%);
