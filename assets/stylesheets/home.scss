@@ -52,7 +52,7 @@ section.centered {
     padding: 40px 0;
     margin: 40px 0;
     font-size: 18px;
-    
+
     .container {
       margin: 0 auto;
       max-width: 70rem;
@@ -74,7 +74,7 @@ section.centered {
 
 .implementation {
   margin: 40px 20px;
-  
+
   @media screen and (min-width: 768px) {
     display: inline-block;
     margin: 20px;
@@ -146,14 +146,15 @@ section.centered {
 }
 
 .logos {
-  margin: 20px -20px;
-  
+  margin: 20px 0;
+
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: row wrap;
     text-align: center;
+    margin: 20px -20px;
   }
 }
 
@@ -190,15 +191,14 @@ section.centered {
 
   img {
     float: left;
-    margin: 0;
+    margin: 3px 0 0;
   }
 
   p {
-    display: inline-block;
     margin: 0;
     max-width: 550px;
     max-height: 50px;
-    overflow: hidden;		
+    overflow: hidden;
   }
 
   span.timeago {
@@ -213,7 +213,7 @@ section.centered {
     border-bottom: 1px solid #eee;
     clear: both;
     margin: 0;
-    padding: 5px 0;
+    padding: 5px 0 13px;
     position: relative;
     max-width: none;
 
@@ -226,7 +226,12 @@ section.centered {
     }
 
     abbr {
-      float: right;
+      font-size: 14px;
+      color: #999;
+
+      @media screen and (min-width: 768px) {
+        float: right;
+      }
     }
   }
 
@@ -290,6 +295,7 @@ section.centered {
       background: $scheme-tertiary;
       border-color: $scheme-tertiary;
       margin-left: -7px;
+      font-size: 12px;
 
       &:hover {
         background: darken($scheme-tertiary, 1%);
