@@ -4,7 +4,7 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2021-08-25T13:11:43+02:00</updated>
+ <updated>2021-08-25T13:32:09+02:00</updated>
  <id>https://tus.io</id>
 
  
@@ -294,7 +294,7 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
    <link href="https://tus.io/blog/2016/03/07/tus-s3-backend.html"/>
    <updated>2016-03-07T00:00:00+01:00</updated>
    <id>https://tus.io/blog/2016/03/07/tus-s3-backend</id>
-   <content type="html">&lt;p&gt;With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd&lt;/a&gt; server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to &lt;a href=&quot;https://godoc.org/github.com/tus/tusd/s3store&quot;&gt;deliver&lt;/a&gt; on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon’s service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.&lt;/p&gt;
+   <content type="html">&lt;p&gt;With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd&lt;/a&gt; server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to &lt;a href=&quot;https://pkg.go.dev/github.com/tus/tusd@v1.6.0/pkg/s3store&quot;&gt;deliver&lt;/a&gt; on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon’s service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
