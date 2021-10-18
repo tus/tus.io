@@ -4,7 +4,7 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2021-10-18T13:53:23+02:00</updated>
+ <updated>2021-10-18T14:05:15+02:00</updated>
  <id>https://tus.io</id>
 
  
@@ -34,7 +34,7 @@
 
 &lt;p&gt;Support for Azure Cloud Storage is part of the &lt;a href=&quot;https://github.com/tus/tusd/releases/tag/v1.7.1&quot;&gt;v1.7.1 release&lt;/a&gt;, where the prebuilt binaries can be downloaded. Give this new feature a try and let us know on &lt;a href=&quot;https://github.com/tus/tusd/issues&quot;&gt;GitHub&lt;/a&gt; if you encounter any problems!&lt;/p&gt;
 
-&lt;p&gt;To conclude this blog post, let’s again thank Ole-Martin Bratteng for this amazing contribution!&lt;/p&gt;
+&lt;p&gt;To conclude this blog post, let’s again thank &lt;a href=&quot;https://github.com/omBratteng&quot;&gt;Ole-Martin Bratteng&lt;/a&gt; for this amazing contribution!&lt;/p&gt;
 </content>
  </entry>
  
