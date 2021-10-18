@@ -4,9 +4,39 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2021-09-21T09:45:54+02:00</updated>
+ <updated>2021-10-18T13:53:23+02:00</updated>
  <id>https://tus.io</id>
 
+ 
+ 
+ <entry>
+   <author>
+     <name>Marius Kleidl</name>
+     <email>marius@transloadit.com</email>
+   </author>
+   <title>Uploading files to Azure Storage using tusd</title>
+   <link href="https://tus.io/blog/2021/08/10/tusd-azure-storage.html"/>
+   <updated>2021-08-10T00:00:00+02:00</updated>
+   <id>https://tus.io/blog/2021/08/10/tusd-azure-storage</id>
+   <content type="html">&lt;p&gt;Today we are excited to announce that &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd&lt;/a&gt; is now also able to store uploaded files in the Azure Cloud Storage! Just like all tus servers, tusd’s role is to accept incoming uploads from the tus clients and then relay them to the underlying storage providers. For a long time has tusd already supported storing uploads locally on disk, on AWS S3 and Google’s Cloud Storage. Thanks to an incredible contribution from &lt;a href=&quot;https://github.com/omBratteng&quot;&gt;Ole-Martin Bratteng&lt;/a&gt;, this support has been expanded to also cover the Azure Cloud Storage!&lt;/p&gt;
+
+&lt;h2 id=&quot;on-the-backend&quot;&gt;On the backend&lt;/h2&gt;
+
+&lt;p&gt;The Azure Blob Storage implementation is only supporting the Block Blob. This was a concious choice to make the implementation easier to use, and is the most fitting blob type for tusd. The current service version supported is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2019-12-12&lt;/code&gt;, which allows files up to 190.7 TiB in size (4000 MiB x 50,000 blocks).&lt;/p&gt;
+
+&lt;p&gt;Upon starting tusd with Azure Blob Storage as the selected storage endpoint, it will atempt to connect to a container (also known as a Bucket in S3). If one does not exist, it will be created. You can also specify the access type of the container, which defaults to private, and the default blob access tier type which defaults to the inferred tier from the storage account.&lt;/p&gt;
+
+&lt;p&gt;When tusd receives a chunk of data from the client, it will stage the chunk as a block in the Azure Blob Storage. When the client sends the last chunk of data, tusd will then send commit the block list to the Azure Blob Storage, which in part, creates the file in the Azure Blob Storage.&lt;/p&gt;
+
+&lt;p&gt;We’ve also implemented support for &lt;a href=&quot;https://github.com/Azure/Azurite&quot;&gt;Azurite&lt;/a&gt;, which is a lightweight, self-hosted Azure Blob Storage emulator, this can be enabled by using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-azure-endpoint&lt;/code&gt; flag. This should also work for custom Azure Blob Storage endpoints, although it has not been tested fully.&lt;/p&gt;
+
+&lt;h2 id=&quot;give-it-a-try&quot;&gt;Give it a try&lt;/h2&gt;
+
+&lt;p&gt;Support for Azure Cloud Storage is part of the &lt;a href=&quot;https://github.com/tus/tusd/releases/tag/v1.7.1&quot;&gt;v1.7.1 release&lt;/a&gt;, where the prebuilt binaries can be downloaded. Give this new feature a try and let us know on &lt;a href=&quot;https://github.com/tus/tusd/issues&quot;&gt;GitHub&lt;/a&gt; if you encounter any problems!&lt;/p&gt;
+
+&lt;p&gt;To conclude this blog post, let’s again thank Ole-Martin Bratteng for this amazing contribution!&lt;/p&gt;
+</content>
+ </entry>
  
  
  <entry>
