@@ -21,4 +21,4 @@ We've also implemented support for [Azurite](https://github.com/Azure/Azurite), 
 
 Support for Azure Cloud Storage is part of the [v1.7.1 release](https://github.com/tus/tusd/releases/tag/v1.7.1), where the prebuilt binaries can be downloaded. Give this new feature a try and let us know on [GitHub](https://github.com/tus/tusd/issues) if you encounter any problems!
 
-To conclude this blog post, let's again thank Ole-Martin Bratteng for this amazing contribution!
+To conclude this blog post, let's again thank [Ole-Martin Bratteng](https://github.com/omBratteng) for this amazing contribution!
