@@ -7,7 +7,7 @@ permalink: /demo.html
 
 # {{ page.title }}
 
-This demo is a working and production-ready example for  resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
+This demo is a working and production-ready example for resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
 It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
 
 **⚠️ Please be aware that the uploaded files will be removed from our servers after a few hours, for privacy, and to combat people uploading malicious content.**
@@ -61,3 +61,7 @@ and works with the following browsers:
 
 Using the `X-HTTP-Method-Override` header, it's possible to run tus
 even on platforms that won't let you do `PUT` and `PATCH` requests.
+
+### Source Code
+
+The source code for this demo is available on [GitHub](https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js).

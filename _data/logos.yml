@@ -40,3 +40,6 @@
 - url: 'https://globalctoforum.org/'
   src:  /assets/img/logos/global-cto-forum.png
   name: Global CTO Forum
+- url: 'https://www.ranchcomputing.com'
+  src: 'https://www.ranchcomputing.com/assets/imgs/logo/ranch_blue.png'
+  name: RANCH Computing

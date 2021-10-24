@@ -20,9 +20,6 @@
 - url: https://www.reddit.com/r/programming/comments/3t0rb2/berlinbased_transloadit_wants_to_fix_broken_file/
   src: /assets/img/press/reddit.png
   name: Reddit
-- url: http://t3n.de/news/tus-open-source-upload-berliner-startup-657322
-  src: /assets/img/press/t3n.png
-  name: t3n (German)
 - url: https://transloadit.com/blog/2016/03/tus-in-linux-magazine/
   src: /assets/img/press/linuxmagazine.png
   name: Linux Magazine
