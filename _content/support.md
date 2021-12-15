@@ -22,7 +22,7 @@ Are you as passionate about better file uploading as we are? Join us! We welcome
 
 ## Commercial support
 
-The development of tus is sponsored by [Transloadit](https://transloadit.com/), a cloud service for file uploading, conversion, and processing. tus support on their hosted version is free for all customers, for self-hosting tus (setup, integration, deployment, scaling, and monitoring), commercial support is available upon request: [support@transloadit.com](mailto:support@transloadit.com).
+The development of tus is sponsored by [Transloadit](https://transloadit.com/), a cloud service for file uploading, conversion, and processing. tus support on their hosted version is free for all customers. For self-hosting tus (setup, integration, deployment, scaling, and monitoring), commercial support is available upon request. More details can be found on [their website](https://transloadit.com/open-source/support/).
 
 <!-- Use `make build-community` to fetch latest authors -->
 
