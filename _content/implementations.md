@@ -338,6 +338,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under Apache License 2.0</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/hossyposs/Tus.Net.Client">
+      hossyposs/Tus.Net.Client
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/hossyposs">hossyposs</a></div>
+
+    <div class="description">
+      A lightweight tus <code>v1.0.0</code> client for <strong>.NET5/DotNetCore</strong>.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
 </ul>
 
 <h4>Server</h4>
@@ -571,7 +585,6 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-
 </ul>
 
 <h4>Projects using tus</h4>
