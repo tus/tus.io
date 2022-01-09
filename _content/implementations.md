@@ -557,6 +557,21 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under BSD 2-clause</div>
   </li>
+
+  <li>
+    <a class="title" href="https://github.com/s3rius/rustus">
+      s3rius/rustus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/s3rius">Pavel Kirilin</a></div>
+
+    <div class="description">
+      This project is a tus <code>1.0.0</code> server implementation in <strong>Rust lang</strong> with many useful integrations.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
+  </li>
+
 </ul>
 
 <h4>Projects using tus</h4>
