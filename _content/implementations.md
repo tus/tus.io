@@ -580,7 +580,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/s3rius">Pavel Kirilin</a></div>
 
     <div class="description">
-      This project is a tus <code>1.0.0</code> server implementation in <strong>Rust lang</strong> with many useful integrations.
+      This project is a tus <code>1.0.0</code> server implementation in <strong>Rust</strong> with many useful integrations.
     </div>
 
     <div class="license">Licensed under MIT</div>
@@ -594,7 +594,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/terminusdb">TerminusDB</a></div>
 
     <div class="description">
-      This project includes a tus <code>1.0.0</code> server and client implementation in <strong>Prolong</strong> for swipl.
+      This project includes a tus <code>1.0.0</code> server and client implementation in <strong>Prolog</strong> for swipl.
     </div>
 
     <div class="license">Licensed under Apache License, Version 2.0</div>
