@@ -585,6 +585,20 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
+  
+  <li>
+    <a class="title" href="https://github.com/terminusdb/tus">
+      terminusdb/tus
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/terminusdb">TerminusDB</a></div>
+
+    <div class="description">
+      This project includes a tus <code>1.0.0</code> server and client implementation in <strong>Prolong</strong> for swipl.
+    </div>
+
+    <div class="license">Licensed under Apache License, Version 2.0</div>
+  </li>
 </ul>
 
 <h4>Projects using tus</h4>
