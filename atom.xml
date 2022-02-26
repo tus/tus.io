@@ -4,9 +4,55 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2022-02-26T10:45:05+01:00</updated>
+ <updated>2022-02-26T11:17:00+01:00</updated>
  <id>https://tus.io</id>
 
+ 
+ 
+ <entry>
+   <author>
+     <name>Marius Kleidl</name>
+     <email>marius@transloadit.com</email>
+   </author>
+   <title>Towards tus 2.0</title>
+   <link href="https://tus.io/blog/2022/02/24/tus-v2.html"/>
+   <updated>2022-02-24T00:00:00+01:00</updated>
+   <id>https://tus.io/blog/2022/02/24/tus-v2</id>
+   <content type="html">&lt;p&gt;Seven years ago, in November 2015, &lt;a href=&quot;blog/2015/11/16/tus.1.0.html&quot;&gt;we announced the release of tus 1.0&lt;/a&gt;, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about &lt;strong&gt;tus 2.0&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;tus 2.0 will keep the same principles and approaches for how uploads are performed. This ensures that upgrading the uploading infrastructure from tus 1.0 to 2.0 is as seamless as possible for the end-users as well as for the developers. The most important changes will happen to the structure of the protocol:&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;specification of tus 1.0&lt;/a&gt; consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. All of these specifications have been hosted on our website &lt;a href=&quot;/&quot;&gt;tus.io&lt;/a&gt; and we have been pleased to see a &lt;a href=&quot;/implementations.html&quot;&gt;wide variety of implementations&lt;/a&gt;, in part because it is based on open standards like HTTP.&lt;/p&gt;
+
+&lt;p&gt;Looking to the future, we’d like to further encourage native implementations of the uploading protocol in browsers and mobile platform SDKs, as well making resumable uploads accessible to more people. To that end, we would like &lt;strong&gt;tus 2.0&lt;/strong&gt;, to be an open standard. In considering how to approach standardization, we believe that turning the core uploading protocol into a clear and concise standard within the &lt;a href=&quot;https://www.ietf.org/&quot;&gt;IETF&lt;/a&gt; is most appropriate. We have published a &lt;a href=&quot;https://datatracker.ietf.org/doc/draft-tus-httpbis-resumable-uploads-protocol/&quot;&gt;first revision of an Internet-Draft&lt;/a&gt; and are engaging with the process of formal adoption into a suitable venue at the IETF.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-will-change-between-tus-10-and-20&quot;&gt;What will change between tus 1.0 and 2.0?&lt;/h2&gt;
+
+&lt;p&gt;tus 2.0 will keep the same uploading approach and most functionality. The most important changes will happen to the structure of the protocol:&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;specification of tus 1.0&lt;/a&gt; consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. Our major goal with tus 2.0 is to turn the core uploading protocol into an &lt;a href=&quot;https://www.ietf.org/&quot;&gt;IETF&lt;/a&gt; Internet Standard. The tus protocol will still be open and freely accessible and usable, but with a more formal standard.&lt;/p&gt;
+
+&lt;p&gt;Features that currently exist as optional extensions in tus 1.0 might not be part of the standardized upload protocol. These features will also be included in tus 2.0 as optional extensions, that live outside the standardized upload protocol. This helps ensure that the standardized upload protocol is concise and focused, while also continuing to support additional use cases.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-current-status-of-tus-20&quot;&gt;What is the current status of tus 2.0?&lt;/h2&gt;
+
+&lt;p&gt;As of the time of writing, we are actively working on the core uploading protocol, which will seek adoption and standardization of in the IETF. You can see the current draft at &lt;a href=&quot;https://tus.github.io/tus-v2/draft-tus-httpbis-resumable-uploads-protocol.html&quot;&gt;tus.github.io/tus-v2&lt;/a&gt; and join the discussion in our GitHub repository at &lt;a href=&quot;https://github.com/tus/tus-v2&quot;&gt;github.com/tus/tus-v2&lt;/a&gt;. We have published a &lt;a href=&quot;https://datatracker.ietf.org/doc/draft-tus-httpbis-resumable-uploads-protocol/&quot;&gt;first revision of an Internet-Draft&lt;/a&gt; and are engaging with the process of formal adoption into a suitable venue at the IETF. Work on additional tus 2.0 extensions, that will cover the content from tus 1.0 that will not be included in the standardized upload protocol, has not been started yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-will-happen-to-the-client-and-server-implementations&quot;&gt;What will happen to the client and server implementations?&lt;/h2&gt;
+
+&lt;p&gt;For all of our &lt;a href=&quot;/implementations.html&quot;&gt;official implementations&lt;/a&gt;, we are going to add support for tus 2.0 while also keeping support for tus 1.0. This ensures a seamless upgrade to tus 2.0 while also supporting existing users of tus 1.0.&lt;/p&gt;
+
+&lt;p&gt;So far, &lt;a href=&quot;https://github.com/tus/tusd/pull/568&quot;&gt;tusd&lt;/a&gt; and &lt;a href=&quot;https://github.com/tusdotnet/tusdotnet/tree/POC/tus2&quot;&gt;tusdotnet&lt;/a&gt; contain experimental support for tus 2.0. These might change however as the tus 2.0 specification matures.&lt;/p&gt;
+
+&lt;h2 id=&quot;can-i-contribute-to-tus-20&quot;&gt;Can I contribute to tus 2.0?&lt;/h2&gt;
+
+&lt;p&gt;Yes, of course! Many details of tus 2.0 are not settled in stone yet. You can always check out the current state and join the discussion in our &lt;a href=&quot;https://github.com/tus/tus-v2&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you-to-all-contributors&quot;&gt;Thank you to all contributors&lt;/h2&gt;
+
+&lt;p&gt;A grateful “Thank You” goes especially to &lt;a href=&quot;https://github.com/guoye-zhang&quot;&gt;Guoye Zhang&lt;/a&gt;, &lt;a href=&quot;https://github.com/jitenmehta&quot;&gt;Jiten Mehta&lt;/a&gt;, &lt;a href=&quot;https://github.com/justinruggles&quot;&gt;Justin Ruggles&lt;/a&gt;, &lt;a href=&quot;https://github.com/LPardue&quot;&gt;Lucas Pardue&lt;/a&gt;, and &lt;a href=&quot;https://github.com/smatsson&quot;&gt;Stefan Matsson&lt;/a&gt;. All of them have dedicated their time and efforts into working on tus 2.0. Thank you all!&lt;/p&gt;
+</content>
+ </entry>
  
  
  <entry>

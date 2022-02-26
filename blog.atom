@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://tus.io/blog.atom" rel="self" type="application/atom+xml" /><link href="https://tus.io/" rel="alternate" type="text/html" /><updated>2022-02-26T10:45:05+01:00</updated><id>https://tus.io/blog.atom</id><entry><title type="html">Uploading files to Azure Storage using tusd</title><link href="https://tus.io/blog/2021/08/10/tusd-azure-storage.html" rel="alternate" type="text/html" title="Uploading files to Azure Storage using tusd" /><published>2021-08-10T00:00:00+02:00</published><updated>2021-08-10T00:00:00+02:00</updated><id>https://tus.io/blog/2021/08/10/tusd-azure-storage</id><content type="html" xml:base="https://tus.io/blog/2021/08/10/tusd-azure-storage.html">&lt;p&gt;Today we are excited to announce that &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd&lt;/a&gt; is now also able to store uploaded files in the Azure Cloud Storage! Just like all tus servers, tusd’s role is to accept incoming uploads from the tus clients and then relay them to the underlying storage providers. For a long time has tusd already supported storing uploads locally on disk, on AWS S3 and Google’s Cloud Storage. Thanks to an incredible contribution from &lt;a href=&quot;https://github.com/omBratteng&quot;&gt;Ole-Martin Bratteng&lt;/a&gt;, this support has been expanded to also cover the Azure Cloud Storage!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://tus.io/blog.atom" rel="self" type="application/atom+xml" /><link href="https://tus.io/" rel="alternate" type="text/html" /><updated>2022-02-26T11:17:00+01:00</updated><id>https://tus.io/blog.atom</id><entry><title type="html">Towards tus 2.0</title><link href="https://tus.io/blog/2022/02/24/tus-v2.html" rel="alternate" type="text/html" title="Towards tus 2.0" /><published>2022-02-24T00:00:00+01:00</published><updated>2022-02-24T00:00:00+01:00</updated><id>https://tus.io/blog/2022/02/24/tus-v2</id><content type="html" xml:base="https://tus.io/blog/2022/02/24/tus-v2.html">&lt;p&gt;Seven years ago, in November 2015, &lt;a href=&quot;blog/2015/11/16/tus.1.0.html&quot;&gt;we announced the release of tus 1.0&lt;/a&gt;, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about &lt;strong&gt;tus 2.0&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;tus 2.0 will keep the same principles and approaches for how uploads are performed. This ensures that upgrading the uploading infrastructure from tus 1.0 to 2.0 is as seamless as possible for the end-users as well as for the developers. The most important changes will happen to the structure of the protocol:&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;specification of tus 1.0&lt;/a&gt; consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. All of these specifications have been hosted on our website &lt;a href=&quot;/&quot;&gt;tus.io&lt;/a&gt; and we have been pleased to see a &lt;a href=&quot;/implementations.html&quot;&gt;wide variety of implementations&lt;/a&gt;, in part because it is based on open standards like HTTP.&lt;/p&gt;
+
+&lt;p&gt;Looking to the future, we’d like to further encourage native implementations of the uploading protocol in browsers and mobile platform SDKs, as well making resumable uploads accessible to more people. To that end, we would like &lt;strong&gt;tus 2.0&lt;/strong&gt;, to be an open standard. In considering how to approach standardization, we believe that turning the core uploading protocol into a clear and concise standard within the &lt;a href=&quot;https://www.ietf.org/&quot;&gt;IETF&lt;/a&gt; is most appropriate. We have published a &lt;a href=&quot;https://datatracker.ietf.org/doc/draft-tus-httpbis-resumable-uploads-protocol/&quot;&gt;first revision of an Internet-Draft&lt;/a&gt; and are engaging with the process of formal adoption into a suitable venue at the IETF.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-will-change-between-tus-10-and-20&quot;&gt;What will change between tus 1.0 and 2.0?&lt;/h2&gt;
+
+&lt;p&gt;tus 2.0 will keep the same uploading approach and most functionality. The most important changes will happen to the structure of the protocol:&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;specification of tus 1.0&lt;/a&gt; consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. Our major goal with tus 2.0 is to turn the core uploading protocol into an &lt;a href=&quot;https://www.ietf.org/&quot;&gt;IETF&lt;/a&gt; Internet Standard. The tus protocol will still be open and freely accessible and usable, but with a more formal standard.&lt;/p&gt;
+
+&lt;p&gt;Features that currently exist as optional extensions in tus 1.0 might not be part of the standardized upload protocol. These features will also be included in tus 2.0 as optional extensions, that live outside the standardized upload protocol. This helps ensure that the standardized upload protocol is concise and focused, while also continuing to support additional use cases.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-current-status-of-tus-20&quot;&gt;What is the current status of tus 2.0?&lt;/h2&gt;
+
+&lt;p&gt;As of the time of writing, we are actively working on the core uploading protocol, which will seek adoption and standardization of in the IETF. You can see the current draft at &lt;a href=&quot;https://tus.github.io/tus-v2/draft-tus-httpbis-resumable-uploads-protocol.html&quot;&gt;tus.github.io/tus-v2&lt;/a&gt; and join the discussion in our GitHub repository at &lt;a href=&quot;https://github.com/tus/tus-v2&quot;&gt;github.com/tus/tus-v2&lt;/a&gt;. We have published a &lt;a href=&quot;https://datatracker.ietf.org/doc/draft-tus-httpbis-resumable-uploads-protocol/&quot;&gt;first revision of an Internet-Draft&lt;/a&gt; and are engaging with the process of formal adoption into a suitable venue at the IETF. Work on additional tus 2.0 extensions, that will cover the content from tus 1.0 that will not be included in the standardized upload protocol, has not been started yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-will-happen-to-the-client-and-server-implementations&quot;&gt;What will happen to the client and server implementations?&lt;/h2&gt;
+
+&lt;p&gt;For all of our &lt;a href=&quot;/implementations.html&quot;&gt;official implementations&lt;/a&gt;, we are going to add support for tus 2.0 while also keeping support for tus 1.0. This ensures a seamless upgrade to tus 2.0 while also supporting existing users of tus 1.0.&lt;/p&gt;
+
+&lt;p&gt;So far, &lt;a href=&quot;https://github.com/tus/tusd/pull/568&quot;&gt;tusd&lt;/a&gt; and &lt;a href=&quot;https://github.com/tusdotnet/tusdotnet/tree/POC/tus2&quot;&gt;tusdotnet&lt;/a&gt; contain experimental support for tus 2.0. These might change however as the tus 2.0 specification matures.&lt;/p&gt;
+
+&lt;h2 id=&quot;can-i-contribute-to-tus-20&quot;&gt;Can I contribute to tus 2.0?&lt;/h2&gt;
+
+&lt;p&gt;Yes, of course! Many details of tus 2.0 are not settled in stone yet. You can always check out the current state and join the discussion in our &lt;a href=&quot;https://github.com/tus/tus-v2&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you-to-all-contributors&quot;&gt;Thank you to all contributors&lt;/h2&gt;
+
+&lt;p&gt;A grateful “Thank You” goes especially to &lt;a href=&quot;https://github.com/guoye-zhang&quot;&gt;Guoye Zhang&lt;/a&gt;, &lt;a href=&quot;https://github.com/jitenmehta&quot;&gt;Jiten Mehta&lt;/a&gt;, &lt;a href=&quot;https://github.com/justinruggles&quot;&gt;Justin Ruggles&lt;/a&gt;, &lt;a href=&quot;https://github.com/LPardue&quot;&gt;Lucas Pardue&lt;/a&gt;, and &lt;a href=&quot;https://github.com/smatsson&quot;&gt;Stefan Matsson&lt;/a&gt;. All of them have dedicated their time and efforts into working on tus 2.0. Thank you all!&lt;/p&gt;</content><author><name>Marius Kleidl</name><email>marius@transloadit.com</email></author><summary type="html">Seven years ago, in November 2015, we announced the release of tus 1.0, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about tus 2.0. tus 2.0 will keep the same principles and approaches for how uploads are performed. This ensures that upgrading the uploading infrastructure from tus 1.0 to 2.0 is as seamless as possible for the end-users as well as for the developers. The most important changes will happen to the structure of the protocol: The specification of tus 1.0 consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. All of these specifications have been hosted on our website tus.io and we have been pleased to see a wide variety of implementations, in part because it is based on open standards like HTTP. Looking to the future, we’d like to further encourage native implementations of the uploading protocol in browsers and mobile platform SDKs, as well making resumable uploads accessible to more people. To that end, we would like tus 2.0, to be an open standard. In considering how to approach standardization, we believe that turning the core uploading protocol into a clear and concise standard within the IETF is most appropriate. We have published a first revision of an Internet-Draft and are engaging with the process of formal adoption into a suitable venue at the IETF. What will change between tus 1.0 and 2.0? tus 2.0 will keep the same uploading approach and most functionality. The most important changes will happen to the structure of the protocol: The specification of tus 1.0 consists of the core uploading protocol and multiple optional extensions, such as the creation extension, termination extension, and checksum extension. Our major goal with tus 2.0 is to turn the core uploading protocol into an IETF Internet Standard. The tus protocol will still be open and freely accessible and usable, but with a more formal standard. Features that currently exist as optional extensions in tus 1.0 might not be part of the standardized upload protocol. These features will also be included in tus 2.0 as optional extensions, that live outside the standardized upload protocol. This helps ensure that the standardized upload protocol is concise and focused, while also continuing to support additional use cases. What is the current status of tus 2.0? As of the time of writing, we are actively working on the core uploading protocol, which will seek adoption and standardization of in the IETF. You can see the current draft at tus.github.io/tus-v2 and join the discussion in our GitHub repository at github.com/tus/tus-v2. We have published a first revision of an Internet-Draft and are engaging with the process of formal adoption into a suitable venue at the IETF. Work on additional tus 2.0 extensions, that will cover the content from tus 1.0 that will not be included in the standardized upload protocol, has not been started yet. What will happen to the client and server implementations? For all of our official implementations, we are going to add support for tus 2.0 while also keeping support for tus 1.0. This ensures a seamless upgrade to tus 2.0 while also supporting existing users of tus 1.0. So far, tusd and tusdotnet contain experimental support for tus 2.0. These might change however as the tus 2.0 specification matures. Can I contribute to tus 2.0? Yes, of course! Many details of tus 2.0 are not settled in stone yet. You can always check out the current state and join the discussion in our GitHub repository. Thank you to all contributors A grateful “Thank You” goes especially to Guoye Zhang, Jiten Mehta, Justin Ruggles, Lucas Pardue, and Stefan Matsson. All of them have dedicated their time and efforts into working on tus 2.0. Thank you all!</summary></entry><entry><title type="html">Uploading files to Azure Storage using tusd</title><link href="https://tus.io/blog/2021/08/10/tusd-azure-storage.html" rel="alternate" type="text/html" title="Uploading files to Azure Storage using tusd" /><published>2021-08-10T00:00:00+02:00</published><updated>2021-08-10T00:00:00+02:00</updated><id>https://tus.io/blog/2021/08/10/tusd-azure-storage</id><content type="html" xml:base="https://tus.io/blog/2021/08/10/tusd-azure-storage.html">&lt;p&gt;Today we are excited to announce that &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd&lt;/a&gt; is now also able to store uploaded files in the Azure Cloud Storage! Just like all tus servers, tusd’s role is to accept incoming uploads from the tus clients and then relay them to the underlying storage providers. For a long time has tusd already supported storing uploads locally on disk, on AWS S3 and Google’s Cloud Storage. Thanks to an incredible contribution from &lt;a href=&quot;https://github.com/omBratteng&quot;&gt;Ole-Martin Bratteng&lt;/a&gt;, this support has been expanded to also cover the Azure Cloud Storage!&lt;/p&gt;
 
 &lt;h2 id=&quot;on-the-backend&quot;&gt;On the backend&lt;/h2&gt;
 
@@ -374,111 +406,4 @@ file uploads at zero cost.&lt;/p&gt;
 &lt;p&gt;It has taken us the better part of three years and we have had to overcome many obstacles along the way. It is in great part thanks to &lt;a href=&quot;/about.html&quot;&gt;these people&lt;/a&gt; that tus is able to push out a stable release today. A special 
 word of thanks goes out to the talented people that have been instrumental in getting us to where we are today: &lt;a href=&quot;https://felixge.de&quot;&gt;Felix&lt;/a&gt;, &lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren&lt;/a&gt; and &lt;a href=&quot;https://transloadit.com/about#marius&quot;&gt;Marius&lt;/a&gt;. We couldn’t have done tus without you!&lt;/p&gt;
 
-&lt;p&gt;Discuss on &lt;a href=&quot;https://news.ycombinator.com/item?id=10574364&quot;&gt;Hacker News&lt;/a&gt;&lt;/p&gt;</content><author><name>Kevin van Zonneveld</name><email>kevin@transloadit.com</email></author><summary type="html">As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: ‘upload interrupted’.</summary></entry><entry><title type="html">Project Status</title><link href="https://tus.io/blog/2015/09/19/project-status.html" rel="alternate" type="text/html" title="Project Status" /><published>2015-09-19T00:00:00+02:00</published><updated>2015-09-19T00:00:00+02:00</updated><id>https://tus.io/blog/2015/09/19/project-status</id><content type="html" xml:base="https://tus.io/blog/2015/09/19/project-status.html">&lt;p&gt;Here’s a quick update on the status of the project.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;10&quot;&gt;1.0&lt;/h3&gt;
-
-&lt;p&gt;We’re finalizing 1.0. Our project
-lead &lt;a href=&quot;https://github.com/Acconut&quot;&gt;Marius Kleidl&lt;/a&gt; has been taking care
-of integrating a large batch of improvements
-that were made by Vimeo’s &lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren Venkataraman&lt;/a&gt; and this team.&lt;/p&gt;
-
-&lt;p&gt;Things still left to do:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/issues/59&quot;&gt;Write a Developers Guide&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Gather a &lt;em&gt;final round of feedback&lt;/em&gt; on &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/pull/57&quot;&gt;the 1.0 proposal&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We’re waiting for a &lt;em&gt;final round of feedback&lt;/em&gt; to make sure every last bit
-is taken care of before cementing everything into our first stable release.&lt;/p&gt;
-
-&lt;h3 id=&quot;exposure--swag&quot;&gt;Exposure &amp;amp; Swag&lt;/h3&gt;
-
-&lt;p&gt;To make sure every developer and interested party had their change to chime in,
-we’re trying to get some extra exposure for the project. We’ll be covered
-in the upcoming &lt;a href=&quot;https://changelog.com/&quot;&gt;Changelog&lt;/a&gt; and Transloadit
-is sponsoring conferences to hand out swag and raise tus awareness.&lt;/p&gt;
-
-&lt;p&gt;Swag is also for sale at the new &lt;a href=&quot;http://shop.tus.io/collections/all&quot;&gt;shop.tus.io&lt;/a&gt;. The shop
-currently only features two, pretty expensive, items and we’re working with &lt;a href=&quot;https://www.theprintful.com/&quot;&gt;Printful&lt;/a&gt; to improve on that.
-Know that any profit flows back to the project and our books are open to
-anyone who wants to verify.&lt;/p&gt;
-
-&lt;h3 id=&quot;implementations&quot;&gt;Implementations&lt;/h3&gt;
-
-&lt;p&gt;While 1.0 could potentially still be changed, we don’t expect major changes
-so our official implementations have already been made 1.0 compatible.&lt;/p&gt;
-
-&lt;p&gt;All official projects have been updated to the 1.0 branch already
-for which a big thank you goes out to &lt;a href=&quot;https://github.com/MMasterson&quot;&gt;Mark R. Masterson&lt;/a&gt;
-and Marius who upgraded all of our implementations.&lt;/p&gt;
-
-&lt;p&gt;Marius also added Android and
-standalone Java implementations as official tus projects, and replaced our jQuery
-implementation with a standalone &lt;a href=&quot;https://github.com/tus/tus-js-client&quot;&gt;tus-js-client&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you’re interested in building &amp;amp; maintaining new 1.0 implementations, becoming
-a member of tus core, leave a note here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/issues/67&quot;&gt;More 1.0 implementations&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;design&quot;&gt;Design&lt;/h3&gt;
-
-&lt;p&gt;The whole site has been given a new layout by &lt;a href=&quot;https://github.com/fahad19&quot;&gt;Fahad Ibnay Heylaal&lt;/a&gt; and
-a completely new logo was designed by &lt;a href=&quot;https://twitter.com/milan_vuckovic&quot;&gt;Milan Vuckovic&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We’re currently working on improving other:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus.io/issues&quot;&gt;Design issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
-
-&lt;p&gt;Since the first publication of the tus protocol, our website featured a
-&lt;a href=&quot;/demo.html&quot;&gt;demo page&lt;/a&gt; allowing users to see a tus in action, interactively.
-In the past this service had some issues with reliability and browser-support.
-Because of this past, we updated the entire stack used by the demo.&lt;/p&gt;
-
-&lt;p&gt;It now uses our newly created &lt;a href=&quot;https://github.com/tus/tus-js-client&quot;&gt;tus-js-client&lt;/a&gt;
-and we’ve updated the demo page to feature all the browsers &amp;amp; platforms the
-client has been tested to work on.
-The demo page uploads files to a &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd 1.0&lt;/a&gt;
-server written in Go, that we deploy via the newly created
-&lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt; repository.&lt;/p&gt;
-
-&lt;h3 id=&quot;infra&quot;&gt;Infra&lt;/h3&gt;
-
-&lt;p&gt;Still a work in progress, &lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt;
-uses a powerful combination of &lt;a href=&quot;http://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; and
-&lt;a href=&quot;https://terraform.io/&quot;&gt;Terraform&lt;/a&gt; to
-spin up fully functioning tus servers with a single command. Every bit
-(except for the AWS &amp;amp; SSH keys) has been added to the repository
-and is publicly available.&lt;/p&gt;
-
-&lt;p&gt;Please each out if you’d like to help us:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/infra-tusd/issues/1&quot;&gt;Add local Vagrant support for testing the Ansible scripts&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;adoption&quot;&gt;Adoption&lt;/h3&gt;
-
-&lt;p&gt;Finally, a few big companies have taken an interest
-in tus. tus will always remain open source and community owned, but
-we’re excited that we’re on the path to realizing our mission to
-change how the world does file uploading.&lt;/p&gt;
-
-&lt;p&gt;We’ll have more announcements on this soon!&lt;/p&gt;
-
-&lt;p&gt;If you (plan to) use tus in production, please comment on this issue and get your
-company listed on the tus.io website:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus.io/issues/28&quot;&gt;Companies that (plan to) use tus&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Kevin van Zonneveld</name><email>kevin@transloadit.com</email></author><summary type="html">Here’s a quick update on the status of the project.</summary></entry></feed>
+&lt;p&gt;Discuss on &lt;a href=&quot;https://news.ycombinator.com/item?id=10574364&quot;&gt;Hacker News&lt;/a&gt;&lt;/p&gt;</content><author><name>Kevin van Zonneveld</name><email>kevin@transloadit.com</email></author><summary type="html">As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: ‘upload interrupted’.</summary></entry></feed>
