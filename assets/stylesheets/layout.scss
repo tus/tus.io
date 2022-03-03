@@ -254,9 +254,10 @@ select {
 
 .TransloaditBar {
   display: block;
-  background: #141829;
+  // background: #141829;
+  background: #0165d6;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   
   .container {
     padding: 5px 10px 8px;
@@ -273,7 +274,8 @@ select {
   }
 
   &-link {
-    color: #fff;
+    // color: #fff;
+    color: #FFD700;
     font-weight: 700;
 
     &:hover {
