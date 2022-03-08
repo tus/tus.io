@@ -114,7 +114,7 @@ That being said, custom headers also allowed us to greatly simplify the client a
 
 ## Why are you not using the "X-" prefix for your headers?
 
-The "X-" prefix for headers has been deprecated, see [RFC 6648](http://tools.ietf.org/html/rfc6648).
+The "X-" prefix for headers has been deprecated, see [RFC 6648](https://datatracker.ietf.org/doc/html/rfc6648).
 
 ## What does "tus" even mean?
 
