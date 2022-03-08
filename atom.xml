@@ -4,7 +4,7 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2022-03-03T07:54:47+01:00</updated>
+ <updated>2022-03-08T17:02:50+01:00</updated>
  <id>https://tus.io</id>
 
  
@@ -18,7 +18,7 @@
    <link href="https://tus.io/blog/2022/02/24/tus-v2.html"/>
    <updated>2022-02-24T00:00:00+01:00</updated>
    <id>https://tus.io/blog/2022/02/24/tus-v2</id>
-   <content type="html">&lt;p&gt;Seven years ago, in November 2015, &lt;a href=&quot;blog/2015/11/16/tus.1.0.html&quot;&gt;we announced the release of tus 1.0&lt;/a&gt;, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about &lt;strong&gt;tus 2.0&lt;/strong&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Seven years ago, in November 2015, &lt;a href=&quot;/blog/2015/11/16/tus.1.0.html&quot;&gt;we announced the release of tus 1.0&lt;/a&gt;, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about &lt;strong&gt;tus 2.0&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;tus 2.0 will keep the same principles and approaches for how uploads are performed. This ensures that upgrading the uploading infrastructure from tus 1.0 to 2.0 is as seamless as possible for the end-users as well as for the developers. The most important changes will happen to the structure of the protocol:&lt;/p&gt;
 
@@ -594,8 +594,8 @@ we’re trying to get some extra exposure for the project. We’ll be covered
 in the upcoming &lt;a href=&quot;https://changelog.com/&quot;&gt;Changelog&lt;/a&gt; and Transloadit
 is sponsoring conferences to hand out swag and raise tus awareness.&lt;/p&gt;
 
-&lt;p&gt;Swag is also for sale at the new &lt;a href=&quot;http://shop.tus.io/collections/all&quot;&gt;shop.tus.io&lt;/a&gt;. The shop
-currently only features two, pretty expensive, items and we’re working with &lt;a href=&quot;https://www.theprintful.com/&quot;&gt;Printful&lt;/a&gt; to improve on that.
+&lt;p&gt;Swag is also for sale at the new &lt;a href=&quot;https://shop.transloadit.com/&quot;&gt;Transloadit shop&lt;/a&gt;. The shop
+currently features a variety of Transloadit, Uppy and Tus products and we’re working with &lt;a href=&quot;https://www.theprintful.com/&quot;&gt;Printful&lt;/a&gt; to improve on that.
 Know that any profit flows back to the project and our books are open to
 anyone who wants to verify.&lt;/p&gt;
 
@@ -642,21 +642,21 @@ and we’ve updated the demo page to feature all the browsers &amp;amp; platform
 client has been tested to work on.
 The demo page uploads files to a &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd 1.0&lt;/a&gt;
 server written in Go, that we deploy via the newly created
-&lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt; repository.&lt;/p&gt;
+infra-tusd repository.&lt;/p&gt;
 
 &lt;h3 id=&quot;infra&quot;&gt;Infra&lt;/h3&gt;
 
-&lt;p&gt;Still a work in progress, &lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt;
+&lt;p&gt;Still a work in progress, infra-tusd
 uses a powerful combination of &lt;a href=&quot;http://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; and
 &lt;a href=&quot;https://terraform.io/&quot;&gt;Terraform&lt;/a&gt; to
 spin up fully functioning tus servers with a single command. Every bit
 (except for the AWS &amp;amp; SSH keys) has been added to the repository
 and is publicly available.&lt;/p&gt;
 
-&lt;p&gt;Please each out if you’d like to help us:&lt;/p&gt;
+&lt;p&gt;Please reach out if you’d like to help us:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/infra-tusd/issues/1&quot;&gt;Add local Vagrant support for testing the Ansible scripts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Add local Vagrant support for testing the Ansible scripts&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;adoption&quot;&gt;Adoption&lt;/h3&gt;
