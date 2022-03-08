@@ -32,8 +32,8 @@ we're trying to get some extra exposure for the project. We'll be covered
 in the upcoming [Changelog](https://changelog.com/) and Transloadit
 is sponsoring conferences to hand out swag and raise tus awareness.
 
-Swag is also for sale at the new [shop.tus.io](http://shop.tus.io/collections/all). The shop
-currently only features two, pretty expensive, items and we're working with [Printful](https://www.theprintful.com/) to improve on that.
+Swag is also for sale at the new [Transloadit shop](https://shop.transloadit.com/). The shop
+currently features a variety of Transloadit, Uppy and Tus products and we're working with [Printful](https://www.theprintful.com/) to improve on that.
 Know that any profit flows back to the project and our books are open to
 anyone who wants to verify.
 
@@ -76,20 +76,20 @@ and we've updated the demo page to feature all the browsers & platforms the
 client has been tested to work on.
 The demo page uploads files to a [tusd 1.0](https://github.com/tus/tusd)
 server written in Go, that we deploy via the newly created
-[infra-tusd](https://github.com/tus/infra-tusd) repository.
+infra-tusd repository.
 
 ### Infra
 
-Still a work in progress, [infra-tusd](https://github.com/tus/infra-tusd)
+Still a work in progress, infra-tusd
 uses a powerful combination of [Ansible](http://www.ansible.com/) and
 [Terraform](https://terraform.io/) to
 spin up fully functioning tus servers with a single command. Every bit
 (except for the AWS & SSH keys) has been added to the repository
 and is publicly available.
 
-Please each out if you'd like to help us:
+Please reach out if you'd like to help us:
 
-- [Add local Vagrant support for testing the Ansible scripts](https://github.com/tus/infra-tusd/issues/1)
+- Add local Vagrant support for testing the Ansible scripts
 
 ### Adoption
 
