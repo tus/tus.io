@@ -12,7 +12,8 @@
     "jQuery": true
   },
   "rules": {
-    "no-multi-spaces": 0,
+    "no-multi-spaces": ["off"],
+    "node/no-path-concat": ["off"],
     "comma-dangle": [
       "error",
       "always-multiline"
