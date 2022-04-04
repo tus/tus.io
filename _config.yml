@@ -5,14 +5,21 @@ strict_front_matter: true
 encoding: UTF-8
 timezone: Europe/Amsterdam
 
+markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-  enable_coderay: false
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 2..6
+  transliterated_header_ids: true
+  toc_levels: 1..2
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  syntax_highlighter: nil
+  # syntax_highlighter: rouge
+  gfm_emojis: true
+  gfm_emoji_opts:
+    asset_path: "https://assets.transloadit.com/assets/images/emoji"
 
 collections:
   content:
@@ -32,10 +39,10 @@ rss_feed: /atom.xml
 url: https://tus.io
 
 plugins:
-  - jemoji
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
 
 emoji:
   src: "/assets/img"

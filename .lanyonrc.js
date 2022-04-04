@@ -3,7 +3,7 @@ const _ = require('lodash')
 
 module.exports.overrideRuntime = function ({ runtime, toolkit }) {
   if (!runtime.isDev) {
-    runtime['prebuild:content'] = 'npm run inject'
+    runtime['prebuild:content'] = 'yarn inject'
   }
 
   return runtime

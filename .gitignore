@@ -1,5 +1,14 @@
-_versions/*.md
+_jekyll/.ruby-version
+_jekyll/bin/*
+_jekyll/Gemfile.hash
+_jekyll/Gemfile.lock
+_jekyll/share/*
+_jekyll/src
+_jekyll/tmp/
+_jekyll/vendor/*
+_jekyll/wget-log
 _site
+_versions/*.md
 .DS_Store
 .jekyll-cache/
 .jekyll-metadata

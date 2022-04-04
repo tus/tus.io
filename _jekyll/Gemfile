@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+
+# https://github.com/jekyll/jekyll/compare/7b7a286b4a5a06d651e53836cc598455b27d1b95...master
+gem "jekyll", github: "jekyll/jekyll", ref: "7b7a286b4a5a06d651e53836cc598455b27d1b95"
+gem "kramdown-parser-gfm", github: "kramdown/parser-gfm", ref: "d3c0ae0745fbe0a994c2e283b3360e48570ec135"
+gem "jekyll-toc", "0.17.1"
+gem "stringex", "2.8.5"
+gem "liquid-c", "4.0.0"
+gem "ffi", "1.15.4"
+
+# Do not use jekyll_plugins group,
+# so we can dynamically disable plugins in lanyonrc.js
+gem "jekyll-feed", "0.16.0"
+gem "jekyll-redirect-from", "0.16.0"
+gem "jekyll-sitemap", "1.4.0"
+
+# Needed for rendering emojis
+gem "gemoji", "3.0.1"
