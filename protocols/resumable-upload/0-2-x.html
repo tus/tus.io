@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/assets/build/vendors~app.7b5ef8790937472c1a8f.93659b28b0a28ca6ceea.chunk.css" rel="stylesheet"><link href="/assets/build/app.3dc1af8eebe2a036c4e7.css" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
 
     <!-- Twitter follow button script -->
@@ -172,45 +172,9 @@
   <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a></li>
   <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
   <li><a href="#notation" id="markdown-toc-notation">Notation</a></li>
-  <li><a href="#core-protocol" id="markdown-toc-core-protocol">Core Protocol</a>    <ul>
-      <li><a href="#example" id="markdown-toc-example">Example</a></li>
-      <li><a href="#headers" id="markdown-toc-headers">Headers</a>        <ul>
-          <li><a href="#offset" id="markdown-toc-offset">Offset</a></li>
-        </ul>
-      </li>
-      <li><a href="#requests" id="markdown-toc-requests">Requests</a>        <ul>
-          <li><a href="#head" id="markdown-toc-head">HEAD</a></li>
-          <li><a href="#patch" id="markdown-toc-patch">PATCH</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#protocol-extensions" id="markdown-toc-protocol-extensions">Protocol Extensions</a>    <ul>
-      <li><a href="#file-creation" id="markdown-toc-file-creation">File Creation</a>        <ul>
-          <li><a href="#example-1" id="markdown-toc-example-1">Example</a></li>
-          <li><a href="#headers-1" id="markdown-toc-headers-1">Headers</a>            <ul>
-              <li><a href="#final-length" id="markdown-toc-final-length">Final-Length</a></li>
-            </ul>
-          </li>
-          <li><a href="#requests-1" id="markdown-toc-requests-1">Requests</a>            <ul>
-              <li><a href="#post" id="markdown-toc-post">POST</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#checksums" id="markdown-toc-checksums">Checksums</a></li>
-      <li><a href="#parallel-chunks" id="markdown-toc-parallel-chunks">Parallel Chunks</a></li>
-      <li><a href="#metadata" id="markdown-toc-metadata">Metadata</a></li>
-      <li><a href="#streams" id="markdown-toc-streams">Streams</a></li>
-    </ul>
-  </li>
-  <li><a href="#faq" id="markdown-toc-faq">FAQ</a>    <ul>
-      <li><a href="#why-is-the-protocol-using-custom-headers" id="markdown-toc-why-is-the-protocol-using-custom-headers">Why is the protocol using custom headers?</a></li>
-      <li><a href="#why-are-you-not-using-the-x--prefix-for-your-headers" id="markdown-toc-why-are-you-not-using-the-x--prefix-for-your-headers">Why are you not using the “X-“ prefix for your headers?</a></li>
-      <li><a href="#how-can-i-deal-with-bad-http-proxies" id="markdown-toc-how-can-i-deal-with-bad-http-proxies">How can I deal with bad http proxies?</a></li>
-      <li><a href="#how-are-pauseresume-handled-when-should-i-delete-partial-uploads" id="markdown-toc-how-are-pauseresume-handled-when-should-i-delete-partial-uploads">How are pause/resume handled? When should I delete partial uploads?</a></li>
-    </ul>
-  </li>
+  <li><a href="#core-protocol" id="markdown-toc-core-protocol">Core Protocol</a></li>
+  <li><a href="#protocol-extensions" id="markdown-toc-protocol-extensions">Protocol Extensions</a></li>
+  <li><a href="#faq" id="markdown-toc-faq">FAQ</a></li>
   <li><a href="#license" id="markdown-toc-license">License</a></li>
 </ul>
 
@@ -221,8 +185,8 @@
 <strong>Authors:</strong> <a href="https://twitter.com/felixge">Felix Geisendörfer</a>, <a href="https://twitter.com/kvz">Kevin van
 Zonneveld</a>, <a href="https://twitter.com/tim_kos">Tim Koschützki</a></p>
 
-<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
-“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
 
 <h2 id="status">Status</h2>
@@ -242,7 +206,7 @@ and feedback via
 will be listed as authors.</p>
 
 <p>Please also let us know about any implementations (open source or commercial)
-if you’d like to be listed on the
+if you'd like to be listed on the
 <a href="http://www.tus.io/implementations.html">implementations</a> page.</p>
 
 <h2 id="abstract">Abstract</h2>
@@ -252,7 +216,7 @@ if you’d like to be listed on the
 
 <h2 id="notation">Notation</h2>
 
-<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code class="language-plaintext highlighter-rouge">[size]</code>).</p>
+<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code>[size]</code>).</p>
 
 <h2 id="core-protocol">Core Protocol</h2>
 
@@ -272,65 +236,65 @@ interrupted after 70 bytes were transfered.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 Ok
+<pre><code>HTTP/1.1 200 Ok
 Offset: 70
-</code></pre></div></div>
+</code></pre>
 
 <p>Given the offset, the client uses the PATCH method to resume the upload:</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Length: 30
 Offset: 70
 
 [remaining 30 bytes]
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 Ok
-</code></pre></div></div>
+<pre><code>HTTP/1.1 200 Ok
+</code></pre>
 
 <h3 id="headers">Headers</h3>
 
 <h4 id="offset">Offset</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Offset</code> header is a request and response header that indicates a byte
-offset within a resource. The value MUST be an integer that is <code class="language-plaintext highlighter-rouge">0</code> or larger.</p>
+<p>The <code>Offset</code> header is a request and response header that indicates a byte
+offset within a resource. The value MUST be an integer that is <code>0</code> or larger.</p>
 
 <h3 id="requests">Requests</h3>
 
 <h4 id="head">HEAD</h4>
 
-<p>Servers MUST always return an <code class="language-plaintext highlighter-rouge">Offset</code> header for <code class="language-plaintext highlighter-rouge">HEAD</code> requests against a tus
-resource, even if it is <code class="language-plaintext highlighter-rouge">0</code>, or the upload is already considered completed.</p>
+<p>Servers MUST always return an <code>Offset</code> header for <code>HEAD</code> requests against a tus
+resource, even if it is <code>0</code>, or the upload is already considered completed.</p>
 
 <h4 id="patch">PATCH</h4>
 
-<p>Servers MUST accept <code class="language-plaintext highlighter-rouge">PATCH</code> requests against any tus resource and apply the
-bytes contained in the message at the given <code class="language-plaintext highlighter-rouge">Offset</code>.</p>
+<p>Servers MUST accept <code>PATCH</code> requests against any tus resource and apply the
+bytes contained in the message at the given <code>Offset</code>.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Offset</code> value SHOULD be equal, but MAY also be smaller than the current
-offset of the resource, and servers MUST handle <code class="language-plaintext highlighter-rouge">PATCH</code> operations containing
+<p>The <code>Offset</code> value SHOULD be equal, but MAY also be smaller than the current
+offset of the resource, and servers MUST handle <code>PATCH</code> operations containing
 the same data at the same absolute offsets idempotently. The behavior of using
-<code class="language-plaintext highlighter-rouge">Offset</code> values larger than the current upload offset is undefined, see the
+<code>Offset</code> values larger than the current upload offset is undefined, see the
 <a href="#parallel-chunks">Parallel Chunks</a> extension.</p>
 
-<p>Clients SHOULD send all remaining bytes of a resource in a single <code class="language-plaintext highlighter-rouge">PATCH</code>
+<p>Clients SHOULD send all remaining bytes of a resource in a single <code>PATCH</code>
 request, but MAY also use multiple small requests for scenarios where this is
 desirable (e.g. NGINX buffering requests before they reach their backend).</p>
 
-<p>Servers MUST acknowledge successful <code class="language-plaintext highlighter-rouge">PATCH</code> operations using a <code class="language-plaintext highlighter-rouge">200 Ok</code> status,
-which implicitly means that clients can assume that the new <code class="language-plaintext highlighter-rouge">Offset</code> = <code class="language-plaintext highlighter-rouge">Offset</code>
-+ <code class="language-plaintext highlighter-rouge">Content-Length</code>.</p>
+<p>Servers MUST acknowledge successful <code>PATCH</code> operations using a <code>200 Ok</code> status,
+which implicitly means that clients can assume that the new <code>Offset</code> = <code>Offset</code>
++ <code>Content-Length</code>.</p>
 
 <p>Both clients and servers SHOULD attempt to detect and handle network errors
 predictably. They may do so by checking for read/write socket errors, as well
@@ -341,7 +305,7 @@ timeout. A timeout SHOULD be handled by closing the underlaying connection.</p>
 store as much of the received data as possible.</p>
 
 <p>Clients SHOULD use a randomized exponential back off strategy after
-encountering a network error or receiving a <code class="language-plaintext highlighter-rouge">500 Internal Server Error</code>. It is
+encountering a network error or receiving a <code>500 Internal Server Error</code>. It is
 up to the client to decide to give up at some point.</p>
 
 <h2 id="protocol-extensions">Protocol Extensions</h2>
@@ -359,43 +323,43 @@ that does not make sense, a custom mechanism may be used instead.</p>
 <h4 id="example-1">Example</h4>
 
 <p>An empty POST request is used to create a new upload resource. The
-<code class="language-plaintext highlighter-rouge">Final-Length</code> header indicates the final size of the file.</p>
+<code>Final-Length</code> header indicates the final size of the file.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Host: tus.example.org
 Content-Length: 0
 Final-Length: 100
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+<pre><code>HTTP/1.1 201 Created
 Location: http://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
-</code></pre></div></div>
+</code></pre>
 
-<p>The new resource has an implicit offset of <code class="language-plaintext highlighter-rouge">0</code> allowing the client to use the
+<p>The new resource has an implicit offset of <code>0</code> allowing the client to use the
 core protocol for performing the actual upload.</p>
 
 <h4 id="headers-1">Headers</h4>
 
 <h5 id="final-length">Final-Length</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Final-Length</code> header indicates the final size of a new resource in bytes.
+<p>The <code>Final-Length</code> header indicates the final size of a new resource in bytes.
 This way a server will implicitly know when a file has completed uploading.</p>
 
 <h4 id="requests-1">Requests</h4>
 
 <h5 id="post">POST</h5>
 
-<p>Clients MUST use a <code class="language-plaintext highlighter-rouge">POST</code> against a well known file creation url to request the
-creation of a new file resource. The request MUST include a <code class="language-plaintext highlighter-rouge">Final-Size</code>
+<p>Clients MUST use a <code>POST</code> against a well known file creation url to request the
+creation of a new file resource. The request MUST include a <code>Final-Size</code>
 header.</p>
 
-<p>Servers MUST acknowledge a successful file creation request with a <code class="language-plaintext highlighter-rouge">201
+<p>Servers MUST acknowledge a successful file creation request with a <code>201
 Created</code> response code and include an absolute url for the created resource in
-the <code class="language-plaintext highlighter-rouge">Location</code> header.</p>
+the <code>Location</code> header.</p>
 
 <p>Clients then continue to perform the actual upload of the file using the core
 protocol.</p>
@@ -423,11 +387,11 @@ unknown length at the beginning of the upload.</p>
 
 <h3 id="why-is-the-protocol-using-custom-headers">Why is the protocol using custom headers?</h3>
 
-<p>We have carefully investigated the use of existing headers such as <code class="language-plaintext highlighter-rouge">Range</code> and
-<code class="language-plaintext highlighter-rouge">Content-Range</code>, but unfortunately they are defined in a way that makes them
+<p>We have carefully investigated the use of existing headers such as <code>Range</code> and
+<code>Content-Range</code>, but unfortunately they are defined in a way that makes them
 unsuitable for resumable file uploads.</p>
 
-<p>We also considered using existing <code class="language-plaintext highlighter-rouge">PATCH</code> payload formats such as
+<p>We also considered using existing <code>PATCH</code> payload formats such as
 <a href="http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges">multipart/byteranges</a>,
 but unfortunately the XHR2 <a href="http://www.w3.org/TR/XMLHttpRequest/#interface-formdata">FormData
 interface</a> does not
@@ -436,18 +400,18 @@ method</a> does not allow
 streaming arbitrary data without loading all of it into memory.</p>
 
 <p>That being said, custom headers also allowed us to greatly simplify the
-implementation requirements for clients and servers, so we’re quite happy with
+implementation requirements for clients and servers, so we're quite happy with
 them.</p>
 
-<h3 id="why-are-you-not-using-the-x--prefix-for-your-headers">Why are you not using the “X-“ prefix for your headers?</h3>
+<h3 id="why-are-you-not-using-the-x--prefix-for-your-headers">Why are you not using the "X-" prefix for your headers?</h3>
 
-<p>The “X-“ prefix for headers has been deprecated, see <a href="http://tools.ietf.org/html/rfc6648">RFC
+<p>The "X-" prefix for headers has been deprecated, see <a href="http://tools.ietf.org/html/rfc6648">RFC
 6648</a>.</p>
 
 <h3 id="how-can-i-deal-with-bad-http-proxies">How can I deal with bad http proxies?</h3>
 
-<p>If you are dealing with http proxies that strip/modify http headers or can’t
-handle <code class="language-plaintext highlighter-rouge">PATCH</code> requests properly, you should consider using https which will
+<p>If you are dealing with http proxies that strip/modify http headers or can't
+handle <code>PATCH</code> requests properly, you should consider using https which will
 make it impossible for proxies to modify your requests.</p>
 
 <p>If that is not an option for you, please reach out to us, we are open to
@@ -477,6 +441,6 @@ defining a compatibility protocol extension.</p>
 
     <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
 
-    <script src="/assets/build/vendors~app.83a9f4d700aad6cc7d53.93659b28b0a28ca6ceea.chunk.js"></script><script src="/assets/build/app.4759fb056ce29631dcf5.js"></script>
+    <script src="/assets/build/app.b8255d6fa0508d086c5c.js"></script>
   </body>
 </html>

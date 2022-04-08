@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/assets/build/vendors~app.7b5ef8790937472c1a8f.93659b28b0a28ca6ceea.chunk.css" rel="stylesheet"><link href="/assets/build/app.3dc1af8eebe2a036c4e7.css" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
 
     <!-- Twitter follow button script -->
@@ -151,7 +151,7 @@
   </div>
 
   <div class="post-content">
-    <p>As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: ‘upload interrupted’.</p>
+    <p>As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: 'upload interrupted'.</p>
 
 <!--more-->
 
@@ -169,13 +169,13 @@
 
 <p>In addition to this, tus has redesigned the process of uploading in such a way that multiple file parts can be sent simultaneously. Using tus not only makes uploading a lot more reliable, but also much faster.</p>
 
-<h3 id="havent-other-companies-already-implemented-this">Haven’t other companies already implemented this?</h3>
+<h3 id="havent-other-companies-already-implemented-this">Haven't other companies already implemented this?</h3>
 
 <p>Yes, but we see this as another part of the problem. While there are many implementations that offer resumable uploads, they all solve it in a different way. They are either bound to one language or use case. They are also not as thorough or interoperable as we would like, because they all speak different dialects. Some implementations are supported by others, but that is as far as compatibility goes.</p>
 
 <p>This is not remotely how an <em>open web</em> should work.</p>
 
-<p>Dropbox, Vimeo, Google and AWS all have their own API’s for uploading chunks. Some companies describe their API, but make choices that aren’t suitable for general use and they certainly don’t offer a platform to contribute improvements. If we want to support anything beyond their use case, we are on our own again. This further increases fragmentation and leaves resumable file uploads as a luxury, only to be enjoyed by a few large companies, while it should be the standard method that benefits everyone.</p>
+<p>Dropbox, Vimeo, Google and AWS all have their own API's for uploading chunks. Some companies describe their API, but make choices that aren't suitable for general use and they certainly don't offer a platform to contribute improvements. If we want to support anything beyond their use case, we are on our own again. This further increases fragmentation and leaves resumable file uploads as a luxury, only to be enjoyed by a few large companies, while it should be the standard method that benefits everyone.</p>
 
 <h3 id="tus">tus</h3>
 
@@ -194,35 +194,35 @@ and from the author of
 
 <h3 id="how-does-it-work">How does it work?</h3>
 
-<p>Let’s take a quick look at an example of a simple communication between a client and a server speaking tus 1.0:</p>
+<p>Let's take a quick look at an example of a simple communication between a client and a server speaking tus 1.0:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Client:</span>
-<span class="o">&gt;</span> POST /files HTTP/1.1
-<span class="o">&gt;</span> Host: tus.example.org
-<span class="o">&gt;</span> Tus-Resumable: 1.0.0
-<span class="o">&gt;</span> Content-Length: 0
-<span class="o">&gt;</span> Upload-Length: 100
-<span class="o">&gt;</span> Upload-Metadata: filename <span class="nv">d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg</span><span class="o">==</span>
+<pre><code class="language-bash"># Client:
+&gt; POST /files HTTP/1.1
+&gt; Host: tus.example.org
+&gt; Tus-Resumable: 1.0.0
+&gt; Content-Length: 0
+&gt; Upload-Length: 100
+&gt; Upload-Metadata: filename d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg==
 
-<span class="c"># Server:</span>
+# Server:
 &lt; HTTP/1.1 201 Created
 &lt; Location: http://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
 &lt; Tus-Resumable: 1.0.0
 
-<span class="c"># Client:</span>
-<span class="o">&gt;</span> PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
-<span class="o">&gt;</span> Host: tus.example.org
+# Client:
+&gt; PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+&gt; Host: tus.example.org
 &lt; Tus-Resumable: 1.0.0
-<span class="o">&gt;</span> Content-Type: application/offset+octet-stream
-<span class="o">&gt;</span> Content-Length: 30
-<span class="o">&gt;</span> Upload-Offset: 0
-<span class="o">&gt;</span>
-<span class="o">&gt;</span> <span class="o">[</span>first 30 bytes]
+&gt; Content-Type: application/offset+octet-stream
+&gt; Content-Length: 30
+&gt; Upload-Offset: 0
+&gt;
+&gt; [first 30 bytes]
 
-<span class="c"># Server:</span>
+# Server:
 &lt; HTTP/1.1 204 No Content
 &lt; Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
 <p>Since tus is a layer on top of HTTP, it is easy to reason about, inspect, extend and deploy in existing projects as well as infra.</p>
 
@@ -230,7 +230,7 @@ and from the author of
 
 <p>The core of the protocol is lightweight, yet well documented and it defines the way in which communication should take place. In addition to this, tus offers extensions such as Checksum, Expiration and Concatenation, which support different use cases and are opt-in.</p>
 
-<p>To highlight one of the protocol’s extensions: Concatenation allows you to split a 100GB file in 20 parts of 5GB, upload them in parallel, and uses the tus server to stitch them together again. This makes uploads much faster by utilizing the available bandwidth more efficiently. An extra advantage of this method is that individual chunks are considered regular tus uploads, which benefit from all of tus’ features (retries, checksums, etc.).</p>
+<p>To highlight one of the protocol's extensions: Concatenation allows you to split a 100GB file in 20 parts of 5GB, upload them in parallel, and uses the tus server to stitch them together again. This makes uploads much faster by utilizing the available bandwidth more efficiently. An extra advantage of this method is that individual chunks are considered regular tus uploads, which benefit from all of tus' features (retries, checksums, etc.).</p>
 
 <h3 id="implementations">Implementations</h3>
 
@@ -275,7 +275,7 @@ file uploads at zero cost.</p>
 <h3 id="special-thanks">Special Thanks</h3>
 
 <p>It has taken us the better part of three years and we have had to overcome many obstacles along the way. It is in great part thanks to <a href="/about.html">these people</a> that tus is able to push out a stable release today. A special 
-word of thanks goes out to the talented people that have been instrumental in getting us to where we are today: <a href="https://felixge.de">Felix</a>, <a href="https://github.com/vayam">Naren</a> and <a href="https://transloadit.com/about#marius">Marius</a>. We couldn’t have done tus without you!</p>
+word of thanks goes out to the talented people that have been instrumental in getting us to where we are today: <a href="https://felixge.de">Felix</a>, <a href="https://github.com/vayam">Naren</a> and <a href="https://transloadit.com/about#marius">Marius</a>. We couldn't have done tus without you!</p>
 
 <p>Discuss on <a href="https://news.ycombinator.com/item?id=10574364">Hacker News</a></p>
 
@@ -305,30 +305,15 @@ word of thanks goes out to the talented people that have been instrumental in ge
 
       
         <div class="container comments">
-          <div id="disqus_thread"></div>
+          <hr />
 
-          <script type="text/javascript">
-              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-              var disqus_shortname = 'tusio'; // required: replace example with your forum shortname
-              var disqus_url = 'https://tus.io/blog/2015/11/16/tus.1.0.html';
-
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-          <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          Do you have a comment? Let us know in the <a href="https://community.transloadit.com/c/tus">forum</a> or on <a href="https://twitter.com/tus_io/">Twitter</a>.
         </div>
       
     </div>
 
     <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
 
-    <script src="/assets/build/vendors~app.83a9f4d700aad6cc7d53.93659b28b0a28ca6ceea.chunk.js"></script><script src="/assets/build/app.4759fb056ce29631dcf5.js"></script>
+    <script src="/assets/build/app.b8255d6fa0508d086c5c.js"></script>
   </body>
 </html>

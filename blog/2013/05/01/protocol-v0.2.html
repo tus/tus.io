@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/assets/build/vendors~app.7b5ef8790937472c1a8f.93659b28b0a28ca6ceea.chunk.css" rel="stylesheet"><link href="/assets/build/app.3dc1af8eebe2a036c4e7.css" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
 
     <!-- Twitter follow button script -->
@@ -159,8 +159,8 @@ key issues with <a href="https://github.com/tus/tus-resumable-upload-protocol/bl
 protocol:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">PUT</code> requests are not appropriate for transferring partial resources</li>
-  <li>The <code class="language-plaintext highlighter-rouge">Content-Range</code> and <code class="language-plaintext highlighter-rouge">Range</code> headers are not meant for resuming an
+  <li><code>PUT</code> requests are not appropriate for transferring partial resources</li>
+  <li>The <code>Content-Range</code> and <code>Range</code> headers are not meant for resuming an
 interrupted resource transfer.</li>
 </ul>
 
@@ -169,9 +169,9 @@ interrupted resource transfer.</li>
 <!--more-->
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">PATCH</code> instead of <code class="language-plaintext highlighter-rouge">PUT</code></li>
-  <li>A new <code class="language-plaintext highlighter-rouge">Offset</code> header used by <code class="language-plaintext highlighter-rouge">HEAD</code> responses and <code class="language-plaintext highlighter-rouge">PATCH</code> requests alike</li>
-  <li>A <code class="language-plaintext highlighter-rouge">Final-Length</code> header to provide the final file size to the server</li>
+  <li><code>PATCH</code> instead of <code>PUT</code></li>
+  <li>A new <code>Offset</code> header used by <code>HEAD</code> responses and <code>PATCH</code> requests alike</li>
+  <li>A <code>Final-Length</code> header to provide the final file size to the server</li>
 </ul>
 
 <p>We also split the protocol into a core protocol which takes care of
@@ -215,30 +215,15 @@ implementers.</p>
 
       
         <div class="container comments">
-          <div id="disqus_thread"></div>
+          <hr />
 
-          <script type="text/javascript">
-              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-              var disqus_shortname = 'tusio'; // required: replace example with your forum shortname
-              var disqus_url = 'https://tus.io/blog/2013/05/01/protocol-v0.2.html';
-
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-          <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          Do you have a comment? Let us know in the <a href="https://community.transloadit.com/c/tus">forum</a> or on <a href="https://twitter.com/tus_io/">Twitter</a>.
         </div>
       
     </div>
 
     <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
 
-    <script src="/assets/build/vendors~app.83a9f4d700aad6cc7d53.93659b28b0a28ca6ceea.chunk.js"></script><script src="/assets/build/app.4759fb056ce29631dcf5.js"></script>
+    <script src="/assets/build/app.b8255d6fa0508d086c5c.js"></script>
   </body>
 </html>

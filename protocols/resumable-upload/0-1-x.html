@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/assets/build/vendors~app.7b5ef8790937472c1a8f.93659b28b0a28ca6ceea.chunk.css" rel="stylesheet"><link href="/assets/build/app.3dc1af8eebe2a036c4e7.css" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
 
     <!-- Twitter follow button script -->
@@ -173,16 +173,7 @@
   <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
   <li><a href="#notation" id="markdown-toc-notation">Notation</a></li>
   <li><a href="#example-resumable-upload" id="markdown-toc-example-resumable-upload">Example: Resumable Upload</a></li>
-  <li><a href="#protocol" id="markdown-toc-protocol">Protocol</a>    <ul>
-      <li><a href="#response-codes" id="markdown-toc-response-codes">Response Codes</a></li>
-      <li><a href="#error-handling" id="markdown-toc-error-handling">Error Handling</a></li>
-      <li><a href="#request-headers" id="markdown-toc-request-headers">Request Headers</a></li>
-      <li><a href="#response-headers" id="markdown-toc-response-headers">Response Headers</a></li>
-      <li><a href="#creating-file-resources-post" id="markdown-toc-creating-file-resources-post">Creating File Resources (POST)</a></li>
-      <li><a href="#uploading-file-data-put" id="markdown-toc-uploading-file-data-put">Uploading File Data (PUT)</a></li>
-      <li><a href="#checking-file-resources-head" id="markdown-toc-checking-file-resources-head">Checking File Resources (HEAD)</a></li>
-    </ul>
-  </li>
+  <li><a href="#protocol" id="markdown-toc-protocol">Protocol</a></li>
   <li><a href="#appendix-a---discussion-of-prior-art" id="markdown-toc-appendix-a---discussion-of-prior-art">Appendix A - Discussion of Prior Art</a></li>
   <li><a href="#appendix-b---cross-domain-uploads" id="markdown-toc-appendix-b---cross-domain-uploads">Appendix B - Cross Domain Uploads</a></li>
   <li><a href="#appendix-c---support-for-legacy--multipart-clients" id="markdown-toc-appendix-c---support-for-legacy--multipart-clients">Appendix C - Support for legacy / multipart clients</a></li>
@@ -196,8 +187,8 @@
 <strong>Authors:</strong> <a href="https://twitter.com/felixge">Felix Geisendörfer</a>, <a href="https://twitter.com/kvz">Kevin van
 Zonneveld</a>, <a href="https://twitter.com/tim_kos">Tim Koschützki</a></p>
 
-<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
-“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
 
 <h2 id="status">Status</h2>
@@ -217,7 +208,7 @@ and feedback via
 will be listed as authors.</p>
 
 <p>Please also let us know about any implementations (open source or commercial)
-if you’d like to be listed on the
+if you'd like to be listed on the
 <a href="http://www.tus.io/implementations.html">implementations</a> page.</p>
 
 <h2 id="abstract">Abstract</h2>
@@ -229,7 +220,7 @@ mechanism for resumable file uploads.</p>
 
 <h2 id="notation">Notation</h2>
 
-<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code class="language-plaintext highlighter-rouge">[size]</code>).</p>
+<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code>[size]</code>).</p>
 
 <h2 id="example-resumable-upload">Example: Resumable Upload</h2>
 
@@ -241,88 +232,88 @@ the server:</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Host: tus.example.org
 Content-Length: 0
 Content-Range: bytes */100
 Content-Type: image/jpeg
 Content-Disposition: attachment; filename="cat.jpg"
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+<pre><code>HTTP/1.1 201 Created
 Location: http://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
 Content-Length: 0
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
-<p>After being assigned a resource <code class="language-plaintext highlighter-rouge">Location</code>, the client starts the actual
+<p>After being assigned a resource <code>Location</code>, the client starts the actual
 upload:</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUT /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>PUT /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Length: 100
 Content-Range: bytes 0-99/100
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[bytes 0-99]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[bytes 0-99]
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 Ok
+<pre><code>HTTP/1.1 200 Ok
 Range: bytes=0-99
 Content-Length: 0
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
 <p>In this case, the upload succeeded. However, if there had been a network error
-during the <code class="language-plaintext highlighter-rouge">PUT</code> request, the client could have also resumed this upload:</p>
+during the <code>PUT</code> request, the client could have also resumed this upload:</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 Ok
+<pre><code>HTTP/1.1 200 Ok
 Content-Length: 100
 Content-Type: image/jpg
 Content-Disposition: attachment; filename="cat.jpg"'
 Range: bytes=0-69
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
-<p>The <code class="language-plaintext highlighter-rouge">Range</code> tells the client how much data made it to the server, so he
+<p>The <code>Range</code> tells the client how much data made it to the server, so he
 can continue from there:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUT /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>PUT /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Length: 30
 Content-Range: bytes 70-99/100
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[bytes 70-99]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[bytes 70-99]
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 Ok
+<pre><code>HTTP/1.1 200 Ok
 Range: bytes=0-99
 Content-Length: 0
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[empty body]
-</code></pre></div></div>
+</code></pre>
+<pre><code>[empty body]
+</code></pre>
 
 <h2 id="protocol">Protocol</h2>
 
@@ -335,11 +326,11 @@ protocol.</p>
 <p>Servers MUST implement the following http status codes:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">200 Ok</code> per default</li>
-  <li><code class="language-plaintext highlighter-rouge">201 Created</code> after creating new resources</li>
-  <li><code class="language-plaintext highlighter-rouge">400 Bad Request</code> for invalid request</li>
-  <li><code class="language-plaintext highlighter-rouge">404 Not Found</code> for unknown resources</li>
-  <li><code class="language-plaintext highlighter-rouge">500 Internal Server Error</code> for transient problems</li>
+  <li><code>200 Ok</code> per default</li>
+  <li><code>201 Created</code> after creating new resources</li>
+  <li><code>400 Bad Request</code> for invalid request</li>
+  <li><code>404 Not Found</code> for unknown resources</li>
+  <li><code>500 Internal Server Error</code> for transient problems</li>
 </ul>
 
 <p>Servers MAY use additional status codes as defined in RFC 2616, and clients
@@ -357,62 +348,62 @@ timeout. A timeout SHOULD be handled by closing the underlaying socket.</p>
 store as much of the received data as possible.</p>
 
 <p>Clients SHOULD use a randomized exponential back off strategy after
-encountering a network error or receiving a <code class="language-plaintext highlighter-rouge">500 Internal Server Error</code>. It is
+encountering a network error or receiving a <code>500 Internal Server Error</code>. It is
 up to the client to decide to give up at some point.</p>
 
 <h3 id="request-headers">Request Headers</h3>
 
-<p><code class="language-plaintext highlighter-rouge">Content-Length</code>: Defines the amount of bytes included in the request body.</p>
+<p><code>Content-Length</code>: Defines the amount of bytes included in the request body.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Content-Range</code>: When <code class="language-plaintext highlighter-rouge">Content-Length</code> is <code class="language-plaintext highlighter-rouge">0</code>, the <code class="language-plaintext highlighter-rouge">Content-Range</code> MUST be
-given as <code class="language-plaintext highlighter-rouge">bytes */[size]</code> where <code class="language-plaintext highlighter-rouge">[size]</code> is the total size of the file. For
-<code class="language-plaintext highlighter-rouge">Content-Length</code> values larger than <code class="language-plaintext highlighter-rouge">0</code>, the <code class="language-plaintext highlighter-rouge">Content-Range</code> MUST take the form
-<code class="language-plaintext highlighter-rouge">bytes [from]-[to]/[size]</code>, where <code class="language-plaintext highlighter-rouge">[from]</code> and <code class="language-plaintext highlighter-rouge">[to]</code> define the byte range
+<p><code>Content-Range</code>: When <code>Content-Length</code> is <code>0</code>, the <code>Content-Range</code> MUST be
+given as <code>bytes */[size]</code> where <code>[size]</code> is the total size of the file. For
+<code>Content-Length</code> values larger than <code>0</code>, the <code>Content-Range</code> MUST take the form
+<code>bytes [from]-[to]/[size]</code>, where <code>[from]</code> and <code>[to]</code> define the byte range
 transmitted in the body according to RFC 2616.</p>
 
 <h3 id="response-headers">Response Headers</h3>
 
-<p><code class="language-plaintext highlighter-rouge">Range</code>: Defines the range of bytes a server has received for the given file
-resource. Takes the form <code class="language-plaintext highlighter-rouge">bytes=[from]-[to]</code>. An empty file is indicated by the
-absence of a <code class="language-plaintext highlighter-rouge">Range</code> header. A completed file is indicated by a <code class="language-plaintext highlighter-rouge">Range</code> header
-where <code class="language-plaintext highlighter-rouge">[from]</code> is <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">[to]</code> is <code class="language-plaintext highlighter-rouge">[size - 1]</code> (e.g. <code class="language-plaintext highlighter-rouge">Range: bytes=0-99</code> for
+<p><code>Range</code>: Defines the range of bytes a server has received for the given file
+resource. Takes the form <code>bytes=[from]-[to]</code>. An empty file is indicated by the
+absence of a <code>Range</code> header. A completed file is indicated by a <code>Range</code> header
+where <code>[from]</code> is <code>0</code> and <code>[to]</code> is <code>[size - 1]</code> (e.g. <code>Range: bytes=0-99</code> for
 a 100 byte file).</p>
 
 <h3 id="creating-file-resources-post">Creating File Resources (POST)</h3>
 
 <p>A server MUST define one or more fixed URLs for clients to create new file
-resources via <code class="language-plaintext highlighter-rouge">POST</code> requests (e.g <code class="language-plaintext highlighter-rouge">/files</code>).</p>
+resources via <code>POST</code> requests (e.g <code>/files</code>).</p>
 
-<p>All file resource creation requests MUST include a <code class="language-plaintext highlighter-rouge">Content-Range</code> and a
-<code class="language-plaintext highlighter-rouge">Content-Length</code> header.</p>
+<p>All file resource creation requests MUST include a <code>Content-Range</code> and a
+<code>Content-Length</code> header.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Content-Length</code> SHOULD be set to <code class="language-plaintext highlighter-rouge">0</code>, but clients MAY choose to upload some
+<p>The <code>Content-Length</code> SHOULD be set to <code>0</code>, but clients MAY choose to upload some
 or all bytes of a file when creating it.</p>
 
-<p>A valid request MUST be acknowledged with a <code class="language-plaintext highlighter-rouge">201 Created</code> status by the server.
-The response MUST also include a <code class="language-plaintext highlighter-rouge">Location</code> header that holds the absolute URL
+<p>A valid request MUST be acknowledged with a <code>201 Created</code> status by the server.
+The response MUST also include a <code>Location</code> header that holds the absolute URL
 of the created file resource.</p>
 
-<p>Clients SHOULD also include meta headers , such as <code class="language-plaintext highlighter-rouge">Content-Type</code>,
-<code class="language-plaintext highlighter-rouge">Content-Disposition</code>, and MAY also include headers to trigger server specific
+<p>Clients SHOULD also include meta headers , such as <code>Content-Type</code>,
+<code>Content-Disposition</code>, and MAY also include headers to trigger server specific
 behavior.</p>
 
 <h3 id="uploading-file-data-put">Uploading File Data (PUT)</h3>
 
-<p>Clients MUST use <code class="language-plaintext highlighter-rouge">PUT</code> requests in order to upload data to an existing file
-resource (e.g. <code class="language-plaintext highlighter-rouge">/files/24e533e02ec3bc40c387f1a0e460e216</code>).</p>
+<p>Clients MUST use <code>PUT</code> requests in order to upload data to an existing file
+resource (e.g. <code>/files/24e533e02ec3bc40c387f1a0e460e216</code>).</p>
 
-<p><code class="language-plaintext highlighter-rouge">PUT</code> requests MUST include a <code class="language-plaintext highlighter-rouge">Content-Length</code> header larger than <code class="language-plaintext highlighter-rouge">0</code>, as well
-as a corresponding <code class="language-plaintext highlighter-rouge">Content-Range</code> header.</p>
+<p><code>PUT</code> requests MUST include a <code>Content-Length</code> header larger than <code>0</code>, as well
+as a corresponding <code>Content-Range</code> header.</p>
 
-<p>Servers MUST handle overlapping <code class="language-plaintext highlighter-rouge">PUT</code> requests in an idempotent fashion given
+<p>Servers MUST handle overlapping <code>PUT</code> requests in an idempotent fashion given
 that the overlapping data is identical. Otherwise the behavior is undefined.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Range</code> response header indicates if a file has been received completely.</p>
+<p>The <code>Range</code> response header indicates if a file has been received completely.</p>
 
 <h3 id="checking-file-resources-head">Checking File Resources (HEAD)</h3>
 
-<p>Clients MUST use <code class="language-plaintext highlighter-rouge">HEAD</code> requests to inquire about the <code class="language-plaintext highlighter-rouge">Range</code> of data received
+<p>Clients MUST use <code>HEAD</code> requests to inquire about the <code>Range</code> of data received
 by an existing file resource.</p>
 
 <h2 id="appendix-a---discussion-of-prior-art">Appendix A - Discussion of Prior Art</h2>
@@ -456,6 +447,6 @@ by an existing file resource.</p>
 
     <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
 
-    <script src="/assets/build/vendors~app.83a9f4d700aad6cc7d53.93659b28b0a28ca6ceea.chunk.js"></script><script src="/assets/build/app.4759fb056ce29631dcf5.js"></script>
+    <script src="/assets/build/app.b8255d6fa0508d086c5c.js"></script>
   </body>
 </html>

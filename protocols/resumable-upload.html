@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="/assets/build/vendors~app.7b5ef8790937472c1a8f.93659b28b0a28ca6ceea.chunk.css" rel="stylesheet"><link href="/assets/build/app.3dc1af8eebe2a036c4e7.css" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
 
     <!-- Twitter follow button script -->
@@ -166,82 +166,8 @@
   <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a></li>
   <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
   <li><a href="#notation" id="markdown-toc-notation">Notation</a></li>
-  <li><a href="#core-protocol" id="markdown-toc-core-protocol">Core Protocol</a>    <ul>
-      <li><a href="#example" id="markdown-toc-example">Example</a></li>
-      <li><a href="#headers" id="markdown-toc-headers">Headers</a>        <ul>
-          <li><a href="#upload-offset" id="markdown-toc-upload-offset">Upload-Offset</a></li>
-          <li><a href="#upload-length" id="markdown-toc-upload-length">Upload-Length</a></li>
-          <li><a href="#tus-version" id="markdown-toc-tus-version">Tus-Version</a></li>
-          <li><a href="#tus-resumable" id="markdown-toc-tus-resumable">Tus-Resumable</a></li>
-          <li><a href="#tus-extension" id="markdown-toc-tus-extension">Tus-Extension</a></li>
-          <li><a href="#tus-max-size" id="markdown-toc-tus-max-size">Tus-Max-Size</a></li>
-          <li><a href="#x-http-method-override" id="markdown-toc-x-http-method-override">X-HTTP-Method-Override</a></li>
-        </ul>
-      </li>
-      <li><a href="#requests" id="markdown-toc-requests">Requests</a>        <ul>
-          <li><a href="#head" id="markdown-toc-head">HEAD</a></li>
-          <li><a href="#patch" id="markdown-toc-patch">PATCH</a></li>
-          <li><a href="#options" id="markdown-toc-options">OPTIONS</a>            <ul>
-              <li><a href="#example-1" id="markdown-toc-example-1">Example</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#protocol-extensions" id="markdown-toc-protocol-extensions">Protocol Extensions</a>    <ul>
-      <li><a href="#creation" id="markdown-toc-creation">Creation</a>        <ul>
-          <li><a href="#example-2" id="markdown-toc-example-2">Example</a></li>
-          <li><a href="#headers-1" id="markdown-toc-headers-1">Headers</a>            <ul>
-              <li><a href="#upload-defer-length" id="markdown-toc-upload-defer-length">Upload-Defer-Length</a></li>
-              <li><a href="#upload-metadata" id="markdown-toc-upload-metadata">Upload-Metadata</a></li>
-            </ul>
-          </li>
-          <li><a href="#requests-1" id="markdown-toc-requests-1">Requests</a>            <ul>
-              <li><a href="#post" id="markdown-toc-post">POST</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#creation-with-upload" id="markdown-toc-creation-with-upload">Creation With Upload</a>        <ul>
-          <li><a href="#example-3" id="markdown-toc-example-3">Example</a></li>
-        </ul>
-      </li>
-      <li><a href="#expiration" id="markdown-toc-expiration">Expiration</a>        <ul>
-          <li><a href="#example-4" id="markdown-toc-example-4">Example</a></li>
-          <li><a href="#headers-2" id="markdown-toc-headers-2">Headers</a>            <ul>
-              <li><a href="#upload-expires" id="markdown-toc-upload-expires">Upload-Expires</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#checksum" id="markdown-toc-checksum">Checksum</a>        <ul>
-          <li><a href="#headers-3" id="markdown-toc-headers-3">Headers</a>            <ul>
-              <li><a href="#tus-checksum-algorithm" id="markdown-toc-tus-checksum-algorithm">Tus-Checksum-Algorithm</a></li>
-              <li><a href="#upload-checksum" id="markdown-toc-upload-checksum">Upload-Checksum</a></li>
-            </ul>
-          </li>
-          <li><a href="#example-5" id="markdown-toc-example-5">Example</a></li>
-        </ul>
-      </li>
-      <li><a href="#termination" id="markdown-toc-termination">Termination</a>        <ul>
-          <li><a href="#requests-2" id="markdown-toc-requests-2">Requests</a>            <ul>
-              <li><a href="#delete" id="markdown-toc-delete">DELETE</a></li>
-            </ul>
-          </li>
-          <li><a href="#example-6" id="markdown-toc-example-6">Example</a></li>
-        </ul>
-      </li>
-      <li><a href="#concatenation" id="markdown-toc-concatenation">Concatenation</a>        <ul>
-          <li><a href="#headers-4" id="markdown-toc-headers-4">Headers</a>            <ul>
-              <li><a href="#upload-concat" id="markdown-toc-upload-concat">Upload-Concat</a></li>
-            </ul>
-          </li>
-          <li><a href="#example-7" id="markdown-toc-example-7">Example</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li><a href="#core-protocol" id="markdown-toc-core-protocol">Core Protocol</a></li>
+  <li><a href="#protocol-extensions" id="markdown-toc-protocol-extensions">Protocol Extensions</a></li>
   <li><a href="#faq" id="markdown-toc-faq">FAQ</a></li>
   <li><a href="#license" id="markdown-toc-license">License</a></li>
 </ul>
@@ -278,7 +204,7 @@ Kleidl</a><br />
 <a href="https://github.com/radiospiel">eno</a>,
 <a href="https://github.com/luk-">Luke Arduini</a>,
 <a href="https://github.com/sheeep">Jim Schmid</a>,
-<a href="https://github.com/jf">Jeffrey ‘jf’ Lim</a>,
+<a href="https://github.com/jf">Jeffrey 'jf' Lim</a>,
 <a href="https://github.com/timemachine3030">Daniel Lopretto</a>,
 <a href="https://github.com/MarkMurphy">Mark Murphy</a>,
 <a href="https://github.com/pmdarrow">Peter Darrow</a>,
@@ -294,14 +220,14 @@ Kleidl</a><br />
 <a href="https://github.com/ifedapoolarewaju">Ifedapo Olarewaju</a>
 <a href="https://github.com/ronag">Robert Nagy</a></p>
 
-<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
-“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
 
 <h2 id="status">Status</h2>
 
 <p>Following <a href="http://semver.org">SemVer</a>, as of 1.0.0 tus is ready for general
-adoption. We don’t expect to make breaking changes, but if we do, those will
+adoption. We don't expect to make breaking changes, but if we do, those will
 have to be in a 2.0.0. Introducing a new extension or any backwards-compatible
 change adding new functionality will result in a bumped MINOR version.</p>
 
@@ -313,7 +239,7 @@ and feedback via
 collaborators will be listed as such in the protocol header.</p>
 
 <p>Please also <a href="https://github.com/tus/tus.io/issues/new">let us know</a> about any
-implementations (open source or commercial) if you’d like to be listed on the
+implementations (open source or commercial) if you'd like to be listed on the
 <a href="https://www.tus.io/implementations.html">implementations</a> page.</p>
 
 <h2 id="abstract">Abstract</h2>
@@ -324,7 +250,7 @@ implementations (open source or commercial) if you’d like to be listed on the
 
 <h2 id="notation">Notation</h2>
 
-<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code class="language-plaintext highlighter-rouge">[size]</code>).</p>
+<p>Characters enclosed by square brackets indicate a placeholder (e.g. <code>[size]</code>).</p>
 
 <p>The terms space, comma, and semicolon refer to their ASCII representations.</p>
 
@@ -345,7 +271,7 @@ the Server to decide.</p>
 
 <h3 id="example">Example</h3>
 
-<p>A <code class="language-plaintext highlighter-rouge">HEAD</code> request is used to determine the offset at which the upload should be
+<p>A <code>HEAD</code> request is used to determine the offset at which the upload should be
 continued.</p>
 
 <p>The example below shows the continuation of a 100 byte upload that was
@@ -353,23 +279,23 @@ interrupted after 70 bytes were transferred.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>HEAD /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+<pre><code>HTTP/1.1 200 OK
 Upload-Offset: 70
 Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
-<p>Given the offset, the Client uses the <code class="language-plaintext highlighter-rouge">PATCH</code> method to resume the upload:</p>
+<p>Given the offset, the Client uses the <code>PATCH</code> method to resume the upload:</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Type: application/offset+octet-stream
 Content-Length: 30
@@ -377,60 +303,60 @@ Upload-Offset: 70
 Tus-Resumable: 1.0.0
 
 [remaining 30 bytes]
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Tus-Resumable: 1.0.0
 Upload-Offset: 100
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="headers">Headers</h3>
 
 <h4 id="upload-offset">Upload-Offset</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Offset</code> request and response header indicates a byte offset within a
+<p>The <code>Upload-Offset</code> request and response header indicates a byte offset within a
 resource. The value MUST be a non-negative integer.</p>
 
 <h4 id="upload-length">Upload-Length</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Length</code> request and response header indicates the size of the entire
+<p>The <code>Upload-Length</code> request and response header indicates the size of the entire
 upload in bytes. The value MUST be a non-negative integer.</p>
 
 <h4 id="tus-version">Tus-Version</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Version</code> response header MUST be a comma-separated list of protocol versions
-supported by the Server. The list MUST be sorted by Server’s preference
+<p>The <code>Tus-Version</code> response header MUST be a comma-separated list of protocol versions
+supported by the Server. The list MUST be sorted by Server's preference
 where the first one is the most preferred one.</p>
 
 <h4 id="tus-resumable">Tus-Resumable</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Resumable</code> header MUST be included in every request and response except
-for <code class="language-plaintext highlighter-rouge">OPTIONS</code> requests. The value MUST be the version of the protocol used by
+<p>The <code>Tus-Resumable</code> header MUST be included in every request and response except
+for <code>OPTIONS</code> requests. The value MUST be the version of the protocol used by
 the Client or the Server.</p>
 
 <p>If the version specified by the Client is not supported by the Server, it
-MUST respond with the <code class="language-plaintext highlighter-rouge">412 Precondition Failed</code> status and MUST include the
-<code class="language-plaintext highlighter-rouge">Tus-Version</code> header into the response.
+MUST respond with the <code>412 Precondition Failed</code> status and MUST include the
+<code>Tus-Version</code> header into the response.
 In addition, the Server MUST NOT process the request.</p>
 
 <h4 id="tus-extension">Tus-Extension</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Extension</code> response header MUST be a comma-separated list of the extensions
-supported by the Server. If no extensions are supported, the <code class="language-plaintext highlighter-rouge">Tus-Extension</code>
+<p>The <code>Tus-Extension</code> response header MUST be a comma-separated list of the extensions
+supported by the Server. If no extensions are supported, the <code>Tus-Extension</code>
 header MUST be omitted.</p>
 
 <h4 id="tus-max-size">Tus-Max-Size</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Max-Size</code> response header MUST be a non-negative integer indicating the maximum
+<p>The <code>Tus-Max-Size</code> response header MUST be a non-negative integer indicating the maximum
 allowed size of an entire upload in bytes. The Server SHOULD set this header if
 there is a known hard limit.</p>
 
 <h4 id="x-http-method-override">X-HTTP-Method-Override</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">X-HTTP-Method-Override</code> request header MUST be a string which MUST be
-interpreted as the request’s method by the Server, if the header is presented.
+<p>The <code>X-HTTP-Method-Override</code> request header MUST be a string which MUST be
+interpreted as the request's method by the Server, if the header is presented.
 The actual method of the request MUST be ignored. The Client SHOULD use this
 header if its environment does not support the PATCH or DELETE methods.</p>
 
@@ -438,43 +364,43 @@ header if its environment does not support the PATCH or DELETE methods.</p>
 
 <h4 id="head">HEAD</h4>
 
-<p>The Server MUST always include the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header in the response for a
-<code class="language-plaintext highlighter-rouge">HEAD</code> request, even if the offset is <code class="language-plaintext highlighter-rouge">0</code>, or the upload is already considered
+<p>The Server MUST always include the <code>Upload-Offset</code> header in the response for a
+<code>HEAD</code> request, even if the offset is <code>0</code>, or the upload is already considered
 completed. If the size of the upload is known, the Server MUST include the
-<code class="language-plaintext highlighter-rouge">Upload-Length</code> header in the response. If the resource is not found, the Server
-SHOULD return either the <code class="language-plaintext highlighter-rouge">404 Not Found</code>, <code class="language-plaintext highlighter-rouge">410 Gone</code> or <code class="language-plaintext highlighter-rouge">403 Forbidden</code> status
-without the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header.</p>
+<code>Upload-Length</code> header in the response. If the resource is not found, the Server
+SHOULD return either the <code>404 Not Found</code>, <code>410 Gone</code> or <code>403 Forbidden</code> status
+without the <code>Upload-Offset</code> header.</p>
 
 <p>The Server MUST prevent the client and/or proxies from caching the response by
-adding the <code class="language-plaintext highlighter-rouge">Cache-Control: no-store</code> header to the response.</p>
+adding the <code>Cache-Control: no-store</code> header to the response.</p>
 
 <h4 id="patch">PATCH</h4>
 
-<p>The Server SHOULD accept <code class="language-plaintext highlighter-rouge">PATCH</code> requests against any upload URL and apply the
+<p>The Server SHOULD accept <code>PATCH</code> requests against any upload URL and apply the
 bytes contained in the message at the given offset specified by the
-<code class="language-plaintext highlighter-rouge">Upload-Offset</code> header. All <code class="language-plaintext highlighter-rouge">PATCH</code> requests MUST use
-<code class="language-plaintext highlighter-rouge">Content-Type: application/offset+octet-stream</code>, otherwise the server SHOULD
-return a <code class="language-plaintext highlighter-rouge">415 Unsupported Media Type</code> status.</p>
+<code>Upload-Offset</code> header. All <code>PATCH</code> requests MUST use
+<code>Content-Type: application/offset+octet-stream</code>, otherwise the server SHOULD
+return a <code>415 Unsupported Media Type</code> status.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header’s value MUST be equal to the current offset of the
+<p>The <code>Upload-Offset</code> header's value MUST be equal to the current offset of the
 resource. In order to achieve parallel upload the
 <a href="#concatenation">Concatenation</a> extension MAY be used. If the offsets do not
-match, the Server MUST respond with the <code class="language-plaintext highlighter-rouge">409 Conflict</code> status without modifying
+match, the Server MUST respond with the <code>409 Conflict</code> status without modifying
 the upload resource.</p>
 
-<p>The Client SHOULD send all the remaining bytes of an upload in a single <code class="language-plaintext highlighter-rouge">PATCH</code>
+<p>The Client SHOULD send all the remaining bytes of an upload in a single <code>PATCH</code>
 request, but MAY also use multiple small requests successively for scenarios
 where this is desirable. One example for these situations is when the
 <a href="#checksum">Checksum</a> extension is used.</p>
 
-<p>The Server MUST acknowledge successful <code class="language-plaintext highlighter-rouge">PATCH</code> requests with the
-<code class="language-plaintext highlighter-rouge">204 No Content</code> status. It MUST include the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header containing
-the new offset. The new offset MUST be the sum of the offset before the <code class="language-plaintext highlighter-rouge">PATCH</code>
+<p>The Server MUST acknowledge successful <code>PATCH</code> requests with the
+<code>204 No Content</code> status. It MUST include the <code>Upload-Offset</code> header containing
+the new offset. The new offset MUST be the sum of the offset before the <code>PATCH</code>
 request and the number of bytes received and processed or stored during the
-current <code class="language-plaintext highlighter-rouge">PATCH</code> request.</p>
+current <code>PATCH</code> request.</p>
 
-<p>If the server receives a <code class="language-plaintext highlighter-rouge">PATCH</code> request against a non-existent resource
-it SHOULD return a <code class="language-plaintext highlighter-rouge">404 Not Found</code> status.</p>
+<p>If the server receives a <code>PATCH</code> request against a non-existent resource
+it SHOULD return a <code>404 Not Found</code> status.</p>
 
 <p>Both Client and Server, SHOULD attempt to detect and handle network errors
 predictably. They MAY do so by checking for read/write socket errors, as well
@@ -484,85 +410,85 @@ as setting read/write timeouts. A timeout SHOULD be handled by closing the under
 
 <h4 id="options">OPTIONS</h4>
 
-<p>An <code class="language-plaintext highlighter-rouge">OPTIONS</code> request MAY be used to gather information about the Server’s current
-configuration. A successful response indicated by the <code class="language-plaintext highlighter-rouge">204 No Content</code> or <code class="language-plaintext highlighter-rouge">200 OK</code> status
-MUST contain the <code class="language-plaintext highlighter-rouge">Tus-Version</code> header. It MAY include the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> and
-<code class="language-plaintext highlighter-rouge">Tus-Max-Size</code> headers.</p>
+<p>An <code>OPTIONS</code> request MAY be used to gather information about the Server's current
+configuration. A successful response indicated by the <code>204 No Content</code> or <code>200 OK</code> status
+MUST contain the <code>Tus-Version</code> header. It MAY include the <code>Tus-Extension</code> and
+<code>Tus-Max-Size</code> headers.</p>
 
-<p>The Client SHOULD NOT include the <code class="language-plaintext highlighter-rouge">Tus-Resumable</code> header in the request and the
+<p>The Client SHOULD NOT include the <code>Tus-Resumable</code> header in the request and the
 Server MUST ignore the header.</p>
 
 <h5 id="example-1">Example</h5>
 
-<p>This example clarifies the response for an <code class="language-plaintext highlighter-rouge">OPTIONS</code> request. The version used
-in the response is <code class="language-plaintext highlighter-rouge">1.0.0</code> while the Server is also capable of
-handling <code class="language-plaintext highlighter-rouge">0.2.2</code> and <code class="language-plaintext highlighter-rouge">0.2.1</code>. Uploads with a total size of up to 1GB are
+<p>This example clarifies the response for an <code>OPTIONS</code> request. The version used
+in the response is <code>1.0.0</code> while the Server is also capable of
+handling <code>0.2.2</code> and <code>0.2.1</code>. Uploads with a total size of up to 1GB are
 allowed and the extensions for <a href="#creation">Creation</a> and
 <a href="#expiration">Expiration</a> are enabled.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OPTIONS /files HTTP/1.1
+<pre><code>OPTIONS /files HTTP/1.1
 Host: tus.example.org
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Tus-Resumable: 1.0.0
 Tus-Version: 1.0.0,0.2.2,0.2.1
 Tus-Max-Size: 1073741824
 Tus-Extension: creation,expiration
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="protocol-extensions">Protocol Extensions</h2>
 
 <p>Clients and Servers are encouraged to implement as many of the extensions
 as possible. Feature detection SHOULD be achieved by the Client sending an
-<code class="language-plaintext highlighter-rouge">OPTIONS</code> request and the Server responding with the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+<code>OPTIONS</code> request and the Server responding with the <code>Tus-Extension</code> header.</p>
 
 <h3 id="creation">Creation</h3>
 
 <p>The Client and the Server SHOULD implement the upload creation extension. If
-the Server supports this extension, it MUST add <code class="language-plaintext highlighter-rouge">creation</code> to the <code class="language-plaintext highlighter-rouge">Tus-Extension</code>
+the Server supports this extension, it MUST add <code>creation</code> to the <code>Tus-Extension</code>
 header.</p>
 
 <h4 id="example-2">Example</h4>
 
-<p>An empty <code class="language-plaintext highlighter-rouge">POST</code> request is used to create a new upload resource. The
-<code class="language-plaintext highlighter-rouge">Upload-Length</code> header indicates the size of the entire upload in bytes.</p>
+<p>An empty <code>POST</code> request is used to create a new upload resource. The
+<code>Upload-Length</code> header indicates the size of the entire upload in bytes.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Host: tus.example.org
 Content-Length: 0
 Upload-Length: 100
 Tus-Resumable: 1.0.0
 Upload-Metadata: filename d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg==,is_confidential
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+<pre><code>HTTP/1.1 201 Created
 Location: https://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
 Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
-<p>The new resource has an implicit offset of <code class="language-plaintext highlighter-rouge">0</code> allowing the Client to use the
+<p>The new resource has an implicit offset of <code>0</code> allowing the Client to use the
 core protocol for performing the actual upload.</p>
 
 <h4 id="headers-1">Headers</h4>
 
 <h5 id="upload-defer-length">Upload-Defer-Length</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Defer-Length</code> request and response header indicates that the size of
+<p>The <code>Upload-Defer-Length</code> request and response header indicates that the size of
 the upload is not known currently and will be transferred later. Its value MUST
-be <code class="language-plaintext highlighter-rouge">1</code>. If the length of an upload is not deferred, this header MUST be omitted.</p>
+be <code>1</code>. If the length of an upload is not deferred, this header MUST be omitted.</p>
 
 <h5 id="upload-metadata">Upload-Metadata</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Metadata</code> request and response header MUST consist of one or more comma-separated
+<p>The <code>Upload-Metadata</code> request and response header MUST consist of one or more comma-separated
 key-value pairs. The key and value MUST be separated by a space. The key
 MUST NOT contain spaces and commas and MUST NOT be empty. The key SHOULD be
 ASCII encoded and the value MUST be Base64 encoded. All keys MUST be unique.
@@ -577,33 +503,33 @@ as header values to avoid header smuggling.</p>
 
 <h5 id="post">POST</h5>
 
-<p>The Client MUST send a <code class="language-plaintext highlighter-rouge">POST</code> request against a known upload creation URL to
+<p>The Client MUST send a <code>POST</code> request against a known upload creation URL to
 request a new upload resource. The request MUST include one of the following headers:</p>
 
-<p>a) <code class="language-plaintext highlighter-rouge">Upload-Length</code> to indicate the size of an entire upload in bytes.</p>
+<p>a) <code>Upload-Length</code> to indicate the size of an entire upload in bytes.</p>
 
-<p>b) <code class="language-plaintext highlighter-rouge">Upload-Defer-Length: 1</code> if upload size is not known at the time. Once it is
-known the Client MUST set the <code class="language-plaintext highlighter-rouge">Upload-Length</code> header in the next <code class="language-plaintext highlighter-rouge">PATCH</code> request.
+<p>b) <code>Upload-Defer-Length: 1</code> if upload size is not known at the time. Once it is
+known the Client MUST set the <code>Upload-Length</code> header in the next <code>PATCH</code> request.
 Once set the length MUST NOT be changed. As long as the length of the upload is
-not known, the Server MUST set <code class="language-plaintext highlighter-rouge">Upload-Defer-Length: 1</code> in all responses to
-<code class="language-plaintext highlighter-rouge">HEAD</code> requests. If the <code class="language-plaintext highlighter-rouge">Upload-Defer-Length</code> header contains any other value
-than <code class="language-plaintext highlighter-rouge">1</code> the server should return a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> status.</p>
+not known, the Server MUST set <code>Upload-Defer-Length: 1</code> in all responses to
+<code>HEAD</code> requests. If the <code>Upload-Defer-Length</code> header contains any other value
+than <code>1</code> the server should return a <code>400 Bad Request</code> status.</p>
 
-<p>If the Server supports deferring length, it MUST add <code class="language-plaintext highlighter-rouge">creation-defer-length</code> to
-the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+<p>If the Server supports deferring length, it MUST add <code>creation-defer-length</code> to
+the <code>Tus-Extension</code> header.</p>
 
-<p>The Client MAY supply the <code class="language-plaintext highlighter-rouge">Upload-Metadata</code> header to add additional metadata to the
+<p>The Client MAY supply the <code>Upload-Metadata</code> header to add additional metadata to the
 upload creation request. The Server MAY decide to ignore or use this information to
 further process the request or to reject it. If an upload contains additional
-metadata, responses to <code class="language-plaintext highlighter-rouge">HEAD</code> requests MUST include the <code class="language-plaintext highlighter-rouge">Upload-Metadata</code> header
+metadata, responses to <code>HEAD</code> requests MUST include the <code>Upload-Metadata</code> header
 and its value as specified by the Client during the creation.</p>
 
 <p>If the length of the upload exceeds the maximum, which MAY be specified using
-the <code class="language-plaintext highlighter-rouge">Tus-Max-Size</code> header, the Server MUST respond with the
-<code class="language-plaintext highlighter-rouge">413 Request Entity Too Large</code> status.</p>
+the <code>Tus-Max-Size</code> header, the Server MUST respond with the
+<code>413 Request Entity Too Large</code> status.</p>
 
-<p>The Server MUST acknowledge a successful upload creation with the <code class="language-plaintext highlighter-rouge">201 Created</code>
-status. The Server MUST set the <code class="language-plaintext highlighter-rouge">Location</code> header to the URL of the created
+<p>The Server MUST acknowledge a successful upload creation with the <code>201 Created</code>
+status. The Server MUST set the <code>Location</code> header to the URL of the created
 resource. This URL MAY be absolute or relative.</p>
 
 <p>The Client MUST perform the actual upload using the core protocol.</p>
@@ -614,33 +540,33 @@ resource. This URL MAY be absolute or relative.</p>
 using the Creation With Upload extension.</p>
 
 <p>If the Server supports this extension, it MUST advertise this by including
-<code class="language-plaintext highlighter-rouge">creation-with-upload</code> in the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header. Furthermore, this extension
+<code>creation-with-upload</code> in the <code>Tus-Extension</code> header. Furthermore, this extension
 depends directly on the Creation extension. Therefore, if the Server does not
 offer the Creation extension, it MUST NOT offer the Creation With Upload
 extension either.</p>
 
 <p>The Client MAY include either the entirety or a chunk of the upload data in the body of
-the <code class="language-plaintext highlighter-rouge">POST</code> request. In this case, similar rules as for the <code class="language-plaintext highlighter-rouge">PATCH</code> request and
+the <code>POST</code> request. In this case, similar rules as for the <code>PATCH</code> request and
 response apply. The Client MUST include the
-<code class="language-plaintext highlighter-rouge">Content-Type: application/offset+octet-stream</code> header. The Server SHOULD accept
-as many bytes as possible and MUST include the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header in the
+<code>Content-Type: application/offset+octet-stream</code> header. The Server SHOULD accept
+as many bytes as possible and MUST include the <code>Upload-Offset</code> header in the
 response and MUST set its value to the offset of the upload after applying the
 accepted bytes.</p>
 
 <p>If the Client wants to use this extension, the Client SHOULD verify that it is
-supported by the Server before sending the <code class="language-plaintext highlighter-rouge">POST</code> request.
-In addition, the Client SHOULD include the <code class="language-plaintext highlighter-rouge">Expect: 100-continue</code> header in
+supported by the Server before sending the <code>POST</code> request.
+In addition, the Client SHOULD include the <code>Expect: 100-continue</code> header in
 the request to receive early feedback from the Server on whether it will accept
 the creation request, before attempting to transfer the first chunk.</p>
 
 <h4 id="example-3">Example</h4>
 
-<p>A non-empty <code class="language-plaintext highlighter-rouge">POST</code> request is used to create a new upload resource. The
-<code class="language-plaintext highlighter-rouge">Upload-Offset</code> header in the response indicates how much data has been accepted.</p>
+<p>A non-empty <code>POST</code> request is used to create a new upload resource. The
+<code>Upload-Offset</code> header in the response indicates how much data has been accepted.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Host: tus.example.org
 Content-Length: 5
 Upload-Length: 100
@@ -648,30 +574,30 @@ Tus-Resumable: 1.0.0
 Content-Type: application/offset+octet-stream
 
 hello
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
+<pre><code>HTTP/1.1 201 Created
 Location: https://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
 Tus-Resumable: 1.0.0
 Upload-Offset: 5
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="expiration">Expiration</h3>
 
 <p>The Server MAY remove unfinished uploads once they expire. In order to indicate
-this behavior to the Client, the Server MUST add <code class="language-plaintext highlighter-rouge">expiration</code> to the
-<code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+this behavior to the Client, the Server MUST add <code>expiration</code> to the
+<code>Tus-Extension</code> header.</p>
 
 <h4 id="example-4">Example</h4>
 
-<p>The unfinished upload is available until the time specified in <code class="language-plaintext highlighter-rouge">Upload-Expires</code>.
+<p>The unfinished upload is available until the time specified in <code>Upload-Expires</code>.
 After this date the upload can not be resumed.</p>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Type: application/offset+octet-stream
 Content-Length: 30
@@ -679,82 +605,82 @@ Upload-Offset: 70
 Tus-Resumable: 1.0.0
 
 [remaining 30 bytes]
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Upload-Expires: Wed, 25 Jun 2014 16:00:00 GMT
 Tus-Resumable: 1.0.0
 Upload-Offset: 100
-</code></pre></div></div>
+</code></pre>
 
 <h4 id="headers-2">Headers</h4>
 
 <h5 id="upload-expires">Upload-Expires</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Expires</code> response header indicates the time after which the unfinished upload
+<p>The <code>Upload-Expires</code> response header indicates the time after which the unfinished upload
 expires. A Server MAY wish to remove incomplete uploads after a given
 period of time to prevent abandoned uploads from taking up extra storage. The
 Client SHOULD use this header to determine if an upload is still valid before
 attempting to resume the upload.</p>
 
-<p>This header MUST be included in every <code class="language-plaintext highlighter-rouge">PATCH</code> response if the upload is going
-to expire. If the expiration is known at the creation, the <code class="language-plaintext highlighter-rouge">Upload-Expires</code>
-header MUST be included in the response to the initial <code class="language-plaintext highlighter-rouge">POST</code> request.
+<p>This header MUST be included in every <code>PATCH</code> response if the upload is going
+to expire. If the expiration is known at the creation, the <code>Upload-Expires</code>
+header MUST be included in the response to the initial <code>POST</code> request.
 Its value MAY change over time.</p>
 
 <p>If a Client does attempt to resume an upload which has since been removed by the
-Server, the Server SHOULD respond with the<code class="language-plaintext highlighter-rouge">404 Not Found</code> or <code class="language-plaintext highlighter-rouge">410 Gone</code> status.
+Server, the Server SHOULD respond with the<code>404 Not Found</code> or <code>410 Gone</code> status.
 The latter one SHOULD be used if the Server is keeping track of expired uploads.
 In both cases the Client SHOULD start a new upload.</p>
 
-<p>The value of the <code class="language-plaintext highlighter-rouge">Upload-Expires</code> header MUST be in
+<p>The value of the <code>Upload-Expires</code> header MUST be in
 <a href="https://tools.ietf.org/html/rfc7231#section-7.1.1.1">RFC 7231</a> datetime format.</p>
 
 <h3 id="checksum">Checksum</h3>
 
 <p>The Client and the Server MAY implement and use this extension to verify data
-integrity of each <code class="language-plaintext highlighter-rouge">PATCH</code> request. If supported, the Server MUST add <code class="language-plaintext highlighter-rouge">checksum</code>
-to the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+integrity of each <code>PATCH</code> request. If supported, the Server MUST add <code>checksum</code>
+to the <code>Tus-Extension</code> header.</p>
 
-<p>A Client MAY include the <code class="language-plaintext highlighter-rouge">Upload-Checksum</code> header in a <code class="language-plaintext highlighter-rouge">PATCH</code> request.
+<p>A Client MAY include the <code>Upload-Checksum</code> header in a <code>PATCH</code> request.
 Once the entire request has been received, the Server MUST verify the uploaded
 chunk against the provided checksum using the specified algorithm. Depending on
 the result the Server MAY respond with one of the following status code:
-1) <code class="language-plaintext highlighter-rouge">400 Bad Request</code> if the checksum algorithm is not supported by the server,
-2) <code class="language-plaintext highlighter-rouge">460 Checksum Mismatch</code> if the checksums mismatch or
-3) <code class="language-plaintext highlighter-rouge">204 No Content</code> if the checksums match and the processing of the data
+1) <code>400 Bad Request</code> if the checksum algorithm is not supported by the server,
+2) <code>460 Checksum Mismatch</code> if the checksums mismatch or
+3) <code>204 No Content</code> if the checksums match and the processing of the data
 succeeded.
 In the first two cases the uploaded chunk MUST be discarded, and the upload and
 its offset MUST NOT be updated.</p>
 
 <p>The Server MUST support at least the SHA1 checksum algorithm identified
-by <code class="language-plaintext highlighter-rouge">sha1</code>. The names of the checksum algorithms MUST only consist of ASCII
+by <code>sha1</code>. The names of the checksum algorithms MUST only consist of ASCII
 characters with the modification that uppercase characters are excluded.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Checksum-Algorithm</code> header MUST be included in the response to an
-<code class="language-plaintext highlighter-rouge">OPTIONS</code> request.</p>
+<p>The <code>Tus-Checksum-Algorithm</code> header MUST be included in the response to an
+<code>OPTIONS</code> request.</p>
 
 <p>If the hash cannot be calculated at the beginning of the upload, it MAY be
 included as a trailer. If the Server can handle trailers, this behavior MUST be
-announced by adding <code class="language-plaintext highlighter-rouge">checksum-trailer</code> to the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.
+announced by adding <code>checksum-trailer</code> to the <code>Tus-Extension</code> header.
 Trailers, also known as trailing headers, are headers which are sent after the
-request’s body has been transmitted already. Following
+request's body has been transmitted already. Following
 <a href="https://tools.ietf.org/html/rfc7230#section-4.1.2">RFC 7230</a> they
-MUST be announced using the <code class="language-plaintext highlighter-rouge">Trailer</code> header and are only allowed in chunked
+MUST be announced using the <code>Trailer</code> header and are only allowed in chunked
 transfers.</p>
 
 <h4 id="headers-3">Headers</h4>
 
 <h5 id="tus-checksum-algorithm">Tus-Checksum-Algorithm</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Tus-Checksum-Algorithm</code> response header MUST be a comma-separated list of
+<p>The <code>Tus-Checksum-Algorithm</code> response header MUST be a comma-separated list of
 the checksum algorithms supported by the server.</p>
 
 <h5 id="upload-checksum">Upload-Checksum</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Checksum</code> request header contains information about the checksum of
+<p>The <code>Upload-Checksum</code> request header contains information about the checksum of
 the current body payload. The header MUST consist of the name of the used
 checksum algorithm and the Base64 encoded checksum separated by a space.</p>
 
@@ -762,36 +688,36 @@ checksum algorithm and the Base64 encoded checksum separated by a space.</p>
 
 <p><strong>Request</strong>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OPTIONS /files HTTP/1.1
+<pre><code>OPTIONS /files HTTP/1.1
 Host: tus.example.org
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response</strong>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Tus-Resumable: 1.0.0
 Tus-Version: 1.0.0
 Tus-Extension: checksum
 Tus-Checksum-Algorithm: md5,sha1,crc32
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Request</strong>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/17f44dbe1c4bace0e18ab850cf2b3a83 HTTP/1.1
+<pre><code>PATCH /files/17f44dbe1c4bace0e18ab850cf2b3a83 HTTP/1.1
 Content-Length: 11
 Upload-Offset: 0
 Tus-Resumable: 1.0.0
 Upload-Checksum: sha1 Kq5sNclPz7QV2+lfQIuc6R7oRu0=
 
 hello world
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response</strong>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Tus-Resumable: 1.0.0
 Upload-Offset: 11
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="termination">Termination</h3>
 
@@ -799,158 +725,158 @@ Upload-Offset: 11
 uploads allowing the Server to free up used resources.</p>
 
 <p>If this extension is supported by the Server, it MUST be announced by adding
-<code class="language-plaintext highlighter-rouge">termination</code> to the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+<code>termination</code> to the <code>Tus-Extension</code> header.</p>
 
 <h4 id="requests-2">Requests</h4>
 
 <h5 id="delete">DELETE</h5>
 
-<p>When receiving a <code class="language-plaintext highlighter-rouge">DELETE</code> request for an existing upload the Server SHOULD free
-associated resources and MUST respond with the <code class="language-plaintext highlighter-rouge">204 No Content</code> status
+<p>When receiving a <code>DELETE</code> request for an existing upload the Server SHOULD free
+associated resources and MUST respond with the <code>204 No Content</code> status
 confirming that the upload was terminated. For all future requests to this URL,
-the Server SHOULD respond with the <code class="language-plaintext highlighter-rouge">404 Not Found</code> or <code class="language-plaintext highlighter-rouge">410 Gone</code> status.</p>
+the Server SHOULD respond with the <code>404 Not Found</code> or <code>410 Gone</code> status.</p>
 
 <h4 id="example-6">Example</h4>
 
 <p><strong>Request:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+<pre><code>DELETE /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
 Host: tus.example.org
 Content-Length: 0
 Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Response:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
+<pre><code>HTTP/1.1 204 No Content
 Tus-Resumable: 1.0.0
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="concatenation">Concatenation</h3>
 
 <p>This extension can be used to concatenate multiple uploads into a single one enabling
 Clients to perform parallel uploads and to upload non-contiguous chunks. If the
-Server supports this extension, it MUST add <code class="language-plaintext highlighter-rouge">concatenation</code> to the
-<code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+Server supports this extension, it MUST add <code>concatenation</code> to the
+<code>Tus-Extension</code> header.</p>
 
 <p>A partial upload represents a chunk of a file. It is constructed by including the
-<code class="language-plaintext highlighter-rouge">Upload-Concat: partial</code> header while creating a new upload using the
+<code>Upload-Concat: partial</code> header while creating a new upload using the
 <a href="#creation">Creation</a> extension. Multiple partial uploads are concatenated
 into a final upload in the specified order. The Server SHOULD NOT process these
 partial uploads until they are concatenated to form a final upload. The length of the
 final upload MUST be the sum of the length of all partial uploads.</p>
 
-<p>In order to create a new final upload, the Client MUST add the <code class="language-plaintext highlighter-rouge">Upload-Concat</code> header
-to the upload creation request. The value MUST be <code class="language-plaintext highlighter-rouge">final</code> followed by a semicolon
+<p>In order to create a new final upload, the Client MUST add the <code>Upload-Concat</code> header
+to the upload creation request. The value MUST be <code>final</code> followed by a semicolon
 and a space-separated list of the partial upload URLs that need to be concatenated.
 The partial uploads MUST be concatenated as per the order specified in the list.
 This concatenation request SHOULD happen after all of the corresponding partial uploads
-are completed. The Client MUST NOT include the <code class="language-plaintext highlighter-rouge">Upload-Length</code> header in the final
+are completed. The Client MUST NOT include the <code>Upload-Length</code> header in the final
 upload creation.</p>
 
 <p>The Client MAY send the concatenation request while the partial uploads are still
 in progress. This feature MUST be explicitly announced by the Server by adding
-<code class="language-plaintext highlighter-rouge">concatenation-unfinished</code> to the <code class="language-plaintext highlighter-rouge">Tus-Extension</code> header.</p>
+<code>concatenation-unfinished</code> to the <code>Tus-Extension</code> header.</p>
 
-<p>When creating a new final upload the partial uploads’ metadata SHALL NOT be
+<p>When creating a new final upload the partial uploads' metadata SHALL NOT be
 transferred to the new final upload. All metadata SHOULD be included in the
-concatenation request using the <code class="language-plaintext highlighter-rouge">Upload-Metadata</code> header.</p>
+concatenation request using the <code>Upload-Metadata</code> header.</p>
 
 <p>The Server MAY delete partial uploads after concatenation. They MAY however be
 used multiple times to form a final resource.</p>
 
-<p>The Server MUST respond with the <code class="language-plaintext highlighter-rouge">403 Forbidden</code> status to <code class="language-plaintext highlighter-rouge">PATCH</code> requests against
+<p>The Server MUST respond with the <code>403 Forbidden</code> status to <code>PATCH</code> requests against
 a final upload URL and MUST NOT modify the final or its partial uploads.</p>
 
-<p>The response to a HEAD request for a final upload SHOULD NOT contain the <code class="language-plaintext highlighter-rouge">Upload-Offset</code>
+<p>The response to a HEAD request for a final upload SHOULD NOT contain the <code>Upload-Offset</code>
 header unless the concatenation has been successfully finished. After successful
-concatenation, the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> and <code class="language-plaintext highlighter-rouge">Upload-Length</code> MUST be set and their values MUST be
-equal. The value of the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header before concatenation is not defined for a
+concatenation, the <code>Upload-Offset</code> and <code>Upload-Length</code> MUST be set and their values MUST be
+equal. The value of the <code>Upload-Offset</code> header before concatenation is not defined for a
 final upload.</p>
 
-<p>The response to a HEAD request for a partial upload MUST contain the <code class="language-plaintext highlighter-rouge">Upload-Offset</code> header.</p>
+<p>The response to a HEAD request for a partial upload MUST contain the <code>Upload-Offset</code> header.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Length</code> header MUST be included if the length of the final resource can
-be calculated at the time of the request. Response to <code class="language-plaintext highlighter-rouge">HEAD</code> request against partial
-or final upload MUST include the <code class="language-plaintext highlighter-rouge">Upload-Concat</code> header and its value as received in
+<p>The <code>Upload-Length</code> header MUST be included if the length of the final resource can
+be calculated at the time of the request. Response to <code>HEAD</code> request against partial
+or final upload MUST include the <code>Upload-Concat</code> header and its value as received in
 the upload creation request.</p>
 
 <h4 id="headers-4">Headers</h4>
 
 <h5 id="upload-concat">Upload-Concat</h5>
 
-<p>The <code class="language-plaintext highlighter-rouge">Upload-Concat</code> request and response header MUST be set in both partial and final upload creation
+<p>The <code>Upload-Concat</code> request and response header MUST be set in both partial and final upload creation
 requests. It indicates whether the upload is either a partial
-or final upload. If the upload is a partial one, the header value MUST be <code class="language-plaintext highlighter-rouge">partial</code>.
-In the case of a final upload, its value MUST be <code class="language-plaintext highlighter-rouge">final</code> followed by a
+or final upload. If the upload is a partial one, the header value MUST be <code>partial</code>.
+In the case of a final upload, its value MUST be <code>final</code> followed by a
 semicolon and a space-separated list of partial upload URLs that will be
 concatenated. The partial uploads URLs MAY be absolute or relative and MUST NOT contain
 spaces as defined in <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>.</p>
 
 <h4 id="example-7">Example</h4>
 
-<p>In the following example, the <code class="language-plaintext highlighter-rouge">Host</code> and <code class="language-plaintext highlighter-rouge">Tus-Resumable</code> headers are omitted for
+<p>In the following example, the <code>Host</code> and <code>Tus-Resumable</code> headers are omitted for
 readability although they are required by the specification.
 In the beginning two partial uploads are created:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Upload-Concat: partial
 Upload-Length: 5
 
 HTTP/1.1 201 Created
 Location: https://tus.example.org/files/a
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+</code></pre>
+<pre><code>POST /files HTTP/1.1
 Upload-Concat: partial
 Upload-Length: 6
 
 HTTP/1.1 201 Created
 Location: https://tus.example.org/files/b
-</code></pre></div></div>
+</code></pre>
 
-<p>You are now able to upload data to the two partial resources using <code class="language-plaintext highlighter-rouge">PATCH</code>
+<p>You are now able to upload data to the two partial resources using <code>PATCH</code>
 requests:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/a HTTP/1.1
+<pre><code>PATCH /files/a HTTP/1.1
 Upload-Offset: 0
 Content-Length: 5
 
 hello
 
 HTTP/1.1 204 No Content
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH /files/b HTTP/1.1
+</code></pre>
+<pre><code>PATCH /files/b HTTP/1.1
 Upload-Offset: 0
 Content-Length: 6
 
  world
 
 HTTP/1.1 204 No Content
-</code></pre></div></div>
+</code></pre>
 
-<p>In the first request, the string <code class="language-plaintext highlighter-rouge">hello</code> was uploaded while the second file now
+<p>In the first request, the string <code>hello</code> was uploaded while the second file now
 contains ` world` with a leading space.</p>
 
 <p>The next step is to create the final upload consisting of the two earlier
-generated partial uploads. In the following request, no <code class="language-plaintext highlighter-rouge">Upload-Length</code> header is
+generated partial uploads. In the following request, no <code>Upload-Length</code> header is
 presented.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /files HTTP/1.1
+<pre><code>POST /files HTTP/1.1
 Upload-Concat: final;/files/a /files/b
 
 HTTP/1.1 201 Created
 Location: https://tus.example.org/files/ab
-</code></pre></div></div>
+</code></pre>
 
 <p>The length of the final resource is now 11 bytes consisting of the string
-<code class="language-plaintext highlighter-rouge">hello world</code>.</p>
+<code>hello world</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD /files/ab HTTP/1.1
+<pre><code>HEAD /files/ab HTTP/1.1
 
 HTTP/1.1 200 OK
 Upload-Length: 11
 Upload-Concat: final;/files/a /files/b
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="faq">FAQ</h2>
 
@@ -973,30 +899,15 @@ Upload-Concat: final;/files/a /files/b
 
       
         <div class="container comments">
-          <div id="disqus_thread"></div>
+          <hr />
 
-          <script type="text/javascript">
-              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-              var disqus_shortname = 'tusio'; // required: replace example with your forum shortname
-              var disqus_url = 'https://tus.io/protocols/resumable-upload.html';
-
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-          <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          Do you have a comment? Let us know in the <a href="https://community.transloadit.com/c/tus">forum</a> or on <a href="https://twitter.com/tus_io/">Twitter</a>.
         </div>
       
     </div>
 
     <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
 
-    <script src="/assets/build/vendors~app.83a9f4d700aad6cc7d53.93659b28b0a28ca6ceea.chunk.js"></script><script src="/assets/build/app.4759fb056ce29631dcf5.js"></script>
+    <script src="/assets/build/app.b8255d6fa0508d086c5c.js"></script>
   </body>
 </html>
