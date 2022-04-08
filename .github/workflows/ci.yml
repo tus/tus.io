@@ -38,9 +38,8 @@ jobs:
           yarn build:production
       - name: Website Deploy 🚀
         if  : github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
         with: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH      : gh-pages # The branch the action should deploy to.
-          FOLDER      : _site # The folder the action should deploy.
-          CLEAN       : true # Automatically remove deleted files from the deploy branch
+          branch: gh-pages # The branch the action should deploy to.
+          folder: _site # The folder the action should deploy.
+          clean : true # Automatically remove deleted files from the deploy branch
