@@ -29,7 +29,7 @@
     "cross-env": "7.0.3",
     "depurar": "0.3.0",
     "download": "8.0.0",
-    "eslint": "8.14.0",
+    "eslint": "8.13.0",
     "eslint-config-standard": "16.0.3",
     "eslint-import-resolver-webpack": "0.13.2",
     "eslint-plugin-import": "2.26.0",
