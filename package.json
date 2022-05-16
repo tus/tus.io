@@ -39,7 +39,7 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-standard": "5.0.0",
     "fakefile": "1.0.0",
-    "glob": "8.0.1",
+    "glob": "8.0.3",
     "jquery": "3.6.0",
     "js-yaml": "4.1.0",
     "lanyon": "0.3.16",
