@@ -508,12 +508,15 @@ request a new upload resource. The request MUST include one of the following hea
 
 <p>a) <code>Upload-Length</code> to indicate the size of an entire upload in bytes.</p>
 
-<p>b) <code>Upload-Defer-Length: 1</code> if upload size is not known at the time. Once it is
-known the Client MUST set the <code>Upload-Length</code> header in the next <code>PATCH</code> request.
+<p>b) <code>Upload-Defer-Length: 1</code> if upload size is not known at the time.
+If the <code>Upload-Defer-Length</code> header contains any other value
+than <code>1</code> the server should return a <code>400 Bad Request</code> status.</p>
+
+<p>If the length was deferred using <code>Upload-Defer-Length: 1</code>, the Client MUST set
+the <code>Upload-Length</code> header in the next <code>PATCH</code> request, once the length is known.
 Once set the length MUST NOT be changed. As long as the length of the upload is
 not known, the Server MUST set <code>Upload-Defer-Length: 1</code> in all responses to
-<code>HEAD</code> requests. If the <code>Upload-Defer-Length</code> header contains any other value
-than <code>1</code> the server should return a <code>400 Bad Request</code> status.</p>
+<code>HEAD</code> requests.</p>
 
 <p>If the Server supports deferring length, it MUST add <code>creation-defer-length</code> to
 the <code>Tus-Extension</code> header.</p>
