@@ -37,7 +37,7 @@ jobs:
           yarn build:production
       - name: Website Deploy 🚀
         if  : github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@v4.3.4
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with: 
           branch: gh-pages # The branch the action should deploy to.
           folder: _site # The folder the action should deploy.
