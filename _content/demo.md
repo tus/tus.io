@@ -47,10 +47,8 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 ### Compatibility
 
 The [tus-js-client](https://github.com/tus/tus-js-client) used in
-this demo has been [automatically tested](https://travis-ci.org/tus/tus-js-client)
-and works with the following browsers:
+this demo has been automatically tested and works with the following browsers:
 
-* Internet Explorer 10+
 * Microsoft Edge 12+
 * Mozilla Firefox 14+
 * Google Chrome 20+
