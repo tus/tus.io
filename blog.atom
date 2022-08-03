@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://tus.io/blog.atom" rel="self" type="application/atom+xml" /><link href="https://tus.io/" rel="alternate" type="text/html" /><updated>2022-08-02T11:36:18+02:00</updated><id>https://tus.io/blog.atom</id><entry><title type="html">Towards tus 2.0</title><link href="https://tus.io/blog/2022/02/24/tus-v2.html" rel="alternate" type="text/html" title="Towards tus 2.0" /><published>2022-02-24T00:00:00+01:00</published><updated>2022-02-24T00:00:00+01:00</updated><id>https://tus.io/blog/2022/02/24/tus-v2</id><content type="html" xml:base="https://tus.io/blog/2022/02/24/tus-v2.html"><![CDATA[<p>Seven years ago, in November 2015, <a href="/blog/2015/11/16/tus.1.0.html">we announced the release of tus 1.0</a>, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about <strong>tus 2.0</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://tus.io/blog.atom" rel="self" type="application/atom+xml" /><link href="https://tus.io/" rel="alternate" type="text/html" /><updated>2022-08-04T00:31:54+02:00</updated><id>https://tus.io/blog.atom</id><entry><title type="html">Major release: tus-js-client v3.0.0</title><link href="https://tus.io/blog/2022/08/03/tus-js-client-300.html" rel="alternate" type="text/html" title="Major release: tus-js-client v3.0.0" /><published>2022-08-03T00:00:00+02:00</published><updated>2022-08-03T00:00:00+02:00</updated><id>https://tus.io/blog/2022/08/03/tus-js-client-300</id><content type="html" xml:base="https://tus.io/blog/2022/08/03/tus-js-client-300.html"><![CDATA[<p class="lead">tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.</p>
+
+<p><a href="https://github.com/tus/tus-js-client/">tus-js-client</a> is the official client implementation for <a href="/protocols/resumable-upload.html">the tus protocol</a> in JavaScript. It not only supports  <strong>web browsers</strong>, but can also be used in <strong>Node.js</strong>, <strong>React Native</strong>, and <strong>Apache Cordova</strong> applications.</p>
+
+<p>This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams.</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li><strong>Add support for Parallel Uploads for <code>fs.ReadStream</code></strong><br />
+In the previous <a href="https://tus.io/blog/2020/05/04/tus-js-client-200.html">major release of tus-js-client v2.0.0</a> we announced that it now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploads"><code>parallelUploads</code> documentation</a> for more details.
+In this release, support for parallel uploads has been extended to also cover <code>fs.ReadStream</code> as an input type. You can use it like so:
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+  parallelUploads: 3,
+})
+</code></pre>
+  </li>
+  <li><strong>Add <code>parallelUploadBoundaries</code> option</strong><br />
+If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploadboundaries"><code>parallelUploadBoundaries</code> documentation</a> for more details.</li>
+  <li><strong>Automatically obtain file size for <code>fs.ReadStream</code></strong><br />
+tus-js-client has supported uploading an instance of <code>fs.ReadStream</code> directly for a long time. However, you always had to manually specify the file size, like this:
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+const { size } = fs.statSync(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+  uploadSize: size,
+})
+</code></pre>
+    <p>The <code>uploadSize</code> option is now optional and can be left out:</p>
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+})
+</code></pre>
+    <p>tus-js-client will automatically obtain the file size from disk.</p>
+  </li>
+</ul>
+
+<h2 id="bug-fixes">Bug fixes</h2>
+
+<ul>
+  <li><strong>Fix resuming of streams in Node.js</strong><br />
+Previously, if you wanted to upload a non-file-based stream using tus-js-client and paused the upload using <code>abort()</code>, the resumption using <code>start()</code> could cause a hanging upload. <a href="https://github.com/tus/tus-js-client/issues/275">This issue</a> has been resolved and resuming properly works now.</li>
+  <li><strong>Fix fingerprint removal after successful upload</strong><br />
+If the <code>removeFingerprintOnSuccess</code> option was used together with <code>uploadDataDuringCreation</code>, the fingerprint was not always properly removed from the URL storage. <a href="https://github.com/tus/tus-js-client/issues/397">This issue</a> has been fixed.</li>
+</ul>
+
+<h2 id="breaking-changes">Breaking changes</h2>
+
+<p>The main behavior of tus-js-client and the vast majority of its API surface stay the same. However, the following breaking changes were necessary:</p>
+
+<ul>
+  <li><strong>Drop support for Node.js v12 and earlier</strong><br />
+Only Node.js v14 or newer are fully supported and tested for compatibility with tus-js-client from now own. Earlier versions may work, but we don't guarantee or support it.</li>
+  <li><strong>Drop support for Internet Explorer</strong><br />
+Many dependencies have dropped support for Internet Explorer, and so do we now. tus-js-client will not be compatible with any version of Internet Explorer from now on. Please note that we still support all other browsers as before.</li>
+  <li><strong>Rename the exported <code>HttpStack</code> class to <code>DefaultHttpStack</code></strong><br />
+tus-js-client allows you to provide a custom HTTP stack using which requests are sent out. If not configured, tus-js-client will use a default implementation depending on the environment. Previously, this class was exported under the <code>HttpStack</code> name. This class shared the name with the <code>HttpStack</code> interface and <a href="https://github.com/tus/tus-js-client/pull/241">caused a collision</a> when using our TypeScript definitions. As such, we have renamed the <code>HttpStack</code> class (not the interface) to <code>DefaultHttpStack</code>. Please update your references if you are using this class.</li>
+  <li><strong>Do not close streams for <code>abort()</code> calls</strong><br />
+Previously, if you provided a <code>Reader</code> or <code>Readable</code> stream to tus-js-client and called the <code>abort()</code> method, tus-js-client would stop the upload and close the stream. This is problematic because the upload cannot be resumed later because one cannot read from the stream anymore. From now on, tus-js-client will not close the stream anymore to allow later resuming using <code>start()</code> again. If you do not want to continue the upload, you must close the stream now on your own.
+Please note that tus-js-client still closes the stream if the upload was completed successfully (i.e. <code>onSuccess</code> has been invoked), as it has done in previous releases.</li>
+  <li><strong>Store upload URL provided by <code>uploadUrl</code></strong><br />
+If you create a new upload, its upload URL will be stored in the URL storage by tus-js-client, so it can later be retrieved using <code>tus.Upload#findPreviousUploads()</code> for resuming the uploads. This behavior is controlled by the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#storefingerprintforresuming"><code>storeFingerprintForResuming</code> option</a>. However, not all servers allow clients to create uploads on their own. Sometimes, the server will supply the client with a pre-defined upload URL to use with the <code>uploadUrl</code> option (e.g. the Vimeo API). Previously, these upload URLs were not stored in the URL storage and could therefore not be retrieved for later resumption.
+This release changes this behavior, so that these URLs are also stored by default, and you can use <code>tus.Upload#findPreviousUploads()</code> to retrieve them.
+If you do not want to store the upload URL, you can revert to the old behavior by disabling it:
+    <pre><code class="language-js">const upload = new tus.Upload(file, {
+  uploadUrl: 'https://tusd.tusdemo.net/files/...',
+  storeFingerprintForResuming: false,
+})
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="try-it">Try it</h2>
+
+<p>If you'd like to try it out, we have updated our <a href="/demo.html">demo</a> to use tus-js-client v3.0.0 as well. The code for it can be found <a href="https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js">here</a>. Do leave a comment there how it went!</p>
+
+<p>Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at <a href="https://github.com/tus">GitHub</a>. If you don't know where to start or have other questions, feel free to <a href="/support.html">contact us</a>!</p>]]></content><author><name>Marius Kleidl</name><email>marius@transloadit.com</email></author><summary type="html"><![CDATA[tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers. tus-js-client is the official client implementation for the tus protocol in JavaScript. It not only supports web browsers, but can also be used in Node.js, React Native, and Apache Cordova applications. This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams. New features Add support for Parallel Uploads for fs.ReadStream In the previous major release of tus-js-client v2.0.0 we announced that it now supports parallel upload requests using the Concatenation extension. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the parallelUploads documentation for more details. In this release, support for parallel uploads has been extended to also cover fs.ReadStream as an input type. You can use it like so: const path = 'my/file.txt' const file = fs.createReadStream(path) const upload = new tus.Upload(file, { endpoint: 'https://tusd.tusdemo.net/files/', parallelUploads: 3, }) Add parallelUploadBoundaries option If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the parallelUploadBoundaries documentation for more details. Automatically obtain file size for fs.ReadStream tus-js-client has supported uploading an instance of fs.ReadStream directly for a long time. However, you always had to manually specify the file size, like this: const path = 'my/file.txt' const file = fs.createReadStream(path) const { size } = fs.statSync(path) const upload = new tus.Upload(file, { endpoint: 'https://tusd.tusdemo.net/files/', uploadSize: size, }) The uploadSize option is now optional and can be left out: const path = 'my/file.txt' const file = fs.createReadStream(path) const upload = new tus.Upload(file, { endpoint: 'https://tusd.tusdemo.net/files/', }) tus-js-client will automatically obtain the file size from disk. Bug fixes Fix resuming of streams in Node.js Previously, if you wanted to upload a non-file-based stream using tus-js-client and paused the upload using abort(), the resumption using start() could cause a hanging upload. This issue has been resolved and resuming properly works now. Fix fingerprint removal after successful upload If the removeFingerprintOnSuccess option was used together with uploadDataDuringCreation, the fingerprint was not always properly removed from the URL storage. This issue has been fixed. Breaking changes The main behavior of tus-js-client and the vast majority of its API surface stay the same. However, the following breaking changes were necessary: Drop support for Node.js v12 and earlier Only Node.js v14 or newer are fully supported and tested for compatibility with tus-js-client from now own. Earlier versions may work, but we don't guarantee or support it. Drop support for Internet Explorer Many dependencies have dropped support for Internet Explorer, and so do we now. tus-js-client will not be compatible with any version of Internet Explorer from now on. Please note that we still support all other browsers as before. Rename the exported HttpStack class to DefaultHttpStack tus-js-client allows you to provide a custom HTTP stack using which requests are sent out. If not configured, tus-js-client will use a default implementation depending on the environment. Previously, this class was exported under the HttpStack name. This class shared the name with the HttpStack interface and caused a collision when using our TypeScript definitions. As such, we have renamed the HttpStack class (not the interface) to DefaultHttpStack. Please update your references if you are using this class. Do not close streams for abort() calls Previously, if you provided a Reader or Readable stream to tus-js-client and called the abort() method, tus-js-client would stop the upload and close the stream. This is problematic because the upload cannot be resumed later because one cannot read from the stream anymore. From now on, tus-js-client will not close the stream anymore to allow later resuming using start() again. If you do not want to continue the upload, you must close the stream now on your own. Please note that tus-js-client still closes the stream if the upload was completed successfully (i.e. onSuccess has been invoked), as it has done in previous releases. Store upload URL provided by uploadUrl If you create a new upload, its upload URL will be stored in the URL storage by tus-js-client, so it can later be retrieved using tus.Upload#findPreviousUploads() for resuming the uploads. This behavior is controlled by the storeFingerprintForResuming option. However, not all servers allow clients to create uploads on their own. Sometimes, the server will supply the client with a pre-defined upload URL to use with the uploadUrl option (e.g. the Vimeo API). Previously, these upload URLs were not stored in the URL storage and could therefore not be retrieved for later resumption. This release changes this behavior, so that these URLs are also stored by default, and you can use tus.Upload#findPreviousUploads() to retrieve them. If you do not want to store the upload URL, you can revert to the old behavior by disabling it: const upload = new tus.Upload(file, { uploadUrl: 'https://tusd.tusdemo.net/files/...', storeFingerprintForResuming: false, }) Try it If you'd like to try it out, we have updated our demo to use tus-js-client v3.0.0 as well. The code for it can be found here. Do leave a comment there how it went! Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at GitHub. If you don't know where to start or have other questions, feel free to contact us!]]></summary></entry><entry><title type="html">Towards tus 2.0</title><link href="https://tus.io/blog/2022/02/24/tus-v2.html" rel="alternate" type="text/html" title="Towards tus 2.0" /><published>2022-02-24T00:00:00+01:00</published><updated>2022-02-24T00:00:00+01:00</updated><id>https://tus.io/blog/2022/02/24/tus-v2</id><content type="html" xml:base="https://tus.io/blog/2022/02/24/tus-v2.html"><![CDATA[<p>Seven years ago, in November 2015, <a href="/blog/2015/11/16/tus.1.0.html">we announced the release of tus 1.0</a>, the first major and stable version of our uploading protocol. In the past months, we have been actively working on the next steps for tus and wanted to share early details about <strong>tus 2.0</strong>.</p>
 
 <p>tus 2.0 will keep the same principles and approaches for how uploads are performed. This ensures that upgrading the uploading infrastructure from tus 1.0 to 2.0 is as seamless as possible for the end-users as well as for the developers. The most important changes will happen to the structure of the protocol:</p>
 
@@ -72,19 +157,19 @@
 
 <ul>
   <li><strong>Add support for Parallel Uploads</strong><br />
-tus-js-client now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#paralleluploads"><code>parallelUploads</code> documentation</a> for more details.</li>
+tus-js-client now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#paralleluploads"><code>parallelUploads</code> documentation</a> for more details.</li>
   <li><strong>Add Upload Storage API</strong><br />
 tus-js-client was always able to resume uploads which have been started in a previous browsing session. This is possible by storing the upload resource's URL after it has been created and retrieving it from said storage based on file metadata later on. This allows users to pick up an upload where it had been left off even after the browser is (accidentally) closed. tus-js-client uses the Web Storage API to save this pointer inside the browsers but historically provided little access to retrieve or modify elements in this URL storage.
-To remove this limitation, we introduce the URL Storage interface: You are now able to supply your own URL storage using the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#urlstorage"><code>urlStorage</code> option</a>, if you want to save URLs in a database, for example.
-Furthermore, you can now easily query the URL storage to retrieve a list of previously started uploads using the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#tusuploadfindpreviousuploads"><code>findPreviousUploads</code> method</a> and ask the end user which upload should be resumed. Please have a look at <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/usage.md#example-let-user-select-upload-to-resume">the corresponding example</a> for more details on this approach.</li>
+To remove this limitation, we introduce the URL Storage interface: You are now able to supply your own URL storage using the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#urlstorage"><code>urlStorage</code> option</a>, if you want to save URLs in a database, for example.
+Furthermore, you can now easily query the URL storage to retrieve a list of previously started uploads using the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#tusuploadfindpreviousuploads"><code>findPreviousUploads</code> method</a> and ask the end user which upload should be resumed. Please have a look at <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/usage.md#example-let-user-select-upload-to-resume">the corresponding example</a> for more details on this approach.</li>
   <li><strong>Add HTTP abstraction layer</strong><br />
-tus-js-client has always contained an abstraction layer to smooth out the differences between the network APIs in browsers and inside Node.js. Users now also have the ability to supply a custom HTTP stack to further customize the used HTTP interface. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#httpstack"><code>httpStack</code> documentation</a> for more details.</li>
+tus-js-client has always contained an abstraction layer to smooth out the differences between the network APIs in browsers and inside Node.js. Users now also have the ability to supply a custom HTTP stack to further customize the used HTTP interface. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#httpstack"><code>httpStack</code> documentation</a> for more details.</li>
   <li><strong>Add File Reader abstraction layer</strong><br />
-Similar to the HTTP abstraction layer, tus-js-client also uses an abstraction to uniformly read data from the different input file types. If you want to add support for another input type, you can supply your own file reader implementation now. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#filereader"><code>fileReader</code> documentation</a> for more details.</li>
+Similar to the HTTP abstraction layer, tus-js-client also uses an abstraction to uniformly read data from the different input file types. If you want to add support for another input type, you can supply your own file reader implementation now. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#filereader"><code>fileReader</code> documentation</a> for more details.</li>
   <li><strong>Add request IDs</strong><br />
-tus-js-client can now be configured to send unique request IDs using the <code>X-Request-ID</code> header. Since tus-js-client includes this ID in its error messages, it can be used to correlate client errors with server logs to make debugging easier. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#addrequestid"><code>addRequestId</code> documentation</a> for more details.</li>
+tus-js-client can now be configured to send unique request IDs using the <code>X-Request-ID</code> header. Since tus-js-client includes this ID in its error messages, it can be used to correlate client errors with server logs to make debugging easier. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#addrequestid"><code>addRequestId</code> documentation</a> for more details.</li>
   <li><strong>Add request and response callbacks</strong><br />
-This release also adds the <code>onBeforeRequest</code> and <code>onAfterResponse</code> callbacks which will be invoked before a HTTP request is sent and directly after a HTTP response is received. This allows you to modify outgoing requests or retrieve additional information from incoming responses. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#onbeforerequest">documentation</a> for more information and examples.</li>
+This release also adds the <code>onBeforeRequest</code> and <code>onAfterResponse</code> callbacks which will be invoked before a HTTP request is sent and directly after a HTTP response is received. This allows you to modify outgoing requests or retrieve additional information from incoming responses. See the <a href="https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#onbeforerequest">documentation</a> for more information and examples.</li>
 </ul>
 
 <h2 id="breaking-changes">Breaking changes</h2>
@@ -280,130 +365,4 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
 
 <h2 id="finishing-thoughts">Finishing Thoughts</h2>
 
-<p>With S3, engineers have an incredibly useful tool for storing data with high availability and scalability. However, it does not present the perfect storage back-end for the tus protocol and requires some workarounds. In the future, we will have a look at other storage system and cloud providers.</p>]]></content><author><name>Marius Kleidl</name><email>marius@transloadit.com</email></author><summary type="html"><![CDATA[With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official tusd server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to deliver on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon's service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.]]></summary></entry><entry><title type="html">tus 1.0 - Changing the future of file uploading</title><link href="https://tus.io/blog/2015/11/16/tus.1.0.html" rel="alternate" type="text/html" title="tus 1.0 - Changing the future of file uploading" /><published>2015-11-16T00:00:00+01:00</published><updated>2015-11-16T00:00:00+01:00</updated><id>https://tus.io/blog/2015/11/16/tus.1.0</id><content type="html" xml:base="https://tus.io/blog/2015/11/16/tus.1.0.html"><![CDATA[<p>As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: 'upload interrupted'.</p>
-
-<!--more-->
-
-<p>This is by itself a negative user experience, but it becomes even worse when it happens in the middle of a 2GB upload on a slow connection. And of course, the longer an upload takes, the more exposed it is to poor connections. A failed upload will then have to be retried from the start, if the user even bothers with it at all.</p>
-
-<p>With media files growing larger and networks remaining fragile, it is clear that we need a better solution to handle uploading.</p>
-
-<h3 id="resumable-uploads">Resumable Uploads</h3>
-
-<p>Even though certain decent network libraries already implement retries, these do not give the option to resume at the point where the upload was previously interrupted and then only transfer the remaining bytes. Furthermore, these network libraries often require additional user input in order to retry failed uploads. If retries were initiated behind the scenes, the user might not even notice he had an interrupted connection, as the total duration of the upload would barely be impacted.</p>
-
-<p>There are also many areas in the world where connections are quite poor. In such places, restarting an upload from the beginning usually means that the user only gets to transmit the first 20% of his file, before the connection breaks again. Thus, resuming an upload exactly where it left off is the <em>only</em> way a large file will ever be uploaded in these cases.</p>
-
-<p>From this, it is apparent that we <em>need</em> resumable uploads and therefore we are proud to present tus, the protocol that aims to offer solutions to all of the problems listed above.</p>
-
-<p>In addition to this, tus has redesigned the process of uploading in such a way that multiple file parts can be sent simultaneously. Using tus not only makes uploading a lot more reliable, but also much faster.</p>
-
-<h3 id="havent-other-companies-already-implemented-this">Haven't other companies already implemented this?</h3>
-
-<p>Yes, but we see this as another part of the problem. While there are many implementations that offer resumable uploads, they all solve it in a different way. They are either bound to one language or use case. They are also not as thorough or interoperable as we would like, because they all speak different dialects. Some implementations are supported by others, but that is as far as compatibility goes.</p>
-
-<p>This is not remotely how an <em>open web</em> should work.</p>
-
-<p>Dropbox, Vimeo, Google and AWS all have their own API's for uploading chunks. Some companies describe their API, but make choices that aren't suitable for general use and they certainly don't offer a platform to contribute improvements. If we want to support anything beyond their use case, we are on our own again. This further increases fragmentation and leaves resumable file uploads as a luxury, only to be enjoyed by a few large companies, while it should be the standard method that benefits everyone.</p>
-
-<h3 id="tus">tus</h3>
-
-<p>tus is a protocol that is fully community-owned. It has been <a href="https://github.com/tus/tus-resumable-upload-protocol">developed</a> using nothing but GitHub and Markdown, and was fueled by a profound motivation - shared by a few passionate high profile developers - to solve this problem once and for all.</p>
-
-<p>Over the course of two years, we have received suggestions from people working at
-<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Avayam">Vimeo</a>,
-<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Atechnoweenie">GitHub</a>,
-<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3ABaughn">Google</a>,
-and from the author of
-<a href="https://github.com/tus/tus.io/issues?q=mentions%3Ahintjens">ØMQ</a>, as well as from the co-authors of
-<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Areschke">HTTP/1.1</a> and
-<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Afelixge">Node.js</a>.</p>
-
-<p>It has not always been easy to find consensus and at times we hit deadlocks. In the past few months, however, we have made considerable progress and we are now excited to announce a finalized version 1.0. tus is ready for the world to use.</p>
-
-<h3 id="how-does-it-work">How does it work?</h3>
-
-<p>Let's take a quick look at an example of a simple communication between a client and a server speaking tus 1.0:</p>
-
-<pre><code class="language-bash"># Client:
-&gt; POST /files HTTP/1.1
-&gt; Host: tus.example.org
-&gt; Tus-Resumable: 1.0.0
-&gt; Content-Length: 0
-&gt; Upload-Length: 100
-&gt; Upload-Metadata: filename d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg==
-
-# Server:
-&lt; HTTP/1.1 201 Created
-&lt; Location: http://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
-&lt; Tus-Resumable: 1.0.0
-
-# Client:
-&gt; PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
-&gt; Host: tus.example.org
-&lt; Tus-Resumable: 1.0.0
-&gt; Content-Type: application/offset+octet-stream
-&gt; Content-Length: 30
-&gt; Upload-Offset: 0
-&gt;
-&gt; [first 30 bytes]
-
-# Server:
-&lt; HTTP/1.1 204 No Content
-&lt; Tus-Resumable: 1.0.0
-</code></pre>
-
-<p>Since tus is a layer on top of HTTP, it is easy to reason about, inspect, extend and deploy in existing projects as well as infra.</p>
-
-<h3 id="a-streamlined-core-with-optional-extensions">A streamlined core with optional extensions</h3>
-
-<p>The core of the protocol is lightweight, yet well documented and it defines the way in which communication should take place. In addition to this, tus offers extensions such as Checksum, Expiration and Concatenation, which support different use cases and are opt-in.</p>
-
-<p>To highlight one of the protocol's extensions: Concatenation allows you to split a 100GB file in 20 parts of 5GB, upload them in parallel, and uses the tus server to stitch them together again. This makes uploads much faster by utilizing the available bandwidth more efficiently. An extra advantage of this method is that individual chunks are considered regular tus uploads, which benefit from all of tus' features (retries, checksums, etc.).</p>
-
-<h3 id="implementations">Implementations</h3>
-
-<p>Our aim is to support all major languages and platforms. Alongside the protocol
-we also develop many implementations, so that developers can have drop-in self-hosted resumable
-file uploads at zero cost.</p>
-
-<p>We currently support the following platforms:</p>
-
-<ul>
-  <li><a href="https://github.com/tus/tusd">Server in Go</a></li>
-  <li><a href="https://github.com/tus/tus-node-server">Server in ES2015 JavaScript for Node.js</a></li>
-  <li><a href="https://github.com/tus/tus-js-client">Client in JavaScript</a></li>
-  <li><a href="https://github.com/tus/TUSKit">Client for iOS</a></li>
-  <li><a href="https://github.com/tus/tus-android-client">Client for Android</a></li>
-  <li><a href="https://github.com/tus/tus-java-client">Client in Java</a></li>
-</ul>
-
-<p>Additionally, there are many community provided <a href="/implementations.html">implementations</a> in languages such as:
-<a href="https://github.com/picocandy/rubytus">Ruby</a>,
-<a href="https://github.com/vayam/tuspy">Python</a> and
-<a href="https://github.com/leblanc-simon/php-tus">PHP</a>.</p>
-
-<p>Quality implementations of the protocol licensed MIT might be adopted in the <a href="https://github.com/tus">tus organization on GitHub</a>, making you an official contributor to the project.</p>
-
-<h3 id="releasing-version-10">Releasing version 1.0</h3>
-
-<p>Today we are proud to announce that we have launched version 1.0 on GitHub by merging <a href="https://github.com/tus/tus-resumable-upload-protocol/pull/57">the 1.0 pull request</a>.</p>
-
-<p>We consider the protocol to be stable and ready for production!</p>
-
-<p>The full protocol is published online <a href="/protocols/resumable-upload.html">here</a>.</p>
-
-<h3 id="early-adopters">Early Adopters</h3>
-
-<p>Early adopters <a href="https://vimeo.com">Vimeo</a> and Transloadit have already announced they will use tus 1.0 as their main protocol for uploading.</p>
-
-<p>tus is initiated and funded by <a href="https://transloadit.com">Transloadit</a>, but it is community owned and this will never change.</p>
-
-<p>We encourage anybody who deals with file uploads to have have a look at tus and to consider using it for your next release.</p>
-
-<h3 id="special-thanks">Special Thanks</h3>
-
-<p>It has taken us the better part of three years and we have had to overcome many obstacles along the way. It is in great part thanks to <a href="/about.html">these people</a> that tus is able to push out a stable release today. A special 
-word of thanks goes out to the talented people that have been instrumental in getting us to where we are today: <a href="https://felixge.de">Felix</a>, <a href="https://github.com/vayam">Naren</a> and <a href="https://transloadit.com/about#marius">Marius</a>. We couldn't have done tus without you!</p>
-
-<p>Discuss on <a href="https://news.ycombinator.com/item?id=10574364">Hacker News</a></p>]]></content><author><name>Kevin van Zonneveld</name><email>kevin@transloadit.com</email></author><summary type="html"><![CDATA[As time progresses, we share ever larger media files from our phones and desktops. More than often, however, complications arise during this process. Whether it is through servers misbehaving or mobile users switching to a WiFi connection, the outcome is the same: 'upload interrupted'.]]></summary></entry></feed>
+<p>With S3, engineers have an incredibly useful tool for storing data with high availability and scalability. However, it does not present the perfect storage back-end for the tus protocol and requires some workarounds. In the future, we will have a look at other storage system and cloud providers.</p>]]></content><author><name>Marius Kleidl</name><email>marius@transloadit.com</email></author><summary type="html"><![CDATA[With their Simple Storage System (S3), Amazon Web Services has built one of the major providers of cloud storage for applications ranging from small side projects to enterprise systems. Since the introduction of flexible storage back-ends for the official tusd server, an integration with S3 has been a much desired feature by our users. We are happy to announce that we are now able to deliver on this request. During the time it took to create this, we had to deal with various peculiarities of Amazon's service and were able to gain a lot of experience. In this post, we want to focus on the downsides of building a tus server on top of S3 and share some of our recently acquired knowledge with you.]]></summary></entry></feed>

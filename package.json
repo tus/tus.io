@@ -50,7 +50,7 @@
     "s-ago": "2.2.0",
     "skeleton-css": "2.0.4",
     "timeago": "1.6.7",
-    "tus-js-client": "2.3.2"
+    "tus-js-client": "3"
   },
   "engines": {
     "yarn": ">= 1.0.0"

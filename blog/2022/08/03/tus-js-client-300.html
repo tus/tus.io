@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw" />
+
+    
+
+    
+    
+    
+
+    <title>Major release: tus-js-client v3.0.0 | tus</title>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/assets/build/app.33674ec01e589e0ac9fa.css" rel="stylesheet">
+    <link type="application/atom+xml" rel="alternate" href="https://tus.io/blog.atom" />
+
+    <!-- Twitter follow button script -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </head>
+
+  <body>
+    
+    
+    
+
+    <div class="wrapper">
+      <div class="TransloaditBar">
+        <div class="container">
+          <div class="TransloaditBar-about">
+            <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+              <img class="TransloaditBar-logoImg" src="/assets/img/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+            </a>
+            <span>tus is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+            <img width="24" height="16" src="/assets/img/ua-flag.svg" alt="Flag of Ukraine">
+            &nbsp;
+            We stand with the brave people of Ukraine. Stop the war. Find out&nbsp;<a class="TransloaditBar-link" href="https://transloadit.com/blog/2022/02/ukraine" target="_blank" rel="noopener">how you can help</a>.
+          </div>
+          <!-- <div class="TransloaditBar-info">
+            <b>New: </b><a href="https://transloadit.com/pricing/" class="TransloaditBar-info-link">Transloadit Community Plan</a> — get free hosted Companion &amp; tusd, unlimited uploading, and 5GB/month encoding traffic!
+          </div> -->
+        </div>
+      </div>
+
+      <div class="header">
+        <a href="https://github.com/tus" class="github-corner" aria-label="View source on GitHub"><svg width="64" height="64" viewBox="0 0 250 250" style="fill:#48aa92; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+        <div class="container">
+          <div class="row">
+            <div class="three columns logo-container">
+              <h3 class="logo">
+                <a href="/">
+                  
+                    <img src="/assets/img/favicon.png" class="shield" alt="tus" />
+                  
+
+                  <img src="/assets/img/tus8.png" alt="tus" />
+                </a>
+              </h3>
+            </div>
+
+            <div class="nine columns nav-container">
+              <a href="#" class="toggler">
+                <span class="hamburger">&#8801;</span>
+                <span class="cross">&#10005;</span>
+              </a>
+
+              <ul class="nav">
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/faq.html">FAQ</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/support.html">Support</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="active">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/blog.html">Blog</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/demo.html">Demo</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/protocols/resumable-upload.html">Protocol</a>
+                  </li>
+                
+                  
+                  
+                  
+                  
+                  <li class="">
+                    <a data-pageUrlHtml="/blog/2022/08/03/tus-js-client-300.html.html" href="/implementations.html">Implementations</a>
+                  </li>
+                
+                <li class="github-menu-item"><a href="https://github.com/tus">GitHub</a></li>
+              </ul>
+
+              <div class="u-cf"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        
+          <div class="container">
+        
+
+          
+
+<div class="post">
+  <h1 class="post-title">
+    Major release: tus-js-client v3.0.0
+  </h1>
+
+  <div class="post-info">
+    Published on <span class="date">August  3, 2022</span> by
+    
+      <a class="author" href="https://twitter.com/acconut_">
+        Marius Kleidl
+      </a>
+    
+  </div>
+
+  <div class="post-content">
+    <p class="lead">tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.</p>
+
+<p><a href="https://github.com/tus/tus-js-client/">tus-js-client</a> is the official client implementation for <a href="/protocols/resumable-upload.html">the tus protocol</a> in JavaScript. It not only supports  <strong>web browsers</strong>, but can also be used in <strong>Node.js</strong>, <strong>React Native</strong>, and <strong>Apache Cordova</strong> applications.</p>
+
+<p>This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams.</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li><strong>Add support for Parallel Uploads for <code>fs.ReadStream</code></strong><br />
+In the previous <a href="https://tus.io/blog/2020/05/04/tus-js-client-200.html">major release of tus-js-client v2.0.0</a> we announced that it now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploads"><code>parallelUploads</code> documentation</a> for more details.
+In this release, support for parallel uploads has been extended to also cover <code>fs.ReadStream</code> as an input type. You can use it like so:
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+  parallelUploads: 3,
+})
+</code></pre>
+  </li>
+  <li><strong>Add <code>parallelUploadBoundaries</code> option</strong><br />
+If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploadboundaries"><code>parallelUploadBoundaries</code> documentation</a> for more details.</li>
+  <li><strong>Automatically obtain file size for <code>fs.ReadStream</code></strong><br />
+tus-js-client has supported uploading an instance of <code>fs.ReadStream</code> directly for a long time. However, you always had to manually specify the file size, like this:
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+const { size } = fs.statSync(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+  uploadSize: size,
+})
+</code></pre>
+    <p>The <code>uploadSize</code> option is now optional and can be left out:</p>
+    <pre><code class="language-js">const path = 'my/file.txt'
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: 'https://tusd.tusdemo.net/files/',
+})
+</code></pre>
+    <p>tus-js-client will automatically obtain the file size from disk.</p>
+  </li>
+</ul>
+
+<h2 id="bug-fixes">Bug fixes</h2>
+
+<ul>
+  <li><strong>Fix resuming of streams in Node.js</strong><br />
+Previously, if you wanted to upload a non-file-based stream using tus-js-client and paused the upload using <code>abort()</code>, the resumption using <code>start()</code> could cause a hanging upload. <a href="https://github.com/tus/tus-js-client/issues/275">This issue</a> has been resolved and resuming properly works now.</li>
+  <li><strong>Fix fingerprint removal after successful upload</strong><br />
+If the <code>removeFingerprintOnSuccess</code> option was used together with <code>uploadDataDuringCreation</code>, the fingerprint was not always properly removed from the URL storage. <a href="https://github.com/tus/tus-js-client/issues/397">This issue</a> has been fixed.</li>
+</ul>
+
+<h2 id="breaking-changes">Breaking changes</h2>
+
+<p>The main behavior of tus-js-client and the vast majority of its API surface stay the same. However, the following breaking changes were necessary:</p>
+
+<ul>
+  <li><strong>Drop support for Node.js v12 and earlier</strong><br />
+Only Node.js v14 or newer are fully supported and tested for compatibility with tus-js-client from now own. Earlier versions may work, but we don't guarantee or support it.</li>
+  <li><strong>Drop support for Internet Explorer</strong><br />
+Many dependencies have dropped support for Internet Explorer, and so do we now. tus-js-client will not be compatible with any version of Internet Explorer from now on. Please note that we still support all other browsers as before.</li>
+  <li><strong>Rename the exported <code>HttpStack</code> class to <code>DefaultHttpStack</code></strong><br />
+tus-js-client allows you to provide a custom HTTP stack using which requests are sent out. If not configured, tus-js-client will use a default implementation depending on the environment. Previously, this class was exported under the <code>HttpStack</code> name. This class shared the name with the <code>HttpStack</code> interface and <a href="https://github.com/tus/tus-js-client/pull/241">caused a collision</a> when using our TypeScript definitions. As such, we have renamed the <code>HttpStack</code> class (not the interface) to <code>DefaultHttpStack</code>. Please update your references if you are using this class.</li>
+  <li><strong>Do not close streams for <code>abort()</code> calls</strong><br />
+Previously, if you provided a <code>Reader</code> or <code>Readable</code> stream to tus-js-client and called the <code>abort()</code> method, tus-js-client would stop the upload and close the stream. This is problematic because the upload cannot be resumed later because one cannot read from the stream anymore. From now on, tus-js-client will not close the stream anymore to allow later resuming using <code>start()</code> again. If you do not want to continue the upload, you must close the stream now on your own.
+Please note that tus-js-client still closes the stream if the upload was completed successfully (i.e. <code>onSuccess</code> has been invoked), as it has done in previous releases.</li>
+  <li><strong>Store upload URL provided by <code>uploadUrl</code></strong><br />
+If you create a new upload, its upload URL will be stored in the URL storage by tus-js-client, so it can later be retrieved using <code>tus.Upload#findPreviousUploads()</code> for resuming the uploads. This behavior is controlled by the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#storefingerprintforresuming"><code>storeFingerprintForResuming</code> option</a>. However, not all servers allow clients to create uploads on their own. Sometimes, the server will supply the client with a pre-defined upload URL to use with the <code>uploadUrl</code> option (e.g. the Vimeo API). Previously, these upload URLs were not stored in the URL storage and could therefore not be retrieved for later resumption.
+This release changes this behavior, so that these URLs are also stored by default, and you can use <code>tus.Upload#findPreviousUploads()</code> to retrieve them.
+If you do not want to store the upload URL, you can revert to the old behavior by disabling it:
+    <pre><code class="language-js">const upload = new tus.Upload(file, {
+  uploadUrl: 'https://tusd.tusdemo.net/files/...',
+  storeFingerprintForResuming: false,
+})
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="try-it">Try it</h2>
+
+<p>If you'd like to try it out, we have updated our <a href="/demo.html">demo</a> to use tus-js-client v3.0.0 as well. The code for it can be found <a href="https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js">here</a>. Do leave a comment there how it went!</p>
+
+<p>Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at <a href="https://github.com/tus">GitHub</a>. If you don't know where to start or have other questions, feel free to <a href="/support.html">contact us</a>!</p>
+
+  </div>
+</div>
+
+<hr />
+
+<div class="post-subscribe">
+  <p>
+    Subscribe to, or respond on our social channels:
+  </p>
+  <div>
+  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"><img src="/assets/img/community-forum-35a78b.svg" /></a>
+  <a href="https://twitter.com/tus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @tus_io</a>
+  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg" /></a>
+  <iframe src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+</div>
+
+</div>
+
+
+        
+          </div>
+        
+      </div>
+
+      
+        <div class="container comments">
+          <hr />
+
+          Do you have a comment? Let us know in the <a href="https://community.transloadit.com/c/tus">forum</a> or on <a href="https://twitter.com/tus_io/">Twitter</a>.
+        </div>
+      
+    </div>
+
+    <script defer data-domain="tus.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+    <script src="/assets/build/902.af1a8c7789265c9a9279.js"></script><script src="/assets/build/app.c490cb35a44b8777529f.js"></script>
+  </body>
+</html>

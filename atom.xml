@@ -4,9 +4,108 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2022-08-02T11:36:18+02:00</updated>
+ <updated>2022-08-04T00:31:54+02:00</updated>
  <id>https://tus.io</id>
 
+ 
+ 
+ <entry>
+   <author>
+     <name>Marius Kleidl</name>
+     <email>marius@transloadit.com</email>
+   </author>
+   <title>Major release: tus-js-client v3.0.0</title>
+   <link href="https://tus.io/blog/2022/08/03/tus-js-client-300.html"/>
+   <updated>2022-08-03T00:00:00+02:00</updated>
+   <id>https://tus.io/blog/2022/08/03/tus-js-client-300</id>
+   <content type="html">&lt;p class=&quot;lead&quot;&gt;tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tus/tus-js-client/&quot;&gt;tus-js-client&lt;/a&gt; is the official client implementation for &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;the tus protocol&lt;/a&gt; in JavaScript. It not only supports  &lt;strong&gt;web browsers&lt;/strong&gt;, but can also be used in &lt;strong&gt;Node.js&lt;/strong&gt;, &lt;strong&gt;React Native&lt;/strong&gt;, and &lt;strong&gt;Apache Cordova&lt;/strong&gt; applications.&lt;/p&gt;
+
+&lt;p&gt;This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams.&lt;/p&gt;
+
+&lt;h2 id=&quot;new-features&quot;&gt;New features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Add support for Parallel Uploads for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+In the previous &lt;a href=&quot;https://tus.io/blog/2020/05/04/tus-js-client-200.html&quot;&gt;major release of tus-js-client v2.0.0&lt;/a&gt; we announced that it now supports parallel upload requests using the &lt;a href=&quot;https://tus.io/protocols/resumable-upload.html#concatenation&quot;&gt;Concatenation extension&lt;/a&gt;. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploads&quot;&gt;&lt;code&gt;parallelUploads&lt;/code&gt; documentation&lt;/a&gt; for more details.
+In this release, support for parallel uploads has been extended to also cover &lt;code&gt;fs.ReadStream&lt;/code&gt; as an input type. You can use it like so:
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: &apos;https://tusd.tusdemo.net/files/&apos;,
+  parallelUploads: 3,
+})
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Add &lt;code&gt;parallelUploadBoundaries&lt;/code&gt; option&lt;/strong&gt;&lt;br /&gt;
+If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploadboundaries&quot;&gt;&lt;code&gt;parallelUploadBoundaries&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automatically obtain file size for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+tus-js-client has supported uploading an instance of &lt;code&gt;fs.ReadStream&lt;/code&gt; directly for a long time. However, you always had to manually specify the file size, like this:
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
+const file = fs.createReadStream(path)
+const { size } = fs.statSync(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: &apos;https://tusd.tusdemo.net/files/&apos;,
+  uploadSize: size,
+})
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;The &lt;code&gt;uploadSize&lt;/code&gt; option is now optional and can be left out:&lt;/p&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
+const file = fs.createReadStream(path)
+
+const upload = new tus.Upload(file, {
+  endpoint: &apos;https://tusd.tusdemo.net/files/&apos;,
+})
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;tus-js-client will automatically obtain the file size from disk.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bug-fixes&quot;&gt;Bug fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Fix resuming of streams in Node.js&lt;/strong&gt;&lt;br /&gt;
+Previously, if you wanted to upload a non-file-based stream using tus-js-client and paused the upload using &lt;code&gt;abort()&lt;/code&gt;, the resumption using &lt;code&gt;start()&lt;/code&gt; could cause a hanging upload. &lt;a href=&quot;https://github.com/tus/tus-js-client/issues/275&quot;&gt;This issue&lt;/a&gt; has been resolved and resuming properly works now.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fix fingerprint removal after successful upload&lt;/strong&gt;&lt;br /&gt;
+If the &lt;code&gt;removeFingerprintOnSuccess&lt;/code&gt; option was used together with &lt;code&gt;uploadDataDuringCreation&lt;/code&gt;, the fingerprint was not always properly removed from the URL storage. &lt;a href=&quot;https://github.com/tus/tus-js-client/issues/397&quot;&gt;This issue&lt;/a&gt; has been fixed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h2&gt;
+
+&lt;p&gt;The main behavior of tus-js-client and the vast majority of its API surface stay the same. However, the following breaking changes were necessary:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Drop support for Node.js v12 and earlier&lt;/strong&gt;&lt;br /&gt;
+Only Node.js v14 or newer are fully supported and tested for compatibility with tus-js-client from now own. Earlier versions may work, but we don&apos;t guarantee or support it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Drop support for Internet Explorer&lt;/strong&gt;&lt;br /&gt;
+Many dependencies have dropped support for Internet Explorer, and so do we now. tus-js-client will not be compatible with any version of Internet Explorer from now on. Please note that we still support all other browsers as before.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rename the exported &lt;code&gt;HttpStack&lt;/code&gt; class to &lt;code&gt;DefaultHttpStack&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+tus-js-client allows you to provide a custom HTTP stack using which requests are sent out. If not configured, tus-js-client will use a default implementation depending on the environment. Previously, this class was exported under the &lt;code&gt;HttpStack&lt;/code&gt; name. This class shared the name with the &lt;code&gt;HttpStack&lt;/code&gt; interface and &lt;a href=&quot;https://github.com/tus/tus-js-client/pull/241&quot;&gt;caused a collision&lt;/a&gt; when using our TypeScript definitions. As such, we have renamed the &lt;code&gt;HttpStack&lt;/code&gt; class (not the interface) to &lt;code&gt;DefaultHttpStack&lt;/code&gt;. Please update your references if you are using this class.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Do not close streams for &lt;code&gt;abort()&lt;/code&gt; calls&lt;/strong&gt;&lt;br /&gt;
+Previously, if you provided a &lt;code&gt;Reader&lt;/code&gt; or &lt;code&gt;Readable&lt;/code&gt; stream to tus-js-client and called the &lt;code&gt;abort()&lt;/code&gt; method, tus-js-client would stop the upload and close the stream. This is problematic because the upload cannot be resumed later because one cannot read from the stream anymore. From now on, tus-js-client will not close the stream anymore to allow later resuming using &lt;code&gt;start()&lt;/code&gt; again. If you do not want to continue the upload, you must close the stream now on your own.
+Please note that tus-js-client still closes the stream if the upload was completed successfully (i.e. &lt;code&gt;onSuccess&lt;/code&gt; has been invoked), as it has done in previous releases.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Store upload URL provided by &lt;code&gt;uploadUrl&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+If you create a new upload, its upload URL will be stored in the URL storage by tus-js-client, so it can later be retrieved using &lt;code&gt;tus.Upload#findPreviousUploads()&lt;/code&gt; for resuming the uploads. This behavior is controlled by the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#storefingerprintforresuming&quot;&gt;&lt;code&gt;storeFingerprintForResuming&lt;/code&gt; option&lt;/a&gt;. However, not all servers allow clients to create uploads on their own. Sometimes, the server will supply the client with a pre-defined upload URL to use with the &lt;code&gt;uploadUrl&lt;/code&gt; option (e.g. the Vimeo API). Previously, these upload URLs were not stored in the URL storage and could therefore not be retrieved for later resumption.
+This release changes this behavior, so that these URLs are also stored by default, and you can use &lt;code&gt;tus.Upload#findPreviousUploads()&lt;/code&gt; to retrieve them.
+If you do not want to store the upload URL, you can revert to the old behavior by disabling it:
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const upload = new tus.Upload(file, {
+  uploadUrl: &apos;https://tusd.tusdemo.net/files/...&apos;,
+  storeFingerprintForResuming: false,
+})
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;try-it&quot;&gt;Try it&lt;/h2&gt;
+
+&lt;p&gt;If you&apos;d like to try it out, we have updated our &lt;a href=&quot;/demo.html&quot;&gt;demo&lt;/a&gt; to use tus-js-client v3.0.0 as well. The code for it can be found &lt;a href=&quot;https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js&quot;&gt;here&lt;/a&gt;. Do leave a comment there how it went!&lt;/p&gt;
+
+&lt;p&gt;Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at &lt;a href=&quot;https://github.com/tus&quot;&gt;GitHub&lt;/a&gt;. If you don&apos;t know where to start or have other questions, feel free to &lt;a href=&quot;/support.html&quot;&gt;contact us&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  
  <entry>
@@ -134,19 +233,19 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Add support for Parallel Uploads&lt;/strong&gt;&lt;br /&gt;
-tus-js-client now supports parallel upload requests using the &lt;a href=&quot;https://tus.io/protocols/resumable-upload.html#concatenation&quot;&gt;Concatenation extension&lt;/a&gt;. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#paralleluploads&quot;&gt;&lt;code&gt;parallelUploads&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
+tus-js-client now supports parallel upload requests using the &lt;a href=&quot;https://tus.io/protocols/resumable-upload.html#concatenation&quot;&gt;Concatenation extension&lt;/a&gt;. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#paralleluploads&quot;&gt;&lt;code&gt;parallelUploads&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add Upload Storage API&lt;/strong&gt;&lt;br /&gt;
 tus-js-client was always able to resume uploads which have been started in a previous browsing session. This is possible by storing the upload resource&apos;s URL after it has been created and retrieving it from said storage based on file metadata later on. This allows users to pick up an upload where it had been left off even after the browser is (accidentally) closed. tus-js-client uses the Web Storage API to save this pointer inside the browsers but historically provided little access to retrieve or modify elements in this URL storage.
-To remove this limitation, we introduce the URL Storage interface: You are now able to supply your own URL storage using the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#urlstorage&quot;&gt;&lt;code&gt;urlStorage&lt;/code&gt; option&lt;/a&gt;, if you want to save URLs in a database, for example.
-Furthermore, you can now easily query the URL storage to retrieve a list of previously started uploads using the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#tusuploadfindpreviousuploads&quot;&gt;&lt;code&gt;findPreviousUploads&lt;/code&gt; method&lt;/a&gt; and ask the end user which upload should be resumed. Please have a look at &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/usage.md#example-let-user-select-upload-to-resume&quot;&gt;the corresponding example&lt;/a&gt; for more details on this approach.&lt;/li&gt;
+To remove this limitation, we introduce the URL Storage interface: You are now able to supply your own URL storage using the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#urlstorage&quot;&gt;&lt;code&gt;urlStorage&lt;/code&gt; option&lt;/a&gt;, if you want to save URLs in a database, for example.
+Furthermore, you can now easily query the URL storage to retrieve a list of previously started uploads using the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#tusuploadfindpreviousuploads&quot;&gt;&lt;code&gt;findPreviousUploads&lt;/code&gt; method&lt;/a&gt; and ask the end user which upload should be resumed. Please have a look at &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/usage.md#example-let-user-select-upload-to-resume&quot;&gt;the corresponding example&lt;/a&gt; for more details on this approach.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add HTTP abstraction layer&lt;/strong&gt;&lt;br /&gt;
-tus-js-client has always contained an abstraction layer to smooth out the differences between the network APIs in browsers and inside Node.js. Users now also have the ability to supply a custom HTTP stack to further customize the used HTTP interface. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#httpstack&quot;&gt;&lt;code&gt;httpStack&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
+tus-js-client has always contained an abstraction layer to smooth out the differences between the network APIs in browsers and inside Node.js. Users now also have the ability to supply a custom HTTP stack to further customize the used HTTP interface. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#httpstack&quot;&gt;&lt;code&gt;httpStack&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add File Reader abstraction layer&lt;/strong&gt;&lt;br /&gt;
-Similar to the HTTP abstraction layer, tus-js-client also uses an abstraction to uniformly read data from the different input file types. If you want to add support for another input type, you can supply your own file reader implementation now. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#filereader&quot;&gt;&lt;code&gt;fileReader&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
+Similar to the HTTP abstraction layer, tus-js-client also uses an abstraction to uniformly read data from the different input file types. If you want to add support for another input type, you can supply your own file reader implementation now. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#filereader&quot;&gt;&lt;code&gt;fileReader&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add request IDs&lt;/strong&gt;&lt;br /&gt;
-tus-js-client can now be configured to send unique request IDs using the &lt;code&gt;X-Request-ID&lt;/code&gt; header. Since tus-js-client includes this ID in its error messages, it can be used to correlate client errors with server logs to make debugging easier. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#addrequestid&quot;&gt;&lt;code&gt;addRequestId&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
+tus-js-client can now be configured to send unique request IDs using the &lt;code&gt;X-Request-ID&lt;/code&gt; header. Since tus-js-client includes this ID in its error messages, it can be used to correlate client errors with server logs to make debugging easier. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#addrequestid&quot;&gt;&lt;code&gt;addRequestId&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add request and response callbacks&lt;/strong&gt;&lt;br /&gt;
-This release also adds the &lt;code&gt;onBeforeRequest&lt;/code&gt; and &lt;code&gt;onAfterResponse&lt;/code&gt; callbacks which will be invoked before a HTTP request is sent and directly after a HTTP response is received. This allows you to modify outgoing requests or retrieve additional information from incoming responses. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0/docs/api.md#onbeforerequest&quot;&gt;documentation&lt;/a&gt; for more information and examples.&lt;/li&gt;
+This release also adds the &lt;code&gt;onBeforeRequest&lt;/code&gt; and &lt;code&gt;onAfterResponse&lt;/code&gt; callbacks which will be invoked before a HTTP request is sent and directly after a HTTP response is received. This allows you to modify outgoing requests or retrieve additional information from incoming responses. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v2.0.0/docs/api.md#onbeforerequest&quot;&gt;documentation&lt;/a&gt; for more information and examples.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h2&gt;
