@@ -585,7 +585,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/terminusdb/tus">
       terminusdb/tus
@@ -598,6 +598,20 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under Apache License, Version 2.0</div>
+  </li>
+
+  <li>
+    <a class="title" href="https://github.com/edihasaj/tuspy-fast-api">
+      edihasaj/tuspy-fast-api
+    </a>
+
+    <div class="author">&mdash; by <a href="https://github.com/edihasaj">Edi Hasaj</a></div>
+
+    <div class="description">
+      <strong>FastAPI</strong> extension implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Python</strong> servers and apps.
+    </div>
+
+    <div class="license">Licensed under MIT</div>
   </li>
 </ul>
 
