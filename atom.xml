@@ -4,7 +4,7 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2023-01-17T12:25:36+01:00</updated>
+ <updated>2023-01-18T13:02:04+01:00</updated>
  <id>https://tus.io</id>
 
  
@@ -101,7 +101,7 @@ If you do not want to store the upload URL, you can revert to the old behavior b
 
 &lt;h2 id=&quot;try-it&quot;&gt;Try it&lt;/h2&gt;
 
-&lt;p&gt;If you&apos;d like to try it out, we have updated our &lt;a href=&quot;/demo.html&quot;&gt;demo&lt;/a&gt; to use tus-js-client v3.0.0 as well. The code for it can be found &lt;a href=&quot;https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js&quot;&gt;here&lt;/a&gt;. Do leave a comment there how it went!&lt;/p&gt;
+&lt;p&gt;If you&apos;d like to try it out, we have updated our &lt;a href=&quot;/demo.html&quot;&gt;demo&lt;/a&gt; to use tus-js-client v3.0.0 as well. The code for it can be found &lt;a href=&quot;https://github.com/tus/tus.io/blob/main/assets/javascripts/upload-demo.js&quot;&gt;here&lt;/a&gt;. Do leave a comment there how it went!&lt;/p&gt;
 
 &lt;p&gt;Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at &lt;a href=&quot;https://github.com/tus&quot;&gt;GitHub&lt;/a&gt;. If you don&apos;t know where to start or have other questions, feel free to &lt;a href=&quot;/support.html&quot;&gt;contact us&lt;/a&gt;!&lt;/p&gt;
 </content>
@@ -320,7 +320,7 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
 
 &lt;h2 id=&quot;try-it&quot;&gt;Try it&lt;/h2&gt;
 
-&lt;p&gt;If you&apos;d like to try it out, we have updated our &lt;a href=&quot;/demo.html&quot;&gt;demo&lt;/a&gt; to use tus-js-client v2.0 as well. The code for it can be found &lt;a href=&quot;https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js&quot;&gt;here&lt;/a&gt;. Do leave a comment there how it went!&lt;/p&gt;
+&lt;p&gt;If you&apos;d like to try it out, we have updated our &lt;a href=&quot;/demo.html&quot;&gt;demo&lt;/a&gt; to use tus-js-client v2.0 as well. The code for it can be found &lt;a href=&quot;https://github.com/tus/tus.io/blob/main/assets/javascripts/upload-demo.js&quot;&gt;here&lt;/a&gt;. Do leave a comment there how it went!&lt;/p&gt;
 
 &lt;p&gt;Finally, we want to thank everyone who helped to make this release happen! If you also want to contribute, you can find our open source code at &lt;a href=&quot;https://github.com/tus&quot;&gt;GitHub&lt;/a&gt;. If you don&apos;t know where to start or have other questions, feel free to &lt;a href=&quot;/support.html&quot;&gt;contact us&lt;/a&gt;!&lt;/p&gt;
 </content>
@@ -389,7 +389,7 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
    <id>https://tus.io/blog/2018/09/25/adoption</id>
    <content type="html">&lt;p&gt;Just a quick update from the team!&lt;/p&gt;
 
-&lt;p&gt;We had a fun month as we learned that &lt;a href=&quot;https://github.com/git-lfs/git-lfs/blob/master/docs/man/git-lfs-config.5.ronn#transfer-upload--download-settings&quot;&gt;Git LFS supports our protocol for transmitting large files&lt;/a&gt;, and Clouflare uses it to power the uploading component of their &lt;a href=&quot;https://blog.cloudflare.com/how-cloudflare-streams/&quot;&gt;new streaming product&lt;/a&gt;. The &apos;tus&apos; community on GitHub continues to thrive and we&apos;re seeing issues raised and addressed on a daily basis. You guys are awesome!&lt;/p&gt;
+&lt;p&gt;We had a fun month as we learned that &lt;a href=&quot;https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-config.5.ronn#transfer-upload--download-settings&quot;&gt;Git LFS supports our protocol for transmitting large files&lt;/a&gt;, and Clouflare uses it to power the uploading component of their &lt;a href=&quot;https://blog.cloudflare.com/how-cloudflare-streams/&quot;&gt;new streaming product&lt;/a&gt;. The &apos;tus&apos; community on GitHub continues to thrive and we&apos;re seeing issues raised and addressed on a daily basis. You guys are awesome!&lt;/p&gt;
 
 &lt;!--more--&gt;
 
