@@ -68,7 +68,7 @@ The tus server is usually deployed alongside your main application server in its
 
 Once you have a tus server set up, you can integrate the tus client into your client application. We offer tus clients for a variety of environments, including browsers, Android, iOS, Java and Node.js. If you want to add application-specific pieces of information to your upload, such as the current user's ID, you can add them as key-value-pairs to the upload's metadata. This metadata is then also available to the tus server for custom processing.
 
-Finally, most tus servers offer a way to subscribe to specific events, such as if a new upload is created or finished. For example, [tusd](https://github.com/tus/tusd) has a [hook system](https://github.com/tus/tusd/blob/master/docs/hooks.md) that can be used to execute custom scripts or send HTTP requests if a specific event occurs. These can be used to move the completed uploads to another location and provide them with your application for further processing. It's also possible to access the upload's metadata set by the tus client in your client application inside these hooks.
+Finally, most tus servers offer a way to subscribe to specific events, such as if a new upload is created or finished. For example, [tusd](https://github.com/tus/tusd) has a [hook system](https://github.com/tus/tusd/blob/main/docs/hooks.md) that can be used to execute custom scripts or send HTTP requests if a specific event occurs. These can be used to move the completed uploads to another location and provide them with your application for further processing. It's also possible to access the upload's metadata set by the tus client in your client application inside these hooks.
 
 ## How do I scale tus?
 

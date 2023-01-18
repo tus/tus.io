@@ -62,4 +62,4 @@ even on platforms that won't let you do `PUT` and `PATCH` requests.
 
 ### Source Code
 
-The source code for this demo is available on [GitHub](https://github.com/tus/tus.io/blob/master/assets/javascripts/upload-demo.js).
+The source code for this demo is available on [GitHub](https://github.com/tus/tus.io/blob/main/assets/javascripts/upload-demo.js).

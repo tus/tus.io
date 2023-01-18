@@ -52,6 +52,6 @@ ${content}
 EOF
 }
 
-fetch_protocol "https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/master/protocol.md" "1.0.x" 0
+fetch_protocol "https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/main/protocol.md" "1.0.x" 0
 fetch_protocol "https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/0.2/protocol.md" "0.2.x" 1
 fetch_protocol "https://raw.githubusercontent.com/tus/tus-resumable-upload-protocol/0.1/README.md" "0.1.x" 1

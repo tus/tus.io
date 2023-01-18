@@ -24,10 +24,10 @@ npm start
 
 ## Deployment
 
-Done via GitHub Actions on pushes to master.
+Done via GitHub Actions on pushes to main.
 
 ## How to add your company/project logo to the site
 
-Just edit [logos.yml](https://github.com/tus/tus.io/edit/master/_data/logos.yml) directly and
+Just edit [logos.yml](https://github.com/tus/tus.io/edit/main/_data/logos.yml) directly and
 save - this will send us a PR. We will download and include the externally linked logo ourselves
 later on via `make download-logos && make optimize-logos`.
