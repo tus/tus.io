@@ -8445,9 +8445,9 @@ tunnel-agent@~0.4.1:
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
 
 tus-js-client@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/tus-js-client/-/tus-js-client-3.0.1.tgz#d81fea22b8fb23769f973aa49501afef0f97928a"
-  integrity sha512-2EZIUvswv1xG3KtzJO9FZ2wvTtVzltUN23Nse/nZwWE06dbn/8RBeRqi2clV/ilpEomOQOOMdHkIPUQmTum/xg==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/tus-js-client/-/tus-js-client-3.1.0.tgz#20af57d06c23823fbe108ccb3a3dcb7503968cb4"
+  integrity sha512-Hfpc8ho4C9Lhs/OflPUA/nHUHZJUrKD5upoPBq7dYJJ9DQhWocsjJU2RZYfN16Y5n19j9dFDszwCvVZ5sfcogw==
   dependencies:
     buffer-from "^1.1.2"
     combine-errors "^3.0.3"
