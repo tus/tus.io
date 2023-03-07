@@ -622,7 +622,7 @@ what protocol version you're targeting.
     <div class="author">&mdash; by <a href="https://github.com/dino9527">Chu Hang</a></div>
 
     <div class="description">
-      The Http stack uses <strong>Webflux</strong> and <strong>MySQL</strong> as the backend of upload information management. Supported extensions include <strong>creation</strong>, <strong>checksum</strong>, <strong>expiration</strong>, <strong>termination</strong>, and <strong>concatenation</strong>. The repository currently provides the implementation of Tus protocol for local storage, allowing implementers to develop their own specific requirements.   
+      The HTTP stack uses <strong>Webflux</strong> and <strong>MySQL</strong> as the backend of upload information management. Supported extensions include creation, checksum, expiration, termination, and concatenation. It provides an implementation of tus <code>v1.0.0</code> protocol for local storage and allows implementers to develop their own specific requirements.   
     </div>
 
     <div class="license">Licensed under MIT</div>
