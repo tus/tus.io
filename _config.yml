@@ -1,4 +1,4 @@
-permalink: "/blog/:year/:month/:day/:title.html"
+permalink: '/blog/:year/:month/:day/:title.html'
 commenting_baseurl: https://tus.io
 
 strict_front_matter: true
@@ -14,12 +14,12 @@ kramdown:
   entity_output: as_char
   transliterated_header_ids: true
   toc_levels: 1..2
-  smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes: ['apos', 'apos', 'quot', 'quot']
   syntax_highlighter: nil
   # syntax_highlighter: rouge
   gfm_emojis: true
   gfm_emoji_opts:
-    asset_path: "https://assets.transloadit.com/assets/images/emoji"
+    asset_path: 'https://assets.transloadit.com/assets/images/emoji'
 
 collections:
   content:
@@ -28,7 +28,7 @@ collections:
   versions:
     output: true
 
-excerpt_separator: "<!--more-->"
+excerpt_separator: '<!--more-->'
 
 # We'll refer new atom feed though, as adviced by GitHub
 # https://github.com/blog/2053-easier-feeds-for-github-pages
@@ -45,7 +45,7 @@ plugins:
   - jekyll-toc
 
 emoji:
-  src: "/assets/img"
+  src: '/assets/img'
 
 exclude:
   - node_modules

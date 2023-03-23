@@ -14,10 +14,10 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
 
 ### Instructions
 
- 1. Select a large file.
- 2. Watch it upload for a bit, then close this tab before it finishes.
- 3. Come back to this page, select the same file again and you can resume the upload where it left off.
- 4. Inspect the HTTP traffic (see below) to understand how tus works.
+1.  Select a large file.
+2.  Watch it upload for a bit, then close this tab before it finishes.
+3.  Come back to this page, select the same file again and you can resume the upload where it left off.
+4.  Inspect the HTTP traffic (see below) to understand how tus works.
 
 <p class="alert hidden" id="js-support-alert">
   <b>Warning!</b> Your browser does not seem to support the features necessary to run this demo. The buttons below may work but probably will fail silently.
@@ -42,20 +42,20 @@ It sends your files to our public [tusd](https://github.com/tus/tusd) instance, 
   <!-- Will be filled using the script in request-viewer.js -->
 </div>
 
----------------------------------------
+---
 
 ### Compatibility
 
 The [tus-js-client](https://github.com/tus/tus-js-client) used in
 this demo has been automatically tested and works with the following browsers:
 
-* Microsoft Edge 12+
-* Mozilla Firefox 14+
-* Google Chrome 20+
-* Safari 6+
-* Opera 12.1+
-* iOS 6.0+
-* Android 5.0+
+- Microsoft Edge 12+
+- Mozilla Firefox 14+
+- Google Chrome 20+
+- Safari 6+
+- Opera 12.1+
+- iOS 6.0+
+- Android 5.0+
 
 Using the `X-HTTP-Method-Override` header, it's possible to run tus
 even on platforms that won't let you do `PUT` and `PATCH` requests.

@@ -5,7 +5,7 @@
   &.comments {
     max-width: 800px;
   }
-  
+
   .page-index & {
     max-width: 960px;
   }
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'IBM Plex Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -31,13 +31,13 @@ a {
   }
 }
 
-input[type=email]:focus,
-input[type=text]:focus,
-input[type=tel]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
 select:focus,
 textarea:focus {
   border-color: $scheme-secondary;
@@ -87,7 +87,7 @@ select {
   background: $header-bg;
   border-bottom: 1px solid #eee;
   position: relative;
-  
+
   .container {
     padding: 0 20px;
     max-width: 1600px;
@@ -234,7 +234,6 @@ select {
   }
 }
 
-
 @media (max-width: 549px) {
   .logo-container {
     width: auto;
@@ -246,11 +245,9 @@ select {
   }
 }
 
-
 .comments {
   margin: 50px auto 80px;
 }
-
 
 .TransloaditBar {
   display: block;
@@ -258,12 +255,12 @@ select {
   background: #0165d6;
   color: #fff;
   font-size: 15px;
-  
+
   .container {
     padding: 5px 10px 8px;
     width: auto;
     max-width: 1600px;
-    
+
     @media screen and (min-width: 768px) {
       height: 37px;
       display: flex;
@@ -275,14 +272,14 @@ select {
 
   &-link {
     // color: #fff;
-    color: #FFD700;
+    color: #ffd700;
     font-weight: 700;
 
     &:hover {
       text-decoration: underline;
     }
   }
-  
+
   &-logo {
     margin-right: 10px;
   }
@@ -311,7 +308,7 @@ select {
   &-info-link {
     color: #b3cbf2;
     font-weight: 600;
-    
+
     &:hover {
       color: #b3cbf2;
     }

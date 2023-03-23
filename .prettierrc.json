@@ -10,19 +10,14 @@
     {
       "files": "*.html",
       "options": {
-        "plugins": [
-          "@shopify/prettier-plugin-liquid"
-        ],
+        "plugins": ["@shopify/prettier-plugin-liquid"],
         "parser": "liquid-html",
         "singleQuote": false,
         "liquidSingleQuote": false
       }
     },
     {
-      "files": [
-        "*.scss",
-        "*.css"
-      ],
+      "files": ["*.scss", "*.css"],
       "options": {
         "singleQuote": false,
         "printWidth": 80

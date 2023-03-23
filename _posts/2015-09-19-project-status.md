@@ -20,9 +20,9 @@ that were made by Vimeo's [Naren Venkataraman](https://github.com/vayam) and thi
 Things still left to do:
 
 - [Write a Developers Guide](https://github.com/tus/tus-resumable-upload-protocol/issues/59)
-- Gather a *final round of feedback* on [the 1.0 proposal](https://github.com/tus/tus-resumable-upload-protocol/pull/57)
+- Gather a _final round of feedback_ on [the 1.0 proposal](https://github.com/tus/tus-resumable-upload-protocol/pull/57)
 
-We're waiting for a *final round of feedback* to make sure every last bit
+We're waiting for a _final round of feedback_ to make sure every last bit
 is taken care of before cementing everything into our first stable release.
 
 ### Exposure & Swag
@@ -53,7 +53,7 @@ implementation with a standalone [tus-js-client](https://github.com/tus/tus-js-c
 If you're interested in building & maintaining new 1.0 implementations, becoming
 a member of tus core, leave a note here:
 
- - [More 1.0 implementations](https://github.com/tus/tus-resumable-upload-protocol/issues/67)
+- [More 1.0 implementations](https://github.com/tus/tus-resumable-upload-protocol/issues/67)
 
 ### Design
 
@@ -62,7 +62,7 @@ a completely new logo was designed by [Milan Vuckovic](https://twitter.com/milan
 
 We're currently working on improving other:
 
- - [Design issues](https://github.com/tus/tus.io/issues)
+- [Design issues](https://github.com/tus/tus.io/issues)
 
 ### Demo
 

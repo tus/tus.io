@@ -2,25 +2,24 @@
 layout: default
 comments: true
 ---
-
 {% assign author = site.data.authors[page.author] %}
 
 <div class="post">
   <h1 class="post-title">
-    {{page.visible_title |default: page.title}}
+    {{ page.visible_title | default: page.title }}
   </h1>
 
   <div class="post-info">
     Published on <span class="date">{{ page.date | date: "%B %e, %Y" }}</span> by
-    {%if author.link%}
+    {% if author.link %}
       <a class="author" href="{{author.link}}">
         {{ author.name }}
       </a>
-    {%else%}
+    {% else %}
       <a class="author" href="https://twitter.com/{{author.twitter}}">
         {{ author.name }}
       </a>
-    {%endif%}
+    {% endif %}
   </div>
 
   <div class="post-content">
@@ -28,11 +27,9 @@ comments: true
   </div>
 </div>
 
-<hr />
+<hr>
 
 <div class="post-subscribe">
-  <p>
-    Subscribe to, or respond on our social channels:
-  </p>
+  <p>Subscribe to, or respond on our social channels:</p>
   {% include social.html rss=true %}
 </div>
