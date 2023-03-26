@@ -164,19 +164,19 @@
 <p><strong>Could you tell us something about the work you do and the kind of service your company provides to fire fighters?</strong></p>
 
 <blockquote>
-  <p>Certainly! My name is Jaroslaw Wasilewski and I work as a developer for an IT company called <a href="http://Bit-sa.pl">BIT S.A.</a>, which is located in Bialystok, Poland. We primarily write dedicated software for government and local administration. Our fire brigades were already using a system for handling requests and directing them to the appropriate, nearest units. There was, however, nothing in place that could support communication during rescue operations, either between units or between the command center and the firefighters in the field, beyond the typical radio communication. So, we developed a set of mobile and web-based applications that allows for messages, documents, data mapping, pictures and videos from the area of action to be sent to the command post and vice versa. It also makes it possible to closely monitor both the location and status of vehicles and firefighters, and it can be used to report the state of the victims. Lastly, it even provides logistic services for long-term rescue operations, such as forest fires or other natural disasters.  The system is currently being tested by firefighters in the <a href="https://en.wikipedia.org/wiki/Podlaskie_Voivodeship">province of Podlasie</a>.</p>
+  <p>Certainly! My name is Jaroslaw Wasilewski and I work as a developer for an IT company called <a href="http://Bit-sa.pl">BIT S.A.</a>, which is located in Bialystok, Poland. We primarily write dedicated software for government and local administration. Our fire brigades were already using a system for handling requests and directing them to the appropriate, nearest units. There was, however, nothing in place that could support communication during rescue operations, either between units or between the command center and the firefighters in the field, beyond the typical radio communication. So, we developed a set of mobile and web-based applications that allows for messages, documents, data mapping, pictures and videos from the area of action to be sent to the command post and vice versa. It also makes it possible to closely monitor both the location and status of vehicles and firefighters, and it can be used to report the state of the victims. Lastly, it even provides logistic services for long-term rescue operations, such as forest fires or other natural disasters. The system is currently being tested by firefighters in the <a href="https://en.wikipedia.org/wiki/Podlaskie_Voivodeship">province of Podlasie</a>.</p>
 </blockquote>
 
 <p><strong>How exactly are you using tus? Could you tell me something about the way it is used in firefighting operations?</strong></p>
 
 <blockquote>
-  <p>Tus is being used to send photos, videos and  other documents from mobile application to the back-end as attachments to the exchanged messages. This allows units in the field to immediately give the command center of any rescue operation a full and clear picture of the situation at hand. Fast and reliable file uploading is something that might help to save lives in such cases and, with the help of tus, our system can provide that. A more reliable means of transferring information, even under very poor networking circumstances, means that those in charge of rescue operations are better equipped to make decisions at times when lives are at stake.</p>
+  <p>Tus is being used to send photos, videos and other documents from mobile application to the back-end as attachments to the exchanged messages. This allows units in the field to immediately give the command center of any rescue operation a full and clear picture of the situation at hand. Fast and reliable file uploading is something that might help to save lives in such cases and, with the help of tus, our system can provide that. A more reliable means of transferring information, even under very poor networking circumstances, means that those in charge of rescue operations are better equipped to make decisions at times when lives are at stake.</p>
 </blockquote>
 
 <p><strong>How did you find out about tus and what led you to implement the protocol in your system?</strong></p>
 
 <blockquote>
-  <p>We needed an effective solution for transferring large types of data, such as high-resolution photos and long videos. Our system was intended to operate on a GSM network, often outside the cities, in areas where coverage tends to be weak and intermittent. With that in mind, the solution should be able to upload files piece by piece and save the current upload state. We didn't want to use FTP because it would be quite difficult to integrate with the REST API and also because partial transfer can be very unreliable. Our <a href="https://netbulls.io/">subcontractor</a>, who develops the mobile parts of the system, told us about tus.  While they themselves had not used it before, it quickly appeared after some more searching for possible solutions and various tests that tus met all of our expectations. The availability of libraries for the Android and .NET platforms was also crucially important for us. Furthermore, thanks to the tusd server and JavaScript client we had a great reference solution for the analysis of the protocol. As a result, we were able to prepare a new implementation of the tus server for PHP, and in parallel, work on the mobile application.</p>
+  <p>We needed an effective solution for transferring large types of data, such as high-resolution photos and long videos. Our system was intended to operate on a GSM network, often outside the cities, in areas where coverage tends to be weak and intermittent. With that in mind, the solution should be able to upload files piece by piece and save the current upload state. We didn't want to use FTP because it would be quite difficult to integrate with the REST API and also because partial transfer can be very unreliable. Our <a href="https://netbulls.io/">subcontractor</a>, who develops the mobile parts of the system, told us about tus. While they themselves had not used it before, it quickly appeared after some more searching for possible solutions and various tests that tus met all of our expectations. The availability of libraries for the Android and .NET platforms was also crucially important for us. Furthermore, thanks to the tusd server and JavaScript client we had a great reference solution for the analysis of the protocol. As a result, we were able to prepare a new implementation of the tus server for PHP, and in parallel, work on the mobile application.</p>
 </blockquote>
 
 <p><strong>Did you encounter any challenges in implementing tus? If so, how did you overcome them?</strong></p>
@@ -198,17 +198,30 @@
   </div>
 </div>
 
-<hr />
+<hr>
 
 <div class="post-subscribe">
-  <p>
-    Subscribe to, or respond on our social channels:
-  </p>
+  <p>Subscribe to, or respond on our social channels:</p>
   <div>
-  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"><img src="/assets/img/community-forum-35a78b.svg" /></a>
-  <a href="https://twitter.com/tus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @tus_io</a>
-  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg" /></a>
-  <iframe src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"
+    ><img src="/assets/img/community-forum-35a78b.svg"
+  ></a>
+  <a
+    href="https://twitter.com/tus_io"
+    class="twitter-follow-button"
+    data-show-count="false"
+    data-dnt="true"
+    >Follow @tus_io</a
+  >
+  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg"></a>
+  <iframe
+    src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true"
+    allowtransparency="true"
+    frameborder="0"
+    scrolling="0"
+    width="100"
+    height="20"
+  ></iframe>
 </div>
 
 </div>

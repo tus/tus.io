@@ -201,11 +201,14 @@ The <code>Upload#abort</code> and <code>Upload.terminate</code> functions do not
 })
 </code></pre>
     <p>you should rewrite it to:</p>
-    <pre><code class="language-js">upload.abort(true).then(() =&gt; {
-  // Handle success
-}).catch((err) =&gt; {
-  // Handle error
-})
+    <pre><code class="language-js">upload
+  .abort(true)
+  .then(() =&gt; {
+    // Handle success
+  })
+  .catch((err) =&gt; {
+    // Handle error
+  })
 </code></pre>
   </li>
   <li><strong>Use Promises for the <code>fingerprint</code> option</strong><br />
@@ -218,10 +221,12 @@ The function that is passed as the <code>fingerprint</code> option into the <cod
   </li>
   <li><strong>Enable retries by default</strong><br />
 tus-js-client has supported automated retries of network-caused error for years using the <code>retryDelays</code> option. However, in order to avoid breaking changes, this feature had been disabled by default when it was introduced. With this release, the retrying mechanism will be enabled by default to make it easier for new users to take advantage of it. If you have custom retrying code implemented, you may want to check that it is compatible when tus-js-client also retries HTTP requests.</li>
-  <li><strong>Remove <code>resume</code> option</strong><br />
+  <li>
+    <p><strong>Remove <code>resume</code> option</strong><br />
 Historically, the <code>resume</code> option has controlled whether tus-js-client will check if it is possible to resume an upload from a previous browsing session (e.g. when the browser has accidentally been closed while the upload was still running). This was implemented by calculating the fingerprint for the given input file and comparing it to a list of previously created uploads which was stored in the browser's <code>localStorage</code>. If such an upload exists, tus-js-client would attempt to resume it.
 However, this effectively gives the application no control over which upload is resumed. In previous versions, applications were not able to retrieve the list of previously created uploads or remove items from this list. Furthermore, if multiple matching uploads were found for a fingerprint, the applications could not decide which of those uploads should be resumed.
-In this release, the <code>resume</code> option has been removed and instead the Upload Storage API has been added. An introduction into the Upload Storage API can be found in the New Features section higher up. If you previously did not explicitly set <code>resume: false</code>, and hence relied on tus-js-client deciding to resume, you can get the previous behavior using following code snippet:
+In this release, the <code>resume</code> option has been removed and instead the Upload Storage API has been added. An introduction into the Upload Storage API can be found in the New Features section higher up. If you previously did not explicitly set <code>resume: false</code>, and hence relied on tus-js-client deciding to resume, you can get the previous behavior using following code snippet:</p>
+
     <pre><code class="language-js">upload = new tus.Upload(file, options)
 upload.findPreviousUploads().then((previousUploads) =&gt; {
   if (previousUploads.length &gt; 0) {
@@ -231,7 +236,9 @@ upload.findPreviousUploads().then((previousUploads) =&gt; {
   upload.start()
 })
 </code></pre>
+
     <p>or in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async/await</a> syntax:</p>
+
     <pre><code class="language-js">upload = new tus.Upload(file, options)
 const previousUploads = await upload.findPreviousUploads()
 if (previousUploads.length &gt; 0) {
@@ -263,17 +270,30 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
   </div>
 </div>
 
-<hr />
+<hr>
 
 <div class="post-subscribe">
-  <p>
-    Subscribe to, or respond on our social channels:
-  </p>
+  <p>Subscribe to, or respond on our social channels:</p>
   <div>
-  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"><img src="/assets/img/community-forum-35a78b.svg" /></a>
-  <a href="https://twitter.com/tus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @tus_io</a>
-  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg" /></a>
-  <iframe src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"
+    ><img src="/assets/img/community-forum-35a78b.svg"
+  ></a>
+  <a
+    href="https://twitter.com/tus_io"
+    class="twitter-follow-button"
+    data-show-count="false"
+    data-dnt="true"
+    >Follow @tus_io</a
+  >
+  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg"></a>
+  <iframe
+    src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true"
+    allowtransparency="true"
+    frameborder="0"
+    scrolling="0"
+    width="100"
+    height="20"
+  ></iframe>
 </div>
 
 </div>

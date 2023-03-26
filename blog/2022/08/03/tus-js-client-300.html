@@ -153,16 +153,18 @@
   <div class="post-content">
     <p class="lead">tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.</p>
 
-<p><a href="https://github.com/tus/tus-js-client/">tus-js-client</a> is the official client implementation for <a href="/protocols/resumable-upload.html">the tus protocol</a> in JavaScript. It not only supports  <strong>web browsers</strong>, but can also be used in <strong>Node.js</strong>, <strong>React Native</strong>, and <strong>Apache Cordova</strong> applications.</p>
+<p><a href="https://github.com/tus/tus-js-client/">tus-js-client</a> is the official client implementation for <a href="/protocols/resumable-upload.html">the tus protocol</a> in JavaScript. It not only supports <strong>web browsers</strong>, but can also be used in <strong>Node.js</strong>, <strong>React Native</strong>, and <strong>Apache Cordova</strong> applications.</p>
 
 <p>This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams.</p>
 
 <h2 id="new-features">New features</h2>
 
 <ul>
-  <li><strong>Add support for Parallel Uploads for <code>fs.ReadStream</code></strong><br />
+  <li>
+    <p><strong>Add support for Parallel Uploads for <code>fs.ReadStream</code></strong><br />
 In the previous <a href="https://tus.io/blog/2020/05/04/tus-js-client-200.html">major release of tus-js-client v2.0.0</a> we announced that it now supports parallel upload requests using the <a href="https://tus.io/protocols/resumable-upload.html#concatenation">Concatenation extension</a>. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploads"><code>parallelUploads</code> documentation</a> for more details.
-In this release, support for parallel uploads has been extended to also cover <code>fs.ReadStream</code> as an input type. You can use it like so:
+In this release, support for parallel uploads has been extended to also cover <code>fs.ReadStream</code> as an input type. You can use it like so:</p>
+
     <pre><code class="language-js">const path = 'my/file.txt'
 const file = fs.createReadStream(path)
 
@@ -174,8 +176,10 @@ const upload = new tus.Upload(file, {
   </li>
   <li><strong>Add <code>parallelUploadBoundaries</code> option</strong><br />
 If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the <a href="https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploadboundaries"><code>parallelUploadBoundaries</code> documentation</a> for more details.</li>
-  <li><strong>Automatically obtain file size for <code>fs.ReadStream</code></strong><br />
-tus-js-client has supported uploading an instance of <code>fs.ReadStream</code> directly for a long time. However, you always had to manually specify the file size, like this:
+  <li>
+    <p><strong>Automatically obtain file size for <code>fs.ReadStream</code></strong><br />
+tus-js-client has supported uploading an instance of <code>fs.ReadStream</code> directly for a long time. However, you always had to manually specify the file size, like this:</p>
+
     <pre><code class="language-js">const path = 'my/file.txt'
 const file = fs.createReadStream(path)
 const { size } = fs.statSync(path)
@@ -185,7 +189,9 @@ const upload = new tus.Upload(file, {
   uploadSize: size,
 })
 </code></pre>
+
     <p>The <code>uploadSize</code> option is now optional and can be left out:</p>
+
     <pre><code class="language-js">const path = 'my/file.txt'
 const file = fs.createReadStream(path)
 
@@ -193,6 +199,7 @@ const upload = new tus.Upload(file, {
   endpoint: 'https://tusd.tusdemo.net/files/',
 })
 </code></pre>
+
     <p>tus-js-client will automatically obtain the file size from disk.</p>
   </li>
 </ul>
@@ -241,17 +248,30 @@ If you do not want to store the upload URL, you can revert to the old behavior b
   </div>
 </div>
 
-<hr />
+<hr>
 
 <div class="post-subscribe">
-  <p>
-    Subscribe to, or respond on our social channels:
-  </p>
+  <p>Subscribe to, or respond on our social channels:</p>
   <div>
-  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"><img src="/assets/img/community-forum-35a78b.svg" /></a>
-  <a href="https://twitter.com/tus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @tus_io</a>
-  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg" /></a>
-  <iframe src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <a href="https://community.transloadit.com/c/tus" class="community-forum-button"
+    ><img src="/assets/img/community-forum-35a78b.svg"
+  ></a>
+  <a
+    href="https://twitter.com/tus_io"
+    class="twitter-follow-button"
+    data-show-count="false"
+    data-dnt="true"
+    >Follow @tus_io</a
+  >
+  <a href="/atom.xml"><img src="/assets/img/rss-feed-orange.svg"></a>
+  <iframe
+    src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true"
+    allowtransparency="true"
+    frameborder="0"
+    scrolling="0"
+    width="100"
+    height="20"
+  ></iframe>
 </div>
 
 </div>

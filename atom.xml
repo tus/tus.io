@@ -4,7 +4,7 @@
  <title>tus.io</title>
  <link href="/atom.xml" rel="self"/>
  <link href="https://tus.io"/>
- <updated>2023-03-16T23:45:35+01:00</updated>
+ <updated>2023-03-26T23:14:36+02:00</updated>
  <id>https://tus.io</id>
 
  
@@ -20,16 +20,18 @@
    <id>https://tus.io/blog/2022/08/03/tus-js-client-300</id>
    <content type="html">&lt;p class=&quot;lead&quot;&gt;tus is a protocol based on HTTP for resumable file uploads. Resumable here means that an interrupted upload can carry on without re-uploading already uploaded data again. An interruption may happen willingly, if the user wants to pause while switching to another workspace, or by accident in case of a network issue or server outage. When resumability is implemented with automatic retries, the user does not need to notice there was an interruption. Since HTTP/1.1 such a resumability is available for file downloads already but not for file uploads as tus offers.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tus/tus-js-client/&quot;&gt;tus-js-client&lt;/a&gt; is the official client implementation for &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;the tus protocol&lt;/a&gt; in JavaScript. It not only supports  &lt;strong&gt;web browsers&lt;/strong&gt;, but can also be used in &lt;strong&gt;Node.js&lt;/strong&gt;, &lt;strong&gt;React Native&lt;/strong&gt;, and &lt;strong&gt;Apache Cordova&lt;/strong&gt; applications.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tus/tus-js-client/&quot;&gt;tus-js-client&lt;/a&gt; is the official client implementation for &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;the tus protocol&lt;/a&gt; in JavaScript. It not only supports &lt;strong&gt;web browsers&lt;/strong&gt;, but can also be used in &lt;strong&gt;Node.js&lt;/strong&gt;, &lt;strong&gt;React Native&lt;/strong&gt;, and &lt;strong&gt;Apache Cordova&lt;/strong&gt; applications.&lt;/p&gt;
 
 &lt;p&gt;This release addresses a few cases of odd-behavior from tus-js-client to make it more developer-friendly. We also drop support for older environments and add handy feature for handling parallel uploads and file-based streams.&lt;/p&gt;
 
 &lt;h2 id=&quot;new-features&quot;&gt;New features&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Add support for Parallel Uploads for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Add support for Parallel Uploads for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
 In the previous &lt;a href=&quot;https://tus.io/blog/2020/05/04/tus-js-client-200.html&quot;&gt;major release of tus-js-client v2.0.0&lt;/a&gt; we announced that it now supports parallel upload requests using the &lt;a href=&quot;https://tus.io/protocols/resumable-upload.html#concatenation&quot;&gt;Concatenation extension&lt;/a&gt;. When enabled, an input file will be split into multiple equally sized parts which are uploaded in parallel. After all requests are finished, the parts will be stitched together on the server-side to produce the original file. The motivation behind this feature is to allow better utilization of network connections and available bandwidth. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploads&quot;&gt;&lt;code&gt;parallelUploads&lt;/code&gt; documentation&lt;/a&gt; for more details.
-In this release, support for parallel uploads has been extended to also cover &lt;code&gt;fs.ReadStream&lt;/code&gt; as an input type. You can use it like so:
+In this release, support for parallel uploads has been extended to also cover &lt;code&gt;fs.ReadStream&lt;/code&gt; as an input type. You can use it like so:&lt;/p&gt;
+
     &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
 const file = fs.createReadStream(path)
 
@@ -41,8 +43,10 @@ const upload = new tus.Upload(file, {
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Add &lt;code&gt;parallelUploadBoundaries&lt;/code&gt; option&lt;/strong&gt;&lt;br /&gt;
 If parallel uploads are enabled, this setting can be used to have parts of different size distributions or parts with specific boundaries to satisfy server requirements. See the &lt;a href=&quot;https://github.com/tus/tus-js-client/blob/v3.0.0/docs/api.md#paralleluploadboundaries&quot;&gt;&lt;code&gt;parallelUploadBoundaries&lt;/code&gt; documentation&lt;/a&gt; for more details.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Automatically obtain file size for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-tus-js-client has supported uploading an instance of &lt;code&gt;fs.ReadStream&lt;/code&gt; directly for a long time. However, you always had to manually specify the file size, like this:
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Automatically obtain file size for &lt;code&gt;fs.ReadStream&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+tus-js-client has supported uploading an instance of &lt;code&gt;fs.ReadStream&lt;/code&gt; directly for a long time. However, you always had to manually specify the file size, like this:&lt;/p&gt;
+
     &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
 const file = fs.createReadStream(path)
 const { size } = fs.statSync(path)
@@ -52,7 +56,9 @@ const upload = new tus.Upload(file, {
   uploadSize: size,
 })
 &lt;/code&gt;&lt;/pre&gt;
+
     &lt;p&gt;The &lt;code&gt;uploadSize&lt;/code&gt; option is now optional and can be left out:&lt;/p&gt;
+
     &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const path = &apos;my/file.txt&apos;
 const file = fs.createReadStream(path)
 
@@ -60,6 +66,7 @@ const upload = new tus.Upload(file, {
   endpoint: &apos;https://tusd.tusdemo.net/files/&apos;,
 })
 &lt;/code&gt;&lt;/pre&gt;
+
     &lt;p&gt;tus-js-client will automatically obtain the file size from disk.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -265,11 +272,14 @@ The &lt;code&gt;Upload#abort&lt;/code&gt; and &lt;code&gt;Upload.terminate&lt;/c
 })
 &lt;/code&gt;&lt;/pre&gt;
     &lt;p&gt;you should rewrite it to:&lt;/p&gt;
-    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;upload.abort(true).then(() =&amp;gt; {
-  // Handle success
-}).catch((err) =&amp;gt; {
-  // Handle error
-})
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;upload
+  .abort(true)
+  .then(() =&amp;gt; {
+    // Handle success
+  })
+  .catch((err) =&amp;gt; {
+    // Handle error
+  })
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Use Promises for the &lt;code&gt;fingerprint&lt;/code&gt; option&lt;/strong&gt;&lt;br /&gt;
@@ -282,10 +292,12 @@ The function that is passed as the &lt;code&gt;fingerprint&lt;/code&gt; option i
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Enable retries by default&lt;/strong&gt;&lt;br /&gt;
 tus-js-client has supported automated retries of network-caused error for years using the &lt;code&gt;retryDelays&lt;/code&gt; option. However, in order to avoid breaking changes, this feature had been disabled by default when it was introduced. With this release, the retrying mechanism will be enabled by default to make it easier for new users to take advantage of it. If you have custom retrying code implemented, you may want to check that it is compatible when tus-js-client also retries HTTP requests.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Remove &lt;code&gt;resume&lt;/code&gt; option&lt;/strong&gt;&lt;br /&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Remove &lt;code&gt;resume&lt;/code&gt; option&lt;/strong&gt;&lt;br /&gt;
 Historically, the &lt;code&gt;resume&lt;/code&gt; option has controlled whether tus-js-client will check if it is possible to resume an upload from a previous browsing session (e.g. when the browser has accidentally been closed while the upload was still running). This was implemented by calculating the fingerprint for the given input file and comparing it to a list of previously created uploads which was stored in the browser&apos;s &lt;code&gt;localStorage&lt;/code&gt;. If such an upload exists, tus-js-client would attempt to resume it.
 However, this effectively gives the application no control over which upload is resumed. In previous versions, applications were not able to retrieve the list of previously created uploads or remove items from this list. Furthermore, if multiple matching uploads were found for a fingerprint, the applications could not decide which of those uploads should be resumed.
-In this release, the &lt;code&gt;resume&lt;/code&gt; option has been removed and instead the Upload Storage API has been added. An introduction into the Upload Storage API can be found in the New Features section higher up. If you previously did not explicitly set &lt;code&gt;resume: false&lt;/code&gt;, and hence relied on tus-js-client deciding to resume, you can get the previous behavior using following code snippet:
+In this release, the &lt;code&gt;resume&lt;/code&gt; option has been removed and instead the Upload Storage API has been added. An introduction into the Upload Storage API can be found in the New Features section higher up. If you previously did not explicitly set &lt;code&gt;resume: false&lt;/code&gt;, and hence relied on tus-js-client deciding to resume, you can get the previous behavior using following code snippet:&lt;/p&gt;
+
     &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;upload = new tus.Upload(file, options)
 upload.findPreviousUploads().then((previousUploads) =&amp;gt; {
   if (previousUploads.length &amp;gt; 0) {
@@ -295,7 +307,9 @@ upload.findPreviousUploads().then((previousUploads) =&amp;gt; {
   upload.start()
 })
 &lt;/code&gt;&lt;/pre&gt;
+
     &lt;p&gt;or in &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function&quot;&gt;async/await&lt;/a&gt; syntax:&lt;/p&gt;
+
     &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;upload = new tus.Upload(file, options)
 const previousUploads = await upload.findPreviousUploads()
 if (previousUploads.length &amp;gt; 0) {
@@ -338,7 +352,7 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
    <id>https://tus.io/blog/2019/09/20/tusd-100</id>
    <content type="html">&lt;p&gt;Today, we are thrilled to announce the v1.0.0 release of our &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd project&lt;/a&gt;, the official reference implementation for the tus protocol. Don&apos;t let yourself be fooled by the version number, tusd has been production-ready and battle-tested for many years already.&lt;/p&gt;
 
-&lt;p&gt;This release ships with a few exciting new features but most of the changes were necessary to clean up technical debt which accumulated  over the last four years. We try to avoid frequent breaking changes in tusd to reduce the impact of dependency upgrades on your project. However, this debt also prevented us from adding new highly-requested features and tusd 1.0 is now able to deliver those.&lt;/p&gt;
+&lt;p&gt;This release ships with a few exciting new features but most of the changes were necessary to clean up technical debt which accumulated over the last four years. We try to avoid frequent breaking changes in tusd to reduce the impact of dependency upgrades on your project. However, this debt also prevented us from adding new highly-requested features and tusd 1.0 is now able to deliver those.&lt;/p&gt;
 
 &lt;p&gt;A detailed list of all relevant changes in the 1.0 release can be found in the &lt;a href=&quot;https://github.com/tus/tusd/releases/tag/v1.0.0&quot;&gt;release notes&lt;/a&gt; where you are also able to download prebuilt binaries for Linux, macOS and Windows.&lt;/p&gt;
 
@@ -426,19 +440,19 @@ This release introduces an HTTP abstraction layer to overcome differences betwee
 &lt;p&gt;&lt;strong&gt;Could you tell us something about the work you do and the kind of service your company provides to fire fighters?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Certainly! My name is Jaroslaw Wasilewski and I work as a developer for an IT company called &lt;a href=&quot;http://Bit-sa.pl&quot;&gt;BIT S.A.&lt;/a&gt;, which is located in Bialystok, Poland. We primarily write dedicated software for government and local administration. Our fire brigades were already using a system for handling requests and directing them to the appropriate, nearest units. There was, however, nothing in place that could support communication during rescue operations, either between units or between the command center and the firefighters in the field, beyond the typical radio communication. So, we developed a set of mobile and web-based applications that allows for messages, documents, data mapping, pictures and videos from the area of action to be sent to the command post and vice versa. It also makes it possible to closely monitor both the location and status of vehicles and firefighters, and it can be used to report the state of the victims. Lastly, it even provides logistic services for long-term rescue operations, such as forest fires or other natural disasters.  The system is currently being tested by firefighters in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Podlaskie_Voivodeship&quot;&gt;province of Podlasie&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;Certainly! My name is Jaroslaw Wasilewski and I work as a developer for an IT company called &lt;a href=&quot;http://Bit-sa.pl&quot;&gt;BIT S.A.&lt;/a&gt;, which is located in Bialystok, Poland. We primarily write dedicated software for government and local administration. Our fire brigades were already using a system for handling requests and directing them to the appropriate, nearest units. There was, however, nothing in place that could support communication during rescue operations, either between units or between the command center and the firefighters in the field, beyond the typical radio communication. So, we developed a set of mobile and web-based applications that allows for messages, documents, data mapping, pictures and videos from the area of action to be sent to the command post and vice versa. It also makes it possible to closely monitor both the location and status of vehicles and firefighters, and it can be used to report the state of the victims. Lastly, it even provides logistic services for long-term rescue operations, such as forest fires or other natural disasters. The system is currently being tested by firefighters in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Podlaskie_Voivodeship&quot;&gt;province of Podlasie&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;How exactly are you using tus? Could you tell me something about the way it is used in firefighting operations?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Tus is being used to send photos, videos and  other documents from mobile application to the back-end as attachments to the exchanged messages. This allows units in the field to immediately give the command center of any rescue operation a full and clear picture of the situation at hand. Fast and reliable file uploading is something that might help to save lives in such cases and, with the help of tus, our system can provide that. A more reliable means of transferring information, even under very poor networking circumstances, means that those in charge of rescue operations are better equipped to make decisions at times when lives are at stake.&lt;/p&gt;
+  &lt;p&gt;Tus is being used to send photos, videos and other documents from mobile application to the back-end as attachments to the exchanged messages. This allows units in the field to immediately give the command center of any rescue operation a full and clear picture of the situation at hand. Fast and reliable file uploading is something that might help to save lives in such cases and, with the help of tus, our system can provide that. A more reliable means of transferring information, even under very poor networking circumstances, means that those in charge of rescue operations are better equipped to make decisions at times when lives are at stake.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;How did you find out about tus and what led you to implement the protocol in your system?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;We needed an effective solution for transferring large types of data, such as high-resolution photos and long videos. Our system was intended to operate on a GSM network, often outside the cities, in areas where coverage tends to be weak and intermittent. With that in mind, the solution should be able to upload files piece by piece and save the current upload state. We didn&apos;t want to use FTP because it would be quite difficult to integrate with the REST API and also because partial transfer can be very unreliable. Our &lt;a href=&quot;https://netbulls.io/&quot;&gt;subcontractor&lt;/a&gt;, who develops the mobile parts of the system, told us about tus.  While they themselves had not used it before, it quickly appeared after some more searching for possible solutions and various tests that tus met all of our expectations. The availability of libraries for the Android and .NET platforms was also crucially important for us. Furthermore, thanks to the tusd server and JavaScript client we had a great reference solution for the analysis of the protocol. As a result, we were able to prepare a new implementation of the tus server for PHP, and in parallel, work on the mobile application.&lt;/p&gt;
+  &lt;p&gt;We needed an effective solution for transferring large types of data, such as high-resolution photos and long videos. Our system was intended to operate on a GSM network, often outside the cities, in areas where coverage tends to be weak and intermittent. With that in mind, the solution should be able to upload files piece by piece and save the current upload state. We didn&apos;t want to use FTP because it would be quite difficult to integrate with the REST API and also because partial transfer can be very unreliable. Our &lt;a href=&quot;https://netbulls.io/&quot;&gt;subcontractor&lt;/a&gt;, who develops the mobile parts of the system, told us about tus. While they themselves had not used it before, it quickly appeared after some more searching for possible solutions and various tests that tus met all of our expectations. The availability of libraries for the Android and .NET platforms was also crucially important for us. Furthermore, thanks to the tusd server and JavaScript client we had a great reference solution for the analysis of the protocol. As a result, we were able to prepare a new implementation of the tus server for PHP, and in parallel, work on the mobile application.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Did you encounter any challenges in implementing tus? If so, how did you overcome them?&lt;/strong&gt;&lt;/p&gt;
@@ -648,7 +662,7 @@ file uploads at zero cost.&lt;/p&gt;
 
 &lt;h3 id=&quot;special-thanks&quot;&gt;Special Thanks&lt;/h3&gt;
 
-&lt;p&gt;It has taken us the better part of three years and we have had to overcome many obstacles along the way. It is in great part thanks to &lt;a href=&quot;/about.html&quot;&gt;these people&lt;/a&gt; that tus is able to push out a stable release today. A special 
+&lt;p&gt;It has taken us the better part of three years and we have had to overcome many obstacles along the way. It is in great part thanks to &lt;a href=&quot;/about.html&quot;&gt;these people&lt;/a&gt; that tus is able to push out a stable release today. A special
 word of thanks goes out to the talented people that have been instrumental in getting us to where we are today: &lt;a href=&quot;https://felixge.de&quot;&gt;Felix&lt;/a&gt;, &lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren&lt;/a&gt; and &lt;a href=&quot;https://transloadit.com/about#marius&quot;&gt;Marius&lt;/a&gt;. We couldn&apos;t have done tus without you!&lt;/p&gt;
 
 &lt;p&gt;Discuss on &lt;a href=&quot;https://news.ycombinator.com/item?id=10574364&quot;&gt;Hacker News&lt;/a&gt;&lt;/p&gt;
@@ -798,7 +812,7 @@ one mandatory. All these headers must be returned in the new &lt;code&gt;OPTIONS
 in order to enable protocol discovery. In addition the &lt;code&gt;Offset&lt;/code&gt; header must not
 be greater or lower than the current offset for the file.&lt;/p&gt;
 
-&lt;p&gt;The biggest changes were made by introducing the Upload-Expiration,  Checksum,
+&lt;p&gt;The biggest changes were made by introducing the Upload-Expiration, Checksum,
 Stream, Retries, Termination, Merge and Metadata extensions.&lt;/p&gt;
 
 &lt;p&gt;After all of this work the protocol is now considered stable and ready for use
@@ -927,7 +941,7 @@ implementers.&lt;/p&gt;
    <link href="https://tus.io/blog/2013/04/15/a-protocol-for-resumable-file-uploads.html"/>
    <updated>2013-04-15T00:00:00+02:00</updated>
    <id>https://tus.io/blog/2013/04/15/a-protocol-for-resumable-file-uploads</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; We are happy to announce version 0.1 of the 
+   <content type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; We are happy to announce version 0.1 of the
 &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;tus resumable upload protocol&lt;/a&gt; and are interested in your
 feedback!&lt;/p&gt;
 
