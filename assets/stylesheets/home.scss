@@ -32,15 +32,15 @@ section.centered {
   }
 
   .banner {
-    -webkit-animation: fadeIn 1s;  /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation   : fadeIn 1s;  /* Firefox < 16 */
-    -ms-animation    : fadeIn 1s;  /* Internet Explorer */
-    -o-animation     : fadeIn 1s;  /* Opera < 12.1 */
-    animation        : fadeIn 1s;
-    width            : auto;
-    max-width        : 100%;
-    margin           : 40px auto 20px;
-    display          : block;
+    -webkit-animation: fadeIn 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeIn 1s; /* Firefox < 16 */
+    -ms-animation: fadeIn 1s; /* Internet Explorer */
+    -o-animation: fadeIn 1s; /* Opera < 12.1 */
+    animation: fadeIn 1s;
+    width: auto;
+    max-width: 100%;
+    margin: 40px auto 20px;
+    display: block;
 
     @media screen and (min-width: 768px) {
       width: 60%;

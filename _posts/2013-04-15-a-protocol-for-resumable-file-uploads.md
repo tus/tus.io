@@ -6,7 +6,7 @@ author: felixge
 redirect_from: /blog/2013/04/15/a-protocol-for-resumable-file-uploads/
 ---
 
-**tl;dr:** We are happy to announce version 0.1 of the 
+**tl;dr:** We are happy to announce version 0.1 of the
 [tus resumable upload protocol](/protocols/resumable-upload.html) and are interested in your
 feedback!
 

@@ -4,7 +4,7 @@ const ago = require('s-ago')
 const tus = require('tus-js-client')
 
 const container = document.querySelector('#js-upload-container')
-const alertBox  = document.querySelector('#js-support-alert')
+const alertBox = document.querySelector('#js-support-alert')
 
 if (!tus.isSupported) {
   alertBox.classList.remove('hidden')
@@ -13,7 +13,7 @@ if (!tus.isSupported) {
 /**
  * Fill the container with a file input element.
  */
-function drawFileInput () {
+function drawFileInput() {
   container.innerHTML = `
     <div class="heading">Select a file you want to upload:</div>
     <input type="file" id="js-file-input" />
@@ -50,7 +50,7 @@ function drawFileInput () {
 /**
  * Fill the container with buttons to select if an upload should be resumed
  */
-async function drawPreviousUploadSelect (upload) {
+async function drawPreviousUploadSelect(upload) {
   let previousUploads = await upload.findPreviousUploads()
 
   // We only want to consider uploads that were started within the last three hours.
@@ -60,7 +60,7 @@ async function drawPreviousUploadSelect (upload) {
       upload.creationTime = new Date(upload.creationTime)
       return upload
     })
-    .filter(upload => upload.creationTime > threeHoursAgo)
+    .filter((upload) => upload.creationTime > threeHoursAgo)
     .sort((a, b) => b.creationTime - a.creationTime)
 
   // If no upload was previously started, we can directly start the upload.
@@ -94,7 +94,7 @@ async function drawPreviousUploadSelect (upload) {
 /**
  * Fill the container with a progress bar and a pause/unpause button.
  */
-function drawUploadControls (upload) {
+function drawUploadControls(upload) {
   container.innerHTML = `
     <div class="heading">The upload is running:</div>
     <div class="upload-row">
@@ -106,11 +106,11 @@ function drawUploadControls (upload) {
     <div class="upload-text-progress" id="js-upload-text-progress"></div>
   `
 
-  const progress      = container.querySelector('.progress')
-  const progressBar   = container.querySelector('.progress-bar')
-  const pauseButton   = container.querySelector('#js-upload-toggle')
-  const textProgress  = container.querySelector('#js-upload-text-progress')
-  const textHeading   = container.querySelector('.heading')
+  const progress = container.querySelector('.progress')
+  const progressBar = container.querySelector('.progress-bar')
+  const pauseButton = container.querySelector('#js-upload-toggle')
+  const textProgress = container.querySelector('#js-upload-text-progress')
+  const textHeading = container.querySelector('.heading')
   let isUploadRunning = true
 
   pauseButton.addEventListener('click', () => {
@@ -150,11 +150,13 @@ Do you want to retry the upload?`
   }
 
   upload.options.onProgress = (bytesUploaded, bytesTotal) => {
-    const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2) + '%'
+    const percentage = ((bytesUploaded / bytesTotal) * 100).toFixed(2) + '%'
     progress.classList.remove('indeterminate')
     progressBar.style.width = percentage
     console.log('demo: progress', bytesUploaded, bytesTotal, percentage)
-    textProgress.textContent = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(bytesTotal)} (${percentage})`
+    textProgress.textContent = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(
+      bytesTotal
+    )} (${percentage})`
   }
 
   upload.options.onSuccess = () => {
@@ -167,7 +169,7 @@ Do you want to retry the upload?`
 /**
  * Fill the container with a download link after the upload is finished.
  */
-function drawDownloadLink (upload) {
+function drawDownloadLink(upload) {
   container.innerHTML = `
     <div class="heading">The upload is complete!</div>
 
@@ -190,7 +192,7 @@ function drawDownloadLink (upload) {
  * Turn a byte number into a human readable format.
  * Taken from https://stackoverflow.com/a/18650828
  */
-function formatBytes (bytes, decimals = 2) {
+function formatBytes(bytes, decimals = 2) {
   if (bytes === 0) return '0 Bytes'
 
   const k = 1024

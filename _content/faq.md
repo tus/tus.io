@@ -52,7 +52,7 @@ This section covers the more low-level details of how tus performs an upload. If
 
 A tus upload is broken down into different HTTP requests, where each one has a different purpose:
 
-- At first, the client sends a `POST` request to the server to initiate the upload. This *upload creation request* tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the `Location` header set to the *upload URL*. The upload URL is used to uniquely identify and reference the newly-created upload resource.
+- At first, the client sends a `POST` request to the server to initiate the upload. This _upload creation request_ tells the server basic information about the upload, such as its size or additional metadata. If the server accepts this upload creation request, it will return a successful response with the `Location` header set to the _upload URL_. The upload URL is used to uniquely identify and reference the newly-created upload resource.
 - Once the upload has been created, the client can start to transmit the actual upload content by sending a `PATCH` request to the upload URL, as returned in the previous `POST` request. Ideally, this `PATCH` request should contain as much upload content as possible to minimize the upload duration. The `PATCH` request must also contain the `Upload-Offset` header, which tells the server at which byte offset the server should write the uploaded data. If the `PATCH` request successfully transfers the entirety of the upload content, then your upload is done!
 - If the `PATCH` request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a `HEAD` request to the upload URL and inspecting the returned `Upload-Offset` header. Once the client knows the upload offset, it can send another `PATCH` request until the upload is completely done.
 - Optionally, if the client wants to delete an upload because it won't be needed anymore, a `DELETE` request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.
@@ -61,8 +61,7 @@ If you want to see these requests in action, you can head over to our [demo](/de
 
 ## How do I integrate tus into my application?
 
-If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](/implementations.html
-). The exact setup steps vary for each implementation, but the basic scheme is as follows:
+If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](/implementations.html). The exact setup steps vary for each implementation, but the basic scheme is as follows:
 
 The tus server is usually deployed alongside your main application server in its process. A proxy is then used to route the requests to either the tus server or your application server. The tus server usually stores the uploads on disk, but some servers (such as our reference implementation [tusd](https://github.com/tus/tusd)) are also capable of storing the data directly on different cloud providers, such as AWS S3 or Google Cloud Storage.
 
@@ -95,8 +94,7 @@ If that is not an option for you, please reach out to us. We are open to definin
 
 ## How are pause/resume handled? When should I delete partial uploads?
 
-The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload, you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g., checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response, you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration](/protocols/resumable-upload.html#expiration
-) extension).
+The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload, you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g., checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response, you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration](/protocols/resumable-upload.html#expiration) extension).
 
 Before deleting an outstanding upload, the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one week for a general use case.
 

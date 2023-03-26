@@ -9,8 +9,8 @@ const imageConfigFile = process.env.IMAGES_CFG || `${__dirname}/../_data/logos.y
 const images = YAML.safeLoad(fs.readFileSync(imageConfigFile, 'utf8'))
 
 for (let i = 0; i < images.length; i++) {
-  const image = images[i];
-  (({ src, name }, i) => {
+  const image = images[i]
+  ;(({ src, name }, i) => {
     if (!src.match(/^https?:\/\//i)) {
       return debug(`Skipping already downloaded ${src}`)
     } else {

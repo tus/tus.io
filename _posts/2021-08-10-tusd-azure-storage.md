@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Uploading files to Azure Storage using tusd"
+title: 'Uploading files to Azure Storage using tusd'
 author: acconut
 redirect_from: /blog/2021/08/11/tusd-azure-storage/
 ---

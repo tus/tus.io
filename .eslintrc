@@ -1,5 +1,5 @@
 {
-  "extends": "standard",
+  "extends": ["standard", "prettier"],
   "env": {
     "es6": true,
     "jest": true,
@@ -13,25 +13,6 @@
   },
   "rules": {
     "no-multi-spaces": ["off"],
-    "node/no-path-concat": ["off"],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "key-spacing": [
-      "error",
-      {
-        "multiLine": {
-          "beforeColon": false,
-          "afterColon": true
-        },
-        "align": {
-          "beforeColon": false,
-          "afterColon": true,
-          "on": "colon",
-          "mode": "strict"
-        }
-      }
-    ]
+    "node/no-path-concat": ["off"]
   }
 }

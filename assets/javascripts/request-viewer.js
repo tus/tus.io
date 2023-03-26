@@ -12,12 +12,12 @@ const xhrSend = XMLHttpRequest.prototype.send
 
 XMLHttpRequest.prototype.open = function (method, url, ...args) {
   this._requestDetails = {
-    id          : Math.round(Math.random() * 1e9),
-    method      : method.toUpperCase(),
-    url         : url,
-    headers     : [],
-    time        : null,
-    bodySize    : null,
+    id: Math.round(Math.random() * 1e9),
+    method: method.toUpperCase(),
+    url: url,
+    headers: [],
+    time: null,
+    bodySize: null,
     isTusRequest: false,
   }
   xhrOpen.apply(this, [method, url, ...args])
@@ -45,9 +45,9 @@ XMLHttpRequest.prototype.send = function (data) {
 
   this.addEventListener('load', () => {
     this._responseDetails = {
-      status : this.status + ' ' + this.statusText,
+      status: this.status + ' ' + this.statusText,
       headers: [],
-      time   : new Date(),
+      time: new Date(),
     }
 
     RESPONSE_HEADERS.forEach((name) => {
@@ -64,7 +64,7 @@ XMLHttpRequest.prototype.send = function (data) {
   onRequestOutgoing(this)
 }
 
-function onRequestOutgoing (xhr) {
+function onRequestOutgoing(xhr) {
   const req = xhr._requestDetails
 
   $('.http-traffic-list').append(`
@@ -85,7 +85,7 @@ function onRequestOutgoing (xhr) {
   `)
 }
 
-function onResponseIncoming (xhr) {
+function onResponseIncoming(xhr) {
   const req = xhr._requestDetails
   const res = xhr._responseDetails
 
@@ -98,6 +98,4 @@ function onResponseIncoming (xhr) {
   `)
 }
 
-$(() => {
-
-})
+$(() => {})
