@@ -621,7 +621,21 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under MIT</div>
+    
+  </li>
+  
+  <li>
+    <a class="title" href="https://github.com/kallebysantos/meteoritus">
+      kallebysantos/meteoritus
+    </a>
+      
+    <div class="author">&mdash; by <a href="https://github.com/kallebysantos">Kalleby Santos</a></div>
 
+    <div class="description">
+      This project is a <strong>Rust</strong> library that implements tus <code>v1.0.0</code> server integration for <strong>Rocket framework</strong>
+    </div>
+
+    <div class="license">Licensed under MIT</div>
   </li>
 
   <li>
@@ -667,7 +681,7 @@ what protocol version you're targeting.
 
     <div class="license">Licensed under MIT</div>
 
-  </li>
+  </li> 
 </ul>
 
 <h4>Projects using tus</h4>
