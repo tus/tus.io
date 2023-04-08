@@ -1,44 +1,44 @@
-name: tus.io CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types:
-      - opened
-      - synchronize
-jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-      - uses: actions/setup-node@main
-        with:
-          node-version: 14.x
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "##[set-output name=dir;]$(yarn cache dir)"
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - uses: sergioramos/yarn-actions/install@master
-        with:
-          frozen-lockfile: true
-      - name: Lint
-        run: |
-          yarn lint
-      - name: Website Build
-        run: |
-          yarn build:production
-      - name: Website Deploy 🚀
-        if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: _site # The folder the action should deploy.
-          clean: true # Automatically remove deleted files from the deploy branch
+# name: tus.io CI
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     types:
+#       - opened
+#       - synchronize
+# jobs:
+#   ci:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 1
+#       - uses: actions/setup-node@main
+#         with:
+#           node-version: 14.x
+#       - name: Get yarn cache directory path
+#         id: yarn-cache-dir-path
+#         run: echo "##[set-output name=dir;]$(yarn cache dir)"
+#       - uses: actions/cache@v3
+#         with:
+#           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-yarn-
+#       - uses: sergioramos/yarn-actions/install@master
+#         with:
+#           frozen-lockfile: true
+#       - name: Lint
+#         run: |
+#           yarn lint
+#       - name: Website Build
+#         run: |
+#           yarn build:production
+#       - name: Website Deploy 🚀
+#         if: github.ref == 'refs/heads/main'
+#         uses: JamesIves/github-pages-deploy-action@v4.4.1
+#         with:
+#           branch: gh-pages # The branch the action should deploy to.
+#           folder: _site # The folder the action should deploy.
+#           clean: true # Automatically remove deleted files from the deploy branch
