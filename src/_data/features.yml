@@ -1,0 +1,35 @@
+- title: HTTP-based
+  content: |
+    Built as a layer on top of the popular HTTP protocol, tus can easily be integrated
+    into applications using existing libraries, proxies and firewalls, and can
+    be used directly from any website.
+- title: Production-ready
+  content: |
+    tus is ready for use in production. It has undergone numerous
+    rounds of improvements and received valuable feedback from people working at Vimeo, Google
+    and multiple other well-known companies.
+- title: Open source
+  content: |
+    tus is brought to you by the people behind
+    <a href="https://transloadit.com"><img
+      src="/assets/img/transloadit-logo.png"
+      align="absmiddle" width="16" height="16"></a><a style="text-decoration: none;" href="https://transloadit.com">
+    </a><a href="https://transloadit.com">Transloadit</a>
+    but the source code to all of our implementations, this website and even the protocol
+    itself is accessible to everyone under MIT license, directly from our
+    [GitHub](https://github.com/tus) organization.
+- title: Minimalistic design...
+  content: |
+    The specification only requires a very small set of features to be
+    implemented by clients and servers. tus embraces simplicity, fast
+    development and iteration speed for everyone.
+- title: ... yet still extensible
+  content: |
+    tus nevertheless features a sizable list of extensions that introduce additional
+    functionality, such as parallel uploading or checksums and expiration. All of these may be
+    implemented according to your preferences.
+- title: Community-owned
+  content: |
+    We believe in an open and accessible evolution of this protocol. At any
+    stage since the beginning of tus, feedback has been appreciated and
+    integrated. We look forward to your contributions as well.

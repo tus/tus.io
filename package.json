@@ -12,6 +12,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-bundle": "^1.0.4",
     "@11ty/eleventy-plugin-webc": "^0.11.0",
+    "@types/node": "^18.15.11",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
@@ -19,5 +20,12 @@
     "prettier": "^2.8.7",
     "sass": "^1.57.1",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@preact/signals": "^1.1.3",
+    "@slinkity/preact": "^1.0.1",
+    "clsx": "^1.2.1",
+    "modern-normalize": "^1.1.0",
+    "slinkity": "^1.0.0-canary.0"
   }
 }

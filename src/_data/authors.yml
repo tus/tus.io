@@ -1,0 +1,38 @@
+felixge:
+  name: Felix Geisendörfer
+  gravatar: 23968f0ca75b13463d2db5343e5c2096
+  email: felix@transloadit.com
+  web: http://felixge.de
+  twitter: felixge
+  github: felixge
+tim_kos:
+  name: Tim Koschützki
+  gravatar: 9c31d1102d95104fb994ae67cd1989b6
+  email: tim@transloadit.com
+  web: http://debuggable.com
+  twitter: tim_kos
+  github: tim-kos
+kvz:
+  name: Kevin van Zonneveld
+  gravatar: 3210e1be3e4059b93c4a88309e2183a2
+  email: kevin@transloadit.com
+  web: http://kvz.io
+  twitter: kvz
+  github: kvz
+vayam:
+  name: Naren Venkataraman
+  gravatar: 3b5a456c814b3235a7f0bffa27406022
+  email: naren@doorul.com
+  web: http://dev.doorul.com
+  twitter: asyncme
+  github: vayam
+acconut:
+  name: Marius Kleidl
+  gravatar: cda1e4d36e22cbcd826f0f09f8c19f04
+  email: marius@transloadit.com
+  twitter: acconut_
+  github: Acconut
+aj:
+  name: A.J. van Loon
+  gravatar: f7134e6ec5e5982428c50ce31eacd592
+  link: https://transloadit.com/about/#a-j

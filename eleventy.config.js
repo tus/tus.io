@@ -1,32 +1,16 @@
-const bundlerPlugin = require("@11ty/eleventy-plugin-bundle");
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-const postcss = require("postcss");
-const csso = require("postcss-csso");
-const presetEnv = require("postcss-preset-env");
-const autoprefixer = require("autoprefixer");
+const slinkity = require("slinkity");
+const preact = require("@slinkity/preact");
 
 /**
  * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
  **/
 module.exports = function (eleventyConfig) {
-  // Use WebC for global components
-  eleventyConfig.addPlugin(pluginWebc);
-
-  // Setup bundler plugin
-  eleventyConfig.addPlugin(bundlerPlugin, {
-    transforms: [
-      async function transform(content) {
-        if (this.type === "css") {
-          let result = await postcss([autoprefixer, presetEnv, csso]).process(
-            content,
-            { from: this.page.inputPath, to: null }
-          );
-          return result.css;
-        }
-      },
-    ],
-  });
-
+  eleventyConfig.addPlugin(
+    slinkity.plugin,
+    slinkity.defineConfig({
+      renderers: [preact()],
+    })
+  );
   /**
    * Why copy the /public directory?
    *
@@ -37,7 +21,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("public");
 
   return {
-    htmlTemplateEngine: "webc",
     dir: {
       /**
        * Why set an input directory?

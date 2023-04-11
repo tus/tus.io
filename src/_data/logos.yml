@@ -1,0 +1,45 @@
+# Just (click) Edit this file. Saving will then that will automatically fork this,
+# and create a Pull Request so that we can review and merge it in.
+#
+# Adding your image as an http:// URL is okay.
+# tus developers will later on download, optimize, and include your logo in ./assets.
+# This saves you the hassle of cloning the project locally to add your image.
+- url: 'https://transloadit.com'
+  src: /assets/img/logos/transloadit.png
+  name: Transloadit - File uploading & encoding API
+- url: 'https://medium.com/vimeo-engineering-blog/vimeo-is-adopting-tus-d5e999acd517'
+  src: /assets/img/logos/vimeo.png
+  name: Vimeo
+- url: 'https://cloudflare.com'
+  src: /assets/img/logos/cloudflare.png
+  name: Cloudflare
+- url: 'https://git-lfs.github.com/'
+  src: /assets/img/logos/git-lfs-icon.png
+  name: Git LFS
+- url: 'http://www.sdsc.edu'
+  src: /assets/img/logos/san-diego-supercomputer-center.png
+  name: San Diego Supercomputer Center
+- url: 'https://90seconds.tv'
+  src: /assets/img/logos/90-seconds---cloud-video-production-platform.png
+  name: 90 Seconds - Cloud video production platform
+- url: 'https://soundoff.io'
+  src: /assets/img/logos/soundoff.png
+  name: Soundoff.io
+- url: 'http://hotpointapp.com'
+  src: /assets/img/logos/hotpoint.png
+  name: Hotpoint
+- url: 'https://filepost.io'
+  src: /assets/img/logos/filepost.png
+  name: FilePost
+- url: 'https://ezybox.in'
+  src: https://ezybox.in/logo-color.png
+  name: Ezybox
+- url: 'https://radity.com'
+  src: /assets/img/logos/radity.png
+  name: Radity
+- url: 'https://globalctoforum.org/'
+  src: /assets/img/logos/global-cto-forum.png
+  name: Global CTO Forum
+- url: 'https://www.ranchcomputing.com'
+  src: 'https://www.ranchcomputing.com/assets/imgs/logo/ranch_blue.png'
+  name: RANCH Computing
