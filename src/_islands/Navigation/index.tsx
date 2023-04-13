@@ -1,11 +1,12 @@
 import tusWordmark from "./wordmark.png";
 import tusLogo from "./logo.png";
-import { signal } from "@preact/signals";
+import { computed, signal } from "@preact/signals";
 import styles from "./style.module.css";
 import { useEffect, useRef } from "preact/hooks";
 import cx from "clsx";
 
 const expanded = signal(false);
+const hidden = computed(() => !expanded.value);
 
 type NavigationProps = {
   currentPage: string;
@@ -34,7 +35,6 @@ export default function Navigation(props: NavigationProps) {
     const onClickOutside = (event: MouseEvent) => {
       if (!event.target) return;
       const node = event.target as Node;
-      console.log(nav.current?.contains(node), event.target);
       if (!nav.current?.contains(node)) {
         expanded.value = false;
       }
@@ -69,7 +69,7 @@ export default function Navigation(props: NavigationProps) {
               <HamburgerMenuIcon size={24} />
             )}
           </button>
-          <ul class={styles.items} hidden={!expanded.value}>
+          <ul class={styles.items} hidden={hidden}>
             <li>
               <a
                 class={cx(styles.link, {

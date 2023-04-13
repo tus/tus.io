@@ -1,0 +1,7 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space1);
+  justify-content: center;
+  margin-bottom: var(--space5);
+}

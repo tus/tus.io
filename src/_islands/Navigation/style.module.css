@@ -98,9 +98,7 @@
 
   .link:hover {
     background-color: unset;
-    color: var(--gray12);
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    color: var(--green2);
   }
 }
 

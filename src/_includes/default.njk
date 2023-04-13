@@ -29,9 +29,11 @@
       crossorigin="anonymous"
     />
     
-    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="/@root/styles/index.css" />
+
   </head>
   <body>
+    {% island "TransloaditBar/index.tsx", 'client:load' %}{% endisland %}
     {% island "Navigation/index.tsx", 'client:load' %}
     {% prop 'currentPage', page.url %}
     {% endisland %}

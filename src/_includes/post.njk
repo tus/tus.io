@@ -1,0 +1,35 @@
+---
+layout: default
+comments: true
+---
+{# {% set author = site.data.authors[page.author] %}
+
+<div class="post">
+  <h1 class="post-title">
+    {{ page.visible_title | default: page.title }}
+  </h1>
+
+  <div class="post-info">
+    Published on <span class="date">{{ page.date | date: "%B %e, %Y" }}</span> by
+    {% if author.link %}
+      <a class="author" href="{{author.link}}">
+        {{ author.name }}
+      </a>
+    {% else %}
+      <a class="author" href="https://twitter.com/{{author.twitter}}">
+        {{ author.name }}
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</div>
+
+<hr>
+
+<div class="post-subscribe">
+  <p>Subscribe to, or respond on our social channels:</p>
+  {% include social.html rss=true %}
+</div> #}

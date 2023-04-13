@@ -5,12 +5,15 @@ const preact = require("@slinkity/preact");
  * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
  **/
 module.exports = function (eleventyConfig) {
+  eleventyConfig.ignores.add("src/lib/**");
+
   eleventyConfig.addPlugin(
     slinkity.plugin,
     slinkity.defineConfig({
       renderers: [preact()],
     })
   );
+
   /**
    * Why copy the /public directory?
    *
