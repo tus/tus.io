@@ -1,16 +1,18 @@
+import clsx from "clsx";
 import communityForumLogo from "./community-forum-35a78b.svg";
 import rssFeedIcon from "./rss-feed-orange.svg";
 import styles from "./style.module.css";
 
 type SocialProps = {
   includeRss?: boolean;
+  centered?: boolean;
 };
 
 export default function Social(props: SocialProps) {
-  const { includeRss } = props;
+  const { centered, includeRss } = props;
 
   return (
-    <div class={styles.social}>
+    <div class={clsx(styles.social, { [styles.centered]: centered })}>
       <a
         href="https://community.transloadit.com/c/tus"
         class="community-forum-button"

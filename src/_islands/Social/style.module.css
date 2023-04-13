@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space1);
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: var(--space5);
+}
+
+.centered {
+  justify-content: center;
 }

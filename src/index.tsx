@@ -4,57 +4,9 @@ import styles from "./_islands/Home/style.module.css";
 import cx from "clsx";
 import Markdown from "./_islands/Markdown";
 import Social from "./_islands/Social";
-import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
-import type { Octokit } from "octokit";
+
 import TusOnGithub from "./_islands/TusOnGithub";
-
-type Authors = Record<
-  string,
-  {
-    name: string;
-    gravatar: string;
-    email: string;
-    web: string;
-    twitter: string;
-    github: string;
-  }
->;
-
-type EleventyPageData = {
-  authors: Authors;
-  collections: {
-    post: {
-      url: string;
-      date: Date;
-      data: {
-        author: keyof Authors;
-        title: string;
-      };
-    }[];
-  };
-  features: {
-    title: string;
-    content: string;
-  }[];
-  githubActivity: GetResponseDataTypeFromEndpointMethod<
-    InstanceType<typeof Octokit>["rest"]["activity"]["listPublicOrgEvents"]
-  >;
-  implementations: {
-    name: string;
-    icon: string;
-    repo: string;
-  }[];
-  logos: {
-    url: string;
-    src: string;
-    name: string;
-  }[];
-  press: {
-    url: string;
-    src: string;
-    name: string;
-  }[];
-};
+import { EleventyPageData } from "types/types";
 
 export const island = {
   when: "client:load",
@@ -200,7 +152,7 @@ export default function IndexPage(props: IndexPageProps) {
             implementations. We welcome your involvement and are happy to answer
             any question!
           </p>
-          <Social />
+          <Social centered />
         </Container>
       </section>
 

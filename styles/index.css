@@ -8,6 +8,12 @@
 }
 @font-face {
   font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans-Medium.woff2");
+  font-display: swap;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
   src: url("/fonts/IBMPlexSans-Bold.woff2");
   font-display: swap;
   font-weight: bold;

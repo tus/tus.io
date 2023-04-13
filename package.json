@@ -29,7 +29,10 @@
     "clsx": "^1.2.1",
     "modern-normalize": "^1.1.0",
     "react-remark": "^2.1.0",
+    "rehype-parse": "^8.0.4",
+    "rehype-stringify": "^9.0.3",
     "slinkity": "^1.0.0-canary.0",
-    "timeago.js": "^4.0.2"
+    "timeago.js": "^4.0.2",
+    "unified": "^10.1.2"
   }
 }
