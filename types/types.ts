@@ -1,17 +1,16 @@
 import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 import type { Octokit } from "@octokit/rest";
 
-type Authors = Record<
-  string,
-  {
-    name: string;
-    gravatar: string;
-    email: string;
-    web: string;
-    twitter: string;
-    github: string;
-  }
->;
+export type Author = {
+  name: string;
+  gravatar: string;
+  email: string;
+  web: string;
+  twitter: string;
+  github: string;
+};
+
+type Authors = Record<string, Author>;
 
 export type EleventyPageData = {
   authors: Authors;

@@ -8,8 +8,6 @@ redirect_from: /blog/2015/09/19/project-status/
 
 Here's a quick update on the status of the project.
 
-<!--more-->
-
 ### 1.0
 
 We're finalizing 1.0. Our project

@@ -1,6 +1,6 @@
 import tusBanner from "./_islands/Home/tus1--no-io.png";
 import VisuallyHidden from "./_islands/VisuallyHidden";
-import styles from "./_islands/Home/style.module.css";
+import styles from "./index.module.css";
 import cx from "clsx";
 import Markdown from "./_islands/Markdown";
 import Social from "./_islands/Social";
@@ -41,6 +41,7 @@ type IndexPageProps = ReturnType<(typeof island)["props"]>;
 export const frontmatter = {
   layout: "default",
   title: "tus - resumable file uploads",
+  is_home: true,
   eleventyImport: {
     collections: ["post"],
   },

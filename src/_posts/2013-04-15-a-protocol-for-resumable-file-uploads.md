@@ -19,8 +19,6 @@ upload without having to start from the beginning. In many scenarios this can
 mean the difference between a file reaching your application, or the user
 giving up in frustration.
 
-<!--more-->
-
 Ideally, this should be a trivial feature to add. In reality however, there is
 quite a lack of solutions in this space. Sure, there are a few JavaScript
 libraries that claim to support resumable uploading, but in reality you will

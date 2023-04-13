@@ -1,5 +1,5 @@
 import { format } from "timeago.js";
-import { signal, useSignal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 import styles from "./style.module.css";
 import { useEffect } from "preact/hooks";
