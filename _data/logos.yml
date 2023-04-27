@@ -43,3 +43,6 @@
 - url: 'https://www.ranchcomputing.com'
   src: 'https://www.ranchcomputing.com/assets/imgs/logo/ranch_blue.png'
   name: RANCH Computing
+- url: 'https://www.progress-up.live'
+  src: 'https://progress-up.live/images/progress-up-logo.svg'
+	name: Progress-up Open source HTML5 file uploader with progress bar
