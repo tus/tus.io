@@ -621,7 +621,7 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under MIT</div>
-    
+
   </li>
   
   <li>
@@ -636,6 +636,7 @@ what protocol version you're targeting.
     </div>
 
     <div class="license">Licensed under MIT</div>
+
   </li>
 
   <li>
