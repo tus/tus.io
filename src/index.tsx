@@ -1,11 +1,11 @@
-import tusBanner from "./_islands/Home/tus1--no-io.png";
-import VisuallyHidden from "./_islands/VisuallyHidden";
-import styles from "./index.module.css";
+import tusBanner from "/@input/_islands/Home/tus1--no-io.png";
+import VisuallyHidden from "/@input/_islands/VisuallyHidden";
+import styles from "/@input/index.module.css";
 import cx from "clsx";
-import Markdown from "./_islands/Markdown";
-import Social from "./_islands/Social";
+import Markdown from "/@input/_islands/Markdown";
+import Social from "/@input/_islands/Social";
 
-import TusOnGithub from "./_islands/TusOnGithub";
+import TusOnGithub from "/@input/_islands/TusOnGithub";
 import { EleventyPageData } from "types/types";
 
 export const island = {

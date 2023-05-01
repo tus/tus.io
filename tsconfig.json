@@ -19,7 +19,8 @@
     "useDefineForClassFields": true,
     "baseUrl": "./",
     "paths": {
-      "/@root/*": ["./src/*"],
+      "/@root/*": ["./*"],
+      "/@input/*": ["./src/*"],
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
     }
