@@ -8,14 +8,15 @@ type HtmlProps = {
   children: string;
 };
 
+const markdownToPreact = unified()
+  .use(rehypeParse, { fragment: true })
+  .use(rehypePrism)
+  .use(rehypeReact, { createElement, Fragment });
+
 export default function Html(props: HtmlProps) {
   const { children } = props;
 
-  const node = unified()
-    .use(rehypeParse, { fragment: true })
-    .use(rehypePrism)
-    .use(rehypeReact, { createElement, Fragment })
-    .processSync(children);
+  const node = markdownToPreact.processSync(children);
 
-  return node.result as JSX.Element;
+  return node.result as import("preact").JSX.Element;
 }
