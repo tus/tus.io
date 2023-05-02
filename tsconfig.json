@@ -1,31 +1,16 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "moduleResolution": "node",
-    "module": "ESNext",
-    "target": "es2019",
-    "noEmit": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "strict": true,
-    "useDefineForClassFields": true,
     "baseUrl": "./",
-    "types": ["vite/client"],
     "paths": {
-      "/@root/*": ["./*"],
-      "/@input/*": ["./src/*"],
+      "@/*": ["src/*"],
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
-    }
-  },
-  "include": ["src/**/*", "types/**/*", "*.config.js", ".eslintrc.js"],
-  "exclude": ["_site/"]
+    },
+    "plugins": [{ "name": "@astrojs/ts-plugin" }]
+  }
 }

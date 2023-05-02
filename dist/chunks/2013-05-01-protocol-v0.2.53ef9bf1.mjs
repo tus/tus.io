@@ -1,0 +1,11 @@
+const id = "2013-05-01-protocol-v0.2.md";
+						const collection = "blog";
+						const slug = "2013/05/01/protocol-v0.2/";
+						const body = "\nAfter releasing our first draft a few weeks ago, we received an incredible\namount of feedback and suggestions. Based on this feedback as well as\n[discussing](http://lists.w3.org/Archives/Public/ietf-http-wg/2013AprJun/0155.html)\nthe problems with the [IETF HTTPbis Working Group](http://trac.tools.ietf.org/wg/httpbis/trac/wiki), we identified a few\nkey issues with [v0.1](https://github.com/tus/tus-resumable-upload-protocol/blob/v0.1/README.md) of the\nprotocol:\n\n- `PUT` requests are not appropriate for transferring partial resources\n- The `Content-Range` and `Range` headers are not meant for resuming an\n  interrupted resource transfer.\n\nAfter lots of careful thinking, we came up with a new approach that uses:\n\n- `PATCH` instead of `PUT`\n- A new `Offset` header used by `HEAD` responses and `PATCH` requests alike\n- A `Final-Length` header to provide the final file size to the server\n\nWe also split the protocol into a core protocol which takes care of\nresumability, and nothing else, as well as optional protocol extensions.\n\nThe result of this has just been published as v0.2 can be seen on the [protocol\npage](/protocols/resumable-upload.html). Also included is a new [FAQ\nsection](/protocols/resumable-upload.html#7) which will expanded over time.\n\nWe feel that the overall result is a drastic simplification of the problem down\nto its essence, and we encourage interested developers to implement prototypes.\n\nOur next step is upgrading tusd, the jquery client and the ios client to the\nnew protocol version. Once the protocol has reached a little more maturity, we\nare also thinking about providing an executable protocol verification tool for\nimplementers.\n";
+						const data = {title:"Protocol v0.2",author:"felixge",date:new Date(1367366400000)};
+						const _internal = {
+							filePath: "/Users/nick/dev/transloadit/tus.io/src/content/blog/2013-05-01-protocol-v0.2.md",
+							rawData: "\ntitle: Protocol v0.2\ncomments: true\nauthor: felixge\nredirect_from: /blog/2013/05/01/protocol-v0.2/\ndate: 2013-05-01\nslug: 2013/05/01/protocol-v0.2/",
+						};
+
+export { _internal, body, collection, data, id, slug };

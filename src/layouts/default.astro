@@ -1,0 +1,78 @@
+---
+import TransloaditBar from "@/components/TransloaditBar";
+import "../styles/global.css";
+import Navigation from "old_src/components/Navigation";
+
+let { title } = Astro.props;
+if (Astro.url.pathname !== "/") {
+  title += " | tus.io";
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:image" content="/images/og-image-banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="tus.io" />
+    <meta property="og:title" />
+    <meta property="og:description" content="To eleventy and beyond!" />
+    <link rel="icon" type="img/png" href="/images/favicon.png" />
+
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- {% if noindex %}
+      <meta name="robots" content="noindex">
+    {% endif %} -->
+
+    <!-- {% set used_title = title %}
+    {% if is_home %}
+      {# do nothing #}
+    {% else %}
+      {% set used_title = used_title + " | tus" %}
+    {% endif %}
+
+    {% if title_prefix %}
+      {% set used_title = title_prefix + used_title %}
+    {% endif %} -->
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <TransloaditBar />
+    <Navigation client:idle />
+    <!-- {% island "TransloaditBar/index.tsx" %}
+    {% endisland %}
+    
+    {% island "Navigation/index.tsx" %}
+    {% prop 'currentPage', page.url %}
+    {% endisland %} -->
+
+    <slot />
+  </body>
+</html>

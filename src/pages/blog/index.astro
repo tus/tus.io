@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/default.astro";
+import authors from "@/data/authors.json";
+import { ExternalA } from "old_src/components/ExternalA";
+import { getFirstParagraphContent } from "@/lib/getFirstParagraph";
+
+const title = "Blog";
+
+const posts = (await getCollection("blog")).reverse();
+
+const formatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={title}>
+  <main class="root">
+    <h1>Blog</h1>
+    <ol class="list">
+      {
+        posts.map((post) => {
+          const author = authors[post.data.author as keyof typeof authors];
+
+          return (
+            <li class="item">
+              <article class="post">
+                <a href={`/blog/${post.slug}`} class="title">
+                  <h2>{post.data.title}</h2>
+                </a>
+                <p class={"meta"}>
+                  Published on {formatter.format(post.data.date)} by{" "}
+                  <ExternalA
+                    href={
+                      author.twitter
+                        ? `https://twitter.com/${author.twitter}`
+                        : author.web ?? author.link
+                    }
+                  >
+                    {author.name}
+                  </ExternalA>
+                </p>
+                <div
+                  class="excerpt"
+                  set:html={getFirstParagraphContent(post.body)}
+                />
+                <a href={`/blog/${post.slug}`}>Read on &rarr;</a>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </main>
+</Layout>
+
+<style>
+  .root {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
+
+  @media screen and (min-width: 768px) {
+    .root {
+      padding-inline: var(--space6);
+    }
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space6);
+    list-style-type: none;
+  }
+
+  .title {
+    color: var(--gray12);
+  }
+
+  .title h2 {
+    font-weight: 500;
+    margin-block-end: var(--space1);
+  }
+
+  .meta {
+    color: var(--gray10);
+    font-size: 0.875rem;
+  }
+
+  .excerpt p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+</style>

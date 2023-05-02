@@ -1,0 +1,234 @@
+---
+import VisuallyHidden from "@/components/VisuallyHidden";
+import Layout from "../layouts/default.astro";
+import banner from "@/assets/banner.png";
+import Container from "@/components/Container";
+import Features from "@/components/Home/Features.astro";
+import Social from "@/components/Social";
+import Implementations from "@/components/Home/Implementations.astro";
+import { getCollection } from "astro:content";
+import BlogPosts from "@/components/Home/BlogPosts.astro";
+
+const title = "tus - resumable file uploads";
+
+const posts = await getCollection("blog");
+---
+
+<Layout title={title}>
+  <section class="section intro">
+    <div class="container">
+      <h1>
+        <VisuallyHidden>tus – resumable file uploads</VisuallyHidden>
+        <img
+          class="banner"
+          src={banner.src}
+          width={banner.width}
+          height={banner.height}
+          loading="eager"
+          alt=""
+        />
+      </h1>
+    </div>
+
+    <div class="mission">
+      <div class="container">
+        <p>
+          People are sharing more and more photos and videos every day. Mobile
+          networks remain fragile however. Platform APIs are also often a mess
+          and every project builds its own file uploader. There are a thousand
+          one-week projects that barely work, when all we need is one real
+          project. One project done right.
+        </p>
+
+        <p>
+          We are the ones who are going to do this right. Our aim is to solve
+          the problem of unreliable file uploads once and for all. tus is a new
+          open{" "}
+          <a href="/protocols/resumable-upload.html">
+            protocol for resumable uploads
+          </a>{" "}
+          built on HTTP. It offers simple, cheap and reusable stacks for clients
+          and servers. It supports any language, any platform and any network.
+        </p>
+
+        <p>
+          It may seem to be an impossible dream. Perhaps that is because no-one
+          has managed to solve it yet. Still, we are confident and we are going
+          to give it our best shot.{" "}
+          <a target="" href="https://github.com/tus"> Join us on GitHub</a>{" "}
+          and help us make the world a better place. Say "No!" to lost cat videos!
+          Say "Yes!" to tus!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <Features />
+  </section>
+
+  <section class={"section centered social"}>
+    <div class="container">
+      <h2>Say Hello 👋</h2>
+      <p>
+        We are still actively improving the protocol and all of its
+        implementations. We welcome your involvement and are happy to answer any
+        question!
+      </p>
+      <Social centered />
+    </div>
+  </section>
+
+  <section class="section centered">
+    <Implementations />
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <BlogPosts />
+    </div>
+  </section>
+
+  <!-- <section class={styles.section}>
+    <Container>
+      <h2>Blog posts</h2>
+
+      <ol className={styles.posts}>
+        {
+          lastFivePosts.map((p) => {
+            return (
+              <li key={p.url}>
+                <article class={styles.post}>
+                  <div class={styles.postContent}>
+                    <h3>
+                      <a href={p.url}>{p.title}</a>
+                    </h3>
+                    <time class="date" dateTime={p.date}>
+                      {formatter.format(new Date(p.date))}
+                    </time>
+                  </div>
+
+                  <a
+                    href={`https://twitter.com/${p.author.twitter}`}
+                    aria-title={p.author.name}
+                    class={styles.author}
+                  >
+                    <img
+                      src={`https://secure.gravatar.com/avatar/${p.author.gravatar}&s=64`}
+                      class={styles.gravatar}
+                      loading="lazy"
+                      width="64"
+                      height="64"
+                      alt={`Avatar of ${p.author.name}`}
+                    />
+                  </a>
+                </article>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </Container>
+  </section>
+</Layout> -->
+
+  <style>
+    .section {
+      margin-bottom: 6rem;
+    }
+
+    .container {
+      padding-inline: var(--space3);
+      max-width: 60rem;
+      margin: var(--space12) auto;
+    }
+
+    @media screen and (min-width: 768px) {
+      .container {
+        padding-inline: var(--space6);
+      }
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .intro {
+      background-color: white;
+    }
+
+    .intro .container {
+      max-width: 37.5rem;
+    }
+
+    .intro h1 {
+      margin: var(--space10) 0;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner {
+      display: block;
+      animation: fade-in 1s;
+      object-fit: contain;
+      object-position: center;
+      max-width: 35rem;
+      width: 100%;
+      height: auto;
+    }
+
+    .mission {
+      background-color: var(--gray2);
+      font-size: 1.125rem;
+      padding: var(--space10) 0;
+    }
+
+    .mission .container {
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .social p {
+      margin-bottom: var(--space6);
+    }
+
+    .whoIsUsingTus {
+      background-color: var(--gray2);
+      padding-block: var(--space8);
+    }
+
+    .whoIsUsingTus p {
+      margin-bottom: 0;
+    }
+
+    .logos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space12);
+      margin: var(--space10) 0;
+    }
+
+    .logo {
+      width: 8rem;
+    }
+
+    .logo img {
+      height: auto;
+      width: 100%;
+    }
+  </style>
+</Layout>

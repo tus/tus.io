@@ -1,7 +1,8 @@
 import type { Root } from "hast";
-import rehypeParse from "rehype-parse";
+import remarkParse from "remark-parse";
 import rehypeStringify from "rehype-stringify";
 import { unified, type Plugin } from "unified";
+import remarkRehype from "remark-rehype";
 
 const extractFirstParagraph: Plugin<[], Root> = () => {
   return (tree) => {
@@ -10,8 +11,7 @@ const extractFirstParagraph: Plugin<[], Root> = () => {
     const children = [];
 
     for (const node of root.children) {
-      if (node.type !== "element") continue;
-      if (node.tagName !== "p") continue;
+      if (node.type !== "paragraph") continue;
       children.push(node);
       break;
     }
@@ -22,15 +22,16 @@ const extractFirstParagraph: Plugin<[], Root> = () => {
   };
 };
 
-const htmlToFirstP = unified()
-  .use(rehypeParse, { fragment: true })
+const markdownToFirstP = unified()
+  .use(remarkParse)
   .use(extractFirstParagraph)
+  .use(remarkRehype)
   .use(rehypeStringify);
 
-export function getFirstParagraphContent(html: string) {
+export function getFirstParagraphContent(markdown: string) {
   const shortcodeRe = /\{[^}]*\}/g;
 
-  const result = htmlToFirstP.processSync(html);
+  const result = markdownToFirstP.processSync(markdown);
 
   return (result.value as string).replace(shortcodeRe, "");
 }

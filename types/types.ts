@@ -1,4 +1,4 @@
-import type { PublicOrgEvents } from "../src/_islands/TusOnGithub/types";
+import type { PublicOrgEvents } from "../old_src/_islands/TusOnGithub/types";
 
 export type Author = {
   name: string;

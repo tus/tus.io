@@ -1,0 +1,26 @@
+.root {
+  background-color: var(--blue1);
+  font-size: calc(15 / 16 * 1rem);
+}
+
+.container {
+  padding-block: var(--space1);
+}
+
+.flag {
+  margin-right: var(--space2);
+}
+
+.text {
+  margin: 0;
+  color: white;
+}
+
+.link {
+  color: gold;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
