@@ -1,5 +1,4 @@
-import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
-import type { Octokit } from "@octokit/rest";
+import type { PublicOrgEvents } from "../src/_islands/TusOnGithub/types";
 
 export type Author = {
   name: string;
@@ -29,9 +28,7 @@ export type EleventyPageData = {
     title: string;
     content: string;
   }[];
-  githubActivity: GetResponseDataTypeFromEndpointMethod<
-    InstanceType<typeof Octokit>["rest"]["activity"]["listPublicOrgEvents"]
-  >;
+  githubActivity: PublicOrgEvents;
   implementations: {
     name: string;
     icon: string;

@@ -1,9 +1,7 @@
 const slinkity = require("slinkity");
 const preact = require("@slinkity/preact");
 
-/**
- * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
- **/
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("src/lib/**");
 

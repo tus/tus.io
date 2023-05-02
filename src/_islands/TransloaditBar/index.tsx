@@ -1,5 +1,5 @@
-import ukraineFlag from "./ua-flag.svg";
-import styles from "./style.module.css";
+import ukraineFlag from "/@islands/TransloaditBar/ua-flag.svg";
+import styles from "/@islands/TransloaditBar/style.module.css";
 import Container from "../Container";
 
 export default function TransloaditBar() {

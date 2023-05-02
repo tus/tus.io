@@ -4,9 +4,10 @@ import styles from "/@input/index.module.css";
 import cx from "clsx";
 import Markdown from "/@input/_islands/Markdown";
 import Social from "/@input/_islands/Social";
+import type preact from "preact";
 
 import TusOnGithub from "/@input/_islands/TusOnGithub";
-import { EleventyPageData } from "types/types";
+import type { EleventyPageData } from "types/types";
 
 export const island = {
   when: "client:load",
@@ -65,7 +66,7 @@ export default function IndexPage(props: IndexPageProps) {
     press,
   } = props;
 
-  const { format: formatDate } = new Intl.DateTimeFormat("en-US", {
+  const formatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -127,7 +128,7 @@ export default function IndexPage(props: IndexPageProps) {
       <section class={styles.section}>
         <div className={styles.features}>
           {features.map((f) => (
-            <article>
+            <article key={f.title}>
               <h4 class={styles.featureTitle}>{f.title}</h4>
               <Markdown
                 components={{
@@ -163,7 +164,7 @@ export default function IndexPage(props: IndexPageProps) {
 
           <div class={styles.implementations}>
             {implementations.map((d) => (
-              <article class={styles.implementation}>
+              <article key={d.name} class={styles.implementation}>
                 <a href={`https://github.com/${d.repo}`}>
                   <img
                     src={`/images/${d.icon}.svg`}
@@ -198,7 +199,7 @@ export default function IndexPage(props: IndexPageProps) {
                         <a href={p.url}>{p.title}</a>
                       </h3>
                       <time class="date" dateTime={p.date}>
-                        {formatDate(new Date(p.date))}
+                        {formatter.format(new Date(p.date))}
                       </time>
                     </div>
 
@@ -260,7 +261,12 @@ export default function IndexPage(props: IndexPageProps) {
 
           <div class={styles.logos}>
             {press.map((p) => (
-              <a href={p.url} aria-title={p.name} class={styles.logo}>
+              <a
+                key={p.url}
+                href={p.url}
+                aria-title={p.name}
+                class={styles.logo}
+              >
                 <img src={p.src} alt={`Logo of ${p.name}`} loading="lazy" />
               </a>
             ))}

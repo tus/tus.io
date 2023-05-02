@@ -2,6 +2,7 @@ import type { EleventyPageData } from "types/types";
 import styles from "./blog.module.css";
 import { getFirstParagraphContent } from "./lib/getFirstParagraph";
 import PageFooter from "./_islands/PageFooter";
+import Html from "./_islands/Html";
 
 export const frontmatter = {
   title: "Blog",
@@ -11,7 +12,7 @@ export const frontmatter = {
 export default function BlogPage(props: EleventyPageData) {
   const { authors, collections } = props;
 
-  const { format: formatDate } = new Intl.DateTimeFormat("en-US", {
+  const formatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -27,20 +28,17 @@ export default function BlogPage(props: EleventyPageData) {
             const author = authors[post.data.author];
 
             return (
-              <li class={styles.item}>
+              <li key={post.url} class={styles.item}>
                 <article class={styles.post}>
                   <a href={post.url} class={styles.title}>
                     <h2>{post.data.title}</h2>
                   </a>
                   <p class={styles.meta}>
-                    Published on {formatDate(post.date)} by {author.name}
+                    Published on {formatter.format(post.date)} by {author.name}
                   </p>
-                  <div
-                    class={styles.excerpt}
-                    dangerouslySetInnerHTML={{
-                      __html: getFirstParagraphContent(post.content),
-                    }}
-                  />
+                  <div class={styles.excerpt}>
+                    <Html>{getFirstParagraphContent(post.content)}</Html>
+                  </div>
                   <a href="">Read on &rarr;</a>
                 </article>
               </li>

@@ -44,7 +44,7 @@
     grid-gap: var(--space2);
     grid-template-columns: 1.5rem 1fr max-content;
     grid-template-rows: auto;
-    align-content: center;
+    align-items: center;
   }
 
   .time {

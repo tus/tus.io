@@ -1,25 +1,13 @@
 import { format } from "timeago.js";
 import { useSignal } from "@preact/signals";
-import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 import styles from "./style.module.css";
 import { useEffect } from "preact/hooks";
-import type { Octokit } from "@octokit/rest";
-
-function ExternalA(props: {
-  href: string;
-  children: preact.ComponentChildren;
-}) {
-  const { href, children } = props;
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
-  );
-}
+import Html from "../Html";
+import { ExternalA } from "../ExternalA";
+import type { PublicOrgEvents } from "./types";
 
 type ActivityDescriptionProps = {
-  // & any because the Octokit types are not very good, they only include common event data
-  activity: TusOnGithubProps["githubActivity"][number] & any;
+  activity: PublicOrgEvents[number];
 };
 
 function ActivityDescription(props: ActivityDescriptionProps) {
@@ -37,19 +25,17 @@ function ActivityDescription(props: ActivityDescriptionProps) {
     </ExternalA>
   );
 
-  let action = <span></span>;
-
   switch (activity.type) {
     case "IssuesEvent": {
-      let isClosed = activity.payload.issue?.state === "closed";
+      const isClosed = activity.payload.issue?.state === "closed";
       let issue = (
-        <ExternalA href={activity.payload.issue?.url!}>
+        <ExternalA href={activity.payload.issue?.url}>
           {activity.payload.issue?.title}
         </ExternalA>
       );
       issue = isClosed ? <s>{issue}</s> : issue;
 
-      let action = (
+      const action = (
         <span>
           {activity.payload.action} issue {issue} on
         </span>
@@ -62,17 +48,15 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "CommitCommentEvent": {
-      let action = (
+      const action = (
         <span>
           commented “
-          <span
-            dangerouslySetInnerHTML={{
-              __html: activity.payload.comment?.body ?? "",
-            }}
-          />
+          <span>
+            <Html>{activity.payload.comment?.body ?? ""}</Html>
+          </span>
           ” on a commit to{" "}
-          <ExternalA href={activity.payload.comment?.html_url!}>
-            {activity.payload.comment?.path!}
+          <ExternalA href={activity.payload.comment?.html_url}>
+            {activity.payload.comment?.path}
           </ExternalA>
         </span>
       );
@@ -83,16 +67,16 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "IssueCommentEvent": {
-      let isClosed = activity.payload.issue?.state === "closed";
+      const isClosed = activity.payload.issue?.state === "closed";
 
       let issue = (
-        <ExternalA href={activity.payload.comment?.html_url!}>
+        <ExternalA href={activity.payload.comment?.html_url}>
           {activity.payload.issue?.title}
         </ExternalA>
       );
       issue = isClosed ? <s>{issue}</s> : issue;
 
-      let action = <span>commented on {issue}</span>;
+      const action = <span>commented on {issue}</span>;
 
       return (
         <p class={styles.description}>
@@ -109,17 +93,17 @@ function ActivityDescription(props: ActivityDescriptionProps) {
         );
       }
 
-      let n = activity.payload.commits.length;
-      let firstCommit = activity.payload.commits[0].sha;
-      let firstUrl = activity.payload.commits[0].url;
-      let lastCommit =
+      const n = activity.payload.commits.length;
+      const firstCommit = activity.payload.commits[0].sha;
+      const firstUrl = activity.payload.commits[0].url;
+      const lastCommit =
         activity.payload.commits[activity.payload.commits.length - 1].sha;
 
-      let compareUrl = firstUrl
+      const compareUrl = firstUrl
         .replace("commit", "compare")
         .replace(firstCommit, firstCommit + "..." + lastCommit);
 
-      let action = (
+      const action = (
         <span>
           pushed{" "}
           <a href={n === 1 ? firstUrl : compareUrl}>
@@ -150,11 +134,11 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "PullRequestEvent": {
-      let action = (
+      const action = (
         <span>
           {activity.payload.action} pull request{" "}
-          <ExternalA href={activity.payload.pull_request.html_url}>
-            {activity.payload.pull_request.title}
+          <ExternalA href={activity.payload.pull_request?.html_url}>
+            {activity.payload.pull_request?.title}
           </ExternalA>{" "}
           for
         </span>
@@ -167,14 +151,14 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "PullRequestReviewEvent": {
-      let action = (
+      const action = (
         <span>
           {activity.payload.review?.state === "commented"
             ? "commented on"
             : activity.payload.review?.state}{" "}
           pull request{" "}
-          <ExternalA href={activity.payload.pull_request.html_url}>
-            {activity.payload.pull_request.title}
+          <ExternalA href={activity.payload.pull_request?.html_url}>
+            {activity.payload.pull_request?.title}
           </ExternalA>{" "}
           in
         </span>
@@ -187,11 +171,13 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "CreateEvent": {
-      let action = <span>created a new {activity.payload.ref_type} in</span>;
+      const action = <span>created a new {activity.payload.ref_type} in</span>;
 
-      let branch = (
+      const branch = (
         <ExternalA
-          href={`https://github.com/${activity.repo.name}/tree/${activity.payload.ref}`}
+          href={`https://github.com/${activity.repo.name}/tree/${
+            activity.payload.ref ?? ""
+          }`}
         >
           {activity.payload.ref}
         </ExternalA>
@@ -204,11 +190,11 @@ function ActivityDescription(props: ActivityDescriptionProps) {
       );
     }
     case "ReleaseEvent": {
-      let action = (
+      const action = (
         <span>
           {activity.payload.action}{" "}
-          <ExternalA href={activity.payload.release.html_url}>
-            {activity.payload.release.name}
+          <ExternalA href={activity.payload.release?.html_url}>
+            {activity.payload.release?.name}
           </ExternalA>{" "}
           in
         </span>
@@ -227,9 +213,7 @@ function ActivityDescription(props: ActivityDescriptionProps) {
 }
 
 type TusOnGithubProps = {
-  githubActivity: GetResponseDataTypeFromEndpointMethod<
-    InstanceType<typeof Octokit>["rest"]["activity"]["listPublicOrgEvents"]
-  >;
+  githubActivity: PublicOrgEvents;
 };
 
 // duplicate or irrelevant data
@@ -238,30 +222,26 @@ const filteredTypes = ["DeleteEvent", "PullRequestReviewCommentEvent"];
 export default function TusOnGithub(props: TusOnGithubProps) {
   const { githubActivity } = props;
 
-  const activity = useSignal<typeof githubActivity>(githubActivity);
+  const activity = useSignal<PublicOrgEvents>(githubActivity);
 
   useEffect(() => {
     const update = async () => {
-      try {
-        const { Octokit } = await import("https://esm.sh/@octokit/rest");
-        const octokit = new Octokit();
+      const { Octokit } = await import("@octokit/rest");
+      const octokit = new Octokit();
 
-        const { data } = await octokit.rest.activity.listPublicOrgEvents({
-          org: "tus",
-          per_page: 20,
-          mediaType: {
-            format: "html",
-          },
-        });
+      const { data } = await octokit.rest.activity.listPublicOrgEvents({
+        org: "tus",
+        per_page: 20,
+        mediaType: {
+          format: "html",
+        },
+      });
 
-        activity.value = data;
-      } catch {
-        // do nothing
-      }
+      activity.value = data as PublicOrgEvents;
     };
 
-    update();
-  }, []);
+    update().catch((e) => console.error(e));
+  }, [activity]);
 
   return (
     <ol class={styles.list}>
@@ -272,7 +252,7 @@ export default function TusOnGithub(props: TusOnGithubProps) {
             <li key={a.id} class={styles.item}>
               <img
                 src={a.actor.avatar_url}
-                alt={`Avatar of ${a.actor.display_login}`}
+                alt={`Avatar of ${a.actor.display_login ?? a.actor.login}`}
                 class={styles.avatar}
                 loading="lazy"
                 width="460"

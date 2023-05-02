@@ -1,5 +1,5 @@
 import { formatDate } from "../../lib/format";
-import { Author } from "types/types";
+import type { Author } from "types/types";
 import styles from "./style.module.css";
 import Html from "../Html";
 

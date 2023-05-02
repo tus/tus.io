@@ -3,12 +3,13 @@ import { createElement, Fragment } from "preact";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import { unified } from "unified";
+import type preact from "preact";
 
 type HtmlProps = {
   children: string;
 };
 
-const markdownToPreact = unified()
+const htmlToPreact = unified()
   .use(rehypeParse, { fragment: true })
   .use(rehypePrism)
   .use(rehypeReact, { createElement, Fragment });
@@ -16,7 +17,7 @@ const markdownToPreact = unified()
 export default function Html(props: HtmlProps) {
   const { children } = props;
 
-  const node = markdownToPreact.processSync(children);
+  const node = htmlToPreact.processSync(children);
 
-  return node.result as import("preact").JSX.Element;
+  return node.result as preact.JSX.Element;
 }

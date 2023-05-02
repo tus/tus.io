@@ -165,7 +165,7 @@ function HamburgerMenuIcon(props: IconProps) {
         fill="currentColor"
         fill-rule="evenodd"
         clip-rule="evenodd"
-      ></path>
+      />
     </svg>
   );
 }
@@ -185,7 +185,7 @@ function CrossIcon(props: IconProps) {
         fill="currentColor"
         fill-rule="evenodd"
         clip-rule="evenodd"
-      ></path>
+      />
     </svg>
   );
 }
@@ -205,7 +205,7 @@ function GithubIcon(props: IconProps) {
         fill="currentColor"
         fill-rule="evenodd"
         clip-rule="evenodd"
-      ></path>
+      />
     </svg>
   );
 }

@@ -32,7 +32,7 @@ export default function Social(props: SocialProps) {
         async
         src="https://platform.twitter.com/widgets.js"
         charSet="utf-8"
-      ></script>
+      />
 
       {includeRss && (
         <a href="{{ site.rss_feed }}">
@@ -47,7 +47,7 @@ export default function Social(props: SocialProps) {
         scrolling="0"
         width="100"
         height="20"
-      ></iframe>
+      />
     </div>
   );
 }

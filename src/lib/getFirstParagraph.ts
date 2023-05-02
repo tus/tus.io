@@ -1,25 +1,13 @@
-import { Plugin, unified } from "unified";
+import type { Root } from "hast";
 import rehypeParse from "rehype-parse";
 import rehypeStringify from "rehype-stringify";
-import { Root, Node } from "hast";
-
-export function getFirstParagraphContent(html: string) {
-  const result = unified()
-    .use(rehypeParse, { fragment: true })
-    .use(extractFirstParagraph)
-    .use(rehypeStringify)
-    .processSync(html);
-
-  const shortcodeRe = /\{[^\}]*\}/g;
-
-  return (result.value as string).replace(shortcodeRe, "");
-}
+import { unified, type Plugin } from "unified";
 
 const extractFirstParagraph: Plugin<[], Root> = () => {
   return (tree) => {
-    let root = tree;
+    const root = tree;
 
-    let children = [];
+    const children = [];
 
     for (const node of root.children) {
       if (node.type !== "element") continue;
@@ -33,3 +21,16 @@ const extractFirstParagraph: Plugin<[], Root> = () => {
     return root;
   };
 };
+
+const htmlToFirstP = unified()
+  .use(rehypeParse, { fragment: true })
+  .use(extractFirstParagraph)
+  .use(rehypeStringify);
+
+export function getFirstParagraphContent(html: string) {
+  const shortcodeRe = /\{[^}]*\}/g;
+
+  const result = htmlToFirstP.processSync(html);
+
+  return (result.value as string).replace(shortcodeRe, "");
+}

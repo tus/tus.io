@@ -18,6 +18,7 @@
     "strict": true,
     "useDefineForClassFields": true,
     "baseUrl": "./",
+    "types": ["vite/client"],
     "paths": {
       "/@root/*": ["./*"],
       "/@input/*": ["./src/*"],
@@ -25,5 +26,6 @@
       "react-dom": ["./node_modules/preact/compat/"]
     }
   },
+  "include": ["src/**/*", "types/**/*", "*.config.js", ".eslintrc.js"],
   "exclude": ["_site/"]
 }
