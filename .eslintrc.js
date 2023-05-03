@@ -30,6 +30,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:astro/recommended",
     "prettier",
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks"],
@@ -78,9 +79,20 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["eslint.config.js", "eleventy.config.js", "src/_data/*.js"],
+      files: ["eslint.config.js"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    {
+      files: ["*.astro"],
+      // Allows Astro components to be parsed.
+      parser: "astro-eslint-parser",
+      // Parse the script in `.astro` as TypeScript by adding the following configuration.
+      // It's the setting you need when using TypeScript.
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
       },
     },
   ],
