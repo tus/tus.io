@@ -224,24 +224,15 @@ export default function TusOnGithub(props: TusOnGithubProps) {
 
   const activity = useSignal<PublicOrgEvents>(githubActivity);
 
-  useEffect(() => {
-    const update = async () => {
-      const { Octokit } = await import("@octokit/rest");
-      const octokit = new Octokit();
+  // useEffect(() => {
+  //   const update = async () => {
+  //     const { getGitHubActivity } = await import("@/lib/getGitHubActivity");
+  //     const data = getGitHubActivity();
+  //     activity.value = data as PublicOrgEvents;
+  //   };
 
-      const { data } = await octokit.rest.activity.listPublicOrgEvents({
-        org: "tus",
-        per_page: 20,
-        mediaType: {
-          format: "html",
-        },
-      });
-
-      activity.value = data as PublicOrgEvents;
-    };
-
-    update().catch((e) => console.error(e));
-  }, [activity]);
+  //   update().catch((e) => console.error(e));
+  // }, [activity]);
 
   return (
     <ol class={styles.list}>

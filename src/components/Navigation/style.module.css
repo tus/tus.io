@@ -3,6 +3,7 @@
   height: 4rem;
   background-color: var(--gray2);
   border-bottom: 1px solid var(--gray3);
+  font-size: 1rem;
 }
 
 .root div {
@@ -25,6 +26,7 @@
 .home {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   gap: var(--space2);
   height: 2rem;
 }
@@ -34,10 +36,15 @@
   width: auto;
 }
 
+.wordmark {
+  height: var(--space6);
+}
+
 .toggle {
   all: unset;
   display: block;
   line-height: 1;
+  color: var(--green2);
 }
 
 .toggle svg {
@@ -46,7 +53,6 @@
 }
 
 .toggle:hover {
-  color: var(--green2);
   cursor: pointer;
 }
 
@@ -70,6 +76,10 @@
   box-shadow: 0 2px 20px var(--gray3);
 }
 
+.items li {
+  margin-block-end: 0;
+}
+
 .link {
   display: block;
   padding: var(--space2) var(--space4);
@@ -82,14 +92,24 @@
   color: white;
 }
 
+.activeLink {
+  color: var(--green1);
+}
+
 @media screen and (min-width: 768px) {
   .items {
     all: unset;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
     gap: var(--space6);
     list-style-type: none;
+  }
+
+  .items li {
+    display: flex;
+    align-items: center;
   }
 
   .link {
@@ -103,7 +123,22 @@
 }
 
 .githubLink {
-  display: inline-flex;
+  display: flex;
   gap: var(--space2);
   align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .githubLink span {
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    word-wrap: normal;
+  }
 }

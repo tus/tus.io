@@ -1,10 +1,9 @@
 ---
 title: Project Status
-comments: true
+# comments: true
 author: kvz
-redirect_from: /blog/2015/09/19/project-status/
+# redirect_from: /blog/2015/09/19/project-status/
 date: 2015-09-19
-slug: 2015/09/19/project-status/
 ---
 
 Here's a quick update on the status of the project.

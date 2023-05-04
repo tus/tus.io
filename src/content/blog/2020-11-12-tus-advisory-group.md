@@ -1,9 +1,9 @@
 ---
 title: "Announcing the tus Advisory Group"
 author: acconut
-redirect_from: /blog/2020/11/12/tus-advisory-group/
+# redirect_from: /blog/2020/11/12/tus-advisory-group/
 date: 2020-11-12
-slug: 2020/11/12/tus-advisory-group/
+# slug: 2020/11/12/tus-advisory-group/
 ---
 
 Since the tus project began in 2013, countless contributors with various technical backgrounds have joined our mission and helped move the protocol forward. Many people have contributed their knowledge to tus over these years, some as front-end developers and server engineers, and others as security professionals or network administrators. This variety is of great importance as it allows us to look at problems from different angles and find the optimal solution for everyone involved. Furthermore, since we want the tus protocol to be available and usable for many applications, it's essential to get feedback from as many people as possible.

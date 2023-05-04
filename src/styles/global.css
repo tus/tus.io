@@ -1,5 +1,4 @@
 @import "modern-normalize/modern-normalize.css";
-@import "prismjs/themes/prism.css";
 
 @font-face {
   font-family: "IBM Plex Sans";
@@ -51,6 +50,7 @@
   --green2: #48aa92;
 
   --red1: #f16100;
+  --yellow1: #e1e11e;
 
   --blue1: #0165d6;
 }
@@ -77,11 +77,20 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3 {
   margin-bottom: 1rem;
   font-weight: 400;
+}
+
+h1,
+h2 {
+  letter-spacing: -1px;
 }
 
 h4,
@@ -117,12 +126,6 @@ h4 {
 
 h5 {
   line-height: 1.5;
-}
-
-.content h2,
-.content h3,
-.content h4 {
-  margin-top: 2.5em;
 }
 
 .content ul {
@@ -166,4 +169,15 @@ p.lead {
     font-size: 1rem;
     font-weight: 700;
   }
+}
+
+ol,
+ul {
+  margin-block-start: 0;
+  margin-block-end: var(--space6);
+  padding-inline-start: 0;
+}
+
+li {
+  margin-block-end: var(--space3);
 }

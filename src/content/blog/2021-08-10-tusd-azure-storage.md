@@ -2,7 +2,7 @@
 title: "Uploading files to Azure Storage using tusd"
 author: acconut
 date: 2021-08-10
-slug: 2021/08/10/tusd-azure-storage/
+# slug: 2021/08/10/tusd-azure-storage/
 ---
 
 Today we are excited to announce that [tusd](https://github.com/tus/tusd) is now also able to store uploaded files in the Azure Cloud Storage! Just like all tus servers, tusd's role is to accept incoming uploads from the tus clients and then relay them to the underlying storage providers. For a long time has tusd already supported storing uploads locally on disk, on AWS S3 and Google's Cloud Storage. Thanks to an incredible contribution from [Ole-Martin Bratteng](https://github.com/omBratteng), this support has been expanded to also cover the Azure Cloud Storage!

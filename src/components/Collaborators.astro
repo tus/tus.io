@@ -1,0 +1,29 @@
+---
+import { Octokit } from "@octokit/rest";
+
+const octokit = new Octokit({
+  auth: "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",
+});
+
+const user = "tus";
+const repos = [
+  "tus.io",
+  "tusd",
+  "tus-js-client",
+  "TUSKit",
+  "tus-android-client",
+  "tus-java-client",
+  "tus-node-server",
+  "tus-resumable-upload-protocol",
+];
+
+const collaborators = await Promise.all(
+  repos.map(async (repo) => {
+    const { data } = await octokit.repos.listCollaborators({
+      owner: user,
+      repo,
+    });
+    return data;
+  })
+);
+---

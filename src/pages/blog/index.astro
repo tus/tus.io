@@ -2,8 +2,10 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/default.astro";
 import authors from "@/data/authors.json";
-import { ExternalA } from "old_src/components/ExternalA";
+import { ExternalA } from "@/components/ExternalA";
 import { getFirstParagraphContent } from "@/lib/getFirstParagraph";
+import PageFooter from "@/components/PageFooter";
+import { getBlogPostSlug } from "@/lib/getBlogPostSlug";
 
 const title = "Blog";
 
@@ -27,7 +29,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
           return (
             <li class="item">
               <article class="post">
-                <a href={`/blog/${post.slug}`} class="title">
+                <a href={`/blog/${getBlogPostSlug(post.slug)}`} class="title">
                   <h2>{post.data.title}</h2>
                 </a>
                 <p class={"meta"}>
@@ -46,7 +48,9 @@ const formatter = new Intl.DateTimeFormat("en-US", {
                   class="excerpt"
                   set:html={getFirstParagraphContent(post.body)}
                 />
-                <a href={`/blog/${post.slug}`}>Read on &rarr;</a>
+                <a href={`/blog/${getBlogPostSlug(post.slug)}`}>
+                  Read on &rarr;
+                </a>
               </article>
             </li>
           );
@@ -54,6 +58,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
       }
     </ol>
   </main>
+  <PageFooter />
 </Layout>
 
 <style>

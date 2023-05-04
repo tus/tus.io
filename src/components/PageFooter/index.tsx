@@ -3,17 +3,20 @@ import styles from "./style.module.css";
 
 type PageFooterProps = {
   comments?: boolean;
+  social: boolean;
 };
 
 export default function PageFooter(props: PageFooterProps) {
-  const { comments } = props;
+  const { comments, social } = props;
   return (
     <div class={styles.root}>
       <footer class={styles.footer}>
-        <div class={styles.social}>
-          <p>Subscribe to, or say hello to our community</p>
-          <Social includeRss />
-        </div>
+        {social && (
+          <div class={styles.social}>
+            <p>Subscribe to, or say hello to our community</p>
+            <Social includeRss />
+          </div>
+        )}
 
         {comments && (
           <div class={styles.comments}>

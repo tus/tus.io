@@ -1,12 +1,15 @@
 ---
-import TransloaditBar from "@/components/TransloaditBar";
 import "../styles/global.css";
-import Navigation from "old_src/components/Navigation";
+
+import TransloaditBar from "@/components/TransloaditBar";
+import Navigation from "@/components/Navigation";
 
 let { title } = Astro.props;
 if (Astro.url.pathname !== "/") {
   title += " | tus.io";
 }
+
+const currentPage = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -16,13 +19,9 @@ if (Astro.url.pathname !== "/") {
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:image" content="/images/og-image-banner.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="tus.io" />
-    <meta property="og:title" />
-    <meta property="og:description" content="To eleventy and beyond!" />
     <link rel="icon" type="img/png" href="/images/favicon.png" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link
       rel="preload"
@@ -65,14 +64,7 @@ if (Astro.url.pathname !== "/") {
   </head>
   <body>
     <TransloaditBar />
-    <Navigation client:idle />
-    <!-- {% island "TransloaditBar/index.tsx" %}
-    {% endisland %}
-    
-    {% island "Navigation/index.tsx" %}
-    {% prop 'currentPage', page.url %}
-    {% endisland %} -->
-
+    <Navigation client:load currentPage={currentPage} />
     <slot />
   </body>
 </html>

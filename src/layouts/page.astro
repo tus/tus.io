@@ -1,0 +1,70 @@
+---
+import PageFooter from "@/components/PageFooter";
+import Layout from "./default.astro";
+
+const { title } = Astro.props.frontmatter;
+---
+
+<Layout title={title}>
+  <main class="page">
+    <slot />
+  </main>
+  <PageFooter comments />
+</Layout>
+
+<style>
+  .page {
+    max-width: 50rem;
+    padding-inline: var(--space3);
+    margin: 0 auto;
+  }
+
+  .page > :global(p:first-of-type) {
+    font-size: 1.25em;
+  }
+
+  .page :global(h2, h3, h4) {
+    margin-top: 2.5em;
+  }
+
+  .page :global(ol, ul) {
+    padding-inline-start: var(--space5);
+  }
+
+  .page :global(ul) {
+    list-style: disc outside;
+    padding-inline-start: var(--space5);
+  }
+
+  .page :global(ol) {
+    list-style: decimal inside;
+  }
+
+  .page :global(.implementations) {
+    list-style: disc outside;
+    margin-inline-start: var(--space8);
+    padding-inline-start: var(--space4);
+  }
+
+  .page :global(.implementations .title) {
+    display: inline-block;
+  }
+
+  .page :global(.implementations .author) {
+    display: inline-block;
+    color: var(--gray9);
+  }
+  .page :global(.implementations .author a) {
+    color: inherit;
+  }
+
+  .page :global(code) {
+    background-color: var(--gray2);
+    border: 1px solid var(--gray4);
+    border-radius: var(--space1);
+    font-size: 0.9rem;
+    margin: 0 2px;
+    padding: 2px var(--space1);
+    white-space: nowrap;
+  }
+</style>

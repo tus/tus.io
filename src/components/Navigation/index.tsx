@@ -4,6 +4,7 @@ import { computed, signal } from "@preact/signals";
 import styles from "./style.module.css";
 import { useEffect, useRef } from "preact/hooks";
 import cx from "clsx";
+import VisuallyHidden from "../VisuallyHidden";
 
 const expanded = signal(false);
 const hidden = computed(() => !expanded.value);
@@ -51,8 +52,21 @@ export default function Navigation(props: NavigationProps) {
     <header class={styles.root}>
       <div>
         <a href="/" class={styles.home}>
-          {currentPage !== "/" && <img src={tusLogo} />}
-          <img src={tusWordmark} alt="tus" />
+          {currentPage !== "/" && (
+            <img
+              src={tusLogo.src}
+              width={tusLogo.width}
+              height={tusLogo.height}
+              alt=""
+            />
+          )}
+          <img
+            class={styles.wordmark}
+            src={tusWordmark.src}
+            width={tusWordmark.width}
+            height={tusWordmark.height}
+            alt="tus"
+          />
         </a>
         <nav ref={nav}>
           <button
@@ -73,9 +87,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === "/faq.html",
+                  [styles.activeLink]: currentPage === "/faq",
                 })}
-                href="/faq.html"
+                href="/faq"
               >
                 FAQ
               </a>
@@ -83,9 +97,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === "/support.html",
+                  [styles.activeLink]: currentPage === "/support",
                 })}
-                href="/support.html"
+                href="/support"
               >
                 Support
               </a>
@@ -93,9 +107,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === "/blog.html",
+                  [styles.activeLink]: currentPage.startsWith("/blog"),
                 })}
-                href="/blog.html"
+                href="/blog"
               >
                 Blog
               </a>
@@ -103,9 +117,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === "/demo.html",
+                  [styles.activeLink]: currentPage === "/demo",
                 })}
-                href="/demo.html"
+                href="/demo"
               >
                 Demo
               </a>
@@ -113,10 +127,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]:
-                    currentPage === "/protocols/resumable-upload.html",
+                  [styles.activeLink]: currentPage.startsWith("/protocols"),
                 })}
-                href="/protocols/resumable-upload.html"
+                href="/protocols/resumable-upload"
               >
                 Protocol
               </a>
@@ -124,9 +137,9 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === "/implementations.html",
+                  [styles.activeLink]: currentPage === "/implementations",
                 })}
-                href="/implementations.html"
+                href="/implementations"
               >
                 Implementations
               </a>
@@ -136,7 +149,7 @@ export default function Navigation(props: NavigationProps) {
                 href="https://github.com/tus"
                 class={cx(styles.link, styles.githubLink)}
               >
-                GitHub <GithubIcon size={20} />
+                <GithubIcon size={20} /> <span>GitHub</span>
               </a>
             </li>
           </ul>

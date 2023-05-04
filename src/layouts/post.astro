@@ -1,0 +1,17 @@
+---
+import Layout from "./default.astro";
+---
+
+<Layout title={Astro.props.title}>
+  <article>
+    <slot />
+  </article>
+</Layout>
+
+<style>
+  article {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
+</style>

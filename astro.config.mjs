@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
+import remarkToc from "remark-toc";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,8 +13,16 @@ export default defineConfig({
       compat: true,
     }),
     sitemap(),
+    mdx(),
   ],
   experimental: {
     assets: true,
+  },
+  markdown: {
+    // See https://github.com/remarkjs/remark-toc
+    remarkPlugins: [[remarkToc, { tight: true, maxDepth: 2, ordered: true }]],
+    shikiConfig: {
+      theme: "github-light",
+    },
   },
 });

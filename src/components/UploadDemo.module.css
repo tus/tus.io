@@ -1,0 +1,125 @@
+.root {
+  background-color: var(--gray1);
+  padding: var(--space5) var(--space6);
+  border: 1px solid var(--gray4);
+  border-radius: var(--space2);
+  margin-block-end: var(---space6);
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-block-end: var(--space2);
+}
+
+.alert {
+  padding: var(--space4) var(--space6);
+  border: 1px solid var(--yellow1);
+  border-radius: var(--space1);
+}
+
+.heading {
+  display: block;
+  font-weight: bold;
+  margin-block-start: 0;
+  margin-block-end: var(--space2);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--space2);
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  height: var(--space10);
+  padding: 0 var(--space8);
+  color: var(--gray11);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: var(--space10);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: var(--space1);
+  border: 1px solid var(--gray8);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--gray10);
+  color: var(--gray12);
+}
+
+.primary {
+  color: white;
+  background-color: var(--green2);
+  border-color: var(--green2);
+}
+
+.primary:hover {
+  color: white;
+  background-color: var(--green1);
+  border-color: var(--green1);
+}
+
+.uploadRow {
+  display: flex;
+  flex-wrap: none;
+  justify-content: space-between;
+  gap: var(--space3);
+  margin-block-end: var(--space2);
+}
+
+@keyframes stripes {
+  from {
+    background-position: -40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+.progress {
+  flex: 1;
+  overflow: hidden;
+  height: var(--space10);
+  background-color: var(--gray2);
+  border-radius: 4px;
+  box-shadow: 0 1px 1px var(--gray4) inset;
+  overflow: hidden;
+}
+
+.progressBar {
+  animation: stripes 2s linear infinite;
+  background-color: var(--green1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  line-height: var(--space10);
+  transition: width 0.25s ease, background-color 0.25s ease;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+}
+
+[data-state="paused"] .progressBar {
+  animation-play-state: paused;
+  background-color: var(--green2);
+}
+
+.progressText {
+  margin-block-end: 0;
+}

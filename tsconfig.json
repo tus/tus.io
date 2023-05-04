@@ -10,7 +10,7 @@
       "@/*": ["src/*"],
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
-    },
-    "plugins": [{ "name": "@astrojs/ts-plugin" }]
+    }
+    // "plugins": [{ "name": "@astrojs/ts-plugin" }]
   }
 }

@@ -33,7 +33,7 @@ module.exports = {
     "plugin:astro/recommended",
     "prettier",
   ],
-  plugins: ["@typescript-eslint", "react", "react-hooks"],
+  plugins: ["@typescript-eslint", "astro", "react", "react-hooks"],
   rules: {
     /**
      * Preact / JSX rules

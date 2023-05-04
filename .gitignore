@@ -2,3 +2,4 @@ node_modules/
 .astro/
 .yarn/cache/
 .yarn/install-state.gz
+dist/
