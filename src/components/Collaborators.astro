@@ -1,9 +1,7 @@
 ---
-import { Octokit } from "@octokit/rest";
-
-const octokit = new Octokit({
-  auth: "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",
-});
+import { getGitHubData } from "@/lib/getGitHubData";
+import { request } from "@octokit/request";
+import { uniqBy } from "lodash-es";
 
 const user = "tus";
 const repos = [
@@ -17,13 +15,82 @@ const repos = [
   "tus-resumable-upload-protocol",
 ];
 
-const collaborators = await Promise.all(
-  repos.map(async (repo) => {
-    const { data } = await octokit.repos.listCollaborators({
-      owner: user,
-      repo,
-    });
-    return data;
-  })
+const issues = await getGitHubData("GET /repos/{owner}/{repo}/issues", {
+  state: "all",
+});
+
+const comments = await getGitHubData(
+  "GET /repos/{owner}/{repo}/issues/comments",
+  {
+    sort: "created",
+    direction: "desc",
+  }
 );
+
+const collaborators = [];
+
+for (const issue of issues) {
+  collaborators.push(issue.user);
+}
+
+for (const comment of comments) {
+  collaborators.push(comment.user);
+}
+
+const uniqueCollaborators = uniqBy(collaborators, "id");
 ---
+
+<h2>Collaborators ({uniqueCollaborators.length})</h2>
+
+<p>People commenting on tus</p>
+
+<div class="collaborators">
+  {
+    uniqueCollaborators.map((c) => (
+      <a
+        key={c.id}
+        href={c.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="avatar"
+        aria-label={`GitHub profile of ${c.login}`}
+      >
+        <img
+          src={c.avatar_url}
+          width="460"
+          height="460"
+          alt={`Avatar of ${c.login}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .collaborators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: var(--space6);
+    row-gap: var(--space5);
+  }
+
+  .avatar {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 0 0 var(--space2) var(--gray8);
+  }
+
+  .avatar img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

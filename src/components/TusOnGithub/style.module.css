@@ -11,6 +11,7 @@
   grid-gap: var(--space1);
   padding-block: var(--space3);
   padding-inline: var(--space1);
+  margin-block-end: 0;
 }
 
 .item:not(:last-of-type) {
