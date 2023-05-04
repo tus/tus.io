@@ -7,22 +7,22 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://tus.io",
-  integrations: [
-    preact({
-      compat: true,
-    }),
-    sitemap(),
-    mdx(),
-  ],
-  experimental: {
-    assets: true,
-  },
-  markdown: {
-    // See https://github.com/remarkjs/remark-toc
-    remarkPlugins: [[remarkToc, { tight: true, maxDepth: 2, ordered: true }]],
-    shikiConfig: {
-      theme: "github-light",
-    },
-  },
+	site: "https://tus.io",
+	integrations: [
+		preact({
+			compat: true,
+		}),
+		sitemap(),
+		mdx(),
+	],
+	experimental: {
+		assets: true,
+	},
+	markdown: {
+		// See https://github.com/remarkjs/remark-toc
+		remarkPlugins: [[remarkToc, { tight: true, maxDepth: 2, ordered: true }]],
+		shikiConfig: {
+			theme: "github-light",
+		},
+	},
 });

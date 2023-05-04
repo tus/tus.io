@@ -5,59 +5,59 @@ import implementations from "@/data/implementations.json";
 <h2>Official implementations</h2>
 
 <div class={"implementations"}>
-  {
-    implementations.map((d) => (
-      <article key={d.name} class={"implementation"}>
-        <a href={`https://github.com/${d.repo}`}>
-          <img
-            src={`/images/${d.icon}.svg`}
-            alt={`Support for ${d.name}`}
-            loading="lazy"
-          />
-          {d.name}
-        </a>
-      </article>
-    ))
-  }
+	{
+		implementations.map((d) => (
+			<article key={d.name} class={"implementation"}>
+				<a href={`https://github.com/${d.repo}`}>
+					<img
+						src={`/images/${d.icon}.svg`}
+						alt={`Support for ${d.name}`}
+						loading="lazy"
+					/>
+					{d.name}
+				</a>
+			</article>
+		))
+	}
 </div>
 
 <p>
-  Additionally, there are many other{" "}
-  <a class="link" href="/implementations.html">projects</a> built and maintained
-  by our community.
+	Additionally, there are many other{" "}
+	<a class="link" href="/implementations.html">projects</a> built and maintained
+	by our community.
 </p>
 
 <style>
-  .implementations {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    column-gap: var(--space5);
-    row-gap: var(--space8);
-    margin: var(--space10) 0;
-  }
+	.implementations {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+		column-gap: var(--space5);
+		row-gap: var(--space8);
+		margin: var(--space10) 0;
+	}
 
-  .implementation {
-    display: block;
-    flex: 0 0 8.25rem;
-  }
+	.implementation {
+		display: block;
+		flex: 0 0 8.25rem;
+	}
 
-  .implementation a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
-  }
+	.implementation a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		white-space: nowrap;
+	}
 
-  .implementation img {
-    display: block;
-    margin-bottom: var(--space2);
-    width: 2.5rem;
-  }
+	.implementation img {
+		display: block;
+		margin-bottom: var(--space2);
+		width: 2.5rem;
+	}
 
-  .link {
-    margin: 20px 0;
-  }
+	.link {
+		margin: 20px 0;
+	}
 </style>

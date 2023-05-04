@@ -1,144 +1,144 @@
 .root {
-  position: relative;
-  height: 4rem;
-  background-color: var(--gray2);
-  border-bottom: 1px solid var(--gray3);
-  font-size: 1rem;
+	position: relative;
+	height: 4rem;
+	background-color: var(--gray2);
+	border-bottom: 1px solid var(--gray3);
+	font-size: 1rem;
 }
 
 .root div {
-  max-width: 100rem;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding-inline: var(--space3);
+	max-width: 100rem;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding-inline: var(--space3);
 }
 
 @media screen and (min-width: 768px) {
-  .root div {
-    padding-inline: var(--space6);
-  }
+	.root div {
+		padding-inline: var(--space6);
+	}
 }
 
 .home {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: var(--space2);
-  height: 2rem;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: var(--space2);
+	height: 2rem;
 }
 
 .home img {
-  max-height: 100%;
-  width: auto;
+	max-height: 100%;
+	width: auto;
 }
 
 .wordmark {
-  height: var(--space6);
+	height: var(--space6);
 }
 
 .toggle {
-  all: unset;
-  display: block;
-  line-height: 1;
-  color: var(--green2);
+	all: unset;
+	display: block;
+	line-height: 1;
+	color: var(--green2);
 }
 
 .toggle svg {
-  display: block;
-  transition: color 120ms;
+	display: block;
+	transition: color 120ms;
 }
 
 .toggle:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
-  .toggle {
-    display: none;
-  }
+	.toggle {
+		display: none;
+	}
 }
 
 .items {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  min-width: 14rem;
-  max-width: 18rem;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  background-color: var(--gray2);
-  border: 1px solid var(--gray3);
-  box-shadow: 0 2px 20px var(--gray3);
+	position: absolute;
+	top: 100%;
+	right: 0;
+	min-width: 14rem;
+	max-width: 18rem;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background-color: var(--gray2);
+	border: 1px solid var(--gray3);
+	box-shadow: 0 2px 20px var(--gray3);
 }
 
 .items li {
-  margin-block-end: 0;
+	margin-block-end: 0;
 }
 
 .link {
-  display: block;
-  padding: var(--space2) var(--space4);
-  transition: color 120ms, background-color 120ms;
-  color: var(--gray12);
+	display: block;
+	padding: var(--space2) var(--space4);
+	transition: color 120ms, background-color 120ms;
+	color: var(--gray12);
 }
 
 .link:hover {
-  background-color: var(--green1);
-  color: white;
+	background-color: var(--green1);
+	color: white;
 }
 
 .activeLink {
-  color: var(--green1);
+	color: var(--green1);
 }
 
 @media screen and (min-width: 768px) {
-  .items {
-    all: unset;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: var(--space6);
-    list-style-type: none;
-  }
+	.items {
+		all: unset;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: var(--space6);
+		list-style-type: none;
+	}
 
-  .items li {
-    display: flex;
-    align-items: center;
-  }
+	.items li {
+		display: flex;
+		align-items: center;
+	}
 
-  .link {
-    padding: 0;
-  }
+	.link {
+		padding: 0;
+	}
 
-  .link:hover {
-    background-color: unset;
-    color: var(--green2);
-  }
+	.link:hover {
+		background-color: unset;
+		color: var(--green2);
+	}
 }
 
 .githubLink {
-  display: flex;
-  gap: var(--space2);
-  align-items: center;
+	display: flex;
+	gap: var(--space2);
+	align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-  .githubLink span {
-    position: absolute;
-    border: 0;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    word-wrap: normal;
-  }
+	.githubLink span {
+		position: absolute;
+		border: 0;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		word-wrap: normal;
+	}
 }

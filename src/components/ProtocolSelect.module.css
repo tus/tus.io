@@ -1,20 +1,20 @@
 .label {
-  color: var(--gray11);
-  display: flex;
-  gap: var(--space2);
-  align-items: center;
-  font-size: calc(14 / 16 * 1rem);
+	color: var(--gray11);
+	display: flex;
+	gap: var(--space2);
+	align-items: center;
+	font-size: calc(14 / 16 * 1rem);
 }
 
 .select {
-  color: inherit;
-  border-color: var(--gray8);
-  border-radius: var(--space1);
-  width: 5rem;
-  padding: var(--space1);
+	color: inherit;
+	border-color: var(--gray8);
+	border-radius: var(--space1);
+	width: 5rem;
+	padding: var(--space1);
 }
 
 .select:focus-visible {
-  outline: none;
-  border-color: var(--green1);
+	outline: none;
+	border-color: var(--green1);
 }

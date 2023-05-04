@@ -1,11 +1,11 @@
 .container {
-  max-width: 100rem;
-  margin: 0 auto;
-  padding-inline: var(--space3);
+	max-width: 100rem;
+	margin: 0 auto;
+	padding-inline: var(--space3);
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    padding-inline: var(--space6);
-  }
+	.container {
+		padding-inline: var(--space6);
+	}
 }

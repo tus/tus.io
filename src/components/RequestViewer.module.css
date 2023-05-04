@@ -1,52 +1,52 @@
 .placeholder {
-  background-color: var(--gray1);
-  border: 1px solid var(--gray4);
-  padding: var(--space3) var(--space4);
-  border-radius: var(--space2);
-  margin-block-end: var(--space4);
+	background-color: var(--gray1);
+	border: 1px solid var(--gray4);
+	padding: var(--space3) var(--space4);
+	border-radius: var(--space2);
+	margin-block-end: var(--space4);
 }
 
 .request {
-  background-color: var(--gray1);
-  border: 1px solid var(--gray4);
-  padding: var(--space3) var(--space4);
-  border-radius: var(--space2);
-  margin-block-end: var(--space4);
+	background-color: var(--gray1);
+	border: 1px solid var(--gray4);
+	padding: var(--space3) var(--space4);
+	border-radius: var(--space2);
+	margin-block-end: var(--space4);
 }
 
 .httpMethodUrl {
-  font-family: monospace;
-  font-size: calc(14 / 16 * 1rem);
-  padding-block-end: var(--space2);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+	font-family: monospace;
+	font-size: calc(14 / 16 * 1rem);
+	padding-block-end: var(--space2);
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .httpMethod {
-  background-color: var(--gray10);
-  padding: var(--space1) var(--space2);
-  color: white;
-  border-radius: var(--space1);
+	background-color: var(--gray10);
+	padding: var(--space1) var(--space2);
+	color: white;
+	border-radius: var(--space1);
 }
 
 .httpBlock {
-  padding-inline-start: var(--space8);
+	padding-inline-start: var(--space8);
 }
 
 .httpDesc {
-  font-size: calc(12 / 16 * 1rem);
+	font-size: calc(12 / 16 * 1rem);
 }
 
 .requestInfo {
-  padding-inline-start: var(--space8);
-  font-family: monospace;
-  font-size: calc(14 / 16 * 1rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	padding-inline-start: var(--space8);
+	font-family: monospace;
+	font-size: calc(14 / 16 * 1rem);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .headers p {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }

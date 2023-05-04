@@ -6,18 +6,18 @@ import { unified } from "unified";
 import type preact from "preact";
 
 type HtmlProps = {
-  children: string;
+	children: string;
 };
 
 const htmlToPreact = unified()
-  .use(rehypeParse, { fragment: true })
-  .use(rehypePrism)
-  .use(rehypeReact, { createElement, Fragment });
+	.use(rehypeParse, { fragment: true })
+	.use(rehypePrism)
+	.use(rehypeReact, { createElement, Fragment });
 
 export default function Html(props: HtmlProps) {
-  const { children } = props;
+	const { children } = props;
 
-  const node = htmlToPreact.processSync(children);
+	const node = htmlToPreact.processSync(children);
 
-  return node.result as preact.JSX.Element;
+	return node.result as preact.JSX.Element;
 }

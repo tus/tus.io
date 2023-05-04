@@ -6,100 +6,100 @@ import authors from "@/data/authors.json";
 import { getBlogPostSlug } from "@/lib/getBlogPostSlug";
 
 const formatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
+	month: "short",
+	day: "numeric",
+	year: "numeric",
 });
 ---
 
 <h2>Blog posts</h2>
 
 <ol class={"posts"}>
-  {
-    lastFivePosts.map((p) => {
-      const author = authors[p.data.author];
-      return (
-        <li key={p.url}>
-          <article class={"post"}>
-            <div class={"postContent"}>
-              <h3>
-                <a href={`/blog/${getBlogPostSlug(p.slug)}`}>{p.data.title}</a>
-              </h3>
-              <time class="date" dateTime={p.data.date}>
-                {formatter.format(p.data.date)}
-              </time>
-            </div>
+	{
+		lastFivePosts.map((p) => {
+			const author = authors[p.data.author];
+			return (
+				<li key={p.url}>
+					<article class={"post"}>
+						<div class={"postContent"}>
+							<h3>
+								<a href={`/blog/${getBlogPostSlug(p.slug)}`}>{p.data.title}</a>
+							</h3>
+							<time class="date" dateTime={p.data.date}>
+								{formatter.format(p.data.date)}
+							</time>
+						</div>
 
-            <a
-              href={`https://twitter.com/${author.twitter}`}
-              aria-title={author.name}
-              class={"author"}
-            >
-              <img
-                src={`https://secure.gravatar.com/avatar/${author.gravatar}&s=64`}
-                class={"gravatar"}
-                loading="lazy"
-                width="64"
-                height="64"
-                alt={`Avatar of ${author.name}`}
-              />
-            </a>
-          </article>
-        </li>
-      );
-    })
-  }
+						<a
+							href={`https://twitter.com/${author.twitter}`}
+							aria-title={author.name}
+							class={"author"}
+						>
+							<img
+								src={`https://secure.gravatar.com/avatar/${author.gravatar}&s=64`}
+								class={"gravatar"}
+								loading="lazy"
+								width="64"
+								height="64"
+								alt={`Avatar of ${author.name}`}
+							/>
+						</a>
+					</article>
+				</li>
+			);
+		})
+	}
 </ol>
 
 <style>
-  .posts {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space4);
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+	.posts {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space4);
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
 
-  .post {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: var(--space5);
-  }
+	.post {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		gap: var(--space5);
+	}
 
-  .posts li:not(:last-of-type) {
-    border-bottom: 1px solid var(--gray4);
-    padding-bottom: var(--space4);
-  }
+	.posts li:not(:last-of-type) {
+		border-bottom: 1px solid var(--gray4);
+		padding-bottom: var(--space4);
+	}
 
-  .postContent {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+	.postContent {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 
-  .postContent h3 {
-    margin: 0;
-  }
+	.postContent h3 {
+		margin: 0;
+	}
 
-  .postContent time {
-    color: var(--gray9);
-  }
+	.postContent time {
+		color: var(--gray9);
+	}
 
-  .author {
-    flex: 0 0 4rem;
-    display: block;
-    border-radius: 9999px;
-    overflow: hidden;
-    width: 4rem;
-    height: 4rem;
-    border: 2px solid white;
-    box-shadow: 0 0 0.5rem var(--gray6);
-  }
+	.author {
+		flex: 0 0 4rem;
+		display: block;
+		border-radius: 9999px;
+		overflow: hidden;
+		width: 4rem;
+		height: 4rem;
+		border: 2px solid white;
+		box-shadow: 0 0 0.5rem var(--gray6);
+	}
 
-  .gravatar {
-    display: block;
-    object-fit: cover;
-    object-position: center;
-  }
+	.gravatar {
+		display: block;
+		object-fit: cover;
+		object-position: center;
+	}
 </style>

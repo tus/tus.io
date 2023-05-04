@@ -1,4 +1,4 @@
 declare module "https://esm.sh/@octokit/rest" {
-  import { Octokit } from "@octokit/rest";
-  export { Octokit };
+	import { Octokit } from "@octokit/rest";
+	export { Octokit };
 }
