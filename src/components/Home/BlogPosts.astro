@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
 const lastFivePosts = posts.reverse().slice(0, 5);
 import authors from "@/data/authors.json";
+import { getBlogPostSlug } from "@/lib/getBlogPostSlug";
 
 const formatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -22,7 +23,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
           <article class={"post"}>
             <div class={"postContent"}>
               <h3>
-                <a href={`/blog/${p.slug}`}>{p.data.title}</a>
+                <a href={`/blog/${getBlogPostSlug(p.slug)}`}>{p.data.title}</a>
               </h3>
               <time class="date" dateTime={p.data.date}>
                 {formatter.format(p.data.date)}

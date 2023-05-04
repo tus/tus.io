@@ -4,7 +4,7 @@ import "../styles/global.css";
 import TransloaditBar from "@/components/TransloaditBar";
 import Navigation from "@/components/Navigation";
 
-let { title } = Astro.props;
+let { noindex, title } = Astro.props;
 if (Astro.url.pathname !== "/") {
   title += " | tus.io";
 }
@@ -18,9 +18,15 @@ const currentPage = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
+    />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <link rel="icon" type="img/png" href="/images/favicon.png" />
-
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link
@@ -45,26 +51,16 @@ const currentPage = Astro.url.pathname;
       crossorigin="anonymous"
     />
 
-    <!-- {% if noindex %}
-      <meta name="robots" content="noindex">
-    {% endif %} -->
-
-    <!-- {% set used_title = title %}
-    {% if is_home %}
-      {# do nothing #}
-    {% else %}
-      {% set used_title = used_title + " | tus" %}
-    {% endif %}
-
-    {% if title_prefix %}
-      {% set used_title = title_prefix + used_title %}
-    {% endif %} -->
-
     <title>{title}</title>
   </head>
   <body>
     <TransloaditBar />
     <Navigation client:load currentPage={currentPage} />
     <slot />
+    <script
+      defer
+      data-domain="tus.io"
+      src="https://analytics.transloadit.com/js/plausible.js"
+    ></script>
   </body>
 </html>

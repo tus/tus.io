@@ -7,6 +7,14 @@
     font-size: inherit;
   }
 
+  div :global(h1, h2, h3) {
+    margin-top: 2.5em;
+  }
+
+  div :global(h3) {
+    border-bottom: 1px solid var(--gray4);
+  }
+
   div > :global(p:first-child) {
     font-size: 1.25em;
   }
@@ -24,7 +32,7 @@
     padding: var(--space1) var(--space3);
   }
 
-  div :global(ul) {
+  div :global(ul, ol) {
     padding-inline-start: var(--space4);
   }
 

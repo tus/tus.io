@@ -1,14 +1,14 @@
 ---
 layout: ../layouts/page.astro
 title: FAQ
-permalink: /faq.html
-redirect_from: /guide.html
+permalink: /faq
+redirect_from: /guide
 comments: true
 ---
 
 # FAQ
 
-Here are some Frequently Asked Questions and their answers. This document is still a work in progress and is being re-written as we speak. If you have any questions or topics you would like to see covered, [let us know](/support.html)!
+Here are some Frequently Asked Questions and their answers. This document is still a work in progress and is being re-written as we speak. If you have any questions or topics you would like to see covered, [let us know](/support)!
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Here are some Frequently Asked Questions and their answers. This document is sti
 
 ## What is tus?
 
-tus is a project aiming to make resumable file uploads easily usable and widely available. The most interesting parts of this project are the [protocol specification](/protocols/resumable-upload.html) and the many freely available [client and server implementations](/implementations.html).
+tus is a project aiming to make resumable file uploads easily usable and widely available. The most interesting parts of this project are the [protocol specification](/protocols/resumable-upload) and the many freely available [client and server implementations](/implementations).
 
 When we say "resumable file uploads", we refer to the ability that uploads can be interrupted at any time and afterward be resumed from the state where the failure began. This interruption can be accidentally (e.g., a connection drop or a server crash) or voluntarily if the user decides to pause the upload. In traditional uploading implementations, your progress would be lost in such a situation, but tus enables you to recover from these interruptions and continue where the upload was stopped.
 
@@ -31,7 +31,7 @@ If you are unsure whether tus is a good fit for your use case, here is a list of
 - You want to provide your users with the ability to pause an upload and resume it later (maybe even after a few days).
 - You do not want to rely on proprietary upload solutions but instead, prefer to build upon free and open source projects.
 
-Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios where you handle many very small files (a few KBs) on a slow network and where the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, [contact us](/support.html) and we are happy to give you some advice.
+Having that said, there are also a few situations where you might not want to use tus. This is mainly in scenarios where you handle many very small files (a few KBs) on a slow network and where the overhead of additional HTTP requests would significantly impact the performance. If you want us to assist you in your decision-making, [contact us](/support) and we are happy to give you some advice.
 
 ## How do I install tus and get started?
 
@@ -40,13 +40,13 @@ You'll need a:
 - server implementation (you can read how to [get started with tusd](https://github.com/tus/tusd/#documentation), which is the most mature option), and a:
 - client implementation (such as the bare-bones [tus-js-client](https://github.com/tus/tus-js-client#installation) for browsers and Node.js, or if you need a rich UI, [Uppy](https://uppy.io/docs/#getting-started).
 
-Tus is a low-level building block and there's no one right way to do deploy resumable file uploads with it. Still, to get started quickly for the majority of use cases, we recommend using tusd in combination with Uppy. The ecosystem is rich, however, and you'll know it if one of our community-maintained client/server [implementations](https://tus.io/implementations.html) in Ruby, Python, Elixir, etc., are a better fit for your platform.
+Tus is a low-level building block and there's no one right way to do deploy resumable file uploads with it. Still, to get started quickly for the majority of use cases, we recommend using tusd in combination with Uppy. The ecosystem is rich, however, and you'll know it if one of our community-maintained client/server [implementations](https://tus.io/implementations) in Ruby, Python, Elixir, etc., are a better fit for your platform.
 
 Finally, if you don't care for self-hosting tus servers, [Transloadit](https://transloadit.com) offers a tus-based upload handling service that can export to the storage of your choice (and can optionally encode or resize files passing through). The setup steps are then to create an account and add an Uppy HTML tag to your website, or check out [non-browser client integrations](https://transloadit.com/docs/#sdks).
 
 ## How does tus work?
 
-This section covers the more low-level details of how tus performs an upload. If you are using one of our open-source [implementations](/implementations.html), you don't have to worry about these details but they may still be helpful to ease debugging and troubleshooting.
+This section covers the more low-level details of how tus performs an upload. If you are using one of our open-source [implementations](/implementations), you don't have to worry about these details but they may still be helpful to ease debugging and troubleshooting.
 
 A tus upload is broken down into different HTTP requests, where each one has a different purpose:
 
@@ -55,11 +55,11 @@ A tus upload is broken down into different HTTP requests, where each one has a d
 - If the `PATCH` request got interrupted or failed for another reason, the client can attempt to resume the upload. To resume, the client must know how much data the server has received. This information is obtained by sending a `HEAD` request to the upload URL and inspecting the returned `Upload-Offset` header. Once the client knows the upload offset, it can send another `PATCH` request until the upload is completely done.
 - Optionally, if the client wants to delete an upload because it won't be needed anymore, a `DELETE` request can be sent to the upload URL. After this, the upload can be cleaned up by the server, and resuming the upload is not possible anymore.
 
-If you want to see these requests in action, you can head over to our [demo](/demo.html) where the actual HTTP requests are shown on the page!
+If you want to see these requests in action, you can head over to our [demo](/demo) where the actual HTTP requests are shown on the page!
 
 ## How do I integrate tus into my application?
 
-If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](/implementations.html). The exact setup steps vary for each implementation, but the basic scheme is as follows:
+If you want to add tus to your application, you need a server and client component. For a quick start, we recommend having a look at our list of open-source [implementations](/implementations). The exact setup steps vary for each implementation, but the basic scheme is as follows:
 
 The tus server is usually deployed alongside your main application server in its process. A proxy is then used to route the requests to either the tus server or your application server. The tus server usually stores the uploads on disk, but some servers (such as our reference implementation [tusd](https://github.com/tus/tusd)) are also capable of storing the data directly on different cloud providers, such as AWS S3 or Google Cloud Storage.
 
@@ -92,7 +92,7 @@ If that is not an option for you, please reach out to us. We are open to definin
 
 ## How are pause/resume handled? When should I delete partial uploads?
 
-The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload, you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g., checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response, you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration](/protocols/resumable-upload.html#expiration) extension).
+The tus protocol is built upon the principles of simple pausing and resuming. To pause an upload, you are allowed to end the current open request. The server will store the uploaded data as long as no violations against other constraints (e.g., checksums) or internal errors occur. Once you are ready to resume an upload, send a `HEAD` request to the corresponding upload URL to obtain the available offset. After receiving a valid response, you can upload more data using `PATCH` requests. You should keep in mind that the server may delete an unfinished upload if it is not continued for a long period (see [Expiration](/protocols/resumable-upload#expiration) extension).
 
 Before deleting an outstanding upload, the server should give the client enough time to resolve potential networking issues. Since this duration depends heavily on the underlying application model, the protocol does not contain a specific number, but we recommend one week for a general use case.
 
@@ -104,7 +104,7 @@ The tus protocol does not have a direct mechanism to obtain the type or filename
 
 We have carefully investigated the use of existing headers such as `Range` and `Content-Range`, but unfortunately, they are defined in a way that makes them unsuitable for resumable file uploads.
 
-We also considered using existing `PATCH` payload formats such as [multipart/byteranges](http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest.html#internet.media.type.multipart.byteranges), but unfortunately, the XHR2 [FormData interface](http://www.w3.org/TR/XMLHttpRequest/#interface-formdata) does not support custom headers for multipart parts, and the [send() method](http://www.w3.org/TR/XMLHttpRequest/#the-send-method) does not allow streaming arbitrary data without loading all of it into memory.
+We also considered using existing `PATCH` payload formats such as [multipart/byteranges](http://greenbytes.de/tech/webdav/draft-ietf-httpbis-p5-range-latest#internet.media.type.multipart.byteranges), but unfortunately, the XHR2 [FormData interface](http://www.w3.org/TR/XMLHttpRequest/#interface-formdata) does not support custom headers for multipart parts, and the [send() method](http://www.w3.org/TR/XMLHttpRequest/#the-send-method) does not allow streaming arbitrary data without loading all of it into memory.
 
 That being said, custom headers also allowed us to greatly simplify the client and server implementations, so we're quite happy with them.
 

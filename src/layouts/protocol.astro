@@ -5,10 +5,10 @@ import { ProtocolSelect } from "@/components/ProtocolSelect";
 
 const protocols = await getCollection("protocols");
 
-const { currentVersion, selectedVersion } = Astro.props;
+const { currentVersion, selectedVersion, noindex } = Astro.props;
 ---
 
-<Layout title={Astro.props.title}>
+<Layout title={Astro.props.title} noindex={noindex}>
   <main>
     <header>
       <h1>Protocol</h1>

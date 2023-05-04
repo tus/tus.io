@@ -13,6 +13,10 @@ const { title } = Astro.props.frontmatter;
 </Layout>
 
 <style>
+  :global(:root) {
+    scroll-behavior: smooth;
+  }
+
   .page {
     max-width: 50rem;
     padding-inline: var(--space3);

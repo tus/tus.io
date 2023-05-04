@@ -13,7 +13,7 @@ Yes, oddly enough, this seems to be the case! A while ago, we noticed something 
 While we did set out to make the world a slightly better place by making uploading more reliable for everyone, this is certainly not what we had in mind. We were very interested to learn more about this, so we invited Jaroslaw to sit down with us for a virtual cup of coffee and asked him to tell us a little more about the system they have developed – and how they are using tus for it.
 
 <div class="kodak-container kodak-dropshadow">
-<img src="/assets/img/fireman.jpg" alt="Firefighters" style="width: 100%;">
+<img src="/images/fireman.jpg" alt="Firefighters" style="width: 100%;">
 </div>
 
 **Could you tell us something about the work you do and the kind of service your company provides to fire fighters?**

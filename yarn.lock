@@ -119,6 +119,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/rss@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "@astrojs/rss@npm:2.4.1"
+  dependencies:
+    fast-xml-parser: ^4.0.8
+    kleur: ^4.1.5
+  checksum: 86d771d3f6c4e12102fd069c3f479ee367daf0142b04171d7ca4e125261a29faf80ccbfb3209df5c2f25918152dd9111843b0b8e449406dfd9d125d8bce3119c
+  languageName: node
+  linkType: hard
+
 "@astrojs/sitemap@npm:^1.2.2":
   version: 1.2.2
   resolution: "@astrojs/sitemap@npm:1.2.2"
@@ -3776,6 +3786,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:^4.0.8":
+  version: 4.2.2
+  resolution: "fast-xml-parser@npm:4.2.2"
+  dependencies:
+    strnum: ^1.0.5
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: f0e687927ddc11b2ba9e434d8bf77ef759b6692639dd2dd731e2f30201319e7c70dec08a103dd67a1af7a27f176246502d9d0f5325b5b5b99ab49665fa876857
+  languageName: node
+  linkType: hard
+
 "fastq@npm:^1.6.0":
   version: 1.15.0
   resolution: "fastq@npm:1.15.0"
@@ -5497,7 +5518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.0.3, kleur@npm:^4.1.4":
+"kleur@npm:^4.0.3, kleur@npm:^4.1.4, kleur@npm:^4.1.5":
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
@@ -9027,6 +9048,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strnum@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "strnum@npm:1.0.5"
+  checksum: 651b2031db5da1bf4a77fdd2f116a8ac8055157c5420f5569f64879133825915ad461513e7202a16d7fec63c54fd822410d0962f8ca12385c4334891b9ae6dd2
+  languageName: node
+  linkType: hard
+
 "style-to-object@npm:^0.3.0":
   version: 0.3.0
   resolution: "style-to-object@npm:0.3.0"
@@ -9330,6 +9358,7 @@ __metadata:
   dependencies:
     "@astrojs/mdx": ^0.19.0
     "@astrojs/preact": ^2.1.0
+    "@astrojs/rss": ^2.4.1
     "@astrojs/sitemap": ^1.2.2
     "@astrojs/ts-plugin": ^1.0.0
     "@mapbox/rehype-prism": ^0.8.0
