@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: 18
           package-manager: yarn
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
