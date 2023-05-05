@@ -9,12 +9,9 @@ import VisuallyHidden from '@/components/VisuallyHidden'
 import logos from '@/data/logos.json'
 import press from '@/data/press.json'
 import { getGitHubActivity } from '@/lib/getGitHubActivity'
-import { getCollection } from 'astro:content'
 import Layout from '../layouts/default.astro'
 
 const title = 'tus - resumable file uploads'
-
-const posts = await getCollection('blog')
 const githubActivity = await getGitHubActivity()
 ---
 
@@ -119,7 +116,7 @@ const githubActivity = await getGitHubActivity()
   <section class={'section'}>
     <div class="container">
       <h2>tus on GitHub</h2>
-      <TusOnGithub githubActivity={githubActivity} />
+      <TusOnGithub githubActivity={githubActivity} client:idle />
     </div>
   </section>
 

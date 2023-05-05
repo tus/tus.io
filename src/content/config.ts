@@ -28,4 +28,5 @@ const protocols = defineCollection({
 export const collections = {
   blog,
   features,
+  protocols,
 }

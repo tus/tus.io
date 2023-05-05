@@ -1,6 +1,6 @@
 ---
-import { ProtocolSelect } from '@/components/ProtocolSelect'
 import ProtocolLayout from '@/layouts/protocol.astro'
+import type { InferGetStaticPropsType } from 'astro'
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -11,13 +11,18 @@ export async function getStaticPaths() {
   }))
 }
 
-const protocols = await getCollection('protocols')
-const currentVersion = protocols.find((p) => p.data.version_outdated === false)!
-  .data.version
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const currentVersion = (
+  await getCollection(
+    'protocols',
+    ({ data }) => data.version_outdated === false
+  )
+)[0].data.version
 
 const { protocol } = Astro.props
 
-const { title, noindex, version, version_outdated } = protocol.data
+const { noindex, version } = protocol.data
 const { Content } = await protocol.render()
 ---
 

@@ -1,15 +1,11 @@
 ---
 import Layout from '@/layouts/default.astro'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
-import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import authors from '@/data/authors.json'
 import PostContent from '@/components/PostContent.astro'
 import PageFooter from '@/components/PageFooter'
-
-interface Props {
-  post: CollectionEntry<'blog'>
-}
+import type { InferGetStaticPropsType } from 'astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -18,6 +14,8 @@ export async function getStaticPaths() {
     props: { post },
   }))
 }
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { post } = Astro.props
 const { Content } = await post.render()
@@ -28,7 +26,7 @@ const formatter = Intl.DateTimeFormat('en-US', {
   day: 'numeric',
 })
 
-const author = authors[post.data.author]
+const author = authors[post.data.author as keyof typeof authors]
 ---
 
 <Layout title={post.data.title}>
@@ -39,7 +37,11 @@ const author = authors[post.data.author]
         >{formatter.format(post.data.date)}</time
       > by{' '}
       <a
-        href={author.web ? author.web : `https://twitter.com/${author.twitter}`}
+        href={'web' in author
+          ? author.web
+          : 'twitter' in author
+          ? `https://twitter.com/${author.twitter}`
+          : undefined}
         rel="noopener noreferrer"
         target="_blank"
       >

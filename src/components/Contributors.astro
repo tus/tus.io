@@ -1,57 +1,41 @@
 ---
-import { request } from '@octokit/request'
-import { Debug } from 'astro/components'
+import { octokit, repos, user } from '@/lib/octokit'
 
-// const octokit = new Octokit({ auth: import.meta.env.GITHUB_TOKEN });
-
-const user = 'tus'
-const repos = [
-  'tus.io',
-  'tusd',
-  'tus-js-client',
-  'TUSKit',
-  'tus-android-client',
-  'tus-java-client',
-  'tus-node-server',
-  'tus-resumable-upload-protocol',
-]
-
-const contributors = (
+let contributors = (
   await Promise.all(
-    repos.map(async (repo) => {
-      const { data } = await request('GET /repos/{owner}/{repo}/contributors', {
+    repos.map((repo) =>
+      octokit.paginate(octokit.rest.repos.listContributors, {
         owner: user,
         repo,
         per_page: 100,
-        headers: {
-          accept: 'application/vnd.github+json',
-          authorization: import.meta.env.GITHUB_TOKEN
-            ? `token ${import.meta.env.GITHUB_TOKEN}`
-            : undefined,
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
       })
-      return data
-    })
+    )
   )
-)
-  .flat()
-  .reduce((acc, curr) => {
-    const existing = acc.find((c) => c.login === curr.login)
-    if (existing) {
-      existing.contributions += curr.contributions
-    } else {
-      acc.push(curr)
-    }
-    return acc
-  }, [])
-  .sort((a, b) => b.contributions - a.contributions)
-  .map((d) => ({
-    id: d.id,
-    html_url: d.html_url,
-    login: d.login,
-    avatar_url: d.avatar_url,
-  }))
+).flat()
+
+// merge contributors by login and sum their contributions
+const merged = []
+for (const c of contributors) {
+  // remove bots
+  if (c.type === 'Bot') continue
+  const existing = merged.find((m) => m.login === c.login)
+  if (existing) {
+    existing.contributions += c.contributions
+  } else {
+    merged.push(c)
+  }
+}
+
+// sort descending by contributions
+merged.sort((a, b) => b.contributions - a.contributions)
+
+// map to a smaller object
+contributors = merged.map((c) => ({
+  id: c.id,
+  html_url: c.html_url,
+  login: c.login,
+  avatar_url: c.avatar_url,
+}))
 ---
 
 <h2>Contributors ({contributors.length})</h2>
@@ -67,13 +51,13 @@ const contributors = (
         target="_blank"
         rel="noopener noreferrer"
         class="avatar"
-        aria-label={`GitHub profile of ${c.login}`}
+        aria-label={`GitHub profile of ${c.login ?? c.name ?? 'anonymous'}`}
       >
         <img
           src={c.avatar_url}
           width="460"
           height="460"
-          alt={`Avatar of ${c.login}`}
+          alt={`Avatar of ${c.login ?? c.name ?? 'anonymous'}`}
           loading="lazy"
           decoding="async"
         />

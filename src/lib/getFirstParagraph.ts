@@ -1,4 +1,4 @@
-import type { Root } from 'hast'
+import type { Root } from 'mdast'
 import remarkParse from 'remark-parse'
 import rehypeStringify from 'rehype-stringify'
 import { unified, type Plugin } from 'unified'

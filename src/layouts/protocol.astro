@@ -3,12 +3,19 @@ import { getCollection } from 'astro:content'
 import Layout from './default.astro'
 import { ProtocolSelect } from '@/components/ProtocolSelect'
 
+type Props = {
+  currentVersion: string
+  selectedVersion: string
+  noindex?: boolean
+  title: string
+}
+
 const protocols = await getCollection('protocols')
 
-const { currentVersion, selectedVersion, noindex } = Astro.props
+const { currentVersion, selectedVersion, noindex, title } = Astro.props
 ---
 
-<Layout title={Astro.props.title} noindex={noindex}>
+<Layout title={title} noindex={noindex}>
   <main>
     <header>
       <h1>Protocol</h1>

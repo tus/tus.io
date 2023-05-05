@@ -2,7 +2,6 @@ import { format } from 'timeago.js'
 import { useSignal } from '@preact/signals'
 import styles from './style.module.css'
 import { useEffect } from 'preact/hooks'
-import Html from '../Html'
 import { ExternalA } from '../ExternalA'
 import type { PublicOrgEvents } from './types'
 
@@ -52,7 +51,12 @@ function ActivityDescription(props: ActivityDescriptionProps) {
         <span>
           commented “
           <span>
-            <Html>{activity.payload.comment?.body ?? ''}</Html>
+            <div
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: activity.payload.comment?.body ?? '',
+              }}
+            />
           </span>
           ” on a commit to{' '}
           <ExternalA href={activity.payload.comment?.html_url}>
@@ -224,15 +228,15 @@ export default function TusOnGithub(props: TusOnGithubProps) {
 
   const activity = useSignal<PublicOrgEvents>(githubActivity)
 
-  // useEffect(() => {
-  //   const update = async () => {
-  //     const { getGitHubActivity } = await import("@/lib/getGitHubActivity");
-  //     const data = getGitHubActivity();
-  //     activity.value = data as PublicOrgEvents;
-  //   };
+  useEffect(() => {
+    const update = async () => {
+      const { getGitHubActivity } = await import('@/lib/getGitHubActivity')
+      const data = getGitHubActivity()
+      activity.value = data as PublicOrgEvents
+    }
 
-  //   update().catch((e) => console.error(e));
-  // }, [activity]);
+    update().catch((e) => console.error(e))
+  }, [activity])
 
   return (
     <ol class={styles.list}>

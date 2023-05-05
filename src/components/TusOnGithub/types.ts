@@ -1,8 +1,8 @@
 import type { GetResponseDataTypeFromEndpointMethod } from '@octokit/types'
-import type { Octokit } from '@octokit/rest'
+import type { octokit } from '@/lib/octokit'
 
 export type PublicOrgEvents = (GetResponseDataTypeFromEndpointMethod<
-  InstanceType<typeof Octokit>['rest']['activity']['listPublicOrgEvents']
+  (typeof octokit)['rest']['activity']['listPublicOrgEvents']
 >[number] & {
   // the Octokit type definitions are missing some of the data returned by the API
   payload: {

@@ -1,41 +1,38 @@
 ---
-import { getGitHubData } from '@/lib/getGitHubData'
-import { request } from '@octokit/request'
+import { octokit, user, repos } from '@/lib/octokit'
 import { uniqBy } from 'lodash-es'
 
-const user = 'tus'
-const repos = [
-  'tus.io',
-  'tusd',
-  'tus-js-client',
-  'TUSKit',
-  'tus-android-client',
-  'tus-java-client',
-  'tus-node-server',
-  'tus-resumable-upload-protocol',
-]
-
-const issues = await getGitHubData('GET /repos/{owner}/{repo}/issues', {
-  state: 'all',
-})
-
-const comments = await getGitHubData(
-  'GET /repos/{owner}/{repo}/issues/comments',
-  {
-    sort: 'created',
-    direction: 'desc',
-  }
+const collaborators = (
+  await Promise.all(
+    repos
+      .map((repo) => [
+        octokit.paginate(
+          octokit.rest.issues.listForRepo,
+          {
+            owner: user,
+            repo: repo,
+            per_page: 100,
+            state: 'all',
+          },
+          (response) => response.data.map((d) => d.user)
+        ),
+        octokit.paginate(
+          octokit.rest.issues.listCommentsForRepo,
+          {
+            owner: user,
+            repo: repo,
+            per_page: 100,
+            sort: 'created',
+            direction: 'desc',
+          },
+          (response) => response.data.map((d) => d.user)
+        ),
+      ])
+      .flat()
+  )
 )
-
-const collaborators = []
-
-for (const issue of issues) {
-  collaborators.push(issue.user)
-}
-
-for (const comment of comments) {
-  collaborators.push(comment.user)
-}
+  .flat()
+  .filter((d) => d.type !== 'Bot')
 
 const uniqueCollaborators = uniqBy(collaborators, 'id')
 ---

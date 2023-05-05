@@ -1,8 +1,12 @@
 ---
 import '../styles/global.css'
-
 import TransloaditBar from '@/components/TransloaditBar'
 import Navigation from '@/components/Navigation'
+
+type Props = {
+  noindex?: boolean
+  title: string
+}
 
 let { noindex, title } = Astro.props
 if (Astro.url.pathname !== '/') {

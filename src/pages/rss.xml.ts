@@ -1,8 +1,9 @@
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
+import type { APIRoute } from 'astro'
 
-export async function get(context) {
+export const get: APIRoute = async (context) => {
   const blog = await getCollection('blog')
   return rss({
     title: 'tus.io',

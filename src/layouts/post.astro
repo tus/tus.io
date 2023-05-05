@@ -1,8 +1,14 @@
 ---
 import Layout from './default.astro'
+
+type Props = {
+  title: string
+}
+
+const { title } = Astro.props
 ---
 
-<Layout title={Astro.props.title}>
+<Layout title={title}>
   <article>
     <slot />
   </article>

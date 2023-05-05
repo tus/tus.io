@@ -3,5 +3,6 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.semanticHighlighting.enabled": true
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

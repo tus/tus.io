@@ -94,6 +94,9 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
       },
+      rules: {
+        'react/self-closing-comp': 'off',
+      },
     },
   ],
 }
