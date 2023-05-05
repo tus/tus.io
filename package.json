@@ -9,11 +9,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "concurrently \"npm:lint:*\"",
+    "lint:astro": "astro check",
     "lint:js": "eslint .",
     "lint:ts": "tsc",
     "lint:fmt": "prettier --check .",
     "inject": "concurrently \"npm:inject:*\"",
-    "inject:protocol": "sh scripts/inject-protocol.sh"
+    "inject:protocol": "scripts/inject-protocol.sh"
   },
   "devDependencies": {
     "@types/eslint": "^8.37.0",
