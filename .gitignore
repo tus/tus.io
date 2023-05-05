@@ -4,3 +4,4 @@ node_modules/
 .yarn/install-state.gz
 dist/
 .env
+.DS_Store
