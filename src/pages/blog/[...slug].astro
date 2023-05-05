@@ -1,82 +1,82 @@
 ---
-import Layout from "@/layouts/default.astro";
-import { getBlogPostSlug } from "@/lib/getBlogPostSlug";
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
-import authors from "@/data/authors.json";
-import PostContent from "@/components/PostContent.astro";
-import PageFooter from "@/components/PageFooter";
+import Layout from '@/layouts/default.astro'
+import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import authors from '@/data/authors.json'
+import PostContent from '@/components/PostContent.astro'
+import PageFooter from '@/components/PageFooter'
 
 interface Props {
-	post: CollectionEntry<"blog">;
+  post: CollectionEntry<'blog'>
 }
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
-	return posts.map((post) => ({
-		params: { slug: getBlogPostSlug(post.slug) },
-		props: { post },
-	}));
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { slug: getBlogPostSlug(post.slug) },
+    props: { post },
+  }))
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
+const { post } = Astro.props
+const { Content } = await post.render()
 
-const formatter = Intl.DateTimeFormat("en-US", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-});
+const formatter = Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 
-const author = authors[post.data.author];
+const author = authors[post.data.author]
 ---
 
 <Layout title={post.data.title}>
-	<article class="post">
-		<h1 class="title">{post.data.title}</h1>
-		<p class="meta">
-			Published on <time datetime={post.data.date.toISOString()}
-				>{formatter.format(post.data.date)}</time
-			> by{" "}
-			<a
-				href={author.web ? author.web : `https://twitter.com/${author.twitter}`}
-				rel="noopener noreferrer"
-				target="_blank"
-			>
-				{author.name}
-			</a>
-		</p>
+  <article class="post">
+    <h1 class="title">{post.data.title}</h1>
+    <p class="meta">
+      Published on <time datetime={post.data.date.toISOString()}
+        >{formatter.format(post.data.date)}</time
+      > by{' '}
+      <a
+        href={author.web ? author.web : `https://twitter.com/${author.twitter}`}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {author.name}
+      </a>
+    </p>
 
-		<PostContent>
-			<Content />
-		</PostContent>
-	</article>
+    <PostContent>
+      <Content />
+    </PostContent>
+  </article>
 
-	<PageFooter comments social />
+  <PageFooter comments social />
 </Layout>
 
 <style>
-	.post {
-		max-width: 50rem;
-		margin: 0 auto;
-		padding-inline: var(--space3);
-	}
+  .post {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
 
-	@media screen and (min-width: 768px) {
-		.post {
-			padding-inline: var(--space6);
-		}
-	}
+  @media screen and (min-width: 768px) {
+    .post {
+      padding-inline: var(--space6);
+    }
+  }
 
-	.title {
-		margin-block-end: var(--space3);
-	}
+  .title {
+    margin-block-end: var(--space3);
+  }
 
-	.meta {
-		color: var(--gray10);
-	}
+  .meta {
+    color: var(--gray10);
+  }
 
-	.meta time {
-		font-weight: 600;
-	}
+  .meta time {
+    font-weight: 600;
+  }
 </style>

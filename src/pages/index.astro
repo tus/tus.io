@@ -1,247 +1,247 @@
 ---
-import banner from "@/assets/banner.png";
-import BlogPosts from "@/components/Home/BlogPosts.astro";
-import Features from "@/components/Home/Features.astro";
-import Implementations from "@/components/Home/Implementations.astro";
-import Social from "@/components/Social";
-import TusOnGithub from "@/components/TusOnGithub";
-import VisuallyHidden from "@/components/VisuallyHidden";
-import logos from "@/data/logos.json";
-import press from "@/data/press.json";
-import { getGitHubActivity } from "@/lib/getGitHubActivity";
-import { getCollection } from "astro:content";
-import Layout from "../layouts/default.astro";
+import banner from '@/assets/banner.png'
+import BlogPosts from '@/components/Home/BlogPosts.astro'
+import Features from '@/components/Home/Features.astro'
+import Implementations from '@/components/Home/Implementations.astro'
+import Social from '@/components/Social'
+import TusOnGithub from '@/components/TusOnGithub'
+import VisuallyHidden from '@/components/VisuallyHidden'
+import logos from '@/data/logos.json'
+import press from '@/data/press.json'
+import { getGitHubActivity } from '@/lib/getGitHubActivity'
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/default.astro'
 
-const title = "tus - resumable file uploads";
+const title = 'tus - resumable file uploads'
 
-const posts = await getCollection("blog");
-const githubActivity = await getGitHubActivity();
+const posts = await getCollection('blog')
+const githubActivity = await getGitHubActivity()
 ---
 
 <Layout title={title}>
-	<section class="section intro">
-		<div class="container">
-			<h1>
-				<VisuallyHidden>tus – resumable file uploads</VisuallyHidden>
-				<img
-					class="banner"
-					src={banner.src}
-					width={banner.width}
-					height={banner.height}
-					loading="eager"
-					alt=""
-				/>
-			</h1>
-		</div>
+  <section class="section intro">
+    <div class="container">
+      <h1>
+        <VisuallyHidden>tus – resumable file uploads</VisuallyHidden>
+        <img
+          class="banner"
+          src={banner.src}
+          width={banner.width}
+          height={banner.height}
+          loading="eager"
+          alt=""
+        />
+      </h1>
+    </div>
 
-		<div class="mission">
-			<div class="container">
-				<p>
-					People are sharing more and more photos and videos every day. Mobile
-					networks remain fragile however. Platform APIs are also often a mess
-					and every project builds its own file uploader. There are a thousand
-					one-week projects that barely work, when all we need is one real
-					project. One project done right.
-				</p>
+    <div class="mission">
+      <div class="container">
+        <p>
+          People are sharing more and more photos and videos every day. Mobile
+          networks remain fragile however. Platform APIs are also often a mess
+          and every project builds its own file uploader. There are a thousand
+          one-week projects that barely work, when all we need is one real
+          project. One project done right.
+        </p>
 
-				<p>
-					We are the ones who are going to do this right. Our aim is to solve
-					the problem of unreliable file uploads once and for all. tus is a new
-					open{" "}
-					<a href="/protocols/resumable-upload.html">
-						protocol for resumable uploads
-					</a>{" "}
-					built on HTTP. It offers simple, cheap and reusable stacks for clients
-					and servers. It supports any language, any platform and any network.
-				</p>
+        <p>
+          We are the ones who are going to do this right. Our aim is to solve
+          the problem of unreliable file uploads once and for all. tus is a new
+          open{' '}
+          <a href="/protocols/resumable-upload.html">
+            protocol for resumable uploads
+          </a>{' '}
+          built on HTTP. It offers simple, cheap and reusable stacks for clients
+          and servers. It supports any language, any platform and any network.
+        </p>
 
-				<p>
-					It may seem to be an impossible dream. Perhaps that is because no-one
-					has managed to solve it yet. Still, we are confident and we are going
-					to give it our best shot.{" "}
-					<a target="" href="https://github.com/tus"> Join us on GitHub</a>{" "}
-					and help us make the world a better place. Say "No!" to lost cat videos!
-					Say "Yes!" to tus!
-				</p>
-			</div>
-		</div>
-	</section>
+        <p>
+          It may seem to be an impossible dream. Perhaps that is because no-one
+          has managed to solve it yet. Still, we are confident and we are going
+          to give it our best shot.{' '}
+          <a target="" href="https://github.com/tus"> Join us on GitHub</a>{' '}
+          and help us make the world a better place. Say "No!" to lost cat videos!
+          Say "Yes!" to tus!
+        </p>
+      </div>
+    </div>
+  </section>
 
-	<section class="section">
-		<Features />
-	</section>
+  <section class="section">
+    <Features />
+  </section>
 
-	<section class={"section centered social"}>
-		<div class="container">
-			<h2>Say Hello 👋</h2>
-			<p>
-				We are still actively improving the protocol and all of its
-				implementations. We welcome your involvement and are happy to answer any
-				question!
-			</p>
-			<Social centered />
-		</div>
-	</section>
+  <section class={'section centered social'}>
+    <div class="container">
+      <h2>Say Hello 👋</h2>
+      <p>
+        We are still actively improving the protocol and all of its
+        implementations. We welcome your involvement and are happy to answer any
+        question!
+      </p>
+      <Social centered />
+    </div>
+  </section>
 
-	<section class="section centered">
-		<Implementations />
-	</section>
+  <section class="section centered">
+    <Implementations />
+  </section>
 
-	<section class="section">
-		<div class="container">
-			<BlogPosts />
-		</div>
-	</section>
+  <section class="section">
+    <div class="container">
+      <BlogPosts />
+    </div>
+  </section>
 
-	<section class="section centered whoIsUsingTus">
-		<div class="container">
-			<h2>Who is using tus?</h2>
+  <section class="section centered whoIsUsingTus">
+    <div class="container">
+      <h2>Who is using tus?</h2>
 
-			<div class={"logos"}>
-				{
-					logos.slice(0, 5).map((logo) => (
-						<a key={logo.url} href={logo.url} class={"logo"}>
-							<img src={logo.src} alt={logo.name} loading="lazy" />
-						</a>
-					))
-				}
-			</div>
+      <div class={'logos'}>
+        {
+          logos.slice(0, 5).map((logo) => (
+            <a key={logo.url} href={logo.url} class={'logo'}>
+              <img src={logo.src} alt={logo.name} loading="lazy" />
+            </a>
+          ))
+        }
+      </div>
 
-			<p>
-				Do you also (plan to) use tus?{" "}
-				<a href="https://github.com/tus/tus.io/edit/main/src/data/logos.json">
-					Add your company
-				</a>
-			</p>
-		</div>
-	</section>
+      <p>
+        Do you also (plan to) use tus?{' '}
+        <a href="https://github.com/tus/tus.io/edit/main/src/data/logos.json">
+          Add your company
+        </a>
+      </p>
+    </div>
+  </section>
 
-	<section class={"section"}>
-		<div class="container">
-			<h2>tus on GitHub</h2>
-			<TusOnGithub githubActivity={githubActivity} />
-		</div>
-	</section>
+  <section class={'section'}>
+    <div class="container">
+      <h2>tus on GitHub</h2>
+      <TusOnGithub githubActivity={githubActivity} />
+    </div>
+  </section>
 
-	<section class="section centered">
-		<div class="container">
-			<h2>As seen on</h2>
-			<div class="logos">
-				{
-					press.map((p) => (
-						<a key={p.url} href={p.url} aria-title={p.name} class={"logo"}>
-							<img
-								src={p.src}
-								alt={`Logo of ${p.name}`}
-								loading="lazy"
-								decoding="async"
-							/>
-						</a>
-					))
-				}
-			</div>
-		</div>
-	</section>
+  <section class="section centered">
+    <div class="container">
+      <h2>As seen on</h2>
+      <div class="logos">
+        {
+          press.map((p) => (
+            <a key={p.url} href={p.url} aria-title={p.name} class={'logo'}>
+              <img
+                src={p.src}
+                alt={`Logo of ${p.name}`}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-	.section {
-		margin-bottom: 6rem;
-	}
+  .section {
+    margin-bottom: 6rem;
+  }
 
-	.container {
-		padding-inline: var(--space3);
-		max-width: 60rem;
-		margin: var(--space12) auto;
-	}
+  .container {
+    padding-inline: var(--space3);
+    max-width: 60rem;
+    margin: var(--space12) auto;
+  }
 
-	@media screen and (min-width: 768px) {
-		.container {
-			padding-inline: var(--space6);
-		}
-	}
+  @media screen and (min-width: 768px) {
+    .container {
+      padding-inline: var(--space6);
+    }
+  }
 
-	.centered {
-		text-align: center;
-	}
+  .centered {
+    text-align: center;
+  }
 
-	.intro {
-		background-color: white;
-	}
+  .intro {
+    background-color: white;
+  }
 
-	.intro .container {
-		max-width: 37.5rem;
-	}
+  .intro .container {
+    max-width: 37.5rem;
+  }
 
-	.intro h1 {
-		margin: var(--space10) 0;
-		border: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+  .intro h1 {
+    margin: var(--space10) 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-	.banner {
-		display: block;
-		animation: fade-in 1s;
-		object-fit: contain;
-		object-position: center;
-		max-width: 35rem;
-		width: 100%;
-		height: auto;
-	}
+  .banner {
+    display: block;
+    animation: fade-in 1s;
+    object-fit: contain;
+    object-position: center;
+    max-width: 35rem;
+    width: 100%;
+    height: auto;
+  }
 
-	.mission {
-		background-color: var(--gray2);
-		font-size: 1.125rem;
-		padding: var(--space10) 0;
-	}
+  .mission {
+    background-color: var(--gray2);
+    font-size: 1.125rem;
+    padding: var(--space10) 0;
+  }
 
-	.mission .container {
-		max-width: 44rem;
-		margin: 0 auto;
-	}
+  .mission .container {
+    max-width: 44rem;
+    margin: 0 auto;
+  }
 
-	@keyframes fade-in {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-	.social p {
-		margin-bottom: var(--space6);
-	}
+  .social p {
+    margin-bottom: var(--space6);
+  }
 
-	.whoIsUsingTus {
-		background-color: var(--gray2);
-		padding-block: var(--space8);
-	}
+  .whoIsUsingTus {
+    background-color: var(--gray2);
+    padding-block: var(--space8);
+  }
 
-	.whoIsUsingTus p {
-		margin-bottom: 0;
-	}
+  .whoIsUsingTus p {
+    margin-bottom: 0;
+  }
 
-	.logos {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: var(--space10);
-		margin: var(--space10) 0;
-	}
+  .logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space10);
+    margin: var(--space10) 0;
+  }
 
-	.logo {
-		height: 2rem;
-	}
+  .logo {
+    height: 2rem;
+  }
 
-	.logo img {
-		height: 100%;
-		width: auto;
-		object-fit: contain;
-		object-position: center;
-	}
+  .logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+  }
 </style>

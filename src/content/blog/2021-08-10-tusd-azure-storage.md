@@ -1,5 +1,5 @@
 ---
-title: "Uploading files to Azure Storage using tusd"
+title: 'Uploading files to Azure Storage using tusd'
 author: acconut
 date: 2021-08-10
 # slug: 2021/08/10/tusd-azure-storage/

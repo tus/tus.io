@@ -1,31 +1,31 @@
 ---
-import { ProtocolSelect } from "@/components/ProtocolSelect";
-import ProtocolLayout from "@/layouts/protocol.astro";
-import { getCollection } from "astro:content";
+import { ProtocolSelect } from '@/components/ProtocolSelect'
+import ProtocolLayout from '@/layouts/protocol.astro'
+import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
-	const protocols = await getCollection("protocols");
-	return protocols.map((p) => ({
-		params: { slug: `resumable-upload/${p.data.version.replaceAll(".", "-")}` },
-		props: { protocol: p },
-	}));
+  const protocols = await getCollection('protocols')
+  return protocols.map((p) => ({
+    params: { slug: `resumable-upload/${p.data.version.replaceAll('.', '-')}` },
+    props: { protocol: p },
+  }))
 }
 
-const protocols = await getCollection("protocols");
+const protocols = await getCollection('protocols')
 const currentVersion = protocols.find((p) => p.data.version_outdated === false)!
-	.data.version;
+  .data.version
 
-const { protocol } = Astro.props;
+const { protocol } = Astro.props
 
-const { title, noindex, version, version_outdated } = protocol.data;
-const { Content } = await protocol.render();
+const { title, noindex, version, version_outdated } = protocol.data
+const { Content } = await protocol.render()
 ---
 
 <ProtocolLayout
-	title="Protocol"
-	selectedVersion={version}
-	currentVersion={currentVersion}
-	noindex={noindex}
+  title="Protocol"
+  selectedVersion={version}
+  currentVersion={currentVersion}
+  noindex={noindex}
 >
-	<Content />
+  <Content />
 </ProtocolLayout>

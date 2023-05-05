@@ -1,8 +1,8 @@
 ---
-title: "How tus may help to save lives"
+title: 'How tus may help to save lives'
 meta_description: >-
   How reliable is uploading with tus? Don’t let us tell you, ask the Polish fire brigades who are using tus to relay information between   the command center and units in the field!
-visible_title: "How tus may help to save lives"
+visible_title: 'How tus may help to save lives'
 author: aj
 # redirect_from: /blog/2017/05/19/how-tus-may-help-to-save-lives/
 date: 2017-05-19

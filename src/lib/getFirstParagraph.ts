@@ -1,37 +1,37 @@
-import type { Root } from "hast";
-import remarkParse from "remark-parse";
-import rehypeStringify from "rehype-stringify";
-import { unified, type Plugin } from "unified";
-import remarkRehype from "remark-rehype";
+import type { Root } from 'hast'
+import remarkParse from 'remark-parse'
+import rehypeStringify from 'rehype-stringify'
+import { unified, type Plugin } from 'unified'
+import remarkRehype from 'remark-rehype'
 
 const extractFirstParagraph: Plugin<[], Root> = () => {
-	return (tree) => {
-		const root = tree;
+  return (tree) => {
+    const root = tree
 
-		const children = [];
+    const children = []
 
-		for (const node of root.children) {
-			if (node.type !== "paragraph") continue;
-			children.push(node);
-			break;
-		}
+    for (const node of root.children) {
+      if (node.type !== 'paragraph') continue
+      children.push(node)
+      break
+    }
 
-		root.children = children;
+    root.children = children
 
-		return root;
-	};
-};
+    return root
+  }
+}
 
 const markdownToFirstP = unified()
-	.use(remarkParse)
-	.use(extractFirstParagraph)
-	.use(remarkRehype)
-	.use(rehypeStringify);
+  .use(remarkParse)
+  .use(extractFirstParagraph)
+  .use(remarkRehype)
+  .use(rehypeStringify)
 
 export function getFirstParagraphContent(markdown: string) {
-	const shortcodeRe = /\{[^}]*\}/g;
+  const shortcodeRe = /\{[^}]*\}/g
 
-	const result = markdownToFirstP.processSync(markdown);
+  const result = markdownToFirstP.processSync(markdown)
 
-	return (result.value as string).replace(shortcodeRe, "");
+  return (result.value as string).replace(shortcodeRe, '')
 }

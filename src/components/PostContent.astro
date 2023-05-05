@@ -1,42 +1,42 @@
 <div>
-	<slot />
+  <slot />
 </div>
 
 <style>
-	div {
-		font-size: inherit;
-	}
+  div {
+    font-size: inherit;
+  }
 
-	div :global(h1, h2, h3) {
-		margin-top: 2.5em;
-	}
+  div :global(h1, h2, h3) {
+    margin-top: 2.5em;
+  }
 
-	div :global(h3) {
-		border-bottom: 1px solid var(--gray4);
-	}
+  div :global(h3) {
+    border-bottom: 1px solid var(--gray4);
+  }
 
-	div > :global(p:first-child) {
-		font-size: 1.25em;
-	}
+  div > :global(p:first-child) {
+    font-size: 1.25em;
+  }
 
-	div :global(code:not(pre code)) {
-		font-size: 0.9em;
-		background-color: var(--gray3);
-		padding: 0.1rem 0.2rem;
-		border: 1px solid var(--gray5);
-		border-radius: 4px;
-	}
+  div :global(code:not(pre code)) {
+    font-size: 0.9em;
+    background-color: var(--gray3);
+    padding: 0.1rem 0.2rem;
+    border: 1px solid var(--gray5);
+    border-radius: 4px;
+  }
 
-	div :global(.astro-code) {
-		font-size: 1rem;
-		padding: var(--space1) var(--space3);
-	}
+  div :global(.astro-code) {
+    font-size: 1rem;
+    padding: var(--space1) var(--space3);
+  }
 
-	div :global(ul, ol) {
-		padding-inline-start: var(--space4);
-	}
+  div :global(ul, ol) {
+    padding-inline-start: var(--space4);
+  }
 
-	div :global(li) {
-		margin-block-end: var(--space3);
-	}
+  div :global(li) {
+    margin-block-end: var(--space3);
+  }
 </style>

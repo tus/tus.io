@@ -1,0 +1,7 @@
+{
+  "eslint.validate": ["astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.semanticHighlighting.enabled": true
+  }
+}

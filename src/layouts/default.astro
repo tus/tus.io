@@ -1,66 +1,66 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css'
 
-import TransloaditBar from "@/components/TransloaditBar";
-import Navigation from "@/components/Navigation";
+import TransloaditBar from '@/components/TransloaditBar'
+import Navigation from '@/components/Navigation'
 
-let { noindex, title } = Astro.props;
-if (Astro.url.pathname !== "/") {
-	title += " | tus.io";
+let { noindex, title } = Astro.props
+if (Astro.url.pathname !== '/') {
+  title += ' | tus.io'
 }
 
-const currentPage = Astro.url.pathname;
+const currentPage = Astro.url.pathname
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="x-ua-compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="google-site-verification"
-			content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
-		/>
-		{noindex && <meta name="robots" content="noindex" />}
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
+    />
+    {noindex && <meta name="robots" content="noindex" />}
 
-		<link rel="icon" type="img/png" href="/images/favicon.png" />
-		<link rel="shortcut icon" href="/images/favicon.png" />
-		<link rel="apple-touch-icon" href="/images/favicon.png" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="img/png" href="/images/favicon.png" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
-		<link
-			rel="preload"
-			href="/fonts/IBMPlexSans-Regular.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/IBMPlexSans-Medium.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/IBMPlexSans-Bold.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin="anonymous"
-		/>
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
 
-		<title>{title}</title>
-	</head>
-	<body>
-		<TransloaditBar />
-		<Navigation client:load currentPage={currentPage} />
-		<slot />
-		<script
-			defer
-			data-domain="tus.io"
-			src="https://analytics.transloadit.com/js/plausible.js"
-		></script>
-	</body>
+    <title>{title}</title>
+  </head>
+  <body>
+    <TransloaditBar />
+    <Navigation client:load currentPage={currentPage} />
+    <slot />
+    <script
+      defer
+      data-domain="tus.io"
+      src="https://analytics.transloadit.com/js/plausible.js"
+    ></script>
+  </body>
 </html>

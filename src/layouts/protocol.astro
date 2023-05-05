@@ -1,96 +1,96 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "./default.astro";
-import { ProtocolSelect } from "@/components/ProtocolSelect";
+import { getCollection } from 'astro:content'
+import Layout from './default.astro'
+import { ProtocolSelect } from '@/components/ProtocolSelect'
 
-const protocols = await getCollection("protocols");
+const protocols = await getCollection('protocols')
 
-const { currentVersion, selectedVersion, noindex } = Astro.props;
+const { currentVersion, selectedVersion, noindex } = Astro.props
 ---
 
 <Layout title={Astro.props.title} noindex={noindex}>
-	<main>
-		<header>
-			<h1>Protocol</h1>
-			<div class="select">
-				<ProtocolSelect
-					client:load
-					protocols={protocols}
-					currentVersion={currentVersion}
-					selectedVersion={selectedVersion}
-				/>
-			</div>
-		</header>
+  <main>
+    <header>
+      <h1>Protocol</h1>
+      <div class="select">
+        <ProtocolSelect
+          client:load
+          protocols={protocols}
+          currentVersion={currentVersion}
+          selectedVersion={selectedVersion}
+        />
+      </div>
+    </header>
 
-		<p>
-			This document contains the specification for the tus protocol which lays
-			out exactly how tus clients and servers must behave. If you want a less
-			formal and more intuitive introduction, we recommend you to also have a
-			look at our <a href="/faq">FAQ</a>.
-		</p>
+    <p>
+      This document contains the specification for the tus protocol which lays
+      out exactly how tus clients and servers must behave. If you want a less
+      formal and more intuitive introduction, we recommend you to also have a
+      look at our <a href="/faq">FAQ</a>.
+    </p>
 
-		{
-			selectedVersion !== currentVersion && (
-				<p class="alert">
-					<b>Warning!</b> This is the specification for an old and outdated
-					version of tus, and should only be used for comparisions. The latest
-					version of the tus protocol can be found
-					<a href="/protocols/resumable-upload">here</a>.
-				</p>
-			)
-		}
-		<slot />
-	</main>
+    {
+      selectedVersion !== currentVersion && (
+        <p class="alert">
+          <b>Warning!</b> This is the specification for an old and outdated
+          version of tus, and should only be used for comparisions. The latest
+          version of the tus protocol can be found
+          <a href="/protocols/resumable-upload">here</a>.
+        </p>
+      )
+    }
+    <slot />
+  </main>
 </Layout>
 
 <style>
-	main {
-		max-width: 50rem;
-		margin: 0 auto;
-		padding-inline: var(--space3);
-	}
+  main {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
 
-	@media screen and (min-width: 768px) {
-		main {
-			padding-inline: var(--space6);
-		}
-	}
+  @media screen and (min-width: 768px) {
+    main {
+      padding-inline: var(--space6);
+    }
+  }
 
-	header {
-		position: relative;
-	}
+  header {
+    position: relative;
+  }
 
-	.select {
-		position: absolute;
-		inset-block-start: 50%;
-		inset-inline-end: 0;
-		transform: translateY(-50%);
-	}
+  .select {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: 0;
+    transform: translateY(-50%);
+  }
 
-	main > p:first-of-type {
-		font-size: 1.25em;
-	}
+  main > p:first-of-type {
+    font-size: 1.25em;
+  }
 
-	main :global(h2, h3, h4) {
-		margin-top: 2.5em;
-	}
+  main :global(h2, h3, h4) {
+    margin-top: 2.5em;
+  }
 
-	main :global(ol, ul) {
-		padding-inline-start: var(--space5);
-	}
+  main :global(ol, ul) {
+    padding-inline-start: var(--space5);
+  }
 
-	main :global(ul) {
-		list-style: disc outside;
-		padding-inline-start: var(--space5);
-	}
+  main :global(ul) {
+    list-style: disc outside;
+    padding-inline-start: var(--space5);
+  }
 
-	main :global(ol) {
-		list-style: decimal inside;
-	}
+  main :global(ol) {
+    list-style: decimal inside;
+  }
 
-	.alert {
-		padding: var(--space4) var(--space6);
-		border: 1px solid var(--yellow1);
-		border-radius: var(--space1);
-	}
+  .alert {
+    padding: var(--space4) var(--space6);
+    border: 1px solid var(--yellow1);
+    border-radius: var(--space1);
+  }
 </style>

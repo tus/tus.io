@@ -1,5 +1,5 @@
 ---
-title: "Announcing the tus Advisory Group"
+title: 'Announcing the tus Advisory Group'
 author: acconut
 # redirect_from: /blog/2020/11/12/tus-advisory-group/
 date: 2020-11-12
