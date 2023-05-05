@@ -1,9 +1,9 @@
 ---
+import authors from '@/data/authors.json'
+import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import { getCollection } from 'astro:content'
 const posts = await getCollection('blog')
 const lastFivePosts = posts.reverse().slice(0, 5)
-import authors from '@/data/authors.json'
-import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 
 const formatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -17,9 +17,9 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 <ol class={'posts'}>
   {
     lastFivePosts.map((p) => {
-      const author = authors[p.data.author]
+      const author = authors[p.data.author as keyof typeof authors]
       return (
-        <li key={p.url}>
+        <li key={p.slug}>
           <article class={'post'}>
             <div class={'postContent'}>
               <h3>
@@ -31,7 +31,15 @@ const formatter = new Intl.DateTimeFormat('en-US', {
             </div>
 
             <a
-              href={`https://twitter.com/${author.twitter}`}
+              href={
+                'twitter' in author
+                  ? `https://twitter.com/${author.twitter}`
+                  : 'web' in author
+                  ? author.web
+                  : author.link ?? ''
+              }
+              target="_blank"
+              rel="noopener noreferrer"
               aria-title={author.name}
               class={'author'}
             >
@@ -68,9 +76,13 @@ const formatter = new Intl.DateTimeFormat('en-US', {
     gap: var(--space5);
   }
 
+  .posts li {
+    margin-block-end: 0;
+  }
+
   .posts li:not(:last-of-type) {
-    border-bottom: 1px solid var(--gray4);
-    padding-bottom: var(--space4);
+    border-block-end: 1px solid var(--gray4);
+    padding-block-end: var(--space4);
   }
 
   .postContent {

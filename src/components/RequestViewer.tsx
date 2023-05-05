@@ -1,5 +1,5 @@
-import { effect, signal } from '@preact/signals'
-import { useEffect } from 'preact/hooks'
+/* eslint-disable @typescript-eslint/unbound-method */
+import { signal } from '@preact/signals'
 import styles from './RequestViewer.module.css'
 
 declare global {
@@ -12,6 +12,11 @@ declare global {
       time: Date
       bodySize: number
       isTusRequest: boolean
+    }
+    _responseDetails: {
+      status: string
+      headers: string[]
+      time: Date
     }
   }
 }
@@ -74,7 +79,7 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
       return
     }
 
-    if (data !== null) {
+    if (data !== null && 'size' in data) {
       this._requestDetails.bodySize = data.size
     }
 
@@ -82,7 +87,7 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
 
     this.addEventListener('load', () => {
       this._responseDetails = {
-        status: this.status + ' ' + this.statusText,
+        status: `${this.status} ${this.statusText}`,
         headers: [],
         time: new Date(),
       }
@@ -128,7 +133,7 @@ export function RequestViewer() {
               <div class={styles.requestInfo}>
                 <div class={styles.headers}>
                   {req.headers.map((h) => (
-                    <p>{h}</p>
+                    <p key={h}>{h}</p>
                   ))}
                 </div>
 
@@ -150,7 +155,7 @@ export function RequestViewer() {
                     {res.status}
                     <div class={styles.headers}>
                       {res.headers.map((h) => (
-                        <p>{h}</p>
+                        <p key={h}>{h}</p>
                       ))}
                     </div>
                   </div>

@@ -1,10 +1,9 @@
-import tusWordmark from '@/assets/wordmark.png'
 import tusLogo from '@/assets/logo.png'
+import tusWordmark from '@/assets/wordmark.png'
 import { computed, signal } from '@preact/signals'
-import styles from './style.module.css'
-import { useEffect, useRef } from 'preact/hooks'
 import cx from 'clsx'
-import VisuallyHidden from '../VisuallyHidden'
+import { useEffect, useRef } from 'preact/hooks'
+import styles from './style.module.css'
 
 const expanded = signal(false)
 const hidden = computed(() => !expanded.value)

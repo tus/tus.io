@@ -1,10 +1,10 @@
 import * as tus from 'tus-js-client'
 import ago from 's-ago'
 import { signal } from '@preact/signals'
-import { useCallback, useId, useState } from 'preact/hooks'
+import { useCallback, useId } from 'preact/hooks'
 import type { ChangeEvent } from 'preact/compat'
 import styles from './UploadDemo.module.css'
-import { formatBytes } from '@/lib/formatBytes'
+import prettyBytes from 'pretty-bytes'
 import clsx from 'clsx'
 
 const supported = signal(tus.isSupported)
@@ -20,14 +20,14 @@ const progress = signal<string>('')
 export function UploadDemo() {
   const id = useId()
 
-  const startUpload = useCallback(async () => {
+  const startUpload = useCallback(() => {
     upload.value.options.onError = (error) => {
       console.log('demo: error', error)
 
       if (error.originalRequest) {
         const text = `The upload was interrupted by a network failure or server error. Usually, this failure will disappear by retrying the upload. If the error does not disappear, please contact us.
 
-Details: ${error}
+Details: ${error.message}
 
 Do you want to retry the upload?`
 
@@ -36,7 +36,7 @@ Do you want to retry the upload?`
           return
         }
       } else {
-        window.alert('Failed because: ' + error)
+        window.alert('Failed because: ' + error.message)
       }
 
       isUploadRunning.value = false
@@ -47,7 +47,7 @@ Do you want to retry the upload?`
       progressBarWidth.value =
         ((bytesUploaded / bytesTotal) * 100).toFixed(2) + '%'
 
-      progress.value = `Uploaded ${formatBytes(bytesUploaded)} of ${formatBytes(
+      progress.value = `Uploaded ${prettyBytes(bytesUploaded)} of ${prettyBytes(
         bytesTotal
       )} (${progressBarWidth.value})`
 
@@ -68,54 +68,57 @@ Do you want to retry the upload?`
     showUploadProgress.value = true
     isUploadRunning.value = true
     upload.value.start()
-  })
-
-  const handleChange = useCallback(async (event: ChangeEvent) => {
-    if (!(event.target instanceof HTMLInputElement)) return
-
-    const file: File = event.target.files[0]
-
-    // Only continue if a file has actually been selected.
-    // IE will trigger a change event even if we reset the input element
-    // using reset() and we do not want to blow up later.
-    if (!file) return
-
-    console.log('demo: selected file', file)
-
-    const options = {
-      endpoint: 'https://tusd.tusdemo.net/files/',
-      metadata: {
-        filename: file.name,
-        filetype: file.type,
-      },
-      addRequestId: true,
-    }
-
-    const newUpload = new tus.Upload(file, options)
-
-    const allPreviousUploads = await newUpload.findPreviousUploads()
-
-    // We only want to consider uploads that were started within the last three hours.
-    const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000
-
-    const lastThreeHrsPrevUploads = allPreviousUploads
-      .map((upload) => {
-        upload.creationTime = new Date(upload.creationTime)
-        return upload
-      })
-      .filter((upload) => upload.creationTime > threeHoursAgo)
-      .sort((a, b) => b.creationTime - a.creationTime)
-
-    upload.value = newUpload
-    previousUploads.value = lastThreeHrsPrevUploads
-
-    if (lastThreeHrsPrevUploads.length === 0) {
-      startUpload(upload.value)
-      return
-    }
-
-    showPreviousUploads.value = true
   }, [])
+
+  const handleChange = useCallback(
+    async (event: ChangeEvent) => {
+      if (!(event.target instanceof HTMLInputElement)) return
+
+      const file: File = event.target.files[0]
+
+      // Only continue if a file has actually been selected.
+      // IE will trigger a change event even if we reset the input element
+      // using reset() and we do not want to blow up later.
+      if (!file) return
+
+      console.log('demo: selected file', file)
+
+      const options = {
+        endpoint: 'https://tusd.tusdemo.net/files/',
+        metadata: {
+          filename: file.name,
+          filetype: file.type,
+        },
+        addRequestId: true,
+      }
+
+      const newUpload = new tus.Upload(file, options)
+
+      const allPreviousUploads = await newUpload.findPreviousUploads()
+
+      // We only want to consider uploads that were started within the last three hours.
+      const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000
+
+      const lastThreeHrsPrevUploads = allPreviousUploads
+        .map((upload) => {
+          upload.creationTime = new Date(upload.creationTime)
+          return upload
+        })
+        .filter((upload) => upload.creationTime > threeHoursAgo)
+        .sort((a, b) => b.creationTime - a.creationTime)
+
+      upload.value = newUpload
+      previousUploads.value = lastThreeHrsPrevUploads
+
+      if (lastThreeHrsPrevUploads.length === 0) {
+        startUpload(upload.value)
+        return
+      }
+
+      showPreviousUploads.value = true
+    },
+    [startUpload]
+  )
 
   return (
     <>
@@ -144,7 +147,13 @@ Do you want to retry the upload?`
                 <label class={styles.label} htmlFor={id}>
                   Select a file you want to upload
                 </label>
-                <input id={id} type="file" onChange={handleChange} />
+                <input
+                  id={id}
+                  type="file"
+                  onChange={(event) => {
+                    void handleChange(event)
+                  }}
+                />
               </>
             )}
 
@@ -175,7 +184,7 @@ Do you want to retry the upload?`
                         class={styles.button}
                         onClick={() => {
                           if (isUploadRunning.value) {
-                            upload.value.abort()
+                            void upload.value.abort()
                             isUploadRunning.value = false
                           } else {
                             upload.value.start()
@@ -233,7 +242,8 @@ Do you want to retry the upload?`
                         rel="noreferrer"
                       >
                         Download {upload.value.file.name} (
-                        {formatBytes(upload.value.file.size)})
+                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
+                        {prettyBytes(upload.value.file.size)})
                       </a>
                       or
                       <button

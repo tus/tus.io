@@ -6,6 +6,7 @@ import authors from '@/data/authors.json'
 import PostContent from '@/components/PostContent.astro'
 import PageFooter from '@/components/PageFooter'
 import type { InferGetStaticPropsType } from 'astro'
+import { ExternalA } from '@/components/ExternalA'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -36,17 +37,15 @@ const author = authors[post.data.author as keyof typeof authors]
       Published on <time datetime={post.data.date.toISOString()}
         >{formatter.format(post.data.date)}</time
       > by{' '}
-      <a
-        href={'web' in author
-          ? author.web
-          : 'twitter' in author
+      <ExternalA
+        href={'twitter' in author
           ? `https://twitter.com/${author.twitter}`
-          : undefined}
-        rel="noopener noreferrer"
-        target="_blank"
+          : 'web' in author
+          ? author.web
+          : author.link ?? ''}
       >
         {author.name}
-      </a>
+      </ExternalA>
     </p>
 
     <PostContent>

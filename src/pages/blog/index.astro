@@ -27,7 +27,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
           const author = authors[post.data.author as keyof typeof authors]
 
           return (
-            <li class="item">
+            <li key={post.id} class="item">
               <article class="post">
                 <a href={`/blog/${getBlogPostSlug(post.slug)}`} class="title">
                   <h2>{post.data.title}</h2>
@@ -36,9 +36,11 @@ const formatter = new Intl.DateTimeFormat('en-US', {
                   Published on {formatter.format(post.data.date)} by{' '}
                   <ExternalA
                     href={
-                      author.twitter
+                      'twitter' in author
                         ? `https://twitter.com/${author.twitter}`
-                        : author.web ?? author.link
+                        : 'web' in author
+                        ? author.web
+                        : author.link ?? ''
                     }
                   >
                     {author.name}

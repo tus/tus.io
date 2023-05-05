@@ -15,21 +15,22 @@ export function ProtocolSelect(props: ProtocolSelectProps) {
       <select
         class={styles.select}
         onChange={(event) => {
-          const version = event.target.options[event.target.selectedIndex].value
-          const slug = version.replaceAll('.', '-')
-
-          if (version === currentVersion) {
+          if (event.target.value === currentVersion) {
             window.location.href = `/protocols/resumable-upload/`
             return
           }
 
+          const version = event.target.value as string
+          if (typeof version !== 'string') return
+
+          const slug = version.replaceAll('.', '-')
           window.location.href = `/protocols/resumable-upload/${slug}`
         }}
       >
         {protocols.map((option) => (
           <option
             key={option.id}
-            value={option.version}
+            value={option.data.version}
             selected={option.data.version === selectedVersion}
           >
             {option.data.version}
