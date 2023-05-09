@@ -20,6 +20,8 @@
 }
 
 :root {
+  scroll-behavior: smooth;
+
   --space1: 0.25rem;
   --space2: 0.5rem;
   --space3: 0.75rem;
@@ -182,6 +184,25 @@ li {
   margin-block-end: var(--space3);
 }
 
+/* styles for autolinked headings by rehype-autolink-headings */
+:where(h1, h2, h3, h4, h5, h6) a[href^='#'] {
+  margin-left: var(--space2);
+  display: inline-flex;
+  align-items: center;
+  visibility: hidden;
+  color: inherit;
+}
+
+:where(h1, h2, h3, h4, h5, h6) a[href^='#'] svg {
+  width: auto;
+  height: 0.75em;
+}
+
+:where(h1, h2, h3, h4, h5, h6):hover a[href^='#'] {
+  visibility: visible;
+}
+
+/* make sure we always show color emojis, not Unicode emojis */
 [aria-label~='emoji'] {
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols';
