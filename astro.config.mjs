@@ -15,6 +15,9 @@ export default defineConfig({
     sitemap(),
     mdx(),
   ],
+  build: {
+    format: 'file',
+  },
   experimental: {
     assets: true,
   },
