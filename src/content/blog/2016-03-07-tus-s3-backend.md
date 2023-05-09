@@ -1,7 +1,7 @@
 ---
 title: 'S3 as a Storage Back-End'
 author: acconut
-# redirect_from: /blog/2016/03/07/tus-s3-backend/
+redirect_from: /blog/2016/03/07/tus-s3-backend/
 date: 2016-03-07
 ---
 

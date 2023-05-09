@@ -1,0 +1,49 @@
+---
+import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return [
+    { params: { redirect: 'guide' }, props: { redirectTo: 'faq' } },
+    { params: { redirect: 'about' }, props: { redirectTo: 'support' } },
+    ...posts
+      .filter((post) => !!post.data.redirect_from)
+      .map((post) => {
+        let redirect = post.data.redirect_from! + 'index'
+        if (redirect.startsWith('/')) {
+          // remove the preceding slash
+          redirect = redirect.slice(1)
+        }
+
+        return {
+          params: { redirect },
+          props: { redirectTo: `blog/${getBlogPostSlug(post.slug)}` },
+        }
+      }),
+  ]
+}
+
+type Props = {
+  redirectTo: string
+}
+
+const { redirectTo } = Astro.props
+
+const destination = `${Astro.url.origin}/${redirectTo}`
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    If you are not redirected automatically, click <a href="${destination}"
+      >here</a
+    >.
+  </body>
+</html>

@@ -6,6 +6,7 @@ const blog = defineCollection({
     author: z.string(),
     date: z.date(),
     meta_description: z.string().optional(),
+    redirect_from: z.string().optional(),
   }),
 })
 

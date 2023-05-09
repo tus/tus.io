@@ -1,8 +1,7 @@
 ---
 title: Project Status
-# comments: true
 author: kvz
-# redirect_from: /blog/2015/09/19/project-status/
+redirect_from: /blog/2015/09/19/project-status/
 date: 2015-09-19
 ---
 

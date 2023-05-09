@@ -1,8 +1,7 @@
 ---
 title: Hello world
-# comments: true
 author: kvz
-# redirect_from: /blog/2013/04/06/hello-world/
+redirect_from: /blog/2013/04/06/hello-world/
 date: 2013-04-06
 ---
 
