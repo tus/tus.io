@@ -36,8 +36,8 @@ export default defineConfig({
     assets: true,
   },
   markdown: {
-    // See https://github.com/remarkjs/remark-toc
     remarkPlugins: [
+      // See https://github.com/remarkjs/remark-toc
       [remarkToc, { tight: true, maxDepth: 2, ordered: true }],
       [remarkEmoji, { accessible: true, emoticon: true }],
     ],
