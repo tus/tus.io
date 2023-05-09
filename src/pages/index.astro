@@ -10,6 +10,7 @@ import logos from '@/data/logos.json'
 import press from '@/data/press.json'
 import { getGitHubActivity } from '@/lib/getGitHubActivity'
 import Layout from '../layouts/default.astro'
+import Emoji from '@/components/Emoji.astro'
 
 const title = 'tus - resumable file uploads'
 const githubActivity = await getGitHubActivity()
@@ -70,7 +71,7 @@ const githubActivity = await getGitHubActivity()
 
   <section class={'section centered social'}>
     <div class="container">
-      <h2>Say Hello 👋</h2>
+      <h2>Say Hello <Emoji label="waving hand">👋</Emoji></h2>
       <p>
         We are still actively improving the protocol and all of its
         implementations. We welcome your involvement and are happy to answer any

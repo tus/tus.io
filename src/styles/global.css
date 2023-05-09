@@ -181,3 +181,8 @@ ul {
 li {
   margin-block-end: var(--space3);
 }
+
+[aria-label~='emoji'] {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols';
+}
