@@ -28,16 +28,13 @@
   flex-flow: row nowrap;
   align-items: center;
   gap: var(--space2);
-  height: 2rem;
+  height: 100%;
+  padding: var(--space3) 0;
 }
 
-.home img {
-  max-height: 100%;
+.logo {
+  height: 100%;
   width: auto;
-}
-
-.wordmark {
-  height: var(--space6);
 }
 
 .toggle {

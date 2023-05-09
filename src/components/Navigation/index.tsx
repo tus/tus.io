@@ -1,9 +1,9 @@
-import tusLogo from '@/assets/logo.png'
-import tusWordmark from '@/assets/wordmark.png'
+import logo from '@/assets/logos-tus-default.svg'
 import { computed, signal } from '@preact/signals'
 import cx from 'clsx'
 import { useEffect, useRef } from 'preact/hooks'
 import styles from './style.module.css'
+import VisuallyHidden from '../VisuallyHidden'
 
 const expanded = signal(false)
 const hidden = computed(() => !expanded.value)
@@ -51,20 +51,13 @@ export default function Navigation(props: NavigationProps) {
     <header class={styles.root}>
       <div>
         <a href="/" class={styles.home}>
-          {currentPage !== '/' && (
-            <img
-              src={tusLogo.src}
-              width={tusLogo.width}
-              height={tusLogo.height}
-              alt=""
-            />
-          )}
+          <VisuallyHidden>Home</VisuallyHidden>
           <img
-            class={styles.wordmark}
-            src={tusWordmark.src}
-            width={tusWordmark.width}
-            height={tusWordmark.height}
-            alt="tus"
+            class={styles.logo}
+            src={logo.src}
+            width={logo.width}
+            height={logo.height}
+            alt="tus.io logo"
           />
         </a>
         <nav ref={nav}>

@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import TransloaditBar from '@/components/TransloaditBar'
 import Navigation from '@/components/Navigation'
+import favicon from '@/assets/logos-tus-default-glyph.svg'
 
 type Props = {
   noindex?: boolean
@@ -28,9 +29,9 @@ const currentPage = Astro.url.pathname
     />
     {noindex && <meta name="robots" content="noindex" />}
 
-    <link rel="icon" type="img/png" href="/images/favicon.png" />
-    <link rel="shortcut icon" href="/images/favicon.png" />
-    <link rel="apple-touch-icon" href="/images/favicon.png" />
+    <link rel="icon" href={favicon.src} />
+    <link rel="shortcut icon" href={favicon.src} />
+    <link rel="apple-touch-icon" href={favicon.src} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link
