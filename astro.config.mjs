@@ -45,7 +45,11 @@ export default defineConfig({
       rehypeHeadingIds,
       [
         rehypeAutolinkHeadings,
-        { behavior: 'append', content: () => AnchorIcon },
+        {
+          behavior: 'append',
+          content: () => AnchorIcon,
+          test: ['h2', 'h3', 'h4', 'h5', 'h6'], // don't link h1's
+        },
       ],
     ],
     shikiConfig: {
