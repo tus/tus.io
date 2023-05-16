@@ -1,0 +1,71 @@
+---
+import Social from './Social.astro'
+
+type Props = {
+  comments?: boolean
+  social?: boolean
+}
+
+const { comments, social } = Astro.props
+---
+
+<div class={'root'}>
+  <footer class={'footer'}>
+    {
+      social && (
+        <div class={'social'}>
+          <p>Subscribe to, or say hello to our community</p>
+          <Social includeRss />
+        </div>
+      )
+    }
+
+    {
+      comments && (
+        <div class={'comments'}>
+          <p>
+            Do you have a comment? Let us know in the{' '}
+            <a href="https://community.transloadit.com/c/tus">forum</a> or on{' '}
+            <a
+              href="https://twitter.com/tus_io/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Twitter
+            </a>
+            .
+          </p>
+        </div>
+      )
+    }
+  </footer>
+</div>
+
+<style>
+  .root {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
+
+  @media screen and (min-width: 768px) {
+    .root {
+      padding-inline: var(--space6);
+    }
+  }
+
+  .footer {
+    padding-block: var(--space10);
+  }
+
+  .social p {
+    font-weight: 500;
+    margin-block-end: var(--space2);
+  }
+
+  .social,
+  .comments {
+    border-block-start: 1px solid var(--gray4);
+    padding-block: var(--space10);
+  }
+</style>

@@ -1,11 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '@/layouts/default.astro'
-import authors from '@/data/authors.json'
 import { ExternalA } from '@/components/ExternalA'
-import { getFirstParagraphContent } from '@/lib/getFirstParagraph'
-import PageFooter from '@/components/PageFooter'
+import PageFooter from '@/components/PageFooter.astro'
+import authors from '@/data/authors.json'
+import Layout from '@/layouts/default.astro'
+import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
+import { getFirstParagraphContent } from '@/lib/getFirstParagraph'
+import { getCollection } from 'astro:content'
 
 const title = 'Blog'
 
@@ -27,22 +28,14 @@ const formatter = new Intl.DateTimeFormat('en-US', {
           const author = authors[post.data.author as keyof typeof authors]
 
           return (
-            <li key={post.id} class="item">
+            <li class="item">
               <article class="post">
                 <a href={`/blog/${getBlogPostSlug(post.slug)}`} class="title">
                   <h2>{post.data.title}</h2>
                 </a>
                 <p class={'meta'}>
                   Published on {formatter.format(post.data.date)} by{' '}
-                  <ExternalA
-                    href={
-                      'twitter' in author
-                        ? `https://twitter.com/${author.twitter}`
-                        : 'web' in author
-                        ? author.web
-                        : author.link ?? ''
-                    }
-                  >
+                  <ExternalA href={getAuthorHref(author)}>
                     {author.name}
                   </ExternalA>
                 </p>

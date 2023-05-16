@@ -9,6 +9,7 @@ type ProtocolSelectProps = {
 
 export function ProtocolSelect(props: ProtocolSelectProps) {
   const { protocols, currentVersion, selectedVersion } = props
+
   return (
     <label class={styles.label}>
       Version{' '}

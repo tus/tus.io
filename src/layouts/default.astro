@@ -1,15 +1,17 @@
 ---
 import '../styles/global.css'
-import TransloaditBar from '@/components/TransloaditBar'
+
+import TransloaditBar from '@/components/TransloaditBar.astro'
 import Navigation from '@/components/Navigation'
 import favicon from '@/assets/logos-tus-default-glyph.svg'
 
 type Props = {
+  canonicalHref?: string
   noindex?: boolean
   title: string
 }
 
-let { noindex, title } = Astro.props
+let { canonicalHref, noindex, title } = Astro.props
 if (Astro.url.pathname !== '/') {
   title += ' | tus.io'
 }
@@ -28,6 +30,7 @@ const currentPage = Astro.url.pathname
       content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
     />
     {noindex && <meta name="robots" content="noindex" />}
+    {canonicalHref && <link rel="canonical" href={canonicalHref} />}
 
     <link rel="icon" href={favicon.src} />
     <link rel="shortcut icon" href={favicon.src} />

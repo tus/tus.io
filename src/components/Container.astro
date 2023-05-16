@@ -1,0 +1,27 @@
+---
+import clsx from 'clsx'
+
+type Props = {
+  className?: string
+}
+
+const { className } = Astro.props
+---
+
+<div class={clsx('container', className)}>
+  <slot />
+</div>
+
+<style>
+  .container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding-inline: var(--space6);
+    }
+  }
+</style>

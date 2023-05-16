@@ -21,7 +21,6 @@ const currentVersion = (
 )[0].data.version
 
 const { protocol } = Astro.props
-
 const { noindex, version } = protocol.data
 const { Content } = await protocol.render()
 ---

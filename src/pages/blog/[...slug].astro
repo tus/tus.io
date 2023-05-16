@@ -1,12 +1,13 @@
 ---
-import Layout from '@/layouts/default.astro'
-import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
-import { getCollection } from 'astro:content'
-import authors from '@/data/authors.json'
-import PostContent from '@/components/PostContent.astro'
-import PageFooter from '@/components/PageFooter'
-import type { InferGetStaticPropsType } from 'astro'
 import { ExternalA } from '@/components/ExternalA'
+import PageFooter from '@/components/PageFooter.astro'
+import PostContent from '@/components/PostContent.astro'
+import authors from '@/data/authors.json'
+import Layout from '@/layouts/default.astro'
+import { getAuthorHref } from '@/lib/getAuthorHref'
+import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
+import type { InferGetStaticParamsType, InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -17,7 +18,9 @@ export async function getStaticPaths() {
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
+type Params = InferGetStaticParamsType<typeof getStaticPaths>
 
+const { slug } = Astro.params as Params
 const { post } = Astro.props
 const { Content } = await post.render()
 
@@ -30,20 +33,14 @@ const formatter = Intl.DateTimeFormat('en-US', {
 const author = authors[post.data.author as keyof typeof authors]
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} canonicalHref={`/blog/${slug}`}>
   <article class="post">
     <h1 class="title">{post.data.title}</h1>
     <p class="meta">
       Published on <time datetime={post.data.date.toISOString()}
         >{formatter.format(post.data.date)}</time
       > by{' '}
-      <ExternalA
-        href={'twitter' in author
-          ? `https://twitter.com/${author.twitter}`
-          : 'web' in author
-          ? author.web
-          : author.link ?? ''}
-      >
+      <ExternalA href={getAuthorHref(author)}>
         {author.name}
       </ExternalA>
     </p>

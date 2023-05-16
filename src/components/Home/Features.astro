@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
 import Feature from './Feature.astro'
+
 const features = await getCollection('features')
 features.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <div class="features">
-  {features.map((feature) => <Feature key={feature.id} feature={feature} />)}
+  {features.map((feature) => <Feature feature={feature} />)}
 </div>
 
 <style>

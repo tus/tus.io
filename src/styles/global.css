@@ -77,6 +77,8 @@ body {
 a {
   color: var(--green1);
   text-decoration: none;
+  text-decoration-skip: spaces;
+  text-decoration-skip-ink: auto;
 }
 
 a:hover {

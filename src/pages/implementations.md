@@ -5,17 +5,13 @@ title: Implementations
 
 # Implementations
 
-Here are some real-life implementations of the tus resumable upload [protocol](/protocols/resumable-upload) in different languages
-and platforms.
+Here are some real-life implementations of the tus resumable upload [protocol](/protocols/resumable-upload) in different languages and platforms.
 
 ## Uppy
 
 Some special attention should go to [Uppy](https://uppy.io) which is a full-featured
 file uploader for web browsers that supports tus. Just like tus, Uppy is
-brought to you by the people behind <a href="https://transloadit.com"><img
-  src="/images/transloadit-logo.png"
-  align="absmiddle" width="16" height="16"></a><a style="text-decoration: none;" href="https://transloadit.com">
-</a><a href="https://transloadit.com">Transloadit</a> and represents their take on
+brought to you by the people behind <a href="https://transloadit.com"><img src="/images/transloadit-logo.png" align="baseline" width="16" height="16" loading="lazy" alt="" style="margin-right: var(--space1);" />Transloadit</a> and represents their take on
 how to use tus technology in user-facing products.
 
 For core implementations with a smaller footprint or non-web browser use, read on.

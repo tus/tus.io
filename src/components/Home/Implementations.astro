@@ -7,7 +7,7 @@ import implementations from '@/data/implementations.json'
 <div class={'implementations'}>
   {
     implementations.map((d) => (
-      <article key={d.name} class={'implementation'}>
+      <article class={'implementation'}>
         <a href={`https://github.com/${d.repo}`}>
           <img
             src={`/images/${d.icon}.svg`}
