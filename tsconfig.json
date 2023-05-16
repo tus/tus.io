@@ -20,6 +20,7 @@
     "./types/**/*",
     ".eslintrc.js",
     "astro.config.mjs",
-    "prettier.config.js"
+    "prettier.config.js",
+    "postcss.config.cjs"
   ]
 }
