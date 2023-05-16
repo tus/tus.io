@@ -1,3 +1,4 @@
+import type { RemarkPlugin } from '@astrojs/markdown-remark'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
@@ -50,7 +51,7 @@ export default defineConfig({
     remarkPlugins: [
       // See https://github.com/remarkjs/remark-toc
       [remarkToc, { tight: true, maxDepth: 2, ordered: true }],
-      [remarkEmoji, { accessible: true, emoticon: true }],
+      [remarkEmoji as RemarkPlugin, { accessible: true, emoticon: true }],
     ],
     rehypePlugins: [
       rehypeHeadingIds,

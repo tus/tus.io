@@ -1,8 +1,9 @@
 ---
 import { octokit, user, repos } from '@/lib/octokit'
 import { uniqBy } from 'lodash-es'
+import { isPresent } from 'ts-is-present'
 
-const collaborators = (
+const data = (
   await Promise.all(
     repos
       .map((repo) => [
@@ -32,31 +33,36 @@ const collaborators = (
   )
 )
   .flat()
-  .filter((d) => d.type !== 'Bot')
+  .filter((d) => d?.type !== 'Bot')
+  .filter(isPresent)
 
-const uniqueCollaborators = uniqBy(collaborators, 'id')
+const collaborators = uniqBy(data, 'id').map((c) => ({
+  html_url: c.html_url,
+  avatar_url: c.avatar_url,
+  login: c.login,
+  name: c.name,
+}))
 ---
 
-<h2>Collaborators ({uniqueCollaborators.length})</h2>
+<h2>Collaborators ({collaborators.length})</h2>
 
 <p>People commenting on tus</p>
 
 <div class="collaborators">
   {
-    uniqueCollaborators.map((c) => (
+    collaborators.map((c) => (
       <a
-        key={c.id}
         href={c.html_url}
         target="_blank"
         rel="noopener noreferrer"
         class="avatar"
-        aria-label={`GitHub profile of ${c.login}`}
+        aria-label={`GitHub profile of ${c?.login ?? c?.name ?? 'anonymous'}`}
       >
         <img
           src={c.avatar_url}
           width="460"
           height="460"
-          alt={`Avatar of ${c.login}`}
+          alt={`Avatar of ${c?.login ?? c?.name ?? 'anonymous'}`}
           loading="lazy"
           decoding="async"
         />

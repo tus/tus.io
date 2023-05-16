@@ -1,7 +1,7 @@
 ---
 import { octokit, repos, user } from '@/lib/octokit'
 
-let contributors = (
+const data = (
   await Promise.all(
     repos.map((repo) =>
       octokit.paginate(octokit.rest.repos.listContributors, {
@@ -14,8 +14,8 @@ let contributors = (
 ).flat()
 
 // merge contributors by login and sum their contributions
-const merged = []
-for (const c of contributors) {
+const merged: typeof data = []
+for (const c of data) {
   // remove bots
   if (c.type === 'Bot') continue
   const existing = merged.find((m) => m.login === c.login)
@@ -30,11 +30,12 @@ for (const c of contributors) {
 merged.sort((a, b) => b.contributions - a.contributions)
 
 // map to a smaller object
-contributors = merged.map((c) => ({
+const contributors = merged.map((c) => ({
   id: c.id,
   html_url: c.html_url,
   login: c.login,
   avatar_url: c.avatar_url,
+  name: c.name,
 }))
 ---
 
@@ -46,7 +47,6 @@ contributors = merged.map((c) => ({
   {
     contributors.map((c) => (
       <a
-        key={c.id}
         href={c.html_url}
         target="_blank"
         rel="noopener noreferrer"

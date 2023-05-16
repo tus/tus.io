@@ -8,7 +8,7 @@ import prettyBytes from 'pretty-bytes'
 import clsx from 'clsx'
 
 const supported = signal(tus.isSupported)
-const upload = signal<tus.Upload>()
+const upload = signal<tus.Upload | null>(null)
 const previousUploads = signal<tus.PreviousUpload[]>([])
 const showUploadProgress = signal<boolean>(false)
 const showPreviousUploads = signal<boolean>(false)
@@ -21,10 +21,12 @@ export function UploadDemo() {
   const id = useId()
 
   const startUpload = useCallback(() => {
+    if (!upload.value) return
+
     upload.value.options.onError = (error) => {
       console.log('demo: error', error)
 
-      if (error.originalRequest) {
+      if (error instanceof tus.DetailedError && error.originalRequest) {
         const text = `The upload was interrupted by a network failure or server error. Usually, this failure will disappear by retrying the upload. If the error does not disappear, please contact us.
 
 Details: ${error.message}
@@ -32,7 +34,7 @@ Details: ${error.message}
 Do you want to retry the upload?`
 
         if (window.confirm(text)) {
-          upload.value.start()
+          upload.value?.start()
           return
         }
       } else {
@@ -73,6 +75,7 @@ Do you want to retry the upload?`
   const handleChange = useCallback(
     async (event: ChangeEvent) => {
       if (!(event.target instanceof HTMLInputElement)) return
+      if (!event.target.files) return
 
       const file: File = event.target.files[0]
 
@@ -100,18 +103,20 @@ Do you want to retry the upload?`
       const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000
 
       const lastThreeHrsPrevUploads = allPreviousUploads
-        .map((upload) => {
-          upload.creationTime = new Date(upload.creationTime)
-          return upload
-        })
-        .filter((upload) => upload.creationTime > threeHoursAgo)
-        .sort((a, b) => b.creationTime - a.creationTime)
+        .filter(
+          (upload) => new Date(upload.creationTime).getTime() > threeHoursAgo
+        )
+        .sort(
+          (a, b) =>
+            new Date(b.creationTime).getTime() -
+            new Date(a.creationTime).getTime()
+        )
 
       upload.value = newUpload
       previousUploads.value = lastThreeHrsPrevUploads
 
       if (lastThreeHrsPrevUploads.length === 0) {
-        startUpload(upload.value)
+        startUpload()
         return
       }
 
@@ -184,10 +189,10 @@ Do you want to retry the upload?`
                         class={styles.button}
                         onClick={() => {
                           if (isUploadRunning.value) {
-                            void upload.value.abort()
+                            void upload.value?.abort()
                             isUploadRunning.value = false
                           } else {
-                            upload.value.start()
+                            upload.value?.start()
                             isUploadRunning.value = true
                           }
                         }}
@@ -204,17 +209,17 @@ Do you want to retry the upload?`
                   <>
                     <p class={styles.heading}>
                       You already started uploading this file{' '}
-                      {ago(previousUploads.value[0].creationTime)}. Do you want
-                      to resume this upload?
+                      {ago(new Date(previousUploads.value[0].creationTime))}. Do
+                      you want to resume this upload?
                     </p>
                     <div class={styles.buttons}>
                       <button
                         class={clsx(styles.button, styles.primary)}
                         onClick={() => {
-                          upload.value.resumeFromPreviousUpload(
+                          upload.value?.resumeFromPreviousUpload(
                             previousUploads.value[0]
                           )
-                          startUpload(upload.value)
+                          startUpload()
                         }}
                       >
                         Yes, resume
@@ -222,7 +227,7 @@ Do you want to retry the upload?`
                       <button
                         class={styles.button}
                         onClick={() => {
-                          startUpload(upload.value)
+                          startUpload()
                         }}
                       >
                         No, start over
@@ -235,17 +240,22 @@ Do you want to retry the upload?`
                   <>
                     <p class={styles.heading}>The upload is complete!</p>
                     <div class={styles.buttons}>
-                      <a
-                        href={upload.value.url}
-                        target="_blank"
-                        class={clsx(styles.button, styles.primary)}
-                        rel="noreferrer"
-                      >
-                        Download {upload.value.file.name} (
-                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
-                        {prettyBytes(upload.value.file.size)})
-                      </a>
-                      or
+                      {upload.value.file instanceof File && (
+                        <>
+                          <a
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            href={upload.value.url!}
+                            target="_blank"
+                            class={clsx(styles.button, styles.primary)}
+                            rel="noreferrer"
+                          >
+                            Download {upload.value.file.name} (
+                            {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
+                            {prettyBytes(upload.value.file.size)})
+                          </a>
+                          or
+                        </>
+                      )}
                       <button
                         class={styles.button}
                         onClick={() => {

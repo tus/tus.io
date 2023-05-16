@@ -3,12 +3,12 @@ import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
 import type { APIRoute } from 'astro'
 
-export const get: APIRoute = async (context) => {
+export const get: APIRoute = async () => {
   const blog = await getCollection('blog')
   return rss({
     title: 'tus.io',
     description: 'tus.io blog posts',
-    site: context.site,
+    site: 'https://tus.io',
     items: blog.map((post) => {
       return {
         title: post.data.title,

@@ -18,7 +18,7 @@
     "inject:protocol": "scripts/inject-protocol.sh"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.0.5",
+    "@astrojs/ts-plugin": "^1.0.6",
     "@types/eslint": "^8.37.0",
     "@types/lodash-es": "^4.17.7",
     "@types/mapbox__rehype-prism": "^0.8.0",
@@ -72,6 +72,7 @@
     "s-ago": "^2.2.0",
     "sharp": "^0.32.1",
     "timeago.js": "^4.0.2",
+    "ts-is-present": "^1.2.2",
     "tus-js-client": "^3.1.0",
     "unified": "^10.1.2"
   },

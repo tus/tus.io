@@ -1,15 +1,15 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"]
+      "react": ["node_modules/preact/compat/"],
+      "react-dom": ["node_modules/preact/compat/"]
     },
     "plugins": [
       { "name": "@astrojs/ts-plugin" },
@@ -17,12 +17,12 @@
     ]
   },
   "include": [
-    "./.astro/**/*",
-    "./scripts/**/*",
-    "./src/**/*",
-    "./types/**/*",
+    ".astro/**/*",
+    "scripts/**/*",
+    "src/**/*",
+    "types/**/*",
     ".eslintrc.js",
-    "astro.config.mjs",
+    "astro.config.ts",
     "prettier.config.js",
     "postcss.config.mjs"
   ]

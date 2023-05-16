@@ -9,14 +9,17 @@ declare global {
       method: string
       url: string | URL
       headers: string[]
-      time: Date
-      bodySize: number
+      time: Date | null
+      bodySize: number | null
       isTusRequest: boolean
     }
     _responseDetails: {
       status: string
       headers: string[]
       time: Date
+    }
+    prototype: {
+      open: typeof XMLHttpRequest.prototype.open
     }
   }
 }
@@ -46,7 +49,12 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
   const xhrSetRequestHeader = XMLHttpRequest.prototype.setRequestHeader
   const xhrSend = XMLHttpRequest.prototype.send
 
-  XMLHttpRequest.prototype.open = function (method, url, ...args) {
+  // @ts-expect-error - not sure how to monkey patch prototype method overloads in TS
+  XMLHttpRequest.prototype.open = function (
+    method,
+    url,
+    ...args: [async: boolean, username?: string, password?: string]
+  ) {
     this._requestDetails = {
       id:
         crypto && 'randomUUID' in crypto
@@ -79,7 +87,7 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
       return
     }
 
-    if (data !== null && 'size' in data) {
+    if (data && data instanceof Blob) {
       this._requestDetails.bodySize = data.size
     }
 

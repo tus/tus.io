@@ -15,7 +15,7 @@ const supportedTypes = [
   'ReleaseEvent',
 ]
 
-export async function getGitHubActivity(): Promise<PublicOrgEvents> {
+export async function getGitHubActivity() {
   try {
     const { data } = await octokit.rest.activity.listPublicOrgEvents({
       org: user,
@@ -25,7 +25,9 @@ export async function getGitHubActivity(): Promise<PublicOrgEvents> {
       },
     })
 
-    return data.filter((d) => supportedTypes.includes(d.type)).slice(0, 20)
+    return data
+      .filter((d) => supportedTypes.includes(d.type ?? ''))
+      .slice(0, 20) as PublicOrgEvents
   } catch (error) {
     console.log(error)
     return []

@@ -4,6 +4,7 @@ import styles from './style.module.css'
 import { useEffect } from 'preact/hooks'
 import { ExternalA } from '../ExternalA'
 import type { PublicOrgEvents } from './types'
+import type { getGitHubActivity } from '@/lib/getGitHubActivity'
 
 type ActivityDescriptionProps = {
   activity: PublicOrgEvents[number]
@@ -231,7 +232,7 @@ export default function TusOnGithub(props: TusOnGithubProps) {
   useEffect(() => {
     const update = async () => {
       const { getGitHubActivity } = await import('@/lib/getGitHubActivity')
-      const data = getGitHubActivity()
+      const data = await getGitHubActivity()
       activity.value = data
     }
 
