@@ -232,7 +232,7 @@ export default function TusOnGithub(props: TusOnGithubProps) {
     const update = async () => {
       const { getGitHubActivity } = await import('@/lib/getGitHubActivity')
       const data = getGitHubActivity()
-      activity.value = data as PublicOrgEvents
+      activity.value = data
     }
 
     update().catch((e) => console.error(e))

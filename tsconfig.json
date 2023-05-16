@@ -11,7 +11,10 @@
       "react": ["./node_modules/preact/compat/"],
       "react-dom": ["./node_modules/preact/compat/"]
     },
-    "plugins": [{ "name": "@astrojs/ts-plugin" }]
+    "plugins": [
+      { "name": "@astrojs/ts-plugin" },
+      { "name": "typescript-plugin-css-modules" }
+    ]
   },
   "include": [
     "./.astro/**/*",
@@ -21,6 +24,6 @@
     ".eslintrc.js",
     "astro.config.mjs",
     "prettier.config.js",
-    "postcss.config.cjs"
+    "postcss.config.mjs"
   ]
 }
