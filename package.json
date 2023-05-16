@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "yarn inject && astro build",
     "preview": "astro preview",
-    "lint": "astro sync && concurrently \"npm:lint:*\"",
+    "lint": "concurrently \"npm:lint:*\"",
     "lint:astro": "astro check",
     "lint:css": "stylelint \"src/**/*.{astro,css}\"",
     "lint:js": "eslint .",
