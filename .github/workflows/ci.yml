@@ -18,6 +18,8 @@ jobs:
           node-version: 18.x
           cache: yarn
       - run: yarn install
+      # make sure types are generated before linting
+      - run: yarn astro sync
       - run: yarn lint
 # name: tus.io CI
 # on:
