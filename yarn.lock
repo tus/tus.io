@@ -9957,6 +9957,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     lodash-es: ^4.17.21
     modern-normalize: ^2.0.0
+    postcss: ^8.4.23
     postcss-html: ^1.5.0
     postcss-preset-env: ^8.3.2
     preact: ^10.14.0

@@ -35,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.23",
     "postcss-html": "^1.5.0",
     "postcss-preset-env": "^8.3.2",
     "prettier": "^2.8.8",
