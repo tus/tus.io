@@ -32,7 +32,7 @@
   text-decoration-line: underline;
   white-space: nowrap;
   text-underline-offset: 2px;
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .description {

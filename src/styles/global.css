@@ -88,7 +88,7 @@ a:hover {
 h1,
 h2,
 h3 {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   font-weight: 400;
 }
 
@@ -100,16 +100,16 @@ h2 {
 h4,
 h5,
 h6 {
-  margin-bottom: 0.5em;
+  margin-block-end: 0.5em;
   font-weight: bold;
 }
 
 h1 {
   line-height: 1.2;
-  margin-top: var(--space6);
-  margin-bottom: var(--space5);
-  border-bottom: 1px solid var(--gray3);
-  padding-bottom: var(--space3);
+  margin-block-start: var(--space6);
+  margin-block-end: var(--space5);
+  border-block-end: 1px solid var(--gray3);
+  padding-block-end: var(--space3);
 }
 
 h2 {
@@ -134,16 +134,16 @@ h5 {
 
 .content ul {
   list-style: disc outside;
-  padding-left: var(--space5);
+  padding-inline-start: var(--space5);
 }
 
 .content ul ul {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin-block-start: 0;
+  margin-block-end: 1em;
 }
 
 p.lead {
@@ -154,7 +154,7 @@ p.lead {
   h1 {
     font-size: 2.25rem;
     font-weight: 600;
-    margin-top: var(--space12);
+    margin-block-start: var(--space12);
   }
 
   h2 {
@@ -188,7 +188,7 @@ li {
 
 /* styles for autolinked headings by rehype-autolink-headings */
 :where(h1, h2, h3, h4, h5, h6) a[href^='#'] {
-  margin-left: var(--space2);
+  margin-inline-start: var(--space2);
   display: inline-flex;
   align-items: center;
   visibility: hidden;

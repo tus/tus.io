@@ -2,7 +2,7 @@
   position: relative;
   height: 4rem;
   background-color: var(--gray2);
-  border-bottom: 1px solid var(--gray3);
+  border-block-end: 1px solid var(--gray3);
   font-size: 1rem;
 }
 
