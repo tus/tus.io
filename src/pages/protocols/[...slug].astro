@@ -5,8 +5,11 @@ import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
   const protocols = await getCollection('protocols')
+
   return protocols.map((p) => ({
-    params: { slug: `resumable-upload/${p.data.version.replaceAll('.', '-')}` },
+    params: {
+      slug: `resumable-upload/${p.data.version.replaceAll('.', '-')}`,
+    },
     props: { protocol: p },
   }))
 }
@@ -21,7 +24,7 @@ const currentVersion = (
 )[0].data.version
 
 const { protocol } = Astro.props
-const { noindex, version } = protocol.data
+const { version, version_outdated } = protocol.data
 const { Content } = await protocol.render()
 ---
 
@@ -29,7 +32,7 @@ const { Content } = await protocol.render()
   title="Protocol"
   selectedVersion={version}
   currentVersion={currentVersion}
-  noindex={noindex}
+  noindex={version_outdated}
 >
   <Content />
 </ProtocolLayout>

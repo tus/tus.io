@@ -6,12 +6,11 @@ import Navigation from '@/components/Navigation'
 import favicon from '@/assets/logos-tus-default-glyph.svg'
 
 type Props = {
-  canonicalHref?: string
   noindex?: boolean
   title: string
 }
 
-let { canonicalHref, noindex, title } = Astro.props
+let { noindex, title } = Astro.props
 if (Astro.url.pathname !== '/') {
   title += ' | tus.io'
 }
@@ -29,8 +28,8 @@ const currentPage = Astro.url.pathname
       name="google-site-verification"
       content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
     />
+    <link rel="canonical" href={Astro.url.href.replace('.html', '')} />
     {noindex && <meta name="robots" content="noindex" />}
-    {canonicalHref && <link rel="canonical" href={canonicalHref} />}
 
     <link rel="icon" href={favicon.src} />
     <link rel="shortcut icon" href={favicon.src} />

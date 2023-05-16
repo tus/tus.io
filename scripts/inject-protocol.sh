@@ -17,13 +17,9 @@ function fetch_protocol {
   # and should not be indexed by search engines.
   if [ "${outdated}" == "1" ]
   then
-    settings="noindex: true
-permalink: /protocols/resumable-upload/:slug.html
-version_outdated: true"
+    settings="version_outdated: true"
   else
-    settings="
-permalink: /protocols/resumable-upload.html
-version_outdated: false"
+    settings="version_outdated: false"
   fi
 
   echo "--> Fetching protocol ${slug}"

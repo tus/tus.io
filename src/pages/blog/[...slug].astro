@@ -6,7 +6,7 @@ import authors from '@/data/authors.json'
 import Layout from '@/layouts/default.astro'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
-import type { InferGetStaticParamsType, InferGetStaticPropsType } from 'astro'
+import type { InferGetStaticPropsType } from 'astro'
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -18,9 +18,7 @@ export async function getStaticPaths() {
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
-type Params = InferGetStaticParamsType<typeof getStaticPaths>
 
-const { slug } = Astro.params as Params
 const { post } = Astro.props
 const { Content } = await post.render()
 
@@ -33,7 +31,7 @@ const formatter = Intl.DateTimeFormat('en-US', {
 const author = authors[post.data.author as keyof typeof authors]
 ---
 
-<Layout title={post.data.title} canonicalHref={`/blog/${slug}`}>
+<Layout title={post.data.title}>
   <article class="post">
     <h1 class="title">{post.data.title}</h1>
     <p class="meta">

@@ -21,8 +21,7 @@ const protocols = defineCollection({
   schema: z.object({
     title: z.string(),
     version: z.string(),
-    noindex: z.boolean().optional(),
-    version_outdated: z.boolean().optional(),
+    version_outdated: z.boolean(),
   }),
 })
 
