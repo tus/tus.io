@@ -4,7 +4,6 @@ import styles from './style.module.css'
 import { useEffect } from 'preact/hooks'
 import { ExternalA } from '../ExternalA'
 import type { PublicOrgEvents } from './types'
-import type { getGitHubActivity } from '@/lib/getGitHubActivity'
 
 type ActivityDescriptionProps = {
   activity: PublicOrgEvents[number]

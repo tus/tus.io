@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "yarn inject && astro build",
     "preview": "astro preview",
-    "lint": "concurrently \"npm:lint:*\"",
+    "lint": "astro sync && concurrently \"npm:lint:*\"",
     "lint:astro": "astro check",
     "lint:css": "stylelint \"src/**/*.{astro,css}\"",
     "lint:js": "eslint .",
-    "lint:ts": "astro sync && tsc",
+    "lint:ts": "tsc",
     "lint:fmt": "prettier --check .",
     "inject": "concurrently \"npm:inject:*\"",
     "inject:protocol": "scripts/inject-protocol.sh"
