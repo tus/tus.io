@@ -79,7 +79,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === '/faq',
+                  [styles.active]: currentPage === '/faq',
                 })}
                 href="/faq"
               >
@@ -89,7 +89,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === '/support',
+                  [styles.active]: currentPage === '/support',
                 })}
                 href="/support"
               >
@@ -99,7 +99,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage.startsWith('/blog'),
+                  [styles.active]: currentPage.startsWith('/blog'),
                 })}
                 href="/blog"
               >
@@ -109,7 +109,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === '/demo',
+                  [styles.active]: currentPage === '/demo',
                 })}
                 href="/demo"
               >
@@ -119,7 +119,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage.startsWith('/protocols'),
+                  [styles.active]: currentPage.startsWith('/protocols'),
                 })}
                 href="/protocols/resumable-upload"
               >
@@ -129,7 +129,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.activeLink]: currentPage === '/implementations',
+                  [styles.active]: currentPage === '/implementations',
                 })}
                 href="/implementations"
               >
@@ -139,7 +139,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 href="https://github.com/tus"
-                class={cx(styles.link, styles.githubLink)}
+                class={cx(styles.link, styles.github)}
               >
                 <GithubIcon size={20} /> <span>GitHub</span>
               </a>

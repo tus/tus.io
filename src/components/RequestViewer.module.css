@@ -14,7 +14,14 @@
   margin-block-end: var(--space4);
 }
 
-.httpMethodUrl {
+.http-method {
+  background-color: var(--gray10);
+  padding: var(--space1) var(--space2);
+  color: white;
+  border-radius: var(--space1);
+}
+
+.http-method-url {
   font-family: monospace;
   font-size: calc(14 / 16 * 1rem);
   padding-block-end: var(--space2);
@@ -23,22 +30,15 @@
   white-space: nowrap;
 }
 
-.httpMethod {
-  background-color: var(--gray10);
-  padding: var(--space1) var(--space2);
-  color: white;
-  border-radius: var(--space1);
-}
-
-.httpBlock {
+.http-block {
   padding-inline-start: var(--space8);
 }
 
-.httpDesc {
+.http-desc {
   font-size: calc(12 / 16 * 1rem);
 }
 
-.requestInfo {
+.request-info {
   padding-inline-start: var(--space8);
   font-family: monospace;
   font-size: calc(14 / 16 * 1rem);

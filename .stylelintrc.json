@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-astro"
+  ],
+  "plugins": ["stylelint-plugin-logical-css"],
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      { "ignoreFontFamilies": ["EmojiSymbols"] }
+    ],
+    "plugin/use-logical-properties-and-values": [
+      true,
+      { "severity": "warning" }
+    ],
+    "plugin/use-logical-units": [true, { "severity": "warning" }]
+  }
+}

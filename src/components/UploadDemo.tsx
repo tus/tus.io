@@ -167,7 +167,7 @@ Do you want to retry the upload?`
                         : 'The upload is paused:'}
                     </p>
 
-                    <div class={styles.uploadRow}>
+                    <div class={styles.row}>
                       <div
                         class={styles.progress}
                         data-state={
@@ -175,7 +175,7 @@ Do you want to retry the upload?`
                         }
                       >
                         <div
-                          class={styles.progressBar}
+                          class={styles['progress-bar']}
                           style={{ width: progressBarWidth.value }}
                         />
                       </div>
@@ -196,7 +196,7 @@ Do you want to retry the upload?`
                       </button>
                     </div>
 
-                    <p class={styles.progressText}>{progress}</p>
+                    <p class={styles['progress-text']}>{progress}</p>
                   </>
                 )}
 

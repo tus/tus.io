@@ -76,8 +76,8 @@ const uniqueCollaborators = uniqBy(collaborators, 'id')
 
   .avatar {
     display: block;
-    height: 4rem;
-    width: 4rem;
+    block-size: 4rem;
+    inline-size: 4rem;
     border-radius: 999px;
     overflow: hidden;
     border: 2px solid white;
@@ -85,8 +85,8 @@ const uniqueCollaborators = uniqBy(collaborators, 'id')
   }
 
   .avatar img {
-    width: 100%;
-    height: auto;
+    inline-size: 100%;
+    block-size: auto;
     object-fit: cover;
     object-position: center;
   }

@@ -58,12 +58,12 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 
 <style>
   .root {
-    max-width: 50rem;
+    max-inline-size: 50rem;
     margin: 0 auto;
     padding-inline: var(--space3);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     .root {
       padding-inline: var(--space6);
     }
@@ -94,7 +94,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 
   .excerpt p {
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: block-axis;
     -webkit-line-clamp: 3;
     overflow: hidden;
   }

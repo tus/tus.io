@@ -52,12 +52,12 @@ const { currentVersion, selectedVersion, noindex, title } = Astro.props
 
 <style>
   main {
-    max-width: 50rem;
+    max-inline-size: 50rem;
     margin: 0 auto;
     padding-inline: var(--space3);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     main {
       padding-inline: var(--space6);
     }

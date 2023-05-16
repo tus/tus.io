@@ -3,7 +3,7 @@
   padding: var(--space5) var(--space6);
   border: 1px solid var(--gray4);
   border-radius: var(--space2);
-  margin-block-end: var(---space6);
+  margin-block-end: var(--space6);
 }
 
 .label {
@@ -33,7 +33,7 @@
 
 .button {
   display: inline-block;
-  height: var(--space10);
+  block-size: var(--space10);
   padding: 0 var(--space8);
   color: var(--gray11);
   text-align: center;
@@ -67,7 +67,7 @@
   border-color: var(--green1);
 }
 
-.uploadRow {
+.row {
   display: flex;
   flex-wrap: none;
   justify-content: space-between;
@@ -87,39 +87,38 @@
 
 .progress {
   flex: 1;
-  overflow: hidden;
-  height: var(--space10);
+  block-size: var(--space10);
   background-color: var(--gray2);
   border-radius: 4px;
   box-shadow: 0 1px 1px var(--gray4) inset;
   overflow: hidden;
 }
 
-.progressBar {
+.progress-bar {
   animation: stripes 2s linear infinite;
   background-color: var(--green1);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  height: 100%;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+  block-size: 100%;
   line-height: var(--space10);
-  transition: width 0.25s ease, background-color 0.25s ease;
+  transition: inline-size 0.25s ease, background-color 0.25s ease;
   background-image: linear-gradient(
     -45deg,
-    rgba(255, 255, 255, 0.2) 25%,
+    rgb(255 255 255 / 20%) 25%,
     transparent 25%,
     transparent 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
+    rgb(255 255 255 / 20%) 50%,
+    rgb(255 255 255 / 20%) 75%,
     transparent 75%,
     transparent
   );
   background-size: 40px 40px;
 }
 
-[data-state='paused'] .progressBar {
+[data-state='paused'] .progress-bar {
   animation-play-state: paused;
   background-color: var(--green2);
 }
 
-.progressText {
+.progress-text {
   margin-block-end: 0;
 }

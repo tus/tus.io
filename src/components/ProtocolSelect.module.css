@@ -10,7 +10,7 @@
   color: inherit;
   border-color: var(--gray8);
   border-radius: var(--space1);
-  width: 5rem;
+  inline-size: 5rem;
   padding: var(--space1);
 }
 

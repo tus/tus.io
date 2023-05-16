@@ -14,12 +14,12 @@ const { className } = Astro.props
 
 <style>
   .container {
-    max-width: 100rem;
+    max-inline-size: 100rem;
     margin: 0 auto;
     padding-inline: var(--space3);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     .container {
       padding-inline: var(--space6);
     }

@@ -19,7 +19,7 @@ const { title } = Astro.props.frontmatter
 
 <style>
   .page {
-    max-width: 50rem;
+    max-inline-size: 50rem;
     padding-inline: var(--space3);
     margin: 0 auto;
   }
@@ -59,6 +59,7 @@ const { title } = Astro.props.frontmatter
     display: inline-block;
     color: var(--gray9);
   }
+
   .page :global(.implementations .author a) {
     color: inherit;
   }

@@ -123,14 +123,14 @@ export function RequestViewer() {
 
         return (
           <div key={req.id} class={styles.request}>
-            <div class={styles.httpMethodUrl}>
-              <span class={styles.httpMethod}>{req.method}</span> {req.url}
+            <div class={styles['http-method-url']}>
+              <span class={styles['http-method']}>{req.method}</span> {req.url}
             </div>
-            <div class={styles.httpBlock}>
-              <div class={styles.httpDesc}>
+            <div class={styles['http-block']}>
+              <div class={styles['http-desc']}>
                 <b>Request</b> (sent at {req.time?.toLocaleTimeString()})
               </div>
-              <div class={styles.requestInfo}>
+              <div class={styles['request-info']}>
                 <div class={styles.headers}>
                   {req.headers.map((h) => (
                     <p key={h}>{h}</p>
@@ -144,14 +144,14 @@ export function RequestViewer() {
                 </p>
               </div>
             </div>
-            <div class={styles.httpBlock}>
+            <div class={styles['http-block']}>
               {res ? (
                 <>
-                  <div class={styles.httpDesc}>
+                  <div class={styles['http-desc']}>
                     <b>Response</b> (received at {res.time.toLocaleTimeString()}
                     )
                   </div>
-                  <div class={styles.requestInfo}>
+                  <div class={styles['request-info']}>
                     {res.status}
                     <div class={styles.headers}>
                       {res.headers.map((h) => (
@@ -161,7 +161,7 @@ export function RequestViewer() {
                   </div>
                 </>
               ) : (
-                <div class={styles.httpDesc}>
+                <div class={styles['http-desc']}>
                   <b>Response</b> (not yet received)
                 </div>
               )}

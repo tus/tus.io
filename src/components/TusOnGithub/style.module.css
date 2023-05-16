@@ -20,8 +20,8 @@
 
 .avatar {
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
   border-radius: 9999px;
 }
 
@@ -40,7 +40,7 @@
   grid-column: span 2;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .item {
     grid-gap: var(--space2);
     grid-template-columns: 1.5rem 1fr max-content;

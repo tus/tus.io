@@ -23,7 +23,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
       return (
         <li>
           <article class={'post'}>
-            <div class={'postContent'}>
+            <div class={'content'}>
               <h3>
                 <a href={`/blog/${getBlogPostSlug(p.slug)}`}>{p.data.title}</a>
               </h3>
@@ -81,16 +81,16 @@ const formatter = new Intl.DateTimeFormat('en-US', {
     padding-block-end: var(--space4);
   }
 
-  .postContent {
+  .content {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .postContent h3 {
+  .content h3 {
     margin: 0;
   }
 
-  .postContent time {
+  .content time {
     color: var(--gray9);
   }
 
@@ -99,8 +99,8 @@ const formatter = new Intl.DateTimeFormat('en-US', {
     display: block;
     border-radius: 9999px;
     overflow: hidden;
-    width: 4rem;
-    height: 4rem;
+    inline-size: 4rem;
+    block-size: 4rem;
     border: 2px solid white;
     box-shadow: 0 0 0.5rem var(--gray6);
   }

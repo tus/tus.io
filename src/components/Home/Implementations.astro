@@ -30,8 +30,7 @@ import implementations from '@/data/implementations.json'
 <style>
   .implementations {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
     column-gap: var(--space5);
     row-gap: var(--space8);
@@ -54,7 +53,7 @@ import implementations from '@/data/implementations.json'
   .implementation img {
     display: block;
     margin-block-end: var(--space2);
-    width: 2.5rem;
+    inline-size: 2.5rem;
   }
 
   .link {

@@ -12,7 +12,7 @@ features.sort((a, b) => a.data.order - b.data.order)
 
 <style>
   .features {
-    max-width: 60rem !important;
+    max-inline-size: 60rem !important;
     margin: var(--space12) auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -20,7 +20,7 @@ features.sort((a, b) => a.data.order - b.data.order)
     padding-inline: var(--space3);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     .features {
       grid-gap: var(--space8);
       grid-template-columns: repeat(3, 1fr);

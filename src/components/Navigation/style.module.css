@@ -1,23 +1,23 @@
 .root {
   position: relative;
-  height: 4rem;
+  block-size: 4rem;
   background-color: var(--gray2);
   border-block-end: 1px solid var(--gray3);
   font-size: 1rem;
 }
 
 .root div {
-  max-width: 100rem;
+  max-inline-size: 100rem;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  block-size: 100%;
   padding-inline: var(--space3);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .root div {
     padding-inline: var(--space6);
   }
@@ -28,13 +28,13 @@
   flex-flow: row nowrap;
   align-items: center;
   gap: var(--space2);
-  height: 100%;
+  block-size: 100%;
   padding: var(--space3) 0;
 }
 
 .logo {
-  height: 100%;
-  width: auto;
+  block-size: 100%;
+  inline-size: auto;
 }
 
 .toggle {
@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .toggle {
     display: none;
   }
@@ -61,10 +61,10 @@
 
 .items {
   position: absolute;
-  top: 100%;
-  right: 0;
-  min-width: 14rem;
-  max-width: 18rem;
+  inset-block-start: 100%;
+  inset-inline-end: 0;
+  min-inline-size: 14rem;
+  max-inline-size: 18rem;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -89,16 +89,15 @@
   color: white;
 }
 
-.activeLink {
+.active {
   color: var(--green1);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .items {
     all: unset;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     align-items: center;
     gap: var(--space6);
     list-style-type: none;
@@ -119,18 +118,18 @@
   }
 }
 
-.githubLink {
+.github {
   display: flex;
   gap: var(--space2);
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
-  .githubLink span {
+@media screen and (width >= 768px) {
+  .github span {
     position: absolute;
     border: 0;
-    width: 1px;
-    height: 1px;
+    inline-size: 1px;
+    block-size: 1px;
     padding: 0;
     margin: -1px;
     overflow: hidden;

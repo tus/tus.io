@@ -91,14 +91,14 @@ const githubActivity = await getGitHubActivity()
     </div>
   </section>
 
-  <section class="section centered whoIsUsingTus">
+  <section class="section centered who-is-using-tus">
     <div class="container">
       <h2>Who is using tus?</h2>
 
       <div class={'logos'}>
         {
           logos.slice(0, 5).map((logo) => (
-            <a key={logo.url} href={logo.url} class={'logo'}>
+            <a href={logo.url} class={'logo'}>
               <img src={logo.src} alt={logo.name} loading="lazy" />
             </a>
           ))
@@ -127,7 +127,7 @@ const githubActivity = await getGitHubActivity()
       <div class="logos">
         {
           press.map((p) => (
-            <a key={p.url} href={p.url} aria-title={p.name} class={'logo'}>
+            <a href={p.url} aria-title={p.name} class={'logo'}>
               <img
                 src={p.src}
                 alt={`Logo of ${p.name}`}
@@ -149,11 +149,11 @@ const githubActivity = await getGitHubActivity()
 
   .container {
     padding-inline: var(--space3);
-    max-width: 60rem;
+    max-inline-size: 60rem;
     margin: var(--space12) auto;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     .container {
       padding-inline: var(--space6);
     }
@@ -168,7 +168,7 @@ const githubActivity = await getGitHubActivity()
   }
 
   .intro .container {
-    max-width: 37.5rem;
+    max-inline-size: 37.5rem;
   }
 
   .intro h1 {
@@ -184,9 +184,9 @@ const githubActivity = await getGitHubActivity()
     animation: fade-in 1s;
     object-fit: contain;
     object-position: center;
-    max-width: 35rem;
-    width: 100%;
-    height: auto;
+    max-inline-size: 35rem;
+    inline-size: 100%;
+    block-size: auto;
   }
 
   .mission {
@@ -196,7 +196,7 @@ const githubActivity = await getGitHubActivity()
   }
 
   .mission .container {
-    max-width: 44rem;
+    max-inline-size: 44rem;
     margin: 0 auto;
   }
 
@@ -204,6 +204,7 @@ const githubActivity = await getGitHubActivity()
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -213,19 +214,18 @@ const githubActivity = await getGitHubActivity()
     margin-block-end: var(--space6);
   }
 
-  .whoIsUsingTus {
+  .who-is-using-tus {
     background-color: var(--gray2);
     padding-block: var(--space8);
   }
 
-  .whoIsUsingTus p {
+  .who-is-using-tus p {
     margin-block-end: 0;
   }
 
   .logos {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     gap: var(--space10);
@@ -233,12 +233,12 @@ const githubActivity = await getGitHubActivity()
   }
 
   .logo {
-    height: 2rem;
+    block-size: 2rem;
   }
 
   .logo img {
-    height: 100%;
-    width: auto;
+    block-size: 100%;
+    inline-size: auto;
     object-fit: contain;
     object-position: center;
   }
