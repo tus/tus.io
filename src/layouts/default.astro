@@ -69,5 +69,20 @@ const currentPage = Astro.url.pathname
       data-domain="tus.io"
       src="https://analytics.transloadit.com/js/plausible.js"
     ></script>
+
+    <script>
+      // We used to have URLs ending in .html, but switched to clean URLs.
+      // .html still works tho. But we want people to use and share the clean versions.
+      // So if the location ends in .html, here we redirect to the same path without .html,
+      // preserving the anchor and query string. This cannot be done in the server, because
+      // we don't have access to the anchor there. In addition, hosting on GitHub pages also
+      // gives no option for dealing even with the .html case.
+      if (location.pathname.endsWith('.html')) {
+        location.href =
+          location.pathname.replace(/\.html$/, '') +
+          location.search +
+          location.hash
+      }
+    </script>
   </body>
 </html>
