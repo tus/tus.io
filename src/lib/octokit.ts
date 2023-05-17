@@ -19,7 +19,7 @@ export const repos = [
 const TusOctokit = Octokit.plugin(retry, restEndpointMethods, paginateRest)
 
 export const octokit = new TusOctokit({
-  request: { fetch },
+  request: { fetch: fetch },
   auth: import.meta.env.GITHUB_TOKEN
     ? `token ${import.meta.env.GITHUB_TOKEN}`
     : undefined,

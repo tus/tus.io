@@ -68,4 +68,11 @@ export default defineConfig({
       theme: 'github-light',
     },
   },
+  vite: {
+    resolve: {
+      alias: {
+        'node-fetch': 'cross-fetch',
+      },
+    },
+  },
 })
