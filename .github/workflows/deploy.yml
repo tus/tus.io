@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: deploy
 
 on:
   # Trigger the workflow every time you push to the `main` branch
@@ -19,12 +19,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: withastro/action@v0
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-          package-manager: yarn
+          cache: yarn
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: corepack enable
+      - run: corepack prepare
+      - run: yarn install
+      - run: yarn build
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: './dist/'
 
   deploy:
     needs: build
@@ -37,6 +44,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v2
         id: deployment
-        uses: actions/deploy-pages@v2
