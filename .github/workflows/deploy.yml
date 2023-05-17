@@ -29,6 +29,8 @@ jobs:
       - run: corepack prepare
       - run: yarn install
       - run: yarn build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-pages-artifact@v1
         with:
           path: './dist/'
