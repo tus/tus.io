@@ -1571,10 +1571,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.10":
-  version: 18.16.10
-  resolution: "@types/node@npm:18.16.10"
-  checksum: 1db35543ae98d4a98731037a11a9478480d1260ff3778da70b9a137a3023666d20bab1573b584c401058f76c0d5f7dfbbc157b70a059452e086c8da5639cc653
+"@types/node@npm:^18.16.12":
+  version: 18.16.12
+  resolution: "@types/node@npm:18.16.12"
+  checksum: 90b316c097a059534870bc8e358c7996d99e3bb4395c88a91b893b925ad34e32ff1177009ec6c16a6467266414dca64ec9613e9e6bb3f91b6de0ab629d3bb3b9
   languageName: node
   linkType: hard
 
@@ -8248,10 +8248,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.14.0":
-  version: 10.14.0
-  resolution: "preact@npm:10.14.0"
-  checksum: b7fbb8e06427d7c4a0da77d8b762683c2fa02ca52e449f63380dbd6de407fb0a3299cc42208b9fbf367bc7275c2c90045fd41e628cf151dccd71587127941941
+"preact@npm:^10.14.1":
+  version: 10.14.1
+  resolution: "preact@npm:10.14.1"
+  checksum: 2babea9a7a48c93fbdc1bc2b4ec599070585cdf253bbfc2f37ebdd3a3c85c503a92af2be175344a46d1e0439820702b92ad60e9140abefc49c43871f906e8461
   languageName: node
   linkType: hard
 
@@ -8645,6 +8645,17 @@ __metadata:
     mdast-util-from-markdown: ^1.0.0
     unified: ^10.0.0
   checksum: 505088e564ab53ff054433368adbb7b551f69240c7d9768975529837a86f1d0f085e72d6211929c5c42db315273df4afc94f3d3a8662ffdb69468534c6643d29
+  languageName: node
+  linkType: hard
+
+"remark-parse@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "remark-parse@npm:10.0.2"
+  dependencies:
+    "@types/mdast": ^3.0.0
+    mdast-util-from-markdown: ^1.0.0
+    unified: ^10.0.0
+  checksum: 5041b4b44725f377e69986e02f8f072ae2222db5e7d3b6c80829756b842e811343ffc2069cae1f958a96bfa36104ab91a57d7d7e2f0cef521e210ab8c614d5c7
   languageName: node
   linkType: hard
 
@@ -9578,9 +9589,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^15.6.1":
-  version: 15.6.1
-  resolution: "stylelint@npm:15.6.1"
+"stylelint@npm:^15.6.2":
+  version: 15.6.2
+  resolution: "stylelint@npm:15.6.2"
   dependencies:
     "@csstools/css-parser-algorithms": ^2.1.1
     "@csstools/css-tokenizer": ^2.1.1
@@ -9626,7 +9637,7 @@ __metadata:
     write-file-atomic: ^5.0.1
   bin:
     stylelint: bin/stylelint.js
-  checksum: 192ac3b5185cb59aaead62e1e2e53c42ffc9eba38e471bcb9e3a34381f688d2194a48ae5a356759e2368a9764626d2c6131dffd31933244519422ebcf76f6da6
+  checksum: b44949053b0500226d718d810af64a10b43d8faeed6c464ab1c8bebd8ace488135b47e3a6e4a97ae552d7e14f011dce82c6c69624e463476f8408751b7544b2f
   languageName: node
   linkType: hard
 
@@ -9949,7 +9960,7 @@ __metadata:
     "@types/eslint": ^8.37.0
     "@types/lodash-es": ^4.17.7
     "@types/mapbox__rehype-prism": ^0.8.0
-    "@types/node": ^18.16.10
+    "@types/node": ^18.16.12
     "@types/react": ^18.2.6
     "@typescript-eslint/eslint-plugin": ^5.59.6
     "@typescript-eslint/parser": ^5.59.6
@@ -9970,19 +9981,19 @@ __metadata:
     postcss: ^8.4.23
     postcss-html: ^1.5.0
     postcss-preset-env: ^8.3.2
-    preact: ^10.14.0
+    preact: ^10.14.1
     prettier: ^2.8.8
     prettier-plugin-astro: ^0.8.1
     pretty-bytes: ^6.1.0
     rehype-autolink-headings: ^6.1.1
     rehype-stringify: ^9.0.3
     remark-emoji: ^3.1.1
-    remark-parse: ^10.0.1
+    remark-parse: ^10.0.2
     remark-rehype: ^10.1.0
     remark-toc: ^8.0.1
     s-ago: ^2.2.0
     sharp: ^0.32.1
-    stylelint: ^15.6.1
+    stylelint: ^15.6.2
     stylelint-config-astro: ^1.0.4
     stylelint-config-prettier: ^9.0.5
     stylelint-config-standard: ^33.0.0
