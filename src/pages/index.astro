@@ -127,10 +127,10 @@ const githubActivity = await getGitHubActivity()
       <div class="logos">
         {
           press.map((p) => (
-            <a href={p.url} aria-title={p.name} class={'logo'}>
+            <a href={p.url} class={'logo'}>
               <img
                 src={p.src}
-                alt={`Logo of ${p.name}`}
+                alt={`${p.name}`}
                 loading="lazy"
                 decoding="async"
               />
