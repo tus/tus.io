@@ -80,7 +80,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.active]: currentPage === '/faq',
+                  [styles.active]: currentPage.startsWith('/faq'),
                 })}
                 href="/faq"
               >
@@ -90,7 +90,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.active]: currentPage === '/support',
+                  [styles.active]: currentPage.startsWith('/support'),
                 })}
                 href="/support"
               >
@@ -110,7 +110,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.active]: currentPage === '/demo',
+                  [styles.active]: currentPage.startsWith('/demo'),
                 })}
                 href="/demo"
               >
@@ -130,7 +130,7 @@ export default function Navigation(props: NavigationProps) {
             <li>
               <a
                 class={cx(styles.link, {
-                  [styles.active]: currentPage === '/implementations',
+                  [styles.active]: currentPage.startsWith('/implementations'),
                 })}
                 href="/implementations"
               >
