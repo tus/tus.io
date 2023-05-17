@@ -41,7 +41,7 @@
   all: unset;
   display: block;
   line-height: 1;
-  color: var(--green2);
+  color: var(--green3);
 }
 
 .toggle svg {
@@ -85,12 +85,12 @@
 }
 
 .link:hover {
-  background-color: var(--green1);
+  background-color: var(--green3);
   color: white;
 }
 
 .active {
-  color: var(--green1);
+  color: var(--green3);
 }
 
 @media screen and (width >= 768px) {

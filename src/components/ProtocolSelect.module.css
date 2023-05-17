@@ -16,5 +16,5 @@
 
 .select:focus-visible {
   outline: none;
-  border-color: var(--green1);
+  border-color: var(--green3);
 }

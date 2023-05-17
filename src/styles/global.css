@@ -46,8 +46,9 @@
   --gray10: hsl(0deg 0% 52.3%);
   --gray11: hsl(0deg 0% 43.5%);
   --gray12: hsl(0deg 0% 9%);
-  --green1: #009771;
-  --green2: #48aa92;
+  --green1: #48aa92;
+  --green2: #009771;
+  --green3: #008067;
   --red1: #f16100;
   --yellow1: #e1e11e;
   --blue1: #0165d6;
@@ -71,7 +72,7 @@ body {
 }
 
 a {
-  color: var(--green1);
+  color: var(--green3);
   text-decoration: none;
   text-decoration-skip: spaces;
   text-decoration-skip-ink: auto;

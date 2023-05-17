@@ -57,14 +57,14 @@
 
 .primary {
   color: white;
-  background-color: var(--green2);
-  border-color: var(--green2);
+  background-color: var(--green1);
+  border-color: var(--green1);
 }
 
 .primary:hover {
   color: white;
-  background-color: var(--green1);
-  border-color: var(--green1);
+  background-color: var(--green3);
+  border-color: var(--green3);
 }
 
 .row {
@@ -116,7 +116,7 @@
 
 [data-state='paused'] .progress-bar {
   animation-play-state: paused;
-  background-color: var(--green2);
+  background-color: var(--green1);
 }
 
 .progress-text {
