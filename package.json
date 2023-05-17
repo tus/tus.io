@@ -15,7 +15,7 @@
     "lint:ts": "tsc",
     "lint:fmt": "prettier --check .",
     "inject": "concurrently \"npm:inject:*\"",
-    "inject:protocol": "scripts/inject-protocol.sh"
+    "inject:protocol": "scripts/inject-protocol.sh && prettier --write ."
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.0.6",
