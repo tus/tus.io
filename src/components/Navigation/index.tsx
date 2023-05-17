@@ -62,6 +62,7 @@ export default function Navigation(props: NavigationProps) {
         </a>
         <nav ref={nav}>
           <button
+            aria-label="Toggle menu"
             class={styles.toggle}
             onClick={(e) => {
               expanded.value = !expanded.value

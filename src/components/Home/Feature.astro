@@ -9,7 +9,9 @@ const { Content } = await render()
 ---
 
 <article>
-  <h4 class="title">{data.title}</h4>
+  <header>
+    <p class="title"><strong>{data.title}</strong></p>
+  </header>
   <div class="content">
     <Content />
   </div>
@@ -17,7 +19,16 @@ const { Content } = await render()
 
 <style>
   .title {
+    font-size: 1.125rem;
+    line-height: 1.35;
     margin-block-start: 0;
+    margin-block-end: 0.5em;
+  }
+
+  @media screen and (width >= 550px) {
+    .title {
+      font-size: 1.25rem;
+    }
   }
 
   .content {
