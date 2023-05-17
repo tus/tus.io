@@ -1,0 +1,78 @@
+---
+import { ExternalA } from '@/components/ExternalA'
+import PageFooter from '@/components/PageFooter.astro'
+import PostContent from '@/components/PostContent.astro'
+import authors from '@/data/authors.json'
+import Layout from '@/layouts/default.astro'
+import { getAuthorHref } from '@/lib/getAuthorHref'
+import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
+import type { InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { slug: getBlogPostSlug(post.slug) },
+    props: { post },
+  }))
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { post } = Astro.props
+const { Content } = await post.render()
+
+const formatter = Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+
+const author = authors[post.data.author as keyof typeof authors]
+---
+
+<Layout title={post.data.title}>
+  <article class="post">
+    <h1 class="title">{post.data.title}</h1>
+    <p class="meta">
+      Published on <time datetime={post.data.date.toISOString()}
+        >{formatter.format(post.data.date)}</time
+      > by{' '}
+      <ExternalA href={getAuthorHref(author)}>
+        {author.name}
+      </ExternalA>
+    </p>
+
+    <PostContent>
+      <Content />
+    </PostContent>
+  </article>
+
+  <PageFooter comments social />
+</Layout>
+
+<style>
+  .post {
+    max-inline-size: 50rem;
+    margin: 0 auto;
+    padding-inline: var(--space3);
+  }
+
+  @media screen and (width >= 768px) {
+    .post {
+      padding-inline: var(--space6);
+    }
+  }
+
+  .title {
+    margin-block-end: var(--space3);
+  }
+
+  .meta {
+    color: var(--gray10);
+  }
+
+  .meta time {
+    font-weight: 600;
+  }
+</style>

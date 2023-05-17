@@ -1,0 +1,76 @@
+---
+import clsx from 'clsx'
+import communityForumLogo from '@/assets/community-forum.svg'
+import rssFeedIcon from '@/assets/rss-feed-orange.svg'
+import { Image } from 'astro:assets'
+
+type Props = {
+  includeRss?: boolean
+  centered?: boolean
+}
+
+const { centered, includeRss } = Astro.props
+---
+
+<div class={clsx('social', { ['centered']: centered })}>
+  <a
+    href="https://community.transloadit.com/c/tus"
+    class="community-forum-button"
+  >
+    <Image
+      src={communityForumLogo.src}
+      width={communityForumLogo.width}
+      height={communityForumLogo.height}
+      alt="Community Forum"
+    />
+  </a>
+
+  <a
+    href="https://twitter.com/tus_io"
+    class="twitter-follow-button"
+    data-dnt="true"
+    data-show-count="false"
+  >
+    Follow @tus_io
+  </a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+  ></script>
+
+  {
+    includeRss && (
+      <a href="{{ site.rss_feed }}">
+        <Image
+          src={rssFeedIcon.src}
+          height={rssFeedIcon.height}
+          width={rssFeedIcon.width}
+          alt="RSS Feed"
+        />
+      </a>
+    )
+  }
+
+  <iframe
+    src="https://ghbtns.com/github-btn.html?user=tus&repo=tus-resumable-upload-protocol&type=watch&count=true"
+    allowtransparency={true}
+    width="100"
+    height="20"></iframe>
+</div>
+
+<style>
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space1);
+    justify-content: flex-start;
+    margin-block-end: var(--space5);
+  }
+
+  .centered {
+    justify-content: center;
+  }
+
+  iframe {
+    border: none;
+    overflow: hidden;
+  }
+</style>

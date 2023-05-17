@@ -1,0 +1,88 @@
+---
+import '../styles/global.css'
+
+import TransloaditBar from '@/components/TransloaditBar.astro'
+import Navigation from '@/components/Navigation'
+import favicon from '@/assets/logos-tus-default-glyph.svg'
+
+type Props = {
+  noindex?: boolean
+  title: string
+}
+
+let { noindex, title } = Astro.props
+if (Astro.url.pathname !== '/') {
+  title += ' | tus.io'
+}
+
+const currentPage = Astro.url.pathname
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
+    />
+    <link rel="canonical" href={Astro.url.href.replace('.html', '')} />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <link rel="icon" href={favicon.src} />
+    <link rel="shortcut icon" href={favicon.src} />
+    <link rel="apple-touch-icon" href={favicon.src} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <TransloaditBar />
+    <Navigation client:load currentPage={currentPage} />
+    <slot />
+    <script
+      defer
+      data-domain="tus.io"
+      src="https://analytics.transloadit.com/js/plausible.js"
+    ></script>
+
+    <script>
+      // We used to have URLs ending in .html, but switched to clean URLs.
+      // .html still works tho. But we want people to use and share the clean versions.
+      // So if the location ends in .html, here we redirect to the same path without .html,
+      // preserving the anchor and query string. This cannot be done in the server, because
+      // we don't have access to the anchor there. In addition, hosting on GitHub pages also
+      // gives no option for dealing even with the .html case.
+      if (location.pathname.endsWith('.html')) {
+        location.href =
+          location.pathname.replace(/\.html$/, '') +
+          location.search +
+          location.hash
+      }
+    </script>
+  </body>
+</html>

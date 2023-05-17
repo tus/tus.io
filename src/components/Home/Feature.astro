@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content'
+interface Props {
+  feature: CollectionEntry<'features'>
+}
+
+const { data, render } = Astro.props.feature
+const { Content } = await render()
+---
+
+<article>
+  <h4 class="title">{data.title}</h4>
+  <div class="content">
+    <Content />
+  </div>
+</article>
+
+<style>
+  .title {
+    margin-block-start: 0;
+  }
+
+  .content {
+    color: var(--gray11);
+  }
+</style>

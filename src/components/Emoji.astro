@@ -1,0 +1,11 @@
+---
+type Props = {
+  label: string
+}
+
+const { label } = Astro.props
+---
+
+<span role="img" aria-label={`${label} emoji`}>
+  <slot />
+</span>

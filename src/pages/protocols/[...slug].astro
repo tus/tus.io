@@ -1,0 +1,38 @@
+---
+import ProtocolLayout from '@/layouts/protocol.astro'
+import type { InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const protocols = await getCollection('protocols')
+
+  return protocols.map((p) => ({
+    params: {
+      slug: `resumable-upload/${p.data.version.replaceAll('.', '-')}`,
+    },
+    props: { protocol: p },
+  }))
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const currentVersion = (
+  await getCollection(
+    'protocols',
+    ({ data }) => data.version_outdated === false
+  )
+)[0].data.version
+
+const { protocol } = Astro.props
+const { version, version_outdated } = protocol.data
+const { Content } = await protocol.render()
+---
+
+<ProtocolLayout
+  title="Protocol"
+  selectedVersion={version}
+  currentVersion={currentVersion}
+  noindex={version_outdated}
+>
+  <Content />
+</ProtocolLayout>

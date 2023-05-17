@@ -1,0 +1,19 @@
+---
+import ProtocolLayout from '@/layouts/protocol.astro'
+import { getCollection } from 'astro:content'
+
+const all = await getCollection(
+  'protocols',
+  ({ data }) => !data.version_outdated
+)
+const { data, render } = all[0]
+const { Content } = await render()
+---
+
+<ProtocolLayout
+  title={data.title}
+  selectedVersion={data.version}
+  currentVersion={data.version}
+>
+  <Content />
+</ProtocolLayout>

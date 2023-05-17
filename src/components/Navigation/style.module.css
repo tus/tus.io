@@ -1,0 +1,140 @@
+.root {
+  position: relative;
+  block-size: 4rem;
+  background-color: var(--gray2);
+  border-block-end: 1px solid var(--gray3);
+  font-size: 1rem;
+}
+
+.root div {
+  max-inline-size: 100rem;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  block-size: 100%;
+  padding-inline: var(--space3);
+}
+
+@media screen and (width >= 768px) {
+  .root div {
+    padding-inline: var(--space6);
+  }
+}
+
+.home {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--space2);
+  block-size: 100%;
+  padding: var(--space3) 0;
+}
+
+.logo {
+  block-size: 100%;
+  inline-size: auto;
+}
+
+.toggle {
+  all: unset;
+  display: block;
+  line-height: 1;
+  color: var(--green2);
+}
+
+.toggle svg {
+  display: block;
+  transition: color 120ms;
+}
+
+.toggle:hover {
+  cursor: pointer;
+}
+
+@media screen and (width >= 768px) {
+  .toggle {
+    display: none;
+  }
+}
+
+.items {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-end: 0;
+  min-inline-size: 14rem;
+  max-inline-size: 18rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: var(--gray2);
+  border: 1px solid var(--gray3);
+  box-shadow: 0 2px 20px var(--gray3);
+}
+
+.items li {
+  margin-block-end: 0;
+}
+
+.link {
+  display: block;
+  padding: var(--space2) var(--space4);
+  transition: color 120ms, background-color 120ms;
+  color: var(--gray12);
+}
+
+.link:hover {
+  background-color: var(--green1);
+  color: white;
+}
+
+.active {
+  color: var(--green1);
+}
+
+@media screen and (width >= 768px) {
+  .items {
+    all: unset;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: var(--space6);
+    list-style-type: none;
+  }
+
+  .items li {
+    display: flex;
+    align-items: center;
+  }
+
+  .link {
+    padding: 0;
+  }
+
+  .link:hover {
+    background-color: unset;
+    color: var(--green2);
+  }
+}
+
+.github {
+  display: flex;
+  gap: var(--space2);
+  align-items: center;
+}
+
+@media screen and (width >= 768px) {
+  .github span {
+    position: absolute;
+    border: 0;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+}

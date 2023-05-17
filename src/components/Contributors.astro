@@ -1,0 +1,94 @@
+---
+import { octokit, repos, user } from '@/lib/octokit'
+
+const data = (
+  await Promise.all(
+    repos.map((repo) =>
+      octokit.paginate(octokit.rest.repos.listContributors, {
+        owner: user,
+        repo,
+        per_page: 100,
+      })
+    )
+  )
+).flat()
+
+// merge contributors by login and sum their contributions
+const merged: typeof data = []
+for (const c of data) {
+  // remove bots
+  if (c.type === 'Bot') continue
+  const existing = merged.find((m) => m.login === c.login)
+  if (existing) {
+    existing.contributions += c.contributions
+  } else {
+    merged.push(c)
+  }
+}
+
+// sort descending by contributions
+merged.sort((a, b) => b.contributions - a.contributions)
+
+// map to a smaller object
+const contributors = merged.map((c) => ({
+  id: c.id,
+  html_url: c.html_url,
+  login: c.login,
+  avatar_url: c.avatar_url,
+  name: c.name,
+}))
+---
+
+<h2>Contributors ({contributors.length})</h2>
+
+<p>People coding on tus</p>
+
+<div class="contributors">
+  {
+    contributors.map((c) => (
+      <a
+        href={c.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="avatar"
+        aria-label={`GitHub profile of ${c.login ?? c.name ?? 'anonymous'}`}
+      >
+        <img
+          src={c.avatar_url}
+          width="460"
+          height="460"
+          alt={`Avatar of ${c.login ?? c.name ?? 'anonymous'}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .contributors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: var(--space6);
+    row-gap: var(--space5);
+  }
+
+  .avatar {
+    display: block;
+    block-size: 4rem;
+    inline-size: 4rem;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 0 0 var(--space2) var(--gray8);
+  }
+
+  .avatar img {
+    inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import Container from './Container.astro'
+import ukraineFlag from '@/assets/ua-flag.svg'
+---
+
+<aside class={'root'}>
+  <Container className={'container'}>
+    <p class={'text'}>
+      <img
+        class={'flag'}
+        src={ukraineFlag.src}
+        alt="Flag of Ukraine"
+        width={24}
+        height={16}
+      />
+      We stand with the brave people of Ukraine. Stop the war. Find out{' '}
+      <a
+        href="https://transloadit.com/blog/2022/02/ukraine"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={'link'}
+      >
+        how you can help
+      </a>
+      .
+    </p>
+  </Container>
+</aside>
+
+<style>
+  .root {
+    background-color: var(--blue1);
+    font-size: calc(15 / 16 * 1rem);
+  }
+
+  .container {
+    padding-block: var(--space1);
+  }
+
+  .flag {
+    margin-inline-end: var(--space2);
+  }
+
+  .text {
+    margin: 0;
+    color: white;
+  }
+
+  .link {
+    color: gold;
+    font-weight: bold;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+</style>

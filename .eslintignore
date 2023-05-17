@@ -1,6 +1,5 @@
 node_modules/
-lib/
-fixture/
-assets/build/
-_site/
-_jekyll/
+dist/
+.yarn/
+yarn.lock
+.astro/
