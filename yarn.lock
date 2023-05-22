@@ -8248,10 +8248,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.14.1":
-  version: 10.14.1
-  resolution: "preact@npm:10.14.1"
-  checksum: 2babea9a7a48c93fbdc1bc2b4ec599070585cdf253bbfc2f37ebdd3a3c85c503a92af2be175344a46d1e0439820702b92ad60e9140abefc49c43871f906e8461
+"preact@npm:^10.15.0":
+  version: 10.15.0
+  resolution: "preact@npm:10.15.0"
+  checksum: 6fa78d31798305a33e5202421551d18f1cbe99ab5ca2a93935e29f48f33997b3ca5ebd1dff51270d0b1291414e98baff2dca00512b6fff8c6ebb670e1e01c15e
   languageName: node
   linkType: hard
 
@@ -9981,7 +9981,7 @@ __metadata:
     postcss: ^8.4.23
     postcss-html: ^1.5.0
     postcss-preset-env: ^8.3.2
-    preact: ^10.14.1
+    preact: ^10.15.0
     prettier: ^2.8.8
     prettier-plugin-astro: ^0.8.1
     pretty-bytes: ^6.1.0
