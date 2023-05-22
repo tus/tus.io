@@ -1571,10 +1571,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.12":
-  version: 18.16.12
-  resolution: "@types/node@npm:18.16.12"
-  checksum: 90b316c097a059534870bc8e358c7996d99e3bb4395c88a91b893b925ad34e32ff1177009ec6c16a6467266414dca64ec9613e9e6bb3f91b6de0ab629d3bb3b9
+"@types/node@npm:^20.2.3":
+  version: 20.2.3
+  resolution: "@types/node@npm:20.2.3"
+  checksum: 576065e8fc1fa45798c8f59a6bf809169582d04abc2e25fab1a048ffc734975b9992ae31be0d960cf705a21fb37112f7fcde11aa322beddf7491e73d5a5a988c
   languageName: node
   linkType: hard
 
@@ -9960,7 +9960,7 @@ __metadata:
     "@types/eslint": ^8.37.0
     "@types/lodash-es": ^4.17.7
     "@types/mapbox__rehype-prism": ^0.8.0
-    "@types/node": ^18.16.12
+    "@types/node": ^20.2.3
     "@types/react": ^18.2.6
     "@typescript-eslint/eslint-plugin": ^5.59.6
     "@typescript-eslint/parser": ^5.59.6
