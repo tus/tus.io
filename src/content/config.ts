@@ -1,23 +1,65 @@
 import { z, defineCollection } from 'astro:content'
 
-const blog = defineCollection({
+const authors = defineCollection({
+  type: 'data',
   schema: z.object({
-    title: z.string(),
+    gravatar: z.string(),
+    name: z.string(),
+    email: z.string().optional(),
+    github: z.string().optional(),
+    twitter: z.string().optional(),
+    web: z.string().optional(),
+  }),
+})
+
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
     author: z.string(),
     date: z.date(),
+    title: z.string(),
     meta_description: z.string().optional(),
     redirect_from: z.string().optional(),
   }),
 })
 
 const features = defineCollection({
+  type: 'content',
   schema: z.object({
     title: z.string(),
     order: z.number(),
   }),
 })
 
+const implementations = defineCollection({
+  type: 'data',
+  schema: z.object({
+    icon: z.string(),
+    name: z.string(),
+    repo: z.string(),
+  }),
+})
+
+const logos = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    src: z.string(),
+    url: z.string(),
+  }),
+})
+
+const press = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    src: z.string(),
+    url: z.string(),
+  }),
+})
+
 const protocols = defineCollection({
+  type: 'content',
   schema: z.object({
     title: z.string(),
     version: z.string(),
@@ -26,7 +68,11 @@ const protocols = defineCollection({
 })
 
 export const collections = {
+  authors,
   blog,
   features,
+  implementations,
+  logos,
+  press,
   protocols,
 }
