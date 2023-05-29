@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/gerdus/tus-dotnet-client",
+  "authors": [
+    {
+      "name": "Gerdus van Zyl",
+      "href": "https://github.com/gerdus"
+    }
+  ],
+  "name": "gerdus/tus-dotnet-client",
+  "description": "Integrate tus <code>v1.0.0</code> with <strong>.NET</strong> applications (C#, Visual Basic.Net, etc)",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/cenkalti/tus.py",
+  "authors": [
+    {
+      "name": "Cenk Altı",
+      "href": "https://github.com/cenkalti"
+    }
+  ],
+  "name": "cenkalti/tus.py",
+  "description": "Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients, plus <strong>command-line</strong> program",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/hossyposs/Tus.Net.Client",
+  "authors": [
+    {
+      "name": "hossyposs",
+      "href": "https://github.com/hossyposs"
+    }
+  ],
+  "name": "hossyposs/Tus.Net.Client",
+  "description": "A lightweight tus <code>v1.0.0</code> client for <strong>.NET5/DotNetCore</strong>.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/vinzscam/react-native-tus-client",
+  "authors": [
+    {
+      "name": "Vincenzo Scamporlino",
+      "href": "https://github.com/vinzscam"
+    }
+  ],
+  "name": "vinzscam/react-native-tus-client",
+  "description": "This project is a tus <code>1.0.0</code> client implementation specifically for <strong>React Native</strong> applications",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

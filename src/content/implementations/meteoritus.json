@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/kallebysantos/meteoritus",
+  "authors": [
+    {
+      "name": "Kalleby Santos",
+      "href": "https://github.com/kallebysantos"
+    }
+  ],
+  "name": "kallebysantos/meteoritus",
+  "description": "This project is a <strong>Rust</strong> library that implements tus <code>v1.0.0</code> server integration for <strong>Rocket framework</strong>",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

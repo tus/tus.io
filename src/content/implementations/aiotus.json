@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/JenSte/aiotus",
+  "authors": [
+    {
+      "name": "Jens Steinhauser",
+      "href": "https://github.com/JenSte"
+    }
+  ],
+  "name": "JenSte/aiotus",
+  "description": "An <strong>asynchronous Python 3</strong> client-side tus <code>v1.0.0</code> implementation.",
+  "license": "Apache License 2.0",
+  "type": "community",
+  "subtype": "client"
+}

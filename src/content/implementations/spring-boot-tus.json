@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/dino9527/spring-boot-tus",
+  "authors": [
+    {
+      "name": "Chu Hang",
+      "href": "https://github.com/dino9527"
+    }
+  ],
+  "name": "dino9527/spring-boot-tus",
+  "description": "The HTTP stack uses <strong>Webflux</strong> and <strong>MySQL</strong> as the backend of upload information management. Supported extensions include creation, checksum, expiration, termination, and concatenation. It provides an implementation of tus <code>v1.0.0</code> protocol for local storage and allows implementers to develop their own specific requirements.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/janko/tus-ruby-server",
+  "authors": [
+    {
+      "name": "Janko Marohnić",
+      "href": "https://github.com/janko"
+    }
+  ],
+  "name": "janko/tus-ruby-server",
+  "description": "The <strong>ruby</strong> server implementation of tus <code>v1.0.0</code>, can be run standalone or mounted in a ruby app",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

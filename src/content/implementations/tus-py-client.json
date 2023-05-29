@@ -1,0 +1,13 @@
+{
+  "href": "https://github.com/tus/tus-py-client",
+  "authors": [
+    {
+      "name": "Ifedapo Olarewaju",
+      "href": "https://github.com/ifedapoolarewaju"
+    }
+  ],
+  "name": "tus-py-client",
+  "description": "Integrate tus <code>v1.0.0</code> with <strong>Python</strong> clients",
+  "license": "MIT",
+  "type": "official"
+}

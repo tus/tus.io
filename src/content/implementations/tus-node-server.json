@@ -1,0 +1,13 @@
+{
+  "href": "https://github.com/tus/tus-node-server",
+  "authors": [
+    {
+      "name": "tus",
+      "href": "/support.html"
+    }
+  ],
+  "name": "tus-node-server",
+  "description": "A stand-alone <strong>server</strong> or <a href=\"http://expressjs.com/en/guide/using-middleware.html\">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.",
+  "license": "MIT",
+  "type": "official"
+}

@@ -1,0 +1,18 @@
+{
+  "href": "https://code.uplex.de/uplex-varnish/libvmod-tus",
+  "authors": [
+    {
+      "name": "Nils Goroll",
+      "href": "https://github.com/nigoroll"
+    },
+    {
+      "name": "UPLEX",
+      "href": "https://uplex.de/"
+    }
+  ],
+  "name": "libvmod-tus",
+  "description": "A <strong><a href=\"https://varnish-cache.org/\">Varnish Cache</a></strong> module (<strong>vmod</strong>) to handle tus <code>1.0.0</code> client uploads and turn them into a single backend request, e.g. as a <code>PUT</code> request.",
+  "license": "BSD 2-clause",
+  "type": "community",
+  "subtype": "server"
+}

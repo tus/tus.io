@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/vayam/tuspy",
+  "authors": [
+    {
+      "name": "Naren Venkataraman",
+      "href": "https://github.com/vayam"
+    }
+  ],
+  "name": "vayam/tuspy",
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>Python</strong> clients",
+  "license": "Apache License, Version 2.0",
+  "type": "community",
+  "subtype": "client"
+}
