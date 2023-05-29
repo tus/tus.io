@@ -15,6 +15,7 @@ module.exports = {
       pragma: 'h',
     },
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
