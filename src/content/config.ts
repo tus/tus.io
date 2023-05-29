@@ -34,9 +34,19 @@ const features = defineCollection({
 const implementations = defineCollection({
   type: 'data',
   schema: z.object({
-    icon: z.string(),
+    authors: z.array(
+      z.object({
+        name: z.string(),
+        href: z.string(),
+      })
+    ),
+    href: z.string().describe('Repository URL'),
     name: z.string(),
-    repo: z.string(),
+    icon: z.string().optional(),
+    description: z.string().describe('HTML allowed'),
+    license: z.string(),
+    type: z.union([z.literal('official'), z.literal('community')]),
+    subtype: z.union([z.literal('client'), z.literal('server')]).optional(),
   }),
 })
 

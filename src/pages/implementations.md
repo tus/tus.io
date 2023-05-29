@@ -122,7 +122,7 @@ could be implemented as Ruby libraries, WordPress plugins, Bash/cURL, etc.
 For new implementations, we recommend using the MIT license and making clear
 what protocol version you're targeting.
 
-<h4>Client</h4>
+### Client
 
 <ul class="implementations">
   <li>
@@ -281,7 +281,7 @@ what protocol version you're targeting.
   </li>
 </ul>
 
-<h4>Server</h4>
+### Server
 
 <ul class="implementations">
   <li>
@@ -465,7 +465,7 @@ what protocol version you're targeting.
     </div>
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/kallebysantos/meteoritus">
       kallebysantos/meteoritus
@@ -475,21 +475,6 @@ what protocol version you're targeting.
       This project is a <strong>Rust</strong> library that implements tus <code>v1.0.0</code> server integration for <strong>Rocket framework</strong>
     </div>
     <div class="license">Licensed under MIT</div>
-  </li>
-  
-  <li>
-    <a class="title" href="https://github.com/kallebysantos/meteoritus">
-      kallebysantos/meteoritus
-    </a>
-      
-    <div class="author">&mdash; by <a href="https://github.com/kallebysantos">Kalleby Santos</a></div>
-
-    <div class="description">
-      This project is a <strong>Rust</strong> library that implements tus <code>v1.0.0</code> server integration for <strong>Rocket framework</strong>
-    </div>
-
-    <div class="license">Licensed under MIT</div>
-
   </li>
 
   <li>
@@ -513,7 +498,7 @@ what protocol version you're targeting.
     </div>
     <div class="license">Licensed under MIT</div>
   </li>
-  
+
   <li>
     <a class="title" href="https://github.com/dino9527/spring-boot-tus">
       dino9527/spring-boot-tus
@@ -523,10 +508,10 @@ what protocol version you're targeting.
       The HTTP stack uses <strong>Webflux</strong> and <strong>MySQL</strong> as the backend of upload information management. Supported extensions include creation, checksum, expiration, termination, and concatenation. It provides an implementation of tus <code>v1.0.0</code> protocol for local storage and allows implementers to develop their own specific requirements.
     </div>
     <div class="license">Licensed under MIT</div>
-  </li> 
+  </li>
 </ul>
 
-<h4>Projects using tus</h4>
+## Projects using `tus`
 
 <ul>
   <li>

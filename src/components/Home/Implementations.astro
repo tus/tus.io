@@ -1,6 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
-const implementations = await getCollection('implementations')
+
+const implementations = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'official' && !!d.data.icon
+)
 ---
 
 <h2>Official implementations</h2>
@@ -9,9 +13,9 @@ const implementations = await getCollection('implementations')
   {
     implementations.map((d) => (
       <article class={'implementation'}>
-        <a href={`https://github.com/${d.data.repo}`}>
+        <a href={d.data.href}>
           <img
-            src={`/images/${d.data.icon}.svg`}
+            src={`/images/${d.data.icon!}.svg`}
             alt={`Support for ${d.data.name}`}
             loading="lazy"
           />

@@ -1,12 +1,13 @@
 ---
 import PageFooter from '@/components/PageFooter.astro'
 import Layout from './default.astro'
+import type { MarkdownLayoutProps } from 'astro'
 
-type Props = {
+type Props = MarkdownLayoutProps<{
   title: string
-}
+}>
 
-const { title } = Astro.props
+const { title } = Astro.props.frontmatter
 ---
 
 <Layout title={title}>

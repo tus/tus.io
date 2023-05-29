@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/page.astro
+layout: ../layouts/markdown.astro
 title: FAQ
 permalink: /faq
 redirect_from: /guide

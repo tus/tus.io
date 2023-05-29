@@ -14,7 +14,22 @@ import BlogPosts from '@/components/Home/BlogPosts.astro'
 const title = 'tus - resumable file uploads'
 const githubActivity = await getGitHubActivity()
 
-const logos = await getCollection('logos')
+const displayedUsers = [
+  'transloadit',
+  'vimeo',
+  'cloudflare',
+  'git-lfs',
+  'san-diego-supercomputer-center',
+]
+
+const logos = (
+  await getCollection('logos', (logo) => displayedUsers.includes(logo.id))
+).sort((a, b) => {
+  const iA = displayedUsers.indexOf(a.id)
+  const iB = displayedUsers.indexOf(b.id)
+  return iA - iB
+})
+
 const press = await getCollection('press')
 ---
 
