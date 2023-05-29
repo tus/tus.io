@@ -14,11 +14,14 @@ const implementations = await getCollection(
     implementations.map((d) => (
       <article class={'implementation'}>
         <a href={d.data.href}>
-          <img
-            src={`/images/${d.data.icon!}.svg`}
-            alt={`Support for ${d.data.name}`}
-            loading="lazy"
-          />
+          {d.data.icon && (
+            <img
+              src={`/images/${d.data.icon}.svg`}
+              alt={`Support for ${d.data.name}`}
+              loading="lazy"
+              decoding="async"
+            />
+          )}
           {d.data.name}
         </a>
       </article>
