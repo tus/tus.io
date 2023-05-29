@@ -1,11 +1,14 @@
 ---
-import authors from '@/data/authors.json'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import { getCollection } from 'astro:content'
 
 const posts = await getCollection('blog')
 const lastFivePosts = posts.reverse().slice(0, 5)
+
+const authors = await getCollection('authors', (author) =>
+  posts.some((post) => post.data.author === author.id)
+)
 
 const formatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -19,7 +22,8 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 <ol class={'posts'}>
   {
     lastFivePosts.map((p) => {
-      const author = authors[p.data.author as keyof typeof authors]
+      const author = authors.find((a) => a.id === p.data.author)
+
       return (
         <li>
           <article class={'post'}>
@@ -32,22 +36,25 @@ const formatter = new Intl.DateTimeFormat('en-US', {
               </time>
             </div>
 
-            <a
-              href={getAuthorHref(author)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={author.name}
-              class={'author'}
-            >
-              <img
-                src={`https://secure.gravatar.com/avatar/${author.gravatar}&s=64`}
-                class={'gravatar'}
-                loading="lazy"
-                width="64"
-                height="64"
-                alt={`Avatar of ${author.name}`}
-              />
-            </a>
+            {author && (
+              <a
+                href={getAuthorHref(author)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={author.data.name}
+                class={'author'}
+              >
+                <img
+                  src={`https://secure.gravatar.com/avatar/${author.data.gravatar}&s=64`}
+                  class={'gravatar'}
+                  loading="lazy"
+                  decoding="async"
+                  width="64"
+                  height="64"
+                  alt={`Avatar of ${author.data.name}`}
+                />
+              </a>
+            )}
           </article>
         </li>
       )

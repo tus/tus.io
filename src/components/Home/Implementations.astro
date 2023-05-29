@@ -1,5 +1,6 @@
 ---
-import implementations from '@/data/implementations.json'
+import { getCollection } from 'astro:content'
+const implementations = await getCollection('implementations')
 ---
 
 <h2>Official implementations</h2>
@@ -8,13 +9,13 @@ import implementations from '@/data/implementations.json'
   {
     implementations.map((d) => (
       <article class={'implementation'}>
-        <a href={`https://github.com/${d.repo}`}>
+        <a href={`https://github.com/${d.data.repo}`}>
           <img
-            src={`/images/${d.icon}.svg`}
-            alt={`Support for ${d.name}`}
+            src={`/images/${d.data.icon}.svg`}
+            alt={`Support for ${d.data.name}`}
             loading="lazy"
           />
-          {d.name}
+          {d.data.name}
         </a>
       </article>
     ))
