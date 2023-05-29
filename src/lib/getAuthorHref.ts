@@ -1,11 +1,11 @@
-import type authors from '@/data/authors.json'
+import type { CollectionEntry } from 'astro:content'
 
-export function getAuthorHref(author: (typeof authors)[keyof typeof authors]) {
-  if ('twitter' in author) {
-    return `https://twitter.com/${author.twitter}`
+export function getAuthorHref(author: CollectionEntry<'authors'>) {
+  if (author.data?.twitter) {
+    return `https://twitter.com/${author.data.twitter}`
   }
 
-  if ('web' in author) {
-    return author.web
+  if ('web' in author.data) {
+    return author.data.web
   }
 }

@@ -29,6 +29,7 @@ const AnchorIcon = h(
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tus.io',
+  compressHTML: true,
   integrations: [
     preact({ compat: true }),
     sitemap({
