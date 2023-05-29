@@ -15,6 +15,11 @@
     "name": "Cloudflare"
   },
   {
+    "url": "https://supabase.com",
+    "src": "/images/logos/supabase.png",
+    "name": "Supabase"
+  },
+  {
     "url": "https://git-lfs.github.com/",
     "src": "/images/logos/git-lfs-icon.png",
     "name": "Git LFS"
