@@ -3,7 +3,7 @@ import { computed, signal } from '@preact/signals'
 import cx from 'clsx'
 import { useEffect, useRef } from 'preact/hooks'
 import styles from './style.module.css'
-import VisuallyHidden from '../VisuallyHidden'
+import { VisuallyHidden } from '../VisuallyHidden'
 
 const expanded = signal(false)
 const hidden = computed(() => !expanded.value)
@@ -12,7 +12,7 @@ type NavigationProps = {
   currentPage: string
 }
 
-export default function Navigation(props: NavigationProps) {
+export function Navigation(props: NavigationProps) {
   const { currentPage } = props
 
   const nav = useRef<HTMLElement>(null)

@@ -223,7 +223,7 @@ type TusOnGithubProps = {
 // duplicate or irrelevant data
 const filteredTypes = ['DeleteEvent', 'PullRequestReviewCommentEvent']
 
-export default function TusOnGithub(props: TusOnGithubProps) {
+export function TusOnGithub(props: TusOnGithubProps) {
   const { githubActivity } = props
 
   const activity = useSignal<PublicOrgEvents>(githubActivity)
