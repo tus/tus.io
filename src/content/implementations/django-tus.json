@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/alican/django-tus",
+  "authors": [
+    {
+      "name": "Alican Toprak",
+      "href": "https://github.com/alican"
+    }
+  ],
+  "name": "alican/django-tus",
+  "description": "Django app implementing server side of the tus <code>v1.0.0</code> protocol to power resumable file uploads in <strong>Django Python</strong> projects",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

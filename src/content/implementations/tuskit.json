@@ -1,1 +1,18 @@
-{ "name": "TUSKit", "icon": "os-ios", "repo": "tus/TUSKit" }
+{
+  "href": "https://github.com/tus/TUSKit",
+  "authors": [
+    {
+      "name": "Alexis Hildebrandt",
+      "href": "https://github.com/afh"
+    },
+    {
+      "name": "Mark R. Masterson",
+      "href": "https://github.com/MMasterson"
+    }
+  ],
+  "name": "TUSKit",
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>iOS</strong> clients.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "os-ios"
+}

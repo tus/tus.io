@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/s3rius/rustus",
+  "authors": [
+    {
+      "name": "Pavel Kirilin",
+      "href": "https://github.com/s3rius"
+    }
+  ],
+  "name": "s3rius/rustus",
+  "description": "This project is a tus <code>1.0.0</code> server implementation in <strong>Rust</strong> with many useful integrations.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

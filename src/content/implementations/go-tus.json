@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/eventials/go-tus",
+  "authors": [
+    {
+      "name": "Eventials",
+      "href": "https://github.com/eventials"
+    }
+  ],
+  "name": "eventials/go-tus",
+  "description": "Integrate tus <code>v1.0.0</code> into your <strong>Golang</strong> application",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

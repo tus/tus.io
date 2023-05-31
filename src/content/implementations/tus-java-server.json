@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/tomdesair/tus-java-server",
+  "authors": [
+    {
+      "name": "Tom Desair",
+      "href": "https://github.com/tomdesair"
+    }
+  ],
+  "name": "tomdesair/tus-java-server",
+  "description": "This project enables tus <code>1.0.0</code> resumable uploads for any <strong>Java</strong> web application",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

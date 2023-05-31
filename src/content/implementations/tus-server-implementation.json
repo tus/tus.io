@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/ckaratzas/tus-server-implementation",
+  "authors": [
+    {
+      "name": "Christos Karatzas",
+      "href": "https://github.com/ckaratzas"
+    }
+  ],
+  "name": "ckaratzas/tus-server-implementation",
+  "description": "This project provides a tus <code>1.0.0</code> server built using <strong>Java</strong> and the Vert.x-Web stack with various extensions",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

@@ -1,5 +1,14 @@
 {
+  "href": "https://github.com/tus/tus-java-client",
+  "authors": [
+    {
+      "name": "tus",
+      "href": "/support.html"
+    }
+  ],
   "name": "tus-java-client",
-  "icon": "prog-java",
-  "repo": "tus/tus-java-client"
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> app using <strong>Java</strong>.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "prog-java"
 }

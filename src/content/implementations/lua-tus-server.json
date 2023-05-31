@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/mmatuska/lua-tus-server",
+  "authors": [
+    {
+      "name": "Martin Matuška",
+      "href": "https://github.com/mmatuska"
+    }
+  ],
+  "name": "mmatuska/lua-tus-server",
+  "description": "This project allows you to add tus <code>1.0.0</code> support to your OpenResty or NGINX (with mod_lua) installation.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

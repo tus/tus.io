@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/matthoskins1980/Flask-Tus",
+  "authors": [
+    {
+      "name": "Matt Hoskins",
+      "href": "https://github.com/matthoskins1980"
+    }
+  ],
+  "name": "matthoskins1980/Flask-Tus",
+  "description": "<strong>Flask</strong> extension implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Python</strong> servers and apps",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

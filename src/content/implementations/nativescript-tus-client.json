@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/kiwiirc/nativescript-tus-client",
+  "authors": [
+    {
+      "name": "Tiago Alves",
+      "href": "https://github.com/tralves"
+    }
+  ],
+  "name": "kiwiirc/nativescript-tus-client",
+  "description": "A NativeScript plugin for TUS. Uses the native libs <a href=\"https://github.com/tus/TUSKit\">TUSKit (iOS)</a> and <a href=\"https://github.com/tus/tus-android-client\">tus-android-client</a> under the hood.",
+  "license": "Apache License 2.0",
+  "type": "community",
+  "subtype": "client"
+}
