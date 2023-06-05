@@ -19,6 +19,7 @@ const displayedUsers = [
   'vimeo',
   'cloudflare',
   'git-lfs',
+  'supabase',
   'san-diego-supercomputer-center',
 ]
 
@@ -114,7 +115,7 @@ const press = await getCollection('press')
 
       <div class={'logos'}>
         {
-          logos.slice(0, 5).map((logo) => (
+          logos.map((logo) => (
             <a href={logo.data.url} class={'logo'}>
               <img src={logo.data.src} alt={logo.data.name} loading="lazy" />
             </a>
