@@ -1,0 +1,227 @@
+---
+import Layout from '@/layouts/page.astro'
+
+import { getCollection } from 'astro:content'
+
+const officialImplementations = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'official'
+)
+
+const communityClientImplementations = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'community' && d.data.subtype === 'client'
+)
+
+const communityServerImplementations = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'community' && d.data.subtype === 'server'
+)
+---
+
+<Layout title="Implementations">
+  <h1>Implementations</h1>
+
+  <p>
+    Here are some real-life implementations of the tus resumable upload <a
+      href="/protocol/resumable-upload">protocol</a
+    > in different languages and platforms.
+  </p>
+
+  <h2>Uppy</h2>
+
+  <p>
+    Some special attention should go to <a
+      href="https://uppy.io/"
+      target="_blank">Uppy</a
+    > which is a full-featured file uploader for web browsers that supports tus.
+    Just like tus, Uppy is brought to you by the people behind <a
+      href="https://transloadit.com"
+      ><img
+        src="/images/transloadit-logo.png"
+        width="16"
+        height="16"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        style="margin-inline-end: var(--space1);"
+      />Transloadit</a
+    > and represents their take on how to use tus technology in user-facing products.
+  </p>
+
+  <p>
+    For core implementations with a smaller footprint or non-web browser use,
+    read on.
+  </p>
+
+  <h2>Official</h2>
+
+  <p>
+    These projects are reference implementations maintained by the protocol
+    developers.
+  </p>
+
+  <ul class="implementations">
+    {
+      officialImplementations.map((implementation) => (
+        <li>
+          <a class="title" href={implementation.data.href}>
+            {implementation.data.name}
+          </a>{' '}
+          <div class="author">
+            — by{' '}
+            {implementation.data.authors.map((author, index, arr) => {
+              const isLast = index === arr.length - 1
+              return (
+                <>
+                  <a href={author.href}>{author.name}</a>
+                  {!isLast && <span> and </span>}
+                </>
+              )
+            })}
+          </div>
+          <div class="description" set:html={implementation.data.description} />
+          <div class="license">
+            Licensed under {implementation.data.license}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p>
+    As we go we'll adopt high-quality MIT licensed implementations for all
+    languages and platforms under the GitHub <a href="https://github.com/tus"
+      >tus organisation</a
+    >. We'll be looking to fork gems inside the Community section below.
+  </p>
+
+  <h2>Community</h2>
+
+  <p>
+    The <a href="/protocols/resumable-upload">protocol</a> is very simple and because
+    it builds on standard HTTP calls it could be implemented as Ruby libraries, WordPress
+    plugins, Bash/cURL, etc.
+  </p>
+
+  <p>
+    For new implementations, we recommend using the MIT license and making clear
+    what protocol version you're targeting.
+  </p>
+
+  <h3>Client</h3>
+
+  <ul class="implementations">
+    {
+      communityClientImplementations.map((implementation) => (
+        <li>
+          <a class="title" href={implementation.data.href}>
+            {implementation.data.name}
+          </a>{' '}
+          <div class="author">
+            — by{' '}
+            {implementation.data.authors.map((author, index, arr) => {
+              const isLast = index === arr.length - 1
+              return (
+                <>
+                  <a href={author.href}>{author.name}</a>
+                  {!isLast && <span> and </span>}
+                </>
+              )
+            })}
+          </div>
+          <div class="description" set:html={implementation.data.description} />
+          <div class="license">
+            Licensed under {implementation.data.license}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3>Server</h3>
+
+  <ul class="implementations">
+    {
+      communityServerImplementations.map((implementation) => (
+        <li>
+          <a class="title" href={implementation.data.href}>
+            {implementation.data.name}
+          </a>{' '}
+          <div class="author">
+            — by{' '}
+            {implementation.data.authors.map((author, index, arr) => {
+              const isLast = index === arr.length - 1
+              return (
+                <>
+                  <a href={author.href}>{author.name}</a>
+                  {!isLast && <span> and </span>}
+                </>
+              )
+            })}
+          </div>
+          <div class="description" set:html={implementation.data.description} />
+          <div class="license">
+            Licensed under {implementation.data.license}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3>Projects using tus</h3>
+
+  <ul>
+    <li>
+      <a class="title" href="https://github.com/choonkeat/attache#rubygem">
+        choonkeat/attache#rubygem
+      </a>
+    </li>
+    <li>
+      <a class="title" href="https://github.com/shrinerb/shrine">
+        shrinerb/shrine
+      </a>
+    </li>
+    <li>
+      Goa based tus server implementation: <a
+        class="title"
+        href="https://github.com/goadesign/examples/tree/master/tus"
+      >
+        goadesign/examples/tus
+      </a>
+    </li>
+    <li>
+      The react-uploady library includes a tus upload component: <a
+        href="https://github.com/rpldy/react-uploady"
+      >
+        rpldy/react-uploady</a
+      >
+    </li>
+  </ul>
+
+  <p>
+    Drop a line if you built an open source tus implementation, and you'll be
+    listed here.
+  </p>
+
+  <style>
+    .implementations {
+      list-style: disc outside;
+      margin-inline-start: var(--space8);
+      padding-inline-start: var(--space4);
+    }
+
+    .implementations .title {
+      display: inline-block;
+    }
+
+    .implementations .author {
+      display: inline-block;
+      color: var(--gray10);
+    }
+
+    .implementations .author a {
+      color: inherit;
+    }
+  </style>
+</Layout>

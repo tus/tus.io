@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/dirkmoors/drf-tus",
+  "authors": [
+    {
+      "name": "Dirk Moors",
+      "href": "https://github.com/dirkmoors"
+    }
+  ],
+  "name": "dirkmoors/drf-tus",
+  "description": "A Python library for powering tus <code>v1.0.0</code> resumable file uploads in applications using <strong>Django Rest Framework</strong>.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

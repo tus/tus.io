@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/vencax/coffeetus",
+  "authors": [
+    {
+      "name": "vencax",
+      "href": "https://github.com/vencax"
+    }
+  ],
+  "name": "vencax/coffeetus",
+  "description": "tus <code>v1.0.0</code> powering resumable file uploads for <strong>CoffeeScript</strong> based Node.js servers and apps",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

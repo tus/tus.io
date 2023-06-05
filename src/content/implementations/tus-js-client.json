@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/tus/tus-js-client",
+  "authors": [
+    {
+      "name": "tus",
+      "href": "/support.html"
+    }
+  ],
+  "name": "tus-js-client",
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> web apps that are built with <strong>JavaScript</strong>.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "prog-js01"
+}

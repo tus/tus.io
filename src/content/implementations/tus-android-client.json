@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/tus/tus-android-client",
+  "authors": [
+    {
+      "name": "tus",
+      "href": "/support.html"
+    }
+  ],
+  "name": "tus-android-client",
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>Android</strong> apps.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "android"
+}

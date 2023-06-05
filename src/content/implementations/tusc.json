@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/jackhftang/tusc",
+  "authors": [
+    {
+      "name": "Jack Tang",
+      "href": "https://github.com/jackhftang"
+    }
+  ],
+  "name": "jackhftang/tusc",
+  "description": "This project provide a <strong>small-size and static-binary command line utility</strong> of tus <code>1.0.0</code> for both client and server.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

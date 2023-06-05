@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/everydo/tusfilter",
+  "authors": [
+    {
+      "name": "FuGangqiang",
+      "href": "https://github.com/FuGangqiang"
+    }
+  ],
+  "name": "everydo/tusfilter",
+  "description": "<strong>wsgi filter</strong> middleware implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Flask, Bottle, Django and Pyraimd</strong> servers and apps",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

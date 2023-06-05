@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/terrischwartz/tus_servlet",
+  "authors": [
+    {
+      "name": "Terri Schwartz",
+      "href": "https://github.com/terrischwartz"
+    }
+  ],
+  "name": "terrischwartz/tus_servlet",
+  "description": "<strong>Java servlet</strong> implementing server side of tus <code>v1.0.0</code>",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

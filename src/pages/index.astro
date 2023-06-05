@@ -1,19 +1,37 @@
 ---
 import banner from '@/assets/banner.png'
-import BlogPosts from '@/components/Home/BlogPosts.astro'
+import Emoji from '@/components/Emoji.astro'
 import Features from '@/components/Home/Features.astro'
 import Implementations from '@/components/Home/Implementations.astro'
 import Social from '@/components/Social.astro'
 import { TusOnGithub } from '@/components/TusOnGithub'
 import { VisuallyHidden } from '@/components/VisuallyHidden'
-import logos from '@/data/logos.json'
-import press from '@/data/press.json'
 import { getGitHubActivity } from '@/lib/getGitHubActivity'
+import { getCollection } from 'astro:content'
 import Layout from '../layouts/default.astro'
-import Emoji from '@/components/Emoji.astro'
+import BlogPosts from '@/components/Home/BlogPosts.astro'
 
 const title = 'tus - resumable file uploads'
 const githubActivity = await getGitHubActivity()
+
+const displayedUsers = [
+  'transloadit',
+  'vimeo',
+  'cloudflare',
+  'git-lfs',
+  'supabase',
+  'san-diego-supercomputer-center',
+]
+
+const logos = (
+  await getCollection('logos', (logo) => displayedUsers.includes(logo.id))
+).sort((a, b) => {
+  const iA = displayedUsers.indexOf(a.id)
+  const iB = displayedUsers.indexOf(b.id)
+  return iA - iB
+})
+
+const press = await getCollection('press')
 ---
 
 <Layout title={title}>
@@ -97,9 +115,9 @@ const githubActivity = await getGitHubActivity()
 
       <div class={'logos'}>
         {
-          logos.slice(0, 5).map((logo) => (
-            <a href={logo.url} class={'logo'}>
-              <img src={logo.src} alt={logo.name} loading="lazy" />
+          logos.map((logo) => (
+            <a href={logo.data.url} class={'logo'}>
+              <img src={logo.data.src} alt={logo.data.name} loading="lazy" />
             </a>
           ))
         }
@@ -127,10 +145,10 @@ const githubActivity = await getGitHubActivity()
       <div class="logos">
         {
           press.map((p) => (
-            <a href={p.url} class={'logo'}>
+            <a href={p.data.url} class={'logo'}>
               <img
-                src={p.src}
-                alt={`${p.name}`}
+                src={p.data.src}
+                alt={`${p.data.name}`}
                 loading="lazy"
                 decoding="async"
               />

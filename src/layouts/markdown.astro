@@ -1,0 +1,57 @@
+---
+import PageFooter from '@/components/PageFooter.astro'
+import Layout from './default.astro'
+import type { MarkdownLayoutProps } from 'astro'
+
+type Props = MarkdownLayoutProps<{
+  title: string
+}>
+
+const { title } = Astro.props.frontmatter
+---
+
+<Layout title={title}>
+  <main class="page">
+    <slot />
+  </main>
+  <PageFooter comments />
+</Layout>
+
+<style>
+  .page {
+    max-inline-size: 50rem;
+    padding-inline: var(--space3);
+    margin: 0 auto;
+  }
+
+  .page > :global(p:first-of-type) {
+    font-size: 1.25em;
+  }
+
+  .page :global(h2, h3, h4) {
+    margin-block-start: 2.5em;
+  }
+
+  .page :global(ol, ul) {
+    padding-inline-start: var(--space5);
+  }
+
+  .page :global(ul) {
+    list-style: disc outside;
+    padding-inline-start: var(--space5);
+  }
+
+  .page :global(ol) {
+    list-style: decimal inside;
+  }
+
+  .page :global(code) {
+    background-color: var(--gray2);
+    border: 1px solid var(--gray4);
+    border-radius: var(--space1);
+    font-size: 0.9rem;
+    margin: 0 2px;
+    padding: 2px var(--space1);
+    white-space: nowrap;
+  }
+</style>

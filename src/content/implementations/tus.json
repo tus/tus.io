@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/terminusdb/tus",
+  "authors": [
+    {
+      "name": "TerminusDB",
+      "href": "https://github.com/terminusdb"
+    }
+  ],
+  "name": "terminusdb/tus",
+  "description": "This project includes a tus <code>1.0.0</code> server and client implementation in <strong>Prolog</strong> for swipl.",
+  "license": "Apache License, Version 2.0",
+  "type": "community",
+  "subtype": "server"
+}

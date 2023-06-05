@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/pylotcode/aiohttp-tus",
+  "authors": [
+    {
+      "name": "@playpauseandstop",
+      "href": "https://github.com/playpauseandstop"
+    }
+  ],
+  "name": "pylotcode/aiohttp-tus",
+  "description": "<strong>Asynchronous Python 3</strong> implementation with binding to <strong>aiohttp.web</strong> framework implementing tus protocol",
+  "license": "BSD-3-Clause",
+  "type": "community",
+  "subtype": "server"
+}

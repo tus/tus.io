@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/Orajo/zf2-tus-server",
+  "authors": [
+    {
+      "name": "Jarosław Wasilewski",
+      "href": "https://github.com/Orajo"
+    }
+  ],
+  "name": "Orajo/zf2-tus-server",
+  "description": "A <strong>PHP</strong> server for powering tus <code>v1.0.0</code> resumable file uploads in Zend Framework 2 applications.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

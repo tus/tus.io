@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/bluetianx/BirdMessenger",
+  "authors": [
+    {
+      "name": "Bruce Tian",
+      "href": "https://github.com/bluetianx"
+    }
+  ],
+  "name": "bluetianx/BirdMessenger",
+  "description": "This project provides a tus <code>1.0.0</code> client built using <strong>.NET</strong>.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

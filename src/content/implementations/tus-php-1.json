@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/ankitpokhrel/tus-php",
+  "authors": [
+    {
+      "name": "Ankit Pokhrel",
+      "href": "https://github.com/ankitpokhrel"
+    }
+  ],
+  "name": "ankitpokhrel/tus-php",
+  "description": "This project is a tus <code>1.0.0</code> client and server implementation for <strong>PHP</strong> applications",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}

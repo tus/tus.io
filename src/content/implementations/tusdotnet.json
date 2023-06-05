@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/tusdotnet/tusdotnet",
+  "authors": [
+    {
+      "name": "Stefan Matsson",
+      "href": "https://github.com/smatsson"
+    }
+  ],
+  "name": "tusdotnet",
+  "description": "<strong>ASP.NET Core and OWIN middlewares</strong> written in <strong>C#</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "prog-dotnet"
+}

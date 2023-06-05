@@ -1,0 +1,18 @@
+{
+  "href": "https://github.com/Jon-Indico/TusDotNetClient",
+  "authors": [
+    {
+      "name": "Jon Grythe Stødle",
+      "href": "https://github.com/Jon-Indico"
+    },
+    {
+      "name": "Gerdus van Zyl",
+      "href": "https://github.com/gerdus"
+    }
+  ],
+  "name": "Jon-Indico/TusDotNetClient",
+  "description": "A tus <code>v1.0.0</code> client library for <strong>.NET</strong> applications",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

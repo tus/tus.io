@@ -2,7 +2,6 @@
 import { ExternalA } from '@/components/ExternalA'
 import PageFooter from '@/components/PageFooter.astro'
 import PostContent from '@/components/PostContent.astro'
-import authors from '@/data/authors.json'
 import Layout from '@/layouts/default.astro'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
@@ -22,13 +21,15 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 const { post } = Astro.props
 const { Content } = await post.render()
 
+const author = (
+  await getCollection('authors', (author) => author.id === post.data.author)
+)[0]
+
 const formatter = Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 })
-
-const author = authors[post.data.author as keyof typeof authors]
 ---
 
 <Layout title={post.data.title}>
@@ -39,7 +40,7 @@ const author = authors[post.data.author as keyof typeof authors]
         >{formatter.format(post.data.date)}</time
       > by{' '}
       <ExternalA href={getAuthorHref(author)}>
-        {author.name}
+        {author.data.name}
       </ExternalA>
     </p>
 

@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/adhocore/tusc.sh",
+  "authors": [
+    {
+      "name": "Jitendra Adhikari",
+      "href": "https://github.com/adhocore"
+    }
+  ],
+  "name": "adhocore/tusc.sh",
+  "description": "This project provides a tus <code>1.0.0</code> client for <strong>bash</strong>.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}

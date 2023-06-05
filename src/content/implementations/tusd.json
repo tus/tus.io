@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/tus/tusd",
+  "authors": [
+    {
+      "name": "tus",
+      "href": "/support.html"
+    }
+  ],
+  "name": "tusd",
+  "description": "A stand-alone <strong>server</strong> written in <strong>Go</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations.",
+  "license": "MIT",
+  "type": "official",
+  "icon": "prog-golang02"
+}
