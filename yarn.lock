@@ -29,6 +29,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/compiler@npm:^1.4.2":
+  version: 1.5.0
+  resolution: "@astrojs/compiler@npm:1.5.0"
+  checksum: 317bd349481fa94fb6cbccc3103b993c1b60ee92150171cab281755fd9736202df655c56655e653f1482d038bfb964b2fe82ea238bbfe67c302a308fbc1d6349
+  languageName: node
+  linkType: hard
+
 "@astrojs/language-server@npm:^1.0.0":
   version: 1.0.5
   resolution: "@astrojs/language-server@npm:1.0.5"
@@ -161,13 +168,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/ts-plugin@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@astrojs/ts-plugin@npm:1.0.6"
+"@astrojs/ts-plugin@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@astrojs/ts-plugin@npm:1.0.7"
   dependencies:
-    "@astrojs/compiler": ^1.4.1
+    "@astrojs/compiler": ^1.4.2
     "@jridgewell/trace-mapping": ^0.3.15
-  checksum: 88534756442fd3314d1deac7f73da9aa65593ccebf11b0d92f6ee89b6dcd2380eb12d40b60d4c42c1a4cdfa8255df095c558dcb1431c0ebefbcd8834c8b942de
+  checksum: dced2fb1713ba381fa68b5f32d3bcd0ada2d9281f2e3b23a426497cff3d51cd776ead5927841420557b70e14aef9cd80a825d53bba047575de6e5b2abca54213
   languageName: node
   linkType: hard
 
@@ -10089,7 +10096,7 @@ __metadata:
     "@astrojs/preact": ^2.2.0
     "@astrojs/rss": ^2.4.3
     "@astrojs/sitemap": ^1.3.1
-    "@astrojs/ts-plugin": ^1.0.6
+    "@astrojs/ts-plugin": ^1.0.7
     "@octokit/core": ^4.2.1
     "@octokit/plugin-paginate-rest": ^6.1.2
     "@octokit/plugin-rest-endpoint-methods": ^7.1.2
