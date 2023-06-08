@@ -10,6 +10,7 @@ import { getGitHubActivity } from '@/lib/getGitHubActivity'
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/default.astro'
 import BlogPosts from '@/components/Home/BlogPosts.astro'
+import PageFooter from '@/components/PageFooter.astro'
 
 const title = 'tus - resumable file uploads'
 const githubActivity = await getGitHubActivity()
@@ -158,6 +159,8 @@ const press = await getCollection('press')
       </div>
     </div>
   </section>
+
+  <PageFooter />
 </Layout>
 
 <style>

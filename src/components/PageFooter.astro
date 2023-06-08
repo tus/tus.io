@@ -1,5 +1,6 @@
 ---
 import Social from './Social.astro'
+import transloaditLogo from '@/assets/transloadit.png'
 
 type Props = {
   comments?: boolean
@@ -38,6 +39,20 @@ const { comments, social } = Astro.props
         </div>
       )
     }
+
+    <div class="tl">
+      <p><a href="/">tus.io</a> is created and maintained by</p>
+      <a href="https://transloadit.com/" target="_blank">
+        <img
+          src={transloaditLogo.src}
+          height={transloaditLogo.height}
+          width={transloaditLogo.width}
+          decoding="async"
+          loading="lazy"
+          alt="Transloadit"
+        />
+      </a>
+    </div>
   </footer>
 </div>
 
@@ -67,5 +82,22 @@ const { comments, social } = Astro.props
   .comments {
     border-block-start: 1px solid var(--gray4);
     padding-block: var(--space10);
+  }
+
+  .tl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space5);
+  }
+
+  .tl p {
+    margin-block-end: 0;
+  }
+
+  .tl img {
+    block-size: var(--space12);
+    inline-size: auto;
   }
 </style>
