@@ -17,10 +17,12 @@ const { centered, includeRss } = Astro.props
     href="https://community.transloadit.com/c/tus"
     class="community-forum-button"
   >
-    <Image
+    <img
       src={communityForumLogo.src}
       width={communityForumLogo.width}
       height={communityForumLogo.height}
+      loading="lazy"
+      decoding="async"
       alt="Community Forum"
     />
   </a>
