@@ -20,7 +20,7 @@ export function ProtocolSelect(props: ProtocolSelectProps) {
           if (!(event.target instanceof HTMLSelectElement)) return
 
           if (event.target.value === currentVersion) {
-            window.location.href = `/protocols/resumable-upload/`
+            window.location.href = `/protocols/resumable-upload`
             return
           }
 

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from './default.astro'
 import { ProtocolSelect } from '@/components/ProtocolSelect'
+import PageFooter from '@/components/PageFooter.astro'
 
 type Props = {
   currentVersion: string
@@ -48,6 +49,7 @@ const { currentVersion, selectedVersion, noindex, title } = Astro.props
     }
     <slot />
   </main>
+  <PageFooter />
 </Layout>
 
 <style>
