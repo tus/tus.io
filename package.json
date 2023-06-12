@@ -18,7 +18,7 @@
     "inject:protocol": "scripts/inject-protocol.sh && prettier --write ."
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.0.7",
+    "@astrojs/ts-plugin": "^1.0.10",
     "@types/eslint": "^8.40.0",
     "@types/lodash-es": "^4.17.7",
     "@types/mapbox__rehype-prism": "^0.8.0",
