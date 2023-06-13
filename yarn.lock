@@ -29,14 +29,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^1.4.2":
-  version: 1.5.0
-  resolution: "@astrojs/compiler@npm:1.5.0"
-  checksum: 317bd349481fa94fb6cbccc3103b993c1b60ee92150171cab281755fd9736202df655c56655e653f1482d038bfb964b2fe82ea238bbfe67c302a308fbc1d6349
-  languageName: node
-  linkType: hard
-
-"@astrojs/compiler@npm:^1.5.0":
+"@astrojs/compiler@npm:^1.5.0, @astrojs/compiler@npm:^1.5.1":
   version: 1.5.1
   resolution: "@astrojs/compiler@npm:1.5.1"
   checksum: 90b32391535d5e8f2896e67bb8bce307f4e09108537763fa0bcdc5e1c924453dad1fdcdb27a9c1aff83f8a97334b0e0f531352dc6edea6feea5e2f70a9520e55
@@ -182,13 +175,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/ts-plugin@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "@astrojs/ts-plugin@npm:1.0.7"
+"@astrojs/ts-plugin@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@astrojs/ts-plugin@npm:1.0.10"
   dependencies:
-    "@astrojs/compiler": ^1.4.2
-    "@jridgewell/trace-mapping": ^0.3.15
-  checksum: dced2fb1713ba381fa68b5f32d3bcd0ada2d9281f2e3b23a426497cff3d51cd776ead5927841420557b70e14aef9cd80a825d53bba047575de6e5b2abca54213
+    "@astrojs/compiler": ^1.5.1
+    "@jridgewell/trace-mapping": ^0.3.18
+  checksum: bab2b715b4610117adc2a50843235fb15c89750ea38427218f196d5e1d70dca0df922ae0e4690f1993382da3550924e9f7e9f7e7169ebd1b7475f50e9980431f
   languageName: node
   linkType: hard
 
@@ -1274,7 +1267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.15, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.9":
+"@jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.18, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.18
   resolution: "@jridgewell/trace-mapping@npm:0.3.18"
   dependencies:
@@ -1416,15 +1409,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/plugin-paginate-rest@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@octokit/plugin-paginate-rest@npm:7.0.0"
+"@octokit/openapi-types@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "@octokit/openapi-types@npm:18.0.0"
+  checksum: d487d6c6c1965e583eee417d567e4fe3357a98953fc49bce1a88487e7908e9b5dbb3e98f60dfa340e23b1792725fbc006295aea071c5667a813b9c098185b56f
+  languageName: node
+  linkType: hard
+
+"@octokit/plugin-paginate-rest@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "@octokit/plugin-paginate-rest@npm:7.1.0"
   dependencies:
     "@octokit/tsconfig": ^1.0.2
-    "@octokit/types": ^9.2.3
+    "@octokit/types": ^9.3.1
   peerDependencies:
     "@octokit/core": ">=4"
-  checksum: d8cec05313219e5cc167caa467a8e10b24bc00c44a655940c9dd8bc7e047deaf717fb56c62382666258f0c45e6ba021918841eb36dd1bd82a517f0851edd66b1
+  checksum: d96d0d2165857463506e4141db86a9f4580410d0220fd609822ea1b6e84cd72c6e7d68c2af5b4331f8a7dc9c28ce690d5b7d315ad0f2b425aa8fd414d9181e22
   languageName: node
   linkType: hard
 
@@ -1498,6 +1498,15 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^17.2.0
   checksum: 6806413089f20a8302237ef85aa2e83bace7499e95fdc3db2d304f9e6dc6e87fb6766452f92e08ddf475046b69753e11beabaeff6733c38bdaf3e21dfd7d3341
+  languageName: node
+  linkType: hard
+
+"@octokit/types@npm:^9.3.1":
+  version: 9.3.1
+  resolution: "@octokit/types@npm:9.3.1"
+  dependencies:
+    "@octokit/openapi-types": ^18.0.0
+  checksum: 56fce104114730553c79175261f288a263055af4a6de848130fa964940460ee4fe8fa610f33dd0862c2c178d7d97f703e44a799898f3b52583e7ce5ae595f8ff
   languageName: node
   linkType: hard
 
@@ -2996,23 +3005,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "concurrently@npm:8.1.0"
+"concurrently@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "concurrently@npm:8.2.0"
   dependencies:
     chalk: ^4.1.2
-    date-fns: ^2.29.3
+    date-fns: ^2.30.0
     lodash: ^4.17.21
-    rxjs: ^7.8.0
-    shell-quote: ^1.8.0
-    spawn-command: 0.0.2-1
+    rxjs: ^7.8.1
+    shell-quote: ^1.8.1
+    spawn-command: 0.0.2
     supports-color: ^8.1.1
     tree-kill: ^1.2.2
-    yargs: ^17.7.1
+    yargs: ^17.7.2
   bin:
     conc: dist/bin/concurrently.js
     concurrently: dist/bin/concurrently.js
-  checksum: f767345c6e142c8de58114afc7ed0e58c58882b110cad28d34e251f7a9cf018212b24c316272ac4df5fe322d64434575f94dad77ea861e868c894fb24b8f36b9
+  checksum: eafe6a4d9b7fda87f55ea285cfc6acd937a5286ceec8991ab48e6cc27c45fce6a5c6f45e18d7555defa15dc7d7e8941bc5a9d1ceaf182e31441d420e00333434
   languageName: node
   linkType: hard
 
@@ -3273,7 +3282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.29.3":
+"date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
@@ -9134,7 +9143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.8.0":
+"rxjs@npm:^7.8.1":
   version: 7.8.1
   resolution: "rxjs@npm:7.8.1"
   dependencies:
@@ -9306,7 +9315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shell-quote@npm:^1.8.0":
+"shell-quote@npm:^1.8.1":
   version: 1.8.1
   resolution: "shell-quote@npm:1.8.1"
   checksum: 5f01201f4ef504d4c6a9d0d283fa17075f6770bfbe4c5850b074974c68062f37929ca61700d95ad2ac8822e14e8c4b990ca0e6e9272e64befd74ce5e19f0736b
@@ -9479,10 +9488,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"spawn-command@npm:0.0.2-1":
-  version: 0.0.2-1
-  resolution: "spawn-command@npm:0.0.2-1"
-  checksum: 2cac8519332193d1ed37d57298c4a1f73095e9edd20440fbab4aa47f531da83831734f2b51c44bb42b2747bf3485dec3fa2b0a1003f74c67561f2636622e328b
+"spawn-command@npm:0.0.2":
+  version: 0.0.2
+  resolution: "spawn-command@npm:0.0.2"
+  checksum: e35c5d28177b4d461d33c88cc11f6f3a5079e2b132c11e1746453bbb7a0c0b8a634f07541a2a234fa4758239d88203b758def509161b651e81958894c0b4b64b
   languageName: node
   linkType: hard
 
@@ -10177,9 +10186,9 @@ __metadata:
     "@astrojs/preact": ^2.2.1
     "@astrojs/rss": ^2.4.3
     "@astrojs/sitemap": ^1.3.3
-    "@astrojs/ts-plugin": ^1.0.7
+    "@astrojs/ts-plugin": ^1.0.10
     "@octokit/core": ^4.2.1
-    "@octokit/plugin-paginate-rest": ^7.0.0
+    "@octokit/plugin-paginate-rest": ^7.1.0
     "@octokit/plugin-rest-endpoint-methods": ^7.1.3
     "@octokit/plugin-retry": ^5.0.2
     "@preact/signals": ^1.1.3
@@ -10193,7 +10202,7 @@ __metadata:
     astro: ^2.6.1
     autoprefixer: ^10.4.14
     clsx: ^1.2.1
-    concurrently: ^8.1.0
+    concurrently: ^8.2.0
     cross-fetch: ^3.1.6
     cssnano: ^6.0.1
     eslint: ^8.42.0
@@ -11027,7 +11036,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.7.1":
+"yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:
