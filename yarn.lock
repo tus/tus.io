@@ -1615,13 +1615,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^8.40.0":
-  version: 8.40.0
-  resolution: "@types/eslint@npm:8.40.0"
+"@types/eslint@npm:^8.40.1":
+  version: 8.40.1
+  resolution: "@types/eslint@npm:8.40.1"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: bab41d7f590182e743853cdd5bf5359cbc4240df986223457c8a5f5674743a3fe2a8626704b65bf9121dfa0ce0a0efd760da8339cc329018f229d4d2d6ee1c43
+  checksum: c210e4741f11d9fda0e06f4444a43f64af79ea72d60cd11ec4acc232374b34cbb49634286f949783d55d8a66b44fa0da041b6a90cfe37fcdf7f796b81776318b
   languageName: node
   linkType: hard
 
@@ -10192,7 +10192,7 @@ __metadata:
     "@octokit/plugin-rest-endpoint-methods": ^7.1.3
     "@octokit/plugin-retry": ^5.0.2
     "@preact/signals": ^1.1.3
-    "@types/eslint": ^8.40.0
+    "@types/eslint": ^8.40.1
     "@types/lodash-es": ^4.17.7
     "@types/mapbox__rehype-prism": ^0.8.0
     "@types/node": ^18.16.16

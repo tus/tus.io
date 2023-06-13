@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.0.10",
-    "@types/eslint": "^8.40.0",
+    "@types/eslint": "^8.40.1",
     "@types/lodash-es": "^4.17.7",
     "@types/mapbox__rehype-prism": "^0.8.0",
     "@types/node": "^18.16.16",
