@@ -3,9 +3,14 @@ import Layout from '@/layouts/page.astro'
 
 import { getCollection } from 'astro:content'
 
-const officialImplementations = await getCollection(
+const officialServers = await getCollection(
   'implementations',
-  (d) => d.data.type === 'official'
+  (d) => d.data.type === 'official' && d.data.subtype === 'server'
+)
+
+const officialClients = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'official' && d.data.subtype === 'client'
 )
 
 const communityClientImplementations = await getCollection(
@@ -61,9 +66,11 @@ const communityServerImplementations = await getCollection(
     developers.
   </p>
 
+  <h3>Servers</h3>
+
   <ul class="implementations">
     {
-      officialImplementations.map((implementation) => (
+      officialServers.map((implementation) => (
         <li>
           <a class="title" href={implementation.data.href}>
             {implementation.data.name}
@@ -89,6 +96,35 @@ const communityServerImplementations = await getCollection(
     }
   </ul>
 
+  <h3>Clients</h3>
+
+  <ul class="implementations">
+    {
+      officialClients.map((implementation) => (
+        <li>
+          <a class="title" href={implementation.data.href}>
+            {implementation.data.name}
+          </a>{' '}
+          <div class="author">
+            — by{' '}
+            {implementation.data.authors.map((author, index, arr) => {
+              const isLast = index === arr.length - 1
+              return (
+                <>
+                  <a href={author.href}>{author.name}</a>
+                  {!isLast && <span> and </span>}
+                </>
+              )
+            })}
+          </div>
+          <div class="description" set:html={implementation.data.description} />
+          <div class="license">
+            Licensed under {implementation.data.license}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
   <p>
     As we go we'll adopt high-quality MIT licensed implementations for all
     languages and platforms under the GitHub <a href="https://github.com/tus"
