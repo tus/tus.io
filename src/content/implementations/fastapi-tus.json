@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/liviaerxin/fastapi-tusd",
+  "authors": [
+    {
+      "name": "Frank Chen",
+      "href": "https://github.com/liviaerxin"
+    }
+  ],
+  "name": "liviaerxin/fastapi-tusd",
+  "description": "<strong>FastAPI</strong> extension implementing tus <code>v1.0.0</code> server for resumable file uploads",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}
