@@ -10,5 +10,6 @@
   "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>Android</strong> apps.",
   "license": "MIT",
   "type": "official",
+  "subtype": "client",
   "icon": "android"
 }

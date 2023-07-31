@@ -10,5 +10,6 @@
   "description": "<strong>ASP.NET Core and OWIN middlewares</strong> written in <strong>C#</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.",
   "license": "MIT",
   "type": "official",
+  "subtype": "server",
   "icon": "prog-dotnet"
 }

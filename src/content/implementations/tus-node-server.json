@@ -7,7 +7,8 @@
     }
   ],
   "name": "tus-node-server",
-  "description": "A stand-alone <strong>server</strong> or <a href=\"http://expressjs.com/en/guide/using-middleware.html\">express middleware</a> written in <strong>node.js</strong> to handle resumable file uploads using the tus <code>v1.0.0</code> protocol. You can run this to test client implementations with.",
+  "description": "<strong>Node.js</strong> tus server, standalone or integrable in any framework, with disk, S3, and GGC stores. ",
   "license": "MIT",
+  "subtype": "server",
   "type": "official"
 }
