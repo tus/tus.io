@@ -4050,9 +4050,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-astro@npm:^0.27.1":
-  version: 0.27.1
-  resolution: "eslint-plugin-astro@npm:0.27.1"
+"eslint-plugin-astro@npm:^0.28.0":
+  version: 0.28.0
+  resolution: "eslint-plugin-astro@npm:0.28.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@jridgewell/sourcemap-codec": ^1.4.14
@@ -4062,7 +4062,7 @@ __metadata:
     postcss-selector-parser: ^6.0.10
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: f77466b9f19a9ed0de7e148f4d8a65c85ad7e184949ee9baa010492d4c127e71140a5c17924f2ca76a44dccf30951c970501c6f81f45cf87f6606f4295925ad7
+  checksum: b3464fd516f12e2a66dc1501bb01e8fa458c98b73c5265f9d63ec173f1aa805052d8704fc6963991b1be88ce94d5cd22066feba9329d8e54639a1824a2634827
   languageName: node
   linkType: hard
 
@@ -10339,7 +10339,7 @@ __metadata:
     cssnano: ^6.0.1
     eslint: ^8.42.0
     eslint-config-prettier: ^8.8.0
-    eslint-plugin-astro: ^0.27.1
+    eslint-plugin-astro: ^0.28.0
     eslint-plugin-jsx-a11y: ^6.7.1
     eslint-plugin-react: ^7.32.2
     eslint-plugin-react-hooks: ^4.6.0
