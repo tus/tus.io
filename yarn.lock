@@ -8968,14 +8968,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-emoji@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "remark-emoji@npm:3.1.1"
+"remark-emoji@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "remark-emoji@npm:3.1.2"
   dependencies:
     emoticon: ^4.0.1
     mdast-util-find-and-replace: ^2.2.2
     node-emoji: ^1.11.0
-  checksum: 1e3908205d45bf9621641b265aeda2f16353ae247193cfde915c71db7f25be1806a71c461398fae08b9b2a62ef405b4230567343bcd5d5e5b5593c8ac14c1fb2
+  checksum: da6a5cb06d8967e4ae3b197e2f18a92f2036ea51908f9eab322fb17cd0e721c957a73ec9a68b09b848287e527341a6d439ea71343a5755c92216dd7db6170d3e
   languageName: node
   linkType: hard
 
@@ -10363,7 +10363,7 @@ __metadata:
     pretty-bytes: ^6.1.0
     rehype-autolink-headings: ^6.1.1
     rehype-stringify: ^9.0.3
-    remark-emoji: ^3.1.1
+    remark-emoji: ^3.1.2
     remark-parse: ^10.0.2
     remark-rehype: ^10.1.0
     remark-toc: ^8.0.1
