@@ -35,7 +35,25 @@ We are always eager to hear what people are thinking!
 
 ## What does this mean for the future of tus?
 
-As we already explained in our [last blog post on this topic](/blog/2022/02/24/tus-v2), a potential resumable uploads standard from the IETF will not replace tus. Instead, we believe that they will complement each other. While the IETF standard aims to provide a basic approach for resumable uploads, tus 2.0 will build upon this standard and extend it with additional features, such as metadata handling, file expiration, parallel uploads etc., that do not fit into the scope of a single RFC. In addition, the tus project will provide and maintain official implementations and tools while assisting the community with building additional ones. As such, the future of resumable uploads is provided by the IETF standard and the tus project together.
+A goal of tus has been to make uploading reliable for the world, and with the adoption in the IETF we are seeing our ambition come to fruition. It's impossible to predict the future, but we expect the majority of our protocol to be replaced by an upcoming resumable uploads standard. This includes the core protocol, as well as the creation, creation with upload, and termination extensions. It is also likely that the checksum extension will be replaced by [draft-ietf-httpbis-digest-headers](https://datatracker.ietf.org/doc/draft-ietf-httpbis-digest-headers/), which defines a new set of integrity headers for HTTP. 
+
+Not every feature from tus 1.0 fits into the tight scope of an RFC. This leaves the expiration and concatenation extensions for tus 2.0, as there is currently no direct replacement inside HTTP for them (as of our knowledge). tus 2.0 could also cover smaller details, such a metadata handling and discovery of optional features.
+
+The following table gives an overview of how sections of tus 1.0 might be covered in the future:
+
+| tus 1.0 sections                                                                                      | Will be covered in the future by ...                                                                          |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [Core protocol](https://tus.io/protocols/resumable-upload#core-protocol)                              | [draft-ietf-httpsbis-resumable-upload](https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/) |
+| [Creation extension](https://tus.io/protocols/resumable-upload#creation)                              | [draft-ietf-httpsbis-resumable-upload](https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/) |
+| [Creation With Upload extension](https://tus.io/protocols/resumable-upload#creation-with-upload)      | [draft-ietf-httpsbis-resumable-upload](https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/) |
+| [Termination extension](https://tus.io/protocols/resumable-upload#termination)                        | [draft-ietf-httpsbis-resumable-upload](https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/) |
+| [Checksum extension](https://tus.io/protocols/resumable-upload#checksum)                              | [draft-ietf-httpbis-digest-headers](https://datatracker.ietf.org/doc/draft-ietf-httpbis-digest-headers/)      |
+| [Expiration extension](https://tus.io/protocols/resumable-upload#expiration)                          | tus 2.0                                                                                                       |
+| [Concatenation extension](https://tus.io/protocols/resumable-upload#concatenation) (Parallel Uploads) | tus 2.0                                                                                                       |
+
+Putting the protocol specification aside, the tus project also maintains a set of official client and server implementations. We hope that platforms, such as browsers and mobile SDKs, can provide resumable uploads directly in the future, reducing the needs for an additional resumable upload client in each application. Similarly, server frameworks and proxies could implement support for resumable uploads, allowing developer to build application without a separate upload server. These are still vague ideas today, but with [Apple's new resumable upload APIs](https://developer.apple.com/videos/play/wwdc2023/10006/) we are seeing the first steps in this direction. We are excited about a future, where some of our implementations' features might be covered by the platforms directly. Despite this, we intend to keep maintaining our implementations to provide resumability to platforms, where no such native support is available, and assisting the community with adopting resumable uploads.
+
+As such, the future of resumable uploads is provided by the IETF standard and the tus project together.
 
 ## Thank you
 
