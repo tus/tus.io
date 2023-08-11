@@ -183,6 +183,37 @@ li {
   padding-inline-start: 0;
 }
 
+table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid;
+}
+
+table th {
+  text-align: left;
+  border-color: var(--gray6);
+}
+
+table td {
+  border-color: var(--gray4);
+}
+
+table th:first-child,
+table td:first-child {
+  padding-left: 0;
+}
+
+table th:last-child,
+table td:last-child {
+  padding-right: 0;
+}
+
 /* styles for autolinked headings by rehype-autolink-headings */
 :where(h1, h2, h3, h4, h5, h6) a[href^='#'] {
   margin-inline-start: var(--space2);
