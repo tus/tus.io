@@ -35,7 +35,7 @@ We are always eager to hear what you are thinking!
 
 ## What does this mean for the future of tus?
 
-A goal of tus has been to make resumable, and thus reliable uploads universally available. With the adoption of this draft by the IETF, we are seeing our ambition come to fruition. It is impossible to predict the future, but we expect the majority of our protocol to be replaced by an upcoming resumable uploads standard. This includes the core protocol, as well as the creation, creation with upload, and termination extensions. It is also likely that the checksum extension will be replaced by [draft-ietf-httpbis-digest-headers](https://datatracker.ietf.org/doc/draft-ietf-httpbis-digest-headers/), which defines a new set of integrity headers for HTTP. 
+A goal of tus has been to make resumable, and thus reliable uploads universally available. With the adoption of this draft by the IETF, we are seeing our ambition come to fruition. It is impossible to predict the future, but we expect the majority of our protocol to be replaced by an upcoming resumable uploads standard. This includes the core protocol, as well as the creation, creation with upload, and termination extensions. It is also likely that the checksum extension will be replaced by [draft-ietf-httpbis-digest-headers](https://datatracker.ietf.org/doc/draft-ietf-httpbis-digest-headers/), which defines a new set of integrity headers for HTTP.
 
 Not every feature from tus 1.0 fits into the tight scope of an RFC. This leaves the expiration and concatenation extensions for tus 2.0, as there is currently no direct replacement inside HTTP for them (as far as we are aware). tus 2.0 could also cover smaller details, such a metadata handling and discovery of optional features.
 
