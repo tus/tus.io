@@ -1,4 +1,4 @@
-import { z, defineCollection } from 'astro:content'
+import { z, defineCollection, reference } from 'astro:content'
 
 const authors = defineCollection({
   type: 'data',
@@ -15,7 +15,7 @@ const authors = defineCollection({
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
-    author: z.string(),
+    author: reference('authors'),
     date: z.date(),
     title: z.string(),
     meta_description: z.string().optional(),
