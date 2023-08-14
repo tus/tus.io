@@ -9,7 +9,10 @@ import { getCollection, getEntries } from 'astro:content'
 
 const title = 'Blog'
 
-const posts = (await getCollection('blog')).reverse()
+const posts = (await getCollection('blog')).sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime()
+})
+
 const authors = await getEntries(posts.map((post) => post.data.author))
 
 const formatter = new Intl.DateTimeFormat('en-US', {
