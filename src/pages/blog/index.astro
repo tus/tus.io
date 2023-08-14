@@ -5,14 +5,15 @@ import Layout from '@/layouts/default.astro'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import { getFirstParagraphContent } from '@/lib/getFirstParagraph'
-import { getCollection } from 'astro:content'
+import { getCollection, getEntries } from 'astro:content'
 
 const title = 'Blog'
 
-const posts = (await getCollection('blog')).reverse()
-const authors = await getCollection('authors', (author) =>
-  posts.some((post) => post.data.author === author.id)
-)
+const posts = (await getCollection('blog')).sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime()
+})
+
+const authors = await getEntries(posts.map((post) => post.data.author))
 
 const formatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -28,7 +29,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
       {
         posts.map((post) => {
           const author = authors.find(
-            (author) => author.id === post.data.author
+            (author) => author.id === post.data.author.id
           )
 
           return (
