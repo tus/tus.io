@@ -1,14 +1,13 @@
 ---
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
-import { getCollection } from 'astro:content'
+import { getCollection, getEntries } from 'astro:content'
 
 const posts = await getCollection('blog')
-const lastFivePosts = posts.reverse().slice(0, 5)
-
-const authors = await getCollection('authors', (author) =>
-  posts.some((post) => post.data.author === author.id)
-)
+const lastFivePosts = posts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5)
+const authors = await getEntries(lastFivePosts.map((post) => post.data.author))
 
 const formatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -22,7 +21,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 <ol class={'posts'}>
   {
     lastFivePosts.map((p) => {
-      const author = authors.find((a) => a.id === p.data.author)
+      const author = authors.find((a) => a.id === p.data.author.id)
 
       return (
         <li>
