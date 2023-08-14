@@ -6,7 +6,7 @@ import Layout from '@/layouts/default.astro'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import type { InferGetStaticPropsType } from 'astro'
-import { getCollection } from 'astro:content'
+import { getCollection, getEntry } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -21,9 +21,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 const { post } = Astro.props
 const { Content } = await post.render()
 
-const author = (
-  await getCollection('authors', (author) => author.id === post.data.author)
-)[0]
+const author = await getEntry(post.data.author)
 
 const formatter = Intl.DateTimeFormat('en-US', {
   year: 'numeric',
