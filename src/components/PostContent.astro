@@ -19,6 +19,37 @@
     font-size: 1.25em;
   }
 
+  div > :global(table) {
+    inline-size: 100%;
+    margin-block-end: var(--space8);
+    border-collapse: collapse;
+  }
+
+  div > :global(table th),
+  table td {
+    padding: 0.4rem var(--space2);
+    border-block-end: 1px solid;
+  }
+
+  div > :global(table th) {
+    text-align: start;
+    border-color: var(--gray6);
+  }
+
+  div > :global(table td) {
+    border-color: var(--gray4);
+  }
+
+  div > :global(table th:first-child),
+  div > :global(table td:first-child) {
+    padding-inline-start: 0;
+  }
+
+  div > :global(table th:last-child),
+  div > :global(table td:last-child) {
+    padding-inline-end: 0;
+  }
+
   div :global(code:not(pre code)) {
     font-size: 0.9em;
     background-color: var(--gray3);
