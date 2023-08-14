@@ -26,7 +26,7 @@ const existingImplementations = fs
   .map((file) => {
     const content = fs.readFileSync(
       `src/content/implementations/${file}`,
-      'utf-8'
+      'utf-8',
     )
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -66,7 +66,7 @@ $('h2').each((i, el) => {
           }
 
           const existing = existingImplementations.find(
-            (d) => d.name === implementation.name
+            (d) => d.name === implementation.name,
           )
 
           if (existing) {

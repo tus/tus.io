@@ -19,7 +19,7 @@ export const get: APIRoute = async () => {
             pubDate: post.data.date,
             link: `/blog/${getBlogPostSlug(post.slug)}`,
           }
-        })
+        }),
       )
     ).sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime()),
     stylesheet: '/pretty-feed-v3.xsl',

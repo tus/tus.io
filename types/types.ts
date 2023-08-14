@@ -1,6 +1,6 @@
 import type { PublicOrgEvents } from '@/components/TusOnGithub/types'
 
-export type Author = {
+export interface Author {
   name: string
   gravatar: string
   email: string
@@ -11,7 +11,7 @@ export type Author = {
 
 type Authors = Record<string, Author>
 
-export type EleventyPageData = {
+export interface EleventyPageData {
   authors: Authors
   collections: {
     post: {

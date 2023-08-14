@@ -38,7 +38,7 @@ const implementations = defineCollection({
       z.object({
         name: z.string(),
         href: z.string(),
-      })
+      }),
     ),
     href: z.string().describe('Repository URL'),
     name: z.string(),

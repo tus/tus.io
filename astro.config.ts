@@ -23,7 +23,7 @@ const AnchorIcon = h(
     fill: 'currentColor',
     fillRule: 'evenodd',
     clipRule: 'evenodd',
-  })
+  }),
 )
 
 // https://astro.build/config
