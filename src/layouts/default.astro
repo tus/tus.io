@@ -4,6 +4,7 @@ import '../styles/global.css'
 import TransloaditBar from '@/components/TransloaditBar.astro'
 import { Navigation } from '@/components/Navigation'
 import favicon from '@/assets/logos-tus-default-glyph.svg'
+import { ViewTransitions } from 'astro:transitions'
 
 type Props = {
   noindex?: boolean
@@ -59,9 +60,10 @@ const currentPage = Astro.url.pathname
     />
 
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <TransloaditBar />
+    <TransloaditBar transition:persist />
     <Navigation client:load currentPage={currentPage} />
     <slot />
     <script

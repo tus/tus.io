@@ -44,10 +44,10 @@ export default defineConfig({
   ],
   build: {
     format: 'file',
-    split: true,
   },
   experimental: {
     assets: true,
+    viewTransitions: true,
   },
   markdown: {
     remarkPlugins: [
