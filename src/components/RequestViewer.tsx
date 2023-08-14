@@ -44,7 +44,7 @@ function updateTraffic(xhr: XMLHttpRequest) {
   traffic.value = updated
 }
 
-if (typeof window !== 'undefined' && window.XMLHttpRequest) {
+if (window?.XMLHttpRequest) {
   const xhrOpen = XMLHttpRequest.prototype.open
   const xhrSetRequestHeader = XMLHttpRequest.prototype.setRequestHeader
   const xhrSend = XMLHttpRequest.prototype.send
