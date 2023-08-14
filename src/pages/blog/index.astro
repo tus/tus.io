@@ -17,8 +17,6 @@ const authors = await getCollection('authors', (author) =>
   posts.some((post) => post.data.author === author.id)
 )
 
-console.log(posts)
-
 const formatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'long',
