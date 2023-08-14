@@ -50,14 +50,14 @@ Do you want to retry the upload?`
         ((bytesUploaded / bytesTotal) * 100).toFixed(2) + '%'
 
       progress.value = `Uploaded ${prettyBytes(bytesUploaded)} of ${prettyBytes(
-        bytesTotal
+        bytesTotal,
       )} (${progressBarWidth.value})`
 
       console.log(
         'demo: progress',
         bytesUploaded,
         bytesTotal,
-        progressBarWidth.value
+        progressBarWidth.value,
       )
     }
 
@@ -104,12 +104,12 @@ Do you want to retry the upload?`
 
       const lastThreeHrsPrevUploads = allPreviousUploads
         .filter(
-          (upload) => new Date(upload.creationTime).getTime() > threeHoursAgo
+          (upload) => new Date(upload.creationTime).getTime() > threeHoursAgo,
         )
         .sort(
           (a, b) =>
             new Date(b.creationTime).getTime() -
-            new Date(a.creationTime).getTime()
+            new Date(a.creationTime).getTime(),
         )
 
       upload.value = newUpload
@@ -122,7 +122,7 @@ Do you want to retry the upload?`
 
       showPreviousUploads.value = true
     },
-    [startUpload]
+    [startUpload],
   )
 
   return (
@@ -217,7 +217,7 @@ Do you want to retry the upload?`
                         class={clsx(styles.button, styles.primary)}
                         onClick={() => {
                           upload.value?.resumeFromPreviousUpload(
-                            previousUploads.value[0]
+                            previousUploads.value[0],
                           )
                           startUpload()
                         }}

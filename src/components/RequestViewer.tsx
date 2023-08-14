@@ -36,7 +36,7 @@ const traffic = signal<XMLHttpRequest[]>([])
 
 function updateTraffic(xhr: XMLHttpRequest) {
   let index = traffic.value.findIndex(
-    (d) => d._requestDetails.id === xhr._requestDetails.id
+    (d) => d._requestDetails.id === xhr._requestDetails.id,
   )
   if (index === -1) index = traffic.value.length
   const updated = [...traffic.value]
