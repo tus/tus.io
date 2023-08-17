@@ -80,7 +80,9 @@
 .link {
   display: block;
   padding: var(--space2) var(--space4);
-  transition: color 120ms, background-color 120ms;
+  transition:
+    color 120ms,
+    background-color 120ms;
   color: var(--gray12);
 }
 

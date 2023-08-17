@@ -1,7 +1,7 @@
 import type { CollectionEntry } from 'astro:content'
 import styles from './ProtocolSelect.module.css'
 
-type ProtocolSelectProps = {
+interface ProtocolSelectProps {
   protocols: CollectionEntry<'protocols'>[]
   currentVersion: string
   selectedVersion: string

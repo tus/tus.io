@@ -5,7 +5,7 @@ import { useEffect } from 'preact/hooks'
 import { ExternalA } from '../ExternalA'
 import type { PublicOrgEvents } from './types'
 
-type ActivityDescriptionProps = {
+interface ActivityDescriptionProps {
   activity: PublicOrgEvents[number]
 }
 
@@ -216,7 +216,7 @@ function ActivityDescription(props: ActivityDescriptionProps) {
   }
 }
 
-type TusOnGithubProps = {
+interface TusOnGithubProps {
   githubActivity: PublicOrgEvents
 }
 

@@ -8,7 +8,7 @@ import { VisuallyHidden } from '../VisuallyHidden'
 const expanded = signal(false)
 const hidden = computed(() => !expanded.value)
 
-type NavigationProps = {
+interface NavigationProps {
   currentPage: string
 }
 
@@ -152,7 +152,7 @@ export function Navigation(props: NavigationProps) {
   )
 }
 
-type IconProps = {
+interface IconProps {
   size?: number
 }
 
