@@ -44,7 +44,10 @@ function updateTraffic(xhr: XMLHttpRequest) {
   traffic.value = updated
 }
 
-if (window?.XMLHttpRequest) {
+// `window` is not available when building the static version, so window?.XMLHttpRequest
+// would error out because window is not defined.
+// eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+if (typeof window !== 'undefined' && window.XMLHttpRequest) {
   const xhrOpen = XMLHttpRequest.prototype.open
   const xhrSetRequestHeader = XMLHttpRequest.prototype.setRequestHeader
   const xhrSend = XMLHttpRequest.prototype.send
