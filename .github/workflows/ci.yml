@@ -27,3 +27,6 @@ jobs:
       # make sure types are generated before linting
       - run: yarn astro sync
       - run: yarn lint
+      - run: yarn build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
