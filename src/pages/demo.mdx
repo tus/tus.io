@@ -10,30 +10,37 @@ import { RequestViewer } from '@/components/RequestViewer.tsx'
 
 # Resumable File Upload Demo
 
-This demo is a working and production-ready example for resumable file uploads built using the [tus-js-client](https://github.com/tus/tus-js-client).
-It sends your files to our public [tusd](https://github.com/tus/tusd) instance, which is the official reference implementation for the tus protocol, written in the [Go programming language](https://golang.org/).
+This demo is a working and production-ready example for resumable file uploads
+built using the [tus-js-client](https://github.com/tus/tus-js-client). It sends
+your files to our public [tusd](https://github.com/tus/tusd) instance, which is
+the official reference implementation for the tus protocol, written in the
+[Go programming language](https://golang.org/).
 
-**:warning: Please be aware that the uploaded files will be removed from our servers after a few hours, for privacy, and to combat people uploading malicious content.**
+**:warning: Please be aware that the uploaded files will be removed from our
+servers after a few hours, for privacy, and to combat people uploading malicious
+content.**
 
 ### Instructions
 
 1.  Select a large file.
 2.  Watch it upload for a bit, then close this tab before it finishes.
-3.  Come back to this page, select the same file again and you can resume the upload where it left off.
+3.  Come back to this page, select the same file again and you can resume the
+    upload where it left off.
 4.  Inspect the HTTP traffic (see below) to understand how tus works.
 
 <UploadDemo client:load />
 
 ### HTTP Traffic
 
-Below you can find a list of the outgoing HTTP requests and incoming responses that tus is using to upload your files:
+Below you can find a list of the outgoing HTTP requests and incoming responses
+that tus is using to upload your files:
 
 <RequestViewer client:load />
 
 ### Compatibility
 
-The [tus-js-client](https://github.com/tus/tus-js-client) used in
-this demo has been automatically tested and works with the following browsers:
+The [tus-js-client](https://github.com/tus/tus-js-client) used in this demo has
+been automatically tested and works with the following browsers:
 
 - Microsoft Edge 12+
 - Mozilla Firefox 14+
@@ -43,9 +50,10 @@ this demo has been automatically tested and works with the following browsers:
 - iOS 6.0+
 - Android 5.0+
 
-Using the `X-HTTP-Method-Override` header, it's possible to run tus
-even on platforms that won't let you do `PUT` and `PATCH` requests.
+Using the `X-HTTP-Method-Override` header, it's possible to run tus even on
+platforms that won't let you do `PUT` and `PATCH` requests.
 
 ### Source Code
 
-The source code for this demo is available on [GitHub](https://github.com/tus/tus.io/blob/main/assets/javascripts/upload-demo.js).
+The source code for this demo is available on
+[GitHub](https://github.com/tus/tus.io/blob/main/assets/javascripts/upload-demo.js).

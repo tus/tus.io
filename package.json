@@ -14,6 +14,7 @@
     "lint:js": "eslint .",
     "lint:ts": "tsc",
     "lint:fmt": "prettier --check .",
+    "format": "prettier --write .",
     "inject": "concurrently \"npm:inject:*\"",
     "inject:protocol": "scripts/inject-protocol.sh && prettier --write ."
   },
