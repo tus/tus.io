@@ -23,7 +23,7 @@
     "@types/eslint": "^8.44.2",
     "@types/lodash-es": "^4.17.8",
     "@types/mapbox__rehype-prism": "^0.8.0",
-    "@types/node": "^18.17.5",
+    "@types/node": "^18.17.12",
     "@types/react": "^18.2.20",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
