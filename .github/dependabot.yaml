@@ -6,7 +6,9 @@ updates:
       interval: monthly
     groups:
       gha:
-        update-types: minor
+        update-types:
+          - patch
+          - minor
         patterns:
           - '*'
 
@@ -16,6 +18,8 @@ updates:
       interval: monthly
     groups:
       npm:
-        update-types: minor
+        update-types:
+          - patch
+          - minor
         patterns:
           - '*'
