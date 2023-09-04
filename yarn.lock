@@ -170,13 +170,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@astrojs/sitemap@npm:2.0.1"
+"@astrojs/sitemap@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@astrojs/sitemap@npm:3.0.0"
   dependencies:
     sitemap: ^7.1.1
-    zod: ^3.17.3
-  checksum: f92e957d90f5af4a21bd1a2369cdbdbda0121db551329d7e80965d411733a830ff11263f3638742e6b8899e689dd9ed09a45f83ac67e0f355e8fec1a9534ef92
+    zod: 3.21.1
+  checksum: 45c5371da74737c6ba651dd7502fd831543b069b9c73d537e8204411b3f72a2676db2a56d6e485c243f013aa90fc44218485b3bfef1f4aeeca3da33d34f5991c
   languageName: node
   linkType: hard
 
@@ -10747,7 +10747,7 @@ __metadata:
     "@astrojs/mdx": ^0.19.7
     "@astrojs/preact": ^2.2.2
     "@astrojs/rss": ^2.4.4
-    "@astrojs/sitemap": ^2.0.1
+    "@astrojs/sitemap": ^3.0.0
     "@astrojs/ts-plugin": ^1.1.3
     "@octokit/core": ^5.0.0
     "@octokit/plugin-paginate-rest": ^8.0.0
@@ -11696,7 +11696,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.17.3, zod@npm:^3.20.6":
+"zod@npm:3.21.1":
+  version: 3.21.1
+  resolution: "zod@npm:3.21.1"
+  checksum: e02ed16b26e171f244fb7592177bef21b67956683aaed57bc8f02dfa5ad307d5cf347e9557c84c0849d96305efaf7c90c909620eaade08cfdf35f62935d741d2
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.20.6":
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
