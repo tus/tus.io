@@ -9,6 +9,20 @@ revived and is now officially semver stable! It has been completely rewritten in
 TypeScript, split into separate packages, has new events and hooks system,
 elaborate docs with examples, and many fixes and features we’ll dive into below.
 
+## What is tus?
+
+tus is a protocol based on HTTP for resumable file uploads. Resumable means that
+an upload can be interrupted at any moment and can be resumed without
+re-uploading the previous data again. An interruption may happen willingly, if
+the user wants to pause, or by accident in case of an network issue or server
+outage
+
+[tus-node-server][] is an official implementation of the tus resumable upload
+protocol. It is capable of accepting uploads with arbitrary sizes and storing them locally
+on disk, on Google Cloud Storage or on AWS S3 (or any other S3-compatible
+storage system). Due to its modularization and extensibility, support for nearly
+any other cloud provider could easily be added.
+
 ## History
 
 The Node.js tus server, [tus-node-server][], was originally published by
@@ -65,7 +79,8 @@ into separate packages under the `@tus` scope.
 ### At a glance
 
 Let’s look at an example of the new packages and some of the features from an
-integration perspective.
+integration perspective. We’ll use the [`@tus/server`][] and [`@tus/s3-store`][]
+packages.
 
 ```js
 const { Server, EVENTS } = require('@tus/server')
@@ -109,6 +124,14 @@ server.on(EVENTS.POST_TERMINATE, (req, res, id => {})
 
 server.listen({ host, port })
 ```
+
+#### Examples
+
+There are also examples showcasing how to integrate the server with [Express][],
+[Koa][], [Fastify][], and [Next.js][].
+
+Still curious how to use hooks? There is also an example showing how to
+[validate metadata][] and [access control][] with (psuedo-code) JSON Web Tokens.
 
 ### Bug fixes
 
@@ -155,18 +178,18 @@ think!
 [@bhstahl]: https://github.com/bhstahl
 [@murderlon]: https://github.com/murderlon
 [protocol specification]: https://tus.io/protocols/resumable-upload
-[Transloadit]: https://transloadit.com
-[`@tus/server`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server
-[`@tus/file-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
-[creation-defer-length]:
-  https://tus.io/protocols/resumable-upload.html#creation-with-upload
+[Transloadit]: https://transloadit.com/open-source
+[`@tus/server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
+[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[creation-defer-length]: https://tus.io/protocols/resumable-upload.html#creation-with-upload
 [concatenation]: https://tus.io/protocols/resumable-upload.html#concatenation
 [tus-max-size]: https://tus.io/protocols/resumable-upload.html#max-size
-[protocol extensions]:
-  https://tus.io/protocols/resumable-upload#protocol-extensions
+[protocol extensions]: https://tus.io/protocols/resumable-upload#protocol-extensions
+[Express]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
+[Koa]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
+[Fastify]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
+[Next.js]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
+[validate metadata]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
+[access control]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
