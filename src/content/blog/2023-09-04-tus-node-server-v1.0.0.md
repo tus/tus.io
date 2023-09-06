@@ -1,5 +1,7 @@
 ---
-title: 'Tus Node.js 1.0.0: new packages, rewritten in TypeScript, and much more'
+title:
+  'Tus Node.js Server 1.0.0: new packages, rewritten in TypeScript, and much
+  more'
 author: murderlon
 date: 2023-09-04
 ---
@@ -138,9 +140,9 @@ Still curious how to use hooks? There is also an example showing how to
 - Fix memory leaks on interrupted upload
 - Fix race condition in S3 store resulting in a buffered chunk not being
   concatenated to the upload.
-- Fix invalid character errors for "x-amz-meta-file” header when using the S3
+- Fix invalid character errors for `x-amz-meta-file` header when using the S3
   store.
-- Fix for HEAD request not returning Upload-Offset when S3 multipart upload is
+- Fix for HEAD request not returning `Upload-Offset` when S3 multipart upload is
   finished
 - Remove content-length response header for 204 status code, which is not
   allowed by the HTTP spec.
@@ -149,7 +151,7 @@ Still curious how to use hooks? There is also an example showing how to
 - Fix upload ID when using S3 store with Digital Ocean Spaces.
 - Fix the bucket exists check for the Google Cloud Storage store.
 - Fix emit upload complete event when using creation-with-upload extension.
-- Fix validation of upload-length header in patch handler.
+- Fix validation of `Upload-Length` header in patch handler.
 
 ## What is next
 
@@ -160,7 +162,7 @@ Some features we are focussing on next:
 
 - Support for custom lockers and providing a distributed lock. This would
   prevent concurrent access to the same resources, allowing for horizontal
-  scaling.
+  scaling without sticky sessions.
 - Support for the `Tux-Max-Size` header. This would allow for limiting the
   maximum upload size. This could also help prevent large payload attacks.
 - Structured logging with configurable log levels.
@@ -168,7 +170,7 @@ Some features we are focussing on next:
 - Support for different JavaScript runtimes, such as Deno, Cloudfare Workers,
   AWS Lambda.
 
-Take the tus server for a spin (or try the
+Take the [tus server][tus-node-server] for a spin (or try the
 [demo](https://github.com/tus/tus-node-server#demos)) and let us know what you
 think!
 
