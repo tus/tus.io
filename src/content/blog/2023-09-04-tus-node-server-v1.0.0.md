@@ -18,10 +18,10 @@ the user wants to pause, or by accident in case of an network issue or server
 outage
 
 [tus-node-server][] is an official implementation of the tus resumable upload
-protocol. It is capable of accepting uploads with arbitrary sizes and storing them locally
-on disk, on Google Cloud Storage or on AWS S3 (or any other S3-compatible
-storage system). Due to its modularization and extensibility, support for nearly
-any other cloud provider could easily be added.
+protocol. It is capable of accepting uploads with arbitrary sizes and storing
+them locally on disk, on Google Cloud Storage or on AWS S3 (or any other
+S3-compatible storage system). Due to its modularization and extensibility,
+support for nearly any other cloud provider could easily be added.
 
 ## History
 
@@ -179,17 +179,29 @@ think!
 [@murderlon]: https://github.com/murderlon
 [protocol specification]: https://tus.io/protocols/resumable-upload
 [Transloadit]: https://transloadit.com/open-source
-[`@tus/server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
-[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
-[creation-defer-length]: https://tus.io/protocols/resumable-upload.html#creation-with-upload
+[`@tus/server`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server
+[`@tus/file-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@tus/s3-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@tus/gcs-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[creation-defer-length]:
+  https://tus.io/protocols/resumable-upload.html#creation-with-upload
 [concatenation]: https://tus.io/protocols/resumable-upload.html#concatenation
 [tus-max-size]: https://tus.io/protocols/resumable-upload.html#max-size
-[protocol extensions]: https://tus.io/protocols/resumable-upload#protocol-extensions
-[Express]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
-[Koa]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
-[Fastify]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
-[Next.js]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
-[validate metadata]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
-[access control]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
+[protocol extensions]:
+  https://tus.io/protocols/resumable-upload#protocol-extensions
+[Express]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
+[Koa]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
+[Fastify]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
+[Next.js]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
+[validate metadata]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
+[access control]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
