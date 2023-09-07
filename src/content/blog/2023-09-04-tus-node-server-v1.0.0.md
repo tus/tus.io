@@ -156,10 +156,10 @@ Still curious how to use hooks? There is also an example showing how to
   allowed by the HTTP spec.
 - Implemented a fix to reject partial uploads if the [concatenation][] extension
   is not supported.
-- Fixed the [creation-defer-length][] extension for all stores.
+- Handle `Upload-Defer-Length` consistently for all stores.
 - Fixed the upload ID when using S3 store with Digital Ocean Spaces.
 - Fixed the bucket exists check for the Google Cloud Storage store.
-- Fixed the emit upload complete event when using the creation-with-upload extension.
+- Fixed the emit upload complete event when using the [creation-with-upload][] extension.
 - Fixed the validation of the `Upload-Length` header in the patch handler.
 
 ## What is next?
@@ -190,29 +190,17 @@ think!
 [@murderlon]: https://github.com/murderlon
 [protocol specification]: https://tus.io/protocols/resumable-upload
 [Transloadit]: https://transloadit.com/open-source
-[`@tus/server`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server
-[`@tus/file-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]:
-  https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
-[creation-defer-length]:
-  https://tus.io/protocols/resumable-upload.html#creation-with-upload
+[`@tus/server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
+[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[creation-with-upload]: https://tus.io/protocols/resumable-upload.html#creation-with-upload
 [concatenation]: https://tus.io/protocols/resumable-upload.html#concatenation
 [tus-max-size]: https://tus.io/protocols/resumable-upload.html#max-size
-[protocol extensions]:
-  https://tus.io/protocols/resumable-upload#protocol-extensions
-[Express]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
-[Koa]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
-[Fastify]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
-[Next.js]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
-[validate metadata]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
-[access control]:
-  https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
+[protocol extensions]: https://tus.io/protocols/resumable-upload#protocol-extensions
+[Express]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
+[Koa]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
+[Fastify]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
+[Next.js]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
+[validate metadata]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
+[access control]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
