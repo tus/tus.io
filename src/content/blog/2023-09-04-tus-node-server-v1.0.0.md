@@ -8,30 +8,32 @@ date: 2023-09-04
 
 The [Node.js tus server](https://github.com/tus/tus-node-server) has been
 revived and is now officially semver stable! It has been completely rewritten in
-TypeScript and was split into separate packages. There is a new system for events
-and hooks, as well as elaborate docs with examples. And those are just a few of
-the many fixes and features that we will dive into below.
+TypeScript and was split into separate packages. There is a new system for
+events and hooks, as well as elaborate docs with examples. And those are just a
+few of the many fixes and features that we will dive into below.
 
 ## What is tus?
 
 tus is an HTTP-based protocol for resumable file uploads. Resumable means that
 an upload can be picked up again at any moment, after it was interrupted for
-whatever reason, without the need to re-upload the previous data. An interruption
-may happen on purpose, if the user wants to pause, or by accident in case of a
-network issue or server outage (or your cat deciding to take a nap on the keyboard).
+whatever reason, without the need to re-upload the previous data. An
+interruption may happen on purpose, if the user wants to pause, or by accident
+in case of a network issue or server outage (or your cat deciding to take a nap
+on the keyboard).
 
 The developers behind tus are currently working together with the influential
-HTTP working group inside the Internet Engineering Task Force (IETF) – the internet
-standards-setting organization that defines the network protocols powering the
-entire internet – to
+HTTP working group inside the Internet Engineering Task Force (IETF) – the
+internet standards-setting organization that defines the network protocols
+powering the entire internet – to
 [make resumable uploads an official standard](https://tus.io/blog/2023/08/09/resumable-uploads-ietf)
 across the web.
 
 [tus-node-server][] is an official implementation of the tus resumable upload
 protocol. It is capable of accepting uploads of all sorts and sizes, and storing
-them locally on disk, or remotely on Google Cloud Storage or AWS S3 (or any other
-S3-compatible storage system). Due to its modularization and extensibility,
-support for nearly any other cloud provider could easily be added.
+them locally on disk, or remotely on Google Cloud Storage or AWS S3 (or any
+other S3-compatible storage system). Due to its modularization and
+extensibility, support for nearly any other cloud provider could easily be
+added.
 
 ## History
 
@@ -42,8 +44,8 @@ the time to maintain things for free in their own time and as such,
 
 In 2021, [@acconut][], [@mitjab][], and others sprung some life into the server
 again by upgrading dependencies and adding a few essential features that were
-missing. However, there was still a lot of work ahead before the server could
-be considered stable and on par with the [protocol specification][].
+missing. However, there was still a lot of work ahead before the server could be
+considered stable and on par with the [protocol specification][].
 
 At the start of 2023, [Transloadit][] graciously allowed me ([@murderlon][]) to
 work on the server on company time. This, together with the help of
@@ -53,16 +55,16 @@ contributors, kick-started the effort towards `1.0.0`.
 
 After a long beta phase, the new major is now ready.
 
-Here is an overview of the features and fixes that were implemented since work was
-resumed in 2023, up until today's `1.0.0` release.
+Here is an overview of the features and fixes that were implemented since work
+was resumed in 2023, up until today's `1.0.0` release.
 
 ### Split packages under the `@tus` scope
 
 For modularity and to signal the official packages, the server has been split
 into separate packages under the `@tus` scope:
 
-- [`@tus/server`][] The tus server. Standalone or integrate it into your
-  Node.js server.
+- [`@tus/server`][] The tus server. Standalone or integrate it into your Node.js
+  server.
 - [`@tus/file-store`][] Store files on disk.
 - [`@tus/s3-store`][] Store files on AWS S3.
 - [`@tus/gcs-store`][] Store files on Google Cloud Storage.
@@ -81,16 +83,16 @@ into separate packages under the `@tus` scope:
   `X-Forwarded-Proto`)
 - 🧮 Calculate optimal part size for S3. This is important to avoid the
   10,000-parts limit for large uploads.
-- 🧩 Handle chunks under the minimum S3 part size. Chunks that are smaller
-  than the minimum S3 part size are buffered and uploaded when they reach
-  the minimum part size.
+- 🧩 Handle chunks under the minimum S3 part size. Chunks that are smaller than
+  the minimum S3 part size are buffered and uploaded when they reach the minimum
+  part size.
 - 🏗 Use GitHub Actions for CI
 
 ### At a glance
 
 Let’s look at an example of the new packages and some of the features from an
-integration perspective. We will use the [`@tus/server`][] and [`@tus/s3-store`][]
-packages.
+integration perspective. We will use the [`@tus/server`][] and
+[`@tus/s3-store`][] packages.
 
 ```js
 const { Server, EVENTS } = require('@tus/server')
@@ -159,7 +161,8 @@ Still curious how to use hooks? There is also an example showing how to
 - Handle `Upload-Defer-Length` consistently for all stores.
 - Fixed the upload ID when using S3 store with Digital Ocean Spaces.
 - Fixed the bucket exists check for the Google Cloud Storage store.
-- Fixed the emit upload complete event when using the [creation-with-upload][] extension.
+- Fixed the emit upload complete event when using the [creation-with-upload][]
+  extension.
 - Fixed the validation of the `Upload-Length` header in the patch handler.
 
 ## What is next?
@@ -190,17 +193,29 @@ think!
 [@murderlon]: https://github.com/murderlon
 [protocol specification]: https://tus.io/protocols/resumable-upload
 [Transloadit]: https://transloadit.com/open-source
-[`@tus/server`]: https://github.com/tus/tus-node-server/tree/main/packages/server
-[`@tus/file-store`]: https://github.com/tus/tus-node-server/tree/main/packages/file-store
-[`@tus/s3-store`]: https://github.com/tus/tus-node-server/tree/main/packages/s3-store
-[`@tus/gcs-store`]: https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
-[creation-with-upload]: https://tus.io/protocols/resumable-upload.html#creation-with-upload
+[`@tus/server`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server
+[`@tus/file-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/file-store
+[`@tus/s3-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/s3-store
+[`@tus/gcs-store`]:
+  https://github.com/tus/tus-node-server/tree/main/packages/gcs-store
+[creation-with-upload]:
+  https://tus.io/protocols/resumable-upload.html#creation-with-upload
 [concatenation]: https://tus.io/protocols/resumable-upload.html#concatenation
 [tus-max-size]: https://tus.io/protocols/resumable-upload.html#max-size
-[protocol extensions]: https://tus.io/protocols/resumable-upload#protocol-extensions
-[Express]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
-[Koa]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
-[Fastify]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
-[Next.js]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
-[validate metadata]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
-[access control]: https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
+[protocol extensions]:
+  https://tus.io/protocols/resumable-upload#protocol-extensions
+[Express]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-express
+[Koa]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-koa
+[Fastify]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-fastify
+[Next.js]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-integrate-tus-into-nextjs
+[validate metadata]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-validate-metadata-when-an-upload-is-created
+[access control]:
+  https://github.com/tus/tus-node-server/tree/main/packages/server#example-access-control
