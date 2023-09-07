@@ -42,7 +42,7 @@ The Node.js tus server, [tus-node-server][], was originally published by
 the time to maintain things for free in their own time and as such,
 [tus-node-server][] was more or less abandoned at the end of 2018.
 
-In 2021, [@acconut][], [@mitjab][], and others sprung some life into the server
+In 2021, [@acconut][], [@mitjap][], and others sprung some life into the server
 again by upgrading dependencies and adding a few essential features that were
 missing. However, there was still a lot of work ahead before the server could be
 considered stable and on par with the [protocol specification][].
@@ -187,7 +187,7 @@ Take the [tus server][tus-node-server] for a spin (or try the
 think!
 
 [tus-node-server]: https://github.com/tus/tus-node-server
-[@mitjab]: https://github.com/mitjab
+[@mitjap]: https://github.com/mitjap
 [@acconut]: https://github.com/acconut
 [@bhstahl]: https://github.com/bhstahl
 [@murderlon]: https://github.com/murderlon
