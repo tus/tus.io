@@ -1,15 +1,14 @@
 {
-    "href": "https://github.com/thsdmfwns/tus-blazor-client",
-    "authors": [
-      {
-        "name": "SonDev",
-        "href": "https://github.com/thsdmfwns"
-      }
-    ],
-    "name": "tus-blazor-client",
-    "description": "tus-blazor-client is a wrapper library project for tus-js-client that can be used in .NET Blazor.",
-    "license": "MIT",
-    "type": "community",
-    "subtype": "client"
+  "href": "https://github.com/thsdmfwns/tus-blazor-client",
+  "authors": [
+    {
+      "name": "SonDev",
+      "href": "https://github.com/thsdmfwns"
+    }
+  ],
+  "name": "tus-blazor-client",
+  "description": "tus-blazor-client is a wrapper library project for tus-js-client that can be used in .NET Blazor.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
 }
-  
