@@ -72,7 +72,7 @@
     "remark-rehype": "^10.1.0",
     "remark-toc": "^8.0.1",
     "s-ago": "^2.2.0",
-    "sharp": "^0.32.5",
+    "sharp": "^0.32.6",
     "timeago.js": "^4.0.2",
     "ts-is-present": "^1.2.2",
     "tus-js-client": "^3.1.1",
