@@ -13,6 +13,7 @@ import BlogPosts from '@/components/Home/BlogPosts.astro'
 import PageFooter from '@/components/PageFooter.astro'
 
 const title = 'tus - resumable file uploads'
+const description = 'Tus is an open protocol for resumable file uploads. It has quickly become the standard for resumable and reliable file uploading across the web.'
 const githubActivity = await getGitHubActivity()
 
 const displayedUsers = [
@@ -34,7 +35,7 @@ const logos = (
 const press = await getCollection('press')
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <section class="section intro">
     <div class="container">
       <h1>

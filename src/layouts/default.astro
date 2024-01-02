@@ -8,9 +8,11 @@ import favicon from '@/assets/logos-tus-default-glyph.svg'
 interface Props {
   noindex?: boolean
   title: string
+  description?: string
+  image?: string
 }
 
-let { noindex, title } = Astro.props
+let { noindex, title, description, image = '/images/ogimage.jpg' } = Astro.props
 if (Astro.url.pathname !== '/') {
   title += ' | tus.io'
 }
@@ -59,6 +61,19 @@ const currentPage = Astro.url.pathname
     />
 
     <title>{title}</title>
+
+    {description && <meta name="description" content={description} />}
+
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
   </head>
   <body>
     <TransloaditBar />

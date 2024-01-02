@@ -9,14 +9,15 @@ interface Props {
   selectedVersion: string
   noindex?: boolean
   title: string
+  description?: string
 }
 
 const protocols = await getCollection('protocols')
 
-const { currentVersion, selectedVersion, noindex, title } = Astro.props
+const { currentVersion, selectedVersion, noindex, title, description } = Astro.props
 ---
 
-<Layout title={title} noindex={noindex}>
+<Layout title={title} description={description} noindex={noindex}>
   <main>
     <header>
       <h1>Protocol</h1>

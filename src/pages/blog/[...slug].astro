@@ -30,7 +30,7 @@ const formatter = Intl.DateTimeFormat('en-US', {
 })
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} description={post.data.meta_description}>
   <article class="post">
     <h1 class="title">{post.data.title}</h1>
     <p class="meta">
