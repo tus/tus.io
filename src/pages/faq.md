@@ -2,7 +2,7 @@
 layout: ../layouts/markdown.astro
 title: FAQ
 description:
-  'Find answers to your questions about Tus. Get insights on how Tus facilitates
+  'Find answers to your questions about tus. Get insights on how tus facilitates
   reliable file uploads and learn tips for integration into your projects.'
 permalink: /faq
 redirect_from: /guide
