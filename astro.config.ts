@@ -35,8 +35,12 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         // filter out redirects
-        if (page === '/guide' || page === '/about') return false
+        if (page.includes('/guide') || page.includes('/about')) return false
+
         if (page.includes('/blog/') && page.includes('/index')) return false
+
+        // filter out old specifications
+        if (page.includes('/protocols/resumable-upload/0-')) return false
         return true
       },
     }),

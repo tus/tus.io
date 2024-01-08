@@ -72,6 +72,7 @@ const protocols = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     version: z.string(),
     version_outdated: z.boolean(),
   }),

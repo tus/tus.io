@@ -8,6 +8,7 @@ import { getFirstParagraphContent } from '@/lib/getFirstParagraph'
 import { getCollection, getEntries } from 'astro:content'
 
 const title = 'Blog'
+const description = 'Explore our blog for the latest updates and insights on resumable file uploading technology and protocol developments.'
 
 const posts = (await getCollection('blog')).sort((a, b) => {
   return b.data.date.getTime() - a.data.date.getTime()
@@ -22,7 +23,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 })
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <main class="root">
     <h1>Blog</h1>
     <ol class="list">

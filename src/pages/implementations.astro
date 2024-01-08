@@ -4,6 +4,8 @@ import ListItem from '@/components/ImplementationListItem.astro'
 
 import { getCollection } from 'astro:content'
 
+const description = 'Explore real-life tus protocol implementations in various languages and platforms, showcasing its versatility and efficiency in file uploads.'
+
 const officialServers = await getCollection(
   'implementations',
   (d) => d.data.type === 'official' && d.data.subtype === 'server'
@@ -25,12 +27,12 @@ const communityServerImplementations = await getCollection(
 )
 ---
 
-<Layout title="Implementations">
+<Layout title="Implementations" description={description}>
   <h1>Implementations</h1>
 
   <p>
     Here are some real-life implementations of the tus resumable upload <a
-      href="/protocol/resumable-upload">protocol</a
+      href="/protocols/resumable-upload">protocol</a
     > in different languages and platforms.
   </p>
 

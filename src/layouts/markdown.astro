@@ -5,12 +5,13 @@ import type { MarkdownLayoutProps } from 'astro'
 
 type Props = MarkdownLayoutProps<{
   title: string
+  description?: string
 }>
 
-const { title } = Astro.props.frontmatter
+const { title, description } = Astro.props.frontmatter
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <main class="page">
     <slot />
   </main>
