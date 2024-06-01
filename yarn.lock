@@ -170,13 +170,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@astrojs/sitemap@npm:2.0.1"
+"@astrojs/sitemap@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "@astrojs/sitemap@npm:3.1.5"
   dependencies:
     sitemap: ^7.1.1
-    zod: ^3.17.3
-  checksum: f92e957d90f5af4a21bd1a2369cdbdbda0121db551329d7e80965d411733a830ff11263f3638742e6b8899e689dd9ed09a45f83ac67e0f355e8fec1a9534ef92
+    stream-replace-string: ^2.0.0
+    zod: ^3.23.8
+  checksum: e932a80775e242fa64630de8ad5b747a3c5b9b65e6cdd20e82d732364949a012a73f432ccae907c3e85237b8295ef802acd40a47f72fc30f3e72bbdba1b6c9df
   languageName: node
   linkType: hard
 
@@ -10201,6 +10202,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stream-replace-string@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stream-replace-string@npm:2.0.0"
+  checksum: 51dfef22a010bd0196792f3a846445029d47b79a60c698528ebf3e811b7751883d7d28a5dfe2ff38868e1a5c1222df4ff1d3fe7f958ad5db33d4727460509af0
+  languageName: node
+  linkType: hard
+
 "streamx@npm:^2.15.0":
   version: 2.15.1
   resolution: "streamx@npm:2.15.1"
@@ -10825,7 +10833,7 @@ __metadata:
     "@astrojs/mdx": ^0.19.7
     "@astrojs/preact": ^2.2.2
     "@astrojs/rss": ^2.4.4
-    "@astrojs/sitemap": ^2.0.1
+    "@astrojs/sitemap": ^3.1.5
     "@astrojs/ts-plugin": ^1.1.3
     "@octokit/core": ^5.0.0
     "@octokit/plugin-paginate-rest": ^8.0.0
@@ -11774,10 +11782,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.17.3, zod@npm:^3.20.6":
+"zod@npm:^3.20.6":
   version: 3.22.4
   resolution: "zod@npm:3.22.4"
   checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.23.8":
+  version: 3.23.8
+  resolution: "zod@npm:3.23.8"
+  checksum: 15949ff82118f59c893dacd9d3c766d02b6fa2e71cf474d5aa888570c469dbf5446ac5ad562bb035bf7ac9650da94f290655c194f4a6de3e766f43febd432c5c
   languageName: node
   linkType: hard
 
