@@ -1,0 +1,14 @@
+{
+    "href": "https://gitea.com/utdream/FasTUS",
+    "authors": [
+      {
+        "name": "Jordan Michaels",
+        "href": "https://gitea.com/utdream"
+      }
+    ],
+    "name": "utdream/FasTUS",
+    "description": "FasTUS is a TUS-compliant resumable file upload server template using FastAPI & released to the public domain. Make something amazing!",
+    "license": "Unlicense",
+    "type": "community",
+    "subtype": "server"
+  }
