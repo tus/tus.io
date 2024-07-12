@@ -212,9 +212,3 @@ li {
 :where(h1, h2, h3, h4, h5, h6):hover a[href^='#'] {
   visibility: visible;
 }
-
-/* make sure we always show color emojis, not Unicode emojis */
-[aria-label~='emoji'] {
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji', 'Android Emoji', EmojiSymbols;
-}
