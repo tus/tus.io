@@ -34,8 +34,11 @@ const { centered, includeRss } = Astro.props
   >
     Follow @tus_io
   </a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-  ></script>
+  <script
+    async
+    src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"
+    is:inline></script>
 
   {
     includeRss && (
