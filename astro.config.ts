@@ -1,13 +1,12 @@
-import type { RemarkPlugin } from '@astrojs/markdown-remark'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import { defineConfig } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import remarkEmoji from 'remark-emoji'
 import remarkToc from 'remark-toc'
 import { h } from 'hastscript'
+import type { RemarkPlugins } from 'astro'
 
 const AnchorIcon = h(
   'svg',
@@ -49,15 +48,11 @@ export default defineConfig({
   build: {
     format: 'file',
   },
-  experimental: {
-    assets: true,
-  },
   markdown: {
     remarkPlugins: [
       // See https://github.com/remarkjs/remark-toc
       [remarkToc, { tight: true, maxDepth: 2, ordered: true }],
-      [remarkEmoji as RemarkPlugin, { accessible: true, emoticon: true }],
-    ],
+    ] as RemarkPlugins,
     rehypePlugins: [
       rehypeHeadingIds,
       [
