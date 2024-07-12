@@ -1,13 +1,13 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {
-		"workbench.colorCustomizations": {
-			"titleBar.activeForeground": "#ffffff",
-			"titleBar.activeBackground": "#008067",
-		},
-	}
+  "folders": [
+    {
+      "path": "..",
+    },
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "titleBar.activeForeground": "#ffffff",
+      "titleBar.activeBackground": "#008067",
+    },
+  },
 }
