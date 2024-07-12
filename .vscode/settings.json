@@ -1,7 +1,7 @@
 {
   "eslint.validate": ["astro"],
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.semanticHighlighting.enabled": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
