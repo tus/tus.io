@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
-    "@astrojs/preact": "^2.2.2",
+    "@astrojs/preact": "^3.5.0",
     "@astrojs/rss": "^2.4.4",
     "@astrojs/sitemap": "^2.0.1",
     "@octokit/core": "^5.0.0",
