@@ -5,7 +5,7 @@ import { unified, type Plugin } from 'unified'
 import remarkRehype from 'remark-rehype'
 
 const extractFirstParagraph: Plugin<[], Root> = () => {
-  return (tree) => {
+  return (tree: Root) => {
     const root = tree
 
     const children = []
