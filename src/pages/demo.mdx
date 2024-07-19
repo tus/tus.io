@@ -8,6 +8,7 @@ comments: true
 permalink: /demo.html
 ---
 
+import Emoji from '@/components/Emoji.astro'
 import { UploadDemo } from '@/components/UploadDemo.tsx'
 import { RequestViewer } from '@/components/RequestViewer.tsx'
 
@@ -19,9 +20,9 @@ your files to our public [tusd](https://github.com/tus/tusd) instance, which is
 the official reference implementation for the tus protocol, written in the
 [Go programming language](https://golang.org/).
 
-**:warning: Please be aware that the uploaded files will be removed from our
-servers after a few hours, for privacy, and to combat people uploading malicious
-content.**
+**<Emoji label="warning">⚠️</Emoji> Please be aware that the uploaded files will
+be removed from our servers after a few hours, for privacy, and to combat people
+uploading malicious content.**
 
 ### Instructions
 

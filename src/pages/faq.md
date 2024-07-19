@@ -266,4 +266,4 @@ still an abbreviation) to desperately avoid yelling TUS in all caps. We used to
 insist on lowercasing, but have gotten more pragmatic from our encounters with
 journalists, who insist on it being Tus in their articles, and there's not much
 we can do about it. So now we just say: write it however you feel like that day
-:smile:
+😄

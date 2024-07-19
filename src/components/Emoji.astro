@@ -6,6 +6,11 @@ interface Props {
 const { label } = Astro.props
 ---
 
-<span role="img" aria-label={`${label} emoji`}>
-  <slot />
-</span>
+<span role="img" aria-label={`${label} emoji`}><slot /></span>
+
+<style>
+  [aria-label~='emoji'] {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji', 'Android Emoji', EmojiSymbols;
+}
+</style>

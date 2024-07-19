@@ -20,7 +20,7 @@ if (Astro.url.pathname !== '/') {
 const currentPage = Astro.url.pathname
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -82,7 +82,8 @@ const currentPage = Astro.url.pathname
     <script
       defer
       data-domain="tus.io"
-      src="https://plausible.io/js/script.js"></script>
+      src="https://plausible.io/js/script.js"
+      is:inline></script>
 
     <script>
       // We used to have URLs ending in .html, but switched to clean URLs.
