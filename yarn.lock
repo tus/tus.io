@@ -158,19 +158,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/preact@npm:~3.0.0":
-  version: 3.0.2
-  resolution: "@astrojs/preact@npm:3.0.2"
+"@astrojs/preact@npm:~3.5.1":
+  version: 3.5.1
+  resolution: "@astrojs/preact@npm:3.5.1"
   dependencies:
-    "@babel/plugin-transform-react-jsx": "npm:^7.22.5"
-    "@babel/plugin-transform-react-jsx-development": "npm:^7.22.5"
-    "@preact/preset-vite": "npm:^2.7.0"
-    "@preact/signals": "npm:^1.2.1"
+    "@babel/plugin-transform-react-jsx": "npm:^7.24.7"
+    "@babel/plugin-transform-react-jsx-development": "npm:^7.24.7"
+    "@preact/preset-vite": "npm:2.8.2"
+    "@preact/signals": "npm:^1.3.0"
     babel-plugin-transform-hook-names: "npm:^1.0.2"
-    preact-render-to-string: "npm:^6.3.1"
+    preact-render-to-string: "npm:^6.5.5"
   peerDependencies:
     preact: ^10.6.5
-  checksum: 10/a33ec7942cea413420d382adb75db22a8c3912cc57d4fa461747810582f70bfcb446fc3f2cd6413a0a0d8c632e2a8ca652343d755e92a3f7b65887e8eb652e53
+  checksum: 10/93b41c79871fc5ddb144111bd1594289f77c2d46978450ddb26ec768cd3aa6e81b9c56b93768dc446d9e5dc4c2632cb0bffd7241c9f4c32575978b2af67445c1
   languageName: node
   linkType: hard
 
@@ -232,7 +232,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.24.7":
+"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.24.7":
   version: 7.24.7
   resolution: "@babel/code-frame@npm:7.24.7"
   dependencies:
@@ -448,7 +448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-react-jsx-development@npm:^7.22.5":
+"@babel/plugin-transform-react-jsx-development@npm:^7.22.5, @babel/plugin-transform-react-jsx-development@npm:^7.24.7":
   version: 7.24.7
   resolution: "@babel/plugin-transform-react-jsx-development@npm:7.24.7"
   dependencies:
@@ -1612,11 +1612,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preact/preset-vite@npm:^2.7.0":
-  version: 2.9.0
-  resolution: "@preact/preset-vite@npm:2.9.0"
+"@preact/preset-vite@npm:2.8.2":
+  version: 2.8.2
+  resolution: "@preact/preset-vite@npm:2.8.2"
   dependencies:
-    "@babel/code-frame": "npm:^7.22.13"
     "@babel/plugin-transform-react-jsx": "npm:^7.22.15"
     "@babel/plugin-transform-react-jsx-development": "npm:^7.22.5"
     "@prefresh/vite": "npm:^2.4.1"
@@ -1632,7 +1631,7 @@ __metadata:
   peerDependencies:
     "@babel/core": 7.x
     vite: 2.x || 3.x || 4.x || 5.x
-  checksum: 10/7007c4239be4d080d4f6d829d6979f169c41c446c75bbf99ce0d723caf6784c3e2625e02588f4512be02b0161658ef32c0439778620196032268c767e1bd98d1
+  checksum: 10/a54b14afbd3a6a09836ec1469bc7924e128778a092cca875c3434989974023bf6f21f09d5c090d12c23fdb81ce9e6499bdf52a2f35c81141e9f2687158c56460
   languageName: node
   linkType: hard
 
@@ -1640,6 +1639,13 @@ __metadata:
   version: 1.4.0
   resolution: "@preact/signals-core@npm:1.4.0"
   checksum: 10/20e6abfad3c018902f80ad439a78df51ab34af63b58119968a1a327b7e07e59554fe088d23ca5d9fccbfafe79d81a9c44f6173a5ac8fb74102720c4b0c1accb3
+  languageName: node
+  linkType: hard
+
+"@preact/signals-core@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@preact/signals-core@npm:1.7.0"
+  checksum: 10/a23ae8ef97dd3f98f6212353c770e37548f9fb1ef9f098bbd9352185725b6979f1daa9309ef29d0cb272887392fdbe86b361121c645fdbb983a07f0661544e5e
   languageName: node
   linkType: hard
 
@@ -1651,6 +1657,17 @@ __metadata:
   peerDependencies:
     preact: 10.x
   checksum: 10/e9a5ffc165cf72f4691954a0adf1977ac4e963ace506bca0ad1004e3b797553ec649f8f72ed3fff3453e9ebf6930912aa581b98bfb57c002088381b7c8254c86
+  languageName: node
+  linkType: hard
+
+"@preact/signals@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@preact/signals@npm:1.3.0"
+  dependencies:
+    "@preact/signals-core": "npm:^1.7.0"
+  peerDependencies:
+    preact: 10.x
+  checksum: 10/65032401ed5c2d3428f27a7f1d00c55aced8fbefb924c3327052d3b0e250929e70703406a743f2082edc9e2ed4006aefb8102001afc1eb010698afc04e945412
   languageName: node
   linkType: hard
 
@@ -9049,12 +9066,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact-render-to-string@npm:^6.3.1":
-  version: 6.5.5
-  resolution: "preact-render-to-string@npm:6.5.5"
+"preact-render-to-string@npm:^6.5.5":
+  version: 6.5.6
+  resolution: "preact-render-to-string@npm:6.5.6"
   peerDependencies:
     preact: ">=10"
-  checksum: 10/caeddf8dd02cb3cdc5cd13341ed911c494ecdfc1c1839de29cf19001575e32a2bd9d464809a8ebec30c9974306a4ac4f73ac621a6f25644bc7f4efb1dffc288f
+  checksum: 10/65be53a7adb4823f39983eb20e210c468413d58ef7e886e88b5f324bf81c160cef0dc0921f5433e866612632ad5260e2eefb6b0369d5dac276ec4e86bbe6d337
   languageName: node
   linkType: hard
 
@@ -10769,7 +10786,7 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.8.1"
     "@astrojs/mdx": "npm:^1.1.5"
-    "@astrojs/preact": "npm:~3.0.0"
+    "@astrojs/preact": "npm:~3.5.1"
     "@astrojs/rss": "npm:^4.0.7"
     "@astrojs/sitemap": "npm:^3.1.6"
     "@astrojs/ts-plugin": "npm:^1.1.3"
