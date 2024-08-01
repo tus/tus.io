@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "^6.5.0",
     "autoprefixer": "^10.4.15",
     "concurrently": "^8.2.1",
-    "cssnano": "^6.0.1",
+    "cssnano": "^7.0.4",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.29.0",
