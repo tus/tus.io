@@ -60,7 +60,7 @@
     "@octokit/plugin-retry": "^6.0.0",
     "@octokit/plugin-throttling": "^8.0.0",
     "@preact/signals": "^1.2.1",
-    "astro": "^3.6.5",
+    "astro": "^4.13.0",
     "clsx": "^2.0.0",
     "cross-fetch": "^4.0.0",
     "lodash-es": "^4.17.21",
