@@ -1,12 +1,16 @@
 {
-  "href": "https://github.com/jjmutumi/tus_client",
+  "href": "https://github.com/tomassasovsky/tus_client",
   "authors": [
     {
       "name": "Joseph Mutumi",
       "href": "https://github.com/jjmutumi"
+    },
+    {
+      "name": "Tomás Sasovsky",
+      "href": "https://github.com/tomassasovsky"
     }
   ],
-  "name": "jjmutumi/tus_client",
+  "name": "tomassasovsky/tus_client",
   "description": "A pure dart library that implements a client for TUS that can be used in Flutter.",
   "license": "MIT",
   "type": "community",
