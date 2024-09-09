@@ -136,10 +136,9 @@ technologies include
 [ZooKeeper](https://zookeeper.apache.org/doc/r3.1.2/recipes.html#sc_recipes_Locks)
 or [Consul](https://www.consul.io/docs/commands/lock.html), but not AWS S3 as it
 does not offer absolute consistency. Since they do promise "read-after-write
-consistency for PUTS of new objects in your S3 bucket [but only] eventual
-consistency for overwrite PUTS and DELETES", this cannot be used to build a
-distributed lock upon. Therefore, you are recommended to use a third-party
-system for doing so.
+consistency for PUTS of new objects in your S3 bucket [but only] eventual consistency
+for overwrite PUTS and DELETES", this cannot be used to build a distributed lock
+upon. Therefore, you are recommended to use a third-party system for doing so.
 
 Another option for preventing concurrent uploading is to put the responsibility
 on the client's side by saying it is their task to prevent multiple accesses to
