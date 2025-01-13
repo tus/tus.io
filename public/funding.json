@@ -222,15 +222,40 @@
     ],
     "plans": [
       {
+        "guid": "backer",
+        "status": "active",
+        "name": "Backer",
+        "amount": 2,
+        "currency": "EUR",
+        "frequency": "monthly",
+        "channels": ["opencollective"]
+      },
+      {
         "guid": "bronze",
         "status": "active",
         "name": "Bronze sponsor",
-        "amount": 100,
-        "currency": "USD",
+        "amount": 25,
+        "currency": "EUR",
         "frequency": "monthly",
-        "channels": [
-          "opencollective"
-        ]
+        "channels": ["opencollective"]
+      },
+      {
+        "guid": "silver",
+        "status": "active",
+        "name": "Silver sponsor",
+        "amount": 100,
+        "currency": "EUR",
+        "frequency": "monthly",
+        "channels": ["opencollective"]
+      },
+      {
+        "guid": "gold",
+        "status": "active",
+        "name": "Gold sponsor",
+        "amount": 500,
+        "currency": "EUR",
+        "frequency": "monthly",
+        "channels": ["opencollective"]
       }
     ],
     "history": []
