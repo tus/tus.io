@@ -42,7 +42,7 @@
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tusd",
-        "wellKnown": "https://github.com/tus/tusd/blob/main/.well-known/funding-manifest-urls"
+        "wellKnown": "https://github.com/tus/tusd/blob/main/docs/.well-known/funding-manifest-urls"
       },
       "licenses": ["mit"],
       "tags": ["http", "upload", "file", "resumable", "go", "server"]
