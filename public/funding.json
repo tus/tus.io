@@ -19,8 +19,8 @@
         "url": "https://tus.io/protocols/resumable-upload"
       },
       "repositoryUrl": {
-        "url": "https://github.com/tus/tus-protocol",
-        "wellKnown": "https://github.com/tus/tus-protocol/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://github.com/tus/tus-resumable-upload-protocol",
+        "wellKnown": "https://github.com/tus/tus-resumable-upload-protocol/blob/main/.well-known/funding-manifest-urls"
       },
       "licenses": ["mit"],
       "tags": [
@@ -42,7 +42,7 @@
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tusd",
-        "wellKnown": "https://github.com/tus/tusd/blob/gh-pages/.well-known/funding-manifest-urls"
+        "wellKnown": "https://github.com/tus/tusd/blob/main/.well-known/funding-manifest-urls"
       },
       "licenses": ["mit"],
       "tags": ["http", "upload", "file", "resumable", "go", "server"]
