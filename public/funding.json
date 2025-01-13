@@ -4,7 +4,7 @@
     "type": "group",
     "role": "steward",
     "name": "tus",
-    "email": "marius@tus.o",
+    "email": "marius@tus.io",
     "description": "Tus is an open protocol for resumable uploads over HTTP enabling file uploads to recover from network interruptions. We maintain open-source implementations to easily add resumability to every application.",
     "webpageUrl": {
       "url": "https://tus.io"
