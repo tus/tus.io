@@ -216,7 +216,8 @@
       {
         "guid": "opencollective",
         "type": "other",
-        "description": "We are in the process of setting up an Open Collective. Please e-mail me for details."
+        "address": "https://opencollective.com/tus",
+        "description": "We accept donations through Open Collective."
       }
     ],
     "plans": [
