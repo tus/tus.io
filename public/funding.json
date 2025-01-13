@@ -22,9 +22,7 @@
         "url": "https://github.com/tus/tus-protocol",
         "wellKnown": "https://github.com/tus/tus-protocol/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
+      "licenses": ["mit"],
       "tags": [
         "http",
         "upload",
@@ -36,7 +34,7 @@
     },
     {
       "guid": "tusd",
-      "name": "tusd", 
+      "name": "tusd",
       "description": "Tusd is a feature-rich server for resumable uploads written in Go.",
       "webpageUrl": {
         "url": "https://tus.github.io/tusd",
@@ -46,17 +44,8 @@
         "url": "https://github.com/tus/tusd",
         "wellKnown": "https://github.com/tus/tusd/blob/gh-pages/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http",
-        "upload", 
-        "file",
-        "resumable",
-        "go",
-        "server"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "go", "server"]
     },
     {
       "guid": "tus-node-server",
@@ -67,20 +56,11 @@
         "wellKnown": "https://github.com/tus/tus-node-server/blob/main/.well-known/funding-manifest-urls"
       },
       "repositoryUrl": {
-        "url": "https://github.com/tus/tus-node-server", 
+        "url": "https://github.com/tus/tus-node-server",
         "wellKnown": "https://github.com/tus/tus-node-server/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http",
-        "upload",
-        "file", 
-        "resumable",
-        "nodejs",
-        "server"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "nodejs", "server"]
     },
     {
       "guid": "tus-js-client",
@@ -94,14 +74,12 @@
         "url": "https://github.com/tus/tus-js-client",
         "wellKnown": "https://github.com/tus/tus-js-client/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"  
-      ],
+      "licenses": ["mit"],
       "tags": [
         "http",
         "upload",
         "file",
-        "resumable", 
+        "resumable",
         "javascript",
         "nodejs",
         "browser",
@@ -109,7 +87,7 @@
       ]
     },
     {
-      "guid": "tus-py-client", 
+      "guid": "tus-py-client",
       "name": "tus-py-client",
       "description": "Client implementation of the tus resumable upload protocol for Python.",
       "webpageUrl": {
@@ -120,21 +98,12 @@
         "url": "https://github.com/tus/tus-py-client",
         "wellKnown": "https://github.com/tus/tus-py-client/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http",
-        "upload",
-        "file",
-        "resumable",
-        "python",
-        "client"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "python", "client"]
     },
     {
       "guid": "tus-java-client",
-      "name": "tus-java-client", 
+      "name": "tus-java-client",
       "description": "Client implementation of the tus resumable upload protocol for Java.",
       "webpageUrl": {
         "url": "https://github.com/tus/tus-java-client",
@@ -144,17 +113,8 @@
         "url": "https://github.com/tus/tus-java-client",
         "wellKnown": "https://github.com/tus/tus-java-client/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http",
-        "upload",
-        "file",
-        "resumable",
-        "java",
-        "client"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "java", "client"]
     },
     {
       "guid": "tus-android-client",
@@ -168,17 +128,8 @@
         "url": "https://github.com/tus/tus-android-client",
         "wellKnown": "https://github.com/tus/tus-android-client/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http", 
-        "upload",
-        "file",
-        "resumable",
-        "android",
-        "client"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "android", "client"]
     },
     {
       "guid": "tuskit",
@@ -192,18 +143,8 @@
         "url": "https://github.com/tus/TUSKit",
         "wellKnown": "https://github.com/tus/TUSKit/blob/main/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "mit"
-      ],
-      "tags": [
-        "http",
-        "upload", 
-        "file",
-        "resumable",
-        "ios",
-        "macos",
-        "client"
-      ]
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "ios", "macos", "client"]
     }
   ],
   "funding": {
