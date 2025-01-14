@@ -160,7 +160,7 @@
       },
       "licenses": ["mit"],
       "tags": ["http", "upload", "file", "resumable", "net", "server"]
-    },
+    }
   ],
   "funding": {
     "channels": [
