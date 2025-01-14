@@ -145,7 +145,22 @@
       },
       "licenses": ["mit"],
       "tags": ["http", "upload", "file", "resumable", "ios", "macos", "client"]
-    }
+    },
+    {
+      "guid": "tusdotnet",
+      "name": "tusdotnet",
+      "description": "Tusdotnet is a feature-rich server for resumable uploads written in .NET",
+      "webpageUrl": {
+        "url": "https://github.com/tusdotnet/tusdotnet",
+        "wellKnown": "https://github.com/tusdotnet/tusdotnet/blob/master/.well-known/funding-manifest-urls"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/tusdotnet/tusdotnet",
+        "wellKnown": "https://github.com/tusdotnet/tusdotnet/blob/master/.well-known/funding-manifest-urls"
+      },
+      "licenses": ["mit"],
+      "tags": ["http", "upload", "file", "resumable", "net", "server"]
+    },
   ],
   "funding": {
     "channels": [
