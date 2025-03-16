@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/eikek/tus4s",
+  "authors": [
+    {
+      "name": "Eike Kettner",
+      "href": "https://github.com/eikek"
+    }
+  ],
+  "name": "eikek/tus4s",
+  "description": "This project is a tus <code>1.0.0</code> server implementation in <strong>Scala 3</strong> with routes for http4s.",
+  "license": "Apache License 2.0",
+  "type": "community",
+  "subtype": "server"
+}
