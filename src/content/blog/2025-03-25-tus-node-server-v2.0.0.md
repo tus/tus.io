@@ -93,10 +93,12 @@ offer the best uploading experience.
 
 ### Running anywhere where JavaScript runs
 
-tus Node.js 2.0.0 can now be integrated in all Node.js compatible runtimes and
-meta-frameworks. This major version is a rewrite of all handlers to be based on
-`Request` and `Response`, as it’s possible to convert Node’s request/response
-objects to those but not the other way around.
+tus Node.js 2.0.0 can now run in all meta frameworks (such as Next.js, Nuxt,
+React Router, SvelteKit, etc) and all Node.js compatible runtime environments
+(AWS Lambda, Cloudflare (as long as the store does not depend on `node:fs`),
+Bun, Deno Deploy, etc). This major version is a rewrite of all handlers to be
+based on `Request` and `Response`, as it’s possible to convert Node’s
+request/response objects to those but not the other way around.
 
 Use the new `handleWeb()` method for `Request` based handlers, such as in Bun:
 
