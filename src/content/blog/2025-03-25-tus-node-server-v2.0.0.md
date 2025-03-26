@@ -20,19 +20,19 @@ interruption may happen on purpose, if the user wants to pause, or by accident
 in case of a network issue or server outage (or your cat deciding to take a nap
 on the keyboard).
 
-The developers behind tus are currently working together with the influential
-HTTP working group inside the Internet Engineering Task Force (IETF) – the
-internet standards-setting organization that defines the network protocols
-powering the entire internet – to
+The developers behind tus are currently working together with the HTTP working
+group inside the Internet Engineering Task Force (IETF) – the internet
+standards-setting organization that defines the network protocols powering the
+entire internet – to
 [make resumable uploads an official standard](https://tus.io/blog/2023/08/09/resumable-uploads-ietf)
 across the web.
 
 [tus-node-server][] is an official implementation of the tus resumable upload
-protocol. It is capable of accepting uploads of all sorts and sizes, and storing
-them locally on disk, or remotely on Google Cloud Storage or AWS S3 (or any
-other S3-compatible storage system). Due to its modularization and
-extensibility, support for nearly any other cloud provider could easily be
-added.
+protocol (it does not support the draft yet). It is capable of accepting uploads
+of all sorts and sizes, and storing them locally on disk, or remotely on Google
+Cloud Storage or AWS S3 (or any other S3-compatible storage system). Due to its
+modularization and extensibility, support for nearly any other cloud provider
+could easily be added.
 
 ## Looking back
 
@@ -76,29 +76,17 @@ environments and frameworks.
 
 ## tus Node.js 2.0.0
 
-### ESM-only
-
-Considered impossible for as long as most can remember, all LTS releases of
-Node.js can now
-[`require(esm)`](https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/)
-from CommonJS. An incredible achievement and finally relieving maintainers from
-choosing whether to publish CommonJS, ESM, or both.
-
-With this release we bump the minimum required Node.js version from >=16
-to >=20.19.0, the specific release that backported `require(esm)`.
-
-While we don’t depend on any ESM-only packages yet, it does give us the
-flexibility to do so should we need it, ensuring we can pick the best tools to
-offer the best uploading experience.
-
 ### Running anywhere where JavaScript runs
 
-tus Node.js 2.0.0 can now run in all meta frameworks (such as Next.js, Nuxt,
-React Router, SvelteKit, etc) and all Node.js compatible runtime environments
-(AWS Lambda, Cloudflare (as long as the store does not depend on `node:fs`),
-Bun, Deno Deploy, etc). This major version is a rewrite of all handlers to be
-based on `Request` and `Response`, as it’s possible to convert Node’s
-request/response objects to those but not the other way around.
+tus Node.js 2.0.0 can now run in all meta frameworks, such as Next.js, Nuxt,
+React Router, SvelteKit, etc. And all Node.js compatible runtime environments,
+for instance AWS Lambda, Cloudflare, Bun, and Deno Deploy. Cloudflare does not
+have `node:fs`, which means the `@tus/file-store` and the R2-compatible
+`@tus/s3-store` can’t run there.
+
+This major version is a rewrite of all handlers to be based on `Request` and
+`Response`, as it’s possible to convert Node’s request/response objects to those
+but not the other way around.
 
 Use the new `handleWeb()` method for `Request` based handlers, such as in Bun:
 
@@ -157,6 +145,21 @@ const tus = new Server({
 tus.listen({ host, port })
 ```
 
+### ESM-only
+
+Considered impossible for as long as most can remember, all LTS releases of
+Node.js can now
+[`require(esm)`](https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/)
+from CommonJS. An incredible achievement and finally relieving maintainers from
+choosing whether to publish CommonJS, ESM, or both.
+
+With this release we bump the minimum required Node.js version from >=16
+to >=20.19.0, the specific release that backported `require(esm)`.
+
+While we don’t depend on any ESM-only packages yet, it does give us the
+flexibility to do so should we need it, ensuring we can pick the best tools to
+offer the best uploading experience.
+
 ## What is next?
 
 With this release, the server is in really good shape. Nonetheless some
@@ -168,7 +171,10 @@ improvements might be on the horizon soon.
   and Google Cloud Storage locker (already WIP) with a
   [similar approach](https://www.joyfulbikeshedding.com/blog/2021-05-19-robust-distributed-locking-algorithm-based-on-google-cloud-storage.html),
   removing the need for something like Redis or Postgres.
-- Even more stability?
+- Running `@tus/s3-store` in Cloudflare (if possible). The store is compatible
+  with Cloudflare’s storage solution
+  [R2](https://www.cloudflare.com/en-gb/developer-platform/products/r2/) but it
+  uses `node:fs`, which can’t be used in Cloudflare.
 
 Take the [tus server][tus-node-server] for a spin and let us know what you
 think!
