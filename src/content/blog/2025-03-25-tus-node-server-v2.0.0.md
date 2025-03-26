@@ -5,11 +5,11 @@ author: murderlon
 date: 2025-03-25
 ---
 
-The Node.js tus server can now run in all meta frameworks and Node.js compatible
+The Node.js tus server can now run in all meta-frameworks and Node.js compatible
 runtimes. Deprecated options have been removed, and the server is ESM-only. The
 packages now require Node.js >=20.19.0, the release that backported
 `require(esm)`, allowing us to output ESM and import ESM packages without
-affecting consumers on CommonJS. But that’s not all, let’s dive in.
+affecting consumers on CommonJS. But that’s not all, so let’s dive in.
 
 ## What is tus?
 
@@ -28,7 +28,7 @@ entire internet – to
 across the web.
 
 [tus-node-server][] is an official implementation of the tus resumable upload
-protocol (it does not support the draft yet). It is capable of accepting uploads
+protocol, although it does not support the draft yet. It is capable of accepting uploads
 of all sorts and sizes, and storing them locally on disk, or remotely on Google
 Cloud Storage or AWS S3 (or any other S3-compatible storage system). Due to its
 modularization and extensibility, support for nearly any other cloud provider
@@ -37,7 +37,7 @@ could easily be added.
 ## Looking back
 
 tus Node.js [1.0.0](https://tus.io/blog/2023/09/04/tus-node-server-v100) brought
-modular packages, TypeScript, and stability. Since that major release more we’ve
+modular packages, TypeScript, and stability. Since that major release, we’ve
 been shipping lots of improvements in minor versions, such as:
 
 - Support for [custom lockers][locker] and distributed locks. This prevents
@@ -52,22 +52,22 @@ been shipping lots of improvements in minor versions, such as:
 - Lots of stability improvements to [`@tus/s3-store`][].
 - Allowing hooks to override metadata.
 - Customizing upload URLs and
-  [custom nested directories](https://github.com/tus/tus-node-server/tree/main/packages/server#example-store-files-in-custom-nested-directories)
+  [custom nested directories](https://github.com/tus/tus-node-server/tree/main/packages/server#example-store-files-in-custom-nested-directories).
 - [And much more...](https://github.com/tus/tus-node-server/compare/%40tus/server%401.0.0...%40tus/server%402.0.0)
 
-All while maintaining backwards compatibility. It has been battle tested at
+We did all this, while maintaining backwards compatibility. It has been battle tested at
 scale in multiple large companies, including in a multi-tenant setup at
 [Supabase](https://supabase.com).
 
-However, these days people run JavaScript servers in lots of places and
-environments. It has become quite common to not run your own Node.js server but
+These days, however, people run JavaScript servers in lots of places and
+environments. It has become quite common to not run your own Node.js server, but
 leverage new (serverless) runtimes, such as AWS Lambda, Cloudflare, Deno Deploy,
 or Bun. Thanks to the [WinterTC](https://wintertc.org/), the Technical Committee
-on Web-interoperable Server Runtimes, we can more or less everywhere write
+on Web-interoperable Server Runtimes, we can – more or less everywhere – write
 servers with the web APIs: `Request` and `Response`.
 
-Or you might be using a full-stack meta-framework, such as Next.js, Nuxt, React
-Router, SvelteKit, etc. In which case you write your API or server logic there,
+Alternatively, you might be using a full-stack meta-framework, such as Next.js, Nuxt, React
+Router, SvelteKit, etc. In that case, you write your API or server logic there,
 with similar `Request`/`Response` request handlers.
 
 When a server is written specifically for Node.js with `http.IncomingMessage`
@@ -78,17 +78,17 @@ environments and frameworks.
 
 ### Running anywhere where JavaScript runs
 
-tus Node.js 2.0.0 can now run in all meta frameworks, such as Next.js, Nuxt,
-React Router, SvelteKit, etc. And all Node.js compatible runtime environments,
-for instance AWS Lambda, Cloudflare, Bun, and Deno Deploy. Cloudflare does not
+tus Node.js 2.0.0 can now run in all meta-frameworks, such as Next.js, Nuxt,
+React Router, SvelteKit, etc. The same goes for all Node.js-compatible runtime environments,
+such as AWS Lambda, Cloudflare, Bun, and Deno Deploy. Cloudflare does not
 have `node:fs`, which means the `@tus/file-store` and the R2-compatible
 `@tus/s3-store` can’t run there.
 
 This major version is a rewrite of all handlers to be based on `Request` and
-`Response`, as it’s possible to convert Node’s request/response objects to those
+`Response`, as it’s possible to convert Node’s request/response objects to those,
 but not the other way around.
 
-Use the new `handleWeb()` method for `Request` based handlers, such as in Bun:
+Use the new `handleWeb()` method for `Request`-based handlers, such as in Bun:
 
 ```js
 import { Server } from '@tus/server'
@@ -129,7 +129,7 @@ app.all('/files/*', (req, res) => tus.handle(req.raw, res.raw))
 app.listen(3000)
 ```
 
-Or run the server standalone:
+You can also run the server standalone:
 
 ```js
 import { Server } from '@tus/server'
@@ -147,13 +147,13 @@ tus.listen({ host, port })
 
 ### ESM-only
 
-Considered impossible for as long as most can remember, all LTS releases of
-Node.js can now
+All LTS releases of Node.js can now
 [`require(esm)`](https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/)
-from CommonJS. An incredible achievement and finally relieving maintainers from
-choosing whether to publish CommonJS, ESM, or both.
+from CommonJS, something that has been considered impossible for as long as
+most can remember. This is an incredible achievement that finally relieves
+maintainers from choosing whether to publish CommonJS, ESM, or both.
 
-With this release we bump the minimum required Node.js version from >=16
+With this release, we bump the minimum required Node.js version from >=16
 to >=20.19.0, the specific release that backported `require(esm)`.
 
 While we don’t depend on any ESM-only packages yet, it does give us the
@@ -162,18 +162,18 @@ offer the best uploading experience.
 
 ## What is next?
 
-With this release, the server is in really good shape. Nonetheless some
-improvements might be on the horizon soon.
+With this release, the server is in really good shape. Nonetheless, some
+improvements might be on the horizon soon:
 
 - Structured logging with log levels.
-- New distributed locks: a S3 locker based on
+- New distributed locks: an S3-locker based on
   [conditional writes](https://www.morling.dev/blog/leader-election-with-s3-conditional-writes/)
   and Google Cloud Storage locker (already WIP) with a
   [similar approach](https://www.joyfulbikeshedding.com/blog/2021-05-19-robust-distributed-locking-algorithm-based-on-google-cloud-storage.html),
   removing the need for something like Redis or Postgres.
 - Running `@tus/s3-store` in Cloudflare (if possible). The store is compatible
   with Cloudflare’s storage solution
-  [R2](https://www.cloudflare.com/en-gb/developer-platform/products/r2/) but it
+  [R2](https://www.cloudflare.com/en-gb/developer-platform/products/r2/), but it
   uses `node:fs`, which can’t be used in Cloudflare.
 
 Take the [tus server][tus-node-server] for a spin and let us know what you
