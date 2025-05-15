@@ -1,12 +1,12 @@
 {
-  "href": "https://github.com/edihasaj/tuspy-fast-api",
+  "href": "https://github.com/edihasaj/tuspyserver",
   "authors": [
     {
       "name": "Edi Hasaj",
       "href": "https://github.com/edihasaj"
     }
   ],
-  "name": "edihasaj/tuspy-fast-api",
+  "name": "edihasaj/tuspyserver",
   "description": "<strong>FastAPI</strong> extension implementing tus <code>v1.0.0</code> powering resumable file uploads for <strong>Python</strong> servers and apps.",
   "license": "MIT",
   "type": "community",
