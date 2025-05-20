@@ -59,10 +59,10 @@ One of our goals has always been to reduce barriers to entry for using the tus
 protocol. Package manager support is a significant step in that direction,
 making it easier for developers to get started with tusd without dealing with
 manual installation processes. For the future, we're exploring options to make
-tusd more accessible through more package managers. If you're interested in
-helping maintain tusd in nixpkgs or would like to contribute to packaging tusd
-for other package managers, please reach out to us on
-[GitHub](https://github.com/tus/tusd).
+tusd more accessible through more package managers. In particular, we're
+currently seeking help with packaging tusd for Debian and Ubuntu distributions.
+If you're interested in this and/or making tusd available via other distribution
+methods, please reach out to us on [GitHub](https://github.com/tus/tusd).
 
 If you're using a system with Nix available, we encourage you to try out tusd
 today with this new installation method and let us know what you think. As
