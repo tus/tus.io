@@ -7,7 +7,7 @@
     }
   ],
   "name": "Cadons/libtusclient",
-  "description": "A C++ client-side implementation of the tus <code>v1.0.0</code> protocol, supporting resumable file uploads.",
+  "description": "A C++ client-side implementation of the tus <code>v1.0.1</code> protocol, supporting resumable file uploads.",
   "license": "MIT License",
   "type": "community",
   "subtype": "client"
