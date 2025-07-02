@@ -1,6 +1,6 @@
-import type { HTMLAttributes } from 'preact/compat'
+import type { AnchorHTMLAttributes } from 'preact/compat'
 
-export function ExternalA(props: HTMLAttributes<HTMLAnchorElement>) {
+export function ExternalA(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href, children, className } = props
   return (
     <a
