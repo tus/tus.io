@@ -51,7 +51,15 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       // See https://github.com/remarkjs/remark-toc
-      [remarkToc, { tight: true, maxDepth: 2, ordered: true }],
+      [
+        remarkToc,
+        {
+          tight: true,
+          maxDepth: 3,
+          ordered: true,
+          skip: 'example|headers|requests',
+        },
+      ],
     ] as RemarkPlugins,
     rehypePlugins: [
       rehypeHeadingIds,
