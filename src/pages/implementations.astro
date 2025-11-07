@@ -6,6 +6,11 @@ import { getCollection } from 'astro:content'
 
 const description = 'Explore real-life tus protocol implementations in various languages and platforms, showcasing its versatility and efficiency in file uploads.'
 
+const officialBoth = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'official' && d.data.subtype === 'both'
+)
+
 const officialServers = await getCollection(
   'implementations',
   (d) => d.data.type === 'official' && d.data.subtype === 'server'
@@ -14,6 +19,11 @@ const officialServers = await getCollection(
 const officialClients = await getCollection(
   'implementations',
   (d) => d.data.type === 'official' && d.data.subtype === 'client'
+)
+
+const communityBothImplementations = await getCollection(
+  'implementations',
+  (d) => d.data.type === 'community' && d.data.subtype === 'both'
 )
 
 const communityClientImplementations = await getCollection(
@@ -69,6 +79,16 @@ const communityServerImplementations = await getCollection(
     developers.
   </p>
 
+  <h3>Servers/Clients</h3>
+  
+  <ul class="implementations">
+    {
+      officialBoth.map((implementation) => (
+        <ListItem implementation={implementation} />
+      ))
+    }
+  </ul>
+
   <h3>Servers</h3>
 
   <ul class="implementations">
@@ -107,6 +127,16 @@ const communityServerImplementations = await getCollection(
     For new implementations, we recommend using the MIT license and making clear
     what protocol version you're targeting.
   </p>
+
+  <h3>Servers/Clients</h3>
+  
+  <ul class="implementations">
+    {
+      communityBothImplementations.map((implementation) => (
+        <ListItem implementation={implementation} />
+      ))
+    }
+  </ul>
 
   <h3>Client</h3>
 
