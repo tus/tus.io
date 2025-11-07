@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/sts07142/resumable-upload",
+  "authors": [
+    {
+      "name": "sts07142",
+      "href": "https://github.com/sts07142"
+    }
+  ],
+  "name": "sts07142/resumable-upload",
+  "description": "A <strong>Python</strong> implementation of the <code>tus v1.0.0</code> for <strong>server and client</strong>, <strong>with zero runtime dependencies</strong>.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "both"
+}

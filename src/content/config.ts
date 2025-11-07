@@ -46,7 +46,7 @@ const implementations = defineCollection({
     description: z.string().describe('HTML allowed'),
     license: z.string(),
     type: z.union([z.literal('official'), z.literal('community')]),
-    subtype: z.union([z.literal('client'), z.literal('server')]).optional(),
+    subtype: z.union([z.literal('client'), z.literal('server'), z.literal('both')]).optional(),
   }),
 })
 
