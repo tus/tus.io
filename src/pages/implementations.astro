@@ -8,22 +8,22 @@ const description = 'Explore real-life tus protocol implementations in various l
 
 const officialServers = await getCollection(
   'implementations',
-  (d) => d.data.type === 'official' && d.data.subtype === 'server'
+  (d) => d.data.type === 'official' && (d.data.subtype === 'server' || d.data.subtype === 'both')
 )
 
 const officialClients = await getCollection(
   'implementations',
-  (d) => d.data.type === 'official' && d.data.subtype === 'client'
+  (d) => d.data.type === 'official' && (d.data.subtype === 'client' || d.data.subtype === 'both')
 )
 
 const communityClientImplementations = await getCollection(
   'implementations',
-  (d) => d.data.type === 'community' && d.data.subtype === 'client'
+  (d) => d.data.type === 'community' && (d.data.subtype === 'client' || d.data.subtype === 'both')
 )
 
 const communityServerImplementations = await getCollection(
   'implementations',
-  (d) => d.data.type === 'community' && d.data.subtype === 'server'
+  (d) => d.data.type === 'community' && (d.data.subtype === 'server' || d.data.subtype === 'both')
 )
 ---
 
