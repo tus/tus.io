@@ -7,7 +7,7 @@
     }
   ],
   "name": "sts07142/resumable-upload",
-  "description": "A <strong>Python</strong> implementation of the <code>tus v1.0.0</code> for <strong>server and client</strong>, <strong>with zero runtime dependencies</strong>.",
+  "description": "A <strong>Python</strong> implementation of tus <code>v1.0.0</code> for <strong>server and client</strong> with zero runtime dependencies.",
   "license": "MIT",
   "type": "community",
   "subtype": "both"
