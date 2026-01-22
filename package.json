@@ -63,7 +63,7 @@
     "astro": "^3.6.5",
     "clsx": "^2.1.1",
     "cross-fetch": "^4.1.0",
-    "lodash-es": "^4.17.22",
+    "lodash-es": "^4.17.23",
     "modern-normalize": "^2.0.0",
     "preact": "^10.28.2",
     "pretty-bytes": "^6.1.1",
