@@ -68,7 +68,7 @@
     "preact": "^10.28.2",
     "pretty-bytes": "^6.1.1",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-stringify": "^9.0.3",
+    "rehype-stringify": "^10.0.1",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
     "remark-toc": "^8.0.1",
