@@ -176,24 +176,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/rss@npm:^4.0.14":
-  version: 4.0.14
-  resolution: "@astrojs/rss@npm:4.0.14"
+"@astrojs/rss@npm:^4.0.15":
+  version: 4.0.15
+  resolution: "@astrojs/rss@npm:4.0.15"
   dependencies:
-    fast-xml-parser: "npm:^5.3.0"
+    fast-xml-parser: "npm:^5.3.3"
     piccolore: "npm:^0.1.3"
-  checksum: 10/ac99a11c5c60c117a0d1a632d54c43725b7874f698fedba58ca86e8ae1dc781e7540101c4aac312936370ec62047dec3f2a46eb6b4adff196a9c9f5e2ef02b3d
+  checksum: 10/e9f28bd49e96b7ee06943a3190f8ef12527e2c0d214e5e1471a45a09c347397873735efa0ada0fa00414797c59e8d0c9c2fc9ffa51cde630cbc0e0dfc5ea1847
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "@astrojs/sitemap@npm:3.6.0"
+"@astrojs/sitemap@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@astrojs/sitemap@npm:3.7.0"
   dependencies:
-    sitemap: "npm:^8.0.0"
+    sitemap: "npm:^8.0.2"
     stream-replace-string: "npm:^2.0.0"
     zod: "npm:^3.25.76"
-  checksum: 10/2f0c84ef51203e03575e9b1926a5d52006db0d982e76d4223e1091c12200a07b5a0d314d587ed57a0501ffdfc9773b6bcc2879d5fed0c8affa1dedc5c516cd7a
+  checksum: 10/868c93e0df65b50859545b8ec886d910c45332527ff812af465d92dea9f2f8bca6fe5ad03e0ed03a44ac53b7fbceec60fd396ad4db04baab62b2fd2365f6df21
   languageName: node
   linkType: hard
 
@@ -3161,12 +3161,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.23":
-  version: 10.4.23
-  resolution: "autoprefixer@npm:10.4.23"
+"autoprefixer@npm:^10.4.27":
+  version: 10.4.27
+  resolution: "autoprefixer@npm:10.4.27"
   dependencies:
     browserslist: "npm:^4.28.1"
-    caniuse-lite: "npm:^1.0.30001760"
+    caniuse-lite: "npm:^1.0.30001774"
     fraction.js: "npm:^5.3.4"
     picocolors: "npm:^1.1.1"
     postcss-value-parser: "npm:^4.2.0"
@@ -3174,7 +3174,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 10/153033db6f137712383ddf3f1f267b1d5900695d135f7794cbfaaec832fdbf4e34efd85418dec6f78c418062afdf3f0a07313e32a83764c119bfb5b2f01648b6
+  checksum: 10/5dd9ec57cc1c2af556e10d6c76d082f66d23275671b8b125f6c1d33ba7d9a984d80d3fb4fab7b5e092ac1a34f3aa5a131a392f131f5924029c3cb82faea15b0c
   languageName: node
   linkType: hard
 
@@ -3621,10 +3621,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001759, caniuse-lite@npm:^1.0.30001760":
+"caniuse-lite@npm:^1.0.30001759":
   version: 1.0.30001762
   resolution: "caniuse-lite@npm:1.0.30001762"
   checksum: 10/d60a589180198ac759fa1775e521862f03503286cc9354144adcd88e76d275f03b2b6e9cab1c606790eee9d6af5cedbedb048ec652f5ff77a2b229992b7c4845
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001774":
+  version: 1.0.30001775
+  resolution: "caniuse-lite@npm:1.0.30001775"
+  checksum: 10/422bb35abdb5aa57c9e70bee594e51c504a264d62d4ac263d288952ece14dcc7876d86ca957cd099c5043cef2f503b5779fdf58c00ea37471e725c8d59fd67bf
   languageName: node
   linkType: hard
 
@@ -5612,7 +5619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^5.3.0":
+"fast-xml-parser@npm:^5.3.3":
   version: 5.4.1
   resolution: "fast-xml-parser@npm:5.4.1"
   dependencies:
@@ -9913,15 +9920,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-html@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "postcss-html@npm:1.8.0"
+"postcss-html@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "postcss-html@npm:1.8.1"
   dependencies:
     htmlparser2: "npm:^8.0.0"
     js-tokens: "npm:^9.0.0"
     postcss: "npm:^8.5.0"
     postcss-safe-parser: "npm:^6.0.0"
-  checksum: 10/563428f38c31fbada65d29d9079db8b163d339fb14d898ed807bf1f5a2488d5f6801788ba69dac47648f4f909e2ee77f971f4d71249b39ed2d1ed82b0a665ee4
+  checksum: 10/c218bb56ee5c7209ccdeeac8df07f3874d28f785aa81e58568bf60e9f5f67cd041a634b3961822a71c8db0f620cf6f8c6b8a9361362a94124dfc2ec2bd479b09
   languageName: node
   linkType: hard
 
@@ -10487,10 +10494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.28.2":
-  version: 10.28.2
-  resolution: "preact@npm:10.28.2"
-  checksum: 10/08b7273fd7a0858897df27a38985a38ed0ecb0c9a32ba8685197bad1be4c7cb7b430d40211ee92ba3fd346454256629c03da660db164aedc2082963bda10482a
+"preact@npm:^10.28.4":
+  version: 10.28.4
+  resolution: "preact@npm:10.28.4"
+  checksum: 10/7deb25d04e811ca165a92a8a9d0be4c8038f4b8b4fa8cc941ac37fb4f5425440e24d73e53802bf822753a6acda3d4be4dd8ee9c75071fbbc89ca39c2fae80349
   languageName: node
   linkType: hard
 
@@ -10564,12 +10571,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.7.4":
-  version: 3.7.4
-  resolution: "prettier@npm:3.7.4"
+"prettier@npm:^3.8.1":
+  version: 3.8.1
+  resolution: "prettier@npm:3.8.1"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/b4d00ea13baed813cb777c444506632fb10faaef52dea526cacd03085f01f6db11fc969ccebedf05bf7d93c3960900994c6adf1b150e28a31afd5cfe7089b313
+  checksum: 10/3da1cf8c1ef9bea828aa618553696c312e951f810bee368f6887109b203f18ee869fe88f66e65f9cf60b7cb1f2eae859892c860a300c062ff8ec69c381fc8dbd
   languageName: node
   linkType: hard
 
@@ -11703,17 +11710,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "sitemap@npm:8.0.0"
+"sitemap@npm:^8.0.2":
+  version: 8.0.3
+  resolution: "sitemap@npm:8.0.3"
   dependencies:
     "@types/node": "npm:^17.0.5"
     "@types/sax": "npm:^1.2.1"
     arg: "npm:^5.0.0"
-    sax: "npm:^1.2.4"
+    sax: "npm:^1.4.1"
   bin:
     sitemap: dist/cli.js
-  checksum: 10/8af7ddbf3753f467ec01507cc19710a8846effbbb17c506e6c09aed8c8f445fa9ad7a8bdcb7654183fc755940470a4a194c2c117ad5b9f522d12ca62a8f4d173
+  checksum: 10/7c1018f365136e8d42f9d4663589c05dc0b1a278463dec3bbd454b017b8c82dd2556ca32ff7135f648351f91c27fffb1a337cc0aedd9dc09ea5fbf2bee4888e1
   languageName: node
   linkType: hard
 
@@ -12618,8 +12625,8 @@ __metadata:
     "@astrojs/check": "npm:^0.9.6"
     "@astrojs/mdx": "npm:^1.1.5"
     "@astrojs/preact": "npm:~3.5.3"
-    "@astrojs/rss": "npm:^4.0.14"
-    "@astrojs/sitemap": "npm:^3.6.0"
+    "@astrojs/rss": "npm:^4.0.15"
+    "@astrojs/sitemap": "npm:^3.7.0"
     "@astrojs/ts-plugin": "npm:^1.10.6"
     "@octokit/core": "npm:^5.0.0"
     "@octokit/plugin-paginate-rest": "npm:^11.4.1"
@@ -12635,7 +12642,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.5.0"
     "@typescript-eslint/parser": "npm:^6.5.0"
     astro: "npm:^3.6.5"
-    autoprefixer: "npm:^10.4.23"
+    autoprefixer: "npm:^10.4.27"
     clsx: "npm:^2.1.1"
     concurrently: "npm:^8.2.2"
     cross-fetch: "npm:^4.1.0"
@@ -12649,10 +12656,10 @@ __metadata:
     lodash-es: "npm:^4.17.23"
     modern-normalize: "npm:^2.0.0"
     postcss: "npm:^8.5.6"
-    postcss-html: "npm:^1.8.0"
+    postcss-html: "npm:^1.8.1"
     postcss-preset-env: "npm:^9.1.3"
-    preact: "npm:^10.28.2"
-    prettier: "npm:^3.7.4"
+    preact: "npm:^10.28.4"
+    prettier: "npm:^3.8.1"
     prettier-plugin-astro: "npm:^0.14.1"
     pretty-bytes: "npm:^6.1.1"
     rehype-autolink-headings: "npm:^6.1.1"
