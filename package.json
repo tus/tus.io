@@ -53,7 +53,7 @@
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/preact": "~3.5.3",
     "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/sitemap": "3.6.0",
     "@octokit/core": "^5.0.0",
     "@octokit/plugin-paginate-rest": "^11.4.1",
     "@octokit/plugin-rest-endpoint-methods": "^9.0.0",
