@@ -186,14 +186,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@astrojs/sitemap@npm:3.7.0"
+"@astrojs/sitemap@npm:3.6.0":
+  version: 3.6.0
+  resolution: "@astrojs/sitemap@npm:3.6.0"
   dependencies:
-    sitemap: "npm:^8.0.2"
+    sitemap: "npm:^8.0.0"
     stream-replace-string: "npm:^2.0.0"
     zod: "npm:^3.25.76"
-  checksum: 10/868c93e0df65b50859545b8ec886d910c45332527ff812af465d92dea9f2f8bca6fe5ad03e0ed03a44ac53b7fbceec60fd396ad4db04baab62b2fd2365f6df21
+  checksum: 10/2f0c84ef51203e03575e9b1926a5d52006db0d982e76d4223e1091c12200a07b5a0d314d587ed57a0501ffdfc9773b6bcc2879d5fed0c8affa1dedc5c516cd7a
   languageName: node
   linkType: hard
 
@@ -11710,7 +11710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^8.0.2":
+"sitemap@npm:^8.0.0":
   version: 8.0.3
   resolution: "sitemap@npm:8.0.3"
   dependencies:
@@ -12626,7 +12626,7 @@ __metadata:
     "@astrojs/mdx": "npm:^1.1.5"
     "@astrojs/preact": "npm:~3.5.3"
     "@astrojs/rss": "npm:^4.0.15"
-    "@astrojs/sitemap": "npm:^3.7.0"
+    "@astrojs/sitemap": "npm:3.6.0"
     "@astrojs/ts-plugin": "npm:^1.10.6"
     "@octokit/core": "npm:^5.0.0"
     "@octokit/plugin-paginate-rest": "npm:^11.4.1"
