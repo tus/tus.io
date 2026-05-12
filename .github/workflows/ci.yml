@@ -22,7 +22,7 @@ jobs:
           node-version: 18.x
       - run: corepack enable
       - run: corepack prepare
-      - run: yarn install
+      - run: yarn install --immutable
       # make sure types are generated before linting
       - run: yarn astro sync
       - run: yarn lint
