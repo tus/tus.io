@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/bartscherer/tussi",
+  "authors": [
+    {
+      "name": "Thomas Bartscherer",
+      "href": "https://github.com/bartscherer"
+    }
+  ],
+  "name": "bartscherer/tussi",
+  "description": "Tus <code>v1.0.0</code> resumable upload server for <strong>Python</strong> ASGI apps",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}
