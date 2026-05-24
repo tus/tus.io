@@ -7,7 +7,7 @@
     }
   ],
   "name": "bartscherer/tussi",
-  "description": "TUS <code>v1.0.0</code> resumable upload server for <strong>Python</strong> ASGI apps",
+  "description": "Tus <code>v1.0.0</code> resumable upload server for <strong>Python</strong> ASGI apps",
   "license": "MIT",
   "type": "community",
   "subtype": "server"
