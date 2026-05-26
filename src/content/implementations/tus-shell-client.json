@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/fentas/tus-shell-client",
+  "authors": [
+    {
+      "name": "fentas",
+      "href": "https://github.com/fentas"
+    }
+  ],
+  "name": "fentas/tus-shell-client",
+  "description": "Parallel and resumable tus <code>v1.0.0</code> uploads in pure <strong>shell</strong>",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "client"
+}
