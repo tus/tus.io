@@ -1,12 +1,12 @@
 {
-  "href": "https://github.com/sts07142/resumable-upload",
+  "href": "https://github.com/injaeryou/resumable-upload",
   "authors": [
     {
-      "name": "sts07142",
-      "href": "https://github.com/sts07142"
+      "name": "injaeryou",
+      "href": "https://github.com/injaeryou"
     }
   ],
-  "name": "sts07142/resumable-upload",
+  "name": "injaeryou/resumable-upload",
   "description": "A <strong>Python</strong> implementation of tus <code>v1.0.0</code> for <strong>server and client</strong> with zero runtime dependencies.",
   "license": "MIT",
   "type": "community",
