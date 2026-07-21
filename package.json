@@ -52,7 +52,7 @@
   "dependencies": {
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/preact": "~3.5.3",
-    "@astrojs/rss": "^4.0.14",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.6.0",
     "@octokit/core": "^5.0.0",
     "@octokit/plugin-paginate-rest": "^11.4.1",
