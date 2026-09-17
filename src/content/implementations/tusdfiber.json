@@ -1,0 +1,14 @@
+{
+  "href": "https://github.com/maulanashalihin/tusdfiber",
+  "authors": [
+    {
+      "name": "Maulana Shalihin",
+      "href": "https://github.com/maulanashalihin"
+    }
+  ],
+  "name": "tusdfiber",
+  "description": "Native Go Fiber implementation. Supports TUS v1, IETF Resumable Upload Draft (v2), Prometheus metrics, and all tusd storage backends (FileStore, S3, GCS, Azure) with hooks (file, HTTP, gRPC). No <code>adaptor.HTTPHandler</code> needed.",
+  "license": "MIT",
+  "type": "community",
+  "subtype": "server"
+}
