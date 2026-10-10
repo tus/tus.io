@@ -1,0 +1,73 @@
+---
+const collectiveUrl = 'https://opencollective.com/tus'
+---
+
+<div class="sponsor-tus">
+  <h2 id="sponsor">Sponsor tus</h2>
+
+  <p>
+    tus is an open protocol for resumable file uploads, with open-source
+    clients and servers for the web, mobile and the backend. Video platforms,
+    cloud providers, databases and developer tools rely on it to get large
+    files across flaky networks without starting over.
+  </p>
+
+  <p>
+    Keeping it reliable takes steady work: reviewing pull requests, fixing
+    bugs, cutting releases, keeping implementations interoperable, and bringing
+    resumable uploads to the IETF as an HTTP standard. Funding lets maintainers
+    spend dedicated time on that. Contributions and expenses are public on Open
+    Collective.
+  </p>
+
+  <p>
+    If your product depends on tus, please consider sponsoring it, either as a
+    company or as an individual.
+  </p>
+
+  <a class="sponsor-button" href={collectiveUrl}>
+    Sponsor tus on Open Collective
+  </a>
+</div>
+
+<style>
+  .sponsor-tus {
+    max-inline-size: 44rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .sponsor-tus p {
+    font-size: 1.125rem;
+    text-align: start;
+  }
+
+  @media screen and (width >= 768px) {
+    .sponsor-tus p {
+      text-align: center;
+    }
+  }
+
+  .sponsor-button {
+    display: inline-block;
+    margin-block-start: var(--space4);
+    padding: var(--space3) var(--space6);
+    border-radius: 0.25rem;
+    background-color: var(--green3);
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Darken rather than lighten on hover: white on --green2 drops below WCAG AA. */
+  .sponsor-button:hover {
+    background-color: color-mix(in srgb, var(--green3) 80%, black);
+    color: white;
+    text-decoration: none;
+  }
+
+  .sponsor-button:focus-visible {
+    outline: 2px solid var(--green3);
+    outline-offset: 2px;
+  }
+</style>
