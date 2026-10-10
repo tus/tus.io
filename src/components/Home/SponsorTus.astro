@@ -59,10 +59,15 @@ const collectiveUrl = 'https://opencollective.com/tus'
     text-decoration: none;
   }
 
-  .sponsor-button:hover,
-  .sponsor-button:focus-visible {
-    background-color: var(--green2);
+  /* Darken rather than lighten on hover: white on --green2 drops below WCAG AA. */
+  .sponsor-button:hover {
+    background-color: color-mix(in srgb, var(--green3) 80%, black);
     color: white;
     text-decoration: none;
+  }
+
+  .sponsor-button:focus-visible {
+    outline: 2px solid var(--green3);
+    outline-offset: 2px;
   }
 </style>
