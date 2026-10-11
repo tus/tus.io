@@ -11,6 +11,7 @@ import { getCollection } from 'astro:content'
 import Layout from '../layouts/default.astro'
 import BlogPosts from '@/components/Home/BlogPosts.astro'
 import PageFooter from '@/components/PageFooter.astro'
+import SponsorTus from '@/components/Home/SponsorTus.astro'
 
 const title = 'tus - resumable file uploads'
 const description = 'tus is the open protocol standard for resumable and reliable file uploads across the web, facilitating efficient and seamless file transfer experiences.'
@@ -130,6 +131,12 @@ mobile
           Add your company
         </a>
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SponsorTus />
     </div>
   </section>
 
