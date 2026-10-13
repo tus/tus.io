@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
-import { prepare, submit } from '../scripts/indexnow.mjs'
+import { prepare, restoreArtifact, submit } from '../scripts/indexnow.mjs'
 
 const origin = 'https://tus.io'
 const key = '0123456789abcdef0123456789abcdef'
@@ -333,6 +333,96 @@ test('a newer archive recovers a removed URL when the cache and CDN agree on sta
   options.loadArtifact = async () => archived
   await prepare(options)
   assert.deepEqual((await state(options)).pending, [removedUrl])
+})
+
+test('failed archive recovery preserves the checkpoint until newer deletions can be recovered', async (t) => {
+  const options = await fixture(t, { '/docs/one': 'Same' })
+  options.fetchImpl = async () => new Response(null, { status: 404 })
+  await prepare(options)
+  const stale = { ...(await state(options)), generation: 10 }
+  await writeFile(
+    path.join(options.stateDir, 'state.json'),
+    JSON.stringify(stale),
+  )
+  const removedUrl = `${origin}/docs/transient`
+  const archived = {
+    ...stale,
+    generation: 20,
+    pages: { ...stale.pages, [removedUrl]: stale.pages[`${origin}/docs/one`] },
+    pending: [],
+  }
+  options.fetchImpl = async () => Response.json(stale)
+  options.loadArtifact = async () => {
+    throw new Error('Archive timeout')
+  }
+  await assert.rejects(prepare(options), /Archive timeout/)
+  assert.deepEqual(await state(options), stale)
+  assert.deepEqual(
+    JSON.parse(
+      await readFile(path.join(options.buildDir, 'indexnow-state.json')),
+    ),
+    stale,
+  )
+  options.loadArtifact = async () => archived
+  await prepare(options)
+  assert.deepEqual((await state(options)).pending, [removedUrl])
+})
+
+test('archive recovery selects the highest generation across API pages, even after an older deploy is retried', async (t) => {
+  const options = await fixture(t, { '/docs/one': 'Same' })
+  const artifact = (id, generation, extra = {}) => ({
+    id,
+    name: `indexnow-production-state-${generation}`,
+    expired: false,
+    workflow_run: {
+      id,
+      head_branch: 'main',
+      head_repository_id: 1,
+      repository_id: 1,
+    },
+    ...extra,
+  })
+  const artifacts = [
+    {
+      artifacts: [
+        artifact(200, 10),
+        artifact(300, 30, { expired: true }),
+        artifact(400, 40, {
+          workflow_run: {
+            id: 400,
+            head_branch: 'main',
+            head_repository_id: 2,
+            repository_id: 1,
+          },
+        }),
+      ],
+    },
+    { artifacts: [artifact(100, 20)] },
+  ]
+  const states = {
+    200: { version: 1, generation: 10, pages: {}, pending: [] },
+    100: {
+      version: 1,
+      generation: 20,
+      pages: {},
+      pending: [`${origin}/docs/transient`],
+    },
+  }
+  const recovered = await restoreArtifact({
+    stateDir: options.stateDir,
+    token: 'test-token',
+    execImpl: async (command, args) => {
+      if (args[0] === 'api') return { stdout: JSON.stringify(artifacts) }
+      const saved = states[Number(args[2])]
+      assert.ok(saved, 'downloaded an expired or foreign artifact')
+      await writeFile(
+        path.join(options.stateDir, 'restore/state.json'),
+        JSON.stringify(saved),
+      )
+      return { stdout: '' }
+    },
+  })
+  assert.deepEqual(recovered, states[100])
 })
 
 test('artifact recovery and a failed preparation preserve the last pending state', async (t) => {

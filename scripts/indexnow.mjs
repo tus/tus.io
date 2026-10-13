@@ -245,39 +245,50 @@ function validateState(state) {
   return { ...state, generation: state.generation ?? 0 }
 }
 
-async function restoreArtifact({ stateDir }) {
-  if (!process.env.GITHUB_TOKEN) return undefined
+export async function restoreArtifact({
+  stateDir,
+  token = process.env.GITHUB_TOKEN,
+  execImpl = exec,
+}) {
+  if (!token) return undefined
   const options = {
-    env: { ...process.env, GH_TOKEN: process.env.GITHUB_TOKEN },
+    env: { ...process.env, GH_TOKEN: token },
     timeout: 20000,
+    maxBuffer: 16 * 1024 * 1024,
   }
-  const { stdout } = await exec(
+  const { stdout } = await execImpl(
     'gh',
     [
       'api',
       'repos/tus/tus.io/actions/artifacts',
       '-X',
       'GET',
-      '-f',
-      `name=${ARTIFACT}`,
+      '--paginate',
+      '--slurp',
       '-f',
       'per_page=100',
     ],
     options,
   )
   const artifact = JSON.parse(stdout)
-    .artifacts.filter(
+    .flatMap((page) => page.artifacts)
+    .filter(
       (item) =>
+        Number.isSafeInteger(artifactGeneration(item)) &&
         !item.expired &&
         item.workflow_run?.head_branch === 'main' &&
         item.workflow_run.head_repository_id ===
           item.workflow_run.repository_id,
     )
-    .sort((a, b) => b.id - a.id)[0]
+    // Retrying an old deploy creates a newer artifact ID with an older snapshot.
+    // The name records the prepared generation; ties prefer later acknowledgements.
+    .sort(
+      (a, b) => artifactGeneration(b) - artifactGeneration(a) || b.id - a.id,
+    )[0]
   if (!artifact) return undefined
   const directory = path.join(stateDir, 'restore')
   await mkdir(directory, { recursive: true })
-  await exec(
+  await execImpl(
     'gh',
     [
       'run',
@@ -286,7 +297,7 @@ async function restoreArtifact({ stateDir }) {
       '--repo',
       'tus/tus.io',
       '--name',
-      ARTIFACT,
+      artifact.name,
       '--dir',
       directory,
     ],
@@ -295,6 +306,13 @@ async function restoreArtifact({ stateDir }) {
   return validateState(
     JSON.parse(await readFile(path.join(directory, 'state.json'), 'utf8')),
   )
+}
+
+function artifactGeneration({ name }) {
+  const suffix = name.startsWith(`${ARTIFACT}-`)
+    ? name.slice(ARTIFACT.length + 1)
+    : ''
+  return /^\d+$/.test(suffix) ? Number(suffix) : NaN
 }
 
 async function save(stateDir, state) {
@@ -327,7 +345,7 @@ export async function prepare(options = {}) {
       await rm(path.join(stateDir, 'state.json'), { force: true })
     }
   }
-  let deployed, artifact, recoveryError
+  let deployed, artifact, recoveryError, artifactError
   try {
     // Always compare generations: a cache hit may predate a failed cache save.
     const response = await request(fetchImpl, `${ORIGIN}/${STATE_FILE}`)
@@ -346,6 +364,7 @@ export async function prepare(options = {}) {
     artifact = await loadArtifact({ stateDir })
   } catch (error) {
     recoveryError = error
+    artifactError = error
     log(`IndexNow: artifact recovery unavailable: ${error.message}`)
   }
   // For the same deployment, cached/archived state includes POST acknowledgements
@@ -367,6 +386,9 @@ export async function prepare(options = {}) {
     await save(stateDir, previous)
     await writeFile(path.join(buildDir, STATE_FILE), JSON.stringify(previous))
   }
+  // Advancing while an archive is unavailable could supersede newer deletions
+  // absent from both a stale cache and CDN. Keep the recovered checkpoint instead.
+  if (artifactError) throw artifactError
   const pages = await snapshot({ buildDir, log })
   const pending = new Set(previous?.pending ?? [])
   if (previous) {
@@ -403,6 +425,7 @@ export async function prepare(options = {}) {
   log(
     `IndexNow: ${Object.keys(pages).length} pages, ${state.pending.length} pending URLs`,
   )
+  return state
 }
 
 export async function submit(options = {}) {
@@ -462,8 +485,16 @@ if (
       process.env.GITHUB_REF === 'refs/heads/main' &&
       ['push', 'workflow_dispatch'].includes(process.env.GITHUB_EVENT_NAME)
     if (!production) console.log('IndexNow: skipping non-production deployment')
-    else if (process.argv[2] === 'prepare') await prepare()
-    else if (process.argv[2] === 'submit') await submit({ production })
+    else if (process.argv[2] === 'prepare') {
+      const state = await prepare()
+      if (process.env.GITHUB_OUTPUT) {
+        await writeFile(
+          process.env.GITHUB_OUTPUT,
+          `generation=${state.generation}\n`,
+          { flag: 'a' },
+        )
+      }
+    } else if (process.argv[2] === 'submit') await submit({ production })
     else throw new Error('Usage: node scripts/indexnow.mjs prepare|submit')
   } catch (error) {
     // The workflow tolerates this failure and can distinguish failed preparation

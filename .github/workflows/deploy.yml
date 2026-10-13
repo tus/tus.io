@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       indexnow: ${{ steps.indexnow.outcome }}
+      generation: ${{ steps.indexnow.outputs.generation }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -85,7 +86,6 @@ jobs:
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      actions: read # to download the prepared notification state
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
     environment:
@@ -155,7 +155,7 @@ jobs:
         timeout-minutes: 2
         uses: actions/upload-artifact@v7
         with:
-          name: indexnow-production-state
+          name: indexnow-production-state-${{ needs.build.outputs.generation }}
           path: .cache/indexnow/state.json
           include-hidden-files: true
           retention-days: 90
