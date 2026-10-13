@@ -3,3 +3,4 @@ dist/
 .yarn/
 yarn.lock
 .astro/
+.cache/

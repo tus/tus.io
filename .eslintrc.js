@@ -41,6 +41,13 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['scripts/indexnow.mjs', 'test/*.mjs'],
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      parserOptions: {
+        project: null,
+      },
+    },
+    {
       files: ['.eslintrc.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',

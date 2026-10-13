@@ -10,13 +10,21 @@ on:
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
 
+# Keep the published snapshot and its acknowledgements in deployment order.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      indexnow: ${{ steps.indexnow.outcome }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -30,15 +38,52 @@ jobs:
       - run: yarn build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore IndexNow production state
+        if: github.repository == 'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/indexnow/state.json
+          key:
+            indexnow-production-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-production-
+
+      - name: Prepare changed URLs for IndexNow
+        id: indexnow
+        if: github.repository == 'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/indexnow.mjs prepare
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: './dist/'
+
+      - name: Transfer IndexNow state to the deploy job
+        if: github.repository == 'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/upload-artifact@v7
+        with:
+          name: indexnow-prepared-state
+          # Include the exact script and ownership key from the deployed build.
+          path: |
+            .cache/indexnow/state.json
+            scripts/indexnow.mjs
+            dist/indexnow.txt
+          include-hidden-files: true
+          retention-days: 1
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
+      actions: read # to download the prepared notification state
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
     environment:
@@ -47,3 +92,65 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v5
         id: deployment
+
+      - name: Download prepared IndexNow state
+        id: indexnow-download
+        if:
+          steps.deployment.outcome == 'success' && github.repository ==
+          'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/download-artifact@v8
+        with:
+          name: indexnow-prepared-state
+          path: .
+
+      - name: Set up Node for IndexNow
+        id: indexnow-node
+        if:
+          steps.indexnow-download.outcome == 'success' &&
+          needs.build.outputs.indexnow == 'success'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/setup-node@v7
+        with:
+          node-version: 18
+
+      - name: Submit changed URLs to IndexNow
+        if:
+          steps.indexnow-download.outcome == 'success' &&
+          steps.indexnow-node.outcome == 'success' &&
+          needs.build.outputs.indexnow == 'success' && steps.deployment.outcome
+          == 'success' && github.repository == 'tus/tus.io' && github.ref ==
+          'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node scripts/indexnow.mjs submit
+
+      - name: Save IndexNow production state
+        if:
+          always() && steps.indexnow-download.outcome == 'success' &&
+          steps.deployment.outcome == 'success' && github.repository ==
+          'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/cache/save@v6
+        with:
+          path: .cache/indexnow/state.json
+          key:
+            indexnow-production-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Archive IndexNow production state
+        if:
+          always() && steps.indexnow-download.outcome == 'success' &&
+          steps.deployment.outcome == 'success' && github.repository ==
+          'tus/tus.io' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/upload-artifact@v7
+        with:
+          name: indexnow-production-state
+          path: .cache/indexnow/state.json
+          include-hidden-files: true
+          retention-days: 90
+          if-no-files-found: ignore
