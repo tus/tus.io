@@ -44,6 +44,13 @@ for the next production deployment, including rejected 4xx requests. Recovery
 can repeat accepted URLs. Optional steps have time limits and tolerate failure,
 so IndexNow errors never fail a deployment.
 
+Every preparation checks the archive even if the cache and live snapshot agree;
+both can be stale after a failed cache save. Failed preparation never transfers
+or archives unvalidated state. A recovered valid snapshot is copied into the
+site before preparing changes, so that recovery survives a later preparation
+failure. Live GitHub activity and contributor-list updates are rendered page
+content and intentionally count as edits.
+
 The public snapshot contains only public URLs, fingerprints, sitemap timestamps
 and pending URLs. The state recovery, queue and submission logic could be shared
 with uppy.io; sitemap paths and rendered-content normalization are

@@ -313,6 +313,28 @@ test('a newer deployed snapshot recovers notices missing from a stale cache', as
   assert.deepEqual((await state(options)).pending, deployed.pending)
 })
 
+test('a newer archive recovers a removed URL when the cache and CDN agree on stale state', async (t) => {
+  const options = await fixture(t, { '/docs/one': 'Same' })
+  options.fetchImpl = async () => new Response(null, { status: 404 })
+  await prepare(options)
+  const stale = { ...(await state(options)), generation: 10 }
+  await writeFile(
+    path.join(options.stateDir, 'state.json'),
+    JSON.stringify(stale),
+  )
+  const removedUrl = `${origin}/docs/transient`
+  const archived = {
+    ...stale,
+    generation: 20,
+    pages: { ...stale.pages, [removedUrl]: stale.pages[`${origin}/docs/one`] },
+    pending: [],
+  }
+  options.fetchImpl = async () => Response.json(stale)
+  options.loadArtifact = async () => archived
+  await prepare(options)
+  assert.deepEqual((await state(options)).pending, [removedUrl])
+})
+
 test('artifact recovery and a failed preparation preserve the last pending state', async (t) => {
   const options = await fixture(t, { '/docs/one': 'Same' })
   options.fetchImpl = async () => new Response(null, { status: 404 })
@@ -340,6 +362,16 @@ test('artifact recovery and a failed preparation preserve the last pending state
     ),
     saved,
   )
+})
+
+test('corrupt cached state is discarded when recovery fails', async (t) => {
+  const options = await fixture(t, { '/docs/one': 'Same' })
+  await mkdir(options.stateDir, { recursive: true })
+  const file = path.join(options.stateDir, 'state.json')
+  await writeFile(file, 'corrupt JSON')
+  options.fetchImpl = async () => new Response(null, { status: 503 })
+  await assert.rejects(prepare(options), /503/)
+  await assert.rejects(readFile(file), { code: 'ENOENT' })
 })
 
 test('returning HTML after a sitemap-only snapshot detects its content', async (t) => {

@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { execFile } from 'node:child_process'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { promisify } from 'node:util'
@@ -321,8 +321,11 @@ export async function prepare(options = {}) {
       JSON.parse(await readFile(path.join(stateDir, 'state.json'), 'utf8')),
     )
   } catch (error) {
-    if (error.code !== 'ENOENT')
+    if (error.code !== 'ENOENT') {
       log(`IndexNow: ignoring invalid cached state: ${error.message}`)
+      // A failed recovery must not leave corrupt state available for archiving.
+      await rm(path.join(stateDir, 'state.json'), { force: true })
+    }
   }
   let deployed, artifact, recoveryError
   try {
@@ -337,13 +340,13 @@ export async function prepare(options = {}) {
     recoveryError = error
     log(`IndexNow: live snapshot unavailable: ${error.message}`)
   }
-  if (!deployed || !cached || deployed.generation !== cached.generation) {
-    try {
-      artifact = await loadArtifact({ stateDir })
-    } catch (error) {
-      recoveryError = error
-      log(`IndexNow: artifact recovery unavailable: ${error.message}`)
-    }
+  try {
+    // A stale cache and CDN response can agree after a failed cache save. Always
+    // consult the archive, which may contain newer pages or pending deletions.
+    artifact = await loadArtifact({ stateDir })
+  } catch (error) {
+    recoveryError = error
+    log(`IndexNow: artifact recovery unavailable: ${error.message}`)
   }
   // For the same deployment, cached/archived state includes POST acknowledgements
   // that the public pre-submission snapshot cannot include. Replays are harmless.
