@@ -1,14 +1,10 @@
 name: deploy
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   actions: read
   contents: read
@@ -21,11 +17,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    outputs:
-      indexnow: ${{ steps.indexnow.outcome }}
-      generation: ${{ steps.indexnow.outputs.generation }}
+    # A retry rebuilds and prepares against current production state before
+    # publishing, including when an older workflow run is retried.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -63,68 +61,18 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: './dist/'
+          # Artifact names are immutable within a run. Each retry has a fresh build.
+          name: github-pages-${{ github.run_attempt }}
 
-      - name: Transfer IndexNow state to the deploy job
-        if:
-          steps.indexnow.outcome == 'success' && github.repository ==
-          'tus/tus.io' && github.ref == 'refs/heads/main'
-        continue-on-error: true
-        timeout-minutes: 2
-        uses: actions/upload-artifact@v7
-        with:
-          name: indexnow-prepared-state
-          # Include the exact script and ownership key from the deployed build.
-          path: |
-            .cache/indexnow/state.json
-            scripts/indexnow.mjs
-            dist/indexnow.txt
-          include-hidden-files: true
-          retention-days: 1
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - uses: actions/deploy-pages@v5
         id: deployment
-
-      - name: Download prepared IndexNow state
-        id: indexnow-download
-        if:
-          needs.build.outputs.indexnow == 'success' && steps.deployment.outcome
-          == 'success' && github.repository == 'tus/tus.io' && github.ref ==
-          'refs/heads/main'
-        continue-on-error: true
-        timeout-minutes: 2
-        uses: actions/download-artifact@v8
         with:
-          name: indexnow-prepared-state
-          path: .
-
-      - name: Set up Node for IndexNow
-        id: indexnow-node
-        if:
-          steps.indexnow-download.outcome == 'success' &&
-          needs.build.outputs.indexnow == 'success'
-        continue-on-error: true
-        timeout-minutes: 2
-        uses: actions/setup-node@v7
-        with:
-          node-version: 18
+          artifact_name: github-pages-${{ github.run_attempt }}
 
       - name: Submit changed URLs to IndexNow
         if:
-          steps.indexnow-download.outcome == 'success' &&
-          steps.indexnow-node.outcome == 'success' &&
-          needs.build.outputs.indexnow == 'success' && steps.deployment.outcome
-          == 'success' && github.repository == 'tus/tus.io' && github.ref ==
+          steps.indexnow.outcome == 'success' && steps.deployment.outcome ==
+          'success' && github.repository == 'tus/tus.io' && github.ref ==
           'refs/heads/main'
         continue-on-error: true
         timeout-minutes: 2
@@ -133,8 +81,7 @@ jobs:
       - name: Save IndexNow production state
         # Failed preparation may leave a partial file; publish no recovery archive.
         if:
-          always() && needs.build.outputs.indexnow == 'success' &&
-          steps.indexnow-download.outcome == 'success' &&
+          always() && steps.indexnow.outcome == 'success' &&
           steps.deployment.outcome == 'success' && github.repository ==
           'tus/tus.io' && github.ref == 'refs/heads/main'
         continue-on-error: true
@@ -147,15 +94,15 @@ jobs:
 
       - name: Archive IndexNow production state
         if:
-          always() && needs.build.outputs.indexnow == 'success' &&
-          steps.indexnow-download.outcome == 'success' &&
+          always() && steps.indexnow.outcome == 'success' &&
           steps.deployment.outcome == 'success' && github.repository ==
           'tus/tus.io' && github.ref == 'refs/heads/main'
         continue-on-error: true
         timeout-minutes: 2
         uses: actions/upload-artifact@v7
         with:
-          name: indexnow-production-state-${{ needs.build.outputs.generation }}
+          name:
+            indexnow-production-state-${{ steps.indexnow.outputs.generation }}
           path: .cache/indexnow/state.json
           include-hidden-files: true
           retention-days: 90

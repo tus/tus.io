@@ -134,6 +134,30 @@ test('cache loss recovers the previous public snapshot and pending notifications
   ])
 })
 
+test('rebuilding an older deployment queues its rollback even when its original baseline was empty', async (t) => {
+  const options = await fixture(t, { '/faq': 'Original' })
+  const posts = []
+  options.fetchImpl = async (url, init) => {
+    if (url.endsWith('.txt')) return new Response(key)
+    if (init?.method === 'POST') {
+      posts.push(JSON.parse(init.body).urlList)
+      return new Response(null, { status: 200 })
+    }
+    return new Response(null, { status: 404 })
+  }
+  await prepare(options)
+  await submit({ ...options, production: true })
+  assert.deepEqual(posts, [])
+  await build(options, { '/faq': 'Edited' })
+  await prepare(options)
+  await submit({ ...options, production: true })
+  await build(options, { '/faq': 'Original' })
+  await prepare(options)
+  assert.deepEqual((await state(options)).pending, [`${origin}/faq`])
+  await submit({ ...options, production: true })
+  assert.deepEqual(posts, [[`${origin}/faq`], [`${origin}/faq`]])
+})
+
 test('missing rendered HTML falls back to the sitemap diff without replaying history', async (t) => {
   const options = await fixture(t, {
     '/docs/missing': null,
