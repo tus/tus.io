@@ -4,7 +4,7 @@
     "type": "group",
     "role": "steward",
     "name": "tus",
-    "email": "marius@tus.io",
+    "email": "kevin@transloadit.com",
     "description": "Tus is an open protocol for resumable uploads over HTTP enabling file uploads to recover from network interruptions. We maintain open-source implementations to easily add resumability to every application.",
     "webpageUrl": {
       "url": "https://tus.io"
@@ -167,7 +167,7 @@
       {
         "guid": "bank",
         "type": "bank",
-        "description": "Will accept direct bank transfers. Please e-mail me for details."
+        "description": "Will accept direct bank transfers. Please e-mail us for details."
       },
       {
         "guid": "opencollective",
@@ -212,6 +212,16 @@
         "currency": "EUR",
         "frequency": "monthly",
         "channels": ["opencollective"]
+      },
+      {
+        "guid": "maintenance-ietf",
+        "status": "active",
+        "name": "Annual grant or anchor sponsorship",
+        "description": "For one funder, such as a grant program or an anchor sponsor, covering a year of maintainer time for tusd, tus-js-client and tus-node-server, interoperability with the IETF resumable uploads draft, and travel to IETF meetings. Partial amounts are welcome. Individuals and companies can use the monthly tiers instead.",
+        "amount": 50000,
+        "currency": "USD",
+        "frequency": "yearly",
+        "channels": ["opencollective", "bank"]
       }
     ],
     "history": []
