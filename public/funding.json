@@ -212,6 +212,16 @@
         "currency": "EUR",
         "frequency": "monthly",
         "channels": ["opencollective"]
+      },
+      {
+        "guid": "maintenance-ietf",
+        "status": "active",
+        "name": "Maintenance and IETF standardization",
+        "description": "Funds maintainer time for tusd, tus-js-client and tus-node-server, interoperability of these implementations with the IETF resumable uploads draft, and travel to IETF meetings to move that draft forward.",
+        "amount": 50000,
+        "currency": "USD",
+        "frequency": "yearly",
+        "channels": ["opencollective", "bank"]
       }
     ],
     "history": []
