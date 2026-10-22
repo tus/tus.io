@@ -28,7 +28,12 @@ async function main(): Promise<void> {
       .split(sep)
       .map((segment) => slug(segment))
       .join('/')
-    posts.push({ id: data.slug ?? id, data })
+      // Match Astro's glob loader, which treats a directory's index as the directory entry.
+      .replace(/\/index$/, '')
+    posts.push({
+      id: data.slug === undefined || data.slug === '' ? id : data.slug,
+      data,
+    })
   }
 
   // Astro's file routing normalizes /index.html before matching dynamic routes.
@@ -43,7 +48,11 @@ async function main(): Promise<void> {
       throw new Error(`Redirect target is not a built page: ${target}`)
     }
     // Static aliases target production; the dev middleware keeps local redirects on its own origin.
-    const destination = new URL(target, 'https://tus.io/').href
+    // URL serialization preserves ampersands, which HTML would interpret as entity references.
+    const destination = new URL(target, 'https://tus.io/').href.replaceAll(
+      '&',
+      '&amp;',
+    )
     await mkdir(dirname(file), { recursive: true })
     await writeFile(
       file,
