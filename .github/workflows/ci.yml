@@ -32,3 +32,4 @@ jobs:
       - run: yarn build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn test:site

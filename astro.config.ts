@@ -1,4 +1,4 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
@@ -6,7 +6,6 @@ import { defineConfig } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkToc from 'remark-toc'
 import { h } from 'hastscript'
-import type { RemarkPlugins } from 'astro'
 
 const AnchorIcon = h(
   'svg',
@@ -49,29 +48,32 @@ export default defineConfig({
     format: 'file',
   },
   markdown: {
-    remarkPlugins: [
-      // See https://github.com/remarkjs/remark-toc
-      [
-        remarkToc,
-        {
-          tight: true,
-          maxDepth: 3,
-          ordered: true,
-          skip: 'example|headers|requests',
-        },
+    // Retain the existing table of contents and heading links on Astro 7.
+    processor: unified({
+      remarkPlugins: [
+        // See https://github.com/remarkjs/remark-toc
+        [
+          remarkToc,
+          {
+            tight: true,
+            maxDepth: 3,
+            ordered: true,
+            skip: 'example|headers|requests',
+          },
+        ],
       ],
-    ] as RemarkPlugins,
-    rehypePlugins: [
-      rehypeHeadingIds,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'append',
-          content: () => AnchorIcon,
-          test: ['h2', 'h3', 'h4', 'h5', 'h6'], // don't link h1's
-        },
+      rehypePlugins: [
+        rehypeHeadingIds,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'append',
+            content: () => AnchorIcon,
+            test: ['h2', 'h3', 'h4', 'h5', 'h6'], // don't link h1's
+          },
+        ],
       ],
-    ],
+    }),
     shikiConfig: {
       theme: 'github-light',
     },

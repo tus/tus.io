@@ -6,23 +6,24 @@ import { getCollection } from 'astro:content'
 
 const description = 'Explore real-life tus protocol implementations in various languages and platforms, showcasing its versatility and efficiency in file uploads.'
 
-const officialServers = await getCollection(
-  'implementations',
+// Retain the legacy file-ID ordering, including dots, dashes, and underscores.
+const implementations = (await getCollection('implementations')).sort((a, b) =>
+  a.id < b.id ? -1 : a.id > b.id ? 1 : 0,
+)
+
+const officialServers = implementations.filter(
   (d) => d.data.type === 'official' && (d.data.subtype === 'server' || d.data.subtype === 'both')
 )
 
-const officialClients = await getCollection(
-  'implementations',
+const officialClients = implementations.filter(
   (d) => d.data.type === 'official' && (d.data.subtype === 'client' || d.data.subtype === 'both')
 )
 
-const communityClientImplementations = await getCollection(
-  'implementations',
+const communityClientImplementations = implementations.filter(
   (d) => d.data.type === 'community' && (d.data.subtype === 'client' || d.data.subtype === 'both')
 )
 
-const communityServerImplementations = await getCollection(
-  'implementations',
+const communityServerImplementations = implementations.filter(
   (d) => d.data.type === 'community' && (d.data.subtype === 'server' || d.data.subtype === 'both')
 )
 ---
