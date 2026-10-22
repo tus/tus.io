@@ -13,11 +13,13 @@ export const GET: APIRoute = async () => {
       await Promise.all(
         blog.map(async (post) => {
           const author = await getEntry(post.data.author)
+          if (!author)
+            throw new Error(`Missing author for blog post ${post.id}`)
           return {
             title: post.data.title,
             author: author.data.name,
             pubDate: post.data.date,
-            link: `/blog/${getBlogPostSlug(post.slug)}`,
+            link: `/blog/${getBlogPostSlug(post.id)}`,
           }
         }),
       )
