@@ -47,6 +47,43 @@ await test('implementation names that differ by punctuation remain distinct', as
   assert.match(html, /href="https:\/\/github\.com\/vayam\/tuspy"/)
 })
 
+await test('community servers retain their published file-name ordering', async () => {
+  const html = await readFile(new URL('implementations.html', output), 'utf8')
+  const previous = html.indexOf(
+    'href="https://github.com/ckaratzas/tus-server-implementation"',
+  )
+  const next = html.indexOf('href="https://github.com/terminusdb/tus"')
+  assert.ok(previous >= 0 && next > previous)
+})
+
+await test('the protocol selector keeps its hydrated payload small', async () => {
+  const html = await readFile(
+    new URL('protocols/resumable-upload.html', output),
+    'utf8',
+  )
+  const props = html.match(
+    /<astro-island\b(?=[^>]*component-export="ProtocolSelect")[^>]*\bprops="([^"]*)"/,
+  )?.[1]
+  assert.ok(props, 'the protocol selector is hydrated')
+  assert.ok(Buffer.byteLength(props) < 4096, 'selector props stay below 4 KiB')
+})
+
+await test('the guide alias still redirects to the FAQ', async () => {
+  const html = await readFile(new URL('guide.html', output), 'utf8')
+  assert.match(
+    html,
+    /http-equiv="refresh" content="0; url=https:\/\/tus\.io\/faq"/,
+  )
+})
+
+await test('the about alias still redirects to support', async () => {
+  const html = await readFile(new URL('about.html', output), 'utf8')
+  assert.match(
+    html,
+    /http-equiv="refresh" content="0; url=https:\/\/tus\.io\/support"/,
+  )
+})
+
 await test('the current protocol retains the generated table of contents and heading links', async () => {
   const html = await readFile(
     new URL('protocols/resumable-upload.html', output),

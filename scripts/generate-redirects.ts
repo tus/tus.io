@@ -1,43 +1,48 @@
-import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import { dirname, resolve, sep } from 'node:path'
 import { parseFrontmatter } from '@astrojs/markdown-remark'
 import { z } from 'astro/zod'
 import { slug } from 'github-slugger'
-import { getBlogPostSlug } from '../src/lib/getBlogPostSlug.ts'
+import {
+  getLegacyRedirects,
+  type LegacyRedirectPost,
+} from '../src/lib/getLegacyRedirects.ts'
 
 async function main(): Promise<void> {
   const output = resolve('dist')
-  const redirects = new Map([
-    ['guide.html', 'faq'],
-    ['about.html', 'support'],
-  ])
+  const posts: LegacyRedirectPost[] = []
 
   for (const entry of await readdir('src/content/blog', { recursive: true })) {
     if (!/\.mdx?$/.test(entry)) continue
     const content = await readFile(resolve('src/content/blog', entry), 'utf8')
-    const { redirect_from: redirectFrom } = z
-      .object({ redirect_from: z.string().optional() })
+    const data = z
+      .object({
+        redirect_from: z.string().optional(),
+        slug: z.string().optional(),
+      })
       .parse(parseFrontmatter(content).frontmatter)
-    if (!redirectFrom) continue
+    if (!data.redirect_from) continue
 
     const id = entry
       .replace(/\.mdx?$/, '')
       .split(sep)
       .map((segment) => slug(segment))
       .join('/')
-    redirects.set(
-      `${redirectFrom.replace(/^\//, '')}index.html`,
-      `blog/${getBlogPostSlug(id)}`,
-    )
+    posts.push({ id: data.slug ?? id, data })
   }
 
   // Astro's file routing normalizes /index.html before matching dynamic routes.
   // Emit the old directory URLs directly so they cannot replace canonical articles.
-  for (const [source, target] of redirects) {
+  for (const [source, target] of getLegacyRedirects(posts)) {
     const file = resolve(output, source)
     if (!file.startsWith(`${output}${sep}`)) {
       throw new Error(`Redirect escapes the build output: ${source}`)
     }
+    // Fail the build if a collection ID or slug override no longer matches an actual article.
+    if (!(await stat(resolve(output, `${target}.html`))).isFile()) {
+      throw new Error(`Redirect target is not a built page: ${target}`)
+    }
+    // Static aliases target production; the dev middleware keeps local redirects on its own origin.
     const destination = new URL(target, 'https://tus.io/').href
     await mkdir(dirname(file), { recursive: true })
     await writeFile(

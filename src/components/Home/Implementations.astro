@@ -1,9 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
+import { sortBy } from 'lodash-es'
 
-const implementations = await getCollection(
-  'implementations',
-  (d) => d.data.type === 'official' && !!d.data.icon
+const implementations = sortBy(
+  await getCollection(
+    'implementations',
+    (d) => d.data.type === 'official' && !!d.data.icon,
+  ),
+  (entry) => `${entry.id}.json`,
 )
 ---
 
@@ -31,8 +35,8 @@ const implementations = await getCollection(
 
 <p>
   Additionally, there are many other{' '}
-  <a class="link" href="/implementations.html">projects</a> built and maintained
-  by our community.
+  <a class="link" href="/implementations.html">projects</a> built and maintained by
+  our community.
 </p>
 
 <style>

@@ -12,9 +12,12 @@ interface Props {
   description?: string
 }
 
-const protocols = await getCollection('protocols')
+const versions = (await getCollection('protocols'))
+  .map((protocol) => protocol.data.version)
+  .sort()
 
-const { currentVersion, selectedVersion, noindex, title, description } = Astro.props
+const { currentVersion, selectedVersion, noindex, title, description } =
+  Astro.props
 ---
 
 <Layout title={title} description={description} noindex={noindex}>
@@ -24,7 +27,7 @@ const { currentVersion, selectedVersion, noindex, title, description } = Astro.p
       <div class="select">
         <ProtocolSelect
           client:load
-          protocols={protocols}
+          versions={versions}
           currentVersion={currentVersion}
           selectedVersion={selectedVersion}
         />
