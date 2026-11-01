@@ -12940,7 +12940,7 @@ __metadata:
     tus-js-client: "npm:^3.1.1"
     typescript: "npm:^5.9.3"
     typescript-plugin-css-modules: "npm:^5.2.0"
-    unified: "npm:^10.1.2"
+    unified: "npm:^11.0.5"
   languageName: unknown
   linkType: soft
 
@@ -13278,7 +13278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified@npm:^10.0.0, unified@npm:^10.1.2":
+"unified@npm:^10.0.0":
   version: 10.1.2
   resolution: "unified@npm:10.1.2"
   dependencies:
