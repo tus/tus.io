@@ -38,12 +38,31 @@ Every expense is public on the
 admins approve spending. We’ll post an update each quarter on what came in and
 what it paid for.
 
+## What sponsors get
+
+Sponsoring tus first of all keeps a piece of infrastructure you depend on
+healthy. We also want your support to be visible:
+
+- **Supporter** ($25 a month): your name on the sponsor list on tus.io.
+- **Bronze** ($100 a month): a small logo on tus.io.
+- **Silver** ($350 a month): your logo on the tus.io homepage and in the tusd
+  and tus-js-client READMEs, and thanks in their release notes.
+- **Gold** ($1,000 a month): a large logo at the top of the tus.io homepage and
+  in all tus READMEs, thanks in release notes, and a quarterly written report
+  from the maintainers on the roadmap and the IETF standard, including a mention
+  of your support.
+
+Transloadit sponsors at the Silver level through
+[GitHub Sponsors](https://github.com/sponsors/tus), on purpose: it's the route
+most companies will use, so we want to be the first to go through it.
+
 ## Contribute
 
 If tus is part of your stack,
 [become a contributor on Open Collective](https://opencollective.com/tus). You
 can also support tus through [GitHub Sponsors](https://github.com/sponsors/tus);
-both count toward the match.
+both count toward the match. More about how tus is funded is in the
+[Sponsor tus](/#sponsor) section on our homepage.
 
 Thank you to everyone who has contributed code, issues and time to tus over the
 years.
