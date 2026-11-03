@@ -13,13 +13,18 @@
       "react-dom": ["node_modules/preact/compat/"]
     },
     "plugins": [
-      { "name": "@astrojs/ts-plugin" },
-      { "name": "typescript-plugin-css-modules" }
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+      {
+        "name": "typescript-plugin-css-modules"
+      }
     ]
   },
   "include": [
     ".astro/**/*",
     "scripts/**/*",
+    "test/**/*.ts",
     "src/**/*",
     "types/**/*",
     ".eslintrc.js",

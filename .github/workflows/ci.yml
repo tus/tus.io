@@ -19,7 +19,9 @@ jobs:
           fetch-depth: 1
       - uses: actions/setup-node@v7
         with:
-          node-version: 18.x
+          node-version: '^26.12.1'
+          check-latest: true
+      - run: npm install --global corepack@0.36.0
       - run: corepack enable
       - run: corepack prepare
       - run: yarn install --immutable
@@ -30,3 +32,4 @@ jobs:
       - run: yarn build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn test:site

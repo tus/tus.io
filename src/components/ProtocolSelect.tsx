@@ -1,14 +1,13 @@
-import type { CollectionEntry } from 'astro:content'
 import styles from './ProtocolSelect.module.css'
 
 interface ProtocolSelectProps {
-  protocols: CollectionEntry<'protocols'>[]
+  versions: string[]
   currentVersion: string
   selectedVersion: string
 }
 
 export function ProtocolSelect(props: ProtocolSelectProps) {
-  const { protocols, currentVersion, selectedVersion } = props
+  const { versions, currentVersion, selectedVersion } = props
 
   return (
     <label class={styles.label}>
@@ -30,13 +29,13 @@ export function ProtocolSelect(props: ProtocolSelectProps) {
           window.location.href = `/protocols/resumable-upload/${slug}`
         }}
       >
-        {protocols.map((option) => (
+        {versions.map((version) => (
           <option
-            key={option.id}
-            value={option.data.version}
-            selected={option.data.version === selectedVersion}
+            key={version}
+            value={version}
+            selected={version === selectedVersion}
           >
-            {option.data.version}
+            {version}
           </option>
         ))}
       </select>

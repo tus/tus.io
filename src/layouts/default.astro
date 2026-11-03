@@ -12,12 +12,15 @@ interface Props {
   image?: string
 }
 
+// Astro 7 prerenders file-format pages with their .html URL, including /index.html.
+const pageUrl = new URL(Astro.url)
+if (pageUrl.pathname === '/index.html') pageUrl.pathname = '/'
+const currentPage = pageUrl.pathname
+
 let { noindex, title, description, image = '/images/ogimage.jpg' } = Astro.props
-if (Astro.url.pathname !== '/') {
+if (currentPage !== '/') {
   title += ' | tus.io'
 }
-
-const currentPage = Astro.url.pathname
 ---
 
 <!doctype html>
@@ -30,7 +33,7 @@ const currentPage = Astro.url.pathname
       name="google-site-verification"
       content="Y0C1UF4FAEedNCMjLTIm48uKmKyrqhZta6vAU7kQ_kw"
     />
-    <link rel="canonical" href={Astro.url.href.replace('.html', '')} />
+    <link rel="canonical" href={pageUrl.href.replace(/\.html$/, '')} />
     {noindex && <meta name="robots" content="noindex" />}
 
     <link rel="icon" href={favicon.src} />
@@ -66,7 +69,7 @@ const currentPage = Astro.url.pathname
 
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={new URL(image, Astro.url)} />
 

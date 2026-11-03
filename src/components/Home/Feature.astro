@@ -1,11 +1,12 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import { type CollectionEntry, render } from 'astro:content'
 interface Props {
   feature: CollectionEntry<'features'>
 }
 
-const { data, render } = Astro.props.feature
-const { Content } = await render()
+const { feature } = Astro.props
+const { data } = feature
+const { Content } = await render(feature)
 ---
 
 <article>

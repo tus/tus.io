@@ -8,13 +8,15 @@ import { TusOnGithub } from '@/components/TusOnGithub'
 import { VisuallyHidden } from '@/components/VisuallyHidden'
 import { getGitHubActivity } from '@/lib/getGitHubActivity'
 import { getCollection } from 'astro:content'
+import { sortBy } from 'lodash-es'
 import Layout from '../layouts/default.astro'
 import BlogPosts from '@/components/Home/BlogPosts.astro'
 import PageFooter from '@/components/PageFooter.astro'
 import SponsorTus from '@/components/Home/SponsorTus.astro'
 
 const title = 'tus - resumable file uploads'
-const description = 'tus is the open protocol standard for resumable and reliable file uploads across the web, facilitating efficient and seamless file transfer experiences.'
+const description =
+  'tus is the open protocol standard for resumable and reliable file uploads across the web, facilitating efficient and seamless file transfer experiences.'
 const githubActivity = await getGitHubActivity()
 
 const displayedUsers = [
@@ -33,7 +35,10 @@ const logos = (
   return iA - iB
 })
 
-const press = await getCollection('press')
+const press = sortBy(
+  await getCollection('press'),
+  (entry) => `${entry.id}.json`,
+)
 ---
 
 <Layout title={title} description={description}>
@@ -55,10 +60,9 @@ const press = await getCollection('press')
     <div class="mission">
       <div class="container">
         <p>
-          People are sharing more and more photos and videos every day, but 
-mobile
-          networks remain fragile. Platform APIs are often a mess and every 
-          project builds its own file uploader. There are a thousand
+          People are sharing more and more photos and videos every day, but
+          mobile networks remain fragile. Platform APIs are often a mess and
+          every project builds its own file uploader. There are a thousand
           one-week projects that barely work, when all we need is one real
           project. One project done right.
         </p>
@@ -69,8 +73,8 @@ mobile
           <a href="/protocols/resumable-upload.html">
             protocol for resumable uploads
           </a>{' '}
-          built on HTTP. It offers simple, cheap and reusable stacks for clients
-          and servers. It supports any language, any platform and any network.
+          built on HTTP. It offers simple, cheap and reusable stacks for clients and
+          servers. It supports any language, any platform and any network.
         </p>
 
         <p>

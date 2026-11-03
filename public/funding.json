@@ -52,8 +52,7 @@
       "name": "tus-node-server",
       "description": "Tus-node-server is a feature-rich server for resumable uploads written in Node.js.",
       "webpageUrl": {
-        "url": "https://github.com/tus/tus-node-server",
-        "wellKnown": "https://github.com/tus/tus-node-server/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tus-node-server",
@@ -67,8 +66,7 @@
       "name": "tus-js-client",
       "description": "Client implementation of the tus resumable upload protocol for JavaScript (Node.js and browsers).",
       "webpageUrl": {
-        "url": "https://github.com/tus/tus-js-client",
-        "wellKnown": "https://github.com/tus/tus-js-client/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tus-js-client",
@@ -91,8 +89,7 @@
       "name": "tus-py-client",
       "description": "Client implementation of the tus resumable upload protocol for Python.",
       "webpageUrl": {
-        "url": "https://github.com/tus/tus-py-client",
-        "wellKnown": "https://github.com/tus/tus-py-client/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tus-py-client",
@@ -106,8 +103,7 @@
       "name": "tus-java-client",
       "description": "Client implementation of the tus resumable upload protocol for Java.",
       "webpageUrl": {
-        "url": "https://github.com/tus/tus-java-client",
-        "wellKnown": "https://github.com/tus/tus-java-client/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tus-java-client",
@@ -121,8 +117,7 @@
       "name": "tus-android-client",
       "description": "Client implementation of the tus resumable upload protocol for Android.",
       "webpageUrl": {
-        "url": "https://github.com/tus/tus-android-client",
-        "wellKnown": "https://github.com/tus/tus-android-client/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/tus-android-client",
@@ -136,8 +131,7 @@
       "name": "TUSKit",
       "description": "Client implementation of the tus resumable upload protocol for iOS and macOS.",
       "webpageUrl": {
-        "url": "https://github.com/tus/TUSKit",
-        "wellKnown": "https://github.com/tus/TUSKit/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tus/TUSKit",
@@ -151,8 +145,7 @@
       "name": "tusdotnet",
       "description": "Tusdotnet is a feature-rich server for resumable uploads written in .NET",
       "webpageUrl": {
-        "url": "https://github.com/tusdotnet/tusdotnet",
-        "wellKnown": "https://github.com/tusdotnet/tusdotnet/blob/master/.well-known/funding-manifest-urls"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
         "url": "https://github.com/tusdotnet/tusdotnet",
