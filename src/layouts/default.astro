@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
 
-import TransloaditBar from '@/components/TransloaditBar.astro'
 import { Navigation } from '@/components/Navigation'
 import favicon from '@/assets/logos-tus-default-glyph.svg'
 
@@ -79,7 +78,6 @@ if (currentPage !== '/') {
     <meta name="twitter:image" content={new URL(image, Astro.url)} />
   </head>
   <body>
-    <TransloaditBar />
     <Navigation client:load currentPage={currentPage} />
     <slot />
     <script
