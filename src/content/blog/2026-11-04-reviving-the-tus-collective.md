@@ -1,11 +1,11 @@
 ---
 title: 'Reviving the tus collective'
 author: kvz
-date: 2026-10-14
+date: 2026-11-04
 meta_description:
-  'Transloadit now sponsors tus with €300 a month, and until April 30, 2027,
-  matches every new contribution one to one, on Open Collective or GitHub
-  Sponsors, up to €2,400.'
+  'Transloadit now sponsors tus with $350 a month through GitHub Sponsors, and
+  until April 30, 2027, matches every new contribution one to one, on Open
+  Collective or GitHub Sponsors, up to €2,400.'
 ---
 
 tus has had an [Open Collective](https://opencollective.com/tus) since January
@@ -18,10 +18,11 @@ resumable uploads are becoming an HTTP standard
 We want that funding to be visible and shared, so that tus doesn’t depend on a
 single company.
 
-So from today, Transloadit sponsors tus with €300 a month. On top of that, until
-April 30, 2027, Transloadit matches every new contribution from others one to
-one, on Open Collective or GitHub Sponsors, up to €2,400. If your company relies
-on tus, now is a good moment: your contribution counts double.
+So from today, Transloadit sponsors tus with $350 a month through GitHub
+Sponsors. On top of that, until April 30, 2027, Transloadit matches every new
+contribution from others one to one, on Open Collective or GitHub Sponsors, up
+to €2,400. If your company relies on tus, now is a good moment: your
+contribution counts double.
 
 ## What the money pays for
 
@@ -70,4 +71,4 @@ years.
 _Kevin van Zonneveld, on behalf of Transloadit_
 
 Also published on the
-[Transloadit blog](https://transloadit.com/blog/2026/10/reviving-the-tus-collective/).
+[Transloadit blog](https://transloadit.com/blog/2026/11/reviving-the-tus-collective/).
