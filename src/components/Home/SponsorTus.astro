@@ -1,5 +1,6 @@
 ---
-const collectiveUrl = 'https://opencollective.com/tus'
+import SponsorLogos from '@/components/SponsorLogos.astro'
+import { collectiveUrl, sponsorUrl } from '@/data/sponsors'
 ---
 
 <div class="sponsor-tus">
@@ -25,9 +26,14 @@ const collectiveUrl = 'https://opencollective.com/tus'
     company or as an individual.
   </p>
 
-  <a class="sponsor-button" href={collectiveUrl}>
-    Sponsor tus on Open Collective
-  </a>
+  <SponsorLogos tiers={['gold', 'silver']} />
+
+  <a class="sponsor-button" href={sponsorUrl}>Sponsor tus on GitHub</a>
+
+  <p class="alternative">
+    Or contribute through <a href={collectiveUrl}>Open Collective</a>. Both
+    count toward Transloadit's match, and every expense is public.
+  </p>
 </div>
 
 <style>
@@ -69,5 +75,11 @@ const collectiveUrl = 'https://opencollective.com/tus'
   .sponsor-button:focus-visible {
     outline: 2px solid var(--green3);
     outline-offset: 2px;
+  }
+
+  .sponsor-tus .alternative {
+    margin-block-start: var(--space4);
+    font-size: 1rem;
+    text-align: center;
   }
 </style>
