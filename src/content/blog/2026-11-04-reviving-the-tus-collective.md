@@ -30,8 +30,8 @@ The proceeds will be used to cover expenses, in this order:
 
 1. Travel to IETF meetings for the people editing and implementing the resumable
    uploads draft, so it can become an RFC.
-2. Maintenance of tusd, tus-js-client and tus-node-server: reviews, bug and
-   security fixes, releases.
+2. Maintenance of the tus implementations (tusd, tus-js-client, tus-node-server,
+   tusdotnet and the other clients): reviews, bug and security fixes, releases.
 3. Interoperability work between tus implementations and the new standard.
 
 Every expense is public on the
