@@ -73,16 +73,16 @@
     "preact": "^10.28.2",
     "pretty-bytes": "^6.1.1",
     "rehype-autolink-headings": "^7.1.0",
-    "rehype-stringify": "^9.0.3",
-    "remark-parse": "^10.0.2",
-    "remark-rehype": "^10.1.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "remark-toc": "^9.0.0",
     "s-ago": "^2.2.0",
     "sharp": "^0.35.5",
     "timeago.js": "^4.0.2",
     "ts-is-present": "^1.2.2",
     "tus-js-client": "^3.1.1",
-    "unified": "^10.1.2"
+    "unified": "^11.0.5"
   },
   "resolutions": {
     "react": "npm:@preact/compat@latest",
