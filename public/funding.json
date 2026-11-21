@@ -14,131 +14,27 @@
     {
       "guid": "tus",
       "name": "tus",
-      "description": "Tus is an open protocol for resumable file uploads over HTTP. It enables reliable uploads that can resume after network interruptions.",
+      "description": "Tus is an open protocol for resumable file uploads over HTTP. It enables reliable uploads that can resume after network interruptions. This project covers the protocol specification and its official implementations under github.com/tus: the tusd server (Go), tus-node-server, tus-js-client, tus-py-client, tus-java-client, tus-android-client and TUSKit (iOS and macOS).",
       "webpageUrl": {
-        "url": "https://tus.io/protocols/resumable-upload"
+        "url": "https://tus.io/implementations"
       },
       "repositoryUrl": {
-        "url": "https://github.com/tus/tus-resumable-upload-protocol",
+        "url": "https://github.com/tus",
         "wellKnown": "https://github.com/tus/tus-resumable-upload-protocol/blob/main/.well-known/funding-manifest-urls"
       },
       "licenses": ["mit"],
       "tags": [
         "http",
         "upload",
-        "file",
         "resumable",
         "protocol",
-        "specification"
-      ]
-    },
-    {
-      "guid": "tusd",
-      "name": "tusd",
-      "description": "Tusd is a feature-rich server for resumable uploads written in Go.",
-      "webpageUrl": {
-        "url": "https://tus.github.io/tusd",
-        "wellKnown": "https://tus.github.io/tusd/.well-known/funding-manifest-urls"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tusd",
-        "wellKnown": "https://github.com/tus/tusd/blob/main/docs/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "go", "server"]
-    },
-    {
-      "guid": "tus-node-server",
-      "name": "tus-node-server",
-      "description": "Tus-node-server is a feature-rich server for resumable uploads written in Node.js.",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tus-node-server",
-        "wellKnown": "https://github.com/tus/tus-node-server/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "nodejs", "server"]
-    },
-    {
-      "guid": "tus-js-client",
-      "name": "tus-js-client",
-      "description": "Client implementation of the tus resumable upload protocol for JavaScript (Node.js and browsers).",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tus-js-client",
-        "wellKnown": "https://github.com/tus/tus-js-client/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": [
-        "http",
-        "upload",
-        "file",
-        "resumable",
+        "server",
+        "client",
+        "go",
         "javascript",
         "nodejs",
-        "browser",
-        "client"
+        "mobile"
       ]
-    },
-    {
-      "guid": "tus-py-client",
-      "name": "tus-py-client",
-      "description": "Client implementation of the tus resumable upload protocol for Python.",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tus-py-client",
-        "wellKnown": "https://github.com/tus/tus-py-client/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "python", "client"]
-    },
-    {
-      "guid": "tus-java-client",
-      "name": "tus-java-client",
-      "description": "Client implementation of the tus resumable upload protocol for Java.",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tus-java-client",
-        "wellKnown": "https://github.com/tus/tus-java-client/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "java", "client"]
-    },
-    {
-      "guid": "tus-android-client",
-      "name": "tus-android-client",
-      "description": "Client implementation of the tus resumable upload protocol for Android.",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/tus-android-client",
-        "wellKnown": "https://github.com/tus/tus-android-client/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "android", "client"]
-    },
-    {
-      "guid": "tuskit",
-      "name": "TUSKit",
-      "description": "Client implementation of the tus resumable upload protocol for iOS and macOS.",
-      "webpageUrl": {
-        "url": "https://tus.io/implementations"
-      },
-      "repositoryUrl": {
-        "url": "https://github.com/tus/TUSKit",
-        "wellKnown": "https://github.com/tus/TUSKit/blob/main/.well-known/funding-manifest-urls"
-      },
-      "licenses": ["mit"],
-      "tags": ["http", "upload", "file", "resumable", "ios", "macos", "client"]
     },
     {
       "guid": "tusdotnet",
