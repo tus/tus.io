@@ -13078,13 +13078,8 @@ __metadata:
     ts-is-present: "npm:^1.2.2"
     tus-js-client: "npm:^3.1.1"
     typescript: "npm:^5.9.3"
-<<<<<<< HEAD
-    typescript-plugin-css-modules: "npm:^5.2.0"
-    unified: "npm:^11.0.5"
-=======
     typescript-plugin-css-modules: "npm:^5.3.0"
-    unified: "npm:^10.1.2"
->>>>>>> origin/main
+    unified: "npm:^11.0.5"
   languageName: unknown
   linkType: soft
 
