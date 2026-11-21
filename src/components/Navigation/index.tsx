@@ -68,7 +68,7 @@ export function Navigation(props: NavigationProps) {
               expanded.value = !expanded.value
               e?.stopPropagation()
             }}
-            aria-expanded={expanded}
+            aria-expanded={expanded.value}
           >
             {expanded.value ? (
               <CrossIcon size={24} />

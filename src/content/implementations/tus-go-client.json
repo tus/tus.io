@@ -1,0 +1,15 @@
+{
+  "href": "https://github.com/tus/tus-go-client",
+  "authors": [
+    {
+      "name": "Igor Derkach",
+      "href": "https://github.com/bdragon300"
+    }
+  ],
+  "name": "tus-go-client",
+  "description": "Add tus <code>v1.0.0</code> resumable file uploads to <strong>client</strong> app using <strong>Go</strong>.",
+  "license": "Apache License 2.0",
+  "type": "official",
+  "subtype": "client",
+  "icon": "prog-golang02"
+}

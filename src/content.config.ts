@@ -1,7 +1,19 @@
-import { z, defineCollection, reference } from 'astro:content'
+import { defineCollection, reference } from 'astro:content'
+import { glob, type Loader } from 'astro/loaders'
+import { z } from 'astro/zod'
+
+// Data collections historically use file names as IDs, including punctuation.
+// Slugifying tus.py.json and tuspy.json would silently drop an implementation.
+function jsonLoader(collection: string): Loader {
+  return glob({
+    base: `./src/content/${collection}`,
+    pattern: '**/*.json',
+    generateId: ({ entry }) => entry.replace(/\.json$/, ''),
+  })
+}
 
 const authors = defineCollection({
-  type: 'data',
+  loader: jsonLoader('authors'),
   schema: z.object({
     gravatar: z.string(),
     name: z.string(),
@@ -13,10 +25,10 @@ const authors = defineCollection({
 })
 
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     author: reference('authors'),
-    date: z.date(),
+    date: z.coerce.date(),
     title: z.string(),
     meta_description: z.string().optional(),
     redirect_from: z.string().optional(),
@@ -24,7 +36,7 @@ const blog = defineCollection({
 })
 
 const features = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/features', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     order: z.number(),
@@ -32,7 +44,7 @@ const features = defineCollection({
 })
 
 const implementations = defineCollection({
-  type: 'data',
+  loader: jsonLoader('implementations'),
   schema: z.object({
     authors: z.array(
       z.object({
@@ -53,7 +65,7 @@ const implementations = defineCollection({
 })
 
 const logos = defineCollection({
-  type: 'data',
+  loader: jsonLoader('logos'),
   schema: z.object({
     name: z.string(),
     src: z.string(),
@@ -62,7 +74,7 @@ const logos = defineCollection({
 })
 
 const press = defineCollection({
-  type: 'data',
+  loader: jsonLoader('press'),
   schema: z.object({
     name: z.string(),
     src: z.string(),
@@ -71,7 +83,7 @@ const press = defineCollection({
 })
 
 const protocols = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/protocols', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),

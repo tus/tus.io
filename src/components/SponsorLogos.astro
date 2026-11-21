@@ -1,0 +1,92 @@
+---
+import clsx from 'clsx'
+import { sponsors, sponsorUrl, type SponsorTier } from '@/data/sponsors'
+
+interface Props {
+  tiers?: SponsorTier[]
+  compact?: boolean
+}
+
+const { tiers = ['gold', 'silver', 'bronze'], compact } = Astro.props
+const order: SponsorTier[] = ['gold', 'silver', 'bronze']
+const shown = sponsors
+  .filter((sponsor) => tiers.includes(sponsor.tier))
+  .sort((a, b) => order.indexOf(a.tier) - order.indexOf(b.tier))
+---
+
+<ul class={clsx('sponsor-logos', { compact })}>
+  {
+    shown.map((sponsor) => (
+      <li class={clsx('sponsor', sponsor.tier)}>
+        <a href={sponsor.url} rel="noopener" target="_blank">
+          <img
+            src={sponsor.logo.src}
+            width={sponsor.logo.width}
+            height={sponsor.logo.height}
+            alt={sponsor.name}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </li>
+    ))
+  }
+  <li class="sponsor placeholder">
+    <a href={sponsorUrl}>Your company here</a>
+  </li>
+</ul>
+
+<style>
+  .sponsor-logos {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space6);
+    margin: var(--space6) 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sponsor img {
+    display: block;
+    inline-size: auto;
+    block-size: var(--space10);
+  }
+
+  .sponsor.gold img {
+    block-size: var(--space12);
+  }
+
+  .sponsor.bronze img {
+    block-size: var(--space8);
+  }
+
+  .compact .sponsor img {
+    block-size: var(--space8);
+  }
+
+  .placeholder a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: var(--space10);
+    padding: var(--space2) var(--space4);
+    border: 1px dashed var(--gray9);
+    border-radius: 0.25rem;
+    color: var(--gray11);
+    font-size: 0.875rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .compact .placeholder a {
+    min-block-size: var(--space8);
+  }
+
+  .placeholder a:hover,
+  .placeholder a:focus-visible {
+    border-color: var(--green3);
+    color: var(--green3);
+  }
+</style>

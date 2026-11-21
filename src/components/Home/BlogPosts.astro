@@ -28,7 +28,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
           <article class={'post'}>
             <div class={'content'}>
               <h3>
-                <a href={`/blog/${getBlogPostSlug(p.slug)}`}>{p.data.title}</a>
+                <a href={`/blog/${getBlogPostSlug(p.id)}`}>{p.data.title}</a>
               </h3>
               <time class="date" datetime={p.data.date.toUTCString()}>
                 {formatter.format(p.data.date)}

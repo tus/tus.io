@@ -6,12 +6,12 @@ import Layout from '@/layouts/default.astro'
 import { getAuthorHref } from '@/lib/getAuthorHref'
 import { getBlogPostSlug } from '@/lib/getBlogPostSlug'
 import type { InferGetStaticPropsType } from 'astro'
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection, getEntry, render } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
   return posts.map((post) => ({
-    params: { slug: getBlogPostSlug(post.slug) },
+    params: { slug: getBlogPostSlug(post.id) },
     props: { post },
   }))
 }
@@ -19,9 +19,10 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { post } = Astro.props
-const { Content } = await post.render()
+const { Content } = await render(post)
 
 const author = await getEntry(post.data.author)
+if (!author) throw new Error(`Missing author for blog post ${post.id}`)
 
 const formatter = Intl.DateTimeFormat('en-US', {
   year: 'numeric',

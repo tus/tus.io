@@ -1,13 +1,14 @@
 ---
 import ProtocolLayout from '@/layouts/protocol.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
 const all = await getCollection(
   'protocols',
-  ({ data }) => !data.version_outdated
+  ({ data }) => !data.version_outdated,
 )
-const { data, render } = all[0]
-const { Content } = await render()
+const protocol = all[0]
+const { data } = protocol
+const { Content } = await render(protocol)
 ---
 
 <ProtocolLayout

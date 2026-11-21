@@ -11,6 +11,57 @@
 The site is automatically published to GitHub Pages on any commits to the `main`
 branch.
 
+### IndexNow notifications
+
+After a successful production deployment from `main`, GitHub Actions notifies
+[IndexNow](https://www.indexnow.org/documentation) about added, edited and
+removed public sitemap URLs. The first run establishes a baseline without
+submitting historical pages. Builds, tests, previews and deployments from other
+branches or repositories do not submit URLs.
+
+`scripts/indexnow.mjs` follows the design in
+[uppy.io#467](https://github.com/transloadit/uppy.io/pull/467), adapted to
+Astro's sitemap index and `build.format: 'file'`. It compares rendered page
+content and search metadata while ignoring shared navigation, the banner,
+footer, CSS scope IDs and hydration/bundle references. If rendered HTML is
+missing or empty, it falls back to sitemap URL and `lastmod` differences, while
+preserving metadata comparisons when possible. Astro currently emits no
+`lastmod`, so this fallback detects additions/removals and metadata edits, but
+cannot detect body edits to an unrendered page. All current public pages render
+HTML.
+
+The public ownership key in `public/indexnow.txt` is served at `/indexnow.txt`;
+it needs no secret, new dependency or paid service. The script verifies the live
+key before submitting up to 10,000 URLs per request. HTTP 202 means acceptance
+with key validation pending; acceptance does not guarantee indexing.
+
+The production snapshot and pending notifications live in an Actions cache and a
+90-day artifact; `/indexnow-state.json` provides another recovery copy. Build
+and deploy run in one job, so retrying even an older workflow rebuilds and
+prepares against current production state before publishing. Only a successful
+deployment can submit and save that state. Generations prevent stale cache
+restores from dropping newer notices. Failed notifications stay pending for the
+next production deployment, including rejected 4xx requests. Recovery can repeat
+accepted URLs. Optional steps have time limits and tolerate failure, so IndexNow
+errors never fail a deployment.
+
+Every preparation checks the archive even if the cache and live snapshot agree;
+both can be stale after a failed cache save. Archive names record the snapshot
+generation, so retrying an older deploy cannot hide a newer archive. Recovery
+checks all artifact-list pages and prefers the highest generation. If archive
+recovery fails, preparation preserves the checkpoint rather than advancing past
+potentially newer notices. Failed preparation never archives unvalidated state.
+A recovered valid snapshot is copied into the site before preparing changes, so
+that recovery survives a later preparation failure. Live GitHub activity and
+contributor-list updates are rendered page content and intentionally count as
+edits.
+
+The public snapshot contains only public URLs, fingerprints, sitemap timestamps
+and pending URLs. The state recovery, queue and submission logic could be shared
+with uppy.io; sitemap paths and rendered-content normalization are
+site-specific. This implementation remains self-contained. Run `yarn test` for
+the behavioral tests; their network requests are stubbed.
+
 **Philosophy/rules**
 
 - Do not hydrate components unless strictly necessary

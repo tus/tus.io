@@ -3,27 +3,39 @@ import Layout from '@/layouts/page.astro'
 import ListItem from '@/components/ImplementationListItem.astro'
 
 import { getCollection } from 'astro:content'
+import { sortBy } from 'lodash-es'
 
-const description = 'Explore real-life tus protocol implementations in various languages and platforms, showcasing its versatility and efficiency in file uploads.'
+const description =
+  'Explore real-life tus protocol implementations in various languages and platforms, showcasing its versatility and efficiency in file uploads.'
 
-const officialServers = await getCollection(
-  'implementations',
-  (d) => d.data.type === 'official' && (d.data.subtype === 'server' || d.data.subtype === 'both')
+// Retain the legacy file-ID ordering, including dots, dashes, and underscores.
+const implementations = sortBy(
+  await getCollection('implementations'),
+  (entry) => `${entry.id}.json`,
 )
 
-const officialClients = await getCollection(
-  'implementations',
-  (d) => d.data.type === 'official' && (d.data.subtype === 'client' || d.data.subtype === 'both')
+const officialServers = implementations.filter(
+  (d) =>
+    d.data.type === 'official' &&
+    (d.data.subtype === 'server' || d.data.subtype === 'both'),
 )
 
-const communityClientImplementations = await getCollection(
-  'implementations',
-  (d) => d.data.type === 'community' && (d.data.subtype === 'client' || d.data.subtype === 'both')
+const officialClients = implementations.filter(
+  (d) =>
+    d.data.type === 'official' &&
+    (d.data.subtype === 'client' || d.data.subtype === 'both'),
 )
 
-const communityServerImplementations = await getCollection(
-  'implementations',
-  (d) => d.data.type === 'community' && (d.data.subtype === 'server' || d.data.subtype === 'both')
+const communityClientImplementations = implementations.filter(
+  (d) =>
+    d.data.type === 'community' &&
+    (d.data.subtype === 'client' || d.data.subtype === 'both'),
+)
+
+const communityServerImplementations = implementations.filter(
+  (d) =>
+    d.data.type === 'community' &&
+    (d.data.subtype === 'server' || d.data.subtype === 'both'),
 )
 ---
 
@@ -42,8 +54,8 @@ const communityServerImplementations = await getCollection(
     Some special attention should go to <a
       href="https://uppy.io/"
       target="_blank">Uppy</a
-    > which is a full-featured file uploader for web browsers that supports tus.
-    Just like tus, Uppy is brought to you by the people behind <a
+    > which is a full-featured file uploader for web browsers that supports tus. Just
+    like tus, Uppy is brought to you by the people behind <a
       href="https://transloadit.com"
       ><img
         src="/images/transloadit-logo.png"
@@ -159,7 +171,11 @@ const communityServerImplementations = await getCollection(
   </ul>
 
   <p>
-    Do you have an implementation that's not listed here? Add your work by opening a pull requests against the <a href="https://github.com/tus/tus.io/tree/main/src/content/implementations">website's repository</a>!
+    Do you have an implementation that's not listed here? Add your work by
+    opening a pull requests against the <a
+      href="https://github.com/tus/tus.io/tree/main/src/content/implementations"
+      >website's repository</a
+    >!
   </p>
 
   <style>
